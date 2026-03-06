@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "genius-invokation": {
+      "command": "bun",
+      "args": [
+        "run",
+        "d:/AI/GTCG/genius-invokation/packages/mcp/claude-code-mcp.ts"
+      ],
+      "cwd": "d:/AI/GTCG/genius-invokation",
+      "env": {}
+    }
+  }
+}

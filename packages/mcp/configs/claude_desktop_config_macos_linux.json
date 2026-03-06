@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "genius-invokation": {
+      "command": "bun",
+      "args": [
+        "run",
+        "/path/to/genius-invokation/packages/mcp/src/index.ts"
+      ],
+      "cwd": "/path/to/genius-invokation"
+    }
+  }
+}

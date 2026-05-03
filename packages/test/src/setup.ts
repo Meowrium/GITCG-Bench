@@ -31,6 +31,7 @@ import {
   getVersionBehavior,
   CURRENT_VERSION,
   EntityDefinition,
+  setAsyncContext,
 } from "@gi-tcg/core";
 import {
   Aura,
@@ -45,6 +46,8 @@ import {
   SupportHandle,
 } from "@gi-tcg/core/builder";
 import { TestController } from "./controller";
+
+await setAsyncContext(true);
 
 let _nextId = -5000000;
 function nextId() {
@@ -150,7 +153,7 @@ export function Card(props: Card.Prop): JSX.Element {
 }
 
 export namespace Attachment {
-  export interface Prop {
+  export interface Prop extends EntityProp {
     def: AttachmentHandle;
   }
 }
@@ -166,6 +169,17 @@ export namespace DeclaredEnd {
 }
 export function DeclaredEnd(props: DeclaredEnd.Prop): JSX.Element {
   return { comp: DeclaredEnd, prop: props };
+}
+
+export namespace DiceCount {
+  export interface Prop {
+    my?: boolean;
+    opp?: boolean;
+    count: number;
+  }
+}
+export function DiceCount(props: DiceCount.Prop): JSX.Element {
+  return { comp: DiceCount, prop: props };
 }
 
 export namespace State {
@@ -185,7 +199,7 @@ export function State(props: State.Prop): JSX.Element {
 }
 
 function childrenToArray(
-  children?: JSX.Element[] | JSX.Element
+  children?: JSX.Element[] | JSX.Element,
 ): JSX.Element[] {
   if (typeof children === "undefined") {
     return [];
@@ -204,7 +218,7 @@ function emptyPlayerState(who: 0 | 1): Draft<PlayerState> {
     who,
     initialPile: [],
     pile: [],
-    dice: [],
+    dice: Array.from({ length: 8 }, () => DiceType.Omni),
     activeCharacterId: 0,
     characters: [],
     combatStatuses: [],
@@ -218,7 +232,10 @@ function emptyPlayerState(who: 0 | 1): Draft<PlayerState> {
     hasDefeated: false,
     legendUsed: false,
     skipNextTurn: false,
+    defeatedSwitching: false,
     roundSkillLog: new Map(),
+    phaseDamageLog: [],
+    phaseReactionLog: [],
   };
 }
 
@@ -251,6 +268,15 @@ export function setup(state: JSX.Element): TestController {
         players[1].declaredEnd = true;
       }
       continue;
+    } else if (comp === DiceCount) {
+      const diceArr = Array.from({ length: prop.count }, () => DiceType.Omni);
+      if (prop.my) {
+        players[0].dice = diceArr;
+      }
+      if (prop.opp) {
+        players[1].dice = diceArr;
+      }
+      continue;
     }
     let who: 0 | 1;
     if (prop.my) {
@@ -259,7 +285,7 @@ export function setup(state: JSX.Element): TestController {
       who = 1;
     } else {
       throw new Error(
-        `An entity of type ${comp.name} in global state neither have 'my' or 'opp'`
+        `An entity of type ${comp.name} in global state neither have 'my' or 'opp'`,
       );
     }
     delete prop.my;
@@ -292,7 +318,7 @@ export function setup(state: JSX.Element): TestController {
             Object.entries(definition.varConfigs).map(([k, v]) => [
               k,
               v.initialValue,
-            ])
+            ]),
           ),
           ...v,
           ...namedV,
@@ -302,7 +328,7 @@ export function setup(state: JSX.Element): TestController {
         for (const child of childrenToArray(children)) {
           if (!([Status, Equipment] as Function[]).includes(child.comp)) {
             throw new Error(
-              `An entity of type ${comp.name} can only have Status or Equipment`
+              `An entity of type ${comp.name} can only have Status or Equipment`,
             );
           }
           const { def, ref, v, ...namedV } =
@@ -310,7 +336,7 @@ export function setup(state: JSX.Element): TestController {
           const id = ref?.id ?? nextId();
           if (!def) {
             throw new Error(
-              `An entity of type ${comp.name} must have a def prop`
+              `An entity of type ${comp.name} must have a def prop`,
             );
           }
           const definition = data.entities.get(def);
@@ -322,7 +348,7 @@ export function setup(state: JSX.Element): TestController {
               Object.entries(definition.varConfigs).map(([k, v]) => [
                 k,
                 v.initialValue,
-              ])
+              ]),
             ),
             ...v,
             ...namedV,
@@ -354,11 +380,12 @@ export function setup(state: JSX.Element): TestController {
         break;
       }
       case Card: {
-        const { ref, def, pile, notInitial, children } = prop as OmitProp<Card.Prop>;
+        const { ref, def, pile, notInitial, children } =
+          prop as OmitProp<Card.Prop>;
         const id = ref?.id ?? nextId();
         if (!def) {
           throw new Error(
-            `An entity of type ${comp.name} must have a def prop`
+            `An entity of type ${comp.name} must have a def prop`,
           );
         }
         const definition = data.entities.get(def);
@@ -370,20 +397,29 @@ export function setup(state: JSX.Element): TestController {
           if (!([Attachment] as Function[]).includes(child.comp)) {
             throw new Error(`Card can only have Attachment children`);
           }
-          const { def: attachDef } = child.prop as Attachment.Prop;
+          const {
+            def: attachDef,
+            v,
+            ref,
+            ...namedV
+          } = child.prop as OmitProp<Attachment.Prop>;
           const attachDefinition = data.attachments.get(attachDef);
           if (!attachDefinition) {
             throw new Error(`Attachment ${attachDef} not found`);
           }
           const attachState: AttachmentState = {
             [StateSymbol]: "attachment",
-            id: nextId(),
+            id: ref?.id ?? nextId(),
             definition: attachDefinition,
-            variables: Object.fromEntries(
-              Object.entries(attachDefinition.varConfigs).map(
-                ([name, { initialValue }]) => [name, initialValue]
-              )
-            ),
+            variables: {
+              ...Object.fromEntries(
+                Object.entries(attachDefinition.varConfigs).map(
+                  ([name, { initialValue }]) => [name, initialValue],
+                ),
+              ),
+              ...v,
+              ...namedV,
+            },
           };
           attachments.push(attachState as Draft<AttachmentState>);
         }
@@ -393,8 +429,8 @@ export function setup(state: JSX.Element): TestController {
           definition,
           variables: Object.fromEntries(
             Object.entries(definition.varConfigs).map(
-              ([name, { initialValue }]) => [name, initialValue]
-            )
+              ([name, { initialValue }]) => [name, initialValue],
+            ),
           ),
           attachments: attachments as AttachmentState[],
         };
@@ -412,7 +448,7 @@ export function setup(state: JSX.Element): TestController {
         const id = ref?.id ?? nextId();
         if (!def) {
           throw new Error(
-            `An entity of type ${comp.name} must have a def prop`
+            `An entity of type ${comp.name} must have a def prop`,
           );
         }
         const definition = data.entities.get(def);
@@ -424,7 +460,7 @@ export function setup(state: JSX.Element): TestController {
             Object.entries(definition.varConfigs).map(([k, v]) => [
               k,
               v.initialValue,
-            ])
+            ]),
           ),
           ...v,
           ...namedV,
@@ -440,14 +476,14 @@ export function setup(state: JSX.Element): TestController {
           comp === CombatStatus
             ? "combatStatuses"
             : comp === Summon
-            ? "summons"
-            : "supports";
+              ? "summons"
+              : "supports";
         player[area].push(state as Draft<EntityState>);
         break;
       }
       default: {
         throw new Error(
-          `An entity of type ${comp.name} is not allowed in global state`
+          `An entity of type ${comp.name} is not allowed in global state`,
         );
       }
     }
@@ -464,7 +500,7 @@ export function setup(state: JSX.Element): TestController {
           Object.entries(definition.varConfigs).map(([k, v]) => [
             k,
             v.initialValue,
-          ])
+          ]),
         ) as CharacterVariables,
         entities: [],
       };
@@ -473,7 +509,6 @@ export function setup(state: JSX.Element): TestController {
     if (player.activeCharacterId === 0) {
       player.activeCharacterId = player.characters[0].id;
     }
-    player.dice = Array.from({ length: 8 }, () => DiceType.Omni);
   }
 
   const extensions = data.extensions
@@ -483,14 +518,13 @@ export function setup(state: JSX.Element): TestController {
         [StateSymbol]: "extension",
         definition: def,
         state: def.initialState,
-      })
+      }),
     )
     .toArray();
   const gameState: GameState = {
     [StateSymbol]: "game",
     data,
     config: {
-      errorLevel: "strict",
       initialDiceCount: 8,
       initialHandsCount: 5,
       maxDiceCount: 16,
@@ -502,7 +536,7 @@ export function setup(state: JSX.Element): TestController {
       randomSeed: 0,
     },
     versionBehavior: getVersionBehavior(
-      stateProp.dataVersion ?? CURRENT_VERSION
+      stateProp.dataVersion ?? CURRENT_VERSION,
     ),
     iterators: {
       random: stateProp.random ?? 0,
@@ -514,7 +548,6 @@ export function setup(state: JSX.Element): TestController {
     roundNumber: stateProp.roundNumber ?? 1,
     winner: null,
     players,
-    delayingEventArgs: [],
   };
   const c = new TestController(gameState);
   c._start();

@@ -17,9 +17,10 @@ import { Module } from '@nestjs/common';
 import { GamesService } from './games.service';
 import { GamesController } from './games.controller';
 import { DbModule } from '../db/db.module';
+import { MetricsModule } from '../metrics/metrics.module';
 
 @Module({
-  imports: [DbModule],
+  imports: [DbModule, MetricsModule],
   providers: [GamesService],
   controllers: [GamesController],
   exports: [GamesService],

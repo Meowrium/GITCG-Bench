@@ -1,4 +1,5 @@
 // Copyright (C) 2024-2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -40,6 +41,8 @@ import {
   CustomEventEventArg,
   EMPTY_SKILL_RESULT,
   UseSkillEventArg,
+  DamageOrHealEventArg,
+  ModifyAction4EventArg,
 } from "../base/skill";
 import type {
   AnyState,
@@ -333,10 +336,7 @@ export const detailedEventDictionary = {
       e.canDeductCost()
     );
   }),
-  modifyAction: defineDescriptor("modifyAction2", (e, r) => {
-    return checkRelative(e.onTimeState, { who: e.who }, r);
-  }),
-  beforeFastSwitch: defineDescriptor("modifyAction2", (e, r) => {
+  beforeFastSwitch: defineDescriptor("modifyAction4", (e, r) => {
     return (
       checkRelative(e.onTimeState, { who: e.who }, r) &&
       e.isSwitchActive() &&
@@ -370,7 +370,7 @@ export const detailedEventDictionary = {
     return (
       e.type !== DamageType.Piercing &&
       checkRelative(e.onTimeState, e.source.id, r) &&
-      e.via.definition.initiativeSkillConfig?.skillType === "technique" &&
+      e.via.definition.skillType === "technique" &&
       e.damageInfo.fromReaction === null
     );
   }),
@@ -513,8 +513,7 @@ export const detailedEventDictionary = {
   }),
   disposeOrTuneCard: defineDescriptor("onDispose", (e, r) => {
     return (
-      e.isDisposeCardOrTuning() &&
-      checkRelative(e.onTimeState, { who: e.who }, r)
+      e.isDiscardOrTuning() && checkRelative(e.onTimeState, { who: e.who }, r)
     );
   }),
   dealDamage: defineDescriptor("onDamageOrHeal", (e, r) => {
@@ -547,11 +546,6 @@ export const detailedEventDictionary = {
   dealReaction: defineDescriptor("onReaction", (e, r) => {
     return checkRelative(e.onTimeState, e.caller.id, r);
   }),
-  skillReaction: defineDescriptor("onReaction", (e, r) => {
-    return (
-      checkRelative(e.onTimeState, e.caller.id, r) && e.viaCharacterSkill()
-    );
-  }),
   enter: defineDescriptor("onEnter", (e, r) => {
     return e.entity.id === r.callerId;
   }),
@@ -560,7 +554,7 @@ export const detailedEventDictionary = {
   }),
   dispose: defineDescriptor("onDispose", (e, r) => {
     return (
-      !e.isDisposeCardOrTuning() && checkRelative(e.onTimeState, e.entity.id, r)
+      !e.isDiscardOrTuning() && checkRelative(e.onTimeState, e.entity.id, r)
     );
   }),
   selfDispose: defineDescriptor("onDispose", (e, r) => {
@@ -624,14 +618,17 @@ export const detailedEventDictionary = {
 } satisfies Record<string, Descriptor<any>>;
 
 type OverrideEventArgType = {
+  damaged: DamageOrHealEventArg<DamageInfo>;
+  defeated: DamageOrHealEventArg<DamageInfo>;
+  dealDamage: DamageOrHealEventArg<DamageInfo>;
   deductOmniDiceSwitch: ModifyAction2EventArg<SwitchActiveInfo>;
   deductOmniDiceCard: ModifyAction2EventArg<PlayCardInfo>;
-  beforeFastSwitch: ModifyAction2EventArg<SwitchActiveInfo>;
   deductAllDiceCard: ModifyAction3EventArg<PlayCardInfo>;
   deductVoidDiceSkill: ModifyAction0EventArg<UseSkillInfo>;
   deductElementDiceSkill: ModifyAction1EventArg<UseSkillInfo>;
   deductOmniDiceSkill: ModifyAction2EventArg<UseSkillInfo>;
   deductOmniDiceTechnique: ModifyAction2EventArg<UseSkillInfo>;
+  beforeFastSwitch: ModifyAction4EventArg<SwitchActiveInfo>;
   cancelHealed: Omit<ModifyHeal0EventArg, "damageInfo" | "value">;
   decreaseHealed: Omit<ModifyHeal1EventArg, "damageInfo" | "value">;
 };
@@ -875,8 +872,7 @@ export class TriggeredSkillBuilder<
 > extends SkillBuilder<
   CreateSkillBuilderMeta<EventArgType, CallerType, CallerVars, AssociatedExt>
 > {
-  private _delayedToSkill = false;
-  private _beforeDefaultDispose = false;
+  private _asSkillType: CommonSkillType | null = null;
   private _enableHandTriggering = false;
   private _enablePileTriggering = false;
   private _usageOpt: { name: string; autoDecrease: boolean } | null = null;
@@ -885,6 +881,9 @@ export class TriggeredSkillBuilder<
     autoDecrease: boolean;
   } | null = null;
   private _listenTo: ListenTo = ListenTo.SameArea;
+
+  /** @internal 这个技能是默认的角色击倒时弃置，不应用检测 master 存活的 filter */
+  "~isDefaultDefeatedDispose" = false;
 
   constructor(
     id: number,
@@ -910,25 +909,14 @@ export class TriggeredSkillBuilder<
     this._enableHandTriggering = parent._type === "attachment";
     this._enablePileTriggering = parent._type === "attachment";
   }
-  
-  delayedToSkill() {
-    const allowedEventNames: (DetailedEventNames | CustomEvent)[] = [
-      "dealDamage",
-      "dealReaction",
-    ];
-    if (!allowedEventNames.includes(this.detailedEventName)) {
+
+  asSkillType(skillType: CommonSkillType) {
+    if (this.parent._type !== "character") {
       throw new GiTcgDataError(
-        `delayedToSkill is only allowed at following events: ${allowedEventNames.join(
-          ", ",
-        )}`,
+        "Only character's triggered skill can specify skill type.",
       );
     }
-    this._delayedToSkill = true;
-    return this;
-  }
-
-  beforeDefaultDispose() {
-    this._beforeDefaultDispose = true;
+    this._asSkillType = skillType;
     return this;
   }
 
@@ -1003,16 +991,10 @@ export class TriggeredSkillBuilder<
     return this;
   }
   listenToPlayer(): this {
-    if (this._beforeDefaultDispose) {
-      throw new GiTcgDataError("Only not self defeated can be listened");
-    }
     this._listenTo = ListenTo.SamePlayer;
     return this;
   }
   listenToAll(): this {
-    if (this._beforeDefaultDispose) {
-      throw new GiTcgDataError("Only not self defeated can be listened");
-    }
     this._listenTo = ListenTo.All;
     return this;
   }
@@ -1058,20 +1040,13 @@ export class TriggeredSkillBuilder<
 
     // 【添加各种 filter】
 
-    // 0. 被动技能要求角色存活
-    if (
-      this.parent._type === "character" &&
-      this.detailedEventName !== "defeated"
-    ) {
-      this.filters.push((c) => c.self.variables.alive);
-    }
-    // 1. 对于并非响应自身弃置的技能，当实体已经被弃置时，不再响应
+    // 0. 对于并非响应自身弃置的技能，当实体已经被弃置时，不再响应
     if (this.detailedEventName !== "selfDispose") {
       this.filters.push((c, e) => {
         return c.self.area.type !== "removedEntities";
       });
     }
-    // 2. 默认禁止手牌区实体响应事件，除非显式启用
+    // 1. 默认禁止手牌 & 牌库区实体响应事件，除非显式启用
     if (!this._enableHandTriggering) {
       this.filters.push((c) => {
         return c.self.area.type !== "hands";
@@ -1082,7 +1057,26 @@ export class TriggeredSkillBuilder<
         return c.self.area.type !== "pile";
       });
     }
-    // 3. 基于 listenTo 的 filter
+    // 2. 被动技能要求角色存活
+    if (
+      this.parent._type === "character" &&
+      this.detailedEventName !== "defeated"
+    ) {
+      this.filters.push((c) => c.self.variables.alive);
+    }
+    // 3. 状态和装备的技能默认要求角色存活，默认击倒弃置除外
+    if (
+      !this["~isDefaultDefeatedDispose"] &&
+      (this.parent._type === "status" || this.parent._type === "equipment")
+    ) {
+      this.filters.push((c) => {
+        if (c.self.area.type === "characters") {
+          return c.self.cast<"status" | "equipment">().master.variables.alive;
+        }
+        return true;
+      });
+    }
+    // 4. 基于 listenTo 的 filter
     const [triggerOn, filterDescriptor] =
       detailedEventDictionary[
         isCustomEvent(this.detailedEventName)
@@ -1102,7 +1096,7 @@ export class TriggeredSkillBuilder<
         c.rawState,
       );
     });
-    // 4. 自定义事件：确保事件名一致
+    // 5. 自定义事件：确保事件名一致
     if (isCustomEvent(this.detailedEventName)) {
       const customEvent = this.detailedEventName;
       this.filters.push(function (c, e) {
@@ -1111,74 +1105,26 @@ export class TriggeredSkillBuilder<
         );
       });
     }
-    // 5. 定义技能时显式传入的 filter
+    // 6. 定义技能时显式传入的 filter
     this.filters.push(this.triggerFilter);
 
-    const parentSkillList = this._beforeDefaultDispose
-      ? this.parent._skillListBeforeDefaultDispose
-      : this.parent._skillList;
+    const parentSkillList = this.parent._skillList;
 
     // 【构造技能定义并向父级实体添加】
     const filter = this.buildFilter();
     const action = this.buildAction();
-    if (this._delayedToSkill) {
-      const [, useSkillDescriptor] = detailedEventDictionary["useSkill"];
-      // 手动指定监听 useSkill 事件的 filter：只处理 listenOn
-      const useSkillFilter = function (
-        state: GameState,
-        skill: SkillInfo,
-        e: UseSkillEventArg,
-      ) {
-        const callerArea = getEntityArea(state, skill.caller.id);
-        return useSkillDescriptor(
-          e,
-          {
-            callerArea,
-            callerId: skill.caller.id,
-            listenTo,
-          },
-          state,
-        );
-      };
-      const def: TriggeredSkillDefinition<"onUseSkill"> = {
-        type: "skill",
-        id: this.id,
-        ownerType: this.parent._type,
-        triggerOn: "onUseSkill",
-        initiativeSkillConfig: null,
-        filter: useSkillFilter,
-        action: (state, skillInfo, arg) => {
-          for (const [name, e] of state.delayingEventArgs) {
-            if (
-              name === triggerOn &&
-              filter(state, skillInfo, e as EventArgType)
-            ) {
-              return action(state, skillInfo, e as EventArgType);
-            }
-          }
-          return [state, EMPTY_SKILL_RESULT];
-        },
-        usagePerRoundVariableName: this._usagePerRoundOpt?.name ?? null,
-      };
-      // For debug
-      Object.defineProperty(def, "delayedToSkill", {
-        value: triggerOn,
-        enumerable: true,
-      });
-      parentSkillList.push(def);
-    } else {
-      const def: TriggeredSkillDefinition<any> = {
-        type: "skill",
-        id: this.id,
-        ownerType: this.parent._type,
-        triggerOn,
-        initiativeSkillConfig: null,
-        filter,
-        action,
-        usagePerRoundVariableName: this._usagePerRoundOpt?.name ?? null,
-      };
-      parentSkillList.push(def);
-    }
+    const def: TriggeredSkillDefinition<any> = {
+      type: "skill",
+      id: this.id,
+      ownerType: this.parent._type,
+      skillType: this._asSkillType,
+      triggerOn,
+      initiativeSkillConfig: null,
+      filter,
+      action,
+      usagePerRoundVariableName: this._usagePerRoundOpt?.name ?? null,
+    };
+    parentSkillList.push(def);
   }
 
   endOn() {
@@ -1542,8 +1488,8 @@ export class InitiativeSkillBuilder<
         type: "skill",
         id: this.skillId,
         ownerType: "character",
+        skillType: this._skillType,
         initiativeSkillConfig: {
-          skillType: this._skillType,
           requiredCost: normalizeCost(this._cost),
           computed$costSize: costSize(this._cost),
           computed$diceCostSize: diceCostSize(this._cost),
@@ -1690,9 +1636,9 @@ export class TechniqueBuilder<
       type: "skill",
       id: this.id,
       ownerType: "equipment",
+      skillType: "technique",
       triggerOn: "initiative",
       initiativeSkillConfig: {
-        skillType: "technique",
         requiredCost: normalizeCost(this._cost),
         computed$costSize: costSize(this._cost),
         computed$diceCostSize: diceCostSize(this._cost),

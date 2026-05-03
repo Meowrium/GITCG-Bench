@@ -1,4 +1,5 @@
 // Copyright (C) 2024-2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -236,11 +237,13 @@ export function exposeMutation(
     case "stepRandom":
     case "stepId":
     case "mutateExtensionState":
-    case "pushRoundSkillLog":
-    case "clearRoundSkillLog":
     case "clearRemovedEntities":
-    case "pushDelayingEvent":
-    case "clearDelayingEvent":
+    case "pushRoundSkillLog":
+    case "removeRoundSkillLog":
+    case "clearRoundLogs":
+    case "pushPhaseDamageLog":
+    case "pushPhaseReactionLog":
+    case "clearPhaseLogs":
     case "resetVariables":
     case "switchActive": // We will manually handle this
       return null;
@@ -290,9 +293,7 @@ export function exposeMutation(
       };
     }
     case "createEntity": {
-      // 对手塞入牌库/手牌的信息不可见
-      const hidden =
-        m.target.who !== who && ["hands", "pile"].includes(m.target.type);
+      const hidden = m.target.who !== who && m.target.type === "hands";
       return {
         $case: "createEntity",
         who: m.target.who,
@@ -357,6 +358,8 @@ export function exposeMutation(
       const REASON_MAP: Record<RemoveEntityM["reason"], PbRemoveEntityReason> =
         {
           cardDisposed: PbRemoveEntityReason.CARD_DISPOSED,
+          targetOfSupportPlayed:
+            PbRemoveEntityReason.TARGET_OF_SUPPORT_PLAYED,
           elementalTuning: PbRemoveEntityReason.ELEMENTAL_TUNING,
           eventCardDrawn: PbRemoveEntityReason.EVENT_CARD_DRAWN,
           eventCardPlayed: PbRemoveEntityReason.EVENT_CARD_PLAYED,
@@ -535,7 +538,7 @@ export function exposeEntity(
   };
 }
 
-function exposeAttachment(
+export function exposeAttachment(
   state: GameState | null,
   att: Omit<AttachmentState, StateSymbol>,
 ): PbAttachmentState {
@@ -568,7 +571,7 @@ function exposeDiceRequirement(
     .toArray();
 }
 
-function exposeCharacter(
+export function exposeCharacter(
   state: GameState | null,
   player: PlayerState | null,
   ch: Omit<CharacterState, StateSymbol>,

@@ -13,8 +13,8 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import { EntityDefinition, CardHandle, DamageType, DiceType, Reaction, card, combatStatus, extension, pair, status, summon, originalDiceCostOfCard } from "@gi-tcg/core/builder";
-import { BurningFlame, CatalyzingField, DendroCore, EfficientSwitch, Empowerment, ResistantForm, Shield } from "../../commons";
+import { EntityDefinition, CardHandle, DamageType, DiceType, Reaction, card, combatStatus, extension, status, summon, originalDiceCostOfCard, $, CombatStatusHandle } from "@gi-tcg/core/builder";
+import { BurningFlame, CatalyzingField, CostReduction, DendroCore, EfficientSwitch, Empowerment, ResistantForm, Shield } from "../../commons";
 import { BountifulCore } from "../../characters/hydro/nilou";
 
 /**
@@ -305,6 +305,30 @@ export const ElementalResonanceSprawlingGreenery = card(331702)
   .done();
 
 /**
+ * @id 331721
+ * @name 月兆·满辉
+ * @description
+ * 赋予我方随机1张手牌以及牌组顶的卡牌费用降低。
+ * （牌组包含至少2个「挪德卡莱」角色，才能加入牌组）
+ */
+export const MoonsignAscendantGleam = card(331721)
+  .since("v6.5.0")
+  .tags("resonance")
+  .do((c) => {
+    const handCandidates = c.queryAll($.macros.myHandsNotFree);
+    if (handCandidates.length > 0) {
+      const handCard = c.random(handCandidates);
+      c.attachCostReduction(handCard);
+    }
+    // queryAll 返回顺序是底到顶，牌顶是最后一张
+    const pileCard = c.queryAll($.macros.myPileNotFree).at(-1);
+    if (pileCard) {
+      c.attachCostReduction(pileCard);
+    }
+  })
+  .done();
+
+/**
  * @id 331101
  * @name 元素共鸣：交织之冰
  * @description
@@ -458,8 +482,8 @@ export const ThunderAndEternity = card(331803)
 export const NatureAndWisdom = card(331804)
   .since("v3.7.0")
   .costSame(1)
+  .drawCards(1)
   .switchCards()
-  .drawCards(1) // 先触发换牌请求，再触发抓牌效果
   .done();
 
 /**
@@ -521,6 +545,54 @@ export const FireAndWar = card(331806)
   .costSame(1)
   .addTarget("my characters")
   .characterStatus(OdeOfResurrection, "@targets.0")
+  .done();
+
+
+/**
+ * @id 303184
+ * @name 月与故乡（生效中）
+ * @description
+ * 行动阶段开始时：创建所记录的卡牌加入手牌。
+ */
+export const MoonAndHomelandInEffect02 = combatStatus(303184)
+  .variable("cardDefId", 0, { visible: false, forceOverwrite: true })
+  .once("actionPhase")
+  .do((c) => {
+    const cardDefId = c.getVariable("cardDefId") as CardHandle;
+    if (cardDefId) {
+      c.createHandCard(cardDefId);
+    }
+  })
+  .done();
+
+/**
+ * @id 303183
+ * @name 月与故乡（生效中）
+ * @description
+ * 本回合内我方打出下张卡牌后：在下个回合开始时，创建1张所打出的卡牌加入手牌。
+ */
+export const MoonAndHomelandInEffect01: CombatStatusHandle = combatStatus(303183)
+  .oneDuration()
+  .once("playCard", (c, e) => e.card.definition.id !== MoonAndHomeland)
+  .do((c, e) => {
+    c.combatStatus(MoonAndHomelandInEffect02, "my", {
+      overrideVariables: {
+        cardDefId: e.card.definition.id,
+      }
+    })
+  })
+  .done();
+
+/**
+ * @id 331807
+ * @name 月与故乡
+ * @description
+ * 本回合内我方打出下张卡牌后：在下个回合开始时，创建1张所打出的卡牌加入手牌。
+ * （牌组包含至少2个「挪德卡莱」角色，才能加入牌组）
+ */
+export const MoonAndHomeland = card(331807)
+  .since("v6.5.0")
+  .combatStatus(MoonAndHomelandInEffect01)
   .done();
 
 /**
@@ -916,9 +988,10 @@ export const [Pankration] = card(332023)
   })
   .done();
 
-const LyresongIsFirstExtension = extension(332024, { first: pair(true) })
+const LyresongIsFirstExtension = extension(332024, { first: "pair<boolean>" })
+  .initialState({ first: [true, true] })
   .description("打出琴音之诗前该方该轮次未打出过其他行动牌")
-  .mutateWhen("onRoundEnd", (c) => c.first = pair(true))
+  .mutateWhen("onRoundEnd", (c) => c.first = [true, true])
   .mutateWhen("onPlayCard", (c, e) => c.first[e.who] = false)
   .done();
 
@@ -1331,7 +1404,8 @@ const MELUSINE_EVENT_CARDS = [
   NatureAndWisdom,
   WaterAndJustice,
   FireAndWar,
-  // 331807, 
+  MoonAndHomeland,
+  // 331808 
 ];
 
 // 筛出当前版本存在的卡
@@ -2022,16 +2096,23 @@ export const AwesomeBro = card(332050)
   .generateDice(DiceType.Omni, 1)
   .done();
 
-export const DisposedSupportAndSummonsCountExtension = extension(332051, pair({
-  disposedSupportCount: 0,
-  disposedSummonsCount: 0,
-}))
+export const DisposedSupportAndSummonsCountExtension = extension(332051, {
+  disposedSupportCount: "pair<number>",
+  disposedSummonsCount: "pair<number>",
+})
+  .initialState({
+    disposedSupportCount: [0, 0],
+    disposedSummonsCount: [0, 0],
+  })
   .description("记录本场对局中双方支援区和召唤区弃置卡牌的数量")
   .mutateWhen("onDispose", (st, e) => {
+    if (e.isDiscardOrTuning()) {
+      return;
+    }
     if (e.entity.definition.type === "support") {
-      st[e.who].disposedSupportCount++;
+      st.disposedSupportCount[e.who]++;
     } else if (e.entity.definition.type === "summon") {
-      st[e.who].disposedSummonsCount++;
+      st.disposedSummonsCount[e.who]++;
     }
   })
   .done();
@@ -2054,9 +2135,9 @@ export const FellDragon = summon(303245)
   })
   .on("enter")
   .do((c, e) => {
-    const ext = c.getExtensionState()[c.self.who];
-    const addUsage = Math.min(ext.disposedSupportCount, 4);
-    const addDmg = Math.min(ext.disposedSummonsCount, 4);
+    const ext = c.getExtensionState();
+    const addUsage = Math.min(ext.disposedSupportCount[c.self.who], 4);
+    const addDmg = Math.min(ext.disposedSummonsCount[c.self.who], 4);
     c.addVariable("usage", addUsage);
     c.addVariable("effect", addDmg);
   })
@@ -2076,8 +2157,8 @@ export const FellDragonsAwakening = card(332051)
   .since("v6.0.0")
   .costSame(2)
   .associateExtension(DisposedSupportAndSummonsCountExtension)
-  .replaceDescription("[GCG_TOKEN_COUNTER]", (c, { area }, ext) => ext[area.who].disposedSupportCount)
-  .replaceDescription("[GCG_TOKEN_COUNTER_2]", (c, { area }, ext) => ext[area.who].disposedSummonsCount)
+  .replaceDescription("[GCG_TOKEN_COUNTER]", (c, { area }, ext) => ext.disposedSupportCount[area.who])
+  .replaceDescription("[GCG_TOKEN_COUNTER_2]", (c, { area }, ext) => ext.disposedSummonsCount[area.who])
   .summon(FellDragon)
   .done();
 
@@ -2377,5 +2458,46 @@ export const ClinkClankLegion = card(332061)
         c.attach(Empowerment, card);
       }
     }
+  })
+  .done();
+
+/**
+ * @id 302229
+ * @name 乐平波琳的医疗器材投资
+ * @description
+ * 对我方出战角色造成1点穿透伤害，执行1个「治疗」效果相关的计划。
+ */
+const LepinepaulinesInvestmentInMedicalEquipment = void 0;
+
+/**
+ * @id 302230
+ * @name 乐平波琳的图形对抗投资
+ * @description
+ * 舍弃1张随机手牌，执行1个「抓牌」效果相关的计划。
+ */
+const LepinepaulinesInvestmentInGraphAdversarialTechnology = void 0;
+
+/**
+ * @id 302231
+ * @name 乐平波琳的能量机关投资
+ * @description
+ * 移除我方1个元素骰，执行1个「元素骰」效果相关的计划。
+ */
+const LepinepaulinesInvestmentInEnergyMechanism = void 0;
+
+/**
+ * @id 332062
+ * @name 清扫时间
+ * @description
+ * 我方手牌中每存在1种附着状态，则生成1个随机基础元素骰。（至多生成2个）
+ */
+export const CleaningTime = card(332062)
+  .since("v6.5.0")
+  .do((c) => {
+    const attachmentsCount = new Set(
+      c.queryAll($.my.attachment).map((att) => att.definition.id)
+    ).size;
+    const diceCount = Math.min(attachmentsCount, 2);
+    c.generateDice("randomElement", diceCount);
   })
   .done();

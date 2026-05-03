@@ -112,43 +112,168 @@ export function getAllEntities(
   state: GameState,
   inclRemoved = false,
 ): AnyState[] {
+  return getAllEntitiesImpl(state, inclRemoved, false);
+}
+
+export interface EntityWithArea {
+  readonly state: AnyState;
+  readonly area: EntityArea;
+}
+
+/**
+ * 查找所有实体(含牌堆)，按照通常响应顺序排序，并附带实体所在区域信息。
+ * @param state 游戏状态
+ * @param inclRemoved 是否包含已移除的实体
+ * @returns 实体与区域信息列表
+ */
+export function getAllEntitiesWithArea(
+  state: GameState,
+  inclRemoved = false,
+): EntityWithArea[] {
+  return getAllEntitiesImpl(state, inclRemoved, true);
+}
+
+function getAllEntitiesImpl(
+  state: GameState,
+  inclRemoved: boolean,
+  withArea: true,
+): EntityWithArea[];
+function getAllEntitiesImpl(
+  state: GameState,
+  inclRemoved: boolean,
+  withArea: false,
+): AnyState[];
+function getAllEntitiesImpl(
+  state: GameState,
+  inclRemoved: boolean,
+  withArea: boolean,
+): (AnyState | EntityWithArea)[] {
   const result: AnyState[] = [];
-  for (const who of [state.currentTurn, flip(state.currentTurn)]) {
+  const resultWithArea: EntityWithArea[] = [];
+  let append: (entity: AnyState, area: EntityArea) => void;
+  if (withArea) {
+    append = (entity: AnyState, area: EntityArea) => {
+      resultWithArea.push({ state: entity, area });
+    };
+  } else {
+    append = (entity: AnyState, _area: EntityArea) => {
+      result.push(entity);
+    };
+  }
+
+  // 游戏实际的响应顺序并非规则书所述，而是
+  // 出战角色、出战角色装备和状态、出战状态、后台角色、后台角色装备和状态
+  // 召唤物、支援牌
+  // （即出战状态区夹在出战角色区和后台角色区之间）
+
+  const characters = ([0, 1] as const).map((who) => {
     const player = state.players[who];
     let activeIdx = 0;
     try {
       activeIdx = getActiveCharacterIndex(player);
     } catch {}
-    const [active, ...standby] = player.characters.shiftLeft(activeIdx);
+    return shiftLeft(player.characters, activeIdx);
+  });
 
-    // 游戏实际的响应顺序并非规则书所述，而是
-    // 出战角色、出战角色装备和状态、出战状态、后台角色、后台角色装备和状态
-    // 召唤物、支援牌
-    // （即出战状态区夹在出战角色区和后台角色区之间）
-
-    // 先列出倒下角色区上实体
-    for (const ch of standby) {
+  // 先列出倒下角色区上实体
+  for (const who of [state.currentTurn, flip(state.currentTurn)]) {
+    for (const ch of characters[who]) {
       if (ch.variables.alive === 0) {
-        result.push(ch, ...ch.entities);
+        const area: EntityArea = {
+          type: "characters",
+          who,
+          characterId: ch.id,
+        };
+        append(ch, area);
+        for (const entity of ch.entities) {
+          append(entity, area);
+        }
       }
-    }
-
-    result.push(active, ...active.entities);
-    result.push(...player.combatStatuses);
-    for (const ch of standby) {
-      if (ch.variables.alive === 1) {
-        result.push(ch, ...ch.entities);
-      }
-    }
-    result.push(...player.summons, ...player.supports);
-    for (const card of [...player.hands, ...player.pile.toReversed()]) {
-      result.push(card, ...card.attachments);
-    }
-    if (inclRemoved) {
-      result.push(...player.removedEntities);
     }
   }
-  return result;
+
+  for (const who of [state.currentTurn, flip(state.currentTurn)]) {
+    const player = state.players[who];
+    const [active, ...standby] = characters[who];
+
+    if (active.variables.alive === 1) {
+      const activeArea: EntityArea = {
+        type: "characters",
+        who,
+        characterId: active.id,
+      };
+      append(active, activeArea);
+      for (const entity of active.entities) {
+        append(entity, activeArea);
+      }
+    }
+    const combatStatusArea: EntityArea = {
+      type: "combatStatuses",
+      who,
+    };
+    for (const combatStatus of player.combatStatuses) {
+      append(combatStatus, combatStatusArea);
+    }
+    for (const ch of standby) {
+      if (ch.variables.alive === 1) {
+        const area: EntityArea = {
+          type: "characters",
+          who,
+          characterId: ch.id,
+        };
+        append(ch, area);
+        for (const entity of ch.entities) {
+          append(entity, area);
+        }
+      }
+    }
+    const summonsArea: EntityArea = {
+      type: "summons",
+      who,
+    };
+    for (const summon of player.summons) {
+      append(summon, summonsArea);
+    }
+    const supportsArea: EntityArea = {
+      type: "supports",
+      who,
+    };
+    for (const support of player.supports) {
+      append(support, supportsArea);
+    }
+    for (const card of player.hands) {
+      const area: EntityArea = {
+        type: "hands",
+        who,
+        cardId: card.id,
+      };
+      append(card, area);
+      for (const attachment of card.attachments) {
+        append(attachment, area);
+      }
+    }
+    for (const card of player.pile.toReversed()) {
+      const area: EntityArea = {
+        type: "pile",
+        who,
+        cardId: card.id,
+      };
+      append(card, area);
+      for (const attachment of card.attachments) {
+        append(attachment, area);
+      }
+    }
+    if (inclRemoved) {
+      const removedArea: EntityArea = {
+        type: "removedEntities",
+        who,
+      };
+      for (const removedEntity of player.removedEntities) {
+        append(removedEntity, removedArea);
+      }
+    }
+  }
+  return withArea ? resultWithArea : result;
 }
 
 export interface CallerAndTriggeredSkill {
@@ -184,7 +309,7 @@ export function initiativeSkillsOfPlayer(
         .filter(
           (sk): sk is InitiativeSkillDefinition =>
             sk.triggerOn === "initiative" &&
-            sk.initiativeSkillConfig.skillType !== "playCard" &&
+            sk.skillType !== "playCard" &&
             (includesHidden || !sk.initiativeSkillConfig.hidden),
         )
         .map((sk) => ({
@@ -300,33 +425,6 @@ export function allEntitiesAtArea(
 }
 
 /**
- * 将 `e` 的一份拷贝传入所有响应 `modifyZeroHealth` 的技能，
- * 检查是否存在可使该 `e` 免于被击倒的可能。
- * @param state
- * @param e
- * @returns
- */
-export function checkImmune(state: GameState, e: ZeroHealthEventArg) {
-  const clonedE = new ZeroHealthEventArg(state, e.damageInfo, e.option);
-  for (const { caller, skill } of allSkills(state, "modifyZeroHealth")) {
-    const skillInfo = defineSkillInfo({
-      caller,
-      definition: skill,
-    });
-    clonedE._currentSkillInfo = skillInfo;
-    const filterResult = (0, skill.filter)(state, skillInfo, clonedE);
-    if (!filterResult) {
-      continue;
-    }
-    (0, skill.action)(state, skillInfo, clonedE);
-    if (clonedE._immuneInfo) {
-      return true;
-    }
-  }
-  return false;
-}
-
-/**
  * Remove an entity by its id from the given game state.
  * @param state The mutable game state draft.
  * @param id The id of the entity to remove.
@@ -380,7 +478,7 @@ export function isCharacterInitiativeSkill(
   }
   return (
     skill.definition.triggerOn === "initiative" &&
-    allowSkillType.includes(skill.definition.initiativeSkillConfig.skillType)
+    allowSkillType.includes(skill.definition.skillType as SkillType)
   );
 }
 
@@ -557,7 +655,7 @@ export function isChargedPlunging(skill: SkillDefinition, player: PlayerState) {
   }
   let charged = skill.initiativeSkillConfig.alwaysCharged;
   let plunging = skill.initiativeSkillConfig.alwaysPlunging;
-  const isNormal = skill.initiativeSkillConfig.skillType === "normal";
+  const isNormal = skill.skillType === "normal";
   if (!isNormal) {
     return { charged, plunging };
   }
@@ -622,8 +720,7 @@ export function playSkillOfCard(
   card: EntityDefinition,
 ): InitiativeSkillDefinition | null {
   const skillDefinition = card.skills.find(
-    (sk): sk is InitiativeSkillDefinition =>
-      sk.initiativeSkillConfig?.skillType === "playCard",
+    (sk): sk is InitiativeSkillDefinition => sk.skillType === "playCard",
   );
   return skillDefinition ?? null;
 }
@@ -856,11 +953,11 @@ export function nationOfCharacter(ch: CharacterDefinition): NationTag[] {
   return ch.tags.filter((tag): tag is NationTag => nationTags.includes(tag));
 }
 
-function toSortedBy<T, K extends number[] | number>(
-  this: readonly T[],
+export function toSortedBy<T, K extends number[] | number>(
+  arr: readonly T[],
   projection: (element: T) => K,
 ): T[] {
-  return this.toSorted((a, b) => {
+  return arr.toSorted((a, b) => {
     let projectionA: number[] | number = projection(a);
     let projectionB: number[] | number = projection(b);
     if (!Array.isArray(projectionA)) {
@@ -896,14 +993,15 @@ export function sortDice(
   player: PlayerState,
   dice: readonly DiceType[],
 ): DiceType[] {
-  const characterElements = player.characters
-    .shiftLeft(getActiveCharacterIndex(player))
-    .map((ch) => elementOfCharacter(ch.definition));
+  const characterElements = shiftLeft(
+    player.characters,
+    getActiveCharacterIndex(player),
+  ).map((ch) => elementOfCharacter(ch.definition));
   const countMap = new Map<DiceType, number>();
   for (const d of dice) {
     countMap.set(d, (countMap.get(d) ?? 0) + 1);
   }
-  return dice.toSortedBy((dice) => [
+  return toSortedBy(dice, (dice) => [
     dice === DiceType.Omni ? -1 : 0,
     characterElements.includes(dice) ? -1 : 0,
     -countMap.get(dice)!,
@@ -911,34 +1009,31 @@ export function sortDice(
   ]);
 }
 
+type TupleIndices<T extends readonly unknown[]> = Extract<
+  keyof T,
+  `${number}`
+> extends `${infer N extends number}`
+  ? N
+  : never;
+
 declare global {
   interface ReadonlyArray<T> {
-    shiftLeft: typeof shiftLeft;
-    last: typeof arrayLast;
-    toSortedBy: typeof toSortedBy;
+    map<This extends readonly [unknown, unknown], U>(
+      this: This,
+      fn: (value: T, index: TupleIndices<This>, array: This) => U,
+    ): { -readonly [K in keyof This]: U };
   }
   interface Array<T> {
-    /** Won't mutate original array. */
-    shiftLeft: typeof shiftLeft;
-    last: typeof arrayLast;
-    toSortedBy: typeof toSortedBy;
-
     map<This extends [unknown, unknown], U>(
       this: This,
-      fn: (v: T) => U,
-    ): { [K in keyof This]: U };
+      fn: (value: T, index: TupleIndices<This>, array: This) => U,
+    ): { -readonly [K in keyof This]: U };
   }
 }
 
-function shiftLeft<T>(this: readonly T[], idx: number): T[] {
-  return [...this.slice(idx), ...this.slice(0, idx)];
+export function shiftLeft<T>(arr: readonly T[], idx: number): T[] {
+  return [...arr.slice(idx), ...arr.slice(0, idx)];
 }
-function arrayLast<T>(this: readonly T[]): T {
-  return this[this.length - 1];
-}
-Array.prototype.shiftLeft = shiftLeft;
-Array.prototype.last = arrayLast;
-Array.prototype.toSortedBy = toSortedBy;
 
 /** Shuffle an array. No use of state random generator */
 export function shuffle<T>(arr: readonly T[]): readonly T[] {
@@ -969,6 +1064,12 @@ type MixinResult<
   ...args: ConstructorParameters<T>
 ) => InstanceType<T> & InstanceOfConstructors<Us>;
 
+/**
+ * Construct a mixin class from `derivedCtor`, then copy prototype methods from `constructors` onto it.
+ * @param derivedCtor The base class to extend from.
+ * @param constructors Classes whose prototype methods will be copied. Their constructors and class field initializers are not executed.
+ * @returns
+ */
 export function mixins<
   T extends Constructor,
   const Us extends AbstractConstructor[],

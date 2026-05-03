@@ -1,4 +1,5 @@
 // Copyright (C) 2024-2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -13,7 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import { DamageType, DiceType, Reaction } from "@gi-tcg/typings";
+import { Aura, DamageType, DiceType, Reaction } from "@gi-tcg/typings";
 
 import {
   type EntityArea,
@@ -27,7 +28,6 @@ import {
   type VariableValueChangeInfo,
   type DamageInfo,
   DamageOrHealEventArg,
-  type DisposeOrTuneMethod,
   type EventAndRequest,
   type EventAndRequestConstructorArgs,
   type EventAndRequestNames,
@@ -39,6 +39,8 @@ import {
   type UseSkillRequestOption,
   BeforeVariableEventArg,
   ZeroHealthEventArg,
+  ReactionEventArg,
+  type CoreSkillResult,
 } from "../../base/skill";
 import {
   type CharacterState as CharacterStateO,
@@ -48,7 +50,6 @@ import {
   type GameState,
   type PhaseType,
   type PlayerState,
-  StateSymbol,
   stringifyState,
 } from "../../base/state";
 import {
@@ -62,7 +63,7 @@ import {
   type ExPlainEntityState,
   type PlainAttachmentState,
 } from "./utils";
-import { executeQuery } from "../../query";
+import { runLegacyQueryWithContext } from "../../query-legacy";
 import type {
   AppliableDamageType,
   CardHandle,
@@ -75,20 +76,20 @@ import type {
   StatusHandle,
   SummonHandle,
   EquipmentHandle,
-  SupportHandle,
   AttachmentHandle,
 } from "../type";
-import type { GuessedTypeOfQuery } from "../../query/types";
+import type { GuessedTypeOfQuery } from "../../query-legacy/types";
 import { CALLED_FROM_REACTION } from "../reaction";
 import { flip } from "@gi-tcg/utils";
-import { GiTcgDataError } from "../../error";
+import { GiTcgDataError, GiTcgPreviewAbortedError } from "../../error";
 import { DetailLogType } from "../../log";
 import {
-  GiTcgPreviewAbortedError,
+  EventList,
   type InsertPileStrategy,
   type InternalHealOption,
   type InternalNotifyOption,
   type MutatorConfig,
+  type ReadonlyEventList,
   StateMutator,
 } from "../../mutator";
 import { type Draft, produce } from "immer";
@@ -101,12 +102,28 @@ import {
   type RxEntityState,
 } from "./reactive";
 import { ReactiveStateSymbol } from "./reactive_base";
-import type { CreateEntityOptions } from "../../utils";
+import { type CreateEntityOptions, toSortedBy } from "../../utils";
 import { VARIABLE_NAME_CAN_EMIT_EVENTS } from "../skill";
 import type { LunarReaction } from "@gi-tcg/typings";
+import {
+  $,
+  runQuery,
+  toExpression,
+  type IDollar,
+  type InferResult,
+  type IQuery,
+  type QueryFn,
+} from "../../query";
 
-type CharacterTargetArg = PlainCharacterState | PlainCharacterState[] | string;
-type EntityTargetArg = PlainEntityState | PlainEntityState[] | string;
+type GeneralQueryTargetArg = string | IQuery | QueryFn;
+type CharacterTargetArg =
+  | PlainCharacterState
+  | PlainCharacterState[]
+  | GeneralQueryTargetArg;
+type EntityTargetArg =
+  | PlainEntityState
+  | PlainEntityState[]
+  | GeneralQueryTargetArg;
 
 type EntityDefinitionFilterFn = (card: EntityDefinition) => boolean;
 
@@ -130,6 +147,17 @@ export const ENABLE_SHORTCUT = Symbol("withShortcut");
 
 export interface HealOption {
   kind?: HealKind;
+}
+
+export interface DisposeOption {
+  reason?: RemoveEntityM["reason"];
+  /**
+   * 是否直接弃置。
+   *
+   * 默认情况下，在弃置目标有 usage 的前提下，会先清空 usage 后再弃置，从而正确触发那夏镇等；
+   * 在部分系统内置结算中（如弃置已有支援区实体以打出支援牌时）不适用，此时需设置 `direct: true`
+   */
+  direct?: boolean;
 }
 
 export interface GenerateDiceOption {
@@ -156,8 +184,8 @@ type ShortcutReturn<
   : T;
 
 type MutatorResultCanEmit =
-  | readonly EventAndRequest[]
-  | { readonly events: readonly EventAndRequest[] };
+  | ReadonlyEventList
+  | { readonly events: ReadonlyEventList };
 
 type MutatorMethodCanEmitImpl<K extends keyof StateMutator> =
   StateMutator[K] extends (...args: any[]) => MutatorResultCanEmit ? K : never;
@@ -168,9 +196,9 @@ type MutatorMethodCanEmit = {
 
 type CallAndEmitResult<K extends MutatorMethodCanEmit> = ReturnType<
   StateMutator[K]
-> extends { readonly events: readonly EventAndRequest[] }
+> extends { readonly events: ReadonlyEventList }
   ? Omit<ReturnType<StateMutator[K]>, "events">
-  : ReturnType<StateMutator[K]> extends readonly EventAndRequest[]
+  : ReturnType<StateMutator[K]> extends ReadonlyEventList
     ? void
     : never;
 
@@ -191,7 +219,7 @@ export class SkillContext<Meta extends ContextMetaBase> {
     ReturnType<typeof Proxy.revocable>
   >();
 
-  private readonly eventAndRequests: EventAndRequest[] = [];
+  private readonly eventAndRequests = new EventList();
   private mainDamage: DamageInfo | null = null;
 
   private enableShortcut(): ShortcutReturn<Meta>;
@@ -238,49 +266,142 @@ export class SkillContext<Meta extends ContextMetaBase> {
 
   /**
    * 对技能返回的事件列表预处理。
-   * - 将重复目标的“伤害事件”合并。
    */
-  private preprocessEventList() {
-    const result: EventAndRequest[] = [];
-    const damageEventIndexInResultBasedOnTarget = new Map<number, number>();
+  private preprocessEventList(): CoreSkillResult {
+    const otherEvents: EventAndRequest[] = [];
+    const hciEvents: EventAndRequest[] = [];
+    const safeDamageEvents: EventAndRequest[] = [];
+    const criticalDamageEvents: EventAndRequest[] = [];
+
+    const failedPlayers = new Set<0 | 1>();
+
+    // 将 originalEvents 分类
+    // - 对于 damage，先判断：
+    //   - 若可能击倒但应用 modifyZeroHealth 后免于被击倒，则内联执行后
+    //     将事件继续添加到 originalEvents 中（通常仅有治疗事件）
+    //   - 若确实击倒切无法被免于被击倒，则归类为 criticalDamageEvents，
+    //     否则归类为 safeDamageEvents
+    // - 对于 HCI，删去目标已被舍弃的事件，其余归入 hciEvents
+    // - 其余类型归类为 otherEvents
     for (const event of this.eventAndRequests) {
       const [name, arg] = event;
       if (name === "onDamageOrHeal" && arg.isDamageTypeDamage()) {
-        const previousIndex = damageEventIndexInResultBasedOnTarget.get(
-          arg.target.id,
-        );
-        if (typeof previousIndex !== "undefined") {
-          // combine current event with previous event
-          const previousArg = result[
-            previousIndex
-          ][1] as DamageOrHealEventArg<DamageInfo>;
-          const combinedDamageInfo: DamageInfo = {
-            ...previousArg.damageInfo,
-            value: previousArg.damageInfo.value + arg.damageInfo.value,
-            causeDefeated:
-              previousArg.damageInfo.causeDefeated ||
-              arg.damageInfo.causeDefeated,
-            fromReaction:
-              previousArg.damageInfo.fromReaction ||
-              arg.damageInfo.fromReaction,
-          };
-          result[previousIndex][1] = new DamageOrHealEventArg(
-            previousArg.onTimeState,
-            combinedDamageInfo,
-            previousArg.option,
+        if (arg.damageInfo.causeDefeated) {
+          // Wrap original EventArg to ZeroHealthEventArg
+          const zeroHealthEventArg = new ZeroHealthEventArg(
+            arg.onTimeState,
+            arg.damageInfo,
+            arg.option,
           );
+          this.callAndEmit(
+            "handleInlineEvent",
+            this.skillInfo,
+            "modifyZeroHealth",
+            zeroHealthEventArg,
+          );
+          if (!zeroHealthEventArg._immuneInfo) {
+            const defeatedCh = this.get(arg.target);
+            if (defeatedCh.variables.alive) {
+              this.mutator.log(
+                DetailLogType.Primitive,
+                `${stringifyState(
+                  defeatedCh,
+                )} is defeated (and no immune available)`,
+              );
+              this.mutate({
+                type: "modifyEntityVar",
+                state: defeatedCh.latest(),
+                varName: "alive",
+                value: 0,
+                direction: "decrease",
+              });
+              const energyVarName =
+                defeatedCh.definition.specialEnergy?.variableName ?? "energy";
+              this.mutate({
+                type: "modifyEntityVar",
+                state: defeatedCh.latest(),
+                varName: energyVarName,
+                value: 0,
+                direction: "decrease",
+              });
+              this.mutate({
+                type: "modifyEntityVar",
+                state: defeatedCh.latest(),
+                varName: "aura",
+                value: Aura.None,
+                direction: null,
+              });
+              this.mutate({
+                type: "setPlayerFlag",
+                who: defeatedCh.who,
+                flagName: "hasDefeated",
+                value: true,
+              });
+              this.mutate({
+                type: "removeRoundSkillLog",
+                caller: defeatedCh.latest(),
+              });
+              const player = this.state.players[defeatedCh.who];
+              const aliveCharacters = player.characters.filter(
+                (ch) => ch.variables.alive,
+              );
+              if (aliveCharacters.length === 0) {
+                failedPlayers.add(defeatedCh.who);
+              }
+            }
+            criticalDamageEvents.push(event);
+          } else {
+            safeDamageEvents.push(["onDamageOrHeal", zeroHealthEventArg]);
+          }
         } else {
-          damageEventIndexInResultBasedOnTarget.set(
-            arg.target.id,
-            result.length,
-          );
-          result.push(event);
+          safeDamageEvents.push(event);
+        }
+      } else if (name === "onHandCardInserted") {
+        const shouldDrop =
+          !arg.overflowed && this.get(arg.card).area.type === "removedEntities";
+        if (!shouldDrop) {
+          hciEvents.push(event);
         }
       } else {
-        result.push(event);
+        otherEvents.push(event);
       }
     }
-    return result;
+
+    if (failedPlayers.size === 2) {
+      this.mutator.log(
+        DetailLogType.Other,
+        `Both player has no alive characters, set winner to null`,
+      );
+      this.mutate({
+        type: "changePhase",
+        newPhase: "gameEnd",
+      });
+      this.mutator.notify();
+    } else if (failedPlayers.size === 1) {
+      const who = [...failedPlayers.values()][0];
+      this.mutator.log(
+        DetailLogType.Other,
+        `player ${who} has no alive characters, set winner to ${flip(who)}`,
+      );
+      this.mutate({
+        type: "changePhase",
+        newPhase: "gameEnd",
+      });
+      this.mutate({
+        type: "setWinner",
+        winner: flip(who),
+      });
+      this.mutator.notify();
+    }
+
+    const emittedEvents = [
+      ...otherEvents,
+      ...hciEvents,
+      ...safeDamageEvents,
+      ...criticalDamageEvents,
+    ];
+    const causeDefeated = criticalDamageEvents.length > 0;
+    return { emittedEvents, causeDefeated };
   }
 
   /**
@@ -289,8 +410,9 @@ export class SkillContext<Meta extends ContextMetaBase> {
    */
   _terminate(): SkillDescriptionReturn {
     this.mutator.notify();
+    const { emittedEvents, causeDefeated } = this.preprocessEventList();
+    Object.freeze(emittedEvents);
     Object.freeze(this);
-    const emittedEvents = this.preprocessEventList();
     const resultState = this.rawState;
     for (const [, { revoke }] of this._reactiveProxies) {
       revoke();
@@ -301,6 +423,7 @@ export class SkillContext<Meta extends ContextMetaBase> {
         emittedEvents,
         innerNotify: this._savedNotify,
         mainDamage: this.mainDamage,
+        causeDefeated,
       },
     ];
   }
@@ -325,7 +448,7 @@ export class SkillContext<Meta extends ContextMetaBase> {
   }
 
   get isPreview(): boolean {
-    return !!this.skillInfo.isPreview;
+    return this.skillInfo.environment === "preview";
   }
 
   get state(): ApplyReactive<Meta, GameState> {
@@ -363,15 +486,46 @@ export class SkillContext<Meta extends ContextMetaBase> {
 
   $<const Q extends string>(
     arg: Q,
-  ): RxEntityState<Meta, GuessedTypeOfQuery<Q>> | undefined {
+  ): RxEntityState<Meta, GuessedTypeOfQuery<Q>> | undefined;
+  /** @deprecated use `query` */
+  $<const Q extends IQuery>(
+    arg: (($: IDollar) => Q) | Q,
+  ): RxEntityState<Meta, InferResult<Q>["type"]> | undefined;
+  $(arg: any): any {
     const result = this.$$(arg);
     return result[0];
   }
 
   $$<const Q extends string>(
     arg: Q,
-  ): RxEntityState<Meta, GuessedTypeOfQuery<Q>>[] {
-    return executeQuery(this, arg);
+  ): RxEntityState<Meta, GuessedTypeOfQuery<Q>>[];
+  /** @deprecated use `queryAll` */
+  $$<const Q extends IQuery>(
+    arg: (($: IDollar) => Q) | Q,
+  ): RxEntityState<Meta, InferResult<Q>["type"]>[];
+  $$(arg: string | IQuery | ((dollar: IDollar) => IQuery)): any[] {
+    if (typeof arg === "string") {
+      return runLegacyQueryWithContext(this, arg);
+    }
+    return this.queryAll(arg);
+  }
+
+  query<const Q extends IQuery>(
+    arg: (($: IDollar) => Q) | Q,
+  ): RxEntityState<Meta, InferResult<Q>["type"]> | undefined {
+    const results = this.queryAll(arg);
+    return results[0];
+  }
+
+  queryAll<const Q extends IQuery>(
+    arg: (($: IDollar) => Q) | Q,
+  ): RxEntityState<Meta, InferResult<Q>["type"]>[] {
+    if (typeof arg === "function") {
+      arg = arg($);
+    }
+    return runQuery(this.rawState, this.callerArea.who, arg).map((state) =>
+      this.get(state),
+    );
   }
 
   get<T extends ExEntityType>(id: number): RxEntityState<Meta, T>;
@@ -395,12 +549,17 @@ export class SkillContext<Meta extends ContextMetaBase> {
   }
 
   private queryOrGet<TypeT extends ExEntityType>(
-    q: ExPlainEntityState<TypeT> | ExPlainEntityState<TypeT>[] | string,
+    q:
+      | ExPlainEntityState<TypeT>
+      | ExPlainEntityState<TypeT>[]
+      | GeneralQueryTargetArg,
   ): RxEntityState<Meta, TypeT>[] {
     if (Array.isArray(q)) {
       return q.map((s) => this.get(s));
     } else if (typeof q === "string") {
       return this.$$(q) as RxEntityState<Meta, TypeT>[];
+    } else if (typeof q === "function" || toExpression in q) {
+      return this.queryAll(q) as RxEntityState<Meta, TypeT>[];
     } else {
       return [this.get(q)];
     }
@@ -449,6 +608,38 @@ export class SkillContext<Meta extends ContextMetaBase> {
     );
   }
 
+  hasPhaseDamage(
+    scope: "my" | "all",
+    filter: (e: DamageOrHealEventArg<DamageInfo>) => boolean = () => true,
+  ): boolean {
+    const damages =
+      scope === "my"
+        ? this.getRawPlayer("my").phaseDamageLog
+        : [
+            ...this.getRawPlayer("my").phaseDamageLog,
+            ...this.getRawPlayer("opp").phaseDamageLog,
+          ];
+    return damages.some(
+      (d) =>
+        d instanceof DamageOrHealEventArg &&
+        d.isDamageTypeDamage() &&
+        filter(d),
+    );
+  }
+  hasPhaseReaction(
+    scope: "my" | "all",
+    filter: (e: ReactionEventArg) => boolean = () => true,
+  ): boolean {
+    const reactions =
+      scope === "my"
+        ? this.getRawPlayer("my").phaseReactionLog
+        : [
+            ...this.getRawPlayer("my").phaseReactionLog,
+            ...this.getRawPlayer("opp").phaseReactionLog,
+          ];
+    return reactions.some((r) => r instanceof ReactionEventArg && filter(r));
+  }
+
   /**
    * 某方玩家手牌，并按照元素骰费用降序排序
    * @param who 我方还是对方
@@ -474,12 +665,10 @@ export class SkillContext<Meta extends ContextMetaBase> {
           ] as const,
       ),
     );
-    return player.hands
-      .filter(filter)
-      .toSortedBy((card) => [
-        sortData.get(card.id)!.cost,
-        sortData.get(card.id)!.tb,
-      ]);
+    return toSortedBy(player.hands.filter(filter), (card) => [
+      sortData.get(card.id)!.cost,
+      sortData.get(card.id)!.tb,
+    ]);
   }
 
   /** 我方或对方当前元素骰费用最多的 `count` 张手牌 */
@@ -544,6 +733,7 @@ export class SkillContext<Meta extends ContextMetaBase> {
     );
     this.eventAndRequests.push([event, arg] as EventAndRequest);
   }
+
   // 等效调用 this.mutator.<method>, 并将返回的 events 添加
   callAndEmit<K extends MutatorMethodCanEmit>(
     method: K,
@@ -768,6 +958,40 @@ export class SkillContext<Meta extends ContextMetaBase> {
     return this.enableShortcut();
   }
 
+  /** 清除角色身上的元素附着 */
+  cleanAura(what: Aura | "all", target: CharacterTargetArg) {
+    if (what === Aura.None) {
+      throw new GiTcgDataError(`Invalid: cleaning Aura.None`);
+    }
+    const characters = this.queryCoerceToCharacters(target);
+    for (const ch of characters) {
+      let newAura = ch.aura;
+      if (what === "all" || ch.aura === what) {
+        newAura = Aura.None;
+      } else if (ch.aura === Aura.CryoDendro) {
+        if (what === Aura.Cryo) {
+          newAura = Aura.Dendro;
+        } else if (what === Aura.Dendro) {
+          newAura = Aura.Cryo;
+        }
+      }
+      using l = this.mutator.subLog(
+        DetailLogType.Primitive,
+        `Clean aura [aura:${what}] from ${stringifyState(
+          ch,
+        )}, gets [aura:${newAura}]`,
+      );
+      this.mutate({
+        type: "modifyEntityVar",
+        direction: "decrease",
+        state: ch.latest(),
+        varName: "aura",
+        value: newAura,
+      });
+    }
+    return this.enableShortcut();
+  }
+
   private get fromReaction(): Reaction | null {
     return (this as any)[CALLED_FROM_REACTION] ?? null;
   }
@@ -882,7 +1106,10 @@ export class SkillContext<Meta extends ContextMetaBase> {
           const exist = t.entities.find((v) => v.definition.tags.includes(tag));
           if (exist) {
             // TODO: maybe better reason
-            this.dispose(exist, "overflow");
+            this.dispose(exist, {
+              reason: "overflow",
+              direct: true,
+            });
           }
         }
       }
@@ -934,50 +1161,99 @@ export class SkillContext<Meta extends ContextMetaBase> {
     }
     return this.enableShortcut();
   }
-  attach(def: AttachmentHandle, target: PlainEntityState) {
+  attach(
+    def: AttachmentHandle,
+    target: PlainEntityState,
+    opt: CreateEntityOptions = {},
+  ) {
     const definition = this.state.data.attachments.get(def);
     if (typeof definition === "undefined") {
       throw new GiTcgDataError(`Unknown attachment definition id ${def}`);
     }
-    this.callAndEmit("createAttachment", this.get(target).latest(), definition);
+    this.callAndEmit(
+      "createAttachment",
+      this.get(target).latest(),
+      definition,
+      opt,
+    );
     return this.enableShortcut();
   }
 
-  /** @deprecated */
-  transferEntity(target: EntityTargetArg, area: EntityArea) {
-    const targets = this.queryOrGet(target);
-    for (const target of targets) {
-      const state = target.latest();
-      if (state.definition.type === "character") {
-        throw new GiTcgDataError(`Cannot transfer a character`);
+  private attachCostChange(
+    target: EntityStateO,
+    value: number,
+    isIncrease: boolean,
+  ) {
+    const CostIncrease = 201 as AttachmentHandle;
+    const CostReduction = 202 as AttachmentHandle;
+    const [consumeDef, incomingDef] = isIncrease
+      ? [CostReduction, CostIncrease]
+      : [CostIncrease, CostReduction];
+    const existed = this.query($.def(consumeDef).on($.id(target.id)));
+    if (existed) {
+      const existedLayer = existed.variables.layer;
+      if (existedLayer > value) {
+        this.mutator.log(
+          DetailLogType.Other,
+          `Attaching of [attachment:${incomingDef}] reduces layer of existing attachment ${stringifyState(
+            existed,
+          )} by ${value}`,
+        );
+        this.setVariable("layer", existedLayer - value, existed);
+      } else {
+        this.mutator.log(
+          DetailLogType.Other,
+          `Attaching of [attachment:${incomingDef}] removes existing attachment ${stringifyState(
+            existed,
+          )}`,
+        );
+        this.mutate({
+          type: "removeEntity",
+          from: existed.area,
+          oldState: existed.latest(),
+          reason: "other",
+        });
       }
-      using l = this.mutator.subLog(
-        DetailLogType.Primitive,
-        `Transfer ${stringifyState(target)} to ${stringifyEntityArea(area)}`,
-      );
-      this.mutate({
-        type: "removeEntity",
-        from: target.area,
-        oldState: state,
-        reason: "other",
+      value -= existedLayer;
+    }
+    if (value > 0) {
+      this.attach(incomingDef, target, {
+        overrideVariables: { layer: value },
       });
-      const newState = { ...state } as EntityStateO;
-      this.mutate({
-        type: "createEntity",
-        value: newState,
-        target: area,
-      });
+    }
+  }
+
+  /**
+   * 给 `target` 附着费用增加。
+   * 若 `target` 上附着有费用减少，会选择去除其层数而非新附着。
+   */
+  attachCostIncrease(target: EntityTargetArg, value = 1) {
+    const targets = this.queryOrGet<EntityType>(target);
+    for (const target of targets) {
+      this.attachCostChange(target.latest(), value, true);
+    }
+    return this.enableShortcut();
+  }
+
+  /**
+   * 给 `target` 附着费用减少。
+   * 若 `target` 上附着有费用增加，会选择去除其层数而非新附着。
+   */
+  attachCostReduction(target: EntityTargetArg, value = 1) {
+    const targets = this.queryOrGet<EntityType>(target);
+    for (const target of targets) {
+      this.attachCostChange(target.latest(), value, false);
     }
     return this.enableShortcut();
   }
 
   dispose(
     target: EntityTargetArg = "@self",
-    reason: RemoveEntityM["reason"] = "other",
+    { reason = "other", direct }: DisposeOption = {},
   ) {
     const targets = this.queryOrGet(target);
     for (const t of targets) {
-      const target = t.latest();
+      let target = t.latest();
       if (target.definition.type === "character") {
         throw new GiTcgDataError(
           `Character caller cannot be disposed. You may forget an argument when calling \`dispose\``,
@@ -987,6 +1263,16 @@ export class SkillContext<Meta extends ContextMetaBase> {
         DetailLogType.Primitive,
         `Dispose ${stringifyState(target)} for ${reason}`,
       );
+      if (
+        !direct &&
+        target.definition.type !== "attachment" &&
+        target.variables.usage &&
+        target.variables.usage > 0 &&
+        target.definition.disposeWhenUsageIsZero
+      ) {
+        this.setVariable("usage", 0, target);
+        target = t.latest();
+      }
       this.emitEvent(
         "onDispose",
         this.rawState,
@@ -1095,7 +1381,7 @@ export class SkillContext<Meta extends ContextMetaBase> {
         target.definition.disposeWhenUsageIsZero &&
         this.getVariable("usage", target) <= 0
       ) {
-        this.dispose(target);
+        this.dispose(target, { direct: true });
       }
     }
     return RET;
@@ -1225,7 +1511,7 @@ export class SkillContext<Meta extends ContextMetaBase> {
       countMap.set(dice, (countMap.get(dice) ?? 0) + 1);
     }
     // 万能骰排最后。其余按照数量排序，相等时按照骰子类型排序
-    const sorted = this.player.dice.toSortedBy((dice) => [
+    const sorted = toSortedBy(this.player.dice, (dice) => [
       +(dice === DiceType.Omni),
       -countMap.get(dice)!,
       dice,
@@ -1361,10 +1647,19 @@ export class SkillContext<Meta extends ContextMetaBase> {
     return this.enableShortcut();
   }
 
-  createHandCard(cardId: CardHandle) {
+  createHandCard(
+    cardId: CardHandle,
+  ): ShortcutReturn<Meta, RxEntityState<Meta, EntityType> | void> {
     const cardDef = this.state.data.entities.get(cardId);
     if (typeof cardDef === "undefined") {
       throw new GiTcgDataError(`Unknown card definition id ${cardId}`);
+    }
+    if (this.player.hands.length >= this.state.config.maxHandsCount) {
+      this.mutator.log(
+        DetailLogType.Other,
+        `Cannot create hand card [${cardDef.type}:${cardId}] because player's hand is full`,
+      );
+      return this.enableShortcut();
     }
     const { state } = this.callAndEmit(
       "createHandCard",
@@ -1393,9 +1688,9 @@ export class SkillContext<Meta extends ContextMetaBase> {
         const area = cardEntity.area;
         if (area.type !== "pile") {
           throw new GiTcgDataError(
-            `Cannot draw card ${stringifyState(cardState)} from ${stringifyEntityArea(
-              area,
-            )}`,
+            `Cannot draw card ${stringifyState(
+              cardState,
+            )} from ${stringifyEntityArea(area)}`,
           );
         }
         using l = this.mutator.subLog(
@@ -1700,7 +1995,7 @@ export class SkillContext<Meta extends ContextMetaBase> {
           },
         );
         if (!nightsoulStatus) {
-          console?.warn(
+          console?.warn?.(
             `Failed to create nightsouls blessing for ${stringifyState(
               target,
             )}`,
@@ -1730,15 +2025,12 @@ export class SkillContext<Meta extends ContextMetaBase> {
   continueNextTurn(who: "my" | "opp" = "my") {
     const skipWho =
       who === "my" ? flip(this.callerArea.who) : this.callerArea.who;
-    const playerToSkip = this.rawState.players[skipWho];
-    if (!playerToSkip.declaredEnd) {
-      this.mutate({
-        type: "setPlayerFlag",
-        who: skipWho,
-        flagName: "skipNextTurn",
-        value: true,
-      });
-    }
+    this.mutate({
+      type: "setPlayerFlag",
+      who: skipWho,
+      flagName: "skipNextTurn",
+      value: true,
+    });
     return this.enableShortcut();
   }
 
@@ -1778,7 +2070,7 @@ export class SkillContext<Meta extends ContextMetaBase> {
     let skillId: number;
     if (skill === "normal") {
       const normalSkill = this.$("my active")!.definition.skills.find(
-        (sk) => sk.initiativeSkillConfig?.skillType === "normal",
+        (sk) => sk.skillType === "normal",
       );
       if (normalSkill) {
         skillId = normalSkill.id;
@@ -1913,6 +2205,7 @@ type SkillContextMutativeProps =
   | "increaseMaxHealth"
   | "damage"
   | "apply"
+  | "cleanAura"
   | "createEntity"
   | "moveEntity"
   | "summon"
@@ -1920,8 +2213,9 @@ type SkillContextMutativeProps =
   | "characterStatus"
   | "equip"
   | "attach"
+  | "attachCostIncrease"
+  | "attachCostReduction"
   | "dispose"
-  | "transferEntity"
   | "setVariable"
   | "addVariable"
   | "addVariableWithMax"

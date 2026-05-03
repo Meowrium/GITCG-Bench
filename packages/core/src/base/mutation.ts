@@ -39,6 +39,11 @@ import {
 import type { CharacterDefinition } from "./character";
 import { GiTcgCoreInternalError } from "../error";
 import { nextRandom } from "../random";
+import type {
+  DamageInfo,
+  DamageOrHealEventArg,
+  ReactionEventArg,
+} from "./skill";
 
 enableMapSet();
 
@@ -135,6 +140,7 @@ export interface RemoveEntityM {
   readonly oldState: AnyState;
   readonly reason:
     | "cardDisposed" // 舍弃
+    | "targetOfSupportPlayed"
     | "eventCardPlayed"
     | "eventCardDrawn"
     | "equipOverridden"
@@ -204,20 +210,26 @@ export interface PushRoundSkillLogM {
   readonly caller: CharacterState;
   readonly skillId: number;
 }
-export interface ClearRoundSkillLogM {
-  readonly type: "clearRoundSkillLog";
-  readonly who: 0 | 1;
+export interface RemoveRoundSkillLogM {
+  readonly type: "removeRoundSkillLog";
+  readonly caller: CharacterState;
+}
+export interface ClearRoundLogsM {
+  readonly type: "clearRoundLogs";
+}
+export interface PushPhaseDamageLogM {
+  readonly type: "pushPhaseDamageLog";
+  readonly damageEvent: DamageOrHealEventArg<DamageInfo>;
+}
+export interface PushPhaseReactionLogM {
+  readonly type: "pushPhaseReactionLog";
+  readonly reactionEvent: ReactionEventArg;
+}
+export interface ClearPhaseLogsM {
+  readonly type: "clearPhaseLogs";
 }
 export interface ClearRemovedEntitiesM {
   readonly type: "clearRemovedEntities";
-}
-export interface PushDelayingEventM {
-  readonly type: "pushDelayingEvent";
-  readonly eventName: string;
-  readonly eventArg: unknown;
-}
-export interface ClearDelayingEventM {
-  readonly type: "clearDelayingEvent";
 }
 
 export type Mutation =
@@ -241,10 +253,12 @@ export type Mutation =
   | SetPlayerFlagM
   | MutateExtensionStateM
   | PushRoundSkillLogM
-  | ClearRoundSkillLogM
+  | RemoveRoundSkillLogM
+  | ClearRoundLogsM
   | ClearRemovedEntitiesM
-  | PushDelayingEventM
-  | ClearDelayingEventM;
+  | PushPhaseDamageLogM
+  | PushPhaseReactionLogM
+  | ClearPhaseLogsM;
 
 function createDraft<T extends { readonly id: number }>(
   sym: StateKind,
@@ -508,9 +522,18 @@ function doMutation(state: GameState, m: Mutation): GameState {
         player.roundSkillLog.get(key)!.push(m.skillId);
       });
     }
-    case "clearRoundSkillLog": {
+    case "removeRoundSkillLog": {
+      const key = m.caller.definition.id;
+      const { who } = getEntityArea(state, m.caller.id);
       return produce(state, (draft) => {
-        draft.players[m.who].roundSkillLog.clear();
+        const player = draft.players[who];
+        player.roundSkillLog.delete(key);
+      });
+    }
+    case "clearRoundLogs": {
+      return produce(state, (draft) => {
+        draft.players[0].roundSkillLog.clear();
+        draft.players[1].roundSkillLog.clear();
       });
     }
     case "clearRemovedEntities": {
@@ -519,14 +542,26 @@ function doMutation(state: GameState, m: Mutation): GameState {
         draft.players[1].removedEntities = [];
       });
     }
-    case "pushDelayingEvent": {
+    case "pushPhaseDamageLog": {
       return produce(state, (draft) => {
-        draft.delayingEventArgs.push([m.eventName, m.eventArg]);
+        draft.players[m.damageEvent.sourceWho].phaseDamageLog.push(
+          m.damageEvent,
+        );
       });
     }
-    case "clearDelayingEvent": {
+    case "pushPhaseReactionLog": {
       return produce(state, (draft) => {
-        draft.delayingEventArgs = [];
+        draft.players[m.reactionEvent.viaWho].phaseReactionLog.push(
+          m.reactionEvent,
+        );
+      });
+    }
+    case "clearPhaseLogs": {
+      return produce(state, (draft) => {
+        for (const who of [0, 1] as const) {
+          draft.players[who].phaseDamageLog = [];
+          draft.players[who].phaseReactionLog = [];
+        }
       });
     }
     default: {
@@ -540,6 +575,9 @@ function doMutation(state: GameState, m: Mutation): GameState {
 
 export function stringifyMutation(m: Mutation): string | null {
   switch (m.type) {
+    case "changePhase": {
+      return `Change phase to ${m.newPhase}`;
+    }
     case "stepRound": {
       return `Step round number`;
     }
@@ -600,6 +638,16 @@ export function stringifyMutation(m: Mutation): string | null {
     case "pushRoundSkillLog": {
       return `Push round skill log ${m.skillId} into ${stringifyState(
         m.caller,
+      )}`;
+    }
+    case "removeRoundSkillLog": {
+      return `Remove round skill log of [character:${m.caller.definition.id}] from ${stringifyState(
+        m.caller,
+      )}`;
+    }
+    case "mutateExtensionState": {
+      return `Mutate state of extension ${m.extensionId} to ${JSON.stringify(
+        m.newState,
       )}`;
     }
     default: {

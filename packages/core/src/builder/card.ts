@@ -64,7 +64,7 @@ import {
   type EntityBuilderPublic,
   type EntityDescriptionDictionaryGetter,
 } from "./entity";
-import type { GuessedTypeOfQuery } from "../query/types";
+import type { GuessedTypeOfQuery } from "../query-legacy/types";
 import { GiTcgDataError } from "../error";
 import {
   costSize,
@@ -359,7 +359,10 @@ export class CardBuilder<
       // 支援牌的目标是要弃置的支援区卡牌
       const targets = e.targets as readonly EntityState[];
       if (targets.length > 0 && c.$(`my support with id ${targets[0].id}`)) {
-        c.dispose(targets[0]);
+        c.dispose(targets[0], {
+          reason: "targetOfSupportPlayed",
+          direct: true,
+        });
       }
       c.moveEntity(
         c.self,
@@ -459,12 +462,14 @@ export class CardBuilder<
     this.do((c) => {
       c.characterStatus(id as StatusHandle, target);
     }).done();
-    const builder = new EntityBuilder<"status", never, never, true, never>(
+    const builder = new EntityBuilder<
       "status",
-      id,
-      this.id,
-    );
-    builder._versionInfo = this._versionInfo;
+      never,
+      never,
+      true,
+      never
+    >("status", id, this.id);
+    builder._versionInfo = DEFAULT_VERSION_INFO;
     return builder;
   }
 
@@ -686,6 +691,7 @@ export class CardBuilder<
         0.04 +
         Object.keys(this._descriptionDictionary).length * 0.0001,
       ownerType: this._type,
+      skillType: null,
       triggerOn: eventName,
       initiativeSkillConfig: null,
       filter: filterFn as any,
@@ -710,7 +716,10 @@ export class CardBuilder<
 
     const prependPlayingOp: (typeof this.operations)[number] = function (c) {
       if (c.self.definition.type === "eventCard") {
-        c.dispose(c.self, "eventCardPlayed");
+        c.dispose(c.self, {
+          reason: "eventCardPlayed",
+          direct: true,
+        });
       } else {
         // 打出时移除附属效果
         for (const att of c.self.attachments) {
@@ -741,6 +750,7 @@ export class CardBuilder<
         type: "skill",
         id: this.cardId + 0.02,
         ownerType: this._type,
+        skillType: null,
         triggerOn: "onDispose",
         initiativeSkillConfig: null,
         action: disposeAction,
@@ -767,7 +777,12 @@ export class CardBuilder<
         action = this.buildAction();
       } else {
         this.do((c) => {
-          c.dispose(c.self, "eventCardDrawn");
+          if (c.self.area.type !== "removedEntities") {
+            c.dispose(c.self, {
+              reason: "eventCardDrawn",
+              direct: true,
+            });
+          }
         });
         drawAction = this.buildAction<HandCardInsertedEventArg>();
         filter = () => false;
@@ -777,10 +792,14 @@ export class CardBuilder<
         type: "skill",
         id: this.cardId + 0.03,
         ownerType: this._type,
+        skillType: null,
         triggerOn: "onHandCardInserted",
         initiativeSkillConfig: null,
         filter: (st, info, arg) => {
-          return info.caller.id === arg.card.id;
+          return (
+            getEntityArea(st, info.caller.id).type !== "pile" &&
+            info.caller.id === arg.card.id
+          );
         },
         action: drawAction,
         usagePerRoundVariableName: null,
@@ -789,9 +808,9 @@ export class CardBuilder<
         type: "skill",
         id: this.cardId + 0.01,
         ownerType: this._type,
+        skillType: "playCard",
         triggerOn: "initiative",
         initiativeSkillConfig: {
-          skillType: "playCard",
           requiredCost: normalizeCost(this._cost),
           computed$costSize: costSize(this._cost),
           computed$diceCostSize: diceCostSize(this._cost),
@@ -816,9 +835,9 @@ export class CardBuilder<
         type: "skill",
         id: this.cardId + 0.01,
         ownerType: this._type,
+        skillType: "playCard",
         triggerOn: "initiative",
         initiativeSkillConfig: {
-          skillType: "playCard",
           requiredCost: normalizeCost(this._cost),
           computed$costSize: costSize(this._cost),
           computed$diceCostSize: diceCostSize(this._cost),

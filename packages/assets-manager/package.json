@@ -1,6 +1,6 @@
 {
   "name": "@gi-tcg/assets-manager",
-  "version": "0.17.4",
+  "version": "0.19.1",
   "type": "module",
   "description": "Manage assets of GI-TCG for Web app",
   "dependencies": {
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "build:data": "bun --preload=./scripts/fetch_preload.ts ./scripts/fetch.ts",
-    "build:ts": "tsup",
+    "build:ts": "tsdown",
     "build": "bun run build:data && bun run build:ts"
   }
 }

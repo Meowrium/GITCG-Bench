@@ -13,7 +13,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import { DiceType, card, combatStatus, extension, flip, pair, status } from "@gi-tcg/core/builder";
+import { DiceType, card, combatStatus, extension, flip, status } from "@gi-tcg/core/builder";
 import { DisperseTheCalamity, SanctifyTheDefiled } from "./other";
 import { IneffectiveWhenPlayed } from "../../commons";
 
@@ -76,12 +76,16 @@ export const JoyousCelebration = card(330003)
  * 可用次数：1
  * （整局游戏只能打出一张「秘传」卡牌；这张牌一定在你的起始手牌中）
  */
-export const [FreshWindOfFreedom] = card(330004)
+export const [FreshWindOfFreedom, FreshWindOfFreedomInEffect] = card(330004)
   .since("v4.1.0")
   .legend()
   .toCombatStatus(300002)
   .oneDuration()
-  .on("defeated", (c, e) => c.isMyTurn() && !e.target.isMine())
+  .on("defeated", (c, e) =>
+    c.isMyTurn() && 
+    !c.oppPlayer.declaredEnd &&
+    !e.target.isMine() && 
+    (c.phase === "action" || c.player.defeatedSwitching || c.oppPlayer.defeatedSwitching))
   .listenToAll()
   .usage(1)
   .continueNextTurn()
@@ -100,6 +104,17 @@ export const InEveryHouseAStove = card(330005)
   .since("v4.2.0")
   .legend()
   .replaceDescription("[T]", (st) => st.roundNumber)
+  .filter((c) => {
+    if (c.roundNumber === 1) {
+      return new Set(
+        c.player.initialPile
+          .filter((card) => card.tags.includes("talent"))
+          .map((card) => card.id)
+      ).size >= 2;
+    } else {
+      return true;
+    }
+  })
   .do((c) => {
     if (c.roundNumber === 1) {
       const initTalentDefIds = c.player.initialPile
@@ -220,9 +235,13 @@ export const EdictOfAbsolution = card(330009)
   .done();
 
 export const FlamesOfWarExtension = extension(300006, {
-    spirit: pair(0),
-    win: pair(false),
+    spirit: "pair<number>",
+    win: "pair<boolean>",
   })
+    .initialState({
+      spirit: [0, 0],
+      win: [false, false],
+    })
     .description("记录双方斗争之火的「斗志」，并在行动阶段开始时设置斗争之火的胜者")
     .mutateWhen("onDamageOrHeal", (st, e) => {
       if (e.sourceWho !== e.targetWho) {
@@ -231,7 +250,7 @@ export const FlamesOfWarExtension = extension(300006, {
     })
     .mutateWhen("onActionPhase", (st) => {
       const currentSpirits = [...st.spirit];
-      st.win = pair(false);
+      st.win = [false, false];
       if (currentSpirits[0] >= currentSpirits[1]) {
         st.win[0] = true;
         st.spirit[0] = 0;

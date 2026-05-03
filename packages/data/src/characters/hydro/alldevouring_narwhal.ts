@@ -176,7 +176,7 @@ export const StarfallShower = skill(22042)
     const st = c.self.hasStatus(AnomalousAnatomy);
     const extraDmg = st ? Math.min(Math.floor(st.getVariable("extraMaxHealth") / 3), 3) : 0;
     c.damage(DamageType.Hydro, 1 + extraDmg);
-    const [card] = c.disposeMaxCostHands(1, { allowPreview: true });
+    const [card] = c.disposeMaxCostHands(1);
     if (card){
       c.emitCustomEvent(StarfallShowerDisposeCard, card.latest());
     }
@@ -209,6 +209,15 @@ export const InsatiableAppetite = skill(22044)
   .on("battleBegin")
   .combatStatus(DeepDevourersDomain)
   .done();
+
+/**
+ * @id 22045
+ * @name 无尽食欲
+ * @description
+ * 【被动】战斗开始时，生成深噬之域。
+ */
+export const InsatiableAppetite01 = skill(22045)
+  .reserve();
 
 /**
  * @id 2204
@@ -246,3 +255,4 @@ export const LightlessFeeding = card(222041)
     c.heal(c.get(e.arg).diceCost(), "@master")
   })
   .done();
+

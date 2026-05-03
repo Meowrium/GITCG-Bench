@@ -13,6 +13,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import "./stub.js";
 // Encoding API is a WHATWG Living Standard.
 // Not included in ECMA-262, so V8 doesn't support it. Add a polyfill for that.
 import "fast-text-encoding";
@@ -30,9 +31,9 @@ import {
 import {
   CURRENT_VERSION,
   deserializeGameStateLog,
-  executeQueryOnState,
   GiTcgIoError,
   Game as InternalGame,
+  runLegacyQuery,
   serializeGameStateLog,
   VERSIONS,
   type AnyState,
@@ -159,7 +160,7 @@ class GameCreateParameter {
         versionBehavior: this.dataVersion,
         decks: this.decks,
       }),
-      this.dataVersion ?? CURRENT_VERSION
+      this.dataVersion ?? CURRENT_VERSION,
     );
   }
 }
@@ -183,10 +184,14 @@ class Entity {
         return c.GITCG_ENTITY_TYPE_SUMMON;
       case "support":
         return c.GITCG_ENTITY_TYPE_SUPPORT;
-      case "card":
-        return c.GITCG_ENTITY_TYPE_CARD;
-      default:
+      case "eventCard":
+        return c.GITCG_ENTITY_TYPE_EVENT_CARD;
+      case "attachment":
+        return c.GITCG_ENTITY_TYPE_ATTACHMENT;
+      default: {
+        const _check: never = this.entity.definition;
         throw new Error(`Unreachable: invalid entity type`);
+      }
     }
   }
 
@@ -226,13 +231,11 @@ class State {
     const { gv } = parsed;
     return new State(
       deserializeGameStateLog(getData(gv), parsed)[0]!.state,
-      gv
+      gv,
     );
   }
   query(who: 0 | 1, query: string): Entity[] {
-    return executeQueryOnState(this.state, who, query).map(
-      (st) => new Entity(st)
-    );
+    return runLegacyQuery(this.state, who, query).map((st) => new Entity(st));
   }
   getAttribute(attribute: number): number {
     switch (attribute) {
@@ -323,6 +326,12 @@ class State {
       case c.GITCG_ATTR_STATE_PLAYER_SKIP_NEXT_TURN_1: {
         return +this.state.players[1].skipNextTurn;
       }
+      case c.GITCG_ATTR_STATE_PLAYER_DEFEATED_SWITCHING_0: {
+        return +this.state.players[0].defeatedSwitching;
+      }
+      case c.GITCG_ATTR_STATE_PLAYER_DEFEATED_SWITCHING_1: {
+        return +this.state.players[1].defeatedSwitching;
+      }
       default: {
         throw new Error(`Invalid attribute: ${attribute}`);
       }
@@ -358,7 +367,7 @@ export class Game {
       this.id,
       c.GITCG_INTERNAL_IO_NOTIFICATION,
       who,
-      Notification.encode(data).finish()
+      Notification.encode(data).finish(),
     );
   }
   async #rpc(who: 0 | 1, data: RpcRequest): Promise<RpcResponse> {
@@ -366,7 +375,7 @@ export class Game {
       this.id,
       c.GITCG_INTERNAL_IO_RPC,
       who,
-      RpcRequest.encode(data).finish()
+      RpcRequest.encode(data).finish(),
     );
     return RpcResponse.decode(response);
   }
@@ -380,7 +389,7 @@ export class Game {
   async #onPause(
     state: InternalState,
     mutations: Mutation[],
-    resumable: boolean
+    resumable: boolean,
   ) {
     this.#mutations = mutations;
     this.#resumable = resumable;
@@ -398,7 +407,7 @@ export class Game {
       this.id,
       c.GITCG_INTERNAL_IO_ERROR,
       e.who,
-      this.#encoder.encode(e.message)
+      this.#encoder.encode(e.message),
     );
   }
 

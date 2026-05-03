@@ -15,9 +15,11 @@
 
 import { DiceType, PbPlayerStatus } from "@gi-tcg/typings";
 import { Dice } from "./Dice";
-import { Show } from "solid-js";
+import { createMemo, Show } from "solid-js";
 import { WithDelicateUi } from "../primitives/delicate_ui";
 import { StrokedText } from "./StrokedText";
+import { useUiContext } from "../hooks/context";
+import { AutoResizeText } from "./AutoResizeText";
 
 export interface PlayerInfoProps {
   class?: string;
@@ -30,16 +32,16 @@ export interface PlayerInfoProps {
   avatarUrl?: string;
 }
 
-const STATUS_TEXT_MAP: Record<PbPlayerStatus, string> = {
-  [PbPlayerStatus.UNSPECIFIED]: "正在等待…",
-  [PbPlayerStatus.ACTING]: "正在行动…",
-  [PbPlayerStatus.CHOOSING_ACTIVE]: "正在选择出战角色…",
-  [PbPlayerStatus.REROLLING]: "正在重投骰子…",
-  [PbPlayerStatus.SWITCHING_HANDS]: "正在替换手牌…",
-  [PbPlayerStatus.SELECTING_CARDS]: "正在挑选…",
-};
-
 export function PlayerInfoBox(props: PlayerInfoProps) {
+  const { t } = useUiContext();
+  const statusTextMap = createMemo<Record<PbPlayerStatus, string>>(() => ({
+    [PbPlayerStatus.UNSPECIFIED]: t("player.waiting"),
+    [PbPlayerStatus.ACTING]: t("player.acting"),
+    [PbPlayerStatus.CHOOSING_ACTIVE]: t("player.choosingActive"),
+    [PbPlayerStatus.REROLLING]: t("player.rerolling"),
+    [PbPlayerStatus.SWITCHING_HANDS]: t("player.switchingHands"),
+    [PbPlayerStatus.SELECTING_CARDS]: t("player.selectingCards"),
+  }));
   return (
     <div
       class={`pointer-events-none select-none m-2 gap-1 flex items-start data-[opp=true]:flex-col-reverse data-[opp=false]:flex-col ${
@@ -81,14 +83,14 @@ export function PlayerInfoBox(props: PlayerInfoProps) {
         bool:data-shown={props.declaredEnd}
         data-opp={props.opp}
       >
-        已宣布结束
+        {t("player.declaredEndStatus")}
       </div>
       <div class="relative inline-block h-10 w-44">
         <div
           class="absolute inset-0 rounded-l-full rounded-r-0 border-1.5 playerinfo-box h-full w-full"
           data-opp={props.opp}
         />
-        <div class="relative flex items-center p-1">
+        <div class="relative flex items-center px-1">
           <Show when={props.avatarUrl} fallback={<div class="w-2" />}>
             <div
               class="absolute h-8 w-8 rounded-full border-3 border-#9f6939 data-[opp]:border-#415671"
@@ -101,13 +103,13 @@ export function PlayerInfoBox(props: PlayerInfoProps) {
               />
             </div>
           </Show>
-          <div class="flex flex-col ml-2 flex-1 gap-0.2 text-stroke-0.3">
-            <span class="text-3 leading-tight text-white w-24 overflow-hidden text-nowrap text-ellipsis">
+          <div class="flex flex-col ml-2 flex-1 pt-1">
+            <span class="text-3 leading-tight text-white h-3 w-24 overflow-hidden text-nowrap text-ellipsis">
               {props.name || <>&nbsp;</>}
             </span>
-            <div class="text-2.5 h-3 w-24 text-white/40" data-opp={props.opp}>
-              {STATUS_TEXT_MAP[props.status]}
-            </div>
+            <AutoResizeText minFontSize={8} class="text-2.5 h-6 w-24 text-white/40 text-start items-center">
+              {statusTextMap()[props.status]}
+            </AutoResizeText>
           </div>
           <WithDelicateUi
             assetId={

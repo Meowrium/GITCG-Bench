@@ -1,6 +1,6 @@
 {
   "name": "@gi-tcg/typings",
-  "version": "0.17.4",
+  "version": "0.19.1",
   "description": "Typings for Genius Invokation TCG",
   "type": "module",
   "types": "./dist/index.d.ts",
@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build:buf": "bun scripts/buf.ts",
-    "build": "bun build:buf && tsup"
+    "build": "bun build:buf && tsdown"
   },
   "devDependencies": {
   },

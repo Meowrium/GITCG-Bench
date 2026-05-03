@@ -16,7 +16,6 @@
 import { useNavigate, useParams, useSearchParams } from "@solidjs/router";
 import { Layout } from "../layouts/Layout";
 import {
-  copyToClipboard,
   PlayerInfo,
   roomCodeToId,
   getPlayerAvatarUrl,
@@ -33,7 +32,7 @@ import {
   Component,
   createUniqueId,
 } from "solid-js";
-import axios, { AxiosError, AxiosResponse } from "axios";
+import axios, { AxiosError } from "axios";
 import "@gi-tcg/web-ui-core/style.css";
 import EventSourceStream from "@server-sent-stream/web";
 import {
@@ -47,6 +46,7 @@ import { Dynamic } from "solid-js/web";
 import { MobileChessboardLayout } from "../layouts/MobileChessboardLayout";
 import type { CancellablePlayerIO } from "@gi-tcg/core";
 import { useAuth } from "../auth";
+import { useI18n } from "../i18n";
 
 interface InitializedPayload {
   who: 0 | 1;
@@ -73,7 +73,7 @@ const createReconnectSse = <T,>(
   onPayload: (payload: T) => void,
   onError?: (e: Error) => void,
 ): [fetch: () => void, abort: () => void] => {
-  let reconnectTimeout: Timer | null = null;
+  let reconnectTimeout: number | null = null;
   let abortController: AbortController | null = null;
   let cancelled = false;
   let activating = false;
@@ -167,8 +167,9 @@ const createReconnectSse = <T,>(
 };
 
 export default function Room() {
+  const { t, assetsManager, locale } = useI18n();
   const params = useParams();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const checkboxId = createUniqueId();
   const navigate = useNavigate();
   const code = params.code;
@@ -222,8 +223,10 @@ export default function Room() {
         console.error(e);
       }
     };
-    if (payload) {
+    if (payload && !playerIo()) {
       const [io, Ui] = createClient(payload.who, {
+        assetsManager,
+        locale,
         onGiveUp,
         disableAction: !action,
       });
@@ -263,7 +266,7 @@ export default function Room() {
   };
 
   const deleteRoom = async () => {
-    if (!window.confirm(`确认删除房间吗？`)) {
+    if (!window.confirm(t("deleteRoomConfirm"))) {
       return;
     }
     try {
@@ -275,13 +278,6 @@ export default function Room() {
       }
       console.error(e);
     }
-  };
-
-  const copyWatchLink = async () => {
-    const url = new URL(location.href);
-    url.searchParams.delete("action");
-    await copyToClipboard(url.href);
-    alert("观战链接已复制到剪贴板！");
   };
 
   const [currentMyTimer, setCurrentMyTimer] = createSignal<RpcTimer | null>(
@@ -358,7 +354,7 @@ export default function Room() {
           break;
         }
         case "error": {
-          alert(`发生致命错误：${payload.message}`);
+          alert(t("fatalError", { message: payload.message }));
           break;
         }
         default: {
@@ -477,7 +473,7 @@ export default function Room() {
       component={mobile() && !!chessboard() ? MobileChessboardLayout : Layout}
     >
       <div
-        class="data-[mobile]:p-0 data-[mobile]:h-100dvh data-[mobile]:overflow-clip container mx-auto flex flex-col group"
+        class="p-0 data-[mobile]:h-100dvh data-[mobile]:overflow-clip container mx-auto flex flex-col group max-w-[calc((100dvh-13.5rem)*160/81)]"
         bool:data-mobile={mobile() && chessboard()}
       >
         <div class="group-data-[mobile]:fixed top-0 right-0 z-100 group-data-[mobile]:translate-x-100% group-data-[mobile]-rotate-90 transform-origin-top-left flex group-data-[mobile]:flex-col flex-row group-data-[mobile]:items-start items-center has-[.visibility-control:checked]:bg-white group-data-[mobile]:pl-[calc(var(--root-padding-top)+1rem)] group-data-[mobile]:p-4 rounded-br-2xl">
@@ -495,20 +491,15 @@ export default function Room() {
           </label>
           <div class="flex-grow group-data-[mobile]:hidden group-data-[mobile]:peer-checked:flex flex flex-row group-data-[mobile]:flex-col flex-wrap items-center justify-between mb-3">
             <div class="flex flex-row flex-wrap gap-3 items-center">
-              <h2 class="text-2xl font-bold flex-shrink-0">房间号：{code}</h2>
+              <h2 class="text-2xl font-bold flex-shrink-0">
+                {t("roomNumber", { code })}
+              </h2>
               <Show when={!loading() && !failed() && !initialized()}>
                 <button class="btn btn-outline-red" onClick={deleteRoom}>
                   <i class="i-mdi-delete" />
                 </button>
               </Show>
               <Show when={initialized()?.config?.watchable}>
-                <button
-                  class="btn btn-outline-primary"
-                  title="复制观战链接"
-                  onClick={copyWatchLink}
-                >
-                  <i class="i-mdi-link-variant" />
-                </button>
                 <Show when={allowWatchOpp()}>
                   <input
                     id="showOpp"
@@ -517,7 +508,7 @@ export default function Room() {
                     checked={showOpp()}
                     onChange={(e) => setShowOpp(e.currentTarget.checked)}
                   />
-                  <label for="showOpp">显示对手棋盘</label>
+                  <label for="showOpp">{t("showOpponentBoard")}</label>
                   <Show when={showOpp()}>
                     <input
                       id="liveMode"
@@ -526,7 +517,7 @@ export default function Room() {
                       checked={liveMode()}
                       onChange={(e) => setLiveMode(e.currentTarget.checked)}
                     />
-                    <label for="liveMode">直播模式</label>
+                    <label for="liveMode">{t("liveMode")}</label>
                   </Show>
                 </Show>
               </Show>
@@ -538,45 +529,52 @@ export default function Room() {
                     <div>
                       <span>
                         {payload().myPlayerInfo.name}
-                        {action ? "（您）" : "（观战中）"}
+                        {action ? t("meLabel") : t("spectatingLabel")}
                       </span>
                       <span class="font-bold"> VS </span>
                       <span>{payload().oppPlayerInfo.name}</span>
                     </div>
                     <span class="group-data-[mobile]:hidden">，</span>
-                    <span>您是{payload().who === 0 ? "先手" : "后手"}</span>
+                    <span>
+                      {payload().who === 0
+                        ? t("youAreFirst")
+                        : t("youAreSecond")}
+                    </span>
                   </div>
                 )}
               </Show>
             </div>
           </div>
           <button
-            class="hidden group-data-[mobile]:peer-checked:inline-flex btn btn-outline-blue"
+            class="hidden group-data-[mobile]:peer-checked:inline-flex btn btn-outline-blue whitespace-normal text-center leading-tight min-h-10 px-4 py-2"
             onClick={() => {
               navigate("/");
             }}
           >
             <i class="i-mdi-home" />
-            回到首页
+            {t("backHome")}
           </button>
         </div>
         <Switch>
           <Match when={loading() || roomInfo.loading}>
-            <div class="mb-3 alert alert-outline-info">房间加载中……</div>
+            <div class="mb-3 alert alert-outline-info">{t("roomLoading")}</div>
           </Match>
           <Match when={roomInfo.state === "ready" && roomInfo()}>
             {(info) => (
               <Switch>
                 <Match when={!initialized() && info().status === "waiting"}>
                   <div class="mb-3 alert alert-outline-info">
-                    等待对手加入房间……
+                    {t("waitingForOpponent")}
                   </div>
                 </Match>
                 <Match when={info().status === "finished"}>
                   <div class="mb-3 alert alert-outline-info">
-                    此房间的对局已结束。
-                    <button class="btn btn-soft-info" onClick={downloadGameLog}>
-                      下载日志
+                    {t("roomFinished")}
+                    <button
+                      class="btn btn-soft-info whitespace-normal text-center leading-tight min-h-10 px-4 py-2"
+                      onClick={downloadGameLog}
+                    >
+                      {t("downloadLog")}
                     </button>
                   </div>
                 </Match>
@@ -585,7 +583,7 @@ export default function Room() {
           </Match>
           <Match when={failed()}>
             <div class="mb-3 alert alert-outline-error">
-              加载房间失败！{failed()}
+              {t("roomLoadFailed", { message: failed() ?? "" })}
             </div>
           </Match>
         </Switch>
@@ -610,7 +608,7 @@ export default function Room() {
                         class="px-4 py-1 w-36 h-10 mt-20 font-bold font-size-4.5 text-yellow-800 bg-yellow-50 rounded-full border-yellow-800 b-2 active:bg-yellow-800 active:text-yellow-200 hover:shadow-[inset_0_0_16px_white] hover:border-white"
                         onClick={downloadGameLog}
                       >
-                        下载日志
+                        {t("downloadLog")}
                       </button>
                       {/* <Show when={logtimer}>
                         <span class="text-white/60 text-3">{logtimer}后到期</span>
@@ -623,7 +621,7 @@ export default function Room() {
                           navigate("/");
                         }}
                       >
-                        回到首页
+                        {t("backHome")}
                       </button>
                     </div>
                   </div>

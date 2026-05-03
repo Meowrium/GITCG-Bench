@@ -14,14 +14,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import {
+  $,
   Card,
   Character,
   CombatStatus,
+  Equipment,
   ref,
   setup,
   State,
   Status,
 } from "#test";
+import { PortablePowerSaw } from "@gi-tcg/data/internal/cards/equipment/weapon/claymore";
 import {
   RainbowMacaronsInEffect,
   SingYourHeartOut,
@@ -35,9 +38,11 @@ import {
 } from "@gi-tcg/data/internal/characters/electro/keqing";
 import {
   DetailedDiagnosisThoroughTreatmentStatus,
+  LargeBolsteringBubblebalm,
   ReboundHydrotherapy,
   Sigewinne,
 } from "@gi-tcg/data/internal/characters/hydro/sigewinne";
+import { SweepingFervor, Xinyan } from "@gi-tcg/data/internal/characters/pyro/xinyan";
 import { BondOfLife, Satiated } from "@gi-tcg/data/internal/commons";
 import { Aura } from "@gi-tcg/typings";
 import { test } from "bun:test";
@@ -62,11 +67,10 @@ test("sigwinne: passive triggered after defeated", async () => {
   // 生命之契弃置，触发希格雯被动，最大生命值+1
   // 生命值 10，最大生命值 11
   c.expect(oppNext).toHaveVariable({ health: 10, maxHealth: 11 });
-  c.expect(
-    `opp status with definition id ${DetailedDiagnosisThoroughTreatmentStatus}`,
+  c.expect($.opp.typeStatus.def(DetailedDiagnosisThoroughTreatmentStatus),
   ).toNotExist();
   await c.opp.chooseActive(oppNext);
-  c.expect("opp active").toBe(oppNext);
+  c.expect($.opp.active).toBe(oppNext);
 });
 
 test("sigwinne: bubble", async () => {
@@ -86,6 +90,25 @@ test("sigwinne: bubble", async () => {
   await c.me.switch(target);
   await c.me.card(SingYourHeartOut);
   // 抓三张，水泡自动弃置
-  c.expect("my hand cards").toBeCount(2);
+  c.expect($.my.hand).toBeCount(2);
   c.expect(target).toHaveVariable({ health: 4 });
+});
+
+test("sigwinne bubble: disposed before HCI event", async () => {
+  const myActive = ref();
+  const c = setup(
+    <State>
+      <Character my active def={Xinyan} health={1} ref={myActive}>
+        <Equipment def={PortablePowerSaw} v={{ stoic: 1 }} />
+      </Character>
+      <Character my def={Sigewinne} />
+      <Card my pile def={LargeBolsteringBubblebalm} /> 
+    </State>
+  );
+  await c.me.skill(SweepingFervor);
+  // 希格雯水泡抽上来且舍弃掉
+  c.expect($.my.pile).toBeCount(0);
+  // 但是不会触发效果
+  c.expect($.opp.pile).toBeCount(0);
+  c.expect(myActive).toHaveVariable({ health: 1 });
 });

@@ -13,7 +13,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import { character, skill, summon, combatStatus, card, DamageType, pair, extension } from "@gi-tcg/core/builder";
+import { character, skill, summon, combatStatus, card, DamageType, extension } from "@gi-tcg/core/builder";
 
 /**
  * @id 111011
@@ -68,8 +68,15 @@ export const TrailOfTheQilin = skill(11012)
   .combatStatus(IceLotus)
   .done();
 
-const FrostflakeArrowUsedExtension = extension(11013, { used: pair(false) })
+const FrostflakeArrowUsedExtension = extension(11013, { used: "pair<boolean>" })
+  .initialState({ used: [false, false] })
   .description("本场对局中某方曾经使用过霜华矢")
+  .mutateWhen("onDamageOrHeal", (st, e) => {
+    // 甘雨倒下时重置
+    if (e.target.definition.id === Ganyu && e.damageInfo.causeDefeated) {
+      st.used[e.targetWho] = false;
+    }
+  })
   .done();
 
 /**

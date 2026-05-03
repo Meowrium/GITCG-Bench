@@ -1,4 +1,5 @@
 // Copyright (C) 2024-2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -51,10 +52,7 @@ export type StateKind =
 export const StateSymbol: unique symbol = Symbol("GiTcgCoreState");
 export type StateSymbol = typeof StateSymbol;
 
-export type ErrorLevel = "strict" | "toleratePreview" | "skipPhase";
-
 export interface GameConfig {
-  readonly errorLevel: ErrorLevel;
   readonly randomSeed: number;
   readonly initialHandsCount: number;
   readonly maxHandsCount: number;
@@ -67,7 +65,6 @@ export interface GameConfig {
 }
 
 export const getDefaultGameConfig = (): GameConfig => ({
-  errorLevel: "strict",
   initialDiceCount: 8,
   initialHandsCount: 5,
   maxDiceCount: 16,
@@ -109,7 +106,9 @@ export interface VersionBehavior {
 }
 
 export const getVersionBehavior = (version: Version): VersionBehavior => ({
-  defaultRecreateBehavior: versionLt(version, "v3.5.0") ? "overwrite" : "takeMax",
+  defaultRecreateBehavior: versionLt(version, "v3.5.0")
+    ? "overwrite"
+    : "takeMax",
   foodOmitInjuredOnly: !versionLt(version, "v6.1.0"),
   disposeMaxCostHandsAbortPreview: !versionLt(version, "v6.1.0"),
   diceCostApplyAttachments: !versionLt(version, "v6.4.0"),
@@ -140,7 +139,6 @@ export interface GameState {
   readonly winner: 0 | 1 | null;
   readonly players: readonly [PlayerState, PlayerState];
   readonly extensions: readonly ExtensionState[];
-  readonly delayingEventArgs: readonly (readonly [string, unknown])[];
 }
 
 export interface PlayerState {
@@ -162,10 +160,23 @@ export interface PlayerState {
   readonly legendUsed: boolean;
   readonly skipNextTurn: boolean;
   /**
+   * 正在处于出战角色被击倒的重新选择角色的结算过程中。
+   * 官方实现可能是作为 `phase` 的特殊值，这里我们令其正交。
+   */
+  readonly defeatedSwitching: boolean;
+  /**
    * 每回合使用技能列表。
    * 键为技能发起者的角色定义 id，值为该定义下使用过的技能 id 列表
    */
   readonly roundSkillLog: ReadonlyMap<number, number[]>;
+  /**
+   * 我方在当前阶段造成的伤害 DamageEventArg 记录列表
+   */
+  readonly phaseDamageLog: unknown[];
+  /**
+   * 我方在当前阶段造成的反应 ReactionEventArg 记录列表
+   */
+  readonly phaseReactionLog: unknown[];
   readonly removedEntities: readonly AnyState[];
 }
 
@@ -220,4 +231,5 @@ export type {
   SkillDefinition,
   InitiativeSkillDefinition,
   TriggeredSkillDefinition,
+  AttachmentDefinition,
 };

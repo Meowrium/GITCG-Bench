@@ -23,6 +23,7 @@ import {
   Version,
   exposeState,
   serializeGameStateLog,
+  setAsyncContext,
 } from "@gi-tcg/core";
 
 import { createClient, StandaloneChessboard } from "@gi-tcg/web-ui-core";
@@ -30,6 +31,7 @@ import "@gi-tcg/web-ui-core/style.css";
 import { For, Show, createSignal, onCleanup, onMount } from "solid-js";
 import { DetailLogViewer } from "@gi-tcg/detail-log-viewer";
 import { DEFAULT_ASSETS_MANAGER } from "@gi-tcg/assets-manager";
+import mergeErrorCause from "merge-error-cause";
 
 export interface StandaloneParentProps {
   logs?: GameStateLogEntry[];
@@ -145,7 +147,7 @@ export function StandaloneParent(props: StandaloneParentProps) {
   };
   const enableLog = () => {
     setViewingWho(1);
-    setViewingLogIndex(stateLog().length - 2);
+    setViewingLogIndex(stateLog().length - 1);
   };
   const maxLogIndex = () => {
     return stateLog().length - (fromImport() ? 1 : 2);
@@ -177,16 +179,15 @@ export function StandaloneParent(props: StandaloneParentProps) {
 
   const onGameError = (e: unknown, from?: Game) => {
     if (!from || from === game) {
-      console.error(e);
+      const merged = mergeErrorCause(e);
+      console.error(merged);
       alert(
-        `游戏出现了内部错误！请点击主窗口下方“导出日志”按钮生成日志文件，并反馈至 GitHub Issue，thanks~\n${
-          e instanceof Error ? e.message : String(e)
-        }`,
+        `游戏出现了内部错误！请点击主窗口下方“导出日志”按钮生成日志文件，并反馈至 GitHub Issue，thanks~\n${merged.message}\n${merged.stack}`,
       );
     }
   };
 
-  const createGame = (state?: GameState) => {
+  const createGame = async (state?: GameState) => {
     if (!state) {
       const deck0 = DEFAULT_ASSETS_MANAGER.decode(props.deck0);
       const deck1 = DEFAULT_ASSETS_MANAGER.decode(props.deck1);
@@ -196,7 +197,9 @@ export function StandaloneParent(props: StandaloneParentProps) {
         versionBehavior: props.version,
       });
     }
+    await setAsyncContext(true);
     const game = new Game(state);
+    (window as any).theGame = game;
     game.onPause = pause;
     game.players[0].io = childIo;
     game.players[1].io = uiIo;
@@ -206,7 +209,7 @@ export function StandaloneParent(props: StandaloneParentProps) {
   const startGame = async () => {
     try {
       await showPopup();
-      const initialGame = createGame();
+      const initialGame = await createGame();
       game = initialGame;
       initialGame.start().catch((e) => onGameError(e, initialGame));
     } catch (e) {
@@ -221,7 +224,7 @@ export function StandaloneParent(props: StandaloneParentProps) {
     uiIo.cancelRpc?.();
     game?.terminate();
     const latestState = logs[logs.length - 1];
-    const newGame = createGame(latestState.state);
+    const newGame = await createGame(latestState.state);
     game = newGame;
     newGame.start().catch((e) => onGameError(e, newGame));
     setStateLog(logs);
@@ -263,7 +266,7 @@ export function StandaloneParent(props: StandaloneParentProps) {
     window.addEventListener("message", childGiveUpHandler);
     if (Array.isArray(props.logs)) {
       setStateLog(props.logs);
-      setViewingLogIndex(props.logs.length - 2);
+      setViewingLogIndex(props.logs.length - 1);
       setFromImport(true);
     } else {
       startGame();
@@ -274,7 +277,7 @@ export function StandaloneParent(props: StandaloneParentProps) {
   });
 
   return (
-    <div>
+    <div class="standalone-board-shell">
       <Show
         when={viewingState()}
         fallback={

@@ -15,7 +15,15 @@
 
 import { version } from "../package.json" /*  with { type: "json" } */;
 export { version as CORE_VERSION };
-export { Game, type DeckConfig, type CreateInitialStateConfig } from "./game";
+export {
+  Game,
+  type DeckConfig,
+  type CreateInitialStateConfig,
+  type GameOption,
+  type ErrorLevel,
+  mergeGameConfigWithDefault,
+} from "./game";
+export { setAsyncContext } from "./async_context";
 export { type Player, type PlayerConfig } from "./player";
 export {
   type GameStateLogEntry,
@@ -36,11 +44,15 @@ export {
   resolveOfficialVersion,
   resolveManuallySelectedOfficialVersion,
 } from "./base/version";
-export { executeQueryOnState } from "./query";
+export { runLegacyQuery } from "./query-legacy";
+export * from "./query";
 export {
   type PlayerIO,
   type CancellablePlayerIO,
   exposeState,
+  exposeCharacter,
+  exposeEntity,
+  exposeAttachment,
   mergeIo,
 } from "./io";
 export * from "./error";

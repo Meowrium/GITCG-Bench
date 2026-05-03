@@ -17,33 +17,63 @@ import { useParams } from "@solidjs/router";
 import { createResource, Switch, Match } from "solid-js";
 import { Layout } from "../layouts/Layout";
 import axios, { AxiosError } from "axios";
+import { useAuth, UserInfo as UserInfoT } from "../auth";
+import { useI18n } from "../i18n";
 import { UserInfo } from "../components/UserInfo";
-import { useAuth } from "../auth";
+import { getGithubAvatarUrl } from "../utils";
 
 export default function User() {
+  const { t } = useI18n();
   const params = useParams();
-  const { status: mine } = useAuth();
-  const userId = Number(params.id);
-  const [userInfo] = createResource(() =>
-    axios.get(`users/${userId}`).then((res) => res.data),
+  const { status: mine, avatarUrl: myAvatarUrl } = useAuth();
+
+  const [userInfo, { refetch }] = createResource(
+    () => params.id,
+    async (id) => {
+      if (id.trim() === "" || !Number.isFinite(+id)) {
+        throw new Error(`User ID is incorrect: ${id}`);
+      } else {
+        return await axios
+          .get(`users/${params.id}`)
+          .then((res) => res.data as UserInfoT);
+      }
+    },
   );
+
+  const guestMode = () => params.id === "guest";
+
   return (
     <Layout>
       <Switch>
-        <Match when={userInfo.loading}>正在加载中...</Match>
+        <Match when={guestMode()}>
+          <UserInfo
+            type="guest"
+            idText={t("guestIdentity")}
+            name={mine()?.name || ""}
+            avatarUrl={myAvatarUrl()}
+            editable={true}
+          />
+        </Match>
+        <Match when={userInfo.loading}>{t("loading")}</Match>
         <Match when={userInfo.error}>
-          加载失败：{" "}
-          {userInfo.error instanceof AxiosError
-            ? userInfo.error.response?.data.message
-            : userInfo.error}
+          {t("loadFailed", {
+            message:
+              userInfo.error instanceof AxiosError
+                ? userInfo.error.response?.data.message
+                : userInfo.error,
+          })}
         </Match>
         <Match when={userInfo()}>
-          <div class="w-full flex flex-row justify-center">
+          {(user) => (
             <UserInfo
-              {...userInfo()}
-              editable={userInfo()?.id === mine()?.id}
+              type="user"
+              idText={`ID: ${user().id}`}
+              name={user().name}
+              avatarUrl={getGithubAvatarUrl(user().id)}
+              editable={user().id === mine()?.id}
+              onSubmit={refetch}
             />
-          </div>
+          )}
         </Match>
       </Switch>
     </Layout>

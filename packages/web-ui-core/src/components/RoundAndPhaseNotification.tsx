@@ -1,4 +1,5 @@
 // Copyright (C) 2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -54,14 +55,12 @@ export function RoundAndPhaseNotification(
     }
   });
   return (
-    <div
-      class={`grid grid-cols-1 grid-rows-1 justify-items-center items-center pointer-events-none select-none ${props.class} children:row-span-full children:col-span-full`}
-      data-opp={opp()}
-    >
+    <>
       <Switch>
         <Match when={typeof props.info.value === "number"}>
           <div
-            class="w-210 h-6 flex flex-row justify-center items-center action-hint text-#f5ebd2 font-bold text-3.5 animate-[phase-notification_500ms_both] data-[delay]:animate-[phase-notification_500ms_800ms_both]"
+            class={`w-210 h-6 text-center line-height-4.5 text-#f5ebd2 font-bold text-3.5
+              pointer-events-none select-none action-hint phase-notification ${props.class ?? ""}`}
             bool:data-delay={props.info.showRound}
           >
             {phaseText()[props.info.value as PbPhaseType]}
@@ -73,16 +72,13 @@ export function RoundAndPhaseNotification(
           }
         >
           <div
-            class="w-210 h-6 flex flex-row justify-center items-center font-bold text-3.5 action-hint-who animate-[phase-notification_500ms_both]"
+            class={`w-210 h-6 text-center line-height-6 font-bold text-3.5 pointer-events-none
+              select-none action-hint-who action-notification ${props.class ?? ""}`}
             bool:data-opp={opp()}
           >
-            {props.info.value === "action"
-              ? t(opp() ? "phase.oppActionTurn" : "phase.myActionTurn")
-              : t(
-                  opp()
-                    ? "phase.oppDeclareEndTurn"
-                    : "phase.myDeclareEndTurn",
-                )}
+            {t(
+              `phase.${opp() ? "opp" : "my"}${props.info.value === "action" ? "ActionTurn" : "DeclareEndTurn"}`,
+            )}
             <Show when={props.info.value === "declareEnd" && !isFirst()}>
               {t("phase.gainFirst")}
             </Show>
@@ -91,21 +87,20 @@ export function RoundAndPhaseNotification(
       </Switch>
       <Show when={props.info.showRound}>
         <div
-          class="w-210 h-6 pb-6 flex flex-col justify-center items-center font-bold text-3.5 action-hint-who animate-[phase-notification_800ms_both]"
+          class={`w-210 h-6 text-center line-height-6 font-bold text-3.5 pointer-events-none
+            select-none action-hint-who round-notification ${props.class ?? ""}`}
           bool:data-opp={props.currentTurn !== props.who}
         >
-          <h5 class="font-bold text-3">
+          <div class="h-18 w-36 rounded-t-full font-bold text-3 line-height-none pt-14 mt--18 mx-auto round-hint-who">
             {t("phase.round", { round: props.roundNumber })}
-          </h5>
-          <span>
-            {t(
-              props.currentTurn === props.who
-                ? "phase.mySideFirst"
-                : "phase.oppSideFirst",
-            )}
-          </span>
+          </div>
+          {t(
+            props.currentTurn === props.who
+              ? "phase.mySideFirst"
+              : "phase.oppSideFirst",
+          )}
         </div>
       </Show>
-    </div>
+    </>
   );
 }

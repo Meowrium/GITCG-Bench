@@ -1,4 +1,5 @@
 // Copyright (C) 2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -14,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import {
-  Aura,
+  Aura as A,
   CHARACTER_TAG_BARRIER,
   CHARACTER_TAG_BOND_OF_LIFE,
   CHARACTER_TAG_DISABLE_SKILL,
@@ -26,7 +27,6 @@ import {
 } from "@gi-tcg/typings";
 import { Key } from "@solid-primitives/keyed";
 import {
-  children,
   createEffect,
   createMemo,
   createSignal,
@@ -35,10 +35,8 @@ import {
   Match,
   Show,
   Switch,
-  untrack,
   type Component,
   type ComponentProps,
-  type JSX,
 } from "solid-js";
 import { Image } from "./Image";
 import type {
@@ -52,7 +50,6 @@ import { cssPropertyOfTransform } from "../ui_state";
 import { StatusGroup } from "./StatusGroup";
 import { ActionStepEntityUi } from "../action";
 import { VariableDiff } from "./VariableDiff";
-import { WithDelicateUi } from "../primitives/delicate_ui";
 import { StrokedText } from "./StrokedText";
 import DefeatedIcon from "../svg/DefeatedIcon.svg?fb";
 import HealthIcon from "../svg/HealthIcon.svg?fb";
@@ -67,6 +64,7 @@ import EnergyIconExtraMavuika from "../svg/EnergyIconExtraMavuika.svg?fb";
 import SelectingConfirmIcon from "../svg/SelectingConfirmIcon.svg?fb";
 import SelectingIcon from "../svg/SelectingIcon.svg?fb";
 import SwitchActiveHistoryIcon from "../svg/SwitchActiveHistoryIcon.svg?fb";
+import ReplaceEquipment from "../svg/ReplaceEquipment.svg?fb";
 import ArtifactIcon from "../svg/ArtifactIcon.svg?fb";
 import WeaponIcon from "../svg/WeaponIcon.svg?fb";
 import TalentIcon from "../svg/TalentIcon.svg?fb";
@@ -103,6 +101,7 @@ export type CharacterAnimation =
 
 export interface CharacterAreaProps extends CharacterInfo {
   selecting: boolean;
+  hidden?: boolean;
   onClick?: (e: MouseEvent, currentTarget: HTMLElement) => void;
 }
 
@@ -309,7 +308,7 @@ export function CharacterArea(props: CharacterAreaProps) {
 
   const [getDamage, setDamage] = createSignal<DamageInfo | null>(null);
   // 播放带元素反应的伤害动画时，目标携带旧 aura
-  const [preReactionAura, setPreReactionAura] = createSignal<Aura | null>();
+  const [preReactionAura, setPreReactionAura] = createSignal<A | null>();
   const [getReaction, setReaction] = createSignal<ReactionInfo | null>(null);
   const [showDamage, setShowDamage] = createSignal(false);
 
@@ -317,7 +316,7 @@ export function CharacterArea(props: CharacterAreaProps) {
     delayMs: number,
     damages: (DamageInfo | ReactionInfo)[],
   ) => {
-    let preReactionAuraValue: Aura | null = null;
+    let preReactionAuraValue: A | null = null;
     if (damages[0]?.type === "damage" && damages[0]?.reaction?.base) {
       preReactionAuraValue = damages[0].reaction.base;
     } else if (damages[0]?.type === "reaction" && damages[0].base) {
@@ -409,7 +408,7 @@ export function CharacterArea(props: CharacterAreaProps) {
     }
     const damageType = props.uiState.animation.damageType;
     if (damageType > DamageType.Physical && damageType < DamageType.Piercing) {
-      return `var(--c-${DAMAGE_COLOR[damageType]})`;
+      return DAMAGE_COLOR[damageType];
     }
   });
 
@@ -417,11 +416,16 @@ export function CharacterArea(props: CharacterAreaProps) {
     const aura = props.preview?.newAura ?? preReactionAura() ?? data().aura;
     return [aura & 0xf, (aura >> 4) & 0xf];
   });
+  const previewAura = createMemo(
+    () => !!props.preview?.newAura || !!props.preview?.reactions?.length,
+  );
   const previewReaction = createMemo(() =>
     props.preview?.reactions.map((r) => {
       const reactionElement = REACTION_TEXT_MAP[r.reactionType].elements;
       const applyElement = r.incoming;
-      const baseElement = reactionElement.find((e) => e !== applyElement);
+      const baseElement = reactionElement.find(
+        (e) => e !== applyElement,
+      ) as DamageType;
       return [baseElement, applyElement];
     }),
   );
@@ -429,9 +433,15 @@ export function CharacterArea(props: CharacterAreaProps) {
   const defeated = createMemo(() => data().defeated);
   const triggered = createMemo(() => props.triggered);
 
-  // MARK: debug SKK with returning true
-  const isSkirkEnergyBar = () =>
-    data().specialEnergyName === "serpentsSubtlety";
+  const energyBarComponent = createMemo(() => {
+    const SPECIAL_ENERGY_MAP: Record<string, Component<EnergyBarProps>> = {
+      serpentsSubtlety: SkirkEnergyBar,
+      fightingSpirit: MavuikaEnergyBar,
+    };
+    return (
+      SPECIAL_ENERGY_MAP[data().specialEnergyName ?? ""] ?? NormalEnergyBar
+    );
+  });
 
   const statuses = createMemo(() =>
     props.entities.filter((et) => typeof et.data.equipment === "undefined"),
@@ -452,218 +462,190 @@ export function CharacterArea(props: CharacterAreaProps) {
   );
   return (
     <div
-      class="absolute flex flex-col items-center transition-transform preserve-3d [&_*]:backface-hidden"
+      class="absolute w-21 h-48 grid grid-cols-1 grid-rows-[1fr_6fr_1fr] transition-transform preserve-3d [&_*]:backface-hidden data-[hidden]:invisible"
       style={cssPropertyOfTransform(props.uiState.transform)}
       ref={el}
       onClick={(e) => {
         e.stopPropagation();
         props.onClick?.(e, e.currentTarget);
       }}
+      bool:data-hidden={props.hidden}
     >
-      <div
-        class="h-6 w-21 flex relative justify-center overflow-visible preview-blink z-10"
-        bool:data-preview={props.preview?.newAura || props.preview?.reactions}
+      {/* Elemente */}
+      <Show
+        when={getReaction()}
+        fallback={
+          <Aura
+            preview={previewAura()}
+            previewReaction={previewReaction()}
+            aura={aura()}
+          />
+        }
       >
-        <div class="flex flex-row items-center gap-0.2 max-w-full">
-          <Switch>
-            <Match when={getReaction()}>{(r) => <Reaction info={r()} />}</Match>
-            <Match when={true}>
-              <For each={previewReaction()}>
-                {(reaction) => (
-                  <div class="h-5.1 flex flex-row items-center bg-black/60 rounded-full shrink-0">
-                    <For each={reaction}>
-                      {(e) => (
-                        <Show when={e}>
-                          {(e) => (
-                            <Image
-                              imageId={e()}
-                              class="h-5 w-5"
-                              fallback="aura"
-                            />
-                          )}
-                        </Show>
-                      )}
-                    </For>
-                  </div>
-                )}
-              </For>
-              <For each={aura()}>
-                {(aura) => (
-                  <Show when={aura}>
-                    <Image imageId={aura} class="h-5 w-5" fallback="aura" />
-                  </Show>
-                )}
-              </For>
-            </Match>
-          </Switch>
-        </div>
-      </div>
-      <div class="h-36 w-21 relative z-9 preserve-3d">
+        {(r) => <Reaction class="grid-area-[1/1] z-10" info={r()} />}
+      </Show>
+      {/* Card Area */}
+      <div
+        class="grid-area-[2/1] relative preserve-3d grid rounded-md transition-shadow children:grid-area-[1/1] clickable-outline"
+        bool:data-clickable={
+          props.clickStep && props.clickStep.ui >= ActionStepEntityUi.Outlined
+        }
+      >
+        {/* Marker */}
         <Show when={!defeated()}>
           <Health
             value={data().health}
             isMax={data().health === data().maxHealth}
             bondOfLife={!!(data().tags & CHARACTER_TAG_BOND_OF_LIFE)}
           />
-          <div class="absolute z-1 right-0.4 top-3 translate-x-50% flex flex-col gap-0 items-center">
+          <div class="absolute z-1 right-0.5 top-3 translate-x-50% flex flex-col items-center">
             <Dynamic
-              component={isSkirkEnergyBar() ? SkirkEnergyBar : EnergyBar}
+              component={energyBarComponent()}
               current={energy()}
               preview={props.preview?.newEnergy ?? null}
               total={data().maxEnergy}
-              specialEnergyName={data().specialEnergyName}
             />
             <Show when={technique()}>
               {(et) => (
-                <div class="relative w-6 h-6 rounded-full mt-0.75">
-                  <Image
-                    class="w-6 h-6 equipment"
-                    imageId={et().data.definitionId}
-                    type={"icon"}
-                    fallback="technique"
-                    bool:data-disposing={et().animation === "disposing"}
-                  />
-                  <div
-                    class="absolute top-0 w-6 h-6 rounded-full technique-usage"
-                    bool:data-usable={et().data.hasUsagePerRound}
-                    bool:data-disposing={et().animation === "disposing"}
-                  />
-                  <div
-                    class="absolute top-0 w-6 h-6 rounded-full equipment-animation-1"
-                    bool:data-entering={et().animation === "entering"}
-                    bool:data-disposing={et().animation === "disposing"}
-                    bool:data-triggered={et().triggered}
-                  />
-                  <div
-                    class="absolute top-0 w-6 h-6 rounded-full equipment-animation-2"
-                    bool:data-entering={et().animation === "entering"}
-                    bool:data-disposing={et().animation === "disposing"}
-                    bool:data-triggered={et().triggered}
-                  />
-                </div>
+                <Technique
+                  data={et()}
+                  replace={props.clickStep?.equip === PbEquipmentType.TECHNIQUE}
+                />
               )}
             </Show>
           </div>
           <Show when={props.preview && props.preview.newHealth !== null}>
             <VariableDiff
-              class="absolute z-5 top-0.6 left-6"
+              class="absolute z-1 top-0.5 left-6"
               oldValue={data().health}
               newValue={
-                props.preview!.negativeHealth ?? props.preview!.newHealth!
+                props.preview?.negativeHealth ??
+                (props.preview?.newHealth as number)
               }
-              direction={props.preview!.newHealthDirection}
+              direction={props.preview?.newHealthDirection}
               defeated={props.preview?.defeated}
               revived={props.preview?.revived}
             />
           </Show>
-          <div class="absolute z-3 hover:z-10 left-0 -translate-x-2.5 top-8 flex flex-col items-center justify-center">
+          <div class="absolute z-1 left-0.5 -translate-x-50% top-8 flex flex-col">
             <Show when={weapon()}>
               {(et) => (
-                <Equipment data={et()}>
-                  <WeaponIcon
-                    class="absolute w-7 h-7 equipment"
-                    bool:data-disposing={et().animation === "disposing"}
-                  />
-                </Equipment>
+                <Equipment
+                  data={et()}
+                  icon={WeaponIcon}
+                  replace={props.clickStep?.equip === PbEquipmentType.WEAPON}
+                />
               )}
             </Show>
             <Show when={artifact()}>
               {(et) => (
-                <Equipment data={et()}>
-                  <ArtifactIcon
-                    class="absolute w-7 h-7 equipment"
-                    bool:data-disposing={et().animation === "disposing"}
-                  />
-                </Equipment>
+                <Equipment
+                  data={et()}
+                  icon={ArtifactIcon}
+                  replace={props.clickStep?.equip === PbEquipmentType.ARTIFACT}
+                />
               )}
             </Show>
             <Key each={otherEquipments()} by="id">
               {(et) => (
-                <Equipment data={et()}>
-                  <TalentIcon
-                    class="absolute w-7 h-7 equipment"
-                    bool:data-disposing={et().animation === "disposing"}
-                  />
-                </Equipment>
+                <Equipment
+                  data={et()}
+                  icon={TalentIcon}
+                  replace={props.clickStep?.equip === PbEquipmentType.OTHER}
+                />
               )}
             </Key>
           </div>
         </Show>
-        <div
-          class="h-full w-full rounded-1.2 clickable-outline transition-shadow data-[defeated]:brightness-50 preserve-3d"
-          bool:data-clickable={
-            props.clickStep && props.clickStep.ui >= ActionStepEntityUi.Outlined
-          }
-          bool:data-defeated={defeated()}
-        >
-          <Show when={damageSourceColor()}>
-            <div
-              class="absolute inset-0 h-full w-full rounded-1 attack-effect"
-              style={{ "--glow-color": damageSourceColor() }}
-            />
-            <div
-              class="absolute inset-0 h-full w-full rounded-1 attack-effect rotate-y-180"
-              style={{ "--glow-color": damageSourceColor() }}
-            />
-          </Show>
-          <Show when={data().tags & CHARACTER_TAG_NIGHTSOULS_BLESSING}>
-            <NightsoulsBlessing
-              class="absolute z--1 inset--1.25 top--6"
-              element={Number(data().definitionId.toString()[1]) as DiceType}
-            />
-          </Show>
-          <div class="absolute inset-0.5 bg-#bdaa8a rounded-1.2" />
-          <Image
-            imageId={data().definitionId}
-            class="absolute inset-0 h-full w-full p-1px"
-            fallback="card"
+        <Show when={damageSourceColor()}>
+          <div
+            class="rounded-md rotate-y-180 translate-z--0.2px attacking-effect"
+            style={{ "--shadow-color": `var(--c-${damageSourceColor()})` }}
           />
-          <CardFrameNormal class="absolute inset-0 h-full w-full pointer-events-none" />
-          <CardbackNormal class="absolute inset-0 h-full w-full backface-hidden rotate-y-180 translate-z--0.1px" />
-        </div>
+        </Show>
+        <Show when={data().tags & CHARACTER_TAG_NIGHTSOULS_BLESSING}>
+          <NightsoulsBlessing
+            class="z--1 m--1.25 mt--8 self-end"
+            element={Number(data().definitionId.toString()[1]) as DiceType}
+          />
+        </Show>
+        <Image
+          imageId={data().definitionId}
+          class="h-full w-full p-1% text-3 data-[defeated]:brightness-50"
+          fallback="card"
+          bool:data-defeated={defeated()}
+        />
+        <CardFrameNormal
+          class="pointer-events-none data-[defeated]:brightness-50"
+          bool:data-defeated={defeated()}
+        />
+        <CardbackNormal class="rotate-y-180 translate-z--0.1px" />
         <StatusGroup
-          class="absolute z-3 left-0.5 bottom-0 h-5.5 w-20"
+          class="z-1 self-end h-5 px-0.5 mb-1"
           statuses={statuses()}
         />
         <Show when={defeated()}>
-          <DefeatedIcon class="absolute z-5 top-[50%] left-0 w-21 text-center text-5xl font-bold translate-y--10.5 font-[var(--font-emoji)]" />
+          <DefeatedIcon class="w-21 h-21 z-1 place-self-center" />
         </Show>
         <Switch>
           <Match when={props.clickStep?.ui === ActionStepEntityUi.Selected}>
-            <div class="z-6 absolute inset-0 backface-hidden flex items-center justify-center">
-              <SelectingConfirmIcon class="cursor-pointer h-20 w-20" />
-            </div>
+            <SelectingConfirmIcon class="w-18 h-18 z-2 place-self-center" />
           </Match>
           <Match when={props.selecting}>
-            <div class="z-6 absolute inset-0 backface-hidden flex items-center justify-center">
-              <SelectingIcon class="w-21 h-21" />
-            </div>
+            {/* with animate no render */}
+            <SelectingIcon noRender class="w-21 h-21 z-2 place-self-center" />
           </Match>
           <Match when={props.preview?.active}>
-            <div class="z-6 absolute inset-0 backface-hidden flex items-center justify-center">
-              <SwitchActiveHistoryIcon class="h-18 w-18" />
-            </div>
+            <SwitchActiveHistoryIcon class="w-18 h-18 z-2 place-self-center" />
           </Match>
         </Switch>
-        <Show when={getDamage()}>
-          {(dmg) => <Damage info={dmg()} shown={showDamage()} />}
-        </Show>
+        <Damage info={getDamage()} shown={showDamage()} />
         <CharacterTagMasks tags={data().tags} />
         <Show when={triggered()}>
-          <div class="absolute h-21 w-21 top-7.5">
-            <div class="absolute h-full w-full triggered-animation-6" />
-            <div class="absolute h-full w-full triggered-animation-4">
-              <div class="absolute h-full w-full triggered-animation-1" />
-              <div class="absolute h-full w-full triggered-animation-2" />
-              <div class="absolute h-full w-full triggered-animation-3" />
-            </div>
-            <div class="absolute h-full w-full triggered-animation-5" />
-          </div>
+          <div class="place-self-center h-21 w-21 rounded-full skill-triggered" />
         </Show>
       </div>
       <Show when={props.active}>
-        <StatusGroup class="h-6 w-20 z-10" statuses={props.combatStatus} />
+        <StatusGroup
+          class="grid-area-[3/1] z-10 px-0.5"
+          statuses={props.combatStatus}
+        />
       </Show>
+    </div>
+  );
+}
+
+interface AuraProps {
+  preview: boolean;
+  previewReaction?: DamageType[][];
+  aura: [number, number];
+}
+
+function Aura(props: AuraProps) {
+  return (
+    <div
+      class="grid-area-[1/1] flex flex-nowrap justify-center items-center z-10 aura"
+      bool:data-preview={props.preview}
+    >
+      <For each={props.previewReaction}>
+        {(reaction) => (
+          <div class="flex flex-nowrap items-center bg-black/60 rounded-full shrink-0">
+            <For each={reaction}>
+              {(e) => (
+                <Image imageId={e} class="h-5.5 w-5.5" fallback="state" />
+              )}
+            </For>
+          </div>
+        )}
+      </For>
+      <For each={props.aura}>
+        {(aura) => (
+          // aura is 0 when no element, should not render
+          <Show when={aura}>
+            <Image imageId={aura} class="h-5.5 w-5.5" fallback="state" />
+          </Show>
+        )}
+      </For>
     </div>
   );
 }
@@ -672,30 +654,19 @@ interface EnergyBarProps {
   current: number;
   preview: number | null;
   total: number;
-  specialEnergyName?: string | undefined;
 }
 
-function EnergyBar(props: EnergyBarProps) {
-  type EnergyState = 0 | 1 | 2;
-  let energyMap = createMemo<Partial<Record<EnergyState, Component>>>(() => {
-    if (props.specialEnergyName === "fightingSpirit") {
-      return {
-        0: EnergyIconEmptyMavuika,
-        1: EnergyIconActiveMavuika,
-        2: EnergyIconExtraMavuika,
-      };
-    } else {
-      return {
-        0: EnergyIconEmpty,
-        1: EnergyIconActive,
-      };
-    }
-  });
-  const energyStates = (current: number): EnergyState[] => {
+interface EnergyCellBarProps extends EnergyBarProps {
+  cellComponentMap: Record<number, Component>;
+}
+
+function EnergyCellBar(props: EnergyCellBarProps) {
+  const energyStates = (current: number): number[] => {
     const total = props.total;
     const state = Array.from(
       { length: total },
-      (_, i) => (+(current > i) + +(current - total > i)) as EnergyState,
+      (_, i) =>
+        (Math.floor(current / total) + +(current % total > i)) as number,
     );
     return state;
   };
@@ -704,30 +675,62 @@ function EnergyBar(props: EnergyBarProps) {
     energyStates(props.preview ?? props.current),
   );
   return (
-    <div class="grid grid-cols-1 grid-rows-1">
-      <div class="grid-area-[1/1]">
-        <For each={currentStates()}>
-          {(comp) => (
+    <div
+      class="grid grid-cols-1 grid-rows-[repeat(var(--total),minmax(0,1fr))]"
+      style={{ "--total": props.total }}
+    >
+      <For each={currentStates()}>
+        {(comp, idx) => (
+          <Dynamic<Component<ComponentProps<"div">>>
+            component={props.cellComponentMap[comp]}
+            class="w-9 h-6 grid-area-[var(--row-idx)/1] my--1"
+            style={{ "--row-idx": idx() + 1 }}
+          />
+        )}
+      </For>
+      <Show when={props.preview !== null && props.preview > props.current}>
+        <For each={previewStates()}>
+          {(comp, idx) => (
             <Dynamic<Component<ComponentProps<"div">>>
-              component={energyMap()[comp]}
-              class="w-5.8 h-4"
+              component={props.cellComponentMap[comp]}
+              class="w-9 h-6 grid-area-[var(--row-idx)/1] my--1 energy-preview"
+              style={{ "--row-idx": idx() + 1 }}
             />
           )}
         </For>
-      </div>
-      <Show when={props.preview !== null && props.preview > props.current}>
-        <div class="grid-area-[1/1] energy-preview-animation">
-          <For each={previewStates()}>
-            {(comp) => (
-              <Dynamic<Component<ComponentProps<"div">>>
-                component={energyMap()[comp]}
-                class="w-5.8 h-4"
-              />
-            )}
-          </For>
-        </div>
       </Show>
     </div>
+  );
+}
+
+function NormalEnergyBar(props: EnergyBarProps) {
+  const energyMap: Record<number, Component> = {
+    0: EnergyIconEmpty,
+    1: EnergyIconActive,
+  };
+  return (
+    <EnergyCellBar
+      current={props.current}
+      preview={props.preview}
+      total={props.total}
+      cellComponentMap={energyMap}
+    />
+  );
+}
+
+function MavuikaEnergyBar(props: EnergyBarProps) {
+  const energyMap: Record<number, Component> = {
+    0: EnergyIconEmptyMavuika,
+    1: EnergyIconActiveMavuika,
+    2: EnergyIconExtraMavuika,
+  };
+  return (
+    <EnergyCellBar
+      current={props.current}
+      preview={props.preview}
+      total={props.total}
+      cellComponentMap={energyMap}
+    />
   );
 }
 
@@ -735,23 +738,17 @@ function SkirkEnergyBar(props: EnergyBarProps) {
   const currentRatio = () => (props.current * 14 + 5) / 108;
   const previewRatio = () => ((props.preview ?? props.current) * 14 + 5) / 108;
   return (
-    <div class="grid grid-cols-1 grid-rows-1">
-      <div class="grid-area-[1/1]">
-        <EnergyIconEmptySkirk class="w-4.2 h-16.2" />
-      </div>
-      <div
-        class="grid-area-[1/1] skirk-foreground"
+    <div class="grid children:grid-area-[1/1]">
+      <EnergyIconEmptySkirk class="w-4.2 h-16.2" />
+      <EnergyIconActiveSkirk
+        class="w-4.2 h-16.2 skirk-foreground"
         style={{ "--ratio": `${currentRatio() * 100}%` }}
-      >
-        <EnergyIconActiveSkirk class="w-4.2 h-16.2" />
-      </div>
+      />
       <Show when={props.preview !== null && props.preview > props.current}>
-        <div
-          class="grid-area-[1/1] skirk-foreground energy-preview-animation"
+        <EnergyIconActiveSkirk
+          class="w-4.2 h-16.2 skirk-foreground energy-preview"
           style={{ "--ratio": `${previewRatio() * 100}%` }}
-        >
-          <EnergyIconActiveSkirk class="w-4.2 h-16.2" />
-        </div>
+        />
       </Show>
     </div>
   );
@@ -765,25 +762,25 @@ interface HealthProps {
 
 function Health(props: HealthProps) {
   return (
-    <div class="absolute z-1 left-1.8 top-3 h-9.8 w-9.8 -translate-x-50% -translate-y-50% children-h-full">
-      <HealthIcon class="w-full h-full" />
-      <Show when={props.bondOfLife}>
-        <div class="bond-of-life-health">
-          <BondOfLifeIcon class="w-full h-full" />
-          <div class="bond-of-life-health-background" />
-        </div>
+    <div class="absolute z-1 left-1.5 top--2 h-10 w-10 -translate-x-50% grid children:grid-area-[1/1]">
+      <Show
+        when={props.bondOfLife}
+        fallback={<HealthIcon class="w-full h-full" />}
+      >
+        <BondOfLifeIcon class="w-full h-full" />
       </Show>
-      <Show when={props.isMax}>
-        <div class="absolute inset-0 w-full h-full max-health" />
-      </Show>
-      <div class="absolute inset-0 h-full w-full pt-1.4 flex items-center justify-center scale-y-96">
-        <StrokedText
-          text={String(props.value)}
-          class="line-height-none text-white font-bold text-4.5"
-          strokeWidth={2}
-          strokeColor="#000000B0"
+      <Show when={props.isMax || props.bondOfLife}>
+        <div
+          class="health"
+          style={{ "--bg-color": `${props.isMax ? "#fef9c3dd" : "#ff000060"}` }}
         />
-      </div>
+      </Show>
+      <StrokedText
+        text={String(props.value)}
+        class="mt-2.25 text-white font-bold text-4.5 text-center"
+        strokeWidth={2}
+        strokeColor="#000000B0"
+      />
     </div>
   );
 }
@@ -793,52 +790,83 @@ interface CharacterTagMasksProps {
 }
 
 function CharacterTagMasks(props: CharacterTagMasksProps) {
-  const assets = {
-    [CHARACTER_TAG_SHIELD]: "UI_GCG_Shield_01",
-    [CHARACTER_TAG_BARRIER]: "UI_GCG_Shield_02",
-    [CHARACTER_TAG_DISABLE_SKILL]: "UI_GCG_Frozen",
+  const TAG_MASK_MAP: Record<number, string> = {
+    [CHARACTER_TAG_SHIELD]: "MaskShield",
+    [CHARACTER_TAG_BARRIER]: "MaskBarrier",
+    [CHARACTER_TAG_DISABLE_SKILL]: "MaskFrozen",
     // "UI_GCG_Rocken",
     // "UI_GCG_Dizzy",
   };
   return (
-    <WithDelicateUi assetId={Object.values(assets)} fallback={<></>}>
-      {(...imgs) => (
-        <div class="absolute inset-0 pointer-events-none children-absolute children-inset-1/2 children--translate-x-1/2 children--translate-y-1/2 children-h-92% children-w-full children-scale-125%">
-          <Index each={Object.keys(assets)}>
-            {(flag, i) => (
-              <Show when={props.tags & Number(flag())}>{imgs[i]}</Show>
-            )}
-          </Index>
-        </div>
+    <Index each={Object.keys(TAG_MASK_MAP)}>
+      {(flag) => (
+        <Show when={props.tags & Number(flag())}>
+          <img
+            class="m--3 w-27 h-42 max-w-27 max-h-42"
+            src={`https://ui-assets.piovium.org/${TAG_MASK_MAP[Number(flag())]}.webp`}
+            draggable="false"
+          />
+        </Show>
       )}
-    </WithDelicateUi>
+    </Index>
+  );
+}
+
+interface TechniqueProps {
+  data: StatusInfo;
+  replace: boolean;
+}
+
+function Technique(props: TechniqueProps) {
+  const data = createMemo(() => props.data);
+  return (
+    <div class="w-7 h-7 mt-0.5 grid children:grid-area-[1/1]">
+      <Image
+        class="technique-icon"
+        imageId={data().data.definitionId}
+        type={"icon"}
+        fallback="technique"
+        bool:data-entering={data().animation === "entering"}
+        bool:data-disposing={data().animation === "disposing"}
+      />
+      <Show when={props.replace}>
+        {/* with animate no render */}
+        <ReplaceEquipment noRender class="w-6.5 h-6.5 place-self-center" />
+      </Show>
+      <div
+        class="rounded-full technique-effect"
+        bool:data-usable={data().data.hasUsagePerRound}
+        bool:data-entering={data().animation === "entering"}
+        bool:data-disposing={data().animation === "disposing"}
+        bool:data-triggered={data().triggered}
+      />
+    </div>
   );
 }
 
 interface EquipmentProps {
   data: StatusInfo;
-  children: JSX.Element;
+  icon: Component;
+  replace: boolean;
 }
 
 function Equipment(props: EquipmentProps) {
-  const ch = children(() => props.children);
   const data = createMemo(() => props.data);
   return (
-    <div class="relative w-7 h-6.5 rounded-full">
-      {ch()}
-      <div
-        class="absolute top-0 w-7 h-7 rounded-full equipment-usage"
-        bool:data-usable={data().data.hasUsagePerRound}
-        bool:data-disposing={data().animation === "disposing"}
-      />
-      <div
-        class="absolute top-0 w-7 h-7 rounded-full equipment-animation-1"
+    <div class="w-7 h-7 mb--0.5 grid children:grid-area-[1/1]">
+      <Dynamic<Component<ComponentProps<"div">>>
+        component={props.icon}
+        class="equipment-icon"
         bool:data-entering={data().animation === "entering"}
         bool:data-disposing={data().animation === "disposing"}
-        bool:data-triggered={data().triggered}
       />
+      <Show when={props.replace}>
+        {/* with animate no render */}
+        <ReplaceEquipment noRender class="w-6.5 h-6.5 place-self-center" />
+      </Show>
       <div
-        class="absolute top-0 w-7 h-7 rounded-full equipment-animation-2"
+        class="rounded-full equipment-effect"
+        bool:data-usable={data().data.hasUsagePerRound}
         bool:data-entering={data().animation === "entering"}
         bool:data-disposing={data().animation === "disposing"}
         bool:data-triggered={data().triggered}

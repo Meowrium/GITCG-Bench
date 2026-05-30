@@ -13,7 +13,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import { For } from "solid-js";
+import { For, Show } from "solid-js";
 import { useAssetsManager } from "./context";
 import { typeTagText } from "./text_map";
 
@@ -24,12 +24,12 @@ export interface TagProps {
 export function Tags(props: TagProps) {
   const { t } = useAssetsManager();
   return (
-    <ul class="flex flex-row gap-2 flex-wrap mb-3">
+    <ul class="flex flex-row gap-[0.5em] flex-wrap mb-[0.5em]">
       <For each={props.tags}>
         {(tag) => (
-          <li class="bg-yellow-8 py-0.5 px-1 text-yellow-1 text-xs rounded-sm">
-            {typeTagText(tag, t)}
-          </li>
+          <Show when={typeTagText(tag, t)}>
+            {(tagText) => <li class="card-tag">{tagText()}</li>}
+          </Show>
         )}
       </For>
     </ul>

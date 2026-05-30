@@ -20,7 +20,7 @@ import path from "node:path";
 
 async function compileSvg(filepath: string, source: string) {
   const filename = path.basename(filepath);
-  const remoteRenderedUrl = `https://ui.assets.gi-tcg.guyutongxue.site/rendered-svg/${filename}.webp`;
+  const remoteRenderedUrl = `https://ui-assets.piovium.org/${filename}.webp`;
   const svgSource = source
     .replace(/([{}])/g, "{'$1'}")
     .replace(/<!--\s*([\s\S]*?)\s*-->/g, "{/* $1 */}");
@@ -45,7 +45,7 @@ export default (props = {}) => {
           bool:data-display-none={!remoteLoaded()}
           {...elProps}
           src={remoteRenderedUrl}
-          draggable={false}
+          draggable="false"
           onError={() => {
             setRemoteError(true);
             window.GI_TCG_REMOTE_RENDERED_ERRORS.push(remoteRenderedUrl);
@@ -84,7 +84,7 @@ export default function svgWithFallback(): Plugin {
 
     configResolved(cfg) {
       config = cfg;
-      solidPlugin = config.plugins.find((p) => p.name === "solid");
+      solidPlugin = config.plugins.find((p) => p.name === "solid")!;
       if (!solidPlugin) {
         throw new Error("solid plugin not found");
       }
@@ -111,8 +111,8 @@ export default function svgWithFallback(): Plugin {
         const transformFn =
           typeof solidPlugin.transform === "function"
             ? solidPlugin.transform
-            : solidPlugin.transform.handler;
-        return transformFn.bind(this)(source, `${path}.tsx`, transformOptions);
+            : solidPlugin.transform?.handler;
+        return transformFn?.bind(this)(source, `${path}.tsx`, transformOptions);
       }
     },
   };

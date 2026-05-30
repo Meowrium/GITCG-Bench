@@ -74,10 +74,11 @@ export default {
     buttonConfirm: "Confirm",
     buttonCancel: "Cancel",
     confirmGiveUpGame: "Are you sure you want to concede this match?",
-    liveStreamingMode: "Live Streaming",
+    spectatorMode: "Spectating",
     gameVictory: "Victory",
     gameDefeat: "Defeat",
     buttonDeclareEnd: "End Round",
+    willGetFirst: "Go First in Next Round",
   },
   bottom: {
     invalidatedCardEffectHint: "This card will be rendered ineffective",

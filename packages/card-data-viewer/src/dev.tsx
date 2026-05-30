@@ -19,23 +19,22 @@ import { render } from "solid-js/web";
 import { AssetsManager } from "@gi-tcg/assets-manager";
 
 function App() {
-  const enAssetsManager = new AssetsManager({ language: "EN" });
+  const enAssetsManager = new AssetsManager({ language: "CHS" });
   const { CardDataViewer, showCharacter, showState, showCard, showSkill } =
     createCardDataViewer({
-      includesImage: true,
       assetsManager: () => enAssetsManager,
-      locale: () => "en"
+      locale: () => "zh-CN"
     });
   onMount(() => {
     showState(
       "character",
       {
         id: -500001,
-        definitionId: 1304,
+        definitionId: 1212,
         aura: 0,
         defeated: false,
-        health: 10,
-        maxHealth: 10,
+        health: 5,
+        maxHealth: 100,
         energy: 2,
         maxEnergy: 2,
         tags: 0,
@@ -92,14 +91,18 @@ function App() {
     //     },
     //   ],
     // });
-    // showState("summon", {
-    //   id: -5000001,
-    //   definitionId: 113041,
-    //   descriptionDictionary: {},
-    //   hasUsagePerRound: false,
-    //   variableName: "usage",
-    //   variableValue: 2,
-    // });
+    showState("entity", {
+      id: -5000001,
+      definitionId: 113041,
+      definitionCost: [],
+      tags: 0,
+      descriptionDictionary: {},
+      hasUsagePerRound: false,
+      variableName: "usage",
+      variableValue: 2,
+      type: 4,
+      attachment: []
+    });
     // showCard(212111);
     // showCharacter(1610);
     // showSkill(12111);

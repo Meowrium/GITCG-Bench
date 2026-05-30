@@ -1,4 +1,5 @@
 // Copyright (C) 2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -31,7 +32,7 @@ function parseTime(time: number) {
 export function TimerCapsule(props: TimerProps) {
   return (
     <Show when={props.timer && props.timer.current > 20}>
-      <div class="h-8 w-20 flex items-center justify-center rounded-full b-2 line-height-none font-bold bg-#e9e2d3 text-black/70 b-black/70 opacity-50">
+      <div class="h-6 min-w-20 px-3 rounded-full text-3.5 text-center line-height-6 font-bold bg-#e9e2d3/70 text-black/70 pointer-events-none select-none">
         {parseTime(props.timer!.current)}
       </div>
     </Show>
@@ -42,7 +43,7 @@ export function TimerAlert(props: TimerProps) {
   return (
     <Show when={props.timer && props.timer.current <= 20}>
       <div
-        class="absolute top-6 left-50% translate-x--50%  bg-black text-white opacity-80 py-2 px-4 rounded-2 z-29 whitespace-pre font-bold  data-[alert]:text-red pointer-events-none"
+        class="self-start mt-6 bg-black/80 text-white py-2 px-4 rounded-lg z-7 font-bold data-[alert]:text-red pointer-events-none select-none"
         bool:data-alert={props.timer!.current <= 10}
       >
         {parseTime(props.timer!.current)}

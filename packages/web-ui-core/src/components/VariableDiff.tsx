@@ -1,4 +1,5 @@
 // Copyright (C) 2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -14,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import { PbModifyDirection } from "@gi-tcg/typings";
-import { createMemo, Match, Show, Switch } from "solid-js";
+import { createMemo, Match, Switch, Show } from "solid-js";
 import { StrokedText } from "./StrokedText";
 import DefeatedPreviewIcon from "../svg/DefeatedPreviewIcon.svg?fb";
 import RevivePreviewIcon from "../svg/RevivePreviewIcon.svg?fb";
@@ -23,55 +24,61 @@ export interface VariableDiffProps {
   class?: string;
   defeated?: boolean;
   revived?: boolean;
-  oldValue: number;
-  newValue: number;
-  direction: PbModifyDirection;
+  oldValue?: number;
+  newValue?: number;
+  direction?: PbModifyDirection;
 }
 
 export function VariableDiff(props: VariableDiffProps) {
-  const increase = createMemo(
-    () =>
-      props.newValue > props.oldValue ||
-      (props.newValue === props.oldValue &&
-        props.direction !== PbModifyDirection.DECREASE),
-  );
+  const showValue = createMemo(() => {
+    if (
+      typeof props.oldValue === "undefined" ||
+      typeof props.newValue === "undefined"
+    ) {
+      return void 0;
+    } else {
+      return props.newValue - props.oldValue;
+    }
+  });
+  const increase = createMemo<boolean>(() => {
+    const showingValue = showValue();
+    if (typeof showingValue === "number") {
+      return showingValue > 0;
+    } else if (props.direction) {
+      return props.direction !== PbModifyDirection.DECREASE;
+    } else {
+      return props.defeated ? false : !!props.revived;
+    }
+  });
   const backgroundColor = createMemo(() =>
     increase() ? "#6e9b3a" : props.defeated ? "#a25053" : "#d14f51",
   );
   return (
     <div
-      class={`scale-75 origin-top-left text-white h-8 inline-grid grid-cols-[max-content] grid-rows-[max-content] place-items-center ${
-        props.class ?? ""
-      }`}
+      class={`h-6 grid children:grid-area-[1/1] isolate ${props.class ?? ""}`}
       style={{
         "--bg-color": backgroundColor(),
       }}
     >
-      <div class="grid-area-[1/1] bg-black rounded-full h-full w-full"/>
-      <div class="grid-area-[1/1] bg-black rounded-1 h-full w-[calc(100%-8px)] mx-1"/>
-      <div class="grid-area-[1/1] bg-[var(--bg-color)] rounded-full h-[calc(100%-4px)] w-[calc(100%-4px)] m-0.5"/>
-      <div class="grid-area-[1/1] bg-[var(--bg-color)] rounded-0.5 h-[calc(100%-4px)] w-[calc(100%-12px)] my-0.5 mx-1.5"/>
-      <div class="grid-area-[1/1] inline-flex items-center px-2.5 w-max h-8">
+      <div class="bg-[var(--bg-color)] rounded-full b-black/60 b-2 z-0" />
+      <div class="bg-[var(--bg-color)] rounded-0.5 mx-1 b-black/60 b-2 mix-blend-lighten z-0" />
+      <div class="flex items-center px-1.5 w-max h-6 z-1">
         <Switch>
           <Match when={props.defeated}>
-            <div class="relative h-8 w-8 overflow-visible shrink-0">
-              <DefeatedPreviewIcon noRender class="absolute top-50% left-50% h-10 w-10 -translate-x-50% -translate-y-55%" />
-            </div>
+            <DefeatedPreviewIcon class="h-6.5 w-6.5 mx--0.75 mt--1.25 max-w-6.5" />
           </Match>
           <Match when={props.revived}>
-            <div class="relative h-8 w-8 overflow-visible shrink-0">
-              <RevivePreviewIcon noRender class="absolute top-50% left-50% h-10 w-10 -translate-x-50% -translate-y-55%" />
-            </div>
-          </Match>          
+            <RevivePreviewIcon class="h-6.5 w-6.5 mx--0.75 mt--1.25 max-w-6.5" />
+          </Match>
         </Switch>
-        <StrokedText
-          class="shrink-0 font-bold font-size-5 line-height-none mx-0.5"
-          text={`${increase() ? "+" : "-"}${Math.abs(
-            props.newValue - props.oldValue,
-          )}`}
-          strokeWidth={2}
-          strokeColor="black"
-        />        
+        <Show when={showValue() !== undefined}>
+          <StrokedText
+            class="shrink-0 font-bold font-size-4 line-height-none mx-0.5 text-white"
+            text={`${increase() ? "+" : "-"}${Math.abs(showValue() as number)}`}
+            strokeWidth={2}
+            strokeColor="black"
+          />
+        </Show>
       </div>
     </div>
   );

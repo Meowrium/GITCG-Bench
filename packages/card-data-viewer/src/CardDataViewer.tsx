@@ -13,23 +13,34 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import type { AnyState } from "@gi-tcg/core";
+import type {
+  PbAttachmentState,
+  PbCharacterState,
+  PbEntityState,
+} from "@gi-tcg/typings";
 import {
   createEffect,
   createMemo,
   createSignal,
   ErrorBoundary,
   For,
+  Match,
   Show,
+  Switch,
 } from "solid-js";
 import { ActionCard, Character, Entity, Keyword, Skill } from "./Entity";
 import { useAssetsManager } from "./context";
+import { CardFace } from "./CardFace";
 
-export type StateType =
-  | AnyState["definition"]["type"]
-  | "card"
-  | "skill"
-  | "keyword";
+type MainStateType = "character" | "card" | "entity" | "skill" | "keyword";
+type SubStateType =
+  | "equipment"
+  | "status"
+  | "equipAndStatus"
+  | "combatStatus"
+  | "attachment";
+
+export type StateType = MainStateType | SubStateType;
 
 export type ViewerInput =
   | {
@@ -42,15 +53,12 @@ export type ViewerInput =
       id: number;
       type: StateType;
       definitionId: number;
-      variableValue?: number;
-      descriptionDictionary: {
-        [key: string]: string;
-      };
+      state: PbCharacterState | PbEntityState | PbAttachmentState;
     };
 
 export interface CardDataViewerProps {
   inputs: ViewerInput[];
-  includesImage: boolean;
+  mainImageDefId: number | null;
 }
 
 export interface CardDataViewerContainerProps extends CardDataViewerProps {
@@ -67,14 +75,48 @@ export function CardDataViewerContainer(props: CardDataViewerContainerProps) {
 
 function CardDataViewer(props: CardDataViewerProps) {
   const { t } = useAssetsManager();
-  const grouped = createMemo(() => Object.groupBy(props.inputs, (i) => i.type));
-  const hasStatuses = () => {
+  const [combineCharEntities, setCombineCharEntities] =
+    createSignal<boolean>(false);
+
+  const grouped = createMemo(() => {
+    const combineEquipAndStatus = combineCharEntities();
+    return Object.groupBy(props.inputs, (i) => {
+      if (
+        combineEquipAndStatus &&
+        (i.type === "equipment" || i.type === "status")
+      ) {
+        return "equipAndStatus";
+      } else {
+        return i.type;
+      }
+    });
+  });
+  const subEntities = () => {
+    const render: (ViewerInput | SubStateType)[] = [];
     const g = grouped();
-    return g.equipment || g.status || g.combatStatus || g.attachment;
+    for (const t of [
+      "equipment",
+      "status",
+      "equipAndStatus",
+      "combatStatus",
+      "attachment",
+    ] as SubStateType[]) {
+      if (g[t]?.length) {
+        render.push(t);
+        render.push(...g[t]);
+      }
+    }
+    return render;
   };
 
+  const showCombineButton = (type: SubStateType) =>
+    !!(
+      (grouped().equipment?.length && grouped().status?.length) ||
+      grouped().equipAndStatus?.length
+    ) && ["equipment", "status", "equipAndStatus"].includes(type);
+
   const [explainKeyword, setExplainKeyword] = createSignal<number | null>(null);
-  const onRequestExplain = (definitionId: number) => {
+  const onRequestExplain = (definitionId: number | null) => {
     setExplainKeyword((prev) => (prev === definitionId ? null : definitionId));
   };
 
@@ -90,130 +132,76 @@ function CardDataViewer(props: CardDataViewerProps) {
           </div>
         )}
       >
-        <div class="h-full w-full flex flex-row justify-begin items-start select-none gap-2 min-h-0">
-          <For each={grouped().character}>
-            {(input) => (
-              <div class="card-panel">
-                <Character
-                  {...props}
-                  input={input}
-                  onRequestExplain={onRequestExplain}
-                />
-              </div>
-            )}
-          </For>
-          <For each={grouped().card}>
-            {(input) => (
-              <div class="card-panel">
-                <ActionCard
-                  class="min-h-0"
-                  {...props}
-                  input={input}
-                  onRequestExplain={onRequestExplain}
-                />
-              </div>
-            )}
-          </For>
-          <For each={grouped().skill}>
-            {(input) => (
-              <div class="card-panel">
-                <Skill
-                  class="min-h-0"
-                  {...props}
-                  input={input}
-                  onRequestExplain={onRequestExplain}
-                />
-              </div>
-            )}
-          </For>
-          <For
-            each={[...(grouped().summon ?? []), ...(grouped().support ?? [])]}
-          >
-            {(input) => (
-              <div class="card-panel">
-                <Entity
-                  class="min-h-0"
-                  {...props}
-                  input={input}
-                  onRequestExplain={onRequestExplain}
-                />
-              </div>
-            )}
-          </For>
-          <Show when={hasStatuses()}>
+        <Show when={props.mainImageDefId}>
+          {(id) => <CardFace defId={id()} />}
+        </Show>
+        <For each={grouped().character}>
+          {(input) => (
             <div class="card-panel">
-              <Show when={grouped().equipment?.length}>
-                <h3 class="text-yellow-7 mb-2">{t("equipment")}</h3>
-              </Show>
-              <For each={grouped().equipment}>
-                {(input) => (
-                  <Entity
-                    class="b-yellow-3 b-1 rounded-md mb-2"
-                    {...props}
-                    input={input}
-                    asChild
-                    onRequestExplain={onRequestExplain}
-                  />
-                )}
-              </For>
-              <Show when={grouped().status?.length}>
-                <h3 class="text-yellow-7 mb-2">{t("status")}</h3>
-              </Show>
-              <For each={grouped().status}>
-                {(input) => (
-                  <Entity
-                    class="b-yellow-3 b-1 rounded-md mb-2"
-                    {...props}
-                    input={input}
-                    asChild
-                    onRequestExplain={onRequestExplain}
-                  />
-                )}
-              </For>
-              <Show when={grouped().combatStatus?.length}>
-                <h3 class="text-yellow-7 mb-2">{t("combatStatus")}</h3>
-              </Show>
-              <For each={grouped().combatStatus}>
-                {(input) => (
-                  <Entity
-                    class="b-yellow-3 b-1 rounded-md mb-2"
-                    {...props}
-                    input={input}
-                    asChild
-                    onRequestExplain={onRequestExplain}
-                  />
-                )}
-              </For>
-              <Show when={grouped().attachment?.length}>
-                <h3 class="text-yellow-7 mb-2">{t("attachmentStatus")}</h3>
-              </Show>
-              <For each={grouped().attachment}>
-                {(input) => (
-                  <Entity
-                    class="b-yellow-3 b-1 rounded-md mb-2"
-                    {...props}
-                    input={input}
-                    asChild
-                    onRequestExplain={onRequestExplain}
-                  />
+              <Character input={input} onRequestExplain={onRequestExplain} />
+            </div>
+          )}
+        </For>
+        <For each={[...(grouped().card ?? []), ...(grouped().entity ?? [])]}>
+          {(input) => (
+            <div class="card-panel">
+              <ActionCard input={input} onRequestExplain={onRequestExplain} />
+            </div>
+          )}
+        </For>
+        <For each={grouped().skill}>
+          {(input) => (
+            <div class="card-panel">
+              <Skill input={input} onRequestExplain={onRequestExplain} />
+            </div>
+          )}
+        </For>
+        <Show when={subEntities()?.length}>
+          <div class="card-panel">
+            <div class="flex flex-col gap-[0.5em]">
+              <For each={subEntities()}>
+                {(entity) => (
+                  <Switch>
+                    <Match when={typeof entity === "string" && entity}>
+                      {(entityType) => (
+                        <h3
+                          class="w-full text-center rounded-full entity-category"
+                          bool:data-show-combine-button={showCombineButton(
+                            entityType(),
+                          )}
+                          onClick={() => {
+                            if (showCombineButton(entityType())) {
+                              setCombineCharEntities((v) => !v);
+                            }
+                          }}
+                        >
+                          {t(entityType())}
+                        </h3>
+                      )}
+                    </Match>
+                    <Match when={true}>
+                      <Entity
+                        input={entity as ViewerInput}
+                        asChild
+                        onRequestExplain={onRequestExplain}
+                      />
+                    </Match>
+                  </Switch>
                 )}
               </For>
             </div>
-          </Show>
-          <Show when={explainKeyword()}>
-            {(defId) => (
-              <div class="card-panel">
-                <Keyword {...props} definitionId={defId()} />
-                <div
-                  class="absolute right-1 top-1 text-xs"
-                  onClick={() => setExplainKeyword(null)}
-                >
-                  &#10060;
-                </div>
-              </div>
-            )}
-          </Show>
-        </div>
+          </div>
+        </Show>
+        <Show when={explainKeyword()}>
+          {(defId) => (
+            <div class="card-panel">
+              <h3 class="w-full text-center rounded-full mb-[0.5em] entity-category">
+                {t("rulesExplanation")}
+              </h3>
+              <Keyword {...props} definitionId={defId()} />
+            </div>
+          )}
+        </Show>
       </ErrorBoundary>
     </div>
   );

@@ -1,4 +1,5 @@
 // Copyright (C) 2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -43,7 +44,7 @@ export function Background(props: BackgroundProps) {
   const maskId = createUniqueId();
   const isMobileSafari = () => "GestureEvent" in window;
   const maskUrl = isMobileSafari()
-    ? "https://ui.assets.gi-tcg.guyutongxue.site/rendered-svg/NightsoulsBlessingMask.svg.webp"
+    ? "https://ui-assets.piovium.org/NightsoulsBlessingMask.svg.webp"
     : NightsoulsBlessingMask;
   return (
     <svg

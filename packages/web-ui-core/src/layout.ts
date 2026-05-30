@@ -37,20 +37,20 @@ export const CARD_WIDTH = 21;
 
 const CHARACTER_AREA_HEIGHT = CARD_HEIGHT + 3 * GADGET_HEIGHT;
 const CHARACTER_AREA_WIDTH = CARD_WIDTH;
-const CHARACTER_AREA_GAP = 4.8;
+const CHARACTER_AREA_GAP = 6;
 
 const TOTAL_CHARACTERS_MAX_WIDTH =
   4 * CHARACTER_AREA_WIDTH + 3 * CHARACTER_AREA_GAP;
 
-const ENTITY_HEIGHT = 18;
-const ENTITY_WIDTH = 15;
-const ENTITY_GAP = 4;
+const ENTITY_HEIGHT = 19;
+const ENTITY_WIDTH = 16;
+const ENTITY_GAP = 4.5;
 const ENTITY_AREA_HEIGHT = 2 * ENTITY_HEIGHT + ENTITY_GAP;
 const ENTITY_AREA_WIDTH = 2 * ENTITY_WIDTH + ENTITY_GAP;
 
 const HAND_CARD_BLURRED_SHOW_HEIGHT = 15;
 const HAND_CARD_BLURRED_SHOW_WIDTH = 10;
-const OPP_HAND_CARD_RIGHT_OFFSET = 21;
+const OPP_HAND_CARD_RIGHT_OFFSET = 24;
 
 const SKILL_BUTTON_WIDTH = 15;
 
@@ -64,8 +64,7 @@ const HAND_CARD_HOVERING_X_OFFSET = 2;
 
 const HAND_CARD_FOCUSING_AREA_HEIGHT_WHEN_DRAGGING = CARD_HEIGHT + 10;
 
-const SHOWING_CARD_GAP_MIN = 10;
-const SHOWING_CARD_X_MARGIN = 60;
+export const SHOWING_CARD_X_MARGIN = 60;
 
 export function getCharacterAreaPos(
   [height, width]: Size,
@@ -120,8 +119,8 @@ export function getEntityPos(
     : halfHeight + gapAroundEntityArea;
   const entityAreaX =
     type === "summon"
-      ? halfWidth + TOTAL_CHARACTERS_MAX_WIDTH / 2 + 4
-      : halfWidth - TOTAL_CHARACTERS_MAX_WIDTH / 2 - 4 - ENTITY_AREA_WIDTH;
+      ? halfWidth + TOTAL_CHARACTERS_MAX_WIDTH / 2
+      : halfWidth - TOTAL_CHARACTERS_MAX_WIDTH / 2 - ENTITY_AREA_WIDTH;
   const x = entityAreaX + (index % 2) * (ENTITY_WIDTH + ENTITY_GAP);
   const y = entityAreaY + Math.floor(index / 2) * (ENTITY_HEIGHT + ENTITY_GAP);
   return [x, y];
@@ -139,8 +138,7 @@ export function getHandCardBlurredPos(
     let y =
       (height - MINIMUM_HEIGHT) / 2 +
       HAND_CARD_BLURRED_SHOW_HEIGHT -
-      CARD_HEIGHT -
-      3;
+      CARD_HEIGHT;
     if (!showHands) {
       y = HAND_CARD_BLURRED_SHOW_HEIGHT - CARD_HEIGHT - 2 - CARD_HEIGHT / 2;
     }
@@ -155,8 +153,7 @@ export function getHandCardBlurredPos(
     let y =
       (height - MINIMUM_HEIGHT) / 2 +
       MINIMUM_HEIGHT -
-      HAND_CARD_BLURRED_SHOW_HEIGHT +
-      2;
+      HAND_CARD_BLURRED_SHOW_HEIGHT - 1;
     if (!showHands) {
       y = height - HAND_CARD_BLURRED_SHOW_HEIGHT + 3 + CARD_HEIGHT / 2;
     }
@@ -178,6 +175,35 @@ export function getHandCardBlurredPos(
     const x = areaX + index * HAND_CARD_BLURRED_SHOW_WIDTH;
     return [x, y];
   }
+}
+
+export function getOppHandCardFocusedPos(
+  [height, width]: Size,
+  totalCount: number,
+  index: number,
+  hoveringIndex: number | null,
+): Pos {
+  const yBase = (height - MINIMUM_HEIGHT) / 2;
+  const y = yBase + (index === hoveringIndex ? HAND_CARD_HOVERING_Y_OFFSET : 0);
+  const halfWidth = width / 2;
+  const cardAreaCenter = halfWidth + HAND_CARD_FOCUSED_CENTER_X_OFFSET;
+  const cardAreaMaxWidth = 9 * HAND_CARD_FOCUSED_SHOW_WIDTH_MIN + CARD_WIDTH;
+  const realGap = Math.min(
+    (cardAreaMaxWidth - CARD_WIDTH) / (totalCount - 1),
+    CARD_WIDTH + HAND_CARD_FOCUSED_GAP,
+  );
+  const cardAreaWidth = realGap * (totalCount - 1) + CARD_WIDTH;
+  const cardAreaX = cardAreaCenter - cardAreaWidth / 2;
+  let x = cardAreaX + index * realGap;
+  if (hoveringIndex === null) {
+    return [x, y];
+  }
+  if (index < hoveringIndex) {
+    x -= HAND_CARD_HOVERING_X_OFFSET;
+  } else if (index > hoveringIndex) {
+    x += HAND_CARD_HOVERING_X_OFFSET;
+  }
+  return [x, y];
 }
 
 export function getPilePos([height, width]: Size, opp: boolean): Pos {
@@ -239,41 +265,51 @@ export function getShowingCardPos(
   index: number,
 ): Pos {
   const y = height / 2 - CARD_HEIGHT / 2;
-  const xOffset = Math.min(
-    (MINIMUM_WIDTH - SHOWING_CARD_X_MARGIN - CARD_WIDTH) / (totalCount - 1),
-    CARD_WIDTH + SHOWING_CARD_GAP_MIN,
-  );
-  const totalWidth = xOffset * (totalCount - 1) + CARD_WIDTH;
-  const xStart = (width - totalWidth) / 2;
-  const x = xStart + index * xOffset;
+  const gapX =
+    (MINIMUM_WIDTH - SHOWING_CARD_X_MARGIN - totalCount * CARD_WIDTH) /
+    (totalCount + 1);
+  const xStart = (width - MINIMUM_WIDTH + SHOWING_CARD_X_MARGIN) / 2 + gapX;
+  const x = xStart + index * (CARD_WIDTH + gapX);
   return [x, y];
 }
 
 export function getPileHintPos(size: Size, opp: boolean) {
   const [x, y] = getPilePos(size, opp);
   return {
-    x: x + 2,
-    y: y - CARD_WIDTH / 2 - 3,
+    x: x - 4.5,
+    y: y - CARD_WIDTH / 2 - 4.5,
   };
 }
 
-export function getHandHintPos(size: Size, opp: boolean, value: number) {
+export function getHandHintPos(
+  size: Size,
+  opp: boolean,
+  value: number,
+  focused: boolean,
+) {
   if (opp) {
+    if (focused) {
+      const [x, y] = getOppHandCardFocusedPos(size, value, value - 1, null);
+      return {
+        x: x + CARD_WIDTH - 9,
+        y: y + CARD_HEIGHT + 1,
+      };
+    }
     const [x, y] = getHandCardBlurredPos(size, true, true, value, value - 1, 0);
     return {
-      x: x - CARD_WIDTH / 2 - 3,
-      y: y + CARD_HEIGHT + 2,
+      x: x - 9,
+      y: y + CARD_HEIGHT + 1,
     };
   } else {
     const [x, y] = getHandCardFocusedPos(size, value, value - 1, null);
     return {
-      x: x + CARD_WIDTH / 2 - 2,
+      x: x + CARD_WIDTH - 9,
       y: y - 10,
     };
   }
 }
 
-export const TUNNING_AREA_WIDTH = 20;
+export const TUNNING_AREA_INSET = 25;
 
 export function getTuningAreaPos(
   [height, width]: Size,
@@ -282,7 +318,7 @@ export function getTuningAreaPos(
   const tangent = MINIMUM_WIDTH / 2 / PERSPECTIVE;
   let x = (width - MINIMUM_WIDTH) / 2 + MINIMUM_WIDTH - DRAGGING_Z * tangent;
   if (draggingHand?.status === "moving" && draggingHand.tuneStep) {
-    x -= TUNNING_AREA_WIDTH;
+    x -= TUNNING_AREA_INSET;
   }
   return [x, 0];
 }

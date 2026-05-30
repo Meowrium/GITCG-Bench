@@ -79,10 +79,11 @@ export default {
     buttonConfirm: "确定",
     buttonCancel: "取消",
     confirmGiveUpGame: "确定放弃对局吗？",
-    liveStreamingMode: "直播模式",
+    spectatorMode: "观战中",
     gameVictory: "对局胜利",
     gameDefeat: "对局失败",
     buttonDeclareEnd: "宣布结束",
+    willGetFirst: "获得先手",
   },
   bottom: {
     invalidatedCardEffectHint: "此牌效果将被无效",

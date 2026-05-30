@@ -1,4 +1,5 @@
 // Copyright (C) 2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -21,18 +22,18 @@ import {
   type CardAnimatingUiState,
   type Transform,
 } from "../ui_state";
-import { type CardInfo, type StatusViewInfo } from "./Chessboard";
+import { type CardInfo } from "./Chessboard";
 import {
   type PbDiceRequirement,
   CARD_TAG_ABYSS,
   CARD_TAG_CONDUCTIVE,
 } from "@gi-tcg/typings";
-import { WithDelicateUi } from "../primitives/delicate_ui";
 import SelectingIcon from "../svg/SelectingIcon.svg?fb";
 import CardFrameNormal from "../svg/CardFrameNormal.svg?fb";
 import CardbackNormal from "../svg/CardbackNormal.svg?fb";
-import { StatusGroup } from "./StatusGroup";
-import { ElectricShocks } from "./ElectricShocks";
+import ExchangeCard from "../svg/ExchangeCard.svg?fb";
+import { AttachmentGroup } from "./StatusGroup";
+import ConductiveEffect from "../svg/ConductiveEffect.svg?fb";
 
 export interface CardProps extends CardInfo {
   selected: boolean;
@@ -124,23 +125,7 @@ const opacityKeyframes = (uiState: CardAnimatingUiState): Keyframe[] => {
   return [startKeyframe, ...middleKeyframes, endKeyframe];
 };
 
-export interface CardFaceProps {
-  definitionId: number;
-}
-
-export function CardFace(props: CardFaceProps) {
-  return (
-    <div class="absolute h-full w-full backface-hidden">
-      <div class="absolute inset-0.5 bg-#bdaa8a rounded-2" />
-      <Image
-        class="absolute inset-0 h-full w-full p-1px"
-        imageId={props.definitionId}
-        fallback="card"
-      />
-      <CardFrameNormal class="absolute inset-0 h-full w-full pointer-events-none" />
-    </div>
-  );
-}
+const EFFECTLESS_DEFINITION_ID = 208;
 
 export function Card(props: CardProps) {
   // const [data] = createResource(
@@ -169,28 +154,11 @@ export function Card(props: CardProps) {
       !!(props.data.tags & CARD_TAG_CONDUCTIVE),
   );
 
-  const EFFECTLESS_PLACEHOLDER: StatusViewInfo = {
-    id: 0,
-    data: {
-      id: 0,
-      definitionId: 208,
-      tags: 0,
-      descriptionDictionary: {},
-    },
-    animation: "none",
-    triggered: false,
-  };
-
-  const attachmentInfo = createMemo<StatusViewInfo[]>(() => {
-    const result = props.data.attachment.map<StatusViewInfo>((data) => ({
-      id: data.id,
-      data,
-      animation: "none",
-      triggered: false,
-    }));
+  const attachments = createMemo<number[]>(() => {
+    const result = props.data.attachment.map((data) => data.definitionId);
     // attachment 引入之前的 effectless 效果需要手动添加
     if (result.length === 0 && props.playStep?.isEffectless) {
-      result.push(EFFECTLESS_PLACEHOLDER);
+      result.push(EFFECTLESS_DEFINITION_ID);
     }
     return result;
   });
@@ -238,12 +206,16 @@ export function Card(props: CardProps) {
   return (
     <div
       ref={el}
-      class="absolute top-0 left-0 h-36 w-21 rounded-1.5 preserve-3d transform-origin-tl card pointer-events-auto data-[dragging-end]:pointer-events-none"
+      class={`absolute top-0 left-0 h-36 w-21 grid rounded-md [&_*]:backface-hidden
+        preserve-3d transform-origin-tl pointer-events-auto children:grid-area-[1/1] card`}
       style={style()}
       bool:data-opp-hand={props.kind === "oppHand"}
       bool:data-hidden={props.hidden}
       bool:data-transition-transform={props.enableTransition}
       bool:data-shadow={props.enableShadow}
+      bool:data-triggered={
+        props.uiState.type === "cardStatic" && props.uiState.triggered
+      }
       bool:data-playable={
         props.kind !== "switching" && props.playStep?.playable
       }
@@ -276,59 +248,43 @@ export function Card(props: CardProps) {
         props.onPointerDown?.(e, e.currentTarget);
       }}
     >
-      <div
-        class="absolute inset-0 pointer-events-none h-full w-full rounded-1.2 entity-animation-1"
-        bool:data-triggered={
-          props.uiState.type === "cardStatic" && props.uiState.triggered
-        }
+      <Image
+        class="w-21 h-36 p-1% text-3"
+        imageId={data().definitionId}
+        fallback="card"
       />
-
-      <CardFace definitionId={data().definitionId} />
+      <CardFrameNormal class="w-21 h-36 pointer-events-none" />
+      <div class="pointer-events-none rounded-md z-1 card-animation" />
       <Switch>
         <Match when={props.toBeSwitched}>
-          <WithDelicateUi
-            assetId="UI_TeyvatCard_Select_ExchangeCard"
-            fallback={
-              <div class="absolute h-full w-full backface-hidden flex items-center justify-center text-8xl text-red-500 line-height-none">
-                &#8856;
-              </div>
-            }
-          >
-            {(image) => (
-              <div class="absolute h-full w-full backface-hidden flex items-center justify-center children-w-18">
-                {image}
-              </div>
-            )}
-          </WithDelicateUi>
+          {/* with animate no render */}
+          <ExchangeCard noRender class="w-18 h-18 place-self-center z-1" />
         </Match>
         <Match when={props.selected}>
-          <div class="absolute h-full w-full backface-hidden flex items-center justify-center">
-            <SelectingIcon class="w-21 h-21" />
-          </div>
+          {/* with animate no render */}
+          <SelectingIcon noRender class="w-21 h-21 place-self-center z-1" />
         </Match>
       </Switch>
-      <StatusGroup
-        class="absolute top-0.5 attachments w-full justify-center"
-        statuses={attachmentInfo()}
-        maxCount={2}
+      <AttachmentGroup
+        class="mt-1 z-1 self-start justify-self-center"
+        attachments={attachments()}
       />
       <DiceCost
-        class="absolute left-1.8 top--1 translate-x--50% backface-hidden flex flex-col gap-1 [&:where([data-opp-hand]>*)]:rotate-180"
+        class="absolute left-2 top--0.5 translate-x--50% flex flex-col gap-1 z-2"
         cost={data().definitionCost}
-        size={36}
+        diceClass="w-9 h-9 text-4.5 m--1 max-w-9 max-h-9"
         realCost={realCost()}
       />
-      <CardbackNormal class="absolute h-full w-full backface-hidden rotate-y-180 translate-z--0.1px pointer-events-none" />
+      <CardbackNormal class="rotate-y-180 translate-z--0.1px pointer-events-none" />
       <Show when={abyssDebuff()}>
-        <div class="absolute h-full w-full backface-hidden rotate-y-180 translate-z--0.2px rounded-1.2 abyss-debuff" />
+        <div class="rotate-y-180 translate-z--0.2px rounded-1.2 abyss-debuff" />
       </Show>
       <Show when={conductiveDebuff()}>
-        <ElectricShocks
-          class={`${
-            props.kind === "oppHand"
-              ? "translate-z--0.2px inset--18%"
-              : "inset--20%"
-          }`}
+        {/* with animate no render */}
+        <ConductiveEffect
+          noRender
+          class={`m--3 w-27 h-42 max-w-27 max-h-42
+            ${props.kind === "oppHand" ? "rotate-y-180 translate-z--0.2px" : ""}`}
         />
       </Show>
     </div>

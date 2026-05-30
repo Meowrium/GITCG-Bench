@@ -17,7 +17,8 @@
 
 import path from "node:path";
 import { existsSync } from "node:fs";
-const neededModules = ["deck", "names", "share_id"];
+import { mkdir, writeFile } from "node:fs/promises";
+const neededModules = ["CHS/names","EN/names", "deck", "share_id"];
 
 for (const mod of neededModules) {
   const filepath = path.resolve(
@@ -26,6 +27,7 @@ for (const mod of neededModules) {
     `${mod}.json`,
   );
   if (!existsSync(filepath)) {
-    await Bun.write(filepath, "null");
+    await mkdir(path.dirname(filepath), { recursive: true });
+    await writeFile(filepath, "null");
   }
 }

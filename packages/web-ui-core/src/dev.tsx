@@ -16,7 +16,7 @@
 /* @refresh reload */
 
 import "./index";
-import { createSignal, onMount } from "solid-js";
+import { createSignal, onMount, Show } from "solid-js";
 import { render } from "solid-js/web";
 
 import getData from "@gi-tcg/data";
@@ -33,7 +33,7 @@ import { DetailLogViewer } from "@gi-tcg/detail-log-viewer";
 const deck0: DeckConfig = {
   characters: [1417, 1511, 1709],
   cards: [
-    214171, 332060, 215111, 214171, 214171, 322012, 332045, 332042, 331802,
+    313001, 332011, 215111, 312004, 214171, 322012, 332045, 332042, 331802,
     332006, 332042, 223041, 223041, 226031, 226031, 312009, 312009, 312010,
     312010, 313002, 313002, 321002, 321004, 321017, 321017, 322008, 322012,
     322012, 322025, 332004, 332004, 332006, 332032, 332032, 332041, 332041,
@@ -70,6 +70,9 @@ function App() {
 
   const [logs, setLogs] = createSignal<DetailLogEntry[]>([]);
 
+  // Toggle me to debug oppChessboard
+  const createOpp = true;
+
   onMount(() => {
     const state = Game.createInitialState({
       data: getData(),
@@ -79,10 +82,10 @@ function App() {
 
     const game = new Game(state);
 
-    // const io0Opp = io0.oppController.open();
-
     game.players[0].io = io0;
-    game.players[1].io = io1; // mergeIo(io1, io0Opp);
+    game.players[1].io = createOpp
+      ? mergeIo(io1, io0.oppController.open())
+      : io1;
     game.players[0].config.alwaysOmni = true;
     game.players[0].config.allowTuningAnyDice = true;
     game.onIoError = console.error;
@@ -94,21 +97,23 @@ function App() {
 
   return (
     <>
-      {/*<Chessboard0
-        rotation={0}
-        style={{ width: "80vw", height: "80vh" }}
-        autoHeight={false}
-        liveStreamingMode
-        myPlayerInfo={{
-          avatarUrl: "https://http.cat/404",
-          name: "啊啊啊宝宝你是一个松松软软香香甜甜的小蛋糕",
-        }}
-      />*/}
+      <Show when={createOpp}>
+        <Chessboard0
+          rotation={0}
+          style={{ width: "80vw", height: "80vh" }}
+          autoHeight={false}
+          myPlayerInfo={{
+            avatarUrl: "https://http.cat/404",
+            name: "啊啊啊宝宝你是一个松松软软香香甜甜的小蛋糕",
+          }}
+        />
+      </Show>
       <Chessboard0
         rotation={0}
         style={{ width: "80vw", height: "80vh" }}
         autoHeight={false}
-        // liveStreamingMode
+        chessboardColor="#537a76"
+        spectatorMode={createOpp}
         myPlayerInfo={{
           avatarUrl: "https://http.cat/404",
           name: "啊啊啊宝宝你是一个松松软软香香甜甜的小蛋糕",

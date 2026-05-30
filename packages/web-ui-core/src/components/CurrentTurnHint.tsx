@@ -17,7 +17,6 @@
 import { PbPhaseType } from "@gi-tcg/typings";
 import { Show } from "solid-js";
 import { useUiContext } from "../hooks/context";
-import { AutoResizeText } from "./AutoResizeText";
 
 export interface CurrentTurnHintProps {
   phase: PbPhaseType;
@@ -29,14 +28,10 @@ export function CurrentTurnHint(props: CurrentTurnHintProps) {
   return (
     <Show when={props.phase <= PbPhaseType.ROLL}>
       <div
-        class="h-8 w-24 flex items-center justify-center rounded-full b-2 line-height-none font-bold current-turn-hint text-color-[var(--fg-color)] border-[var(--fg-color)] bg-[var(--bg-color)] px-1 box-border"
+        class="h-6 min-w-20 px-3 rounded-full text-3.5 text-center line-height-6 font-bold current-turn-hint pointer-events-none select-none"
         data-opp={props.opp}
       >
-        <AutoResizeText minFontSize={10} class="text-center">
-          {t(
-            props.opp ? "capsule.hintOppSideFirst" : "capsule.hintMySideFirst",
-          )}
-        </AutoResizeText>
+        {t(props.opp ? "capsule.hintOppSideFirst" : "capsule.hintMySideFirst")}
       </div>
     </Show>
   );

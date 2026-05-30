@@ -14,12 +14,9 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import { Image } from "./Image";
-import { DiceIcon } from "./Dice";
+import { InlineDice } from "./Dice";
 import {
   createMemo,
-  createSignal,
-  onCleanup,
-  onMount,
   type JSX,
 } from "solid-js";
 
@@ -39,14 +36,15 @@ function InlineImage(props: { type?: RichTextImageType; id: number }) {
   return (
     <span class="inline-flex items-center justify-center align-middle">
       {props.type === "dice" ? (
-        <DiceIcon class="inline-image" type={props.id} selected={false} />
+        <InlineDice class="inline-image my--0.5" type={props.id} />
       ) : (
         <Image
-          class="inline-image"
+          class="inline-image my--0.5"
           data-image-type={props.type}
           imageId={props.id}
           type="icon"
-          fallback={props.type === "element" ? "aura" : "general"}
+          zero={props.type === "element" ? "physic" : "unknown"}
+          fallback={props.type === "element" ? "state" : "skill"}
         />
       )}
     </span>

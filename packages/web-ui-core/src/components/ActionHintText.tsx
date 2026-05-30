@@ -1,4 +1,5 @@
 // Copyright (C) 2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -21,9 +22,9 @@ export interface ActionHintTextProps {
 export function ActionHintText(props: ActionHintTextProps) {
   return (
     <div
-      class={`w-210 h-0 data-[shown]:h-6 pointer-events-none flex flex-row justify-center items-center action-hint text-#f5ebd2 font-bold text-3.5 transition-height ${
-        props.class ?? ""
-      }`}
+      class={`invisible data-[shown]:visible opacity-0 data-[shown]:opacity-100
+        w-210 h-6 text-center line-height-4.5 text-#f5ebd2 font-bold text-3.5
+        pointer-events-none select-none transition-all action-hint ${props.class ?? ""}`}
       bool:data-shown={props.text}
     >
       {props.text}

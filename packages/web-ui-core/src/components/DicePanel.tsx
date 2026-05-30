@@ -1,4 +1,5 @@
 // Copyright (C) 2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -14,23 +15,59 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import type { DiceType } from "@gi-tcg/typings";
-import { createMemo, Index, Match, Show, Switch } from "solid-js";
-import { Dice } from "./Dice";
-import { WithDelicateUi } from "../primitives/delicate_ui";
+import { Index, Show } from "solid-js";
+import { Dice, DiceContent } from "./Dice";
+import DiceCountHintBlue from "../svg/DiceCountHintBlue.svg?fb";
+import DiceCountHintYellow from "../svg/DiceCountHintYellow.svg?fb";
+import { Dynamic } from "solid-js/web";
 
 export type DicePanelState = "hidden" | "wrapped" | "visible";
 
-export interface DicePanelProps {
+export interface DiceBarProps {
+  class?: string;
   dice: DiceType[];
-  disabledDiceTypes: DiceType[];
   selectedDice: boolean[];
+  state: DicePanelState;
+  opp?: boolean;
+  spectatorMode?: boolean;
+}
+
+export function DiceBar(props: DiceBarProps) {
+  return (
+    <div
+      class={`invisible data-[shown]:visible opacity-0 data-[shown]:opacity-100
+        grid grid-cols-1 w-7 gap-1.5 place-items-center select-none transition-all
+        pb-2 pointer-events-none dice-shadow ${props.class ?? ""}`}
+      bool:data-wrapped={props.state === "wrapped"}
+      bool:data-shown={props.state !== "visible" || props.spectatorMode}
+    >
+      <Dynamic
+        component={props.opp ? DiceCountHintBlue : DiceCountHintYellow}
+        class="grid-area-[1/1] w-9 h-9 m--1 max-w-9 max-h-9"
+      />
+      <div class="grid-area-[1/1] text-white font-bold">
+        {props.dice.length}
+      </div>
+      <Index each={props.dice}>
+        {(dice, index) => (
+          <DiceContent
+            type={dice()}
+            selected={props.state === "wrapped" && props.selectedDice[index]}
+            class="w-6 h-6 m--1 max-w-6 max-h-6"
+            col={1}
+            row={index + 2}
+          />
+        )}
+      </Index>
+    </div>
+  );
+}
+
+export interface DicePanelProps extends DiceBarProps {
+  disabledDiceTypes: DiceType[];
   maxSelectedCount: number | null;
   onSelectDice: (selectedDice: boolean[]) => void;
-  state: DicePanelState;
   onStateChange: (state: DicePanelState) => void;
-  compactView?: boolean;
-  opp?: boolean;
-  hasMiniView?: boolean;
 }
 
 export function DicePanel(props: DicePanelProps) {
@@ -60,112 +97,48 @@ export function DicePanel(props: DicePanelProps) {
       props.onStateChange("visible");
     }
   };
-  const compactView = createMemo(() => props.state === "hidden" && props.compactView);
   return (
-    <Switch>
-      <Match when={compactView()}>
-        <div class="absolute aspect-ratio-[16/9] w-full max-h-full top-50% translate-y--50% pointer-events-none">
-          <div
-            class="absolute right-1 w-25 h-43 opacity-0 pointer-events-none data-[shown]:opacity-100 transition-opacity b-l-5 b-y-5 b-#443322 rounded-lt-4 rounded-lb-4 px-3 py-4 dice-panel-compact transition-all-500"
-            bool:data-shown={props.state !== "visible"}
-            data-opp={props.opp}
-            bool:data-has-mini-view={props.hasMiniView}
-          >
-            <ul class="absolute grid grid-rows-6 grid-flow-col items-center gap-1.5">
-              <Index each={props.dice}>
-                {(dice, index) => (
-                  <Dice
-                    type={dice()}
-                    size={25}
-                    selected={
-                      props.state === "wrapped" && props.selectedDice[index]
-                    }
-                  />
-                )}
-              </Index>
-            </ul>
-          </div>
-        </div>
-      </Match>
-      <Match when={true}>
+    <>
+      <Show when={!props.spectatorMode}>
         <div
-          class="absolute right--40 data-[state=visible]:right--4 data-[state=wrapped]:right--4 top-0 bottom-0 pr-4 gap-2 w-0 data-[state=visible]:w-40 data-[state=wrapped]:w-18 h-full flex flex-row items-center transition-right dice-panel data-[state=hidden]:pr-0 select-none"
+          class={`justify-self-end w-42 h-full mr--4 pr-6
+            flex flex-row items-center select-none dice-panel`}
           data-state={props.state}
         >
           <div
-            class="text-#e7d090 h-60 ml-1 flex items-center select-none cursor-pointer"
+            class={`h-40 w-8 flex items-center justify-center select-none cursor-pointer
+              text-#e7d090 text-6 hover:text-#ffd26a hover:text-6.5`}
             data-state={props.state}
             onClick={toggleState}
           >
             {props.state === "visible" ? "\u276F" : "\u276E"}
           </div>
-          <div class="flex-grow h-full flex items-center justify-center">
-            <Show when={props.state === "visible"}>
-              <ul class="grid grid-cols-2 gap-x-1 gap-y-2 -translate-y-5">
-                <Index each={props.dice}>
-                  {(dice, index) => (
-                    <li
-                      class="data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed"
-                      bool:data-disabled={props.disabledDiceTypes.includes(
-                        dice(),
-                      )}
-                      onClick={() => toggleDice(dice(), index)}
-                    >
-                      <Dice
-                        type={dice()}
-                        size={48}
-                        selected={props.selectedDice[index]}
-                      />
-                    </li>
-                  )}
-                </Index>
-              </ul>
-            </Show>
-          </div>
-        </div>
-        <div
-          class="absolute right-2 top-0 bottom-0 opacity-0 pointer-events-none data-[shown]:opacity-100 transition-opacity"
-          bool:data-shown={props.state !== "visible"}
-        >
-          <div class="m-2 flex flex-col select-none gap-1.5 items-center">
-            <WithDelicateUi
-              assetId={"UI_Gcg_DiceL_Count_03"}
-              fallback={
-                <div class="h-8 w-8 mt-9 mr-0.3 flex items-center justify-center rounded-full bg-yellow-100 b-yellow-800 b-1 text-yellow-800">
-                  {props.dice.length}
-                </div>
-              }
-            >
-              {(image) => (
-                <div class="relative h-8 w-8.6 mt-9 mb-1 items-center justify-center">
-                  <div class="children-h-full children-w-full">{image}</div>
-                  <div class="absolute inset-0 top-1 flex items-center justify-center text-white font-bold">
-                    {props.dice.length}
-                  </div>
-                </div>
-              )}
-            </WithDelicateUi>
-            <ul class="flex flex-col gap-1.5 items-center dice-shadow">
+          <Show when={props.state === "visible"}>
+            <div class="grid grid-cols-2 gap-x-1 gap-y-2 mb-10 w-21 mx-auto">
               <Index each={props.dice}>
                 {(dice, index) => (
-                  <li
-                    onClick={() =>
-                      props.state === "wrapped" && toggleDice(dice(), index)
-                    }
-                  >
-                    <Dice
-                      type={dice()}
-                      selected={
-                        props.state === "wrapped" && props.selectedDice[index]
-                      }
-                    />
-                  </li>
+                  <Dice
+                    type={dice()}
+                    class="w-12 h-12 data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed m--1 max-w-12 max-h-12"
+                    selected={props.selectedDice[index]}
+                    bool:data-disabled={props.disabledDiceTypes.includes(
+                      dice(),
+                    )}
+                    onClick={() => toggleDice(dice(), index)}
+                  />
                 )}
               </Index>
-            </ul>
-          </div>
+            </div>
+          </Show>
         </div>
-      </Match>
-    </Switch>
+      </Show>
+      <DiceBar
+        class="justify-self-end self-start mr-2.5 mt-13 z-1 dice-bar-my"
+        dice={props.dice}
+        selectedDice={props.selectedDice}
+        state={props.state}
+        spectatorMode={props.spectatorMode}
+      />
+    </>
   );
 }

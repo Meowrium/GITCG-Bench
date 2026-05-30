@@ -15,11 +15,7 @@
 
 import { useNavigate, useParams, useSearchParams } from "@solidjs/router";
 import { Layout } from "../layouts/Layout";
-import {
-  PlayerInfo,
-  roomCodeToId,
-  getPlayerAvatarUrl,
-} from "../utils";
+import { PlayerInfo, roomCodeToId, getPlayerAvatarUrl } from "../utils";
 import {
   Show,
   createSignal,
@@ -83,7 +79,7 @@ const createReconnectSse = <T,>(
       clearTimeout(reconnectTimeout);
     }
     reconnectTimeout = setTimeout(() => {
-      console.warn("No data received, reconnecting...");
+      console.warn?.("No data received, reconnecting...");
       abortController?.abort();
     }, SSE_RECONNECT_TIMEOUT);
   };
@@ -183,8 +179,8 @@ export default function Room() {
   const [failed, setFailed] = createSignal<null | string>(null);
   const [chessboard, setChessboard] = createSignal<Component>();
 
-  const [showOpp, setShowOpp] = createSignal(false);
-  const [liveMode, setLiveMode] = createSignal(true);
+  // Enable opp chessboard & spectator mode
+  const [observerMode, setObserverMode] = createSignal(false);
   const [oppPlayerIo, setOppPlayerIo] = createSignal<CancellablePlayerIO>();
 
   const reportStreamError = async (e: Error) => {
@@ -323,6 +319,9 @@ export default function Room() {
       switch (payload.type) {
         case "initialized": {
           setInitialized(payload);
+          if (payload?.config?.watchable && allowWatchOpp()) {
+            setObserverMode(true);
+          }
           break;
         }
         case "notification": {
@@ -419,7 +418,7 @@ export default function Room() {
   );
 
   createEffect(() => {
-    if (showOpp()) {
+    if (observerMode()) {
       fetchOppNotification();
     } else {
       abortOppNotification();
@@ -501,24 +500,15 @@ export default function Room() {
               </Show>
               <Show when={initialized()?.config?.watchable}>
                 <Show when={allowWatchOpp()}>
-                  <input
-                    id="showOpp"
-                    type="checkbox"
-                    class="checkbox-primary"
-                    checked={showOpp()}
-                    onChange={(e) => setShowOpp(e.currentTarget.checked)}
-                  />
-                  <label for="showOpp">{t("showOpponentBoard")}</label>
-                  <Show when={showOpp()}>
-                    <input
-                      id="liveMode"
-                      type="checkbox"
-                      class="checkbox-primary"
-                      checked={liveMode()}
-                      onChange={(e) => setLiveMode(e.currentTarget.checked)}
-                    />
-                    <label for="liveMode">{t("liveMode")}</label>
-                  </Show>
+                  <button
+                    class="btn btn-outline-primary"
+                    onClick={() => setObserverMode((v) => !v)}
+                  >
+                    <i class="i-mdi-video-switch-outline" />
+                    <span>
+                      {t(`enter${observerMode() ? "PlayerView" : "ObserverMode"}`)}
+                    </span>
+                  </button>
                 </Show>
               </Show>
             </div>
@@ -626,7 +616,7 @@ export default function Room() {
                     </div>
                   </div>
                 }
-                liveStreamingMode={showOpp() && liveMode()}
+                spectatorMode={observerMode()}
               />
             </div>
           )}

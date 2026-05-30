@@ -1,4 +1,5 @@
 // Copyright (C) 2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -14,133 +15,105 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import {
-  createResource,
   createSignal,
   For,
-  Match,
   Show,
-  Switch,
+  splitProps,
+  type ComponentProps,
 } from "solid-js";
 import { Button } from "./Button";
-import { DiceCost } from "./DiceCost";
-import { CardFace } from "./Card";
+import { Image } from "./Image";
+import CardFrameNormal from "../svg/CardFrameNormal.svg?fb";
 import SelectingIcon from "../svg/SelectingIcon.svg?fb";
 import { useUiContext } from "../hooks/context";
-import { DiceType } from "@gi-tcg/typings";
-import type { AnyData } from "@gi-tcg/assets-manager";
+import { DiceCostAsync } from "./DiceCost";
 
 export interface SelectCardViewProps {
+  shown: boolean;
   candidateIds: number[];
-  nameGetter: (id: number) => string | undefined;
   onClickCard: (id: number) => void;
   onConfirm: (id: number) => void;
 }
 
 export function SelectCardView(props: SelectCardViewProps) {
-  const { t } = useUiContext();
+  const { t, assetsManager } = useUiContext();
   const [selectedId, setSelectedId] = createSignal<number | null>(null);
 
   return (
-    <div class="absolute inset-0 flex flex-col items-center justify-center gap-10 select-none">
-      <h3 class="font-bold text-3xl">{t("view.chooseCard")}</h3>
-      <ul class="flex flex-row gap-1">
+    <div
+      class="w-full h-full hidden data-[shown]:flex flex-col items-center justify-center select-none z-3 min-w-0 min-h-0 "
+      bool:data-shown={props.shown}
+    >
+      <h3 class="h-10 font-bold text-3xl text-white/80">
+        {t("view.chooseCard")}
+      </h3>
+      <div class={`flex flex-row h-36 my-15 justify-evenly w-180`}>
         <For each={props.candidateIds}>
           {(cardId) => (
-            <li class="flex flex-col items-center">
-              <div
-                class="h-36 w-21 relative"
-                onClick={() => {
-                  setSelectedId(cardId);
-                  props.onClickCard(cardId);
-                }}
-              >
-                <CardFace definitionId={cardId} />
-                <Show when={selectedId() === cardId}>
-                  <div class="absolute h-full w-full backface-hidden flex items-center justify-center">
-                    <SelectingIcon class="w-21 h-21" />
-                  </div>
-                </Show>
-                <DiceCostAsync
-                  cardDefinitionId={cardId}
-                  size={36}
-                  class="left-1.8 top--1"
-                />
+            <StaticCard
+              cardDefinitionId={cardId}
+              selected={selectedId() === cardId}
+              onClick={() => {
+                setSelectedId(cardId);
+                props.onClickCard(cardId);
+              }}
+            >
+              <div class="self-end w-35 mx--7 max-w-35 py-1 text-3 text-center text-white/80 line-height-tight translate-y-100%">
+                {assetsManager().getNameSync(cardId)}
               </div>
-              <div class="mt-2 w-36 font-size-4 text-center color-black/60 font-bold">
-                {props.nameGetter(cardId)}
-              </div>
-            </li>
+            </StaticCard>
           )}
         </For>
-      </ul>
-      <div
-        class="invisible pointer-events-none data-[shown]:visible data-[shown]:pointer-events-auto"
-        bool:data-shown={selectedId() !== null}
-      >
-        <Button
-          onClick={() => {
-            const id = selectedId();
-            if (id !== null) {
-              props.onConfirm(id);
-            }
-          }}
-        >
-          {t("view.confirmButton")}
-        </Button>
       </div>
+      <Button
+        class="visible data-[hidden]:invisible"
+        bool:data-hidden={selectedId() === null}
+        onClick={() => {
+          const id = selectedId();
+          if (id !== null) {
+            props.onConfirm(id);
+          }
+        }}
+      >
+        {t("view.confirmButton")}
+      </Button>
     </div>
   );
 }
 
-export interface DiceCostAsyncProps {
+export interface StaticCardProps extends ComponentProps<"div"> {
   cardDefinitionId: number;
-  size: number;
-  class?: string;
+  selected?: boolean;
 }
 
-export const DiceCostAsync = (props: DiceCostAsyncProps) => {
-  const { assetsManager } = useUiContext();
-  const [data] = createResource(
-    () => [props.cardDefinitionId, assetsManager()] as const,
-    ([id, manager]) => manager.getData(id),
-  );
-  const COST_MAP: Record<string, number> = {
-    GCG_COST_DICE_VOID: DiceType.Void,
-    GCG_COST_DICE_CRYO: DiceType.Cryo,
-    GCG_COST_DICE_HYDRO: DiceType.Hydro,
-    GCG_COST_DICE_PYRO: DiceType.Pyro,
-    GCG_COST_DICE_ELECTRO: DiceType.Electro,
-    GCG_COST_DICE_ANEMO: DiceType.Anemo,
-    GCG_COST_DICE_GEO: DiceType.Geo,
-    GCG_COST_DICE_DENDRO: DiceType.Dendro,
-    GCG_COST_DICE_SAME: DiceType.Aligned,
-    GCG_COST_ENERGY: DiceType.Energy,
-    GCG_COST_LEGEND: DiceType.Legend,
-  };
-  const renderCost = (data: AnyData) => {
-    if ("playCost" in data && data.playCost.length > 0) {
-      return data.playCost.map((cost) => ({
-        type: COST_MAP[cost.type],
-        count: cost.count,
-      }));
-    } else {
-      return [{ type: 8, count: 0 }];
-    }
-  };
+export function StaticCard(props: StaticCardProps) {
+  const [local, rest] = splitProps(props, [
+    "cardDefinitionId",
+    "selected",
+    "class",
+    "children",
+  ]);
   return (
-    <Switch>
-      <Match when={data.loading || data.error}>
-        <></>
-      </Match>
-      <Match when={data()}>
-        {(data) => (
-          <DiceCost
-            class={`absolute translate-x--50% backface-hidden flex flex-col gap-1 ${props.class}`}
-            cost={renderCost(data())}
-            size={props.size}
-          />
-        )}
-      </Match>
-    </Switch>
+    <div
+      class={`w-21 h-36 grid relative children:grid-area-[1/1] ${local.class ?? ""}`}
+      {...rest}
+    >
+      <Image
+        class="h-full w-full p-1% text-3"
+        imageId={local.cardDefinitionId}
+        fallback="card"
+      />
+      <CardFrameNormal class="h-full w-full pointer-events-none" />
+      <Show when={local.selected}>
+        {/* with animate no render */}
+        <SelectingIcon noRender class="w-21 h-21 place-self-center" />
+      </Show>
+      <DiceCostAsync
+        cardDefinitionId={local.cardDefinitionId}
+        class="absolute left-2 top--0.5 translate-x--50% flex flex-col gap-1"
+        diceClass="w-9 h-9 text-4.5 m--1 max-w-9 max-h-9"
+      />
+      {local.children}
+    </div>
   );
-};
+}

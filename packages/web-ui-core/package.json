@@ -1,24 +1,31 @@
 {
   "name": "@gi-tcg/web-ui-core",
-  "version": "0.19.1",
+  "version": "0.20.5",
   "description": "Core component of @gi-tcg/web-ui",
   "type": "module",
   "types": "./dist/index.d.ts",
+  "repository": {
+    "url": "https://github.com/piovium/genius-invokation",
+    "directory": "packages/web-ui-core"
+  },
   "exports": {
     ".": {
-      "bun": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
     "./style.css": "./dist/style.css"
   },
+  "files": [
+    "dist"
+  ],
   "sideEffects": [
     "**/*.css"
   ],
   "scripts": {
-    "dev": "bunx --bun vite",
+    "dev": "vite",
     "check": "tsc --noEmit",
-    "build": "bunx --bun vite build"
+    "build": "vite build",
+    "svg_render": "gnx ./scripts/svg_render.ts"
   },
   "dependencies": {
     "@gi-tcg/assets-manager": "workspace:*",
@@ -37,14 +44,16 @@
     "@gi-tcg/data": "workspace:*",
     "@gi-tcg/detail-log-viewer": "workspace:*",
     "@gi-tcg/typings": "workspace:*",
-    "puppeteer-core": "^24.14.0",
+    "@hono/node-server": "^2.0.2",
+    "hono": "^4.12.18",
+    "puppeteer-core": "^25.0.4",
     "puppeteer-screen-recorder": "^3.0.6",
     "rollup-plugin-node-externals": "catalog:",
     "solid-devtools": "^0.29.2",
     "svgo": "^4.0.0",
     "unocss": "catalog:",
-    "vite": "catalog:",
     "unplugin-dts": "catalog:",
+    "vite": "catalog:",
     "vite-plugin-solid": "catalog:"
   }
 }

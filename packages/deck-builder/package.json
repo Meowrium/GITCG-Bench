@@ -1,25 +1,32 @@
 {
   "name": "@gi-tcg/deck-builder",
-  "version": "0.19.1",
+  "version": "0.20.5",
   "type": "module",
+  "description": "SolidJS Deck Builder component for Genius Invokation TCG",
   "types": "./dist/index.d.ts",
+  "repository": {
+    "url": "https://github.com/piovium/genius-invokation",
+    "directory": "packages/deck-builder"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "bun": "./src/index.ts",
       "import": "./dist/index.js"
     },
     "./style.css": "./dist/style.css"
   },
+  "files": [
+    "dist"
+  ],
   "sideEffects": [
     "**/*.css"
   ],
   "scripts": {
-    "dev": "bunx --bun vite",
-    "preview": "bunx --bun vite preview",
+    "dev": "vite",
+    "preview": "vite preview",
     "check": "tsc --noEmit",
-    "build:vite": "bunx --bun vite build",
-    "build": "bun build:vite"
+    "build:vite": "vite build",
+    "build": "pnpm build:vite"
   },
   "peerDependencies": {
     "solid-js": "catalog:"

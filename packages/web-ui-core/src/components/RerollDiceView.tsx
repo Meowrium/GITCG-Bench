@@ -1,4 +1,5 @@
 // Copyright (C) 2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -15,14 +16,13 @@
 
 import type { DiceType } from "@gi-tcg/typings";
 import { Dice } from "./Dice";
-import { createSignal, Index, Show } from "solid-js";
+import { createSignal, Index } from "solid-js";
 import { checkPointerEvent } from "../utils";
 import { Button } from "./Button";
-import type { ChessboardViewType } from "./Chessboard";
-import { SpecialViewBackdrop } from "./ViewPanelBackdrop";
 import { useUiContext } from "../hooks/context";
 
 export interface RerollViewProps {
+  shown: boolean;
   noConfirmButton?: boolean;
   dice: DiceType[];
   selectedDice: boolean[];
@@ -47,51 +47,46 @@ export function RerollDiceView(props: RerollViewProps) {
   };
   return (
     <div
-      class="absolute inset-0  flex flex-col items-center justify-center gap-10 select-none"
+      class="w-full h-full hidden data-[shown]:flex flex-col items-center justify-center select-none z-3 min-w-0 min-h-0"
+      bool:data-shown={props.shown}
       onPointerUp={() => setSelectingOn(null)}
     >
-      <h3 class="max-w-70 px-4 text-center leading-tight font-bold text-2xl">{t("view.rerollDiceTitle")}</h3>
-      <ul class="grid grid-rows-2 grid-flow-col gap-6">
+      <h3 class="h-10 font-bold text-3xl text-white/80">
+        {t("view.rerollDiceTitle")}
+      </h3>
+      <div class="h-42 my-12 grid grid-rows-2 grid-flow-col gap-2">
         <Index each={props.dice}>
           {(dice, index) => (
-            <li>
-              <div class="relative">
-                {/* 骰子 */}
-                <Dice
-                  type={dice()}
-                  selected={props.selectedDice[index]}
-                  size={70}
-                />
-                {/* 点选、滑动点选触发区域 */}
-                <div
-                  class="cursor-pointer absolute w-60px h-60px left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-cyan opacity-0"
-                  onPointerDown={(e) => {
-                    if (checkPointerEvent(e)) {
-                      toggleDice(index);
-                      if (e.target.hasPointerCapture(e.pointerId)) {
-                        // https://w3c.github.io/pointerevents/#implicit-pointer-capture
-                        // Touchscreen may implicitly capture pointer
-                        e.target.releasePointerCapture(e.pointerId);
-                      }
-                    }
-                  }}
-                  onPointerEnter={(e) => {
-                    if (checkPointerEvent(e)) {
-                      toggleDice(index);
-                    }
-                  }}
-                />
-              </div>
-            </li>
+            <Dice
+              type={dice()}
+              selected={props.selectedDice[index]}
+              class="cursor-pointer w-20 h-20"
+              onPointerDown={(e) => {
+                if (checkPointerEvent(e)) {
+                  toggleDice(index);
+                  if (e.target.hasPointerCapture(e.pointerId)) {
+                    // https://w3c.github.io/pointerevents/#implicit-pointer-capture
+                    // Touchscreen may implicitly capture pointer
+                    e.target.releasePointerCapture(e.pointerId);
+                  }
+                }
+              }}
+              onPointerEnter={(e) => {
+                if (checkPointerEvent(e)) {
+                  toggleDice(index);
+                }
+              }}
+            />
           )}
         </Index>
-      </ul>
-      <div
+      </div>
+      <Button
         class="visible data-[hidden]:invisible"
         bool:data-hidden={props.noConfirmButton}
+        onClick={() => props.onConfirm()}
       >
-        <Button onClick={() => props.onConfirm()}>{t("view.confirmButton")}</Button>
-      </div>
+        {t("view.confirmButton")}
+      </Button>
     </div>
   );
 }

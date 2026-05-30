@@ -21,8 +21,10 @@ import {
   ElementalTuningAction,
   PbEntityArea,
   PbEntityState,
+  PbEquipmentType,
   PbHealKind,
   PbModifyDirection,
+  PbMoveEntityReason,
   PbReactionType,
   PlayCardAction,
   Reaction,
@@ -33,7 +35,6 @@ import {
   type PreviewData,
   type SwitchActiveAction,
 } from "@gi-tcg/typings";
-import type { JSX } from "solid-js";
 import type { DicePanelState } from "./components/DicePanel";
 import { DICE_COLOR } from "./components/Dice";
 import { checkDice } from "@gi-tcg/utils";
@@ -116,6 +117,8 @@ export interface ClickEntityActionStep {
   readonly type: "clickEntity";
   readonly entityId: number | "myActiveCharacter";
   readonly ui: ActionStepEntityUi;
+  /** 指示该实体将会装备的装备类型 */
+  readonly equip?: PbEquipmentType;
 }
 export interface ClickSkillButtonActionStep {
   readonly type: "clickSkillButton";
@@ -137,7 +140,6 @@ export interface ClickDeclareEndActionStep {
 export interface ClickConfirmButtonActionStep {
   readonly type: "clickConfirmButton";
   readonly confirmText: string;
-  readonly isEffectless?: boolean;
 }
 
 export const CANCEL_ACTION_STEP = {
@@ -363,6 +365,37 @@ function parsePreviewData(previewData: PreviewData[]): ParsedPreviewData {
   return result;
 }
 
+function extractEquipInfoFromPreview(
+  previewData: PreviewData[],
+): Map<number, PbEquipmentType> {
+  const result = new Map<number, PbEquipmentType>();
+  for (const data of previewData) {
+    const { $case, value } = data.mutation!;
+    let characterId: number | undefined;
+    let equipType: PbEquipmentType | undefined;
+
+    if ($case === "moveEntity") {
+      if (
+        value.toWhere !== PbEntityArea.CHARACTER ||
+        value.reason !== PbMoveEntityReason.EQUIP
+      ) {
+        continue;
+      }
+      characterId = value.toMasterCharacterId;
+      equipType = value.entity?.equipment;
+    }
+    if (
+      typeof characterId === "undefined" ||
+      typeof equipType === "undefined"
+    ) {
+      continue;
+    }
+
+    result.set(characterId, equipType);
+  }
+  return result;
+}
+
 export interface ActionState {
   /** 可供前进（点击）的 steps */
   availableSteps: ActionStep[];
@@ -372,10 +405,12 @@ export interface ActionState {
   showHands: boolean;
   /** 是否显示技能按钮（打出手牌/调和时不显示） */
   showSkillButtons: boolean;
-  /** 提示文本 */
+  /** 中央提示文本 */
   hintText?: string;
-  /** 是否快速行动 */
-  isFast: boolean;
+  /** 底部提示文本类型 */
+  bottomHintType: "none" | "normal" | "danger";
+  /** 底部提示文本 */
+  bottomHintText: string;
   /** 进入此状态会出现报错 */
   alertText?: string;
   /** 骰子面板的状态（不显示、默认收起或默认展开） */
@@ -393,6 +428,35 @@ export interface ActionState {
   /** 当 step 触发后，步进到下一状态/提交行动 */
   step: StepActionFunction;
 }
+
+export type BottomHintConfig = Pick<
+  ActionState,
+  "bottomHintType" | "bottomHintText"
+>;
+
+const bottomHintOfAction = (
+  action: Action & {
+    value: UseSkillAction | PlayCardAction | SwitchActiveAction;
+  },
+  t: Translator,
+): BottomHintConfig => {
+  const result = {
+    ...EMPTY_BOTTOM_HINT,
+  };
+  if ("willBeEffectless" in action.value && action.value.willBeEffectless) {
+    result.bottomHintType = "danger";
+    result.bottomHintText = t("bottom.invalidatedCardEffectHint");
+  } else if (action.action?.$case !== "playCard" && action.isFast) {
+    // 打出手牌不显示“快速行动”
+    result.bottomHintType = "normal";
+    result.bottomHintText = t("bottom.fastAction");
+  }
+  return result;
+};
+const EMPTY_BOTTOM_HINT: BottomHintConfig = {
+  bottomHintType: "none",
+  bottomHintText: "",
+};
 
 const validityText = (
   validity: ActionValidity,
@@ -449,10 +513,14 @@ function appendMultiStepNode<T>(
   current.children.set(keys[keys.length - 1], { type: "leaf", value });
 }
 
-/** 创建多步状态树时需使用到的上下文 */
-interface MultiStepRootNodeContext<T> {
+interface ActionContextBase {
   assetsManager: AssetsManager;
+  equipMap: Map<number, PbEquipmentType>;
   t: Translator;
+}
+
+/** 创建多步状态树时需使用到的上下文 */
+interface MultiStepRootNodeContext<T> extends ActionContextBase {
   /** 是否是使用技能（否则为打出卡牌） */
   isSkill: boolean;
   /** 行动树根节点 */
@@ -465,9 +533,7 @@ interface MultiStepRootNodeContext<T> {
   cardOrSkillDefinitionId: number;
 }
 
-interface CreatePlayCardActionStateContext {
-  assetsManager: AssetsManager;
-  t: Translator;
+interface CreatePlayCardActionStateContext extends ActionContextBase {
   // 单步打出（直接打出或者直接选骰）对应的 step 行为加入此 map
   cardSingleSteps: Map<PlayCardActionStep, () => StepActionResult>;
   // 多步打出对应的 context 加入此 map，后续构建成状态树
@@ -527,6 +593,7 @@ function createPlayCardActionState(
     if (!ctx.cardMultiSteps.has(id)) {
       ctx.cardMultiSteps.set(id, {
         assetsManager: ctx.assetsManager,
+        equipMap: ctx.equipMap,
         t: ctx.t,
         isSkill: false,
         node: { type: "branch", children: new Map() },
@@ -559,7 +626,6 @@ function createPlayCardActionState(
   const CONFIRM_BUTTON_STEP: ClickConfirmButtonActionStep = {
     type: "clickConfirmButton",
     confirmText: ctx.t("action.confirmButtonDefault"),
-    isEffectless: ctx.action.value.willBeEffectless,
   };
   const resultState: ActionState = {
     availableSteps: [
@@ -575,7 +641,7 @@ function createPlayCardActionState(
         ctx.assetsManager.getNameSync(ctx.action.value.cardDefinitionId) ??
         "???",
     }),
-    isFast: ctx.action.isFast,
+    ...bottomHintOfAction(ctx.action, ctx.t),
     dicePanel: ctx.action.autoSelectedDice.length > 0 ? "visible" : "hidden",
     autoSelectedDice: ctx.action.autoSelectedDice as DiceType[],
     maxSelectedDiceCount: ctx.action.autoSelectedDice.length,
@@ -629,7 +695,7 @@ function createPlayCardActionState(
 /**
  * 为带目标选择的打出卡牌或使用技能创建状态树
  */
-function createMultiStepState<T>(
+function createMultiStepState<T extends UseSkillAction | PlayCardAction>(
   root: ActionState,
   id: number,
   { isSkill, ...ctx }: MultiStepRootNodeContext<T>,
@@ -668,12 +734,12 @@ function createMultiStepState<T>(
         confirmText: isSkill
           ? ctx.t("action.confirmButtonDefault")
           : ctx.t("action.confirmButtonPlayCard"),
-        isEffectless: ctx.isEffectless,
       };
       const CLICK_ENTITY_STEP: ClickEntityActionStep = {
         type: "clickEntity",
         entityId: id,
         ui: ActionStepEntityUi.Selected,
+        equip: ctx.equipMap.get(id),
       };
       const resultState: ActionState = {
         availableSteps: [
@@ -686,7 +752,7 @@ function createMultiStepState<T>(
         showHands: false,
         showSkillButtons: isSkill,
         hintText: hintTexts[0],
-        isFast: node.value.action.isFast,
+        ...bottomHintOfAction(node.value.action, ctx.t),
         dicePanel:
           node.value.action.autoSelectedDice.length > 0 ? "visible" : "wrapped",
         autoSelectedDice: null,
@@ -746,7 +812,7 @@ function createMultiStepState<T>(
         showHands: false,
         showSkillButtons: isSkill,
         hintText: hintTexts[0],
-        isFast: false,
+        ...EMPTY_BOTTOM_HINT,
         dicePanel: isSkill ? "wrapped" : "hidden",
         autoSelectedDice,
         maxSelectedDiceCount: autoSelectedDice?.length ?? null,
@@ -783,6 +849,7 @@ function createMultiStepState<T>(
           type: "clickEntity",
           entityId: key,
           ui: ActionStepEntityUi.Outlined,
+          equip: ctx.equipMap.get(key),
         };
         childrenStates.set(
           step,
@@ -819,9 +886,7 @@ function createMultiStepState<T>(
   return [enterStep, state, allStates];
 }
 
-interface CreateUseSkillActionStateContext {
-  assetsManager: AssetsManager;
-  t: Translator;
+interface CreateUseSkillActionStateContext extends ActionContextBase {
   skillSingleStepStates: Map<ClickSkillButtonActionStep, ActionState>;
   skillMultiSteps: Map<number, MultiStepRootNodeContext<UseSkillAction>>;
   action: Action & { value: UseSkillAction };
@@ -838,6 +903,7 @@ function createUseSkillActionState(
     if (!ctx.skillMultiSteps.has(id)) {
       ctx.skillMultiSteps.set(id, {
         assetsManager: ctx.assetsManager,
+        equipMap: ctx.equipMap,
         t: ctx.t,
         isSkill: true,
         node: { type: "branch", children: new Map() },
@@ -884,7 +950,7 @@ function createUseSkillActionState(
     autoSelectedDice: ctx.action.autoSelectedDice as DiceType[],
     maxSelectedDiceCount: ctx.action.autoSelectedDice.length,
     showBackdrop: true,
-    isFast: ctx.action.isFast,
+    ...bottomHintOfAction(ctx.action, ctx.t),
     previewData: parsePreviewData(ctx.action.preview),
     step: (step, dice) => {
       if (step === CANCEL_ACTION_STEP) {
@@ -921,9 +987,7 @@ function createUseSkillActionState(
   ctx.skillSingleStepStates.set(ENTER_STEP, resultState);
 }
 
-interface CreateElementalTuningActionStateContext {
-  assetsManager: AssetsManager;
-  t: Translator;
+interface CreateElementalTuningActionStateContext extends ActionContextBase {
   action: Action & { value: ElementalTuningAction };
   index: number;
 }
@@ -951,7 +1015,7 @@ function createElementalTuningActionState(
     maxSelectedDiceCount: 1,
     disabledDiceTypes,
     showBackdrop: true,
-    isFast: false,
+    ...EMPTY_BOTTOM_HINT,
     previewData: NO_PREVIEW,
     step: (step, dice) => {
       if (step === CANCEL_ACTION_STEP) {
@@ -981,9 +1045,7 @@ function createElementalTuningActionState(
   return resultState;
 }
 
-interface CreateSwitchActiveActionStateContext {
-  assetsManager: AssetsManager;
-  t: Translator;
+interface CreateSwitchActiveActionStateContext extends ActionContextBase {
   // 在根状态下，点击角色进入“显示切换出战按钮”的状态
   outerLevelStates: Map<ClickEntityActionStep, ActionState>;
   // 在“显示切换出战按钮”状态下，点击按钮/选中角色可提交行动；或点击其他角色切换目标
@@ -1042,7 +1104,7 @@ function createSwitchActiveActionState(
     autoSelectedDice: ctx.action.autoSelectedDice as DiceType[],
     maxSelectedDiceCount: ctx.action.autoSelectedDice.length,
     showBackdrop: true,
-    isFast: ctx.action.isFast,
+    ...bottomHintOfAction(ctx.action, ctx.t),
     previewData: parsePreviewData(ctx.action.preview),
     step: (step, dice) => {
       if (step === CANCEL_ACTION_STEP) {
@@ -1098,7 +1160,7 @@ function createSwitchActiveActionState(
     autoSelectedDice: null,
     maxSelectedDiceCount: null,
     showBackdrop: false,
-    isFast: false,
+    ...EMPTY_BOTTOM_HINT,
     previewData: NO_PREVIEW,
     step: (step) => {
       if (step === CANCEL_ACTION_STEP) {
@@ -1141,7 +1203,7 @@ export function createActionState(
     autoSelectedDice: null,
     maxSelectedDiceCount: null,
     showBackdrop: false,
-    isFast: false,
+    ...EMPTY_BOTTOM_HINT,
     showHands: true,
     showSkillButtons: true,
     step: (step) => {
@@ -1176,12 +1238,14 @@ export function createActionState(
   const switchActiveInnerStates = new Map<ClickEntityActionStep, ActionState>();
   const switchActiveOuterStates = new Map<ClickEntityActionStep, ActionState>();
   for (let i = 0; i < actions.length; i++) {
-    const { action, requiredCost, validity } = actions[i];
+    const { action, requiredCost, validity, preview } = actions[i];
+    const equipMap = extractEquipInfoFromPreview(preview);
     switch (action?.$case) {
       case "useSkill": {
         realCosts.skills.set(action.value.skillDefinitionId, requiredCost);
         createUseSkillActionState(root, {
           assetsManager,
+          equipMap,
           t,
           skillSingleStepStates: useSkillSingleStepStates,
           skillMultiSteps: useSkillMultiSteps,
@@ -1194,6 +1258,7 @@ export function createActionState(
         realCosts.cards.set(action.value.cardId, requiredCost);
         createPlayCardActionState(root, {
           assetsManager,
+          equipMap,
           t,
           cardSingleSteps: playCardSingleSteps,
           cardMultiSteps: playCardMultiSteps,
@@ -1206,6 +1271,7 @@ export function createActionState(
         realCosts.switchActive.set(action.value.characterId, requiredCost);
         createSwitchActiveActionState(root, {
           assetsManager,
+          equipMap,
           t,
           outerLevelStates: switchActiveOuterStates,
           innerLevelStates: switchActiveInnerStates,
@@ -1224,6 +1290,7 @@ export function createActionState(
         };
         const state = createElementalTuningActionState(root, {
           assetsManager,
+          equipMap,
           t,
           action: { value: action.value, ...actions[i] },
           index: i,
@@ -1327,7 +1394,7 @@ export function createChooseActiveState(
     showHands: true,
     showSkillButtons: true,
     hintText: t("action.chooseActiveCharacter"),
-    isFast: false,
+    ...EMPTY_BOTTOM_HINT,
     step: (step) => {
       if (step === CANCEL_ACTION_STEP) {
         return { type: "newState", newState: root };
@@ -1376,7 +1443,7 @@ export function createChooseActiveState(
       showHands: true,
       showSkillButtons: true,
       hintText: t("action.chooseActiveCharacter"),
-      isFast: false,
+      ...EMPTY_BOTTOM_HINT,
       step: (step, dice) => {
         if (step === CANCEL_ACTION_STEP) {
           return { type: "newState", newState: innerState };

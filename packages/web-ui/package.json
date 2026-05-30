@@ -1,16 +1,23 @@
 {
   "name": "@gi-tcg/web-ui",
-  "version": "0.19.1",
+  "version": "0.20.5",
   "description": "Web UI for Genius Invokation TCG",
   "type": "module",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "url": "https://github.com/piovium/genius-invokation",
+    "directory": "packages/web-ui"
+  },
   "exports": {
     "types": "./dist/index.d.ts",
-    "bun": "./src/index.tsx",
     "import": "./dist/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "bunx --bun vite",
-    "build": "bunx --bun vite build"
+    "dev": "vite",
+    "build": "vite build"
   },
   "devDependencies": {
     "solid-element": "^1.8.0",

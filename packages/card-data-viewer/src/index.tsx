@@ -38,38 +38,58 @@ import { translator } from "@solid-primitives/i18n";
 
 export interface RegisterResult {
   readonly CardDataViewer: () => JSX.Element;
-  readonly showCharacter: (id: number) => void;
-  readonly showSkill: (id: number) => void;
-  readonly showCard: (id: number) => void;
+  readonly showCharacter: (id: number, opt?: ShowCardDataViewerOption) => void;
+  readonly showSkill: (id: number, opt?: ShowCardDataViewerOption) => void;
+  readonly showCard: (id: number, opt?: ShowCardDataViewerOption) => void;
   readonly showState: {
     (
       type: "character",
-      character: PbCharacterState,
+      state: PbCharacterState,
       combatStatuses: PbEntityState[],
+      opt?: ShowCardDataViewerOption,
     ): void;
-    (type: "summon" | "support", entity: PbEntityState): void;
-    (type: "card", card: PbEntityState): void;
+    /**
+     * - Pass in type = "entity" for on-stage entities (which reads `rawPlayingDescription`)
+     * - Pass in type = "card" for off-stage entities (which reads `rawDynamicDescription`)
+     */
+    (
+      type: "entity" | "card",
+      state: PbEntityState,
+      opt?: ShowCardDataViewerOption,
+    ): void;
   };
+
   readonly hide: () => void;
 }
 
 export interface CreateCardDataViewerOption {
   assetsManager?: Accessor<AssetsManager>;
-  includesImage?: boolean;
   locale?: Accessor<Locale>;
+}
+
+export interface ShowCardDataViewerOption {
+  includesImage?: boolean;
 }
 
 export function createCardDataViewer(
   option: CreateCardDataViewerOption = {},
 ): RegisterResult {
   const localeGetter = createMemo(() => option.locale?.() ?? "zh-CN");
-  const assetsManagerGetter = createMemo(() => option.assetsManager?.() ?? DEFAULT_ASSETS_MANAGER);
+  const assetsManagerGetter = createMemo(
+    () => option.assetsManager?.() ?? DEFAULT_ASSETS_MANAGER,
+  );
   const dict = createMemo(() => translations[localeGetter()]);
 
   const [shown, setShown] = createSignal(false);
+  const [mainImageDefId, setMainImageDefId] = createSignal<number | null>(null);
   const [inputs, setInputs] = createSignal<ViewerInput[]>([]);
 
-  const showDef = (definitionId: number, type: StateType) => {
+  const showDef = (
+    definitionId: number,
+    type: StateType,
+    opt?: ShowCardDataViewerOption,
+  ) => {
+    setMainImageDefId(opt?.includesImage ? definitionId : null);
     setInputs([
       {
         from: "definitionId",
@@ -88,9 +108,7 @@ export function createCardDataViewer(
     id: st.id,
     type,
     definitionId: st.definitionId,
-    descriptionDictionary:
-      "descriptionDictionary" in st ? st.descriptionDictionary : {},
-    variableValue: "variableValue" in st ? st.variableValue : void 0,
+    state: st,
   });
 
   return {
@@ -105,40 +123,52 @@ export function createCardDataViewer(
         <CardDataViewerContainer
           shown={shown()}
           inputs={inputs()}
-          includesImage={option.includesImage ?? false}
+          mainImageDefId={mainImageDefId()}
         />
       </AssetsContext.Provider>
     ),
-    showCard: (id) => {
-      showDef(id, "card");
+    showCard: (id: number, opt?: ShowCardDataViewerOption) => {
+      showDef(id, "card", opt);
     },
-    showCharacter: (id) => {
-      showDef(id, "character");
+    showCharacter: (id: number, opt?: ShowCardDataViewerOption) => {
+      showDef(id, "character", opt);
     },
-    showSkill: (id) => {
-      showDef(id, "skill");
+    showSkill: (id: number, opt?: ShowCardDataViewerOption) => {
+      showDef(id, "skill", opt);
     },
     showState: (
       type: StateType,
       state: PbCharacterState | PbEntityState,
-      combatStatuses?: PbEntityState[],
+      combatStatusesOrOpt?: PbEntityState[] | ShowCardDataViewerOption,
+      opt?: ShowCardDataViewerOption,
     ) => {
+      const extra =
+        type === "character" ? (combatStatusesOrOpt as PbEntityState[]) : [];
+      const options =
+        type === "character"
+          ? opt
+          : (combatStatusesOrOpt as ShowCardDataViewerOption | undefined);
+      setMainImageDefId(
+        options?.includesImage === false ? null : state.definitionId,
+      );
       setInputs([
         // main item
         mapStateToInput(state, type),
         // character zone entities
         ...("entity" in state
           ? state.entity.map((st) =>
-              mapStateToInput(st, st.equipment ? "equipment" : "status"),
+              mapStateToInput(
+                st,
+                typeof st.equipment === "number" ? "equipment" : "status",
+              ),
             )
           : []),
+        // action card zone entities
         ...("attachment" in state
           ? state.attachment.map((st) => mapStateToInput(st, "attachment"))
           : []),
         // combat statuses (2nd argument)
-        ...(combatStatuses ?? []).map((st) =>
-          mapStateToInput(st, "combatStatus"),
-        ),
+        ...(extra ?? []).map((st) => mapStateToInput(st, "combatStatus")),
       ]);
       setShown(true);
     },

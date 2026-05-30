@@ -1,4 +1,5 @@
 // Copyright (C) 2024-2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -14,6 +15,6 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 export type * from "@gi-tcg/assets-manager";
-export { default as characters } from "@gi-tcg/assets-manager/data/characters";
-export { default as entities } from "@gi-tcg/assets-manager/data/entities";
-export { default as actionCards } from "@gi-tcg/assets-manager/data/action_cards";
+export { default as characters } from "@gi-tcg/assets-manager/data/CHS/characters";
+export { default as entities } from "@gi-tcg/assets-manager/data/CHS/entities";
+export { default as actionCards } from "@gi-tcg/assets-manager/data/CHS/action_cards";

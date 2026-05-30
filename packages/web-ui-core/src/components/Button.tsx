@@ -1,4 +1,5 @@
 // Copyright (C) 2024-2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -13,33 +14,35 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import { children, type JSX } from "solid-js";
+import { children, splitProps, type ComponentProps, type JSX } from "solid-js";
 import ButtonNormal from "../svg/ButtonNormal.svg?fb";
 import ButtonHover from "../svg/ButtonHover.svg?fb";
 import ButtonActive from "../svg/ButtonActive.svg?fb";
 import { AutoResizeText } from "./AutoResizeText";
 
-export interface ButtonProps {
+export interface ButtonProps extends ComponentProps<"button"> {
   class?: string;
   children: JSX.Element;
   onClick: (e: MouseEvent) => void;
 }
 
 export function Button(props: ButtonProps) {
-  const ch = children(() => props.children);
+  const [local, rest] = splitProps(props, ["class", "children", "onClick"]);
+  const ch = children(() => local.children);
   return (
     <button
-      class={`grid h-10.8 w-45 group/confirm_btn bg-transparent ${
-        props.class ?? ""
+      class={`w-40 h-10 grid children:grid-area-[1/1] group/confirm_btn bg-transparent ${
+        local.class ?? ""
       }`}
-      onClick={(e) => props.onClick(e)}
+      onClick={(e) => local.onClick(e)}
+      {...rest}
     >
-      <ButtonActive class="grid-area-[1/1] w-45 h-10.8 hidden group-active/confirm_btn:block" />
-      <ButtonHover class="grid-area-[1/1] w-45 h-10.8 hidden group-[:hover:not(:active)]/confirm_btn:block" />
-      <ButtonNormal class="grid-area-[1/1] w-45 h-10.8 block group-[:is(:hover,:active)]/confirm_btn:hidden" />
-      <div class="grid-area-[1/1] h-10.8 w-45 flex items-center justify-center text-lg font-bold text-black/70 transition-colors line-height-none px-6 box-border">
-        <AutoResizeText class="text-center">{ch()}</AutoResizeText>
-      </div>
+      <ButtonNormal />
+      <ButtonHover class="hidden group-[:hover:not(:active)]/confirm_btn:block" />
+      <ButtonActive class="hidden group-active/confirm_btn:block" />
+      <AutoResizeText class="w-30 text-center font-bold text-black/70 place-self-center select-none">
+        {ch()}
+      </AutoResizeText>
     </button>
   );
 }

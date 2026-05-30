@@ -1,4 +1,5 @@
 // Copyright (C) 2025 Guyutongxue
+// Copyright (C) 2026 Piovium Labs
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -13,7 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import { splitProps, type ComponentProps, type JSX } from "solid-js";
+import { splitProps, type ComponentProps } from "solid-js";
 
 export interface StrokedTextProps extends ComponentProps<"div"> {
   text: string;
@@ -29,17 +30,16 @@ export function StrokedText(props: StrokedTextProps) {
     "strokeColor",
   ]);
   return (
-    <div class={`grid grid-cols-1 grid-rows-1 ${local.class ?? ""}`} {...rest}>
-      <div
-        class="grid-area-[1/1] pointer-events-none select-none"
-        style={{
-          "-webkit-text-stroke-color": local.strokeColor,
-          "-webkit-text-stroke-width": `${local.strokeWidth}px`,
-        }}
-      >
-        {local.text}
-      </div>
-      <div class="grid-area-[1/1]">{local.text}</div>
+    <div
+      class={`pointer-events-none select-none ${local.class ?? ""}`}
+      style={{
+        "paint-order": "stroke fill",
+        "-webkit-text-stroke-color": local.strokeColor,
+        "-webkit-text-stroke-width": `${local.strokeWidth}px`,
+      }}
+      {...rest}
+    >
+      {local.text}
     </div>
   );
 }

@@ -1,0 +1,25 @@
+FROM oven/bun:1-alpine
+
+# Install curl for result upload and git for deps
+RUN apk add --no-cache curl git
+
+WORKDIR /app
+
+# Copy workspace config and lockfile first (better layer caching)
+COPY package.json bun.lock ./
+COPY packages/gi-agent/package.json packages/gi-agent/
+COPY packages/data/package.json packages/data/
+COPY packages/core/package.json packages/core/
+COPY packages/typings/package.json packages/typings/
+# Add other packages as needed...
+
+# Install deps
+RUN bun install --frozen-lockfile
+
+# Copy source code
+COPY . .
+
+# Default: run benchmark
+# Override CMD via ECI --Container.1.Command / --Container.1.Arg
+# Args: <config.json> [--output result.json] [--output-dir bench-results/] [--markdown report.md] [--concurrency N]
+CMD ["bun", "run", "--smol", "packages/gi-agent/src/evaluation/benchmark/run-benchmark.ts"]

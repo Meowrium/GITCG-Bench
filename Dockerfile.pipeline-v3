@@ -1,0 +1,10 @@
+# Incremental fix: based on ACR-pushed v3 (clean, no NTFS corruption)
+FROM crpi-ivbrp9v853kjkbab.cn-guangzhou.personal.cr.aliyuncs.com/gi-tcg/bench-llm:v16-mcts-gbdt-v3
+
+# Override pipeline script with fixed version (gbdt-value-artifact filename fix)
+COPY eci-files/pipeline-mcts-gbdt.sh /app/pipeline.sh
+RUN chmod +x /app/pipeline.sh
+
+WORKDIR /app
+ENTRYPOINT ["/bin/bash"]
+CMD ["/app/pipeline.sh"]

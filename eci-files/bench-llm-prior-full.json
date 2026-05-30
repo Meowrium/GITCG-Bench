@@ -1,0 +1,995 @@
+{
+  "version": "v6.4.0-llm-prior-full",
+  "matchups": [
+    {
+      "id": "llm-ShuiBa-vs-ShenXiao",
+      "deck0": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+      "deck1": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiBa-vs-ShuiNing",
+      "deck0": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+      "deck1": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiBa-vs-FreezeAggro",
+      "deck0": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+      "deck1": "AJBw2QINALDA3z4NCPAw4IMOCADg9I4PCUBw9ZcPC1HABrwQC2HwCr8QDLGQC8kQDeAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiBa-vs-LeiHe",
+      "deck0": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+      "deck1": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiBa-vs-CaoReaction",
+      "deck0": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+      "deck1": "ASCg8wsPA0AQ9JcPCVBw9acPC2DQ+L0PDICA+cgQDaEgCtIQDbHQC/EQD+EQDvIRDzAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiBa-vs-LeiLang",
+      "deck0": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+      "deck1": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiBa-vs-MoYou",
+      "deck0": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+      "deck1": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiBa-vs-HongNiu",
+      "deck0": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+      "deck1": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiBa-vs-ShuiZhai",
+      "deck0": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+      "deck1": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShenXiao-vs-ShuiNing",
+      "deck0": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+      "deck1": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShenXiao-vs-FreezeAggro",
+      "deck0": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+      "deck1": "AJBw2QINALDA3z4NCPAw4IMOCADg9I4PCUBw9ZcPC1HABrwQC2HwCr8QDLGQC8kQDeAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShenXiao-vs-LeiHe",
+      "deck0": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+      "deck1": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShenXiao-vs-CaoReaction",
+      "deck0": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+      "deck1": "ASCg8wsPA0AQ9JcPCVBw9acPC2DQ+L0PDICA+cgQDaEgCtIQDbHQC/EQD+EQDvIRDzAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShenXiao-vs-LeiLang",
+      "deck0": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+      "deck1": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShenXiao-vs-MoYou",
+      "deck0": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+      "deck1": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShenXiao-vs-HongNiu",
+      "deck0": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+      "deck1": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShenXiao-vs-ShuiZhai",
+      "deck0": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+      "deck1": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiNing-vs-FreezeAggro",
+      "deck0": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+      "deck1": "AJBw2QINALDA3z4NCPAw4IMOCADg9I4PCUBw9ZcPC1HABrwQC2HwCr8QDLGQC8kQDeAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiNing-vs-LeiHe",
+      "deck0": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+      "deck1": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiNing-vs-CaoReaction",
+      "deck0": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+      "deck1": "ASCg8wsPA0AQ9JcPCVBw9acPC2DQ+L0PDICA+cgQDaEgCtIQDbHQC/EQD+EQDvIRDzAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiNing-vs-LeiLang",
+      "deck0": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+      "deck1": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiNing-vs-MoYou",
+      "deck0": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+      "deck1": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiNing-vs-HongNiu",
+      "deck0": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+      "deck1": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-ShuiNing-vs-ShuiZhai",
+      "deck0": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+      "deck1": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-FreezeAggro-vs-LeiHe",
+      "deck0": "AJBw2QINALDA3z4NCPAw4IMOCADg9I4PCUBw9ZcPC1HABrwQC2HwCr8QDLGQC8kQDeAA",
+      "deck1": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-FreezeAggro-vs-CaoReaction",
+      "deck0": "AJBw2QINALDA3z4NCPAw4IMOCADg9I4PCUBw9ZcPC1HABrwQC2HwCr8QDLGQC8kQDeAA",
+      "deck1": "ASCg8wsPA0AQ9JcPCVBw9acPC2DQ+L0PDICA+cgQDaEgCtIQDbHQC/EQD+EQDvIRDzAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-FreezeAggro-vs-LeiLang",
+      "deck0": "AJBw2QINALDA3z4NCPAw4IMOCADg9I4PCUBw9ZcPC1HABrwQC2HwCr8QDLGQC8kQDeAA",
+      "deck1": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-FreezeAggro-vs-MoYou",
+      "deck0": "AJBw2QINALDA3z4NCPAw4IMOCADg9I4PCUBw9ZcPC1HABrwQC2HwCr8QDLGQC8kQDeAA",
+      "deck1": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-FreezeAggro-vs-HongNiu",
+      "deck0": "AJBw2QINALDA3z4NCPAw4IMOCADg9I4PCUBw9ZcPC1HABrwQC2HwCr8QDLGQC8kQDeAA",
+      "deck1": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-FreezeAggro-vs-ShuiZhai",
+      "deck0": "AJBw2QINALDA3z4NCPAw4IMOCADg9I4PCUBw9ZcPC1HABrwQC2HwCr8QDLGQC8kQDeAA",
+      "deck1": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-LeiHe-vs-CaoReaction",
+      "deck0": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "deck1": "ASCg8wsPA0AQ9JcPCVBw9acPC2DQ+L0PDICA+cgQDaEgCtIQDbHQC/EQD+EQDvIRDzAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-LeiHe-vs-LeiLang",
+      "deck0": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "deck1": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-LeiHe-vs-MoYou",
+      "deck0": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "deck1": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-LeiHe-vs-HongNiu",
+      "deck0": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "deck1": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-LeiHe-vs-ShuiZhai",
+      "deck0": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "deck1": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-CaoReaction-vs-LeiLang",
+      "deck0": "ASCg8wsPA0AQ9JcPCVBw9acPC2DQ+L0PDICA+cgQDaEgCtIQDbHQC/EQD+EQDvIRDzAA",
+      "deck1": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-CaoReaction-vs-MoYou",
+      "deck0": "ASCg8wsPA0AQ9JcPCVBw9acPC2DQ+L0PDICA+cgQDaEgCtIQDbHQC/EQD+EQDvIRDzAA",
+      "deck1": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-CaoReaction-vs-HongNiu",
+      "deck0": "ASCg8wsPA0AQ9JcPCVBw9acPC2DQ+L0PDICA+cgQDaEgCtIQDbHQC/EQD+EQDvIRDzAA",
+      "deck1": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-CaoReaction-vs-ShuiZhai",
+      "deck0": "ASCg8wsPA0AQ9JcPCVBw9acPC2DQ+L0PDICA+cgQDaEgCtIQDbHQC/EQD+EQDvIRDzAA",
+      "deck1": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-LeiLang-vs-MoYou",
+      "deck0": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+      "deck1": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-LeiLang-vs-HongNiu",
+      "deck0": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+      "deck1": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-LeiLang-vs-ShuiZhai",
+      "deck0": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+      "deck1": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-MoYou-vs-HongNiu",
+      "deck0": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+      "deck1": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-MoYou-vs-ShuiZhai",
+      "deck0": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+      "deck1": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    },
+    {
+      "id": "llm-HongNiu-vs-ShuiZhai",
+      "deck0": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "deck1": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+      "games": 5,
+      "sideA": {
+        "name": "LLM-Prior",
+        "kind": "gi-ml-runtime",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "endTurnPenalty": 5,
+          "temperature": 0.1
+        }
+      },
+      "sideB": {
+        "name": "baseline",
+        "kind": "baseline",
+        "v2Enabled": false
+      }
+    }
+  ]
+}

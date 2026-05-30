@@ -1,0 +1,30 @@
+{
+  "benchmarkPath": "/app/bench-config.json",
+  "gamesMultiplier": 1,
+  "source": "self_play",
+  "replayLogCapture": false,
+  "rlCapture": {
+    "enabled": true,
+    "directory": "/app/rl-capture-v16",
+    "modelVersion": "v16-mcts400-gbdt"
+  },
+  "dataset": {
+    "outputPath": "/app/rl-dataset-v16/rl-dataset.json",
+    "maxSamplesPerShard": 2000
+  },
+  "sideA": {
+    "name": "MCTS-400-Bootstrap",
+    "kind": "mcts",
+    "v2Enabled": true,
+    "options": {
+      "endTurnPenalty": 5,
+      "mctsIterations": 400,
+      "mctsTemperature": 1.0
+    }
+  },
+  "sideB": {
+    "name": "baseline",
+    "kind": "baseline",
+    "v2Enabled": false
+  }
+}

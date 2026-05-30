@@ -1,0 +1,10 @@
+FROM crpi-ivbrp9v853kjkbab.cn-guangzhou.personal.cr.aliyuncs.com/gi-tcg/llm-bench:v2
+
+# Wrapper script to capture all output
+RUN echo '#!/bin/sh' > /app/run.sh && \
+    echo 'echo "[$(date +%T)] Starting benchmark..."' >> /app/run.sh && \
+    echo 'exec bun packages/gi-agent/src/evaluation/benchmark/run-benchmark.ts /app/eci-files/bench-llm-prior.json --output /app/results/bench-out.json --concurrency 2 2>&1' >> /app/run.sh && \
+    echo 'echo "[$(date +%T)] Benchmark done"' >> /app/run.sh && \
+    chmod +x /app/run.sh
+
+CMD ["/app/run.sh"]

@@ -1,0 +1,37 @@
+FROM oven/bun:1-alpine
+
+# Install curl for result upload and git for deps
+RUN apk add --no-cache curl git
+
+WORKDIR /app
+
+# Copy workspace config and lockfile first (better layer caching)
+COPY package.json bun.lock ./
+COPY patches/ patches/
+COPY packages/gi-agent/package.json packages/gi-agent/
+COPY packages/data/package.json packages/data/
+COPY packages/core/package.json packages/core/
+COPY packages/typings/package.json packages/typings/
+COPY packages/gi-ml/package.json packages/gi-ml/
+COPY packages/utils/package.json packages/utils/
+COPY packages/config/package.json packages/config/
+COPY packages/assets-manager/package.json packages/assets-manager/
+COPY packages/llm-deck-analyzer/package.json packages/llm-deck-analyzer/
+COPY packages/mcp/package.json packages/mcp/
+COPY packages/tactic-mcp/package.json packages/tactic-mcp/
+
+# Install deps (allow lockfile updates since we only copy subset of packages)
+RUN bun install
+
+# Copy source code (includes .llm-deck-cache in gi-agent)
+COPY . .
+
+# Copy pre-built ranker and value artifacts for smoke testing
+COPY eci-files/artifacts/v20.ranker-artifact.json /app/artifacts/
+COPY eci-files/artifacts/v20.value-artifact.json /app/artifacts/
+
+# LLM prior enabled via cache dir
+ENV LLM_CACHE_DIR=/app/packages/gi-agent/.llm-deck-cache
+
+# Default: run LLM prior benchmark
+CMD ["bun", "run", "packages/gi-agent/src/evaluation/benchmark/run-benchmark.ts", "/app/eci-files/bench-llm-prior.json", "--output", "/app/results/bench-out.json", "--concurrency", "2"]

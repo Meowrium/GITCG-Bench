@@ -1,0 +1,57 @@
+FROM docker.m.daocloud.io/oven/bun:1
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends python3 python3-pip curl git && \
+    pip3 install --break-system-packages lightgbm numpy && \
+    rm -rf /var/lib/apt/lists/*
+
+# ── Registry mirror (China GFW) ──
+RUN echo 'registry=https://registry.npmmirror.com' > ~/.npmrc
+
+WORKDIR /app
+
+# Layer 1: Dependencies
+COPY package.json bun.lock ./
+COPY patches/ patches/
+COPY packages/typings/package.json packages/typings/
+COPY packages/utils/package.json packages/utils/
+COPY packages/config/package.json packages/config/
+COPY packages/core/package.json packages/core/
+COPY packages/data/package.json packages/data/
+COPY packages/assets-manager/package.json packages/assets-manager/
+COPY packages/custom-data-loader/package.json packages/custom-data-loader/
+COPY packages/gi-agent/package.json packages/gi-agent/
+COPY packages/gi-ml/package.json packages/gi-ml/
+COPY packages/llm-deck-analyzer/package.json packages/llm-deck-analyzer/
+
+RUN rm -f bun.lock && bun install --no-save
+
+# CRITICAL: Manually symlink workspace packages (bun may not create them)
+RUN cd /app && for pkg in typings utils config core data assets-manager custom-data-loader gi-agent gi-ml llm-deck-analyzer; do \
+      name=$(bun -e "console.log(require('./packages/' + '$pkg' + '/package.json').name)" 2>/dev/null); \
+      if [ -n "$name" ] && [ ! -e "node_modules/$name" ]; then \
+        ln -sf "../../packages/$pkg" "node_modules/$name"; \
+        echo "Linked $name"; \
+      fi; \
+    done
+
+# Layer 2: Source code
+COPY packages/typings/ packages/typings/
+COPY packages/utils/ packages/utils/
+COPY packages/config/ packages/config/
+COPY packages/core/ packages/core/
+COPY packages/data/ packages/data/
+COPY packages/assets-manager/ packages/assets-manager/
+COPY packages/custom-data-loader/ packages/custom-data-loader/
+COPY packages/gi-agent/ packages/gi-agent/
+COPY packages/gi-ml/ packages/gi-ml/
+COPY packages/llm-deck-analyzer/ packages/llm-deck-analyzer/
+
+# Layer 3: Pipeline + configs
+COPY eci-files/bench-config.json /app/bench-config.json
+COPY eci-files/self-play-mcts.json /app/self-play-mcts.json
+COPY eci-files/pipeline-mcts-gbdt.sh /app/pipeline.sh
+RUN chmod +x /app/pipeline.sh
+RUN mkdir -p /app/results /app/bench-results /app/pipeline-logs
+
+CMD ["/app/pipeline.sh"]

@@ -1,0 +1,34 @@
+{
+  "benchmarkPath": "/app/bench-config.json",
+  "gamesMultiplier": 1,
+  "source": "self_play",
+  "replayLogCapture": false,
+  "rlCapture": {
+    "enabled": true,
+    "directory": "/app/rl-capture-v15",
+    "modelVersion": "v15-greedy-10deck"
+  },
+  "dataset": {
+    "outputPath": "/app/rl-dataset-v15/rl-dataset.json",
+    "maxSamplesPerShard": 2000
+  },
+  "sideA": {
+    "name": "V15-Greedy-Bootstrap",
+    "kind": "gi-ml-runtime",
+    "rankerArtifactPath": "/app/artifacts/v14.ranker-artifact.json",
+    "valueArtifactPath": "/app/artifacts/v14.value-artifact.json",
+    "v2Enabled": true,
+    "options": {
+      "endTurnPenalty": 5,
+      "temperature": 1.2,
+      "macroPlanWeight": 0.4,
+      "tempoValueWeight": 0.3,
+      "temporalOpportunityWeight": 0
+    }
+  },
+  "sideB": {
+    "name": "baseline",
+    "kind": "baseline",
+    "v2Enabled": false
+  }
+}

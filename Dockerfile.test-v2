@@ -1,0 +1,40 @@
+FROM oven/bun:1
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-pip && pip3 install --break-system-packages lightgbm numpy && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY package.json bun.lock ./
+COPY patches/ patches/
+COPY packages/gi-agent/package.json packages/gi-agent/
+COPY packages/gi-ml/package.json packages/gi-ml/
+COPY packages/data/package.json packages/data/
+COPY packages/core/package.json packages/core/
+COPY packages/typings/package.json packages/typings/
+COPY packages/assets-manager/package.json packages/assets-manager/
+COPY packages/config/package.json packages/config/
+COPY packages/utils/package.json packages/utils/
+COPY packages/custom-data-loader/package.json packages/custom-data-loader/
+COPY packages/llm-deck-analyzer/package.json packages/llm-deck-analyzer/
+# Patch root workspaces + strip problematic deps from individual packages
+RUN bun -e "
+const fs=require('fs');
+const path=require('path');
+const root=JSON.parse(fs.readFileSync('package.json','utf8'));
+delete root.patchedDependencies;
+root.workspaces=['packages/typings','packages/utils','packages/config','packages/core','packages/data','packages/assets-manager','packages/custom-data-loader','packages/gi-agent','packages/gi-ml','packages/llm-deck-analyzer'];
+fs.writeFileSync('package.json',JSON.stringify(root,null,2));
+const BAD_DEPS=['@gi-tcg/mcp','@gi-tcg/tactic-mcp','@gi-tcg/deck-builder','@gi-tcg/web-ui-core'];
+for(const pkg of ['gi-agent','gi-ml','custom-data-loader']){
+  const pp=path.join('packages',pkg,'package.json');
+  if(!fs.existsSync(pp))continue;
+  const p=JSON.parse(fs.readFileSync(pp,'utf8'));
+  let changed=false;
+  for(const dk of ['dependencies','devDependencies','peerDependencies']){
+    if(!p[dk])continue;
+    for(const bd of BAD_DEPS){if(p[dk][bd]){delete p[dk][bd];changed=true}}
+  }
+  if(changed){fs.writeFileSync(pp,JSON.stringify(p,null,2));console.log('Patched:',pp)}
+}
+console.log('Patch done')
+"
+RUN rm -f bun.lock
+RUN bun install
+RUN echo "=== @gi-tcg ===" && ls /app/node_modules/@gi-tcg/

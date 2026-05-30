@@ -1,0 +1,22 @@
+FROM crpi-ivbrp9v853kjkbab.cn-guangzhou.personal.cr.aliyuncs.com/gi-tcg/llm-bench:v2
+
+# Copy full config
+COPY eci-files/bench-llm-prior-full.json /app/eci-files/bench-llm-prior-full.json
+
+# Wrapper: write results locally, try NAS sync
+RUN echo '#!/bin/sh' > /app/run.sh && \
+    echo 'mkdir -p /tmp/results /nas-results' >> /app/run.sh && \
+    echo 'echo "[$(date +%T)] Starting LLM-prior benchmark (45 matchups, 225 games)"' >> /app/run.sh && \
+    echo 'bun packages/gi-agent/src/evaluation/benchmark/run-benchmark.ts /app/eci-files/bench-llm-prior-full.json --output /tmp/results/bench-out.json --concurrency 2 2>&1' >> /app/run.sh && \
+    echo 'rc=$?' >> /app/run.sh && \
+    echo 'echo "[$(date +%T)] Benchmark done, exit=$rc"' >> /app/run.sh && \
+    echo 'if [ -f /tmp/results/bench-out.json ]; then' >> /app/run.sh && \
+    echo '  echo "===RESULT_START==="' >> /app/run.sh && \
+    echo '  cat /tmp/results/bench-out.json' >> /app/run.sh && \
+    echo '  echo "===RESULT_END==="' >> /app/run.sh && \
+    echo '  cp /tmp/results/bench-out.json /nas-results/ 2>/dev/null || echo "NAS sync skipped"' >> /app/run.sh && \
+    echo 'fi' >> /app/run.sh && \
+    echo 'exit $rc' >> /app/run.sh && \
+    chmod +x /app/run.sh
+
+CMD ["/app/run.sh"]

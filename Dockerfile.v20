@@ -1,0 +1,11 @@
+# Incremental fix: v20b — fix OOM by reducing max-samples-per-shard 500→300
+FROM crpi-ivbrp9v853kjkbab.cn-guangzhou.personal.cr.aliyuncs.com/gi-tcg/bench-llm:v16-gbrl-v19
+
+COPY eci-files/pipeline-mcts-gbdt.sh /app/pipeline.sh
+RUN chmod +x /app/pipeline.sh
+
+COPY packages/gi-ml/src/datasets/rl-value.ts /app/packages/gi-ml/src/datasets/rl-value.ts
+
+WORKDIR /app
+ENTRYPOINT ["/bin/bash"]
+CMD ["/app/pipeline.sh"]

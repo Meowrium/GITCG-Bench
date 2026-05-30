@@ -1,0 +1,19 @@
+# Incremental fix: based on working gbdt-opponent-v2 image
+FROM localhost/bench-llm:gbdt-opponent-v2
+
+# Install Python + LightGBM (same as Dockerfile.pipeline)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends python3 python3-pip && \
+    pip3 install --break-system-packages lightgbm numpy && \
+    rm -rf /var/lib/apt/lists/*
+
+# Override pipeline script with fixed version
+COPY eci-files/pipeline-mcts-gbdt.sh /app/pipeline.sh
+COPY eci-files/self-play-mcts.json /app/self-play-mcts.json
+COPY eci-files/bench-config.json /app/bench-config.json
+
+RUN chmod +x /app/pipeline.sh && mkdir -p /app/results /app/bench-results /app/pipeline-logs
+
+WORKDIR /app
+ENTRYPOINT ["/bin/bash"]
+CMD ["/app/pipeline.sh"]

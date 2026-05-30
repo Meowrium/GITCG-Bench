@@ -1,0 +1,106 @@
+# GBRL full build: Python 3.12 + GBRL + LightGBM distillation
+# NO incremental FROM — clean build from scratch, no cache poisoning
+FROM docker.m.daocloud.io/oven/bun:1
+
+ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
+
+# ── System deps + Python 3.12 (compiled from source on Debian Trixie) ──
+# GBRL v1.1.7 has precompiled wheels for cp39–cp312 only. Trixie ships 3.13.
+# Compiling Python 3.12 avoids pulling 6+ GB PyTorch+ CUDA as build deps.
+RUN sed -i 's|deb.debian.org|mirrors.aliyun.com|g' /etc/apt/sources.list.d/debian.sources 2>/dev/null; \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+      python3 python3-pip curl git tzdata libgomp1 \
+      build-essential libssl-dev zlib1g-dev libbz2-dev \
+      libreadline-dev libsqlite3-dev libffi-dev liblzma-dev wget && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Python 3.12 (apt may have it, fall back to source compile)
+RUN (apt-get update && apt-get install -y --no-install-recommends \
+       python3.12 python3.12-dev python3.12-venv 2>/dev/null && \
+     rm -rf /var/lib/apt/lists/*) || \
+    (echo "python3.12 not in repo, compiling from source..." && \
+     cd /tmp && wget -q https://www.python.org/ftp/python/3.12.9/Python-3.12.9.tgz && \
+     tar xzf Python-3.12.9.tgz && cd Python-3.12.9 && \
+     ./configure --enable-optimizations --prefix=/usr/local 2>&1 | tail -3 && \
+     make -j$(nproc) 2>&1 | tail -5 && \
+     make install 2>&1 | tail -3 && \
+     cd / && rm -rf /tmp/Python-3.12.9* && \
+     ln -sf /usr/local/bin/python3.12 /usr/bin/python3.12 && \
+     ln -sf /usr/local/bin/python3.12 /usr/bin/python3)
+
+# Make python3.12 the default
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 100 && \
+    update-alternatives --install /usr/bin/python python /usr/bin/python3.12 100 && \
+    python3.12 --version
+
+# ── GBRL runtime deps + GBRL itself ──
+# torch CPU required (gbt.py does `import torch as th` at module level)
+# scipy + matplotlib required (utils.py imports them at module level)
+RUN python3.12 -m ensurepip && \
+    python3.12 -m pip install --break-system-packages --no-cache-dir \
+      numpy scipy matplotlib lightgbm && \
+    python3.12 -m pip install --break-system-packages --no-cache-dir \
+      --index-url https://download.pytorch.org/whl/cpu torch && \
+    python3.12 -m pip install --break-system-packages --no-cache-dir --no-deps gbrl && \
+    python3.12 -c "from gbrl.models import GBTModel; print('GBRL OK')" && \
+    python3.12 -c "from gbrl.models import GBTModel; m=GBTModel(tree_struct={'max_depth':3,'grow_policy':'greedy','n_bins':16,'min_data_in_leaf':2,'par_th':100},input_dim=4,output_dim=1,optimizers={'algo':'SGD','lr':0.01,'start_idx':0,'stop_idx':100}); print('GBTModel OK')" && \
+    python3.12 -c "import lightgbm; print('LightGBM OK')"
+
+# ── npm mirror (GFW) ──
+RUN echo 'registry=https://registry.npmmirror.com' > ~/.npmrc
+
+WORKDIR /app
+
+# Layer 1: Dependencies (package.json only → cache-friendly)
+COPY package.json bun.lock ./
+COPY patches/ patches/
+COPY packages/ packages/
+RUN find packages -type f ! -name 'package.json' -delete && \
+    find packages -type d -empty -delete 2>/dev/null; \
+    bun install --no-save
+
+# Layer 2: Source code
+COPY packages/typings/ packages/typings/
+COPY packages/config/  packages/config/
+COPY packages/utils/   packages/utils/
+COPY packages/core/    packages/core/
+COPY packages/data/    packages/data/
+COPY packages/gi-ml/   packages/gi-ml/
+COPY packages/gi-agent/ packages/gi-agent/
+COPY packages/assets-manager/ packages/assets-manager/
+COPY packages/custom-data-loader/ packages/custom-data-loader/
+COPY packages/llm-deck-analyzer/ packages/llm-deck-analyzer/
+COPY packages/mcp/ packages/mcp/
+COPY packages/tactic-mcp/ packages/tactic-mcp/
+
+# Build scripts + tsconfig
+COPY scripts/ scripts/
+COPY buf.gen.yaml buf.yaml ./
+COPY proto/ proto/
+
+# BUILD — individual packages (not bun run build -n, no root tsconfig)
+RUN cd packages/typings && bun run build && \
+    cd /app/packages/core && bun run build && \
+    cd /app/packages/data && bun run build
+
+# Layer 3: Pipeline scripts + configs + LLM cache
+COPY eci-files/pipeline-mcts-gbdt.sh /app/pipeline.sh
+COPY eci-files/self-play-mcts.json /app/self-play-mcts.json
+COPY eci-files/bench-config.json /app/bench-config.json
+COPY packages/gi-agent/.llm-deck-cache/ /app/.llm-deck-cache/
+RUN chmod +x /app/pipeline.sh && mkdir -p /app/results /app/bench-results /app/pipeline-logs
+
+# GBRL TS CLI wrapper (sed the LightGBM CLI to call GBRL Python script)
+RUN sed 's/train_lgbm_value\.py/train_gbrl_value.py/g' \
+    /app/packages/gi-ml/src/cli/run-build-lgbm-value.ts \
+    > /app/packages/gi-ml/src/cli/run-build-gbrl-value.ts
+
+# Copy GBRL training script
+COPY packages/gi-ml/python/gitcg_ml/train_gbrl_value.py /app/packages/gi-ml/python/gitcg_ml/train_gbrl_value.py
+
+ENV LLM_CACHE_DIR=/app/.llm-deck-cache
+
+WORKDIR /app
+ENTRYPOINT ["/bin/bash"]
+CMD ["/app/pipeline.sh"]

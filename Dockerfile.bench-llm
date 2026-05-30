@@ -1,0 +1,42 @@
+FROM oven/bun:1-alpine
+
+RUN apk add --no-cache curl git
+WORKDIR /app
+
+# Layer 1: deps
+COPY package.json bun.lock ./
+COPY packages/gi-agent/package.json packages/gi-agent/
+COPY packages/data/package.json packages/data/
+COPY packages/core/package.json packages/core/
+COPY packages/typings/package.json packages/typings/
+COPY packages/gi-ml/package.json packages/gi-ml/
+COPY packages/assets-manager/package.json packages/assets-manager/
+COPY packages/config/package.json packages/config/
+COPY packages/utils/package.json packages/utils/
+COPY packages/custom-data-loader/package.json packages/custom-data-loader/
+COPY packages/llm-deck-analyzer/package.json packages/llm-deck-analyzer/
+RUN bun install --frozen-lockfile
+
+# Layer 2: source
+COPY packages/typings/ packages/typings/
+COPY packages/config/  packages/config/
+COPY packages/utils/   packages/utils/
+COPY packages/core/    packages/core/
+COPY packages/data/    packages/data/
+COPY packages/gi-ml/   packages/gi-ml/
+COPY packages/gi-agent/ packages/gi-agent/
+COPY packages/assets-manager/ packages/assets-manager/
+COPY packages/custom-data-loader/ packages/custom-data-loader/
+COPY packages/llm-deck-analyzer/ packages/llm-deck-analyzer/
+
+# Layer 3: LLM cache + artifacts + configs
+COPY packages/gi-agent/.llm-deck-cache/ /app/.llm-deck-cache/
+COPY eci-files/artifacts/   /app/artifacts/
+COPY eci-files/bench-llm-prior-full.json /app/bench-full.json
+COPY eci-files/bench-llm-prior.json /app/bench-smoke.json
+
+RUN mkdir -p /app/results /app/bench-results
+ENV LLM_CACHE_DIR=/app/.llm-deck-cache
+
+WORKDIR /app/packages/gi-agent
+CMD ["bun", "run", "--smol", "src/evaluation/benchmark/run-benchmark.ts", "/app/bench-full.json", "--output", "/app/results/bench-out.json", "--output-dir", "/app/bench-results", "--concurrency", "4"]

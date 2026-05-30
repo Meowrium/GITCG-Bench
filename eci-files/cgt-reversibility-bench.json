@@ -1,0 +1,113 @@
+{
+  "version": "v6.4.0-cgt-reversibility",
+  "matchups": [
+    {
+      "id": "cgt-LeiHe-vs-ShuiNing",
+      "deck0": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "deck1": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+      "games": 30,
+      "sideA": {
+        "name": "CGT-Pruned",
+        "kind": "mcts-gi-ml",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "mctsIterations": 200,
+          "mctsMaxDepth": 4,
+          "mctsTemperature": 0.5,
+          "mctsExploration": 1.4,
+          "mctsReversibilityPruning": true,
+          "fallbackToGreedy": true
+        }
+      },
+      "sideB": {
+        "name": "NoPrune",
+        "kind": "mcts-gi-ml",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "mctsIterations": 200,
+          "mctsMaxDepth": 4,
+          "mctsTemperature": 0.5,
+          "mctsExploration": 1.4,
+          "mctsReversibilityPruning": false,
+          "fallbackToGreedy": true
+        }
+      }
+    },
+    {
+      "id": "cgt-ShenXiao-vs-LeiLang",
+      "deck0": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+      "deck1": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+      "games": 30,
+      "sideA": {
+        "name": "CGT-Pruned",
+        "kind": "mcts-gi-ml",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "mctsIterations": 200,
+          "mctsMaxDepth": 4,
+          "mctsTemperature": 0.5,
+          "mctsExploration": 1.4,
+          "mctsReversibilityPruning": true,
+          "fallbackToGreedy": true
+        }
+      },
+      "sideB": {
+        "name": "NoPrune",
+        "kind": "mcts-gi-ml",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "mctsIterations": 200,
+          "mctsMaxDepth": 4,
+          "mctsTemperature": 0.5,
+          "mctsExploration": 1.4,
+          "mctsReversibilityPruning": false,
+          "fallbackToGreedy": true
+        }
+      }
+    },
+    {
+      "id": "cgt-HongNiu-vs-ShuiZhai",
+      "deck0": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "deck1": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+      "games": 30,
+      "sideA": {
+        "name": "CGT-Pruned",
+        "kind": "mcts-gi-ml",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "mctsIterations": 200,
+          "mctsMaxDepth": 4,
+          "mctsTemperature": 0.5,
+          "mctsExploration": 1.4,
+          "mctsReversibilityPruning": true,
+          "fallbackToGreedy": true
+        }
+      },
+      "sideB": {
+        "name": "NoPrune",
+        "kind": "mcts-gi-ml",
+        "rankerArtifactPath": "/app/artifacts/v20.ranker-artifact.json",
+        "valueArtifactPath": "/app/artifacts/v20.value-artifact.json",
+        "v2Enabled": true,
+        "options": {
+          "mctsIterations": 200,
+          "mctsMaxDepth": 4,
+          "mctsTemperature": 0.5,
+          "mctsExploration": 1.4,
+          "mctsReversibilityPruning": false,
+          "fallbackToGreedy": true
+        }
+      }
+    }
+  ]
+}

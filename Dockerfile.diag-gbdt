@@ -1,0 +1,7 @@
+FROM localhost/bench-llm:v16-mcts-gbdt-v9
+COPY eci-files/pipeline-diag2-gbdt.sh /app/pipeline.sh
+COPY eci-files/diag-mcts-value.ts /app/eci-files/diag-mcts-value.ts
+RUN chmod +x /app/pipeline.sh && mkdir -p /app/results /app/pipeline-logs
+WORKDIR /app
+ENTRYPOINT ["/bin/bash"]
+CMD ["/app/pipeline.sh"]

@@ -1,0 +1,24 @@
+[
+  {
+    "skill_id": "genius-invokation-9x",
+    "skill_path": ".opencode/skills/genius-invokation-9x/SKILL.md",
+    "characters_fingerprint": "1411-1510-2102",
+    "key_cards": [],
+    "priority": 100,
+    "fallback_to": [],
+    "version_range": null,
+    "status": "active"
+  },
+  {
+    "skill_id": "genius-invokation-gui-huo",
+    "skill_path": ".opencode/skills/genius-invokation-gui-huo/SKILL.md",
+    "characters_fingerprint": "1408-2103-2104",
+    "key_cards": [
+      "330010"
+    ],
+    "priority": 100,
+    "fallback_to": [],
+    "version_range": null,
+    "status": "active"
+  }
+]

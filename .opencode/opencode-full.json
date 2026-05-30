@@ -1,0 +1,69 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "GLM-5",
+  "provider": {
+    "myprovider": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Baishan",
+      "options": {
+        "baseURL": "https://api.edgefn.net/v1",
+        "apiKey": "sk-LyidmDH0qo9vwTFW16Ab6e70631d4649BdEdD7B9A71b0b8f"
+      },
+      "models": {
+        "GLM-5": {
+          "name": "GLM-5",
+          "limit": {
+            "context": 200000,
+            "output": 65536
+          }
+        },
+        "MiniMax-M2.5": {
+          "name": "MiniMax-M2.5",
+          "limit": {
+            "context": 200000,
+            "output": 65536
+          }
+        }
+      }
+    }
+  },
+  "mcp": {
+    "genius-invokation-p0": {
+      "type": "local",
+      "command": ["bun", "run", "packages/mcp/standalone-mcp.ts", "--who", "0", "--tool-exposure-mode", "fragmented-decision", "--url", "http://localhost:3901"],
+      "environment": {
+        "MCP_TOOL_EXPOSURE_MODE": "fragmented-decision",
+        "MCP_HTTP_API_TOKEN": "Ej6Z+5rTz4F2MybnGtYXlgFRhP/t+E5U+VfTvq8lOI8="
+      },
+      "enabled": true,
+      "timeout": 15000
+    },
+    "genius-invokation-p1": {
+      "type": "local",
+      "command": ["bun", "run", "packages/mcp/standalone-mcp.ts", "--who", "1", "--tool-exposure-mode", "fragmented-decision", "--url", "http://localhost:3901"],
+      "environment": {
+        "MCP_TOOL_EXPOSURE_MODE": "fragmented-decision",
+        "MCP_HTTP_API_TOKEN": "Ej6Z+5rTz4F2MybnGtYXlgFRhP/t+E5U+VfTvq8lOI8="
+      },
+      "enabled": true,
+      "timeout": 15000
+    },
+     "local-memory": {
+      "type": "local",
+      "command": ["bun", "../../../local-memory/src/mcp.ts"],
+      "environment": {
+        "MEMORY_API": "http://localhost:3001"
+      },
+      "enabled": true
+    }
+  },
+  "plugin": [
+    "./plugins/genius-invokation-tools"
+  ],
+  "skills": {
+    "paths": [
+      ".opencode/active-skills",
+      ".opencode/plugins/autoresearch/skills"
+    ]
+  }
+}

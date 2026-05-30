@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "genius-invokation-standalone": {
+      "command": "bun",
+      "args": [
+        "run",
+        "packages/mcp/standalone-mcp.ts",
+        "--tool-exposure-mode",
+        "fragmented-decision",
+        "--url",
+        "http://localhost:3901"
+      ],
+      "cwd": ".",
+      "env": {
+        "MCP_TOOL_EXPOSURE_MODE": "fragmented-decision"
+      }
+    }
+  }
+}

@@ -1,8 +1,73 @@
 node_modules
-
-.vscode/
-
-.DS_Store
-
 dist
 temp
+
+# Python virtualenvs and bytecode
+packages/gi-ml/python/.lgbm-venv/
+packages/gi-ml/python/.venv/
+**/__pycache__/
+*.pyc
+
+# IDE / editor
+.vscode/
+.DS_Store
+
+# Agent / tool configs (local state, not shared)
+.claude/
+.hermes/
+.shared-skills/
+.ruff_cache/
+
+# Temp and scratch files
+.tmp/
+*.stackdump
+bash.exe.stackdump
+
+# Secrets and credentials (NEVER commit)
+Meow.pem
+ds.sh
+.env
+.env.*
+!*.env.example
+
+# Build artifacts
+*.tsbuildinfo
+packages/*/dist/
+packages/mcp/.cache/
+packages/standalone/tsconfig.node.tsbuildinfo
+
+# Generated / cached assets
+packages/standalone/public/card_images/
+
+# Logs and runtime output
+packages/mcp/log/
+output/
+memory.db
+api-1.json
+
+# Archives
+gi-training-cloud.tar.gz
+*.tar.gz
+
+# Temp test / scratch files (underscore-prefixed)
+_*
+*_output.txt
+
+# Session logs and battle reports
+20260529battle.md
+Moyou-battlelog.md
+session0410.md
+
+# Misc scratch utilities
+analyze_logs.py
+patch.js
+packages/Gi-agent_plan.md
+CLEANUP_LIST.txt
+
+# Top-level data copies (already in packages/)
+data/
+gitcg-data/
+gitcg-theory/
+
+# Deck collection data
+4.1卡组收集/

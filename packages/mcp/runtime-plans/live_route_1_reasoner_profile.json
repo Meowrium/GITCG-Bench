@@ -1,0 +1,65 @@
+{
+  "artifact_type": "ReasonerProfileArtifactV1",
+  "session_id": "live_route_1",
+  "plan_id": "plan_live_route_1_1772864665396",
+  "shard_id": "shard_live_route_1_t1_1772864665402",
+  "created_at": "2026-03-07T06:24:25.667Z",
+  "profile": {
+    "version": "ReasonerProfileV1",
+    "selectedSkills": [
+      "genius-invokation-9x"
+    ],
+    "globalGoal": "优先建立前 3 回合节奏优势，避免无效换血。",
+    "tacticalGoal": "Use prompt.txt + selected skills + opening plans to pick the highest-value legal action.",
+    "openingPriorities": [
+      "建立元素附着",
+      "争取高价值反应",
+      "保留关键换人窗口"
+    ],
+    "turnObjectives": [
+      "建立元素附着",
+      "争取高价值反应",
+      "保留关键换人窗口"
+    ],
+    "promptDirectives": [
+      "识别 deck：先调用 get_player0_deck（可选 get_player1_deck）并确认本局角色与关键牌。",
+      "预筛技能：调用 auto_select_skills 生成或刷新 active-skills/selected_skills.json；后续仅读取 active-skills 中已激活技能，不得使用全量技能目录作为决策依据。",
+      "读取卡牌效果：通过 list_cards / get_card_by_id / resolve_card 补齐关键卡与角色效果理解。",
+      "生成开局计划：调用 create_opening_plan_v1，确认开局 1~3 回合目标与风险规则。",
+      "进入动作循环：仅在开局计划完成后，才可进入 get_available_commands -> 执行动作工具 的循环。",
+      "在已完成 v1 后，可调用 create_opening_plan_v2 生成结构化 PlanV2。",
+      "在关键回合前，可调用 create_decision_shard_v1 生成短时决策分片。",
+      "在执行动作后，可调用 critic_evaluate_v1 输出 CriticResultV1，并在 should_replan=true 时触发 replan。"
+    ],
+    "skillHints": [
+      "genius-invokation-9x:附着,反应,节奏,换人"
+    ],
+    "preferredActionCases": [
+      "useSkill",
+      "playCard",
+      "switchActive"
+    ],
+    "avoidActionCases": [
+      "declareEnd"
+    ],
+    "flags": {
+      "prioritizeAuraSetup": true,
+      "prioritizeReactionTempo": true,
+      "prioritizeSupportPlay": true,
+      "allowPivotSwitch": true,
+      "allowElementalTuning": false,
+      "avoidOmniWaste": false,
+      "preserveResources": false,
+      "protectCoreHp": false,
+      "forbidEarlyEnd": true
+    },
+    "summaryLines": [
+      "goal:优先建立前 3 回合节奏优势，避免无效换血。",
+      "tactical:Use prompt.txt + selected skills + opening plans to pick the highest-value legal action.",
+      "priority:建立元素附着",
+      "prefer:useSkill,playCard,switchActive",
+      "avoid:declareEnd",
+      "genius-invokation-9x:附着,反应,节奏,换人"
+    ]
+  }
+}

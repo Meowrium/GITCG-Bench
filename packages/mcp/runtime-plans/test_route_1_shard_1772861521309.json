@@ -1,0 +1,36 @@
+{
+  "version": "DecisionShardV1",
+  "shard_id": "shard_test_route_1_t1_1772861521309",
+  "session_id": "test_route_1",
+  "plan_id": "plan_test_route_1_1772861521299",
+  "turn_range": {
+    "start": 1,
+    "end": 1
+  },
+  "tactical_goal": "Use prompt.txt + selected skills + opening plans to pick the highest-value legal action.",
+  "candidate_policies": [
+    {
+      "id": "policy_prompt_skill_reasoned_choose_action",
+      "priority": 90,
+      "preconditions": [
+        "has_pending_rpc",
+        "pending_method=action",
+        "opening_plan_ready"
+      ],
+      "action_template": {
+        "tool": "choose_action",
+        "args": {
+          "selection_mode": "prompt_skill_reasoned_plan_first"
+        }
+      }
+    }
+  ],
+  "execution_constraints": {
+    "max_actions_this_turn": 3,
+    "dice_budget_mode": "balanced"
+  },
+  "fallback_chain": [],
+  "exit_conditions": [
+    "end_phase_reached"
+  ]
+}

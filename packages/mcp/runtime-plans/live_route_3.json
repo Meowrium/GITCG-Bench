@@ -1,0 +1,30 @@
+{
+  "version": "PlanV2",
+  "plan_id": "plan_live_route_3_1772865066218",
+  "session_id": "live_route_3",
+  "deck_fingerprint": "1411-1510-2102",
+  "source_skills": [
+    "genius-invokation-9x"
+  ],
+  "global_goal": "优先建立前 3 回合节奏优势，避免无效换血。",
+  "opening_window": {
+    "start_turn": 1,
+    "end_turn": 3
+  },
+  "turn_priorities": [
+    {
+      "turn": 1,
+      "objectives": [
+        "建立元素附着",
+        "争取高价值反应",
+        "保留关键换人窗口"
+      ]
+    }
+  ],
+  "risk_rules": [],
+  "pivot_rules": [],
+  "trigger_rules": [],
+  "fallback_rules": [],
+  "created_at": "2026-03-07T06:31:06.218Z",
+  "updated_at": "2026-03-07T06:31:06.218Z"
+}

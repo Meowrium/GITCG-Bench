@@ -1,0 +1,13 @@
+{
+  "planFile": "../../output/plan-oneshot/roundS7-selfevo/plans/leihe.eng.r7.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round22-g53f/plans/shuining.ctrl.r0.json"
+  },
+  "games": 10,
+  "seedBase": 30330821,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "gameVersion": "v6.3.0",
+  "outDir": "../../output/plan-oneshot/roundS8-selfevo/games/r7-evidence-vs-shuining"
+}

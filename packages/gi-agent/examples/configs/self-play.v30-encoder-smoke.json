@@ -1,0 +1,24 @@
+{
+  "benchmarkPath": "./benchmark.quick.json",
+  "gamesMultiplier": 1,
+  "dbPath": "../output/v30-encoder-smoke/self-play.sqlite",
+  "source": "self_play",
+  "featureExtension": {
+    "enabled": true,
+    "fingerprintArtifactPath": "../../output/entity-fingerprints.generated.json"
+  },
+  "stateObservation": {
+    "enabled": true
+  },
+  "sideA": {
+    "name": "baseline-a",
+    "kind": "baseline",
+    "options": { "endTurnPenalty": 5 }
+  },
+  "sideB": {
+    "name": "baseline-b",
+    "kind": "baseline",
+    "options": { "endTurnPenalty": 5 }
+  },
+  "outputPath": "../output/v30-encoder-smoke/self-play-smoke-result.json"
+}

@@ -1,0 +1,89 @@
+{
+  "version": "v5.0",
+  "decks": [
+    {
+      "code": "AZBR2RgNFrCw8lEPBUAQ9JcPCVBx9jEQEyERO1cTGbExDJMQDMFgDcYQDOGgEMoRDQAA",
+      "name": "宵宫夜兰莱欧斯利"
+    },
+    {
+      "code": "AtLSN0AUFmHxxVoNF0EiymMNCpHB3p0PCkHR5Z4QGUEi9YMQGmHi958ZDKJhi7cSDBEB",
+      "name": "赛诺托马铁甲熔火帝皇"
+    },
+    {
+      "code": "EaCRynENGOCx4yIOFzCg5IMOCUBw9JcPE0Ax9VcPFWBx9pMTC7FAirQYE6FRCzURDDAA",
+      "name": "林尼圣骸毒蝎夏沃蕾"
+    },
+    {
+      "code": "FWDByZgMFZDh0WoNFhAQ1ZEVE6AB9DAPFECB9UgPGGERaIEQC9HwD8QQDPFAacYWDJAA",
+      "name": "久岐忍闲云深渊使徒·激流"
+    },
+    {
+      "code": "EXCR6F0OEYCh8SIPEhAh8mAPCEAw9IMPCVBw9ZcPGWExAJMQEwFRBjUQDWGwO+cRDjAA",
+      "name": "林尼珐露珊琳妮特"
+    },
+    {
+      "code": "AZAh0ZkNGOCw45wOCTDA9J0PCUDR9p4PGWHgaLYQC7FgC70RGjEATcYUDNFgackWDJAA",
+      "name": "香菱丘丘水行游侠夏沃蕾"
+    },
+    {
+      "code": "FlDRynINF0Ax1HwVF6DB8jMPE0Ax9FcPFWFxBJ4QGUHgPL0TC8HRijUYE6FRaYUWGJAA",
+      "name": "辛焱圣骸飞蛇阿佩普的绿洲守望者"
+    },
+    {
+      "code": "AFBwyScNETCA2YMNCNCg9IoPCEDg9o4PCWFwBZcQFWFwBr8TC7HxOzYYE6FgisURDBAA",
+      "name": "申鹤魈夜兰"
+    },
+    {
+      "code": "GJDAyRkVAqCw6YgOCJCA6p0OCaDQ9LMPC0EwArgYC6GAC7wQC7HBD6AQGvEAaccWDJAA",
+      "name": "娜维娅迪希雅诺艾尔"
+    },
+    {
+      "code": "FdDBykEMGaCB2WoNFpCh3psPGSCw8pEPCUAQ9JcPCVBx9VcPFWBx9pMQGcEwDLQQC/AA",
+      "name": "久岐忍无相之冰闲云"
+    },
+    {
+      "code": "AXCRyYwMApHgWoYOCJBg6Z0OCaDQ6rMPC0Aw9LYPC2GAArwYC6HBiqAQGrEAC8cQDPAA",
+      "name": "迪希雅娜维娅荒泷一斗"
+    },
+    {
+      "code": "AKCg2RUNFpCw21EPBUAQ9JcPCVBx9jEQEyERO1cTFbFxDJMQGcEwDcYQDNFgEMoRDAAA",
+      "name": "行秋宵宫莱欧斯利"
+    },
+    {
+      "code": "FkLioRYNFZHyymIOF7ES4i0PExHB454PCiHS9VgQFkFy958QGmLhi7cZDKJiDIURGbEB",
+      "name": "深渊使徒·激流「女士」那维莱特"
+    },
+    {
+      "code": "ARAwxDkMEUBgyU8MBJHxOCoNEsCg9JcPE0AB9VcPFWBx9oITGLEgirYYC6HQC8EWDJAA",
+      "name": "班尼特无相之雷若陀龙王"
+    },
+    {
+      "code": "FUDBxBUMGWCBymoMFqCh0ZsPGUCw9KAPClAB9kgPFGGAAq0QCtHQDb0QE/FhaTYWDJAA",
+      "name": "久岐忍「女士」闲云"
+    },
+    {
+      "code": "F2LCyw4OG5KD02wPChIy15MXFaID9jIRFlKD+EoYGoMTDYMSDdPyEcYSDvNCa8gYDpIC",
+      "name": "久岐忍达达利亚闲云"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "AZBR2RgNFrCw8lEPBUAQ9JcPCVBx9jEQEyERO1cTGbExDJMQDMFgDcYQDOGgEMoRDQAA",
+      "deck1": "AtLSN0AUFmHxxVoNF0EiymMNCpHB3p0PCkHR5Z4QGUEi9YMQGmHi958ZDKJhi7cSDBEB",
+      "deck0Name": "宵宫夜兰莱欧斯利",
+      "deck1Name": "赛诺托马铁甲熔火帝皇"
+    },
+    {
+      "deck0": "EaCRynENGOCx4yIOFzCg5IMOCUBw9JcPE0Ax9VcPFWBx9pMTC7FAirQYE6FRCzURDDAA",
+      "deck1": "FWDByZgMFZDh0WoNFhAQ1ZEVE6AB9DAPFECB9UgPGGERaIEQC9HwD8QQDPFAacYWDJAA",
+      "deck0Name": "林尼圣骸毒蝎夏沃蕾",
+      "deck1Name": "久岐忍闲云深渊使徒·激流"
+    },
+    {
+      "deck0": "EXCR6F0OEYCh8SIPEhAh8mAPCEAw9IMPCVBw9ZcPGWExAJMQEwFRBjUQDWGwO+cRDjAA",
+      "deck1": "AZAh0ZkNGOCw45wOCTDA9J0PCUDR9p4PGWHgaLYQC7FgC70RGjEATcYUDNFgackWDJAA",
+      "deck0Name": "林尼珐露珊琳妮特",
+      "deck1Name": "香菱丘丘水行游侠夏沃蕾"
+    }
+  ]
+}

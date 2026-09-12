@@ -1,0 +1,34 @@
+{
+  "deckA": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+  "deckB": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+  "advantage": {
+    "deckA": 0,
+    "deckB": 0,
+    "reason": "镜像对局，双方卡组完全相同，胜负取决于操作、骰运和关键牌抽到时机。"
+  },
+  "keyInteractions": [
+    {
+      "cardA": "贯月矢",
+      "cardB": "贯月矢",
+      "impact": "双方武器相同，提供相同的伤害加成，无法形成装备压制，率先装备并触发减费效果的一方可能获得节奏优势。"
+    },
+    {
+      "cardA": "赌徒的耳环",
+      "cardB": "赌徒的耳环",
+      "impact": "击杀回骰效果在镜像对局中可能形成滚雪球，先触发的一方将获得额外资源，从而占据主动。"
+    },
+    {
+      "cardA": "刘苏",
+      "cardB": "刘苏",
+      "impact": "双方都依赖刘苏加速充能，先利用切人获得充能的一方可能更快开出元素爆发。"
+    }
+  ],
+  "strategy": {
+    "deckAPlaying": "力求尽快打出桓那兰那、立本等资源牌，建立资源循环。利用刘苏和本大爷还没有输！加速充能，争取在中期利用赌徒耳环和自由的新风打出连击滚雪球。",
+    "deckBPlaying": "策略与对手相同，需要抢先手或反制对手的节奏。注意保护己方关键角色，防范对手的爆发窗口。"
+  },
+  "predictedWinRates": {
+    "deckA": 0.5,
+    "deckB": 0.5
+  }
+}

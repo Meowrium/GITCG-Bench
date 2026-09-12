@@ -1,0 +1,89 @@
+{
+  "version": "v4.3",
+  "decks": [
+    {
+      "code": "AeCg9DEPEVCQ9ZcPCWBx9jAQE4EBCDMTE7FBOzQQC6HwC8YQDLFgDdUQDeFRETgRDTAA",
+      "name": "菲谢尔纳西妲林尼"
+    },
+    {
+      "code": "AWCQxiUMEZChySMNCRAA0ZENEuDw550OCXDR6DQOE4FBCzYQDLEgDsIQDOFQD8URDDAA",
+      "name": "迪希雅琴琳妮特"
+    },
+    {
+      "code": "AGCg2QQNAZBw24oPCFCg9pcQCWFxBjAQE4EBCDMTE7EwC78QC7HwDMQQDMFAEMYRDAAA",
+      "name": "行秋重云胡桃"
+    },
+    {
+      "code": "AlCQyQsMAJBg0XwNEhDA1YYNCeBw7ZcPCVCA9pgPE5EBCDAQE4FhOzYQDLFAC8QRDBAA",
+      "name": "流浪者莫娜优菈"
+    },
+    {
+      "code": "AWCgySYMAJDA3mIPBkAg9IMPCFAw9pcQCSFxBjAQE2EBCDQQE4FBCzYQE7FgDMYQDMAA",
+      "name": "菲谢尔温迪达达利亚"
+    },
+    {
+      "code": "AJCQySoNABDQ0UUTB6Cg4ZwOCRDA4p0OCSDR9jQPE5BA/bkPC9GQCr0QDLFAD8QQDPAA",
+      "name": "芭芭拉凝光珊瑚宫心海"
+    },
+    {
+      "code": "AeCg7QsOA9AQ9ZcPCVBw9qQPE5EBCDAQE4FBOzQTDLFgCsYQDbFQC9URExGBPjgTDeAA",
+      "name": "菲谢尔莫娜纳西妲"
+    },
+    {
+      "code": "EZGBOB4TEYBR2ygPElCA9pcPCWFxCDAQE4EBOzMQE7EwC8YQDMFgDNURDQFQENkRDRAA",
+      "name": "夜兰雷音权现「女士」"
+    },
+    {
+      "code": "EVBR1R4TAIGxOCgNEuCA9ZcPCVBx9jAQE4EBCDQTE7FACsYQDLGQC8kQDeEQDtERDRAA",
+      "name": "「女士」雷音权现莫娜"
+    },
+    {
+      "code": "EVBR1R4NEeBh8SgPEhCB9SoPEmCg9pcQCYFxCDAQE6EBCzMQE7FBDjQQDOFgEcYRDTAA",
+      "name": "「女士」雷音权现若陀龙王"
+    },
+    {
+      "code": "EZBw0SsNABGQOogPCECA9J0PCWDR9jAPE5EBAjQQE4FAC7wQC7HADsQQDOFAD8kQDPAA",
+      "name": "莱依拉诺艾尔芭芭拉"
+    },
+    {
+      "code": "EhFR1g0OEtHi9ikQE2GB95gRCgJyATERFIICCTUUFLJBC8MRDbIhDMcRDeJhD9ISDhEB",
+      "name": "「女士」达达利亚雷音权现"
+    },
+    {
+      "code": "AWAw1RwNEVBg2U8TBIHxOCoNEuCg9ZcPCWBx9jAQE4EBCDMTE7FAC8EQDLERETYREzAA",
+      "name": "班尼特刻晴若陀龙王"
+    },
+    {
+      "code": "AXAxyR4MEZCQ3k8OBDDx4yIOCUBw5JcPCzAw9LMPC1Cg9rwPC2HAC8EQDLEQDMcQDMAA",
+      "name": "班尼特雷音权现林尼"
+    },
+    {
+      "code": "A3GxyBoNEpGyyiUOCeEx6okPCpHS6zUPFKFB9rkQDGLBA70RDaIRDMIRFLJiEDcRDfEB",
+      "name": "诺艾尔迪希雅五郎"
+    },
+    {
+      "code": "ANChxBcMAECQyUUNBOBg4ZEOCRAQ4pwOCSDA9p0PCWDR+TQQEyFAC7kQC7GQD70QC/AA",
+      "name": "行秋莱依拉芭芭拉"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "AeCg9DEPEVCQ9ZcPCWBx9jAQE4EBCDMTE7FBOzQQC6HwC8YQDLFgDdUQDeFRETgRDTAA",
+      "deck1": "AWCQxiUMEZChySMNCRAA0ZENEuDw550OCXDR6DQOE4FBCzYQDLEgDsIQDOFQD8URDDAA",
+      "deck0Name": "菲谢尔纳西妲林尼",
+      "deck1Name": "迪希雅琴琳妮特"
+    },
+    {
+      "deck0": "AGCg2QQNAZBw24oPCFCg9pcQCWFxBjAQE4EBCDMTE7EwC78QC7HwDMQQDMFAEMYRDAAA",
+      "deck1": "AlCQyQsMAJBg0XwNEhDA1YYNCeBw7ZcPCVCA9pgPE5EBCDAQE4FhOzYQDLFAC8QRDBAA",
+      "deck0Name": "行秋重云胡桃",
+      "deck1Name": "流浪者莫娜优菈"
+    },
+    {
+      "deck0": "AWCgySYMAJDA3mIPBkAg9IMPCFAw9pcQCSFxBjAQE2EBCDQQE4FBCzYQE7FgDMYQDMAA",
+      "deck1": "AJCQySoNABDQ0UUTB6Cg4ZwOCRDA4p0OCSDR9jQPE5BA/bkPC9GQCr0QDLFAD8QQDPAA",
+      "deck0Name": "菲谢尔温迪达达利亚",
+      "deck1Name": "芭芭拉凝光珊瑚宫心海"
+    }
+  ]
+}

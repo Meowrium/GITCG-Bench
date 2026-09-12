@@ -1,0 +1,454 @@
+{
+  "deckCode": "ILCx9N4PHEHRO+ETHrEQTJcYCqFBijMbG6GRurkdDLKQA8kgDTIQBNEgFGKhBkogDXAA",
+  "version": "v6.2",
+  "characters": [
+    {
+      "id": "2206",
+      "name": "水形幻人",
+      "elements": [],
+      "weapon": null,
+      "nations": [],
+      "hp": 10,
+      "maxEnergy": 0,
+      "skills": []
+    },
+    {
+      "id": "1315",
+      "name": "玛薇卡",
+      "elements": [],
+      "weapon": null,
+      "nations": [],
+      "hp": 10,
+      "maxEnergy": 0,
+      "skills": []
+    },
+    {
+      "id": "1610",
+      "name": "卡齐娜",
+      "elements": [],
+      "weapon": null,
+      "nations": [],
+      "hp": 10,
+      "maxEnergy": 0,
+      "skills": []
+    }
+  ],
+  "cards": [
+    {
+      "id": "213151",
+      "name": "Char-213151",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "213151",
+      "name": "Char-213151",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "312004",
+      "name": "Char-312004",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "312017",
+      "name": "Char-312017",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "312021",
+      "name": "Char-312021",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "321024",
+      "name": "Char-321024",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "321024",
+      "name": "Char-321024",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "322008",
+      "name": "Char-322008",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "322008",
+      "name": "Char-322008",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "322016",
+      "name": "Char-322016",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "322016",
+      "name": "Char-322016",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "322023",
+      "name": "Char-322023",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "322023",
+      "name": "Char-322023",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "330002",
+      "name": "Char-330002",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332004",
+      "name": "Char-332004",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332004",
+      "name": "Char-332004",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332025",
+      "name": "Char-332025",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332025",
+      "name": "Char-332025",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332029",
+      "name": "Char-332029",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332032",
+      "name": "Char-332032",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332032",
+      "name": "Char-332032",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332041",
+      "name": "Char-332041",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332041",
+      "name": "Char-332041",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332045",
+      "name": "Char-332045",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332051",
+      "name": "Char-332051",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332051",
+      "name": "Char-332051",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332052",
+      "name": "Char-332052",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332054",
+      "name": "Char-332054",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332054",
+      "name": "Char-332054",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    },
+    {
+      "id": "332055",
+      "name": "Char-332055",
+      "type": "action",
+      "subtype": null,
+      "tags": [],
+      "relatedCharacterTag": null,
+      "description": "",
+      "playCost": [],
+      "meaningfulTags": []
+    }
+  ],
+  "cardCounts": [
+    {
+      "name": "Char-213151",
+      "count": 2
+    },
+    {
+      "name": "Char-312004",
+      "count": 1
+    },
+    {
+      "name": "Char-312017",
+      "count": 1
+    },
+    {
+      "name": "Char-312021",
+      "count": 1
+    },
+    {
+      "name": "Char-321024",
+      "count": 2
+    },
+    {
+      "name": "Char-322008",
+      "count": 2
+    },
+    {
+      "name": "Char-322016",
+      "count": 2
+    },
+    {
+      "name": "Char-322023",
+      "count": 2
+    },
+    {
+      "name": "Char-330002",
+      "count": 1
+    },
+    {
+      "name": "Char-332004",
+      "count": 2
+    },
+    {
+      "name": "Char-332025",
+      "count": 2
+    },
+    {
+      "name": "Char-332029",
+      "count": 1
+    },
+    {
+      "name": "Char-332032",
+      "count": 2
+    },
+    {
+      "name": "Char-332041",
+      "count": 2
+    },
+    {
+      "name": "Char-332045",
+      "count": 1
+    },
+    {
+      "name": "Char-332051",
+      "count": 2
+    },
+    {
+      "name": "Char-332052",
+      "count": 1
+    },
+    {
+      "name": "Char-332054",
+      "count": 2
+    },
+    {
+      "name": "Char-332055",
+      "count": 1
+    }
+  ],
+  "entityDescriptions": {},
+  "generatedHandCards": {},
+  "summary": {
+    "elementCounts": {},
+    "nations": [],
+    "equipmentCount": 0,
+    "eventCount": 30
+  }
+}

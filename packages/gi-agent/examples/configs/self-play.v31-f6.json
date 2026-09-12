@@ -1,0 +1,15 @@
+{
+  "_doc": "V31 F6 schema-v2 resample. 8 mirror matchups x 80 games x 1.25 = 800 games ~ 54k samples. DB on D: drive (C: nearly full).",
+  "benchmarkPath": "./benchmark.v30-kpib.json",
+  "gamesMultiplier": 1.25,
+  "dbPath": "D:/gitcg-data/v31-f6/samples.sqlite",
+  "source": "self_play",
+  "featureExtension": {
+    "enabled": true,
+    "fingerprintArtifactPath": "../../output/entity-fingerprints.generated.json"
+  },
+  "stateObservation": { "enabled": true },
+  "sideA": { "name": "baseline-a", "kind": "baseline", "options": { "endTurnPenalty": 5 } },
+  "sideB": { "name": "baseline-b", "kind": "baseline", "options": { "endTurnPenalty": 5 } },
+  "outputPath": "D:/gitcg-data/v31-f6/self-play-result.json"
+}

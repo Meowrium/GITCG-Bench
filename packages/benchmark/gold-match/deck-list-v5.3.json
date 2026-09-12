@@ -1,0 +1,89 @@
+{
+  "version": "v5.3",
+  "decks": [
+    {
+      "code": "AWAwwTkMERBgxE8MBEDxySoMEpGhOEgTFICB3FcPFUBx9IIPGGEhip4YGaHgC7YQC7AA",
+      "name": "班尼特无相之雷若陀龙王"
+    },
+    {
+      "code": "AFBwxScNEZCA2YMNCNCg9I4PCEDg9pcPCWFxBTMQGVExBpMQC2HwO78TE7FRDGURDDAA",
+      "name": "申鹤魈夜兰"
+    },
+    {
+      "code": "FtLyN0AUAmHRxVoNF0EiymMZCoHB5J0PCkHR5Z4QGUEi9YMQGmHi958ZDKJhi7cSDBEB",
+      "name": "铁甲熔火帝皇托马赛诺"
+    },
+    {
+      "code": "FJAAyQQNAxBg0YYNCKBg9JcPE0AB9jAPE2ExCFcQFYFwO7YTC7HwTL8YDKFAisQQDLAA",
+      "name": "早柚重云愚人众·藏镜仕女"
+    },
+    {
+      "code": "FdHxNh0MAUDRxGIMFpAgyZwYCYDA5J0OCUDR9IIPGEAh9p4PGWHgirQYC6FgEbYUC9AA",
+      "name": "铁甲熔火帝皇镀金旅团·炽沙叙事人赛诺"
+    },
+    {
+      "code": "A0OUx24YGaPE5S8RDCPT96ASF2OE/EsZG4QUjbobHKTjErkTDvRjFMAXDtTUbFsZD5MD",
+      "name": "芭芭拉莱欧斯利芙宁娜"
+    },
+    {
+      "code": "F4HB3iIQBCES81gQFkFx9bUQDFFB97YQDGFR/bcQHcIiTcMcDaLxu9MRDqIiCzkRFLEB",
+      "name": "芙宁娜八重神子纳西妲"
+    },
+    {
+      "code": "GYTEWxoPA0OUx3gQG8ME5YMRDCPT+aASF2OE/EsZG4QUjYQbDqRjFLkUDhTTbMAZGJMD",
+      "name": "芙宁娜莱依拉芭芭拉"
+    },
+    {
+      "code": "AZBR2RgNFrCw8lEPBUAQ9JcPCVBx9TEPE2ERCFcTFbFxO5MQGcEwDMYQDNFgEMkRDQAA",
+      "name": "宵宫夜兰莱欧斯利"
+    },
+    {
+      "code": "FpHCyhYOGhGC0msOF1KhiZIQFEEC9kkQFWGC94IXGYISC7gRDdJBEMURDfJhascXDZEB",
+      "name": "久岐忍「女士」闲云"
+    },
+    {
+      "code": "AaBQ2QwNFpCw21EPBUAQ9JcPCVBx9jEQEyERA1cTFbFxO5MQGcEwDMYQDNFgEMoRDAAA",
+      "name": "宵宫达达利亚莱欧斯利"
+    },
+    {
+      "code": "AlERNXMYF1EhhXsMF5DByXwNFeBx9FcPGkGxiqsYG6Fxup4bGaHhC8EQC7EwxbYcE1AA",
+      "name": "八重神子阿佩普的绿洲守望者圣骸飞蛇"
+    },
+    {
+      "code": "EVCB2b0NEZBQ25cPCUBx9DEPE1AR9jIQE4EhCJMTGbEwO8YQDMFgDMoQDdEQENERDQAA",
+      "name": "夜兰克洛琳德「女士」"
+    },
+    {
+      "code": "AUAxxF4MEZBgyU8NBGDx1ioTCYFxOEgVFaBx9FcPGEAh9oITGbHgO7YYDKEQisEWDJAA",
+      "name": "班尼特深渊使徒·激流若陀龙王"
+    },
+    {
+      "code": "ARBhwYwTGlFBNY8NGpBx2acNCLBg6ZcOCZBw9KQPFUBx9VcPGWExO5MTC7FACrQQDLAA",
+      "name": "可莉娜维娅千织"
+    },
+    {
+      "code": "FRDA0TENFFDx2moPB0DA9JcPE1AB9TAPFGCB90gQGIEQCMMTDLFACsQQDLGQDckRDTAA",
+      "name": "久岐忍纳西妲那维莱特"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "AWAwwTkMERBgxE8MBEDxySoMEpGhOEgTFICB3FcPFUBx9IIPGGEhip4YGaHgC7YQC7AA",
+      "deck1": "AFBwxScNEZCA2YMNCNCg9I4PCEDg9pcPCWFxBTMQGVExBpMQC2HwO78TE7FRDGURDDAA",
+      "deck0Name": "班尼特无相之雷若陀龙王",
+      "deck1Name": "申鹤魈夜兰"
+    },
+    {
+      "deck0": "FtLyN0AUAmHRxVoNF0EiymMZCoHB5J0PCkHR5Z4QGUEi9YMQGmHi958ZDKJhi7cSDBEB",
+      "deck1": "FJAAyQQNAxBg0YYNCKBg9JcPE0AB9jAPE2ExCFcQFYFwO7YTC7HwTL8YDKFAisQQDLAA",
+      "deck0Name": "铁甲熔火帝皇托马赛诺",
+      "deck1Name": "早柚重云愚人众·藏镜仕女"
+    },
+    {
+      "deck0": "FdHxNh0MAUDRxGIMFpAgyZwYCYDA5J0OCUDR9IIPGEAh9p4PGWHgirQYC6FgEbYUC9AA",
+      "deck1": "A0OUx24YGaPE5S8RDCPT96ASF2OE/EsZG4QUjbobHKTjErkTDvRjFMAXDtTUbFsZD5MD",
+      "deck0Name": "铁甲熔火帝皇镀金旅团·炽沙叙事人赛诺",
+      "deck1Name": "芭芭拉莱欧斯利芙宁娜"
+    }
+  ]
+}

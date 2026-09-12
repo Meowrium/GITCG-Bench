@@ -1,0 +1,25 @@
+{
+  "models": [
+    { "name": "deepseek-v4-pro-0813", "baseUrl": "https://api.deepseek.com", "model": "deepseek-v4-pro-0813", "apiKeyEnv": "DEEPSEEK_API_KEY_PRO" },
+    { "name": "deepseek-v4-flash-vision-exp", "baseUrl": "https://api.deepseek.com", "model": "deepseek-v4-flash-vision-exp", "apiKeyEnv": "DEEPSEEK_API_KEY_FLASH" },
+    { "name": "glm-5.3", "baseUrl": "https://open.bigmodel.cn/api/paas/v4", "model": "glm-5.3", "apiKeyEnv": "GLM_API_KEY_53" },
+    { "name": "glm-5.3-flash", "baseUrl": "https://open.bigmodel.cn/api/paas/v4", "model": "glm-5.3-flash", "apiKeyEnv": "GLM_API_KEY_FLASH" }
+  ],
+  "environments": [
+    {
+      "label": "v6.3",
+      "gameVersion": "v6.3.0",
+      "decks": [
+        "FqHByvwMF5AxyXwNF3HBh1cYFXJxHasPGkCx9MEYHKERijUeGIFBzIQcGMFR1IUdHEAA",
+        "FhHB5+4PAkAR9PEYH6EQip0fCYHR+IQQGPFATcYUDNFgackWDJGQzNAcDcEA1NEdDUAA"
+      ]
+    }
+  ],
+  "gamesPerCell": 15,
+  "rounds": 12,
+  "evidenceScope": "own-generations",
+  "seedBase": 20260905,
+  "outRoot": "output/plan-oneshot/tournament/run-001",
+  "gameArchive": { "stateLogSample": 0.1 },
+  "schedule": { "crossGeneration": "none", "chainGap": 1 }
+}

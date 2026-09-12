@@ -1,0 +1,33 @@
+{
+  "name": "@gi-tcg/tactic-search",
+  "version": "0.17.4",
+  "type": "module",
+  "description": "Simulation-driven combo discovery and evaluation for Genius Invokation TCG",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "development": ["./src/index.ts", "./dist/index.js"],
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsup",
+    "mine": "gnx deploy/mine.ts",
+    "mine:resume": "gnx deploy/mine.ts --resume"
+  },
+  "dependencies": {
+    "@gi-tcg/assets-manager": "workspace:*",
+    "@gi-tcg/core": "workspace:*",
+    "@gi-tcg/data": "workspace:*",
+    "@gi-tcg/typings": "workspace:*",
+    "@gi-tcg/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.7",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}

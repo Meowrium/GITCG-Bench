@@ -1,0 +1,152 @@
+Analyzing deck: AWCQxiUMEZChySMNCRAA0ZENEuDw550OCXDR6DQOE4FBCzYQDLEgDsIQDOFQD8URDDAA
+
+=== Deck Analysis Result ===
+
+{
+  "deckCode": "AWCQxiUMEZChySMNCRAA0ZENEuDw550OCXDR6DQOE4FBCzYQDLEgDsIQDOFQD8URDDAA",
+  "characters": [
+    "迪希雅",
+    "琴",
+    "琳妮特"
+  ],
+  "strength": 7.5,
+  "winCondition": "利用迪希雅的坦度与风系角色的扩散反应进行消耗，后期通过琳妮特天赋与爆发完成斩杀。",
+  "gamePlan": {
+    "earlyGame": "优先打出迪希雅元素战技建立防御领域，随后铺设立本、派蒙等资源支援牌。",
+    "midGame": "切换风系角色进行扩散输出，利用琴的治疗维持血线，同时装备关键圣遗物与武器。",
+    "lateGame": "利用积累的费用优势，打出琳妮特天赋配合元素爆发进行收割，或通过资源差压死对手。"
+  },
+  "keyCards": [
+    {
+      "name": "如影流露的冷刃",
+      "importance": 9,
+      "usage": "琳妮特核心输出牌，配合大招提供高额伤害与生存保障，是主要终结手段。"
+    },
+    {
+      "name": "花海甘露之光",
+      "importance": 8,
+      "usage": "极大增强迪希雅的生存能力，确保其能持续站场分摊伤害。"
+    },
+    {
+      "name": "派蒙",
+      "importance": 7,
+      "usage": "提供每回合的费用减免，支撑卡组的高昂运营成本。"
+    },
+    {
+      "name": "元素共鸣：交织之风",
+      "importance": 8,
+      "usage": "提升队伍整体节奏或伤害效率，帮助卡组更稳定地执行主计划。"
+    },
+    {
+      "name": "元素共鸣：迅捷之风",
+      "importance": 6,
+      "usage": "提升队伍整体节奏或伤害效率，帮助卡组更稳定地执行主计划。"
+    },
+    {
+      "name": "欧庇克莱歌剧院",
+      "importance": 6,
+      "usage": "提供持续资源或功能收益，支撑中后期的运营回合。"
+    }
+  ],
+  "commonLines": [
+    {
+      "sequence": [
+        "迪希雅使用元素战技",
+        "切至琳妮特",
+        "琳妮特使用元素战技"
+      ],
+      "description": "标准起手，利用迪希雅领域保护琳妮特进行火扩散。",
+      "winRateImpact": 0.15
+    },
+    {
+      "sequence": [
+        "打出立本",
+        "切至琴",
+        "琴使用元素爆发"
+      ],
+      "description": "中期利用琴的大招进行群体治疗与扩散，稳住局势。",
+      "winRateImpact": 0.12
+    },
+    {
+      "sequence": [
+        "琳妮特装备如影流露的冷刃",
+        "琳妮特使用元素爆发",
+        "隐身规避伤害"
+      ],
+      "description": "后期爆发手段，利用天赋卡强化大招伤害并获得隐身。",
+      "winRateImpact": 0.18
+    },
+    {
+      "sequence": [
+        "欧庇克莱歌剧院",
+        "切到迪希雅",
+        "如影流露的冷刃"
+      ],
+      "description": "先完成资源启动，再把资源集中到主力角色。",
+      "winRateImpact": 0.12
+    },
+    {
+      "sequence": [
+        "迪希雅使用技能",
+        "万家灶火",
+        "继续压制或安全切人"
+      ],
+      "description": "中期集中资源给主 C 角色，利用装备与天赋提高单回合质量。",
+      "winRateImpact": 0.18
+    }
+  ],
+  "strengths": [
+    "生存能力极强，迪希雅的分摊伤害配合琴的治疗和大量食物牌，很难被快攻突破。",
+    "资源运营稳定，携带大量过牌与费用支援，长盘作战优势明显。",
+    "元素反应灵活，双风体系配合火元素扩散，能有效应对多种护盾。",
+    "角色元素组合明确，主计划较容易围绕核心角色展开。",
+    "支援牌密度较高，长局中的资源与过牌稳定性更好。",
+    "具备元素共鸣组件，能强化队伍整体节奏或伤害效率。"
+  ],
+  "weaknesses": [
+    "缺乏高爆发反应，没有蒸发/融化，斩杀线依赖琳妮特大招，容易被计算血量防住。",
+    "武器牌适配性受限，三把单手剑迪希雅无法使用，若风系角色阵亡武器将卡手。",
+    "启动节奏较慢，极度依赖支援牌上手，前期断档容易陷入被动。",
+    "如果前期抽不到关键资源牌，启动节奏会明显放缓。",
+    "主要依靠站场与单点质量，面对高频切人或控制时容错有限。"
+  ],
+  "matchupNotes": {
+    "快攻": "全力寻找迪希雅战技与防御装，利用分摊伤害机制吸收伤害，保护后排。",
+    "控制": "利用资源优势多打手牌差，通过食物牌抵消关键控制，寻找机会反打。"
+  }
+}
+Analyzing matchup:
+Deck A: AWCQxiUMEZChySMNCRAA0ZENEuDw550OCXDR6DQOE4FBCzYQDLEgDsIQDOFQD8URDDAA
+Deck B: AJCQySoNABDQ0UUTB6Cg4ZwOCRDA4p0OCSDR9jQPE5BA/bkQC6GQC70QDLFAD8QQDPAA
+
+=== Matchup Analysis Result ===
+
+{
+  "deckA": "AWCQxiUMEZChySMNCRAA0ZENEuDw550OCXDR6DQOE4FBCzYQDLEgDsIQDOFQD8URDDAA",
+  "deckB": "AJCQySoNABDQ0UUTB6Cg4ZwOCRDA4p0OCSDR9jQPE5BA/bkQC6GQC70QDLFAD8QQDPAA",
+  "advantage": {
+    "deckA": 1,
+    "deckB": -1,
+    "reason": "双方都有可执行的主计划，胜负更多取决于前中期启动顺序与关键牌命中。"
+  },
+  "keyInteractions": [
+    {
+      "cardA": "如影流露的冷刃",
+      "cardB": "光辉的季节",
+      "impact": "天赋组件与天赋组件的节奏对抗会直接影响中期回合质量。"
+    },
+    {
+      "cardA": "祭礼剑",
+      "cardB": "祭礼残章",
+      "impact": "武器组件与武器组件的节奏对抗会直接影响中期回合质量。"
+    }
+  ],
+  "strategy": {
+    "deckAPlaying": "优先稳住前期资源，等支援体系成型后再围绕迪希雅打高质量回合，尽量压缩芭芭拉的爆发窗口。",
+    "deckBPlaying": "尽量缩短铺垫时间，利用切人与功能牌牵制迪希雅，不要让对手顺利进入资源滚雪球阶段。"
+  },
+  "predictedWinRates": {
+    "deckA": 0.535,
+    "deckB": 0.46499999999999997
+  }
+}

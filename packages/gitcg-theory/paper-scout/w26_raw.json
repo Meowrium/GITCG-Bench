@@ -1,0 +1,1062 @@
+{
+  "week": "2026-W26",
+  "generated": "2026-06-22T01:04:42.472897",
+  "query_count": 26,
+  "total_raw": 100,
+  "new_unique": 46,
+  "tier_stats": {
+    "T1": {
+      "total": 100,
+      "new": 46
+    },
+    "T2": {
+      "total": 0,
+      "new": 0
+    },
+    "T3": {
+      "total": 0,
+      "new": 0
+    }
+  },
+  "score_counts": {
+    "1": 45,
+    "2": 1,
+    "3": 0,
+    "4": 0,
+    "5": 0
+  },
+  "query_results": [
+    [
+      "T1",
+      "reinforcement learning card game AI MCTS",
+      10,
+      10
+    ],
+    [
+      "T1",
+      "imperfect information game deep reinforcement learning card",
+      10,
+      3
+    ],
+    [
+      "T1",
+      "Monte Carlo tree search card game",
+      10,
+      9
+    ],
+    [
+      "T1",
+      "opponent modeling card game",
+      10,
+      4
+    ],
+    [
+      "T1",
+      "action space representation card game",
+      10,
+      3
+    ],
+    [
+      "T1",
+      "combinatorial game theory card",
+      10,
+      4
+    ],
+    [
+      "T1",
+      "regret minimization card game",
+      10,
+      8
+    ],
+    [
+      "T1",
+      "self-play training card game",
+      10,
+      3
+    ],
+    [
+      "T1",
+      "game theory card game neural network",
+      10,
+      2
+    ],
+    [
+      "T1",
+      "counterfactual regret minimization game",
+      10,
+      0
+    ],
+    [
+      "T1",
+      "card game benchmark reinforcement learning",
+      0,
+      0
+    ],
+    [
+      "T2",
+      "large language model game playing agent",
+      0,
+      0
+    ],
+    [
+      "T2",
+      "LLM world model game",
+      0,
+      0
+    ],
+    [
+      "T2",
+      "causal reinforcement learning game",
+      0,
+      0
+    ],
+    [
+      "T2",
+      "multi-agent reinforcement learning card game",
+      0,
+      0
+    ],
+    [
+      "T2",
+      "deep Monte Carlo card game",
+      0,
+      0
+    ],
+    [
+      "T2",
+      "distributed reinforcement learning game training",
+      0,
+      0
+    ],
+    [
+      "T2",
+      "game AI planning search MCTS",
+      0,
+      0
+    ],
+    [
+      "T2",
+      "policy gradient card game imperfect information",
+      0,
+      0
+    ],
+    [
+      "T2",
+      "deck building AI recommendation",
+      0,
+      0
+    ],
+    [
+      "T3",
+      "language model code generation game engine",
+      0,
+      0
+    ],
+    [
+      "T3",
+      "chain of thought game playing reasoning",
+      0,
+      0
+    ],
+    [
+      "T3",
+      "structured causal model game",
+      0,
+      0
+    ],
+    [
+      "T3",
+      "foundation model game AI",
+      0,
+      0
+    ],
+    [
+      "T3",
+      "test-time search game",
+      0,
+      0
+    ],
+    [
+      "T3",
+      "GRPO reinforcement learning game",
+      0,
+      0
+    ]
+  ],
+  "papers": {
+    "2606.20426": {
+      "arxiv_id": "2606.20426v1",
+      "title": "TaCauchy: An Extensible FEM Framework for Vision-Based Tactile Simulation",
+      "authors": [
+        "Hengfei Zhao",
+        "Yifan Xie",
+        "Junhao Gong",
+        "Yue Sun",
+        "Kai Zhu",
+        "Weihua He",
+        "Shoujie Li",
+        "Haohuan Fu",
+        "Wenbo Ding"
+      ],
+      "published": "2026-06-18T16:08:45Z",
+      "summary": "Vision-based tactile sensors require high-fidelity simulation for reinforcement learning, yet existing approaches struggle to provide accurate mechanical stress fields within GPU-accelerated robotics platforms. We present TaCauchy, an extensible Finite Element Method (FEM) framework that integrates rigorous physics-based force computation into Isaac Sim. Built on the Unified Incremental Potential Contact (UIPC) solver, TaCauchy directly computes Cauchy stress tensors from hyperelastic constituti",
+      "categories": [
+        "cs.RO"
+      ],
+      "score": 2,
+      "source_tier": "T1",
+      "source_query": "regret minimization card game"
+    },
+    "2606.20421": {
+      "arxiv_id": "2606.20421v1",
+      "title": "On Ziegler pairs of line arrangements: from non-existence to abundance",
+      "authors": [
+        "Alexandru Dimca",
+        "Piotr Pokora"
+      ],
+      "published": "2026-06-18T16:05:35Z",
+      "summary": "We study Ziegler pairs of line arrangements from both numerical and homological perspectives. First, we show that for arrangements of $d<9$ lines the intersection lattice determines the exponent data considered here. Then we list six distinct Ziegler pair with $d=10$. In particular, we construct higher-degree examples with the same intersection lattice, the same minimal degree of a Jacobian relation, and the same Hilbert function of the Milnor algebra, but with different minimal graded free reso",
+      "categories": [
+        "math.AG",
+        "math.AC",
+        "math.CO"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "regret minimization card game"
+    },
+    "2606.20428": {
+      "arxiv_id": "2606.20428v1",
+      "title": "ARC: Adaptive Robust Joint State and Covariance Estimation",
+      "authors": [
+        "Alexandre Hadji-Thomas",
+        "Andrew Stirling",
+        "James R. Forbes"
+      ],
+      "published": "2026-06-18T16:09:50Z",
+      "summary": "Sensor measurements are frequently corrupted by outliers and non-Gaussian noise. These imperfections in the sensor data can cause classical state estimators to generate biased and unreliable state and uncertainty estimates. Robust estimators reject or downweight outliers but do not perform measurement covariance estimation, whereas joint state and covariance estimators assume Gaussian residuals and fixed loss shape parameters. Integrating these two capabilities into a single framework is an oppo",
+      "categories": [
+        "cs.RO"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "Monte Carlo tree search card game"
+    },
+    "2606.20433": {
+      "arxiv_id": "2606.20433v1",
+      "title": "Shadow Completion in Celestial OPEs",
+      "authors": [
+        "Reiko Liu",
+        "Zijian Liu",
+        "Wen-Jie Ma"
+      ],
+      "published": "2026-06-18T16:11:22Z",
+      "summary": "We argue that celestial OPEs must be supplemented by shadow-basis operators. Although the shadow transform does not introduce new bulk degrees of freedom, it provides a distinct primary state in the boundary celestial theory. From OPE consistency, we show that the ordinary celestial OPE does not close on Mellin-basis exchanges alone. Rather, the same exchanged bulk particle must also appear through its shadow-basis representative. This leads to a shadow-completed OPE, with the shadow OPE coeffic",
+      "categories": [
+        "hep-th"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "Monte Carlo tree search card game"
+    },
+    "2606.20435": {
+      "arxiv_id": "2606.20435v1",
+      "title": "Choosing A Headline Estimand from Matching, DID, and Hybrid Designs: A Minimax-Regret Approach",
+      "authors": [
+        "Yechan Park",
+        "Yuya Sasaki"
+      ],
+      "published": "2026-06-18T16:14:39Z",
+      "summary": "Researchers using panel data to estimate causal effects routinely choose among three approaches to using past outcomes: difference-in-differences (DID), conditioning on lagged outcomes (matching, M), and a hybrid that does both (DIDM). The corresponding identifying assumptions are non-nested, leaving little guidance on which to report. We give conditions under which the corresponding estimands are ordered, with DIDM bracketed between matching and DID. This makes DIDM the minimax-regret choice am",
+      "categories": [
+        "econ.EM"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "regret minimization card game"
+    },
+    "2606.20442": {
+      "arxiv_id": "2606.20442v1",
+      "title": "Evolutionary Two-Stage Hyperparameter Optimization Strategies for Physics-Informed Neural Networks",
+      "authors": [
+        "Fedor Buzaev",
+        "Dmitry Efremenko",
+        "Egor Bugaev",
+        "Andrei Ermakov",
+        "Denis Derkach",
+        "Daria Pugacheva",
+        "Fedor Ratnikov"
+      ],
+      "published": "2026-06-18T16:22:52Z",
+      "summary": "Physics-Informed Neural Networks (PINNs) solve Partial Differential Equations (PDEs) by embedding physical laws into neural network training. However, their performance suffers from unstable convergence, training plateaus, and strong sensitivity to architectural and optimization hyperparameters due to the highly non-convex and multi-term structure of the physics-informed loss. In this setting, the outer-loop hyperparameter search is a noisy and black-box optimization problem over heterogeneous p",
+      "categories": [
+        "cs.LG",
+        "cs.NE",
+        "math.NA"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "Monte Carlo tree search card game"
+    },
+    "2606.20452": {
+      "arxiv_id": "2606.20452v1",
+      "title": "Tree-cut decompositions for displaying undominated edge-ends",
+      "authors": [
+        "Max Pitz",
+        "Lucas Real"
+      ],
+      "published": "2026-06-18T16:30:09Z",
+      "summary": "We prove that every graph admits a linked, componental, rooted tree-cut decomposition of finite adhesion that displays all undominated edge-ends. As a first application, we deduce that this tree-cut decomposition also displays the edge-degrees of all undominated edge-ends. For locally finite graphs $-$ where every end is an undominated edge-end $-$ this yields a linked tree-cut decomposition of finite adhesion into $\\textit{finite}$ parts that displays all ends and their edge-degrees. As a secon",
+      "categories": [
+        "math.CO"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "Monte Carlo tree search card game"
+    },
+    "2606.20454": {
+      "arxiv_id": "2606.20454v1",
+      "title": "Minimality of Random Moore Automata under Prefix-Dependent Congruences",
+      "authors": [
+        "Matías Carrasco",
+        "Sergio Yovine"
+      ],
+      "published": "2026-06-18T16:35:12Z",
+      "summary": "We study prefix-dependent congruences for random deterministic transition systems with state outputs. In this setting, the admissible continuations used to compare two states may depend on the observed prefix, and two states are identified only if no common admissible continuation distinguishes their future outputs. The framework includes probabilistic deterministic finite automata as a motivating special case. We analyze the random transition model in which all transition values are independent",
+      "categories": [
+        "cs.FL"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "regret minimization card game"
+    },
+    "2606.20466": {
+      "arxiv_id": "2606.20466v1",
+      "title": "Correlated Mott semi-metal in the topological heavy fermion model",
+      "authors": [
+        "Emile Pangburn",
+        "Igor de Melo Froldi",
+        "Anurag Banerjee"
+      ],
+      "published": "2026-06-18T16:46:38Z",
+      "summary": "The topological heavy-fermion model provides a minimal framework for describing the coexistence of localized moments and itinerant Dirac electrons in magic-angle twisted bilayer graphene (MATBG). Several analytical and numerical methods have been applied to this model; however, whether they provide a realistic description of MATBG remains incompletely understood. In this work, we develop an Hubbard operator approach that incorporates non-local correlations beyond the single-site limit. We benchm",
+      "categories": [
+        "cond-mat.str-el"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "Monte Carlo tree search card game"
+    },
+    "2606.20467": {
+      "arxiv_id": "2606.20467v1",
+      "title": "Agentic Symbolic Search: Characterizing PDEs Beyond Hand-crafted Expressions, Meshes, and Neural Networks",
+      "authors": [
+        "Zongmin Yu",
+        "Liu Yang"
+      ],
+      "published": "2026-06-18T16:46:42Z",
+      "summary": "Mathematicians understand a PDE solution through mathematical structures rather than tables of computed values. Historically, this has been the product of mathematical analysis, carried out by hand for each problem individually. Neither numerical simulation nor neural networks produce those structures directly. We propose Agentic Symbolic Search (ASYS), a prior-guided framework in which an agent translates PDE theory, public problem constraints, and accumulated search experience into testable di",
+      "categories": [
+        "cs.LG",
+        "math.NA",
+        "physics.comp-ph"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "Monte Carlo tree search card game"
+    },
+    "2606.20468": {
+      "arxiv_id": "2606.20468v1",
+      "title": "Rigidity of coarsely minimal Reeb flows",
+      "authors": [
+        "Barney Bramham",
+        "Jacobus S. de Pooter"
+      ],
+      "published": "2026-06-18T16:47:41Z",
+      "summary": "We introduce the notion of a coarsely minimal Reeb flow, generalizing the notion of minimal geodesic flow, and prove the following rigidity theorem: That a coarsely minimal Reeb flow satisfying a divergence property is orbitally equivalent to the geodesic flow of a Riemannian metric of negative sectional curvature. Without the divergence assumption, we obtain an orbital semi-equivalence. This extends a rigidity result for geodesic flows of negatively curved Riemannian metrics which is due to Gro",
+      "categories": [
+        "math.DS"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "regret minimization card game"
+    },
+    "2606.20470": {
+      "arxiv_id": "2606.20470v1",
+      "title": "Analyzing Defensive Misdirection Against Model-Guided Automated Attacks on Agentic AI Systems",
+      "authors": [
+        "Reza Soosahabi",
+        "Vivek Namsani"
+      ],
+      "published": "2026-06-18T16:50:28Z",
+      "summary": "Agentic AI systems increasingly rely on language-model components to interpret instructions, process external data, invoke tools, and coordinate with other agents. These capabilities make prompt-injection and jailbreak attacks more consequential, especially as attackers adopt model-guided automation to scale probing, prompt refinement, and response evaluation. This work analyzes the resulting attack-defense setting through a probabilistic model of a target system, its defense mechanism, and the ",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "Monte Carlo tree search card game"
+    },
+    "2606.20481": {
+      "arxiv_id": "2606.20481v1",
+      "title": "The alignment time function",
+      "authors": [
+        "Marco van den Beld-Serrano"
+      ],
+      "published": "2026-06-18T16:59:40Z",
+      "summary": "Given a fixed past-directed timelike vector field, does there exist a time function whose gradient is optimally aligned with it? We address this question by introducing a functional that, on the one hand, captures the misalignment between the timelike vector field and the gradients of suitable Sobolev functions, and, on the other hand, penalizes null gradients. Our analysis focuses on compact subsets of smooth stably causal spacetimes. More precisely, we prove that, under suitable assumptions on",
+      "categories": [
+        "math.DG",
+        "gr-qc"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "regret minimization card game"
+    },
+    "2606.20484": {
+      "arxiv_id": "2606.20484v1",
+      "title": "Minimizers for Coulomb gases constrained to a halfspace",
+      "authors": [
+        "Rupert L. Frank",
+        "Paata Ivanishvili",
+        "Clara Torres-Latorre"
+      ],
+      "published": "2026-06-18T17:02:19Z",
+      "summary": "We consider a family of optimization problems, based on a mean-field description of particles interacting through Coulomb forces in a quadratic trap. In addition, the particles are constrained to lie in a halfspace and we are interested in the way the particle distribution changes as the halfspace varies. In particular, we can prove the existence of a phase transition, thereby settling a recent conjecture by Byun, Forrester, Majumdar and Schehr.",
+      "categories": [
+        "math.AP",
+        "math-ph"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "regret minimization card game"
+    },
+    "2606.20497": {
+      "arxiv_id": "2606.20497v1",
+      "title": "Interpretable Meta-Learning for Multi-Objective Chemical Search",
+      "authors": [
+        "Antonio Varagnolo",
+        "Yulia Pimonova",
+        "Michael G. Taylor",
+        "Raphaël Pestourie",
+        "Nicholas E. Lubbers"
+      ],
+      "published": "2026-06-18T17:12:48Z",
+      "summary": "Navigating the vast space of synthetically accessible molecules demands surrogate models that are interpretable and capable of handling multiple competing objectives at the same time. Deep learning approaches struggle to satisfy them under the computational constraints of quantum-level chemistry. Here, we introduce a modular pipeline that combines interpretable linear meta-learning models and adaptive-confidence uncertainty quantification into an Efficient Global Optimization (EGO) framework for",
+      "categories": [
+        "cs.CE",
+        "cond-mat.mtrl-sci"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "Monte Carlo tree search card game"
+    },
+    "2606.20503": {
+      "arxiv_id": "2606.20503v1",
+      "title": "General circuit mapping algorithm for neutral atom quantum computers",
+      "authors": [
+        "Neven Gentil",
+        "Lous S. Rianne",
+        "Aida Todri-Sanial"
+      ],
+      "published": "2026-06-18T17:21:23Z",
+      "summary": "Neutral atom quantum computers (NAQC) are emerging as a promising, scalable quantum computing platform because of their long qubit coherence, flexible qubit arrangement, and multiqubit gate capabilities. However, circuit execution often requires physically moving qubits, making compilation a critical optimization challenge. We propose a circuit independent mathematical framework built on graph-theoretic combinatorial optimization that determines the minimal number of required qubit transfers. Th",
+      "categories": [
+        "quant-ph"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "regret minimization card game"
+    },
+    "2606.20519": {
+      "arxiv_id": "2606.20519v1",
+      "title": "GPU-accelerated semidefinite programming for causal games",
+      "authors": [
+        "Emanuel-Cristian Boghiu",
+        "Kyrylo Simonov"
+      ],
+      "published": "2026-06-18T17:36:34Z",
+      "summary": "The process matrix formalism describes quantum correlations in scenarios without a fixed causal order between local laboratories. Operational signatures of such correlations can be investigated through causal games. A paradigmatic example is the Guess-Your-Neighbour's-Input game, in which two parties attempt to guess each other's inputs. Correlations compatible with any definite, or probabilistically mixed, causal order cannot achieve a winning probability exceeding $1/2$. The best process-matri",
+      "categories": [
+        "quant-ph"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "combinatorial game theory card"
+    },
+    "2606.20524": {
+      "arxiv_id": "2606.20524v1",
+      "title": "String Axiverse Enhancement of Superradiant Dark Matter Production",
+      "authors": [
+        "Diogo S. Gorgulho",
+        "Jacob A. Litterer",
+        "João G. Rosa"
+      ],
+      "published": "2026-06-18T17:38:19Z",
+      "summary": "We study the effects of string axion emission on dark matter production by light primordial black holes (PBHs), through both evaporation and superradiance. We show, in particular, that the Hawking emission of $\\mathcal{O}(100-10^5)$ light axion species predicted in realistic string theory constructions can significantly enhance the efficiency of superradiance, given the associated increase in the PBH spin. The string axiverse thus significantly expands the parametric regions (dark matter mass an",
+      "categories": [
+        "hep-ph",
+        "astro-ph.CO",
+        "gr-qc"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "combinatorial game theory card"
+    },
+    "2606.20525": {
+      "arxiv_id": "2606.20525v1",
+      "title": "The $B^+ \\to K^+ ν\\bar ν$ decay as a QCD axion search: comparing reinterpretation approaches",
+      "authors": [
+        "Merna Abumusabh",
+        "Giulio Dujany",
+        "Diego Guadagnoli",
+        "Méril Reboud",
+        "Claudio Toni"
+      ],
+      "published": "2026-06-18T17:38:38Z",
+      "summary": "Two recent independent analyses of Belle II $B^+ \\! \\to \\! K^+ν\\barν$ data yield limits on ${\\mathcal B}(B^+ \\! \\to \\! K^+ a)$ -- the two-body mode to a light invisible particle such as the QCD axion -- differing by a factor of roughly four; we trace this to the choice of kinematic variable space. The central figure of merit is the resolution in the reconstructed di-neutrino invariant mass $q^2_{\\rm rec}$: fine-grained binning resolves the narrow axion signal, while coarse binning dilutes it int",
+      "categories": [
+        "hep-ph",
+        "hep-ex"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "Monte Carlo tree search card game"
+    },
+    "2606.20526": {
+      "arxiv_id": "2606.20526v1",
+      "title": "DeepSWIP: Quotient-WMC Counterfactuals for Neural Probabilistic Logic Programs",
+      "authors": [
+        "Saimun Habib",
+        "Vaishak Belle",
+        "Fengxiang He"
+      ],
+      "published": "2026-06-18T17:39:00Z",
+      "summary": "Neurosymbolic systems such as DeepProbLog combine neural perception with probabilistic logic, but standard inference is associational. Counterfactual reasoning additionally requires a causal semantics for interventions and evidence. We introduce DeepSWIP, a single-world counterfactual semantics for DeepProbLog programs. Using neural materialization, we reduce fixed-context neural predicates to ordinary ProbLog choices, apply Single World Intervention Programs (SWIPs), and compute counterfactuals",
+      "categories": [
+        "cs.AI"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "game theory card game neural network"
+    },
+    "2606.20530": {
+      "arxiv_id": "2606.20530v1",
+      "title": "Rotating magnetized pion gas of finite transverse size: condensation constraints and transport properties",
+      "authors": [
+        "Ankit Kumar",
+        "Diwakar Gaur",
+        "Vinod Chandra"
+      ],
+      "published": "2026-06-18T17:43:14Z",
+      "summary": "This work investigates the electric, thermal, and thermoelectric responses of a rotating pion gas of finite transverse radius in the presence of a background magnetic field, with the rotation axis aligned with the magnetic field. We explicitly calculate the parameter limits for $π^+$ condensation and restrict our working regime safely outside these boundaries, ensuring well-behaved transport coefficients. Notably, the system exhibits a condensation asymmetry, with $π^-$ remaining uncondensed at ",
+      "categories": [
+        "hep-ph",
+        "nucl-th"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "combinatorial game theory card"
+    },
+    "2606.20531": {
+      "arxiv_id": "2606.20531v1",
+      "title": "VisDom: Sparse Novel View Synthesis with Visible Domain Constraint",
+      "authors": [
+        "Mariia Gladkova*",
+        "Tarun Yenamandra*",
+        "Edmond Boyer",
+        "Robert Maier",
+        "Tony Tung",
+        "Daniel Cremers"
+      ],
+      "published": "2026-06-18T17:45:37Z",
+      "summary": "Sparse novel view synthesis (NVS) remains challenging due to the ambiguity of recovering 3D geometry from few input views. While NeRF- and Gaussian Splatting (GS)-based methods perform well with dense supervision, they often overfit in sparse settings, producing floating artifacts and inconsistent geometry. Silhouette consistency is commonly used as a regularizer, but it remains insufficient, as silhouette-consistent regions can extend beyond the true object geometry. We introduce VisDom, a lear",
+      "categories": [
+        "cs.CV"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "self-play training card game"
+    },
+    "2606.20532": {
+      "arxiv_id": "2606.20532v1",
+      "title": "How Do Instructions Shape Speech? Cross-Attention Attribution for Style-Captioned Text-to-Speech",
+      "authors": [
+        "Nityanand Mathur",
+        "Hamees Sayed",
+        "Wasim Madha",
+        "Apoorv Singh",
+        "Sameer Khurana",
+        "Akshat Mandloi",
+        "Sudarshan Kamath"
+      ],
+      "published": "2026-06-18T17:47:32Z",
+      "summary": "Style-captioned text-to-speech systems use natural language to control voice characteristics, but how individual words influence acoustic output remains unclear. Understanding this is critical for diagnosing failure modes and improving controllability in expressive TTS. We propose cross-attention attribution for speech diffusion models, adapting the DAAM framework to the speech domain for the first time, and apply it to CapSpeech-TTS. Our method extracts per-token heatmaps across 25 layers and 2",
+      "categories": [
+        "cs.AI"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "game theory card game neural network"
+    },
+    "2606.20534": {
+      "arxiv_id": "2606.20534v1",
+      "title": "On Second-Order Methods for Bilevel Optimization",
+      "authors": [
+        "Jiawen Bi",
+        "Jiaxiang Li",
+        "Mingyi Hong",
+        "Shuzhong Zhang"
+      ],
+      "published": "2026-06-18T17:48:15Z",
+      "summary": "Bilevel optimization is an indispensable modeling tool for modern machine learning and engineering design. However, the theory and practice for finding second order stationary points in the context of bilevel optimization still remain largely unsettled. Even for bilevel optimization with strongly convex lower-level problem, the hyperfunction it induces is in general nonconvex. Although the Cubic Regularized Newton methods (CRN) famously achieve the optimal $\\mathcal{O}(\\varepsilon^{-1.5})$ SOSP ",
+      "categories": [
+        "math.OC"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "combinatorial game theory card"
+    },
+    "2606.20536": {
+      "arxiv_id": "2606.20536v1",
+      "title": "The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation",
+      "authors": [
+        "Nicolas Dufour",
+        "Alexei A. Efros",
+        "Patrick Pérez"
+      ],
+      "published": "2026-06-18T17:49:32Z",
+      "summary": "The Frechet Inception Distance (FID) is the de facto arbiter of image generation, yet most papers report just a single number from a single trained model using a single sampling seed. How reproducible is that number if we retrain the model, or merely resample from it? In this paper, we treat FID as a random variable on a two-axis panel of training and generation seeds, and measure its variance directly on several hundred SiT networks trained on class-conditional ImageNet 256x256. We report surpr",
+      "categories": [
+        "cs.CV"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "self-play training card game"
+    },
+    "2606.20538": {
+      "arxiv_id": "2606.20538v1",
+      "title": "Multi-Task Bayesian In-Context Learning",
+      "authors": [
+        "Qingyang Zhu",
+        "Eric Karl Oermann",
+        "Kyunghyun Cho"
+      ],
+      "published": "2026-06-18T17:50:10Z",
+      "summary": "Bayesian predictive inference provides a principled framework for uncertainty quantification, data efficiency, and robust generalization. However, exact inference is often intractable, and scalable approximations may remain computationally expensive or require restrictive modeling assumptions that degrade predictive performance. Prior-Data Fitted and in-context models have recently emerged as an amortized alternative by learning to map datasets directly to predictive distributions, but existing ",
+      "categories": [
+        "cs.LG"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "reinforcement learning card game AI MCTS"
+    },
+    "2606.20539": {
+      "arxiv_id": "2606.20539v1",
+      "title": "Caching for Dollars, Not Hits: An Exact Offline Reference for Cloud-Egress Caching and the Crossover That Decides When It Pays",
+      "authors": [
+        "Madhulatha Mandarapu",
+        "Sandeep Kunkunuru"
+      ],
+      "published": "2026-06-18T17:51:45Z",
+      "summary": "When a cache miss fetches from cloud object storage, the bill is per GET request and per byte of egress, not latency. Classic caching minimizes the miss rate, the wrong objective: a rarely but expensively fetched object can cost thousands of times more dollars than a frequently but cheaply fetched one. Generalized-caching theory bounds the miss-cost objective, but no reported benchmark measures how far deployed heuristics sit from the dollar-optimal offline policy on real cloud prices. We supply",
+      "categories": [
+        "cs.DB",
+        "cs.DS"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "reinforcement learning card game AI MCTS"
+    },
+    "2606.20544": {
+      "arxiv_id": "2606.20544v1",
+      "title": "Toward Calibrated Mixture-of-Experts Under Distribution Shift",
+      "authors": [
+        "Gina Wong",
+        "Drew Prinster",
+        "Suchi Saria",
+        "Rama Chellappa",
+        "Anqi Liu"
+      ],
+      "published": "2026-06-18T17:55:00Z",
+      "summary": "Calibration aligns a model's predictive uncertainty with the frequencies of its empirical outcomes and is important for understanding and trusting reported probabilities. Recent work shows that enforcing calibration at the level of individual predictors can improve ensemble accuracy and calibration, with mixture-of-experts (MoE) models showing strong empirical improvements in particular; however, the conditions under which calibration helps MoE are not well understood. In this work, we study how",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "reinforcement learning card game AI MCTS"
+    },
+    "2606.20546": {
+      "arxiv_id": "2606.20546v1",
+      "title": "Predictability as a Fine-Grained Measure for Privacy",
+      "authors": [
+        "Linda Lu",
+        "Karthik Sridharan"
+      ],
+      "published": "2026-06-18T17:55:31Z",
+      "summary": "Differential privacy (DP) ensures rigorous individual-level privacy guarantees against even the most knowledgeable attackers, but its worst-case nature can impose a costly privacy-accuracy tradeoff. We introduce privacy via predictability, a fine-grained framework that explicitly incorporates the attacker's core knowledge, a compromised portion of the dataset generated by a stochastic process, and a specified family of queries. Predictability measures privacy leakage as the incremental gain in a",
+      "categories": [
+        "cs.LG"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "reinforcement learning card game AI MCTS"
+    },
+    "2606.20547": {
+      "arxiv_id": "2606.20547v1",
+      "title": "The Token Is a Group Element: On Lie-Algebra Attention over Matrix Lie Groups",
+      "authors": [
+        "Przemyslaw Musialski"
+      ],
+      "published": "2026-06-18T17:56:17Z",
+      "summary": "We place the attention token on the group: a token is an element $g_i$ of a matrix Lie group $G$ -- a bare transformation, with no feature payload and no external action $ρ(g)$ carrying it. To our knowledge this is the first attention construction whose tokens are bare matrix Lie group elements: their score is the closed-form algebra norm of the relative pose rather than a learned kernel, and it reaches the affine full-frame groups that every irrep- or surjective-exp-based method must exclude. W",
+      "categories": [
+        "cs.LG",
+        "cs.CV",
+        "cs.GR",
+        "cs.RO",
+        "math.DG"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "reinforcement learning card game AI MCTS"
+    },
+    "2606.20548": {
+      "arxiv_id": "2606.20548v1",
+      "title": "Topological Codes Based on Space Groups",
+      "authors": [
+        "Chong-Yuan Xu",
+        "Ze-Chuan Liu",
+        "Yong Xu"
+      ],
+      "published": "2026-06-18T17:56:41Z",
+      "summary": "Topological codes form one of the most important classes of stabilizer codes. Most existing algebraic constructions and analyses of topological codes assume translation invariance. Here we show that topological codes can arise in more general settings by incorporating point group operations. The central construction is a class of Calderbank-Shor-Steane (CSS) codes called space-group codes, whose check operators are built from group-algebra templates over space groups that combine translations wi",
+      "categories": [
+        "quant-ph",
+        "cond-mat.quant-gas"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "action space representation card game"
+    },
+    "2606.20549": {
+      "arxiv_id": "2606.20549v1",
+      "title": "Generating Robot Hands from Human Demonstrations",
+      "authors": [
+        "Sha Yi",
+        "Nicklas Hansen",
+        "Xueqian Bai",
+        "Carmelo Sferrazza",
+        "Michael T. Tolley",
+        "Xiaolong Wang"
+      ],
+      "published": "2026-06-18T17:57:21Z",
+      "summary": "Robot learning has advanced rapidly in learning control, but learning the physical body of a robot remains much more difficult because jointly searching over design and control creates a very large combinatorial problem. Here, we present a data-driven framework for generating robot hands from human demonstrations. Instead of learning a complex controller together with each candidate design, we generate robot hand designs using the same simple control policy used after fabrication: matching finge",
+      "categories": [
+        "cs.RO"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "reinforcement learning card game AI MCTS"
+    },
+    "2606.20550": {
+      "arxiv_id": "2606.20550v1",
+      "title": "Easy Reads: A Python program for making Scientific Papers on arXiv more Reader Friendly and Accessible",
+      "authors": [
+        "Vishal Verma"
+      ],
+      "published": "2026-06-18T17:57:26Z",
+      "summary": "Scientific papers are frequently dense and characterized by features such as small fonts and line spacing, double columns of text, and tightly arranged figures. While these features make papers more compact, they can hinder readability, make them less accessible, and can strain the reader. arXiv is a premier open-access repository for scientific papers across different fields and is used extensively by researchers, including those in the physics and astrophysics communities.\n  Easy Reads is an a",
+      "categories": [
+        "cs.DL",
+        "cs.HC",
+        "cs.IR"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "imperfect information game deep reinforcement learning card"
+    },
+    "2606.20551": {
+      "arxiv_id": "2606.20551v1",
+      "title": "Benchmark of quantum algorithms for ground state preparation in the presence of noise",
+      "authors": [
+        "Daniel Molpeceres",
+        "Sirui Lu",
+        "J. Ignacio Cirac",
+        "Barbara Kraus"
+      ],
+      "published": "2026-06-18T17:57:56Z",
+      "summary": "We compare the performance of representative cooling, adiabatic, and optimization algorithms for ground-state preparation in the presence of noise. Using an exactly solvable family of quadratic fermionic Hamiltonians subject to depolarizing noise, we derive the scaling of the achievable relative energy as a function of the noise rate and support these results with numerical simulations. The Hamiltonian exhibits two phases, separated by a quantum phase transition. As expected, the performance of ",
+      "categories": [
+        "quant-ph"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "imperfect information game deep reinforcement learning card"
+    },
+    "2606.20552": {
+      "arxiv_id": "2606.20552v1",
+      "title": "On the Renormalization Group Flow of Active Flocks",
+      "authors": [
+        "Kevin T. Grosvenor",
+        "Subodh P. Patil"
+      ],
+      "published": "2026-06-18T17:57:58Z",
+      "summary": "In this paper, we study the statistical field-theoretic renormalization of active flocks via the MSRDJ action formulation for stochastic systems, focusing on the Toner-Tu theory of `Malthusian flocks', or polar-ordered, momentum non-conserving active fluids where relaxation times for density fluctuations are so short that they can be eliminated as a hydrodynamic variable. Working in the limit of isotropic diffusion in two spatial dimensions, we compute the renormalization of the couplings and th",
+      "categories": [
+        "cond-mat.soft",
+        "hep-th"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "action space representation card game"
+    },
+    "2606.20553": {
+      "arxiv_id": "2606.20553v1",
+      "title": "From Efficiency to Leakage -- Privacy Backdoor in Federated Language Model Fine-Tuning",
+      "authors": [
+        "Shanghao Shi",
+        "Chaoyu Zhang",
+        "Heng Jin",
+        "Yang Xiao",
+        "Yevgeniy Vorobeychik",
+        "William Yeoh",
+        "Ning Zhang",
+        "Y. Thomas Hou",
+        "Wenjing Lou"
+      ],
+      "published": "2026-06-18T17:58:25Z",
+      "summary": "Federated learning (FL) enables multiple parties to collaboratively fine-tune language models for domain-specific tasks without sharing raw data. Since full model fine-tuning is often prohibitively expensive for FL clients, parameter-efficient fine-tuning (PEFT) has become the de facto approach in practice, freezing the base model and training only a small set of adapters. In this paper, we show that a malicious parameter server can stealthily corrupt a PEFT adapter into a privacy backdoor that ",
+      "categories": [
+        "cs.CR"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "reinforcement learning card game AI MCTS"
+    },
+    "2606.20554": {
+      "arxiv_id": "2606.20554v1",
+      "title": "Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation",
+      "authors": [
+        "Ruizhong Qiu",
+        "Yinglong Xia",
+        "Dongqi Fu",
+        "Hanqing Zeng",
+        "Ren Chen",
+        "Xiangjun Fan",
+        "Hong Li",
+        "Hong Yan",
+        "Hanghang Tong"
+      ],
+      "published": "2026-06-18T17:58:32Z",
+      "summary": "Generative recommendation is an emerging paradigm that has shown promise in industrial recommendation systems, aiming to predict users' next interactions from their historical behaviors. At the core of generative recommendation lies item tokenization, which bridges item semantics and recommendation models. However, existing methods often struggle to effectively organize and inject complex user-behavioral and item-semantic contexts into recommendation models simultaneously. On the one hand, exist",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "imperfect information game deep reinforcement learning card"
+    },
+    "2606.20555": {
+      "arxiv_id": "2606.20555v1",
+      "title": "Incorporating physical source parameters into microlensing modeling",
+      "authors": [
+        "Mateusz J. Mróz",
+        "Radosław Poleski",
+        "Andrzej Udalski",
+        "Jan Skowron",
+        "Paweł Pietrukowicz",
+        "Michał K. Szymański",
+        "Przemek Mróz",
+        "Mariusz Gromadzki",
+        "Patryk Iwanek",
+        "Szymon Kozłowski",
+        "Milena Ratajczak",
+        "Krzysztof A. Rybicki",
+        "Dorota M. Skowron",
+        "Igor Soszyński",
+        "Krzysztof Ulaczyk",
+        "Marcin Wrona",
+        "Zofia Buzik"
+      ],
+      "published": "2026-06-18T17:58:54Z",
+      "summary": "Modeling of complex microlensing events suffers from many difficult-to-disentangle degeneracies. This is especially the case for orbital motion of the source in a binary system, the so-called xallarap effect. To address the degeneracies inherent in xallarap modeling, we developed a novel approach that directly samples the physical parameters of the source stars (initial mass, evolutionary phase, metallicity, distance, and reddening) during MCMC fitting. In our approach the physical parameters of",
+      "categories": [
+        "astro-ph.SR",
+        "astro-ph.IM"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "opponent modeling card game"
+    },
+    "2606.20556": {
+      "arxiv_id": "2606.20556v1",
+      "title": "Thinking in Boxes: 3D Editing in Real Images Made Easy",
+      "authors": [
+        "Pradhaan S Bhat",
+        "Naveen Chandra R",
+        "Rishubh Parihar",
+        "Vaibhav Vavilala",
+        "R. Venkatesh Babu",
+        "D. A. Forsyth",
+        "Anand Bhattad"
+      ],
+      "published": "2026-06-18T17:59:05Z",
+      "summary": "Text and 2D-conditioning interfaces provide weak, ambiguous control over spatial transformations in image editing -- particularly under large object motions and camera changes. Prior work has used 3D primitives such as boxes, but only as loose conditioning signals indicating approximate object location rather than specifying the transformation. We instead use 3D boxes as structured specifications: the user provides the input and output boxes of the edit, casting editing as a well-posed geometry ",
+      "categories": [
+        "cs.CV"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "self-play training card game"
+    },
+    "2606.20557": {
+      "arxiv_id": "2606.20557v1",
+      "title": "Optimal Deterministic Multicalibration and Omniprediction",
+      "authors": [
+        "Georgy Noarov",
+        "Aaron Roth"
+      ],
+      "published": "2026-06-18T17:59:31Z",
+      "summary": "A model is multicalibrated on a collection of group weights $G$ if it is calibrated -- i.e. unbiased even conditional on its prediction -- not just overall, but also after reweighting contexts by each $g \\in G$. It is a useful property for many downstream applications and is a basic desideratum of trustworthy machine learning. Before this work, all predictors known to attain the minimax-optimal $\\widetilde O(\\varepsilon^{-3})$ sample complexity rate for $\\varepsilon$-multicalibration were random",
+      "categories": [
+        "cs.LG",
+        "math.ST",
+        "stat.ML"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "reinforcement learning card game AI MCTS"
+    },
+    "2606.20558": {
+      "arxiv_id": "2606.20558v1",
+      "title": "Observation of electroweak production of pairs of Z bosons in proton-proton collisions at 13 TeV",
+      "authors": [
+        "CMS Collaboration"
+      ],
+      "published": "2026-06-18T17:59:33Z",
+      "summary": "The first evidence of electroweak (EW) production of pairs of Z bosons in association with two jets (jj) in the final state ZZjj $\\to$ $\\ell\\ellνν$jj, where $\\ell$ = e, $μ$, is reported by the CMS experiment. The analysis is based on a data sample of proton-proton (pp) collisions at $\\sqrt{s}$ = 13 TeV, corresponding to an integrated luminosity of 138 fb$^{-1}$. Events are selected by requiring exactly two leptons of same flavor and opposite charge, large missing transverse momentum, and two jet",
+      "categories": [
+        "hep-ex"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "opponent modeling card game"
+    },
+    "2606.20559": {
+      "arxiv_id": "2606.20559v1",
+      "title": "UNIEGO: Proxies as Mediators for Unified Egocentric Video Representation Learning",
+      "authors": [
+        "Wenhao Chi",
+        "Arkaprava Sinha",
+        "Dominick Reilly",
+        "Hieu Le",
+        "Srijan Das"
+      ],
+      "published": "2026-06-18T17:59:45Z",
+      "summary": "Egocentric video understanding is inherently limited by the narrow perspective of wearable cameras: a single viewpoint, a single modality, a single model cannot capture the full richness of human action. We argue that a truly expressive egocentric representation must subsume complementary knowledge across viewpoints, modalities, and foundation model representations, yet remain deployable from egocentric video alone. To this end, we introduce a hierarchical multi-teacher distillation framework th",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "reinforcement learning card game AI MCTS"
+    },
+    "2606.20560": {
+      "arxiv_id": "2606.20560v1",
+      "title": "How Transparent is DiffusionGemma?",
+      "authors": [
+        "Joshua Engels",
+        "Callum McDougall",
+        "Bilal Chughtai",
+        "Janos Kramar",
+        "Senthoran Rajamanoharan",
+        "Cindy Wu",
+        "Arthur Conmy",
+        "Asic Q Chen",
+        "Jean Tarbouriech",
+        "Min Ma",
+        "Brendan O'Donoghue",
+        "João Gabriel Lopes de Oliveira",
+        "Rohin Shah",
+        "Neel Nanda"
+      ],
+      "published": "2026-06-18T17:59:46Z",
+      "summary": "LLM reasoning transparency is a critical affordance for understanding model decisions, mitigating misuse and misalignment, and debugging surprising model behaviors. However, DiffusionGemma performs a larger fraction of its computation in a continuous latent space; does this make its reasoning less transparent? We study this question by decomposing transparency into two components: variable transparency, whether we understand intermediate snapshots of a model's computational state; and algorithmi",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "reinforcement learning card game AI MCTS"
+    },
+    "2606.20561": {
+      "arxiv_id": "2606.20561v1",
+      "title": "TimeProVe: Propose, then Verify for Efficient Long Video Temporal Reasoning in Activities of Daily Living",
+      "authors": [
+        "Arkaprava Sinha",
+        "Dominick Reilly",
+        "Siddharth Krishnan",
+        "Hieu Le",
+        "Srijan Das"
+      ],
+      "published": "2026-06-18T17:59:48Z",
+      "summary": "Long Video Question Answering (LVQA) requires identifying sparse, query-relevant evidence within hours-long untrimmed videos. Existing approaches either process videos densely with large vision-language models (VLMs), incurring prohibitive computational cost, or rely on sparse caption-based reasoning, which often misses temporally localized and motion-centric evidence. We introduce TimeProVe, a cost-efficient hybrid framework for temporally grounded reasoning in long videos. TimeProVe first empl",
+      "categories": [
+        "cs.CV"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "opponent modeling card game"
+    },
+    "2606.20562": {
+      "arxiv_id": "2606.20562v1",
+      "title": "MemoryWAM: Efficient World Action Modeling with Persistent Memory",
+      "authors": [
+        "Sizhe Yang",
+        "Juncheng Mu",
+        "Tianming Wei",
+        "Chenhao Lu",
+        "Xiaofan Li",
+        "Linning Xu",
+        "Zhengrong Xue",
+        "Zhecheng Yuan",
+        "Dahua Lin",
+        "Jiangmiao Pang",
+        "Huazhe Xu"
+      ],
+      "published": "2026-06-18T17:59:51Z",
+      "summary": "Robust robotic manipulation in the real world requires not only an understanding of the current observation, but also memory and dynamics modeling. World action models (WAMs) possess these capabilities by jointly modeling visual foresight and actions conditioned on both current and historical observations, making them a promising paradigm for robotic manipulation. However, existing WAMs face a fundamental trade-off: methods with efficient inference typically condition only on a bounded window of",
+      "categories": [
+        "cs.RO"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "opponent modeling card game"
+    },
+    "2606.20563": {
+      "arxiv_id": "2606.20563v1",
+      "title": "JanusMesh: Fast and Zero-Shot 3D Visual Illusion Generation via Cross-Space Denoising",
+      "authors": [
+        "Siang-Ling Zhang",
+        "Huai-Hsun Cheng",
+        "Tsung-Ju Yang",
+        "Yu-Lun Liu"
+      ],
+      "published": "2026-06-18T17:59:55Z",
+      "summary": "Creating 3D visual illusions, a single 3D mesh that reveals entirely different semantics from various viewing angles, is a fascinating but tough challenge. Existing optimization-based methods are slow and can produce oversaturated colors. In contrast, naive stitching approaches fail to produce geometrically coherent objects. This results in visible unnatural seams and semantic leaks. In this paper, we present a fast and training-free framework for generating text-driven 3D visual illusions. Our ",
+      "categories": [
+        "cs.CV"
+      ],
+      "score": 1,
+      "source_tier": "T1",
+      "source_query": "action space representation card game"
+    }
+  }
+}

@@ -1,0 +1,2834 @@
+{
+  "deck": {
+    "deckCode": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+    "version": "v2",
+    "dense": {
+      "characterCount": 3,
+      "elementCounts": {
+        "冰": 2,
+        "雷": 1
+      },
+      "nationCounts": {
+        "liyue": 2,
+        "inazuma": 1
+      },
+      "weaponCounts": {
+        "长柄武器": 2,
+        "双手剑": 1
+      },
+      "actionCardTypeCounts": {
+        "equipment": 4,
+        "support": 7,
+        "event": 19
+      },
+      "actionCardSubtypeCounts": {
+        "武器": 2,
+        "圣遗物": 2,
+        "场地": 1,
+        "伙伴": 6,
+        "秘传": 1,
+        "元素共鸣": 4,
+        "事件": 8,
+        "料理": 6
+      },
+      "costCurve": {
+        "cost0": 1,
+        "cost1": 18,
+        "cost2": 11,
+        "cost3Plus": 0,
+        "averageCost": 1.3333333333333333
+      },
+      "tempoProfile": {
+        "setupSpeed": 1,
+        "tempoPush": 1,
+        "longGameValue": 1,
+        "defensiveStability": 1,
+        "finisherDensity": 0.16666666666666666
+      },
+      "strategyProfile": {
+        "reactionReliance": 1,
+        "supportReliance": 0.5833333333333334,
+        "talentReliance": 0,
+        "equipmentReliance": 0.6666666666666666,
+        "summonReliance": 0,
+        "dependencyRisk": 0.25
+      }
+    },
+    "sparse": [
+      {
+        "key": "deck.action.dependency.card_331101__tag_gcg_tag_element_cryo",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.dependency.card_331102__tag_gcg_tag_element_cryo",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.card_draw",
+        "value": 4,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.damage_boost",
+        "value": 4,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.dice_fix",
+        "value": 4,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.dice_gain",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.equipment_enable",
+        "value": 4,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.fast_swap",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.finisher_setup",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.hand_engine",
+        "value": 7,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.heal",
+        "value": 6,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.reaction_enable",
+        "value": 4,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.reaction_payoff",
+        "value": 4,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.stall_tool",
+        "value": 6,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.support_engine",
+        "value": 7,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.function.tempo_push",
+        "value": 19,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.package.burst_finish_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.package.control_stall_package",
+        "value": 6,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.package.equipment_carry_package",
+        "value": 4,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.package.fast_start_package",
+        "value": 19,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.package.long_game_value_package",
+        "value": 7,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.package.reaction_enable_package",
+        "value": 4,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.package.reaction_payoff_package",
+        "value": 4,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.package.support_engine_package",
+        "value": 7,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.package.universal_resource_package",
+        "value": 10,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.threshold.carry_package_online",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.threshold.fast_start_online",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.threshold.reaction_package_online",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.action.threshold.support_engine_online",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.311406",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.312004",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.321011",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.322001",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.322008",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.322012",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.330004",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.331101",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.331102",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.332001",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.332004",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.332005",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.332006",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.332008",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.333002",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.333003",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card_count.333006",
+        "value": 2,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.311406",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.312004",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.321011",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.322001",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.322008",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.322012",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.330004",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.331101",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.331102",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.332001",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.332004",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.332005",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.332006",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.332008",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.333002",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.333003",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.card.333006",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.char_pair.1104_1107",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.char_pair.1104_1407",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.char_pair.1107_1407",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.char_trio.1104_1107_1407",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.char.1104",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.char.1107",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.char.1407",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.synergy.carry_route",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.synergy.dual_element",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "deck.synergy.resonance_route",
+        "value": 1,
+        "source": "rule"
+      }
+    ],
+    "actionCards": {
+      "presence": [
+        {
+          "key": "deck.card.311406",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.312004",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.321011",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.322001",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.322008",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.322012",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.330004",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.331101",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.331102",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.332001",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.332004",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.332005",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.332006",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.332008",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.333002",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.333003",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card.333006",
+          "value": 1,
+          "source": "rule"
+        }
+      ],
+      "counts": [
+        {
+          "key": "deck.card_count.311406",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.312004",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.321011",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.322001",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.322008",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.322012",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.330004",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.331101",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.331102",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.332001",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.332004",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.332005",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.332006",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.332008",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.333002",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.333003",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.card_count.333006",
+          "value": 2,
+          "source": "rule"
+        }
+      ],
+      "functionTags": [
+        {
+          "key": "deck.action.function.card_draw",
+          "value": 4,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.dice_fix",
+          "value": 4,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.dice_gain",
+          "value": 2,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.fast_swap",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.heal",
+          "value": 6,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.damage_boost",
+          "value": 4,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.equipment_enable",
+          "value": 4,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.support_engine",
+          "value": 7,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.hand_engine",
+          "value": 7,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.stall_tool",
+          "value": 6,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.tempo_push",
+          "value": 19,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.reaction_enable",
+          "value": 4,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.reaction_payoff",
+          "value": 4,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.function.finisher_setup",
+          "value": 1,
+          "source": "rule"
+        }
+      ],
+      "packages": [
+        {
+          "key": "deck.action.package.universal_resource_package",
+          "value": 10,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.package.fast_start_package",
+          "value": 19,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.package.support_engine_package",
+          "value": 7,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.package.equipment_carry_package",
+          "value": 4,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.package.reaction_enable_package",
+          "value": 4,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.package.reaction_payoff_package",
+          "value": 4,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.package.control_stall_package",
+          "value": 6,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.package.long_game_value_package",
+          "value": 7,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.package.burst_finish_package",
+          "value": 1,
+          "source": "rule"
+        }
+      ],
+      "dependencies": [
+        {
+          "key": "deck.action.dependency.card_331101__tag_gcg_tag_element_cryo",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.dependency.card_331102__tag_gcg_tag_element_cryo",
+          "value": 1,
+          "source": "rule"
+        }
+      ],
+      "thresholds": [
+        {
+          "key": "deck.action.threshold.support_engine_online",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.threshold.fast_start_online",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.threshold.carry_package_online",
+          "value": 1,
+          "source": "rule"
+        },
+        {
+          "key": "deck.action.threshold.reaction_package_online",
+          "value": 1,
+          "source": "rule"
+        }
+      ],
+      "tempoProfile": {
+        "lowCostStarters": 11,
+        "diceFixers": 6,
+        "burstAmplifiers": 1,
+        "defensiveTools": 12,
+        "longGameEngines": 18
+      }
+    },
+    "graph": {
+      "nodes": [
+        {
+          "id": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "type": "plan_phase",
+          "label": "deck_root"
+        },
+        {
+          "id": "char:1107",
+          "type": "character",
+          "label": "申鹤",
+          "metadata": {
+            "elements": [
+              "冰"
+            ],
+            "nations": [
+              "liyue"
+            ],
+            "weapon": "长柄武器"
+          }
+        },
+        {
+          "id": "char:1407",
+          "type": "character",
+          "label": "雷电将军",
+          "metadata": {
+            "elements": [
+              "雷"
+            ],
+            "nations": [
+              "inazuma"
+            ],
+            "weapon": "长柄武器"
+          }
+        },
+        {
+          "id": "char:1104",
+          "type": "character",
+          "label": "重云",
+          "metadata": {
+            "elements": [
+              "冰"
+            ],
+            "nations": [
+              "liyue"
+            ],
+            "weapon": "双手剑"
+          }
+        },
+        {
+          "id": "card:311406",
+          "type": "action_card",
+          "label": "贯月矢",
+          "metadata": {
+            "subtype": "武器",
+            "kind": "equipment"
+          }
+        },
+        {
+          "id": "card:312004",
+          "type": "action_card",
+          "label": "赌徒的耳环",
+          "metadata": {
+            "subtype": "圣遗物",
+            "kind": "equipment"
+          }
+        },
+        {
+          "id": "card:321011",
+          "type": "action_card",
+          "label": "桓那兰那",
+          "metadata": {
+            "subtype": "场地",
+            "kind": "support"
+          }
+        },
+        {
+          "id": "card:322001",
+          "type": "action_card",
+          "label": "派蒙",
+          "metadata": {
+            "subtype": "伙伴",
+            "kind": "support"
+          }
+        },
+        {
+          "id": "card:322008",
+          "type": "action_card",
+          "label": "立本",
+          "metadata": {
+            "subtype": "伙伴",
+            "kind": "support"
+          }
+        },
+        {
+          "id": "card:322012",
+          "type": "action_card",
+          "label": "刘苏",
+          "metadata": {
+            "subtype": "伙伴",
+            "kind": "support"
+          }
+        },
+        {
+          "id": "card:330004",
+          "type": "action_card",
+          "label": "自由的新风",
+          "metadata": {
+            "subtype": "秘传",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "card:331101",
+          "type": "action_card",
+          "label": "元素共鸣：交织之冰",
+          "metadata": {
+            "subtype": "元素共鸣",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "card:331102",
+          "type": "action_card",
+          "label": "元素共鸣：粉碎之冰",
+          "metadata": {
+            "subtype": "元素共鸣",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "card:332001",
+          "type": "action_card",
+          "label": "最好的伙伴！",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "card:332004",
+          "type": "action_card",
+          "label": "运筹帷幄",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "card:332005",
+          "type": "action_card",
+          "label": "本大爷还没有输！",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "card:332006",
+          "type": "action_card",
+          "label": "交给我吧！",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "card:332008",
+          "type": "action_card",
+          "label": "星天之兆",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "card:333002",
+          "type": "action_card",
+          "label": "仙跳墙",
+          "metadata": {
+            "subtype": "料理",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "card:333003",
+          "type": "action_card",
+          "label": "莲花酥",
+          "metadata": {
+            "subtype": "料理",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "card:333006",
+          "type": "action_card",
+          "label": "蒙德土豆饼",
+          "metadata": {
+            "subtype": "料理",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "phase:early",
+          "type": "plan_phase",
+          "label": "early"
+        },
+        {
+          "id": "phase:mid",
+          "type": "plan_phase",
+          "label": "mid"
+        },
+        {
+          "id": "phase:late",
+          "type": "plan_phase",
+          "label": "late"
+        },
+        {
+          "id": "route:dual_element",
+          "type": "reaction_route",
+          "label": "dual_element"
+        },
+        {
+          "id": "route:resonance_route",
+          "type": "reaction_route",
+          "label": "resonance_route"
+        },
+        {
+          "id": "route:carry_route",
+          "type": "reaction_route",
+          "label": "carry_route"
+        },
+        {
+          "id": "package:universal_resource_package",
+          "type": "package",
+          "label": "universal_resource_package"
+        },
+        {
+          "id": "package:fast_start_package",
+          "type": "package",
+          "label": "fast_start_package"
+        },
+        {
+          "id": "package:support_engine_package",
+          "type": "package",
+          "label": "support_engine_package"
+        },
+        {
+          "id": "package:equipment_carry_package",
+          "type": "package",
+          "label": "equipment_carry_package"
+        },
+        {
+          "id": "package:reaction_enable_package",
+          "type": "package",
+          "label": "reaction_enable_package"
+        },
+        {
+          "id": "package:reaction_payoff_package",
+          "type": "package",
+          "label": "reaction_payoff_package"
+        },
+        {
+          "id": "package:control_stall_package",
+          "type": "package",
+          "label": "control_stall_package"
+        },
+        {
+          "id": "package:long_game_value_package",
+          "type": "package",
+          "label": "long_game_value_package"
+        },
+        {
+          "id": "package:burst_finish_package",
+          "type": "package",
+          "label": "burst_finish_package"
+        },
+        {
+          "id": "dependency:deck.action.dependency.card_331101__tag_gcg_tag_element_cryo",
+          "type": "dependency",
+          "label": "card_331101__tag_gcg_tag_element_cryo",
+          "weight": 1
+        },
+        {
+          "id": "dependency:deck.action.dependency.card_331102__tag_gcg_tag_element_cryo",
+          "type": "dependency",
+          "label": "card_331102__tag_gcg_tag_element_cryo",
+          "weight": 1
+        }
+      ],
+      "edges": [
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "char:1107",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "char:1407",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "char:1104",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:311406",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:312004",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:321011",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:322001",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:322008",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:322012",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:330004",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:331101",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:331102",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:332001",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:332004",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:332005",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:332006",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:332008",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:333002",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:333003",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "card:333006",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "phase:early",
+          "type": "converts_to",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "phase:mid",
+          "type": "converts_to",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "phase:late",
+          "type": "converts_to",
+          "weight": 1
+        },
+        {
+          "from": "phase:mid",
+          "to": "route:dual_element",
+          "type": "enables",
+          "weight": 1
+        },
+        {
+          "from": "phase:mid",
+          "to": "route:resonance_route",
+          "type": "enables",
+          "weight": 1
+        },
+        {
+          "from": "phase:mid",
+          "to": "route:carry_route",
+          "type": "enables",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "package:universal_resource_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "package:fast_start_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "package:support_engine_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "package:equipment_carry_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "package:reaction_enable_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "package:reaction_payoff_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "package:control_stall_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "package:long_game_value_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "package:burst_finish_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "dependency:deck.action.dependency.card_331101__tag_gcg_tag_element_cryo",
+          "type": "requires",
+          "weight": 1
+        },
+        {
+          "from": "deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "dependency:deck.action.dependency.card_331102__tag_gcg_tag_element_cryo",
+          "type": "requires",
+          "weight": 1
+        }
+      ]
+    },
+    "labels": {
+      "archetypes": [
+        "carry_midrange",
+        "lean_support"
+      ],
+      "plans": [
+        "distributed_pressure",
+        "scale_long_game"
+      ],
+      "risks": [
+        "moderate_core_dependency",
+        "adequate_resource_redundancy"
+      ],
+      "routes": [
+        "dual_element",
+        "resonance_route",
+        "carry_route"
+      ],
+      "packages": [
+        "universal_resource_package",
+        "fast_start_package",
+        "support_engine_package",
+        "equipment_carry_package",
+        "reaction_enable_package",
+        "reaction_payoff_package",
+        "control_stall_package",
+        "long_game_value_package",
+        "burst_finish_package"
+      ]
+    },
+    "diagnostics": {
+      "extractorVersion": "v2-skeleton.1",
+      "warnings": [],
+      "assumptions": [
+        "action-card functional tagging is heuristic and based on subtype plus lightweight naming rules",
+        "cost curve is estimated rather than derived from raw play cost data"
+      ],
+      "coverage": {
+        "characterCoverage": 1,
+        "actionCardCoverage": 1,
+        "graphCoverage": 1
+      }
+    }
+  },
+  "matchup": {
+    "deckA": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+    "deckB": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+    "version": "v2",
+    "dense": {
+      "setupSpeedDelta": 0,
+      "longGameValueDelta": 0,
+      "supportGreedDelta": -0.08333333333333326,
+      "defensiveStabilityDelta": 0,
+      "finisherDensityDelta": 0,
+      "punishGreedySetupDelta": 0,
+      "antiSummonDelta": 0,
+      "antiSupportDelta": 0,
+      "routeConflictScore": 4,
+      "dependencyPunishScore": 0
+    },
+    "sparse": [
+      {
+        "key": "matchup.a_card__b_card.311406__311305",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_card__b_card.311406__312010",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_card__b_card.311406__322001",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_card__b_card.312004__311305",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_card__b_card.312004__312010",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_card__b_card.312004__322001",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_card__b_card.321011__311305",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_card__b_card.321011__312010",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_card__b_card.321011__322001",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_char_trio__b_char_trio.1104_1107_1407__1309_1602_1605",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_dependency__b_pressure.card_331101__tag_gcg_tag_element_cryo__hand_engine",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_dependency__b_pressure.card_331101__tag_gcg_tag_element_cryo__support_engine",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_dependency__b_pressure.card_331101__tag_gcg_tag_element_cryo__tempo_push",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_dependency__b_pressure.card_331102__tag_gcg_tag_element_cryo__hand_engine",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_dependency__b_pressure.card_331102__tag_gcg_tag_element_cryo__support_engine",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_dependency__b_pressure.card_331102__tag_gcg_tag_element_cryo__tempo_push",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.fast_start_package__fast_start_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.fast_start_package__long_game_value_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.fast_start_package__support_engine_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.fast_start_package__universal_resource_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.long_game_value_package__fast_start_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.long_game_value_package__long_game_value_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.long_game_value_package__support_engine_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.long_game_value_package__universal_resource_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.support_engine_package__fast_start_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.support_engine_package__long_game_value_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.support_engine_package__support_engine_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.support_engine_package__universal_resource_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.universal_resource_package__fast_start_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.universal_resource_package__long_game_value_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.universal_resource_package__support_engine_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_package__b_package.universal_resource_package__universal_resource_package",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_phase__b_phase.finish_setup__finish_setup",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_phase__b_phase.mid_setup__mid_setup",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_phase__b_phase.setup_setup__setup_setup",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_route__b_route.carry_route__carry_route",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_route__b_route.carry_route__dual_element",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_route__b_route.carry_route__resonance_route",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_route__b_route.carry_route__resource_route",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_route__b_route.dual_element__carry_route",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_route__b_route.dual_element__dual_element",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_route__b_route.dual_element__resonance_route",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_route__b_route.dual_element__resource_route",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_route__b_route.resonance_route__carry_route",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_route__b_route.resonance_route__dual_element",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_route__b_route.resonance_route__resonance_route",
+        "value": 1,
+        "source": "rule"
+      },
+      {
+        "key": "matchup.a_route__b_route.resonance_route__resource_route",
+        "value": 1,
+        "source": "rule"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "type": "plan_phase",
+          "label": "deck_root",
+          "side": "A"
+        },
+        {
+          "id": "A:char:1107",
+          "type": "character",
+          "label": "申鹤",
+          "side": "A",
+          "metadata": {
+            "elements": [
+              "冰"
+            ],
+            "nations": [
+              "liyue"
+            ],
+            "weapon": "长柄武器"
+          }
+        },
+        {
+          "id": "A:char:1407",
+          "type": "character",
+          "label": "雷电将军",
+          "side": "A",
+          "metadata": {
+            "elements": [
+              "雷"
+            ],
+            "nations": [
+              "inazuma"
+            ],
+            "weapon": "长柄武器"
+          }
+        },
+        {
+          "id": "A:char:1104",
+          "type": "character",
+          "label": "重云",
+          "side": "A",
+          "metadata": {
+            "elements": [
+              "冰"
+            ],
+            "nations": [
+              "liyue"
+            ],
+            "weapon": "双手剑"
+          }
+        },
+        {
+          "id": "A:card:311406",
+          "type": "action_card",
+          "label": "贯月矢",
+          "side": "A",
+          "metadata": {
+            "subtype": "武器",
+            "kind": "equipment"
+          }
+        },
+        {
+          "id": "A:card:312004",
+          "type": "action_card",
+          "label": "赌徒的耳环",
+          "side": "A",
+          "metadata": {
+            "subtype": "圣遗物",
+            "kind": "equipment"
+          }
+        },
+        {
+          "id": "A:card:321011",
+          "type": "action_card",
+          "label": "桓那兰那",
+          "side": "A",
+          "metadata": {
+            "subtype": "场地",
+            "kind": "support"
+          }
+        },
+        {
+          "id": "A:card:322001",
+          "type": "action_card",
+          "label": "派蒙",
+          "side": "A",
+          "metadata": {
+            "subtype": "伙伴",
+            "kind": "support"
+          }
+        },
+        {
+          "id": "A:card:322008",
+          "type": "action_card",
+          "label": "立本",
+          "side": "A",
+          "metadata": {
+            "subtype": "伙伴",
+            "kind": "support"
+          }
+        },
+        {
+          "id": "A:card:322012",
+          "type": "action_card",
+          "label": "刘苏",
+          "side": "A",
+          "metadata": {
+            "subtype": "伙伴",
+            "kind": "support"
+          }
+        },
+        {
+          "id": "A:card:330004",
+          "type": "action_card",
+          "label": "自由的新风",
+          "side": "A",
+          "metadata": {
+            "subtype": "秘传",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "A:card:331101",
+          "type": "action_card",
+          "label": "元素共鸣：交织之冰",
+          "side": "A",
+          "metadata": {
+            "subtype": "元素共鸣",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "A:card:331102",
+          "type": "action_card",
+          "label": "元素共鸣：粉碎之冰",
+          "side": "A",
+          "metadata": {
+            "subtype": "元素共鸣",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "A:card:332001",
+          "type": "action_card",
+          "label": "最好的伙伴！",
+          "side": "A",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "A:card:332004",
+          "type": "action_card",
+          "label": "运筹帷幄",
+          "side": "A",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "A:card:332005",
+          "type": "action_card",
+          "label": "本大爷还没有输！",
+          "side": "A",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "A:card:332006",
+          "type": "action_card",
+          "label": "交给我吧！",
+          "side": "A",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "A:card:332008",
+          "type": "action_card",
+          "label": "星天之兆",
+          "side": "A",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "A:card:333002",
+          "type": "action_card",
+          "label": "仙跳墙",
+          "side": "A",
+          "metadata": {
+            "subtype": "料理",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "A:card:333003",
+          "type": "action_card",
+          "label": "莲花酥",
+          "side": "A",
+          "metadata": {
+            "subtype": "料理",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "A:card:333006",
+          "type": "action_card",
+          "label": "蒙德土豆饼",
+          "side": "A",
+          "metadata": {
+            "subtype": "料理",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "A:phase:early",
+          "type": "plan_phase",
+          "label": "early",
+          "side": "A"
+        },
+        {
+          "id": "A:phase:mid",
+          "type": "plan_phase",
+          "label": "mid",
+          "side": "A"
+        },
+        {
+          "id": "A:phase:late",
+          "type": "plan_phase",
+          "label": "late",
+          "side": "A"
+        },
+        {
+          "id": "A:route:dual_element",
+          "type": "reaction_route",
+          "label": "dual_element",
+          "side": "A"
+        },
+        {
+          "id": "A:route:resonance_route",
+          "type": "reaction_route",
+          "label": "resonance_route",
+          "side": "A"
+        },
+        {
+          "id": "A:route:carry_route",
+          "type": "reaction_route",
+          "label": "carry_route",
+          "side": "A"
+        },
+        {
+          "id": "A:package:universal_resource_package",
+          "type": "package",
+          "label": "universal_resource_package",
+          "side": "A"
+        },
+        {
+          "id": "A:package:fast_start_package",
+          "type": "package",
+          "label": "fast_start_package",
+          "side": "A"
+        },
+        {
+          "id": "A:package:support_engine_package",
+          "type": "package",
+          "label": "support_engine_package",
+          "side": "A"
+        },
+        {
+          "id": "A:package:equipment_carry_package",
+          "type": "package",
+          "label": "equipment_carry_package",
+          "side": "A"
+        },
+        {
+          "id": "A:package:reaction_enable_package",
+          "type": "package",
+          "label": "reaction_enable_package",
+          "side": "A"
+        },
+        {
+          "id": "A:package:reaction_payoff_package",
+          "type": "package",
+          "label": "reaction_payoff_package",
+          "side": "A"
+        },
+        {
+          "id": "A:package:control_stall_package",
+          "type": "package",
+          "label": "control_stall_package",
+          "side": "A"
+        },
+        {
+          "id": "A:package:long_game_value_package",
+          "type": "package",
+          "label": "long_game_value_package",
+          "side": "A"
+        },
+        {
+          "id": "A:package:burst_finish_package",
+          "type": "package",
+          "label": "burst_finish_package",
+          "side": "A"
+        },
+        {
+          "id": "A:dependency:deck.action.dependency.card_331101__tag_gcg_tag_element_cryo",
+          "type": "dependency",
+          "label": "card_331101__tag_gcg_tag_element_cryo",
+          "side": "A",
+          "weight": 1
+        },
+        {
+          "id": "A:dependency:deck.action.dependency.card_331102__tag_gcg_tag_element_cryo",
+          "type": "dependency",
+          "label": "card_331102__tag_gcg_tag_element_cryo",
+          "side": "A",
+          "weight": 1
+        },
+        {
+          "id": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "type": "plan_phase",
+          "label": "deck_root",
+          "side": "B"
+        },
+        {
+          "id": "B:char:1605",
+          "type": "character",
+          "label": "荒泷一斗",
+          "side": "B",
+          "metadata": {
+            "elements": [
+              "岩"
+            ],
+            "nations": [
+              "inazuma"
+            ],
+            "weapon": "双手剑"
+          }
+        },
+        {
+          "id": "B:char:1309",
+          "type": "character",
+          "label": "迪希雅",
+          "side": "B",
+          "metadata": {
+            "elements": [
+              "火"
+            ],
+            "nations": [
+              "sumeru"
+            ],
+            "weapon": "双手剑"
+          }
+        },
+        {
+          "id": "B:char:1602",
+          "type": "character",
+          "label": "诺艾尔",
+          "side": "B",
+          "metadata": {
+            "elements": [
+              "岩"
+            ],
+            "nations": [
+              "mondstadt"
+            ],
+            "weapon": "双手剑"
+          }
+        },
+        {
+          "id": "B:card:311305",
+          "type": "action_card",
+          "label": "钟剑",
+          "side": "B",
+          "metadata": {
+            "subtype": "武器",
+            "kind": "equipment"
+          }
+        },
+        {
+          "id": "B:card:312010",
+          "type": "action_card",
+          "label": "千岩牢固",
+          "side": "B",
+          "metadata": {
+            "subtype": "圣遗物",
+            "kind": "equipment"
+          }
+        },
+        {
+          "id": "B:card:322001",
+          "type": "action_card",
+          "label": "派蒙",
+          "side": "B",
+          "metadata": {
+            "subtype": "伙伴",
+            "kind": "support"
+          }
+        },
+        {
+          "id": "B:card:322005",
+          "type": "action_card",
+          "label": "卯师傅",
+          "side": "B",
+          "metadata": {
+            "subtype": "伙伴",
+            "kind": "support"
+          }
+        },
+        {
+          "id": "B:card:322008",
+          "type": "action_card",
+          "label": "立本",
+          "side": "B",
+          "metadata": {
+            "subtype": "伙伴",
+            "kind": "support"
+          }
+        },
+        {
+          "id": "B:card:322016",
+          "type": "action_card",
+          "label": "迪娜泽黛",
+          "side": "B",
+          "metadata": {
+            "subtype": "伙伴",
+            "kind": "support"
+          }
+        },
+        {
+          "id": "B:card:330002",
+          "type": "action_card",
+          "label": "磐岩盟契",
+          "side": "B",
+          "metadata": {
+            "subtype": "秘传",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "B:card:331601",
+          "type": "action_card",
+          "label": "元素共鸣：交织之岩",
+          "side": "B",
+          "metadata": {
+            "subtype": "元素共鸣",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "B:card:331602",
+          "type": "action_card",
+          "label": "元素共鸣：坚定之岩",
+          "side": "B",
+          "metadata": {
+            "subtype": "元素共鸣",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "B:card:332004",
+          "type": "action_card",
+          "label": "运筹帷幄",
+          "side": "B",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "B:card:332006",
+          "type": "action_card",
+          "label": "交给我吧！",
+          "side": "B",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "B:card:332013",
+          "type": "action_card",
+          "label": "送你一程",
+          "side": "B",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "B:card:332018",
+          "type": "action_card",
+          "label": "重攻击",
+          "side": "B",
+          "metadata": {
+            "subtype": "事件",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "B:card:333002",
+          "type": "action_card",
+          "label": "仙跳墙",
+          "side": "B",
+          "metadata": {
+            "subtype": "料理",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "B:card:333003",
+          "type": "action_card",
+          "label": "莲花酥",
+          "side": "B",
+          "metadata": {
+            "subtype": "料理",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "B:card:333006",
+          "type": "action_card",
+          "label": "蒙德土豆饼",
+          "side": "B",
+          "metadata": {
+            "subtype": "料理",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "B:card:333007",
+          "type": "action_card",
+          "label": "烤蘑菇披萨",
+          "side": "B",
+          "metadata": {
+            "subtype": "料理",
+            "kind": "event"
+          }
+        },
+        {
+          "id": "B:phase:early",
+          "type": "plan_phase",
+          "label": "early",
+          "side": "B"
+        },
+        {
+          "id": "B:phase:mid",
+          "type": "plan_phase",
+          "label": "mid",
+          "side": "B"
+        },
+        {
+          "id": "B:phase:late",
+          "type": "plan_phase",
+          "label": "late",
+          "side": "B"
+        },
+        {
+          "id": "B:route:dual_element",
+          "type": "reaction_route",
+          "label": "dual_element",
+          "side": "B"
+        },
+        {
+          "id": "B:route:resonance_route",
+          "type": "reaction_route",
+          "label": "resonance_route",
+          "side": "B"
+        },
+        {
+          "id": "B:route:resource_route",
+          "type": "reaction_route",
+          "label": "resource_route",
+          "side": "B"
+        },
+        {
+          "id": "B:route:carry_route",
+          "type": "reaction_route",
+          "label": "carry_route",
+          "side": "B"
+        },
+        {
+          "id": "B:package:universal_resource_package",
+          "type": "package",
+          "label": "universal_resource_package",
+          "side": "B"
+        },
+        {
+          "id": "B:package:fast_start_package",
+          "type": "package",
+          "label": "fast_start_package",
+          "side": "B"
+        },
+        {
+          "id": "B:package:support_engine_package",
+          "type": "package",
+          "label": "support_engine_package",
+          "side": "B"
+        },
+        {
+          "id": "B:package:equipment_carry_package",
+          "type": "package",
+          "label": "equipment_carry_package",
+          "side": "B"
+        },
+        {
+          "id": "B:package:reaction_enable_package",
+          "type": "package",
+          "label": "reaction_enable_package",
+          "side": "B"
+        },
+        {
+          "id": "B:package:reaction_payoff_package",
+          "type": "package",
+          "label": "reaction_payoff_package",
+          "side": "B"
+        },
+        {
+          "id": "B:package:control_stall_package",
+          "type": "package",
+          "label": "control_stall_package",
+          "side": "B"
+        },
+        {
+          "id": "B:package:long_game_value_package",
+          "type": "package",
+          "label": "long_game_value_package",
+          "side": "B"
+        },
+        {
+          "id": "B:package:burst_finish_package",
+          "type": "package",
+          "label": "burst_finish_package",
+          "side": "B"
+        },
+        {
+          "id": "B:dependency:deck.action.dependency.card_331601__tag_gcg_tag_element_geo",
+          "type": "dependency",
+          "label": "card_331601__tag_gcg_tag_element_geo",
+          "side": "B",
+          "weight": 1
+        },
+        {
+          "id": "B:dependency:deck.action.dependency.card_331602__tag_gcg_tag_element_geo",
+          "type": "dependency",
+          "label": "card_331602__tag_gcg_tag_element_geo",
+          "side": "B",
+          "weight": 1
+        },
+        {
+          "id": "cross:a_faster_setup",
+          "type": "matchup_axis",
+          "label": "a_faster_setup",
+          "side": "cross"
+        },
+        {
+          "id": "cross:a_stronger_long_game",
+          "type": "matchup_axis",
+          "label": "a_stronger_long_game",
+          "side": "cross"
+        },
+        {
+          "id": "cross:dual_element_vs_dual_element",
+          "type": "cross_feature",
+          "label": "dual_element_vs_dual_element",
+          "side": "cross"
+        },
+        {
+          "id": "cross:dual_element_vs_resonance_route",
+          "type": "cross_feature",
+          "label": "dual_element_vs_resonance_route",
+          "side": "cross"
+        },
+        {
+          "id": "cross:dual_element_vs_resource_route",
+          "type": "cross_feature",
+          "label": "dual_element_vs_resource_route",
+          "side": "cross"
+        },
+        {
+          "id": "cross:dual_element_vs_carry_route",
+          "type": "cross_feature",
+          "label": "dual_element_vs_carry_route",
+          "side": "cross"
+        },
+        {
+          "id": "cross:resonance_route_vs_dual_element",
+          "type": "cross_feature",
+          "label": "resonance_route_vs_dual_element",
+          "side": "cross"
+        },
+        {
+          "id": "cross:resonance_route_vs_resonance_route",
+          "type": "cross_feature",
+          "label": "resonance_route_vs_resonance_route",
+          "side": "cross"
+        },
+        {
+          "id": "cross:resonance_route_vs_resource_route",
+          "type": "cross_feature",
+          "label": "resonance_route_vs_resource_route",
+          "side": "cross"
+        },
+        {
+          "id": "cross:resonance_route_vs_carry_route",
+          "type": "cross_feature",
+          "label": "resonance_route_vs_carry_route",
+          "side": "cross"
+        }
+      ],
+      "edges": [
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:char:1107",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:char:1407",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:char:1104",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:311406",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:312004",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:321011",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:322001",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:322008",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:322012",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:330004",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:331101",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:331102",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:332001",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:332004",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:332005",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:332006",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:332008",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:333002",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:333003",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:card:333006",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:phase:early",
+          "type": "converts_to",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:phase:mid",
+          "type": "converts_to",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:phase:late",
+          "type": "converts_to",
+          "weight": 1
+        },
+        {
+          "from": "A:phase:mid",
+          "to": "A:route:dual_element",
+          "type": "enables",
+          "weight": 1
+        },
+        {
+          "from": "A:phase:mid",
+          "to": "A:route:resonance_route",
+          "type": "enables",
+          "weight": 1
+        },
+        {
+          "from": "A:phase:mid",
+          "to": "A:route:carry_route",
+          "type": "enables",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:package:universal_resource_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:package:fast_start_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:package:support_engine_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:package:equipment_carry_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:package:reaction_enable_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:package:reaction_payoff_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:package:control_stall_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:package:long_game_value_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:package:burst_finish_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:dependency:deck.action.dependency.card_331101__tag_gcg_tag_element_cryo",
+          "type": "requires",
+          "weight": 1
+        },
+        {
+          "from": "A:deck:APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+          "to": "A:dependency:deck.action.dependency.card_331102__tag_gcg_tag_element_cryo",
+          "type": "requires",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:char:1605",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:char:1309",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:char:1602",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:311305",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:312010",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:322001",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:322005",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:322008",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:322016",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:330002",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:331601",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:331602",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:332004",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:332006",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:332013",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:332018",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:333002",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:333003",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:333006",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:card:333007",
+          "type": "includes",
+          "weight": 2
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:phase:early",
+          "type": "converts_to",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:phase:mid",
+          "type": "converts_to",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:phase:late",
+          "type": "converts_to",
+          "weight": 1
+        },
+        {
+          "from": "B:phase:mid",
+          "to": "B:route:dual_element",
+          "type": "enables",
+          "weight": 1
+        },
+        {
+          "from": "B:phase:mid",
+          "to": "B:route:resonance_route",
+          "type": "enables",
+          "weight": 1
+        },
+        {
+          "from": "B:phase:mid",
+          "to": "B:route:resource_route",
+          "type": "enables",
+          "weight": 1
+        },
+        {
+          "from": "B:phase:mid",
+          "to": "B:route:carry_route",
+          "type": "enables",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:package:universal_resource_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:package:fast_start_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:package:support_engine_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:package:equipment_carry_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:package:reaction_enable_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:package:reaction_payoff_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:package:control_stall_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:package:long_game_value_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:package:burst_finish_package",
+          "type": "includes",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:dependency:deck.action.dependency.card_331601__tag_gcg_tag_element_geo",
+          "type": "requires",
+          "weight": 1
+        },
+        {
+          "from": "B:deck:ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+          "to": "B:dependency:deck.action.dependency.card_331602__tag_gcg_tag_element_geo",
+          "type": "requires",
+          "weight": 1
+        },
+        {
+          "from": "cross:a_faster_setup",
+          "to": "B:phase:early",
+          "type": "outraces",
+          "weight": 1
+        },
+        {
+          "from": "A:route:dual_element",
+          "to": "B:route:dual_element",
+          "type": "checks",
+          "weight": 1
+        },
+        {
+          "from": "A:route:dual_element",
+          "to": "B:route:resonance_route",
+          "type": "checks",
+          "weight": 1
+        },
+        {
+          "from": "A:route:dual_element",
+          "to": "B:route:resource_route",
+          "type": "checks",
+          "weight": 1
+        },
+        {
+          "from": "A:route:dual_element",
+          "to": "B:route:carry_route",
+          "type": "checks",
+          "weight": 1
+        },
+        {
+          "from": "A:route:resonance_route",
+          "to": "B:route:dual_element",
+          "type": "checks",
+          "weight": 1
+        },
+        {
+          "from": "A:route:resonance_route",
+          "to": "B:route:resonance_route",
+          "type": "checks",
+          "weight": 1
+        }
+      ]
+    },
+    "labels": {
+      "tempoAxes": [
+        "a_faster_setup",
+        "a_stronger_long_game"
+      ],
+      "pressureAxes": [
+        "b_has_mid_game_pressure",
+        "a_finisher_edge"
+      ],
+      "routeConflicts": [
+        "dual_element_vs_dual_element",
+        "dual_element_vs_resonance_route",
+        "dual_element_vs_resource_route",
+        "dual_element_vs_carry_route",
+        "resonance_route_vs_dual_element",
+        "resonance_route_vs_resonance_route",
+        "resonance_route_vs_resource_route",
+        "resonance_route_vs_carry_route",
+        "carry_route_vs_dual_element",
+        "carry_route_vs_resonance_route",
+        "carry_route_vs_resource_route",
+        "carry_route_vs_carry_route"
+      ],
+      "keyPackages": [
+        "a:fast_start_package",
+        "a:universal_resource_package",
+        "b:fast_start_package",
+        "b:long_game_value_package"
+      ],
+      "risks": [
+        "b_dependency_risk",
+        "close_matchup"
+      ]
+    },
+    "diagnostics": {
+      "extractorVersion": "v2-skeleton.1",
+      "warnings": [],
+      "assumptions": [
+        "matchup sparse layer currently emphasizes package, route, dependency and selected card cross products"
+      ],
+      "coverage": {
+        "characterCoverage": 1,
+        "actionCardCoverage": 1,
+        "graphCoverage": 1,
+        "matchupCrossCoverage": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "decks": [
+    {
+      "name": "水八",
+      "code": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA"
+    },
+    {
+      "name": "神宵",
+      "code": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA"
+    },
+    {
+      "name": "水凝",
+      "code": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA"
+    },
+    {
+      "name": "雷鹤",
+      "code": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA"
+    },
+    {
+      "name": "雷狼",
+      "code": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA"
+    },
+    {
+      "name": "莫优",
+      "code": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA"
+    },
+    {
+      "name": "红牛",
+      "code": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA"
+    },
+    {
+      "name": "水债",
+      "code": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA"
+    }
+  ],
+  "version": "v6.3.0"
+}

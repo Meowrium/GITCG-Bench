@@ -1,0 +1,7 @@
+{
+  "planFile": "examples/plans/example-plan.json",
+  "opponent": { "type": "baseline" },
+  "games": 3,
+  "seedBase": 9100,
+  "outDir": "../../.tmp/plan-bench-smoke"
+}

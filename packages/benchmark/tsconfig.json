@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "customConditions": ["development"],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "outDir": "./gi-knowledge/dist",
+    "rootDir": ".",
+    "types": ["node"]
+  },
+  "include": ["gi-knowledge/src/**/*.ts", "deck-analysis/src/**/*.ts", "battle-benchmark/src/**/*.ts", "tree-bench/src/**/*.ts", "shared/**/*.ts"]
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "3.0",
+  "version": "v6.3.0",
+  "deckA": {
+    "code": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+    "name": "水八"
+  },
+  "deckB": {
+    "code": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+    "name": "雷鹤"
+  },
+  "isMirror": false,
+  "perspectives": {
+    "a": {
+      "opponentNotables": {
+        "elementComposition": [
+          "cryo",
+          "electro",
+          "cryo"
+        ],
+        "powerCurve": "spiky",
+        "damageMode": "single_burst",
+        "threatSummary": "aggro 体系，以申鹤、雷电将军、贯月矢为核心制胜"
+      },
+      "threats": [],
+      "assessment": {
+        "myAdvantages": [],
+        "oppAdvantages": []
+      },
+      "overallDirection": "",
+      "decisiveFactor": "",
+      "abstentions": []
+    },
+    "b": {
+      "opponentNotables": {
+        "elementComposition": [],
+        "powerCurve": "",
+        "damageMode": "",
+        "threatSummary": ""
+      },
+      "threats": [],
+      "assessment": {
+        "myAdvantages": [],
+        "oppAdvantages": []
+      },
+      "overallDirection": "",
+      "decisiveFactor": "",
+      "abstentions": []
+    }
+  }
+}

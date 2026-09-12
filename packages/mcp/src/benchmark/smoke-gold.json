@@ -1,0 +1,276 @@
+{
+  "description": "Smoke gold dataset for pre-game deck analysis benchmark (16 single-deck + 8 matchup)",
+  "schemaVersion": "2.0",
+  "createdAt": "TBD",
+  "samples": {
+    "singleDeck": [
+      {
+        "id": "shuiba-base",
+        "lineage": "shuiba",
+        "deckCode": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+        "deckName": "水八",
+        "version": "v5.5.0",
+        "isVariant": false,
+        "variantKind": null,
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "shuiba-remove-payoff",
+        "lineage": "shuiba",
+        "deckCode": "TBD_BY_VARIANT_GENERATOR",
+        "deckName": "水八 (remove payoff)",
+        "version": "v5.5.0",
+        "isVariant": true,
+        "variantKind": "remove_payoff",
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "leihe-base",
+        "lineage": "leihe",
+        "deckCode": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+        "deckName": "雷鹤",
+        "version": "v5.5.0",
+        "isVariant": false,
+        "variantKind": null,
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "leihe-remove-enabler",
+        "lineage": "leihe",
+        "deckCode": "TBD_BY_VARIANT_GENERATOR",
+        "deckName": "雷鹤 (remove enabler)",
+        "version": "v5.5.0",
+        "isVariant": true,
+        "variantKind": "remove_enabler",
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "hongniu-base",
+        "lineage": "hongniu",
+        "deckCode": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+        "deckName": "红牛",
+        "version": "v5.5.0",
+        "isVariant": false,
+        "variantKind": null,
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "hongniu-replace-draw",
+        "lineage": "hongniu",
+        "deckCode": "TBD_BY_VARIANT_GENERATOR",
+        "deckName": "红牛 (replace draw)",
+        "version": "v5.5.0",
+        "isVariant": true,
+        "variantKind": "replace_draw",
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "shuizhai-base",
+        "lineage": "shuizhai",
+        "deckCode": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+        "deckName": "水债",
+        "version": "v5.5.0",
+        "isVariant": false,
+        "variantKind": null,
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "shuizhai-replace-defense",
+        "lineage": "shuizhai",
+        "deckCode": "TBD_BY_VARIANT_GENERATOR",
+        "deckName": "水债 (replace defense)",
+        "version": "v5.5.0",
+        "isVariant": true,
+        "variantKind": "replace_defense",
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "shenxiao-base",
+        "lineage": "shenxiao",
+        "deckCode": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+        "deckName": "神宵",
+        "version": "v5.5.0",
+        "isVariant": false,
+        "variantKind": null,
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "shenxiao-remove-payoff",
+        "lineage": "shenxiao",
+        "deckCode": "TBD_BY_VARIANT_GENERATOR",
+        "deckName": "神宵 (remove payoff)",
+        "version": "v5.5.0",
+        "isVariant": true,
+        "variantKind": "remove_payoff",
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "shuining-base",
+        "lineage": "shuining",
+        "deckCode": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+        "deckName": "水凝",
+        "version": "v5.5.0",
+        "isVariant": false,
+        "variantKind": null,
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "shuining-remove-enabler",
+        "lineage": "shuining",
+        "deckCode": "TBD_BY_VARIANT_GENERATOR",
+        "deckName": "水凝 (remove enabler)",
+        "version": "v5.5.0",
+        "isVariant": true,
+        "variantKind": "remove_enabler",
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "leilang-base",
+        "lineage": "leilang",
+        "deckCode": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+        "deckName": "雷狼",
+        "version": "v5.5.0",
+        "isVariant": false,
+        "variantKind": null,
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "leilang-remove-payoff",
+        "lineage": "leilang",
+        "deckCode": "TBD_BY_VARIANT_GENERATOR",
+        "deckName": "雷狼 (remove payoff)",
+        "version": "v5.5.0",
+        "isVariant": true,
+        "variantKind": "remove_payoff",
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "moyou-base",
+        "lineage": "moyou",
+        "deckCode": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+        "deckName": "莫优",
+        "version": "v5.5.0",
+        "isVariant": false,
+        "variantKind": null,
+        "removedCardId": null,
+        "gold": null
+      },
+      {
+        "id": "moyou-remove-enabler",
+        "lineage": "moyou",
+        "deckCode": "TBD_BY_VARIANT_GENERATOR",
+        "deckName": "莫优 (remove enabler)",
+        "version": "v5.5.0",
+        "isVariant": true,
+        "variantKind": "remove_enabler",
+        "removedCardId": null,
+        "gold": null
+      }
+    ],
+    "matchup": [
+      {
+        "id": "shuiba-vs-leihe",
+        "deck0Code": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+        "deck1Code": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+        "deck0Name": "水八",
+        "deck1Name": "雷鹤",
+        "version": "v5.5.0",
+        "gold": null
+      },
+      {
+        "id": "hongniu-vs-shuizhai",
+        "deck0Code": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+        "deck1Code": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+        "deck0Name": "红牛",
+        "deck1Name": "水债",
+        "version": "v5.5.0",
+        "gold": null
+      },
+      {
+        "id": "shenxiao-vs-shuining",
+        "deck0Code": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+        "deck1Code": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+        "deck0Name": "神宵",
+        "deck1Name": "水凝",
+        "version": "v5.5.0",
+        "gold": null
+      },
+      {
+        "id": "leilang-vs-moyou",
+        "deck0Code": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+        "deck1Code": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+        "deck0Name": "雷狼",
+        "deck1Name": "莫优",
+        "version": "v5.5.0",
+        "gold": null
+      },
+      {
+        "id": "shuiba-vs-hongniu",
+        "deck0Code": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+        "deck1Code": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+        "deck0Name": "水八",
+        "deck1Name": "红牛",
+        "version": "v5.5.0",
+        "gold": null
+      },
+      {
+        "id": "leihe-vs-shuizhai",
+        "deck0Code": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+        "deck1Code": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+        "deck0Name": "雷鹤",
+        "deck1Name": "水债",
+        "version": "v5.5.0",
+        "gold": null
+      },
+      {
+        "id": "shenxiao-vs-leilang",
+        "deck0Code": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+        "deck1Code": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+        "deck0Name": "神宵",
+        "deck1Name": "雷狼",
+        "version": "v5.5.0",
+        "gold": null
+      },
+      {
+        "id": "shuining-vs-moyou",
+        "deck0Code": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+        "deck1Code": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+        "deck0Name": "水凝",
+        "deck1Name": "莫优",
+        "version": "v5.5.0",
+        "gold": null
+      }
+    ]
+  },
+  "annotationGuide": {
+    "steps": [
+      "1. Program extracts hard facts: card/character set, counts, costs, elements, explicit preconditions and effects",
+      "2. Two annotators independently fill analysisV2 gold; they only see the same input, not any candidate model answers or heuristic conclusions",
+      "3. Third annotator resolves disagreements, preserving acceptableAlternatives",
+      "4. Compute Krippendorff's alpha for profile, key pieces, and matchup plan; fields below 0.67 get rubric revisions or multi-answer",
+      "5. Write annotator-explained input IDs into gold for audit"
+    ],
+    "constraints": [
+      "Test set must include decks/variants frozen only after initial development",
+      "Must not use any model's analysis output to generate or adjudicate gold",
+      "Weights and confidence must be in [0, 1]",
+      "primaryArchetypes are labels with weight >= 0.35",
+      "Each key conclusion must have at least one evidence",
+      "Use abstentions when no reliable basis exists"
+    ]
+  }
+}

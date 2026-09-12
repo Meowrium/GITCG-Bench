@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/round27-threat/plans/hongniu.agenticfix.r6.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round22-g53f/plans/hongniu.ctrl.r0.json"
+  },
+  "games": 10,
+  "seedBase": 20275101,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round27-threat/games/hongniu.agenticfix.r6-vs-g53fctrl"
+}

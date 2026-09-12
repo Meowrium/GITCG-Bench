@@ -1,0 +1,16 @@
+{
+  "_doc": "V30 §5.6 第 3 项 — α-mix smoke (1 pair, 2 games) to verify NeuralEvaluatorPolicy benchmark integration loads + runs.",
+  "version": "v6.3.0",
+  "matchups": [
+    {
+      "id": "shuiba-mirror-smoke",
+      "deck0Name": "水八",
+      "deck1Name": "水八",
+      "deck0": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+      "deck1": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+      "games": 2,
+      "sideA": {"name": "neural-α0.5", "kind": "neural-evaluator", "weightsPath": "../output/v30-kpib/weights.ext.json", "encoderWeightsPath": "../output/v30-stage3-2k/encoder-weights.json", "neuralAlpha": 0.5},
+      "sideB": {"name": "baseline",   "kind": "baseline", "options": {"endTurnPenalty": 5}}
+    }
+  ]
+}

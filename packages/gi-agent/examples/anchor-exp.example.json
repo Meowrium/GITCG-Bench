@@ -1,0 +1,19 @@
+{
+  "models": ["deepseek-v4-pro-0813", "deepseek-v4-flash-vision-exp", "glm-5.3", "glm-5.3-flash"],
+  "models_api": {
+    "deepseek-v4-pro-0813": { "baseUrl": "https://api.deepseek.com", "model": "deepseek-v4-pro-0813", "apiKeyEnv": "DEEPSEEK_API_KEY_PRO" },
+    "deepseek-v4-flash-vision-exp": { "baseUrl": "https://api.deepseek.com", "model": "deepseek-v4-flash-vision-exp", "apiKeyEnv": "DEEPSEEK_API_KEY_FLASH" },
+    "glm-5.3": { "baseUrl": "https://open.bigmodel.cn/api/paas/v4", "model": "glm-5.3", "apiKeyEnv": "GLM_API_KEY_53" },
+    "glm-5.3-flash": { "baseUrl": "https://open.bigmodel.cn/api/paas/v4", "model": "glm-5.3-flash", "apiKeyEnv": "GLM_API_KEY_FLASH" }
+  },
+  "environment": {
+    "label": "v6.3",
+    "gameVersion": "v6.3.0",
+    "decks": [
+      "FqHByvwMF5AxyXwNF3HBh1cYFXJxHasPGkCx9MEYHKERijUeGIFBzIQcGMFR1IUdHEAA",
+      "FhHB5+4PAkAR9PEYH6EQip0fCYHR+IQQGPFATcYUDNFgackWDJGQzNAcDcEA1NEdDUAA"
+    ]
+  },
+  "gamesPerMatch": 20,
+  "seeds": [42071001, 42071002]
+}

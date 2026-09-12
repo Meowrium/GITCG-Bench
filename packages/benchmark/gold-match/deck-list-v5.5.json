@@ -1,0 +1,89 @@
+{
+  "version": "v5.5",
+  "decks": [
+    {
+      "code": "HJDR2xkOGJDB6Y8OGKDx6s8PHEDw9JcPCWFxBzMQE3ExO1cTFbFwxLYcC0Fg1NkdDUAA",
+      "name": "卡齐娜林尼娜维娅"
+    },
+    {
+      "code": "AUAxxBYMA5CQyU8TBIHxOCoVEqCg9JcPFECB9lcPFWFxO4IVGLEgirYYDKEQ1MEdDEAA",
+      "name": "班尼特若陀龙王无相之雷"
+    },
+    {
+      "code": "ApBg0RcNFRHBWmMPFkAw9JsPE1AB9kgPFGGBaIEQGKEQD8QUDNFAacYWDJFg1MkdDEAA",
+      "name": "温迪胡桃久岐忍"
+    },
+    {
+      "code": "A5BgyQQNFBAB0UQNCKBg9IYPCUBx9jAPE2EBCDMQFYFxO1cTC7Hwir8YDKFA1MQdDEAA",
+      "name": "愚人众·藏镜仕女重云早柚"
+    },
+    {
+      "code": "AJBx0RgNAhBw02MNCNAw7ooOCOCg9I4PCEDg9pcPCWFxBZMQC2HwBsUTDLFQ1MkdDEAA",
+      "name": "申鹤夜兰魈"
+    },
+    {
+      "code": "FtLyN0AUAmHRxVoNF0EiymMOCtHB5Z0PCkHR9Z4QGUEi94MQGmLhi7UZDKJhErcVDNEB",
+      "name": "铁甲熔火帝皇托马赛诺"
+    },
+    {
+      "code": "EsGS7c8QHRFx85gQFiFy9FgQGjEy9ZQQDEFB97UQDWIxu8QcDqJBP9wUD+Kx1eweD0EB",
+      "name": "林尼艾梅莉埃基尼奇"
+    },
+    {
+      "code": "AJDQ6iwOGqBA72gOGvBw9IwPDEEQisEYE6FhujYbDKFgTcYUDNGQzMkcDcHg1OkdDkAA",
+      "name": "珊瑚宫心海钟离千织"
+    },
+    {
+      "code": "EZBR6aQOAqDA6mgPGkBw9I4PFWBx+YIYDKEQisEbE6FhujYQDKFgzMYcDMGQ1N4dDkAA",
+      "name": "「女士」千织钟离"
+    },
+    {
+      "code": "GtFBNV8TAmERNqcMFkAhxGIMCZDAyZwVCaDQ9J0PGEAh9oIPGWHgzLQcC8Fg1LYdC0AA",
+      "name": "千织铁甲熔火帝皇八重神子"
+    },
+    {
+      "code": "ERCB2b0NEZBR2y8PCSBw9JcPE0AR9jEQFYFxCFcTGbExO5MQDMFgDMYRDAGgEModDUAA",
+      "name": "夜兰克洛琳德「女士」"
+    },
+    {
+      "code": "AZBR2RgNFrCw9FEPBUAQ9ZcPE2ERAjEQFXFxO1cTGbExDJMQDMFgEMYRDAGg1ModDUAA",
+      "name": "宵宫夜兰莱欧斯利"
+    },
+    {
+      "code": "AJBQ6iwOGqBA72gOGvBw9IwPDEEQisEYE6FhujYbDKFgTcYUDNGQzMkcDcHg1OkdDkAA",
+      "name": "神里绫华钟离千织"
+    },
+    {
+      "code": "FjHRk0ELEUDhvXYLF9FgNoUTCGBg2oYPF0Dx9H8PE2AR9jETE7ExDDMQFcFx1FcdGUAA",
+      "name": "辛焱无相之冰雷音权现"
+    },
+    {
+      "code": "G9ERWE4MAEDRxFIVG6Bh4rYOCSHRiUgPFECB9IEPGGERaLcdGTHgEbYRCxFgab0WC5AA",
+      "name": "希格雯夏洛蒂珊瑚宫心海"
+    },
+    {
+      "code": "EfBQ0SENFhHRw3YVFaBx8VcPGRAx8pMPCyBA87UPCzBQ9r0PC2HQDM0QDMHQ1M8dDEAA",
+      "name": "「女士」八重神子辛焱"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "HJDR2xkOGJDB6Y8OGKDx6s8PHEDw9JcPCWFxBzMQE3ExO1cTFbFwxLYcC0Fg1NkdDUAA",
+      "deck1": "AUAxxBYMA5CQyU8TBIHxOCoVEqCg9JcPFECB9lcPFWFxO4IVGLEgirYYDKEQ1MEdDEAA",
+      "deck0Name": "卡齐娜林尼娜维娅",
+      "deck1Name": "班尼特若陀龙王无相之雷"
+    },
+    {
+      "deck0": "ApBg0RcNFRHBWmMPFkAw9JsPE1AB9kgPFGGBaIEQGKEQD8QUDNFAacYWDJFg1MkdDEAA",
+      "deck1": "A5BgyQQNFBAB0UQNCKBg9IYPCUBx9jAPE2EBCDMQFYFxO1cTC7Hwir8YDKFA1MQdDEAA",
+      "deck0Name": "温迪胡桃久岐忍",
+      "deck1Name": "愚人众·藏镜仕女重云早柚"
+    },
+    {
+      "deck0": "AJBx0RgNAhBw02MNCNAw7ooOCOCg9I4PCEDg9pcPCWFxBZMQC2HwBsUTDLFQ1MkdDEAA",
+      "deck1": "FtLyN0AUAmHRxVoNF0EiymMOCtHB5Z0PCkHR9Z4QGUEi94MQGmLhi7UZDKJhErcVDNEB",
+      "deck0Name": "申鹤夜兰魈",
+      "deck1Name": "铁甲熔火帝皇托马赛诺"
+    }
+  ]
+}

@@ -1,0 +1,772 @@
+{
+  "version": "GamePlanV1",
+  "planId": "250190b0c7cd",
+  "parentPlanId": null,
+  "createdAt": "2026-08-24T17:05:09.917Z",
+  "author": "MiniMax-M3",
+  "context": {
+    "deckCode": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+    "opponent": {
+      "kind": "known_deck",
+      "deckCode": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA"
+    }
+  },
+  "predictions": {
+    "winRateEstimate": 0.42,
+    "expectedRounds": 8,
+    "confidence": 0.45,
+    "keyThreats": [
+      "Raiden Shogun (雷电将军) burst: 3 electro damage and +2 energy to her other characters",
+      "Shenhe (申鹤) Icy Quill + cryo damage bonus",
+      "Chongyun (重云) cryo infusion + burst",
+      "Moonpiercer (贯月矢): +1 damage and -2 cost on the next elemental skill/talent",
+      "Vanarana (桓那兰那) banks unused dice across rounds"
+    ]
+  },
+  "opening": {
+    "chooseActive": [
+      {
+        "characterDefId": 1605,
+        "reason": "Arataki Itto (荒泷一斗) is the deck's main geo DPS — open with him"
+      }
+    ],
+    "mulligan": [
+      {
+        "keep": {
+          "cardDefId": 322008
+        },
+        "toss": {
+          "cardDefId": 333002
+        },
+        "reason": "Liben (立本) for early economy; 仙跳墙 is a late-game burst damage buff, not a heal, so it can wait"
+      },
+      {
+        "keep": {
+          "cardDefId": 322001
+        },
+        "toss": {
+          "cardDefId": 333007
+        },
+        "reason": "Paimon (派蒙) for early dice economy; the pizza is a mid/late-game heal"
+      },
+      {
+        "keep": {
+          "cardDefId": 331601
+        },
+        "toss": {
+          "cardDefId": 332018
+        },
+        "reason": "Woven Stone (交织之岩) generates a geo die early; Heavy Strike (重攻击) is a later tempo card"
+      }
+    ],
+    "reroll": [
+      {
+        "keepElements": [
+          "geo",
+          "omni"
+        ],
+        "minKeep": 3,
+        "reason": "keep geo + omni dice for resonance cards and Itto's skills"
+      }
+    ]
+  },
+  "phases": [
+    {
+      "phaseId": "early_game",
+      "when": [
+        {
+          "field": "round",
+          "op": "<=",
+          "value": 3
+        }
+      ],
+      "rules": [
+        {
+          "priority": 5,
+          "when": [
+            {
+              "field": "hand.hasCard.322008",
+              "op": "==",
+              "value": true
+            },
+            {
+              "field": "self.supports.count",
+              "op": "<",
+              "value": 2
+            }
+          ],
+          "then": {
+            "action_case": "playCard",
+            "card_def_id": 322008
+          },
+          "reason": "Liben (立本) sets up early economy: at the end phase he collects unused dice (max 1 per element) and once 3 are collected he draws 2 cards and generates 2 omni dice"
+        },
+        {
+          "priority": 7,
+          "when": [
+            {
+              "field": "self.aliveCount",
+              "op": ">=",
+              "value": 2
+            },
+            {
+              "field": "hand.hasCard.331601",
+              "op": "==",
+              "value": true
+            },
+            {
+              "field": "dice.geo",
+              "op": ">=",
+              "value": 1
+            }
+          ],
+          "then": {
+            "action_case": "playCard",
+            "card_def_id": 331601
+          },
+          "reason": "Woven Stone (元素共鸣：交织之岩) generates 1 geo die for free early"
+        }
+      ]
+    },
+    {
+      "phaseId": "mid_game",
+      "when": [
+        {
+          "field": "round",
+          "op": ">=",
+          "value": 4
+        }
+      ],
+      "rules": [
+        {
+          "priority": 6,
+          "when": [
+            {
+              "field": "self.active.defId",
+              "op": "==",
+              "value": 1605
+            },
+            {
+              "field": "self.active.energy",
+              "op": ">=",
+              "value": 3
+            }
+          ],
+          "then": {
+            "action_case": "useSkill",
+            "skill_type": "burst",
+            "target": "opponent.active"
+          },
+          "reason": "Itto burst (最恶鬼王·一斗轰临！！): 4 geo damage and attaches Raging Oni King (normal attacks +1 and physical→geo for 2 rounds)"
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "priority": 1,
+      "when": [
+        {
+          "field": "self.active.hp",
+          "op": "<=",
+          "value": 1
+        },
+        {
+          "field": "self.characters.1602.alive",
+          "op": "==",
+          "value": true
+        }
+      ],
+      "then": {
+        "action_case": "switchActive",
+        "target": 1602
+      },
+      "reason": "active is at 1 HP and Noelle (诺艾尔) is alive: switch to her to survive"
+    },
+    {
+      "priority": 2,
+      "when": [
+        {
+          "field": "opponent.active.defId",
+          "op": "==",
+          "value": 1407
+        },
+        {
+          "field": "opponent.active.hp",
+          "op": "<=",
+          "value": 3
+        }
+      ],
+      "then": {
+        "action_case": "useSkill",
+        "skill_type": "normal_attack",
+        "target": "opponent.active",
+        "kills": true
+      },
+      "reason": "finish Raiden Shogun (雷电将军) first at hp<=3 to stop her burst"
+    },
+    {
+      "priority": 3,
+      "when": [
+        {
+          "field": "opponent.summons.count",
+          "op": ">=",
+          "value": 1
+        },
+        {
+          "field": "hand.hasCard.332013",
+          "op": "==",
+          "value": true
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 332013
+      },
+      "reason": "Send Off (送你一程) removes 2 usages from an enemy summon — an anti-summon tool that deals no damage, so never attach kills/target to it"
+    },
+    {
+      "priority": 4,
+      "when": [
+        {
+          "field": "hand.hasCard.322005",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "self.supports.count",
+          "op": "<",
+          "value": 4
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 322005
+      },
+      "reason": "Chef Mao (卯师傅): after you play a food card, generate 1 random basic element die (once per round) and draw a food card from the deck (once per game) — an economy support with no damage"
+    },
+    {
+      "priority": 5,
+      "when": [
+        {
+          "field": "hand.hasCard.333002",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "round",
+          "op": ">=",
+          "value": 4
+        },
+        {
+          "field": "self.active.defId",
+          "op": "==",
+          "value": 1605
+        },
+        {
+          "field": "self.active.energy",
+          "op": ">=",
+          "value": "$self.active.maxEnergy"
+        },
+        {
+          "field": "self.active.satied",
+          "op": "==",
+          "value": false
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 333002,
+        "target": 1605
+      },
+      "reason": "仙跳墙 (Adeptus' Temptation): the target character's next burst deals +3 damage (a food buff, not a heal) — eat it before Itto's full-energy burst; satied==false because food is limited to 1 per character per round"
+    },
+    {
+      "priority": 8,
+      "when": [
+        {
+          "field": "self.active.defId",
+          "op": "==",
+          "value": 1602
+        },
+        {
+          "field": "self.active.energy",
+          "op": ">=",
+          "value": "$self.active.maxEnergy"
+        }
+      ],
+      "then": {
+        "action_case": "useSkill",
+        "skill_type": "burst",
+        "target": "opponent.active"
+      },
+      "reason": "Noelle burst (大扫除): 4 geo damage and attaches Sweeping Time (normal attacks +2 and physical→geo for 2 rounds) — the shield comes from her elemental skill, not the burst"
+    },
+    {
+      "priority": 9,
+      "when": [
+        {
+          "field": "self.active.defId",
+          "op": "==",
+          "value": 1309
+        },
+        {
+          "field": "self.active.energy",
+          "op": ">=",
+          "value": "$self.active.maxEnergy"
+        }
+      ],
+      "then": {
+        "action_case": "useSkill",
+        "skill_type": "burst",
+        "target": "opponent.active"
+      },
+      "reason": "Dehya burst (炎啸狮子咬): 3 pyro damage then prepares Incineration Drive (another 3 pyro); the damage mitigation comes from her elemental skill's Fiery Sanctum Field, not the burst"
+    },
+    {
+      "priority": 10,
+      "when": [
+        {
+          "field": "self.active.hp",
+          "op": "<=",
+          "value": 3
+        },
+        {
+          "field": "self.characters.1602.alive",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "self.active.defId",
+          "op": "!=",
+          "value": 1602
+        }
+      ],
+      "then": {
+        "action_case": "switchActive",
+        "target": 1602
+      },
+      "reason": "low HP: switch Noelle (诺艾尔) in to prepare her shield (护心铠: 1 geo damage + 2 shield)"
+    },
+    {
+      "priority": 11,
+      "when": [
+        {
+          "field": "self.active.defId",
+          "op": "==",
+          "value": 1602
+        },
+        {
+          "field": "self.characters.1605.alive",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "self.characters.1605.hp",
+          "op": ">=",
+          "value": 4
+        }
+      ],
+      "then": {
+        "action_case": "switchActive",
+        "target": 1605
+      },
+      "reason": "after Noelle's shield is up, switch back to Itto (荒泷一斗)"
+    },
+    {
+      "priority": 12,
+      "when": [
+        {
+          "field": "self.active.defId",
+          "op": "!=",
+          "value": 1605
+        },
+        {
+          "field": "self.characters.1605.alive",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "self.characters.1605.hp",
+          "op": ">=",
+          "value": 3
+        },
+        {
+          "field": "self.active.hp",
+          "op": ">=",
+          "value": 4
+        }
+      ],
+      "then": {
+        "action_case": "switchActive",
+        "target": 1605
+      },
+      "reason": "when healthy, switch Itto in to attack"
+    },
+    {
+      "priority": 13,
+      "when": [
+        {
+          "field": "hand.count",
+          "op": "<",
+          "value": 5
+        },
+        {
+          "field": "hand.hasCard.322001",
+          "op": "==",
+          "value": true
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 322001
+      },
+      "reason": "Paimon (派蒙): +2 omni dice at action-phase start (2 usages) — dice economy, not card draw"
+    },
+    {
+      "priority": 14,
+      "when": [
+        {
+          "field": "self.aliveCount",
+          "op": ">=",
+          "value": 2
+        },
+        {
+          "field": "hand.hasCard.330002",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "dice.total",
+          "op": "==",
+          "value": 0
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 330002
+      },
+      "reason": "磐岩盟契 (Covenant of Rock, legend): playable only with 0 remaining dice; generates 2 different basic elemental dice — a free refill"
+    },
+    {
+      "priority": 15,
+      "when": [
+        {
+          "field": "self.aliveCount",
+          "op": ">=",
+          "value": 2
+        },
+        {
+          "field": "hand.hasCard.331602",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "dice.geo",
+          "op": ">=",
+          "value": 1
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 331602
+      },
+      "reason": "坚定之岩 (Enduring Rock): 3 shield to our active character — it grants no damage bonus"
+    },
+    {
+      "priority": 16,
+      "when": [
+        {
+          "field": "hand.hasCard.312010",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "self.summons.count",
+          "op": "<",
+          "value": 2
+        },
+        {
+          "field": "dice.geo+omni",
+          "op": ">=",
+          "value": 3
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 312010
+      },
+      "reason": "千岩牢固 (Tenacity of the Millelith, 3 same-color): 2 shield at action-phase start and 1 element die after the holder takes damage (once per round); the same-color cost is paid with dice.geo+omni >= 3 (add a sibling rule per other element you might pay with, never dice.total)"
+    },
+    {
+      "priority": 17,
+      "when": [
+        {
+          "field": "self.active.defId",
+          "op": "==",
+          "value": 1605
+        },
+        {
+          "field": "hand.hasCard.311305",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "dice.geo",
+          "op": ">=",
+          "value": 1
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 311305,
+        "target": 1605
+      },
+      "reason": "钟剑 (The Bell): +1 damage, and after the holder uses a skill give our active 1 shield (once per round, stackable to 2); only claymore characters can equip it — equip Itto"
+    },
+    {
+      "priority": 18,
+      "when": [
+        {
+          "field": "self.active.defId",
+          "op": "==",
+          "value": 1602
+        },
+        {
+          "field": "hand.hasCard.311305",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "dice.geo",
+          "op": ">=",
+          "value": 1
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 311305,
+        "target": 1602
+      },
+      "reason": "钟剑 (The Bell): +1 damage and a 1-shield-on-skill (once per round, up to 2) — equip Noelle instead when she is the active claymore"
+    },
+    {
+      "priority": 20,
+      "when": [
+        {
+          "field": "self.active.hp",
+          "op": "<=",
+          "value": 5
+        },
+        {
+          "field": "hand.hasCard.333003",
+          "op": "==",
+          "value": true
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 333003
+      },
+      "reason": "莲花酥 (Lotus Flower Crisp): the target takes 3 less damage from the next hit (a food, not a heal) — eat it before a threatened hit; food is limited to 1 per character per round"
+    },
+    {
+      "priority": 21,
+      "when": [
+        {
+          "field": "self.active.defId",
+          "op": "==",
+          "value": 1309
+        },
+        {
+          "field": "hand.hasCard.322016",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "self.supports.count",
+          "op": "<",
+          "value": 2
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 322016
+      },
+      "reason": "迪娜泽黛 (Dunyarzad): playing an ally support costs 1 less die (once per round) and draws a random ally support from the deck (once per game) — play early to discount future ally supports"
+    },
+    {
+      "priority": 22,
+      "when": [
+        {
+          "field": "actionsTakenThisTurn",
+          "op": "==",
+          "value": 1
+        },
+        {
+          "field": "hand.hasCard.332018",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "self.active.defId",
+          "op": "==",
+          "value": 1605
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 332018
+      },
+      "reason": "重攻击 (Heavy Strike): the active character's next normal attack deals +1, and +1 more if that attack is a charged attack — open the round with it"
+    },
+    {
+      "priority": 23,
+      "when": [
+        {
+          "field": "self.active.defId",
+          "op": "==",
+          "value": 1309
+        },
+        {
+          "field": "self.characters.1605.alive",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "self.active.hp",
+          "op": ">=",
+          "value": 4
+        },
+        {
+          "field": "hand.hasCard.332006",
+          "op": "==",
+          "value": true
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 332006
+      },
+      "reason": "交给我吧！(Leave It to Me!): your next switch becomes a fast action instead of a combat action — play it before switching to Itto (no target: it applies a combat status)"
+    },
+    {
+      "priority": 24,
+      "when": [
+        {
+          "field": "hand.count",
+          "op": "<",
+          "value": 5
+        },
+        {
+          "field": "hand.hasCard.332004",
+          "op": "==",
+          "value": true
+        }
+      ],
+      "then": {
+        "action_case": "playCard",
+        "card_def_id": 332004
+      },
+      "reason": "运筹帷幄 (Strategize): draw 2 cards"
+    },
+    {
+      "priority": 25,
+      "when": [
+        {
+          "field": "self.active.defId",
+          "op": "==",
+          "value": 1605
+        },
+        {
+          "field": "self.active.energy",
+          "op": "<",
+          "value": 3
+        }
+      ],
+      "then": {
+        "action_case": "useSkill",
+        "skill_type": "elemental_skill",
+        "target": "opponent.active"
+      },
+      "reason": "Itto elemental skill (魔杀绝技·赤牛发破！): 1 geo damage, summons Ushi and attaches Superlative Superstrength (charged attacks +1) — also charges energy"
+    },
+    {
+      "priority": 26,
+      "when": [
+        {
+          "field": "self.active.defId",
+          "op": "==",
+          "value": 1309
+        },
+        {
+          "field": "self.active.energy",
+          "op": "<",
+          "value": 4
+        }
+      ],
+      "then": {
+        "action_case": "useSkill",
+        "skill_type": "elemental_skill",
+        "target": "opponent.active"
+      },
+      "reason": "Dehya elemental skill (熔铁流狱): summons Fiery Sanctum Field (1 pyro at the end phase ×3; while Dehya is benched it reduces damage to our active by 1 once per round)"
+    },
+    {
+      "priority": 27,
+      "when": [
+        {
+          "field": "self.active.alive",
+          "op": "==",
+          "value": true
+        },
+        {
+          "field": "opponent.active.alive",
+          "op": "==",
+          "value": true
+        }
+      ],
+      "then": {
+        "action_case": "useSkill",
+        "skill_type": "normal_attack",
+        "target": "opponent.active"
+      },
+      "reason": "default normal-attack output"
+    },
+    {
+      "priority": 29,
+      "when": [
+        {
+          "field": "dice.total",
+          "op": ">=",
+          "value": 2
+        }
+      ],
+      "then": {
+        "action_case": "elementalTuning"
+      },
+      "reason": "convert surplus dice with elemental tuning"
+    },
+    {
+      "priority": 30,
+      "when": [
+        {
+          "field": "dice.total",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "then": {
+        "action_case": "declareEnd"
+      },
+      "reason": "no dice left: declare end"
+    }
+  ],
+  "fallback": {
+    "policy": "conservative"
+  },
+  "sampling": {
+    "temperature": 0.2,
+    "seed": 20260824
+  }
+}

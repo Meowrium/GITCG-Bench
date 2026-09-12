@@ -1,0 +1,923 @@
+diff --git a/packages/standalone/.gitignore b/packages/standalone/.gitignore
+index 3679ca29..1a9fc01d 100644
+--- a/packages/standalone/.gitignore
++++ b/packages/standalone/.gitignore
+@@ -14,6 +14,9 @@ dist-ssr
+ 
+ temp
+ 
++# Local runtime assets: card images are downloaded by users and not versioned.
++public/card_images/
++
+ # Editor directories and files
+ .vscode/*
+ !.vscode/extensions.json
+diff --git a/packages/standalone/package.json b/packages/standalone/package.json
+index 9c6d9d25..189b0c4b 100644
+--- a/packages/standalone/package.json
++++ b/packages/standalone/package.json
+@@ -19,6 +19,7 @@
+     "@gi-tcg/deck-builder": "workspace:*",
+     "@gi-tcg/detail-log-viewer": "workspace:*",
+     "@gi-tcg/data-code-analyzer": "workspace:*",
++    "@gi-tcg/mcp": "workspace:*",
+     "@vercel/analytics": "^1.2.0",
+     "core-js": "3.38.1",
+     "solid-js": "catalog:"
+diff --git a/packages/standalone/src/App.tsx b/packages/standalone/src/App.tsx
+index 060bcc24..06fe1094 100644
+--- a/packages/standalone/src/App.tsx
++++ b/packages/standalone/src/App.tsx
+@@ -25,6 +25,7 @@ import {
+ } from "@gi-tcg/core";
+ import { StandaloneChild } from "./StandaloneChild";
+ import { StandaloneParent } from "./StandaloneParent";
++import { StandaloneParentWithMCP } from "./StandaloneParentWithMCP";
+ import { IS_BETA, SERVER_HOST, WEB_CLIENT_BASE_PATH } from "@gi-tcg/config";
+ import { DeckBuilder } from "@gi-tcg/deck-builder";
+ import "@gi-tcg/deck-builder/style.css";
+@@ -33,6 +34,7 @@ import { DEFAULT_ASSETS_MANAGER } from "@gi-tcg/assets-manager";
+ enum GameMode {
+   NotStarted = 0,
+   Standalone = 1,
++  StandaloneWithMCP = 2,
+ }
+ 
+ const INIT_DECK0 =
+@@ -185,6 +187,7 @@ export function App() {
+               </div>
+               <div class="config-panel__button-group">
+                 <button onClick={() => setMode(1)}>开始对局</button>
++                <button onClick={() => setMode(2)}>开始对局 (MCP模式)</button>
+                 <button
+                   onClick={async () => {
+                     const logs = await importLog().catch(alert);
+@@ -294,6 +297,16 @@ export function App() {
+             version={version()}
+           />
+         </Match>
++        <Match when={mode() === GameMode.StandaloneWithMCP}>
++          <StandaloneParentWithMCP
++            logs={logs()}
++            deck0={deck0()}
++            deck1={deck1()}
++            version={version()}
++            enableMCP={true}
++            aiPlayerWho={0}
++          />
++        </Match>
+       </Switch>
+       <dialog ref={deckBuilderDialog!} class="deck-builder-dialog">
+         <Show when={loadDeckBuilder()}>
+diff --git a/packages/standalone/tsconfig.node.json b/packages/standalone/tsconfig.node.json
+index 42872c59..31647a97 100644
+--- a/packages/standalone/tsconfig.node.json
++++ b/packages/standalone/tsconfig.node.json
+@@ -6,5 +6,8 @@
+     "moduleResolution": "bundler",
+     "allowSyntheticDefaultImports": true
+   },
+-  "include": ["vite.config.ts"]
++  "include": [
++    "vite.config.ts",
++    "src/**/*.ts"
++  ]
+ }
+diff --git a/packages/standalone/vite.config.ts b/packages/standalone/vite.config.ts
+index 7f84db30..568b2ea2 100644
+--- a/packages/standalone/vite.config.ts
++++ b/packages/standalone/vite.config.ts
+@@ -13,30 +13,811 @@
+ // You should have received a copy of the GNU Affero General Public License
+ // along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-import { defaultClientConditions, defineConfig } from "vite";
++import { defineConfig, loadEnv } from "vite";
+ import solid from "vite-plugin-solid";
+ import babel from "@rollup/plugin-babel";
+ import { viteStaticCopy } from "vite-plugin-static-copy";
++import type { Plugin } from "vite";
++import { createReadStream, existsSync } from "node:fs";
++import nodePath from "node:path";
++import {
++  disconnectMcpBridge,
++  getMcpBridgeStatus,
++  getPendingMcpCommand,
++  resolvePendingMcpCommand,
++  setPendingMcpCommand,
++  updateMcpBridgeSnapshot,
++} from "./src/mcpState";
+ 
+-export default defineConfig({
+-  esbuild: {
+-    target: "ES2020",
+-  },
+-  plugins: [
+-    solid(),
+-    babel({
+-      babelHelpers: "bundled",
+-    }),
+-    viteStaticCopy({
+-      watch: null,
+-      silent: true,
+-      targets: [
+-        {
+-          src: "../data-code-analyzer/src/result.json",
+-          rename: "data-code-analyze-result.json",
+-          dest: "."
+-        }
+-      ]
+-    })
+-  ],
++const OPPONENT_DECK_ENV = "MCP_ALLOW_OPP_DECK";
++const isOpponentDeckAllowed = (): boolean => {
++  const raw = process.env[OPPONENT_DECK_ENV];
++  if (!raw) {
++    return true;
++  }
++  const normalized = raw.toLowerCase();
++  return normalized !== "0" && normalized !== "false" && normalized !== "no";
++};
++
++async function readJsonBody(req: any): Promise<any> {
++  return new Promise((resolve, reject) => {
++    let data = "";
++    req.on("data", (chunk: Buffer | string) => {
++      data += chunk.toString();
++    });
++    req.on("end", () => {
++      if (!data) {
++        resolve({});
++        return;
++      }
++      try {
++        resolve(JSON.parse(data));
++      } catch (e) {
++        reject(e);
++      }
++    });
++    req.on("error", reject);
++  });
++}
++
++function mcpApiPlugin(): Plugin {
++  const localCardImagesDir = nodePath.resolve(__dirname, "public/card_images");
++
++  const middleware = async (req: any, res: any, next: () => void) => {
++    const url = req.url || "";
++
++    const parsedUrl = new URL(url, "http://localhost");
++    const imageMatch = parsedUrl.pathname.match(/^\/card_images\/(\d+)(?:\.(webp|png|jpe?g))?$/i);
++    if (imageMatch) {
++      const imageId = imageMatch[1];
++      const requestedExt = imageMatch[2]?.toLowerCase();
++      const candidates = [
++        { ext: ".webp", contentType: "image/webp" },
++        { ext: ".png", contentType: "image/png" },
++        { ext: ".jpg", contentType: "image/jpeg" },
++        { ext: ".jpeg", contentType: "image/jpeg" },
++      ];
++
++      const targetCandidates = requestedExt
++        ? candidates.filter((candidate) => candidate.ext === `.${requestedExt}`)
++        : candidates;
++
++      for (const candidate of targetCandidates) {
++        const filePath = nodePath.join(localCardImagesDir, `${imageId}${candidate.ext}`);
++        if (existsSync(filePath)) {
++          res.setHeader("Content-Type", candidate.contentType);
++          createReadStream(filePath).pipe(res);
++          return;
++        }
++      }
++
++      res.statusCode = 404;
++      res.end(JSON.stringify({ error: `Card image not found for ${imageId}` }));
++      return;
++    }
++    
++    if (!url.startsWith("/api/mcp/")) {
++      next();
++      return;
++    }
++
++    const path = url.slice("/api/mcp/".length);
++    const bridge = getMcpBridgeStatus();
++    const snapshot = bridge.snapshot;
++
++    const failIfNoPendingRpc = (expectedMethod?: string): string | null => {
++      if (!bridge.connected) {
++        return "Standalone bridge is not connected";
++      }
++      if (!snapshot.hasPendingRpc || !snapshot.pendingMethod) {
++        return "No pending action request";
++      }
++      if (expectedMethod && snapshot.pendingMethod !== expectedMethod) {
++        return `Pending RPC is '${snapshot.pendingMethod}', expected '${expectedMethod}'`;
++      }
++      return null;
++    };
++
++    const createDefaultIdempotencyKey = (
++      method: string,
++      expectedPendingMethod: string,
++      payload: unknown
++    ): string => {
++      const payloadText = (() => {
++        try {
++          return JSON.stringify(payload);
++        } catch {
++          return String(payload);
++        }
++      })();
++      return `${method}:${expectedPendingMethod}:${payloadText}`;
++    };
++
++    const validateSnapshotGuard = (
++      expectedPendingMethod?: unknown,
++      expectedSnapshotUpdatedAt?: unknown
++    ): string | null => {
++      if (
++        typeof expectedPendingMethod === "string" &&
++        snapshot.pendingMethod &&
++        expectedPendingMethod !== snapshot.pendingMethod
++      ) {
++        return `Stale command context: expected pending method '${expectedPendingMethod}', current is '${snapshot.pendingMethod}'`;
++      }
++      if (
++        typeof expectedSnapshotUpdatedAt === "number" &&
++        Number.isFinite(expectedSnapshotUpdatedAt) &&
++        expectedSnapshotUpdatedAt !== snapshot.updatedAt
++      ) {
++        return `Stale snapshot: expected updatedAt=${expectedSnapshotUpdatedAt}, current=${snapshot.updatedAt}`;
++      }
++      return null;
++    };
++
++    const isIntegerArray = (value: unknown): value is number[] =>
++      Array.isArray(value) && value.every((item) => Number.isInteger(item));
++
++    const getCurrentPlayerDice = (): number[] | null => {
++      const stateAny = snapshot.state as any;
++      const player = stateAny?.player;
++      const aiWho = snapshot.aiPlayerWho;
++      const dice = Array.isArray(player) ? player[aiWho]?.dice : undefined;
++      return Array.isArray(dice) ? (dice as number[]) : null;
++    };
++
++    const getCurrentPlayerHandCardIds = (): number[] | null => {
++      const stateAny = snapshot.state as any;
++      const player = stateAny?.player;
++      const aiWho = snapshot.aiPlayerWho;
++      const handCards = Array.isArray(player) ? player[aiWho]?.handCard : undefined;
++      if (!Array.isArray(handCards)) {
++        return null;
++      }
++      return handCards
++        .map((card: any) => card?.id)
++        .filter((id: any) => Number.isInteger(id)) as number[];
++    };
++
++    const getPendingRequest = (): any | null => {
++      const pendingRequest = (snapshot as any).pendingRequest;
++      return pendingRequest && typeof pendingRequest === "object" ? pendingRequest : null;
++    };
++
++    const getPendingActions = (): any[] | null => {
++      const pendingRequest = getPendingRequest();
++      if (pendingRequest?.$case === "action" && Array.isArray(pendingRequest?.value?.action)) {
++        return pendingRequest.value.action as any[];
++      }
++      return null;
++    };
++
++    const getPendingChooseActiveCandidates = (): number[] | null => {
++      const pendingRequest = getPendingRequest();
++      if (pendingRequest?.$case !== "chooseActive") {
++        return null;
++      }
++      const candidateIds = pendingRequest?.value?.candidateIds;
++      return Array.isArray(candidateIds) ? (candidateIds as number[]) : null;
++    };
++
++    const getPendingSelectCardCandidates = (): number[] | null => {
++      const pendingRequest = getPendingRequest();
++      if (pendingRequest?.$case !== "selectCard") {
++        return null;
++      }
++      const candidateDefinitionIds = pendingRequest?.value?.candidateDefinitionIds;
++      return Array.isArray(candidateDefinitionIds) ? (candidateDefinitionIds as number[]) : null;
++    };
++
++    const getDeckInfo = (who: 0 | 1) => {
++      const deckInfo = (snapshot as any)?.deckInfo;
++      const players = deckInfo?.players;
++      if (!Array.isArray(players)) {
++        return null;
++      }
++      return players[who] ?? null;
++    };
++
++    const checkDiceRequirement = (
++      requiredCost: Array<{ type?: number; count?: number }>,
++      usedDice: number[],
++    ): boolean => {
++      const VOID = 0;
++      const OMNI = 8;
++      const ALIGNED = 8;
++      const ENERGY = 9;
++
++      const requirementEntries = requiredCost.filter(
++        (entry) => Number.isInteger(entry.type) && Number.isInteger(entry.count) && (entry.count as number) > 0,
++      );
++
++      const alignedEntry = requirementEntries.find((entry) => entry.type === ALIGNED);
++      if (alignedEntry) {
++        const requiredCount = alignedEntry.count as number;
++        if (requiredCount !== usedDice.length) {
++          return false;
++        }
++        const chosenSet = new Set(usedDice);
++        return (
++          (chosenSet.size === 0 && requiredCount === 0) ||
++          chosenSet.size === 1 ||
++          (chosenSet.size === 2 && chosenSet.has(OMNI))
++        );
++      }
++
++      const requiredList: number[] = [];
++      for (const entry of requirementEntries) {
++        const type = entry.type as number;
++        const count = entry.count as number;
++        for (let i = 0; i < count; i++) {
++          requiredList.push(type);
++        }
++      }
++
++      const chosen = [...usedDice];
++      let voidCount = 0;
++      for (const req of requiredList) {
++        if (req === ENERGY) {
++          continue;
++        }
++        if (req === VOID) {
++          voidCount++;
++          continue;
++        }
++        const sameTypeIndex = chosen.indexOf(req);
++        if (sameTypeIndex !== -1) {
++          chosen.splice(sameTypeIndex, 1);
++          continue;
++        }
++        const omniIndex = chosen.indexOf(OMNI);
++        if (omniIndex === -1) {
++          return false;
++        }
++        chosen.splice(omniIndex, 1);
++      }
++
++      return chosen.length === voidCount;
++    };
++
++    const validateDiceSelection = (selected: number[], fieldName: string): string | null => {
++      const availableDice = getCurrentPlayerDice();
++      if (!availableDice) {
++        return null;
++      }
++      const remaining = [...availableDice];
++      for (const die of selected) {
++        const index = remaining.indexOf(die);
++        if (index === -1) {
++          return `Invalid ${fieldName}: dice type ${die} is not available in current dice pool`;
++        }
++        remaining.splice(index, 1);
++      }
++      return null;
++    };
++
++    const validateCardSelection = (availableIds: number[] | null, selectedIds: number[], fieldName: string): string | null => {
++      if (!availableIds) {
++        return null;
++      }
++      const remaining = [...availableIds];
++      for (const id of selectedIds) {
++        const index = remaining.indexOf(id);
++        if (index === -1) {
++          return `Invalid ${fieldName}: id ${id} is not available`;
++        }
++        remaining.splice(index, 1);
++      }
++      return null;
++    };
++    
++    try {
++      res.setHeader("Content-Type", "application/json");
++
++      switch (path) {
++        case "ping": {
++          res.end(JSON.stringify({
++            status: "ok",
++            connected: bridge.connected,
++            stale: bridge.stale,
++            gameRunning: bridge.connected && snapshot.gamePhase !== "not_started",
++          }));
++          break;
++        }
++        case "status": {
++          const pendingActions = getPendingActions();
++          res.end(JSON.stringify({
++            hasPendingRpc: snapshot.hasPendingRpc,
++            pendingMethod: snapshot.pendingMethod,
++            pendingRequest: getPendingRequest(),
++            pendingActionCount: pendingActions?.length ?? 0,
++            gamePhase: snapshot.gamePhase,
++            currentPlayer: snapshot.currentPlayer,
++            round: snapshot.round,
++            snapshotUpdatedAt: snapshot.updatedAt,
++            aiPlayerWho: snapshot.aiPlayerWho,
++            connected: bridge.connected,
++            stale: bridge.stale,
++            hasPendingCommand: bridge.hasPendingCommand,
++            pendingCommandId: bridge.pendingCommandId,
++            lastCommandResult: bridge.lastCommandResult,
++          }));
++          break;
++        }
++        case "state": {
++          if (!snapshot.state) {
++            res.end(JSON.stringify({ error: "Game not initialized" }));
++            break;
++          }
++          res.end(JSON.stringify(snapshot.state));
++          break;
++        }
++        case "screen": {
++          if (!snapshot.screen) {
++            res.end(JSON.stringify({ error: "Game not initialized" }));
++            break;
++          }
++          res.end(JSON.stringify(snapshot.screen));
++          break;
++        }
++        case "deck0":
++        case "deck1": {
++          const who = path === "deck0" ? 0 : 1;
++          if (who === 1 && !isOpponentDeckAllowed()) {
++            res.end(JSON.stringify({ error: "Opponent deck access is disabled" }));
++            break;
++          }
++          const deckInfo = getDeckInfo(who);
++          if (!deckInfo) {
++            res.end(JSON.stringify({ error: "Deck info not available" }));
++            break;
++          }
++          res.end(JSON.stringify(deckInfo));
++          break;
++        }
++        case "commands": {
++          const availableTools: Array<{ tool: string; description: string }> = [];
++          if (snapshot.hasPendingRpc && snapshot.pendingMethod) {
++            switch (snapshot.pendingMethod) {
++              case "action":
++                availableTools.push({
++                  tool: "choose_action",
++                  description: "Choose an action from available options",
++                });
++                break;
++              case "chooseActive":
++                availableTools.push({
++                  tool: "choose_active",
++                  description: "Choose active character",
++                });
++                break;
++              case "rerollDice":
++                availableTools.push({
++                  tool: "reroll_dice",
++                  description: "Reroll selected dice",
++                });
++                break;
++              case "switchHands":
++                availableTools.push({
++                  tool: "switch_hands",
++                  description: "Switch initial hand cards",
++                });
++                break;
++              case "selectCard":
++                availableTools.push({
++                  tool: "select_card",
++                  description: "Select a card",
++                });
++                break;
++            }
++          }
++          res.end(JSON.stringify({
++            available_tools: availableTools,
++            has_pending_rpc: snapshot.hasPendingRpc,
++            pending_method: snapshot.pendingMethod,
++            connected: bridge.connected,
++          }));
++          break;
++        }
++        case "action": {
++          const error = failIfNoPendingRpc("action");
++          if (error) {
++            res.end(JSON.stringify({ success: false, error }));
++            break;
++          }
++          const body: any = await readJsonBody(req);
++          const { actionIndex, usedDice, idempotencyKey, expectedPendingMethod, expectedSnapshotUpdatedAt } = body;
++
++          const guardError = validateSnapshotGuard(expectedPendingMethod, expectedSnapshotUpdatedAt);
++          if (guardError) {
++            res.end(JSON.stringify({ success: false, error: guardError, errorCode: "STALE_CONTEXT", snapshotUpdatedAt: snapshot.updatedAt }));
++            break;
++          }
++
++          if (!Number.isInteger(actionIndex) || actionIndex <= 0) {
++            res.end(JSON.stringify({ success: false, error: "Invalid actionIndex: must be an integer starting from 1" }));
++            break;
++          }
++          if (typeof usedDice !== "undefined" && !isIntegerArray(usedDice)) {
++            res.end(JSON.stringify({ success: false, error: "Invalid usedDice: must be an integer array" }));
++            break;
++          }
++          const normalizedUsedDice = (usedDice ?? []) as number[];
++
++          const pendingActions = getPendingActions();
++          if (pendingActions) {
++            const selectedAction = pendingActions[actionIndex - 1];
++            if (!selectedAction) {
++              res.end(JSON.stringify({ success: false, error: `Invalid actionIndex: must be between 1 and ${pendingActions.length}` }));
++              break;
++            }
++            if (selectedAction.validity !== 0) {
++              res.end(JSON.stringify({ success: false, error: `Invalid actionIndex: selected action is not valid (validity=${selectedAction.validity})` }));
++              break;
++            }
++            if (!checkDiceRequirement(selectedAction.requiredCost ?? [], normalizedUsedDice)) {
++              res.end(JSON.stringify({ success: false, error: "Invalid usedDice: selected dice do not satisfy the required cost of chosen action" }));
++              break;
++            }
++          }
++
++          const diceValidationError = validateDiceSelection(normalizedUsedDice, "usedDice");
++          if (diceValidationError) {
++            res.end(JSON.stringify({ success: false, error: diceValidationError }));
++            break;
++          }
++
++          const response = {
++            chosenActionIndex: actionIndex - 1,
++            usedDice: normalizedUsedDice,
++          };
++
++          const normalizedIdempotencyKey =
++            typeof idempotencyKey === "string" && idempotencyKey.trim().length > 0
++              ? idempotencyKey.trim()
++              : createDefaultIdempotencyKey("action", "action", response);
++
++          const queued = setPendingMcpCommand("action", response, normalizedIdempotencyKey);
++          res.end(JSON.stringify({
++            success: queued.ok,
++            message: queued.ok
++              ? queued.alreadyResolved
++                ? "Action already resolved (idempotent)"
++                : queued.idempotentHit
++                  ? "Action already queued (idempotent)"
++                  : "Action queued"
++              : queued.reason,
++            commandId: queued.command?.id ?? null,
++            idempotencyKey: normalizedIdempotencyKey,
++            idempotentHit: !!queued.idempotentHit,
++            alreadyResolved: !!queued.alreadyResolved,
++            lastCommandResult: queued.lastResult ?? null,
++          }));
++          break;
++        }
++        case "chooseActive": {
++          const error = failIfNoPendingRpc("chooseActive");
++          if (error) {
++            res.end(JSON.stringify({ success: false, error }));
++            break;
++          }
++          const body: any = await readJsonBody(req);
++          const { characterId, idempotencyKey, expectedPendingMethod, expectedSnapshotUpdatedAt } = body;
++
++          const guardError = validateSnapshotGuard(expectedPendingMethod, expectedSnapshotUpdatedAt);
++          if (guardError) {
++            res.end(JSON.stringify({ success: false, error: guardError, errorCode: "STALE_CONTEXT", snapshotUpdatedAt: snapshot.updatedAt }));
++            break;
++          }
++
++          if (!Number.isInteger(characterId)) {
++            res.end(JSON.stringify({ success: false, error: "Invalid characterId: must be an integer" }));
++            break;
++          }
++          const candidateIds = getPendingChooseActiveCandidates();
++          if (candidateIds && !candidateIds.includes(characterId)) {
++            res.end(JSON.stringify({ success: false, error: `Invalid characterId: must be one of candidate ids ${JSON.stringify(candidateIds)}` }));
++            break;
++          }
++          const response = {
++            activeCharacterId: characterId,
++          };
++          const normalizedIdempotencyKey =
++            typeof idempotencyKey === "string" && idempotencyKey.trim().length > 0
++              ? idempotencyKey.trim()
++              : createDefaultIdempotencyKey("chooseActive", "chooseActive", response);
++          const queued = setPendingMcpCommand("chooseActive", response, normalizedIdempotencyKey);
++          res.end(JSON.stringify({
++            success: queued.ok,
++            message: queued.ok
++              ? queued.alreadyResolved
++                ? "ChooseActive already resolved (idempotent)"
++                : queued.idempotentHit
++                  ? "ChooseActive already queued (idempotent)"
++                  : "ChooseActive queued"
++              : queued.reason,
++            commandId: queued.command?.id ?? null,
++            idempotencyKey: normalizedIdempotencyKey,
++            idempotentHit: !!queued.idempotentHit,
++            alreadyResolved: !!queued.alreadyResolved,
++            lastCommandResult: queued.lastResult ?? null,
++          }));
++          break;
++        }
++        case "rerollDice": {
++          const error = failIfNoPendingRpc("rerollDice");
++          if (error) {
++            res.end(JSON.stringify({ success: false, error }));
++            break;
++          }
++          const body: any = await readJsonBody(req);
++          const { diceToReroll, idempotencyKey, expectedPendingMethod, expectedSnapshotUpdatedAt } = body;
++
++          const guardError = validateSnapshotGuard(expectedPendingMethod, expectedSnapshotUpdatedAt);
++          if (guardError) {
++            res.end(JSON.stringify({ success: false, error: guardError, errorCode: "STALE_CONTEXT", snapshotUpdatedAt: snapshot.updatedAt }));
++            break;
++          }
++
++          if (!isIntegerArray(diceToReroll ?? [])) {
++            res.end(JSON.stringify({ success: false, error: "Invalid diceToReroll: must be an integer array of dice types" }));
++            break;
++          }
++          const diceValidationError = validateDiceSelection(diceToReroll ?? [], "diceToReroll");
++          if (diceValidationError) {
++            res.end(JSON.stringify({ success: false, error: diceValidationError }));
++            break;
++          }
++          const response = {
++            diceToReroll: diceToReroll ?? [],
++          };
++          const normalizedIdempotencyKey =
++            typeof idempotencyKey === "string" && idempotencyKey.trim().length > 0
++              ? idempotencyKey.trim()
++              : createDefaultIdempotencyKey("rerollDice", "rerollDice", response);
++          const queued = setPendingMcpCommand("rerollDice", response, normalizedIdempotencyKey);
++          res.end(JSON.stringify({
++            success: queued.ok,
++            message: queued.ok
++              ? queued.alreadyResolved
++                ? "Reroll already resolved (idempotent)"
++                : queued.idempotentHit
++                  ? "Reroll already queued (idempotent)"
++                  : "Reroll queued"
++              : queued.reason,
++            commandId: queued.command?.id ?? null,
++            idempotencyKey: normalizedIdempotencyKey,
++            idempotentHit: !!queued.idempotentHit,
++            alreadyResolved: !!queued.alreadyResolved,
++            lastCommandResult: queued.lastResult ?? null,
++          }));
++          break;
++        }
++        case "switchHands": {
++          const error = failIfNoPendingRpc("switchHands");
++          if (error) {
++            res.end(JSON.stringify({ success: false, error }));
++            break;
++          }
++          const body: any = await readJsonBody(req);
++          const { removedHandIds, idempotencyKey, expectedPendingMethod, expectedSnapshotUpdatedAt } = body;
++
++          const guardError = validateSnapshotGuard(expectedPendingMethod, expectedSnapshotUpdatedAt);
++          if (guardError) {
++            res.end(JSON.stringify({ success: false, error: guardError, errorCode: "STALE_CONTEXT", snapshotUpdatedAt: snapshot.updatedAt }));
++            break;
++          }
++
++          if (!isIntegerArray(removedHandIds ?? [])) {
++            res.end(JSON.stringify({ success: false, error: "Invalid removedHandIds: must be an integer array" }));
++            break;
++          }
++          const handCardValidationError = validateCardSelection(
++            getCurrentPlayerHandCardIds(),
++            removedHandIds ?? [],
++            "removedHandIds",
++          );
++          if (handCardValidationError) {
++            res.end(JSON.stringify({ success: false, error: handCardValidationError }));
++            break;
++          }
++          const response = {
++            removedHandIds: removedHandIds ?? [],
++          };
++          const normalizedIdempotencyKey =
++            typeof idempotencyKey === "string" && idempotencyKey.trim().length > 0
++              ? idempotencyKey.trim()
++              : createDefaultIdempotencyKey("switchHands", "switchHands", response);
++          const queued = setPendingMcpCommand("switchHands", response, normalizedIdempotencyKey);
++          res.end(JSON.stringify({
++            success: queued.ok,
++            message: queued.ok
++              ? queued.alreadyResolved
++                ? "SwitchHands already resolved (idempotent)"
++                : queued.idempotentHit
++                  ? "SwitchHands already queued (idempotent)"
++                  : "SwitchHands queued"
++              : queued.reason,
++            commandId: queued.command?.id ?? null,
++            idempotencyKey: normalizedIdempotencyKey,
++            idempotentHit: !!queued.idempotentHit,
++            alreadyResolved: !!queued.alreadyResolved,
++            lastCommandResult: queued.lastResult ?? null,
++          }));
++          break;
++        }
++        case "selectCard": {
++          const error = failIfNoPendingRpc("selectCard");
++          if (error) {
++            res.end(JSON.stringify({ success: false, error }));
++            break;
++          }
++          const body: any = await readJsonBody(req);
++          const { selectedDefinitionId, idempotencyKey, expectedPendingMethod, expectedSnapshotUpdatedAt } = body;
++
++          const guardError = validateSnapshotGuard(expectedPendingMethod, expectedSnapshotUpdatedAt);
++          if (guardError) {
++            res.end(JSON.stringify({ success: false, error: guardError, errorCode: "STALE_CONTEXT", snapshotUpdatedAt: snapshot.updatedAt }));
++            break;
++          }
++
++          if (!Number.isInteger(selectedDefinitionId)) {
++            res.end(JSON.stringify({ success: false, error: "Invalid selectedDefinitionId: must be an integer" }));
++            break;
++          }
++          const candidateDefinitionIds = getPendingSelectCardCandidates();
++          if (candidateDefinitionIds && !candidateDefinitionIds.includes(selectedDefinitionId)) {
++            res.end(JSON.stringify({ success: false, error: `Invalid selectedDefinitionId: must be one of candidate definition ids ${JSON.stringify(candidateDefinitionIds)}` }));
++            break;
++          }
++          const response = {
++            selectedDefinitionId,
++          };
++          const normalizedIdempotencyKey =
++            typeof idempotencyKey === "string" && idempotencyKey.trim().length > 0
++              ? idempotencyKey.trim()
++              : createDefaultIdempotencyKey("selectCard", "selectCard", response);
++          const queued = setPendingMcpCommand("selectCard", response, normalizedIdempotencyKey);
++          res.end(JSON.stringify({
++            success: queued.ok,
++            message: queued.ok
++              ? queued.alreadyResolved
++                ? "SelectCard already resolved (idempotent)"
++                : queued.idempotentHit
++                  ? "SelectCard already queued (idempotent)"
++                  : "SelectCard queued"
++              : queued.reason,
++            commandId: queued.command?.id ?? null,
++            idempotencyKey: normalizedIdempotencyKey,
++            idempotentHit: !!queued.idempotentHit,
++            alreadyResolved: !!queued.alreadyResolved,
++            lastCommandResult: queued.lastResult ?? null,
++          }));
++          break;
++        }
++        case "sync": {
++          const body = await readJsonBody(req);
++          const snapshotBody = body?.snapshot ?? body;
++          const updated = updateMcpBridgeSnapshot({
++            aiPlayerWho: snapshotBody.aiPlayerWho,
++            hasPendingRpc: !!snapshotBody.hasPendingRpc,
++            pendingMethod: snapshotBody.pendingMethod ?? null,
++            pendingRequest: snapshotBody.pendingRequest ?? null,
++            gamePhase: snapshotBody.gamePhase ?? "not_started",
++            currentPlayer:
++              typeof snapshotBody.currentPlayer === "number"
++                ? snapshotBody.currentPlayer
++                : -1,
++            round:
++              typeof snapshotBody.round === "number"
++                ? snapshotBody.round
++                : 0,
++            state: snapshotBody.state ?? null,
++            screen: snapshotBody.screen ?? null,
++            deckInfo: snapshotBody.deckInfo ?? null,
++          });
++          res.end(
++            JSON.stringify({
++              success: true,
++              connected: bridge.connected,
++              pendingCommandId: getPendingMcpCommand()?.id ?? null,
++              snapshotUpdatedAt: updated.updatedAt,
++            })
++          );
++          break;
++        }
++        case "next-command": {
++          res.end(
++            JSON.stringify({
++              command: getPendingMcpCommand(),
++            })
++          );
++          break;
++        }
++        case "command-result": {
++          const body = await readJsonBody(req);
++          const id = body?.id;
++          const success = !!body?.success;
++          const message = body?.message as string | undefined;
++          if (typeof id !== "string" || id.length === 0) {
++            res.end(JSON.stringify({ success: false, error: "Missing command id" }));
++            break;
++          }
++          const result = resolvePendingMcpCommand(id, success, message);
++          res.end(JSON.stringify({ success: result.ok, error: result.reason }));
++          break;
++        }
++        case "disconnect": {
++          disconnectMcpBridge();
++          res.end(JSON.stringify({ success: true }));
++          break;
++        }
++        default: {
++          res.statusCode = 404;
++          res.end(JSON.stringify({ error: "Unknown endpoint" }));
++        }
++      }
++    } catch (e) {
++      console.error("MCP API error:", e);
++      res.statusCode = 500;
++      res.end(JSON.stringify({ error: String(e) }));
++    }
++  };
++
++  return {
++    name: "mcp-api",
++    configureServer(server) {
++      server.middlewares.use(middleware);
++    },
++    configurePreviewServer(server) {
++      server.middlewares.use(middleware);
++    },
++  };
++}
++
++export default defineConfig(({ mode }) => {
++  const env = loadEnv(mode, __dirname, "");
++  const localCardImagesBaseUrl =
++    env.VITE_LOCAL_CARD_IMAGES_BASE_URL ||
++    env.LOCAL_CARD_IMAGES_BASE_URL ||
++    "/card_images";
++
++  return {
++    envDir: __dirname,
++    resolve: {
++      alias: {
++        "@gi-tcg/assets-manager": nodePath.resolve(
++          __dirname,
++          "../assets-manager/src/index.ts",
++        ),
++      },
++    },
++    define: {
++      "import.meta.env.VITE_LOCAL_CARD_IMAGES_BASE_URL": JSON.stringify(localCardImagesBaseUrl),
++      "import.meta.env.LOCAL_CARD_IMAGES_BASE_URL": JSON.stringify(localCardImagesBaseUrl),
++    },
++    esbuild: {
++      target: "ES2020",
++    },
++    server: {
++      port: 3001,
++    },
++    plugins: [
++      solid(),
++      babel({
++        babelHelpers: "bundled",
++      }),
++      viteStaticCopy({
++        watch: null,
++        silent: true,
++        targets: [
++          {
++            src: "../data-code-analyzer/src/result.json",
++            rename: "data-code-analyze-result.json",
++            dest: "."
++          }
++        ]
++      }),
++      mcpApiPlugin(),
++    ],
++  };
+ });

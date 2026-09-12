@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/round26-glmpatch/plans/hongniu.glmpatch.p5.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round22-g53f/plans/hongniu.ctrl.r0.json"
+  },
+  "games": 10,
+  "seedBase": 20274101,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round26-glmpatch/games/p5-vs-g53fctrl"
+}

@@ -1,0 +1,38 @@
+{
+  "version": "v6.3.0",
+  "matchups": [
+    {
+      "id": "prior-batch-sample",
+      "games": 20,
+      "priorMatrixBatch": {
+        "weightsPath": "./output/weights.iteration.json",
+        "baselineOptions": {
+          "endTurnPenalty": 5
+        },
+        "evaluatorOptions": {
+          "priorScoreScale": 3
+        },
+        "priorLabel": "prior",
+        "includeMirrors": false,
+        "includeReverse": true,
+        "decks": [
+          {
+            "id": "jiuxian",
+            "name": "Jiuxian",
+            "deckCode": "FZDByRUNGRCB0WoNFlGgWpEPE0AB9TAPFGCB9kgWGIERCoEQDLFADcQQDPFgacYWDJAA"
+          },
+          {
+            "id": "crab",
+            "name": "Crab",
+            "deckCode": "FdHxNj8TAWDQxFkMFkAhyWIYCYDA45wOCUDQ5J0PGEAh9IIPGWDh9p4YC6FgirYRCxAA"
+          },
+          {
+            "id": "sample-3",
+            "name": "Sample 3",
+            "deckCode": "FZDByRUNGRCB0WoNFlGgWpEPE0AB9TAPFGCB9kgWGIERCoEQDLFADcQQDPFgacYWDJAA"
+          }
+        ]
+      }
+    }
+  ]
+}

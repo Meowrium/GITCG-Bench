@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gtcg.local/schemas/mcp/create-decision-shard-v1.request.schema.json",
+  "title": "MCP create_decision_shard_v1 Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "arguments"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "const": "create_decision_shard_v1"
+    },
+    "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["session_id", "plan_id", "turn_range", "tactical_goal"],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "plan_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "shard_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn_range": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["start", "end"],
+          "properties": {
+            "start": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "end": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "tactical_goal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_policies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "priority", "preconditions", "action_template"],
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "priority": { "type": "integer", "minimum": 1, "maximum": 100 },
+              "preconditions": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "action_template": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["tool", "args"],
+                "properties": {
+                  "tool": {
+                    "type": "string",
+                    "enum": [
+                      "submit_decision_fragment_v1",
+                      "choose_action",
+                      "elemental_tuning",
+                      "choose_active",
+                      "reroll_dice",
+                      "switch_hands",
+                      "select_card"
+                    ]
+                  },
+                  "args": { "type": "object" }
+                }
+              }
+            }
+          }
+        },
+        "execution_constraints": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "max_actions_this_turn": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20
+            },
+            "dice_budget_mode": {
+              "type": "string",
+              "enum": ["strict", "balanced", "aggressive"]
+            },
+            "protect_character_definition_ids": {
+              "type": "array",
+              "items": { "type": "integer" }
+            },
+            "forbid_actions": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "fallback_chain": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["when", "policy"],
+            "properties": {
+              "when": { "type": "string" },
+              "policy": {
+                "type": "string",
+                "enum": ["skip_low_value", "save_dice", "hp_stabilize", "force_switch"]
+              }
+            }
+          }
+        },
+        "exit_conditions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "combat_window_plan": {
+          "$ref": "../decision-shard-v1.schema.json#/properties/combat_window_plan"
+        }
+      }
+    }
+  }
+}

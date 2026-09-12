@@ -1,20 +1,118 @@
-# deps & build output
-node_modules/
-dist/
-*.tsbuildinfo
+node_modules
+dist
+temp
 
-# local env / secrets (never commit)
+# Python virtualenvs and bytecode
+packages/gi-ml/python/.lgbm-venv/
+packages/gi-ml/python/.venv/
+**/__pycache__/
+*.pyc
+
+# IDE / editor
+.vscode/
+.DS_Store
+
+# Agent / tool configs (local state, not shared)
+.claude/
+.hermes/
+.shared-skills/
+.ruff_cache/
+
+# Temp and scratch files
+.tmp/
+*.stackdump
+bash.exe.stackdump
+
+# Secrets and credentials (NEVER commit)
+Meow.pem
+ds.sh
 .env
 .env.*
 !*.env.example
+# 本地凭据/模型清单（含 key 值，只留本地）
+packages/benchmark/tree-bench/API.txt
 
-# local runtime artifacts
-.tmp/
-temp/
+# Build artifacts
+*.tsbuildinfo
+packages/*/dist/
+packages/mcp/.cache/
+packages/standalone/tsconfig.node.tsbuildinfo
+
+# Generated / cached assets
+packages/standalone/public/card_images/
+
+# Logs and runtime output
+packages/mcp/log/
 output/
+memory.db
+api-1.json
 
-# editor / OS
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
+# Archives
+gi-training-cloud.tar.gz
+*.tar.gz
+
+# Temp test / scratch files (underscore-prefixed)
+_*
+*_output.txt
+
+# Session logs and battle reports
+20260529battle.md
+Moyou-battlelog.md
+session0410.md
+
+# Misc scratch utilities
+analyze_logs.py
+patch.js
+packages/Gi-agent_plan.md
+CLEANUP_LIST.txt
+
+# Top-level data copies (already in packages/)
+data/
+# 放行 @gi-tcg/data 包本体（裸写 data/ 会匹配任意深度的 data 目录）
+!packages/data/
+/gitcg-data/
+/gitcg-theory/
+
+# Deck collection data
+4.1卡组收集/
+
+# Deployment artifacts
+cloud-benchmark-pack/
+
+# tree-bench 分析输出(运行 pnpm analyze 生成)
+packages/benchmark/tree-bench/out/
+
+# deck-analysis benchmark：卡池与 ground-truth 标注产出需要进版本库
+# （上面裸写的 data/ 规则会匹配任意深度的 data 目录，这里按目录精确放行）
+!packages/benchmark/deck-analysis/data/
+!packages/benchmark/gi-knowledge/data/
+packages/benchmark/deck-analysis/data/.batch-progress.json
+
+# Runtime artifacts（git rm --cached 移出索引，磁盘文件保留）
+runtime-plans/
+headless-logs/
+卡组收集/
+
+# Backup archive（ai-bridge 组件本体在 "aibridge - 副本/" 目录）
+aibridge - 副本..7z
+
+# 已移除的文档/资料目录（HEAD 历史中仍可恢复）
+eci-files/
+lessons/
+learning-records/
+reference/
+references/
+
+# Tool session data
+.omo/
+.kimi/
+.trae/
+.opencode/tmp/
+
+# 已移除的本地组件（已移至 D:/AI/GTCG/_trash_20260901/）
+dsh-client-ui-duel/
+
+# 本地工具/会话文件
+reasonix.toml
+kimi-export-session_*.md
+未命名.base

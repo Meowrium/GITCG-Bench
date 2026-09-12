@@ -1,0 +1,233 @@
+{
+  "schemaVersion": "3.0",
+  "deckCode": "AhCQ3QsPACBg9IYPCUBw9ZgPCVCA9r0PDGAg+cIPDJFgAskQDKGQC8oQDLGgDNEQDcAA",
+  "deckName": "莫优",
+  "version": "v6.3.0",
+  "deckProfile": {
+    "primaryType": "aggro",
+    "secondaryType": "midrange",
+    "tempo": "fast",
+    "startupSpeed": "turn2~3"
+  },
+  "keyCards": {
+    "combo": [],
+    "damage": [
+      {
+        "id": "330004",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "斩杀轮次靠前，抽牌数有限，为保证上手率需要提高留牌优先级",
+        "mulligan": "high"
+      },
+      {
+        "id": "332009",
+        "role": "damage_amplifier",
+        "importance": "important",
+        "rationale": "斩杀轮次靠前，充能足够但抽牌数有限，在明确需要提速斩杀对手关键角色的前提下可留",
+        "mulligan": "situational"
+      },
+      {
+        "id": "332018",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "起手需要的组件较多，优先级降低",
+        "mulligan": "never"
+      },
+      {
+        "id": "333002",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "前期充能有限时无法生效，留下会影响起手关键组件上手率",
+        "mulligan": "never"
+      }
+    ],
+    "draw": [
+      {
+        "id": "322005",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "料理体系运转核心",
+        "mulligan": "high"
+      },
+      {
+        "id": "322008",
+        "role": "draw",
+        "importance": "important",
+        "rationale": "存储剩余费用、调整骰子质量",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322009",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "第一回合需要充足蓄爆，留常九爷可能会导致骰子浪费",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322016",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "伙伴体系核心",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "332004",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "灵活、有效撑起手牌质量",
+        "mulligan": "high"
+      }
+    ],
+    "sustain": [
+      {
+        "id": "333003",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高效承伤，但一般在中期保活争取轮次才有用",
+        "mulligan": "never"
+      }
+    ],
+    "disruption": [
+      {
+        "id": "1106",
+        "role": "disruption",
+        "importance": "core",
+        "rationale": "冻结反应争取输出轮次、提供碎冰增伤",
+        "skills": [
+          {
+            "id": "11062",
+            "name": "冰潮的涡旋"
+          },
+          {
+            "id": "11063",
+            "name": "凝浪之光剑"
+          }
+        ]
+      }
+    ],
+    "ramp": [
+      {
+        "id": "311303",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "帮助在第一回合利用骰子进行蓄爆抢先结束，中期提供高额增伤",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "312005",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "在第一回合提供3+3+2的优质蓄爆，在T2提供额外的骰子进行更多轮次的出伤",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "321011",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "回收残余骰子，在明确回合末会有1~2颗骰子盈余时可留",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322001",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "提供T1的高效蓄爆，可以在抢先结束回合时尽可能提高骰子利用率",
+        "mulligan": "high"
+      },
+      {
+        "id": "322008",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "高效存储T1盈余的大量骰子并在T2提供额外的手牌资源和高质量的万能骰资源，缓解有效骰压力",
+        "mulligan": "high"
+      },
+      {
+        "id": "322016",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "伙伴体系核心",
+        "mulligan": "always_keep"
+      }
+    ],
+    "flex": []
+  },
+  "abstentions": [
+    {
+      "field": "",
+      "reason": ""
+    }
+  ],
+  "damageMode": "raw",
+  "powerCurve": "frontloaded",
+  "hasOneShotPotential": true,
+  "setupDependency": "high",
+  "resilience": {
+    "hasHealing": true,
+    "hasShield": false,
+    "hasImmuneControl": false,
+    "vulnerableTo": [
+      "frontloaded_burst",
+      "chip"
+    ],
+    "hasBoardDisruption": true
+  },
+  "openingSequences": [
+    {
+      "id": "open-1",
+      "name": "莫娜E抢先",
+      "condition": "允许3~5骰蓄爆",
+      "style": "charge_up",
+      "steps": [
+        {
+          "action": "莫娜 水中幻愿",
+          "cost": "3水",
+          "effectDescription": ""
+        },
+        {
+          "action": "蓄爆",
+          "cost": "0",
+          "effectDescription": "投资牌蓄爆：骰子消耗/存储为非技能资源，铺垫后续回合"
+        },
+        {
+          "action": "切流浪者",
+          "cost": "1任意",
+          "effectDescription": "开始出伤"
+        },
+        {
+          "action": "流浪者 羽画·风姿华歌",
+          "cost": "3风",
+          "effectDescription": "出伤"
+        }
+      ],
+      "diceConstraint": "3水",
+      "totalDiceUsed": 7,
+      "isPrimary": false
+    },
+    {
+      "id": "open-2",
+      "name": "扩散",
+      "condition": "手牌缺少蓄爆，骰子允许莫娜流浪者EE",
+      "style": "tempo",
+      "steps": [
+        {
+          "action": "莫娜 水中幻愿",
+          "cost": "3水",
+          "effectDescription": ""
+        },
+        {
+          "action": "切流浪者",
+          "cost": "1任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "流浪者 羽画·风姿华歌",
+          "cost": "3风",
+          "effectDescription": ""
+        }
+      ],
+      "diceConstraint": "3水+3风",
+      "totalDiceUsed": 7,
+      "isPrimary": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/round17-nniter/plans/mm2-hongniu.n1.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round17-nniter/plans/m3-hongniu.n1.json"
+  },
+  "games": 10,
+  "seedBase": 20271801,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round17-nniter/games/x-mm2-m3-hongniu"
+}

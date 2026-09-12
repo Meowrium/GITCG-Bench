@@ -1,0 +1,1 @@
+export const TACTIC_PROTOCOL_VERSION = "1"

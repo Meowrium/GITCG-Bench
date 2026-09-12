@@ -1,0 +1,29 @@
+{
+  "deckA": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+  "deckB": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+  "advantage": {
+    "deckA": 0,
+    "deckB": 0,
+    "reason": "双方卡组完全镜像，均势对局，胜负取决于起手与操作细节。"
+  },
+  "keyInteractions": [
+    {
+      "cardA": "悉数讨回",
+      "cardB": "悉数讨回",
+      "impact": "天赋组件在镜像对局中双方的节奏关键点相同，谁先打出并利用潜行优势谁占优。"
+    },
+    {
+      "cardA": "幸运儿银冠",
+      "cardB": "幸运儿银冠",
+      "impact": "圣遗物提供的续航在镜像中可作为血量优势积累，但双方都有，影响互相抵消。"
+    }
+  ],
+  "strategy": {
+    "deckAPlaying": "均势对局，应优先铺设支援（须弥城、卯师傅、派蒙等）以建立资源循环，中期围绕愚人众·火之债务处理人配合悉数讨回打出爆发节奏，同时利用纯水精灵的召唤物和菲谢尔的奥兹持续施压。注意控制骰子与手牌数量以触发须弥城减费。",
+    "deckBPlaying": "策略与A相同，镜像对局中关键在于谁先完成资源启动并有效利用关键事件（如仙跳墙加伤、立本回收）。注意保护角色血量，利用莲花酥规避爆发。"
+  },
+  "predictedWinRates": {
+    "deckA": 0.5,
+    "deckB": 0.5
+  }
+}

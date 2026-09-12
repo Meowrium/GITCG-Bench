@@ -1,0 +1,89 @@
+{
+  "version": "v5.6",
+  "decks": [
+    {
+      "code": "HJDR6RkOGKDB6o8PGGHxB88QHHHwO5cTCbFxxFccFUFwr7YaC/Fg1MYdDEFg3NsdDsAA",
+      "name": "卡齐娜林尼娜维娅"
+    },
+    {
+      "code": "EZBR6aQOAqDA6mgPGkBx9FcPFWFxip4YDKEQusEbE6FhzDYcDMFg1MYdDEGQ3N4dDsAA",
+      "name": "「女士」千织钟离"
+    },
+    {
+      "code": "AvDB76QPAEDQ9GgPGmBw+cEYDKERijYbE6FgusYdDDFgTd4cDsGQzOkdDkGg1OodDsAA",
+      "name": "钟离千织珊瑚宫心海"
+    },
+    {
+      "code": "AECw1gQNFGEBOEQTFIBA2oYPCEBg9JcQE4EBCDATE7ExOzMYFaFwir8dC0Hw3MQdDMAA",
+      "name": "莫娜重云早柚"
+    },
+    {
+      "code": "AqAR6qQOAvDA72gPGkBx9FcPFVFwisEYDKERujYbE6FgzMYcDMFg1N4dDkGQ3OkdDsAA",
+      "name": "八重神子千织钟离"
+    },
+    {
+      "code": "AZCh6owOHKDR9I8PGEDx9c8QHHHwB4YTCbFwO5ccFUFxxFcWC5Fg1LYdDUGw3OkdDsAA",
+      "name": "菲谢尔娜维娅卡齐娜"
+    },
+    {
+      "code": "E2DwxB0MFZHwWlkOFjAh5GIOCUDA9JwPCWDQ9p0VGLEhioIdGTHg07YRCxFg1L0dE8AA",
+      "name": "托马赛诺铁甲熔火帝皇"
+    },
+    {
+      "code": "FZDA0SYNARFxWmMPFkAw9ZsPE2AB9kgWFIGBloEQG6FwacQWDJFA1MYdDEFg3MkdDMAA",
+      "name": "久岐忍温迪胡桃"
+    },
+    {
+      "code": "EUDR9LEPG2HRPC8VErHwW50ZCWHQlr8aCyHx01gdDDFgEMYRDAGQ1MkdDUER3FodD8AA",
+      "name": "镀金旅团·炽沙叙事人希格雯克洛琳德"
+    },
+    {
+      "code": "EUBw1igNFWHhOGETFIBx2kcPCUBx9DAQE2EBCDMQE4ExO1cTC7Hwir8YGqEA3MQdDMAA",
+      "name": "莱依拉枫原万叶深渊使徒·激流"
+    },
+    {
+      "code": "FWDByV4MAZFxWmoPFlAR9mMPFmExaEgZFGGBCoEQGPEQabYWC5HR1DYdE0Fg3MYdDMAA",
+      "name": "久岐忍深渊使徒·激流胡桃"
+    },
+    {
+      "code": "FvDR1BUNAkERWlccFTBx8ZMPGRAw8rQPCyBA87UPCzBQ9L0PC0DQ9s0PDGHQDM8QDMAA",
+      "name": "辛焱「女士」八重神子"
+    },
+    {
+      "code": "GUFwWjYOFSDh4poPGUAR9JEUGMEhTIIaC+Fgrr0dGzGR27kdDLFg1MYdFkFh3JQdGcAA",
+      "name": "菲米尼愚人众·藏镜仕女深渊使徒·激流"
+    },
+    {
+      "code": "GpBB6V4OAqDA6mgPGkBw9I4PFVFxilcYGKEgurQbDKEQzMEcE8Fh1DYdDEFg3N4dDsAA",
+      "name": "千织深渊使徒·激流钟离"
+    },
+    {
+      "code": "AZAxyV4MEdBgzU8NBBDx0SoVCaBx9EgPFECB9lcPGGEhaYIWDJFA1MQdDEFg3MYdDMAA",
+      "name": "班尼特深渊使徒·激流若陀龙王"
+    },
+    {
+      "code": "GlFBNl8TAmARxKcMFkAhyWIMCZHAWpwPCWDQ9p0dGDEhzIIcGcHg1LYdC0Fg3L0dE8AA",
+      "name": "千织铁甲熔火帝皇八重神子"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "HJDR6RkOGKDB6o8PGGHxB88QHHHwO5cTCbFxxFccFUFwr7YaC/Fg1MYdDEFg3NsdDsAA",
+      "deck1": "EZBR6aQOAqDA6mgPGkBx9FcPFWFxip4YDKEQusEbE6FhzDYcDMFg1MYdDEGQ3N4dDsAA",
+      "deck0Name": "卡齐娜林尼娜维娅",
+      "deck1Name": "「女士」千织钟离"
+    },
+    {
+      "deck0": "AvDB76QPAEDQ9GgPGmBw+cEYDKERijYbE6FgusYdDDFgTd4cDsGQzOkdDkGg1OodDsAA",
+      "deck1": "AECw1gQNFGEBOEQTFIBA2oYPCEBg9JcQE4EBCDATE7ExOzMYFaFwir8dC0Hw3MQdDMAA",
+      "deck0Name": "钟离千织珊瑚宫心海",
+      "deck1Name": "莫娜重云早柚"
+    },
+    {
+      "deck0": "AqAR6qQOAvDA72gPGkBx9FcPFVFwisEYDKERujYbE6FgzMYcDMFg1N4dDkGQ3OkdDsAA",
+      "deck1": "AZCh6owOHKDR9I8PGEDx9c8QHHHwB4YTCbFwO5ccFUFxxFcWC5Fg1LYdDUGw3OkdDsAA",
+      "deck0Name": "八重神子千织钟离",
+      "deck1Name": "菲谢尔娜维娅卡齐娜"
+    }
+  ]
+}

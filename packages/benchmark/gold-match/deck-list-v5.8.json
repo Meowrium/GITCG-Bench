@@ -1,0 +1,89 @@
+{
+  "version": "v5.8",
+  "decks": [
+    {
+      "code": "GNDR3x4NEfBR4JAOCQBw9pcPFWFxAFcYC6HQisYQDKFgE8kRDDGQ1NAdDUEQ3NEdDcAA",
+      "name": "愚人众·霜役人雷音权现「女士」"
+    },
+    {
+      "code": "ABBw0ycNETGA54MOCOAw7ooPCECg9I4PCGDg9pcQCWFwBsUTDLFQ1MkdDEGQ3NEdDcAA",
+      "name": "申鹤魈夜兰"
+    },
+    {
+      "code": "AqAR6qQOAvDA72gPGkBx9VcPFWFwisEYDKERujYbE6FgzMYcDMFg1N4dDkGQ3OkdDsAA",
+      "name": "八重神子千织钟离"
+    },
+    {
+      "code": "A5BhyUANABBB0UQNCKBg9oYPCWFxCDAQE4EBOzMTFbFxilcYC6Hw1L8dDEFA3MQdDMAA",
+      "name": "愚人众·藏镜仕女早柚重云"
+    },
+    {
+      "code": "GCCx8t4PAkAh9OEPHmAQ9pcQCRFxAasdGrGx28EfHJEQ+dsQDsEwDOMRDgFA1OQdD0AA",
+      "name": "夏沃蕾玛薇卡丽莎"
+    },
+    {
+      "code": "FRDB1ZgVEaBR9DAPE0AB9UgPFGCB9oEQG4FwCMQWDIFACsYQDPFgackWDJGQ1NEdDUAA",
+      "name": "久岐忍闲云「女士」"
+    },
+    {
+      "code": "ESBxwt8MFzEBhyAaEjAA9J0PCUHQA6MQCjExBIEQGEEQir0YE6FR6DUeGIFR3IUdDMAA",
+      "name": "莱依拉恰斯卡吞星之鲸"
+    },
+    {
+      "code": "HWISyA8PHwLT0+IPHRNjXLgQFiKD5EoRGmIT+IMYHYNz+rkhDYNi1rgfDkNC3sYfDsIC",
+      "name": "希格雯珊瑚宫心海茜特菈莉"
+    },
+    {
+      "code": "EpLS6L4QHEES9TAQE2Lxl54aCmLRo7cgDILRDMARDLLyDTcRFMJh1cceDUJh3coeDcEB",
+      "name": "镀金旅团·炽沙叙事人克洛琳德希格雯"
+    },
+    {
+      "code": "HMDh7N4PHCBx9OEPHkAQ9pcPCWFxO54TGbHhxMEcHEER27kdG7GQ+dsfDpGw1OsdDkAA",
+      "name": "艾梅莉埃玛薇卡基尼奇"
+    },
+    {
+      "code": "AUAxxBYMA5GQOE8TBIHxWioPEkCg9pcPFGGBO1cYFaFxioIZGGEg1LYdDEEQ3MEdDMAA",
+      "name": "班尼特若陀龙王无相之雷"
+    },
+    {
+      "code": "HWDhyb0MF5Ag0ZANEhHxWkcaCTDQ9p0YC6HQir8cC0HxEDYREwFg1MUdDEFQ3MYdDMAA",
+      "name": "玛薇卡克洛琳德圣骸飞蛇"
+    },
+    {
+      "code": "FkHBWt0OACDR4uAPEmDA9p0WCYHRikgdFDGB04EfG4FwEbYWC5Fg1L0dFUGA3MQdDMAA",
+      "name": "芙宁娜茜特菈莉珊瑚宫心海"
+    },
+    {
+      "code": "ARAxxF4MEUBgyU8TBIHxOGEVEqCh9CoPCWBx9kgTFbFxilcZGGEh1IIdC0Fg3MEdDMAA",
+      "name": "班尼特深渊使徒·激流若陀龙王"
+    },
+    {
+      "code": "GPDR390OEQDg4JcPCUBx9FcPFVBw9cMPDGFgisYfDIGQE8kRDTEA1NEdDUEQ3N0dDcAA",
+      "name": "愚人众·霜役人茜特菈莉雷音权现"
+    },
+    {
+      "code": "HDHR570OApCx6S8OEqDw6p0PCUDQ9L0YC6HRijYQE7FhC1gbDLFg1MYdDEGQ3MkdGsAA",
+      "name": "卡齐娜克洛琳德诺艾尔"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "GNDR3x4NEfBR4JAOCQBw9pcPFWFxAFcYC6HQisYQDKFgE8kRDDGQ1NAdDUEQ3NEdDcAA",
+      "deck1": "ABBw0ycNETGA54MOCOAw7ooPCECg9I4PCGDg9pcQCWFwBsUTDLFQ1MkdDEGQ3NEdDcAA",
+      "deck0Name": "愚人众·霜役人雷音权现「女士」",
+      "deck1Name": "申鹤魈夜兰"
+    },
+    {
+      "deck0": "AqAR6qQOAvDA72gPGkBx9VcPFWFwisEYDKERujYbE6FgzMYcDMFg1N4dDkGQ3OkdDsAA",
+      "deck1": "A5BhyUANABBB0UQNCKBg9oYPCWFxCDAQE4EBOzMTFbFxilcYC6Hw1L8dDEFA3MQdDMAA",
+      "deck0Name": "八重神子千织钟离",
+      "deck1Name": "愚人众·藏镜仕女早柚重云"
+    },
+    {
+      "deck0": "GCCx8t4PAkAh9OEPHmAQ9pcQCRFxAasdGrGx28EfHJEQ+dsQDsEwDOMRDgFA1OQdD0AA",
+      "deck1": "FRDB1ZgVEaBR9DAPE0AB9UgPFGCB9oEQG4FwCMQWDIFACsYQDPFgackWDJGQ1NEdDUAA",
+      "deck0Name": "夏沃蕾玛薇卡丽莎",
+      "deck1Name": "久岐忍闲云「女士」"
+    }
+  ]
+}

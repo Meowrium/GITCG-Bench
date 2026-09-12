@@ -1,0 +1,11 @@
+{
+  "planFile": "../../output/plan-oneshot/roundT4-threat-nn/plans/hongniu.agenticfix.r5nn4.json",
+  "opponent": {
+    "type": "nn"
+  },
+  "games": 10,
+  "seedBase": 20276201,
+  "concurrency": 2,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/roundT4-threat-nn/games/agenticfix.r5nn4-vs-nn"
+}

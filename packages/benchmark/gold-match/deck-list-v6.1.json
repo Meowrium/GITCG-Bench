@@ -1,0 +1,89 @@
+{
+  "version": "v6.1",
+  "decks": [
+    {
+      "code": "FnDA9CEPHkDh+fEbH6ER01cfG4Fx+LcQFaGAacYWDJFgzMkcDMGQ1NAdDUEQ3NEdHsAA",
+      "name": "芙宁娜八重神子贪食匿叶龙山王"
+    },
+    {
+      "code": "HxChv0ALHfHRNkQTFGBA2oYeCJBg9Y4QCIHgCJcTCbFxOzAgE3IBBzMdFUFx3FcdIcAA",
+      "name": "伊安珊早柚茜特菈莉"
+    },
+    {
+      "code": "EUGRO80UHcHhTOEYHqEQipcbE6ExujMdG7KRA7kgDDKABMggDEKQBskgHmFw3PQdD8AA",
+      "name": "林尼卡齐娜玛薇卡"
+    },
+    {
+      "code": "HEDR9N4TILGxTOEUHsEQipcYE6ExukgbC6IwA7QgGzKRBLkgDGKQBskgDXFw3NsdD8AA",
+      "name": "卡齐娜玛薇卡水形幻人"
+    },
+    {
+      "code": "A0Bg9BcPAlBh9mMYFqEx07cdGzFx24QdGLFA+MYQDKFgackWDJGQ1NAdDUER3FodD8AA",
+      "name": "愚人众·藏镜仕女胡桃温迪"
+    },
+    {
+      "code": "AUAxxBYMA0CQyU8MBJHxOCoVEqCg9JcPFGCB9lcTFbFxioIYGKEg1MEdDEER3IQdGMAA",
+      "name": "班尼特若陀龙王无相之雷"
+    },
+    {
+      "code": "ApHBOm4OFJAh6XcOEqDh6i4OCeBx7lcPFUBx9JMTGbEwir0YC6HQEL4RCwHg3MkdDMAA",
+      "name": "钟离云堇千年珍珠骏麟"
+    },
+    {
+      "code": "ABDQ0S0VAqDA6mgOBqCA/YwYCKHA050dCTHQ+L0UC9HxaYQWDJFg1MYdDEGQ3NAdDcAA",
+      "name": "珊瑚宫心海阿贝多钟离"
+    },
+    {
+      "code": "ApDB6qQOIKCw9GgPGkBx9lcPFZBw+cEbDKIRAzYgEzFhzIQcDMFg1MYdDUHg3OkdDsAA",
+      "name": "钟离千织水形幻人"
+    },
+    {
+      "code": "AkFC9d8UHbLSTeIVH8IRi5gZFKIyu4UcGaNCBLohHDORBckhDUOBB8ohDWKR3d8eEMEB",
+      "name": "安柏玛薇卡卡齐娜"
+    },
+    {
+      "code": "AJChyrEMG6DR2i8OEhDx4UcPFEBw9JcQCYFxO1cTFbFxDJMQIMEi1AIdDEFg3MYdDMAA",
+      "name": "行秋希格雯克洛琳德"
+    },
+    {
+      "code": "HUDg8iIPGCCx9OEPHkAQ9l4PCWFwAZcQGhGx26sdHLERDMEQDcGwEOMRDgEw1OQdDkAA",
+      "name": "玛薇卡丽莎夏沃蕾"
+    },
+    {
+      "code": "GPDR3x4OEQBR4JAPCUBw9ZcPFWBx9lcYDKFgisYQDKGQE8kRDTEA1NEdDUEQ3N0dDcAA",
+      "name": "愚人众·霜役人雷音权现「女士」"
+    },
+    {
+      "code": "AGChyV4MG5DR0WENFhEQWpAOEiDx9EcPCUDQ9p0PC9HwC78REwFh1DYdDEFQ3MYdDMAA",
+      "name": "行秋深渊使徒·激流克洛琳德"
+    },
+    {
+      "code": "EWFx9t8VF6AB9HkPCUHQA50QCzGgTLoUC8HRW4UVGLFQisMYDaEQ6NEeGYFB3JQdH8AA",
+      "name": "莱依拉恰斯卡吞星之鲸"
+    },
+    {
+      "code": "HRFhoc0VAaBx6i4eEpDg9JcPCUFxB1cTFbFxO9kZHWGRooQaDPFgr8YdDUEQ1NEdGsAA",
+      "name": "希诺宁卡齐娜胡桃"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "FnDA9CEPHkDh+fEbH6ER01cfG4Fx+LcQFaGAacYWDJFgzMkcDMGQ1NAdDUEQ3NEdHsAA",
+      "deck1": "HxChv0ALHfHRNkQTFGBA2oYeCJBg9Y4QCIHgCJcTCbFxOzAgE3IBBzMdFUFx3FcdIcAA",
+      "deck0Name": "芙宁娜八重神子贪食匿叶龙山王",
+      "deck1Name": "伊安珊早柚茜特菈莉"
+    },
+    {
+      "deck0": "EUGRO80UHcHhTOEYHqEQipcbE6ExujMdG7KRA7kgDDKABMggDEKQBskgHmFw3PQdD8AA",
+      "deck1": "HEDR9N4TILGxTOEUHsEQipcYE6ExukgbC6IwA7QgGzKRBLkgDGKQBskgDXFw3NsdD8AA",
+      "deck0Name": "林尼卡齐娜玛薇卡",
+      "deck1Name": "卡齐娜玛薇卡水形幻人"
+    },
+    {
+      "deck0": "A0Bg9BcPAlBh9mMYFqEx07cdGzFx24QdGLFA+MYQDKFgackWDJGQ1NAdDUER3FodD8AA",
+      "deck1": "AUAxxBYMA0CQyU8MBJHxOCoVEqCg9JcPFGCB9lcTFbFxioIYGKEg1MEdDEER3IQdGMAA",
+      "deck0Name": "愚人众·藏镜仕女胡桃温迪",
+      "deck1Name": "班尼特若陀龙王无相之雷"
+    }
+  ]
+}

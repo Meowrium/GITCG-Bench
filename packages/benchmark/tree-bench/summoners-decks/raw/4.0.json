@@ -1,0 +1,1902 @@
+{
+  "source": "https://www.summoners.top/",
+  "api": "https://www.summoners.top/api/v4/teams-stats?gameVersion=4.0 + /teams/{teamId}/decks-stats?gameVersion=4.0",
+  "gameVersion": "4.0",
+  "versionName": null,
+  "numGamesWithDeck": 82,
+  "usageRateDefinition": "numGames / numGamesWithDeck (ratio, 0-1)",
+  "winRateDefinition": "numGamesWin / numGames (ratio, 0-1)",
+  "deckCount": 105,
+  "decks": [
+    {
+      "deckCode": "BJFRyhsQBCFx9XQQCkFR9pYQDFEx97QQDIGB/rkQDNKhC7wRDKLBDL0RDbJxD8gRDeEB",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 6,
+      "numGamesWin": 3,
+      "usageRate": 0.073171,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AnDgyQkMApCw24gOCJCA6Z0OCaDQ6rMOC9Aw9rgPC9CA/rsQCyGwC7wQC7HAD8cQDPAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 5,
+      "numGamesWin": 2,
+      "usageRate": 0.060976,
+      "winRate": 0.4
+    },
+    {
+      "deckCode": "APBA3yAOAABw4JcOCeBw9MIPDEAg9cgPDFCA9skPDIGQCs0QDKHQC9kQDbGQDtsQDeAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.04878,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AvAA3wcOAABA4JcPCRBw8aYPCkBg9MkPDFCQ9c0PDNHQC9IQDbEgDNkQDcGQDtsQDeAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 4,
+      "numGamesWin": 1,
+      "usageRate": 0.04878,
+      "winRate": 0.25
+    },
+    {
+      "deckCode": "A5BQySEPA0Bw9HMPCVBQ9ZUPC2Aw+LMPC5CA/bgPC9GwCrsQC6HAC7wQDLFwD8cQDPAA",
+      "teamId": "1408-2201-2301",
+      "characters": [
+        "八重神子",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Yae Miko",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 4,
+      "numGamesWin": 3,
+      "usageRate": 0.04878,
+      "winRate": 0.75
+    },
+    {
+      "deckCode": "AABA4CAPABBw8ZcPCUBw9L0PC1DQ9cIPDGCQ9skPDIHQCs0QDaGQC9sQDbHwDt8QDuAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 3,
+      "numGamesWin": 3,
+      "usageRate": 0.036585,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AABA4CAPABBw8ZcPCUBw9L0PDFAg9cIPDGCQ9skPDIHQCs0QDaGQC9sQDbHwDt8QDuAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.036585,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "BJFx9TYQAkGh9nQQClFR95YQDIEx+bQQDNGB/rkRDKKxC70RDLLBDMgRDeJxEMoRDfEB",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.036585,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "ApCw6QkOAqDg6ogOCNCA9J0PCUDQ9rMPC9Aw/bwQCyHAAr0QC7HQC8kQDOGQD9sQDvAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.036585,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "ATAw4xwOAUBg5E8OBNDw7ZAPCRAA8ZcPCUBw9LwPC1DA9cgPDGCA9skQDLGQC9sRDjAA",
+      "teamId": "1303-1306-1403",
+      "characters": [
+        "班尼特",
+        "可莉",
+        "刻晴"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Klee",
+        "Keqing"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.036585,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "ATAw5BYOAUDA7U8PBBDw8ZAPCUAA9JcPCVBw9bwPC2DA9skPDNCQ/dkQDbGwC+MRDjAA",
+      "teamId": "1303-1306-1403",
+      "characters": [
+        "班尼特",
+        "可莉",
+        "刻晴"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Klee",
+        "Keqing"
+      ],
+      "numGames": 3,
+      "numGamesWin": 0,
+      "usageRate": 0.036585,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AABg4BoOANBw7ZcPCRBw8bwPCzDA9MgPDECA9dIPDVEgAtkQDbGQC9sQDdHwDd8RDjAA",
+      "teamId": "1106-1107-1401",
+      "characters": [
+        "优菈",
+        "申鹤",
+        "菲谢尔"
+      ],
+      "charactersEn": [
+        "Eula",
+        "Shenhe",
+        "Fischl"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.036585,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "APBA4CAOAABw8ZcPCRBw9L0PDFAg9cIPDGCQ+MkPDNHQAs0QDaGQCtkQDbGwC98QDeAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "APBA4CAOAABw8ZcPCRBw9L0PC0DQ9cIPDFAg9skPDGCQ+M0QDKHQCtkQDbGwDt8QDeAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.02439,
+      "winRate": 0
+    },
+    {
+      "deckCode": "A5BwyTUPAUCg9HMPB1Aw9ZUPCWBQ+LMPC9Aw/bgQC6GACrsQC7HAC7wQDOFwD8cQDPAA",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.02439,
+      "winRate": 1
+    },
+    {
+      "deckCode": "BJFx9TYQAkGh9nQQClFR95YQDIEx+rQQDNGB/rkRDKKxC70RDLLBDMgRDeJxD8oRDfEB",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "BEFx9TYQAlGh9nQQCmFR95YQDIEx+rQQDNKBA70RDKLBC8gRDbJxDMoRDeKREPMREPEB",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "A0BQ9RoPA1Bw9pUPCWBQ+KcPC5Aw/bMPC9GACrgQC6GwC7wQC7HADscQDOFwD/QQD/AA",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "BJFRyhsQBBFx8nQQCkFR9pYQDGEx+bQQDIGB/rkRDKKRC7wRDLLBDL0RDeJxEMgRDfEB",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "BJFxyjYQAkGh9XQQClFR9pYQC2Fx+bQQDIEx/rkRDKKBC7wRDLLBDL0RDeJxD8gRDfEB",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.02439,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AyBQ9BoPA0Bw9XMPCVBQ9pUPC2Aw+LMPC5CA/bgQC6HACrwQDLEgC8cQDOGQD8kQD/AA",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.02439,
+      "winRate": 0
+    },
+    {
+      "deckCode": "BEFx9TYQAlGh9nQQCmFR95YQDIEx+bQQDNKBA7kRDKLBC70RDbJxDMgRDeKREPMREPEB",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.02439,
+      "winRate": 0
+    },
+    {
+      "deckCode": "BHFRyhsNBJFx9XQQCkFR9pgQDFEx97QQDIGB/rkQDNKRC7wRDLLBDL0RDeIhD8gRDfEB",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.02439,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ApDg6QkOAqCw6ogOCNCA9J0PCUDQ9rMPC5Aw/rgQCyHACrwQC7HQC8cQDOGQD9sQDvAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ApCw6QkOAqDg6ogOCNCA9J0PCWDQ/bMPC9Aw/rkQCyGQAr0QC7HQC8kQDOGQD9oQDvAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ArCw6QkOApDg6ogOCKCA7Z0PCUDQ9LMPC2Aw+bgPC9CA/rwQCyHAC8cQDLFwD8kQDfAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.02439,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ApDg6gkOAqCw7YgPCGCA9p0PCZDQ+bMPC9EwArwQC6HAC70QDLGQDskQDeGwD+kQDvAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.02439,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ATAw4xYOAUDA5E8OBNDw8ZAPCRAA9JcPCVBw9bwPC2DA9skPDNCQ/dkQDbGQC9sRDjAA",
+      "teamId": "1303-1306-1403",
+      "characters": [
+        "班尼特",
+        "可莉",
+        "刻晴"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Klee",
+        "Keqing"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.02439,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ATAw4xYOAUDA5E8OBNDw7ZAPCRAA8ZcPCUBw9bwPC1DA9skPDGCQ/dkQDbGQC9sRDjAA",
+      "teamId": "1303-1306-1403",
+      "characters": [
+        "班尼特",
+        "可莉",
+        "刻晴"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Klee",
+        "Keqing"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ATAw4xYOAUDA5E8OBNDw7ZAPCRAA8ZcPCUBw9LwPC1DA9ckPDGCQ9tkQDbGQC9sRDjAA",
+      "teamId": "1303-1306-1403",
+      "characters": [
+        "班尼特",
+        "可莉",
+        "刻晴"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Klee",
+        "Keqing"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ATAw5BwOAUBg7U8OBNDw8ZAPCRAA9JcPCUBw9bwPC1DA9sgPDGGQC8kQDbGwDuMRDjAA",
+      "teamId": "1303-1306-1403",
+      "characters": [
+        "班尼特",
+        "可莉",
+        "刻晴"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Klee",
+        "Keqing"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ATAw4xwOAUBg5E8OBNDw7ZAPCRAA8ZcPCUBw9KoPClCg9bwPC2DA9skQDLGQDtsRDjAA",
+      "teamId": "1303-1306-1403",
+      "characters": [
+        "班尼特",
+        "可莉",
+        "刻晴"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Klee",
+        "Keqing"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ATAw4xwOAUBg5E8OBNDw7ZAPCRAA8ZcPCUBw9LgPC1CA9bwPC9HAC8kQDLGQEdsRDjAA",
+      "teamId": "1303-1306-1403",
+      "characters": [
+        "班尼特",
+        "可莉",
+        "刻晴"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Klee",
+        "Keqing"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "A5BQ8iEPA0Bw9V0PB1Aw9pUPCYBQ+LMPC9Aw/bgQC6GACrwQC7HAC8cQDOFwD8kQDPAA",
+      "teamId": "1408-2201-2301",
+      "characters": [
+        "八重神子",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Yae Miko",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ASCg8gsPAzAQ9JcPCUBw9acPC1DQ9r0PDICA+dIPDdEgCtsQDqHQC+0QD+EQDvERDzAA",
+      "teamId": "1203-1401-1703",
+      "characters": [
+        "莫娜",
+        "菲谢尔",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Mona",
+        "Fischl",
+        "Nahida"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.02439,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AxAQ8jUPASCg87MPCzAw9LgPC1CA9roPC2Cg+LsPC5DA/bwQDKFwC8cQDLGQDvEQD+AA",
+      "teamId": "1401-1703-2201",
+      "characters": [
+        "菲谢尔",
+        "纳西妲",
+        "纯水精灵·洛蒂娅"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Nahida",
+        "Rhodeia of Loch"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AyAQ8zUPAUCg9JcPCVBw9b0PC2DQ9sIPDJAg+cgPDNCA/ckQDKGQC/EQD7EQDvIQD+AA",
+      "teamId": "1401-1703-2201",
+      "characters": [
+        "菲谢尔",
+        "纳西妲",
+        "纯水精灵·洛蒂娅"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Nahida",
+        "Rhodeia of Loch"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.02439,
+      "winRate": 0
+    },
+    {
+      "deckCode": "APBQ4CAOAABw75cOCfBw9LwPDECA9cgPDFCQ9skPDGHQCs0QDaGQC9kQDbGwDt8QDeAA",
+      "teamId": "1105-1107-1407",
+      "characters": [
+        "神里绫华",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Kamisato Ayaka",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.02439,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ATAw5BUOA0CQ8U8PBBDw8pcPCSBw9L0PDEAg9cIPDFCA9sgPDGGQC8kQDbGQDOMQDsAA",
+      "teamId": "1303-1305-2401",
+      "characters": [
+        "班尼特",
+        "宵宫",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Yoimiya",
+        "Electro Hypostasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.02439,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AHBw6CYOAoBA7ZcOCdBw870PDDCA9MgPDFCQ9ckPDGDQ9tIQDbGQDtkQDeGwE+cRDjAA",
+      "teamId": "1107-1501-1503",
+      "characters": [
+        "申鹤",
+        "砂糖",
+        "温迪"
+      ],
+      "charactersEn": [
+        "Shenhe",
+        "Sucrose",
+        "Venti"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.02439,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AABA4CAPABBw8ZcPCUBw9L0PDFAg9cgPDGCQ+MkPDNHQAs0QDaGQC9sQDbHwDt8QDuAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AvAA4AcOAABA8ZcPCRBw9L0PDEAg9cgPDFCA9skPDICQ/c0QDKHQC9kQDbGwDt8QDeAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "APBA4AcOAgAA8ZcPCRBw9L0PC0DQ9cIPDFCQ9skPDGHQCs0QDaGQC9kQDbGwDt8QDeAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "APBA4CAOAABw8ZcPCRBw9L0PDEAg9cIPDFCQ9skPDGDQ+M0QDaGQCtkQDbGwC98QDeAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AABA8SAPABBw9JcPCUBw9b0PDFAg9sgPDGCQ+MkPDNHQAs0QDaGwCt8QDbHwC+AQDuAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AABA8QcPAhAA8pcPCUBw9L0PDFAg9cIPDGCQ9skPDIHQCs0QDaGwC98QDbHwDuAQDuAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "APBw4CAOAABA8ZcPCRBw9L0PDECA9cgPDFCQ9skPDGHQCs0QDaGQC9kQDbGwDt8QDeAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AgAA4AcOAOBA8ZcPCRBw9MIPDEAg9ckPDFCQ9s0PDIDQ/dkQDaGQC9sQDbHwDt8QDuAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AABA4CAOAOBw85cPCTBw9L0PC0DQ9ckPDFCQ9s0PDGDQ+NkQDaGQC9sQDbHwDt8QDuAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ABBA8SAPACBw8pcPCTBw9L0PC0DQ9ckPDFCQ9s0PDdGQAtsQDaHwC98QDrEADuAQD+AA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AABA4CAPABBw8ZcPCUBw9L0PDFAg9cIPDGCA+MkPDNGQCs0QDKHQC9sQDbHwDt8QDuAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AABA8SAPABBw9JcPCUBw9b0PC1DQ9sIPDGCQ+MkQDCHQCtkQDaGwC98QDbHwDuAQDuAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AABA4CAOAOBw8ZcPCRBw9L0PC0DQ9cgPDFCA9skPDNCQ/c0QDKHQC9sQDbHwDt8QDuAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AABw8SAPABBA8pcPCTBw9L0PDFCA9cgPDGCQ9skPDNDQ/c0QDaGwC98QDbHwDuAQDuAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AvAA4AcOAABA8ZcPCRBw8r0PCzDQ88gPDECA9ckPDFCQ9s0PDNHQCtkQDbGwC98QDeAA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ABBA8QcPAiAA8pcPCTBw870PC0DQ9M0PDFDQ9dkPDWCQ/dsQDaHwCt8QDrEAC+AQD+AA",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ASFB9SEQAUFx9pgQClFx974QDGHR+doQDtKRA9wRDiLxBOARD6IBDOERD7LxD/AREOEB",
+      "teamId": "1104-1107-1407",
+      "characters": [
+        "重云",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "BJFx9TYQAkGh9nQQClFR95YQDIEx+rQQDNGB/rkRDKKxC70RDLLBDMgRDeJxEMoRDfEB",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "BEFx9TYQAlGh9nQQCmFR95YQDIEx+rQQDNKBA70RDKLBC8MRDbJxDMoRDeKREPMREPEB",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AyBQ9BoPA0Bw9XMPCVBQ9pUPC2Aw+LMPC5DA/bwPDNEgCsIQDKGQC8kQD7EQDvEQD+AA",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "BEFR9RsQBFFx9nQQCmFR95YQDIEx+rQQDdEh/sMRDaKBC8kRDbKRDMoREOIRD/IREPEB",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AyBw9DUPAUCg9XMPCVBQ9pUPC2Aw+LMPC9CA/bwQC6HACsIQDLFwC8kQDOGQD/EQD/AA",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AZCg8TUPAxBw8nEPByAw85UPCzAw9bMPC2BA+LgPC5GACrkQC7GQC8cQDOFwDskQDPAA",
+      "teamId": "1401-2201-2301",
+      "characters": [
+        "菲谢尔",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ApDg6QkOAqCw6ogOCNCA9J0PCUDQ9rMPC5Aw/bgPC9HAArwQC7HQC8cQDOGQD9sQDvAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ApDg6QkOAqCw6ogOCNCA9J0PCUDQ9rMPC5Aw/rgQCyHAArwQC7HQC8cQDOGQD9sQDvAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ArDg6QkOApCw6ogOCKCA7Z0PCUDQ9LMPC2Aw+bgPC9CA/bwQCyHAC70QDLFwD8kQDfAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ArDg6QkOApCw6ogOCKCA7Z0PCUDQ9rMPC9Aw/bkPC+HAArwQC7HQC8cQDOGQDskQDfAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ApDg2wkOApCw6YgOCKCA6p0OCdDQ9LMPC0Aw9rgPC5CA/bwQCyHAC8cQDLFwD8kQDPAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AJCQ6SsOAqDg6ogOCNCA9J0PCUDQ9rMPC9Aw/bkQCyHAC7wQC7HQDskQDOGQD9sQDvAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ApCw2wkOApDg6YgOCKCA6p0OCdDQ9LMPC0Aw9rgPC5CA/bwQCyHAC8cQDLFwD8kQDPAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AnCw2wkOApDg6YgOCKCA6p0OCdDQ9LMPC0Aw9rgPC9GAArkQC7HAC7wQC+HQD8cQDPAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AJCQ2y4OApCw6YgOCKCA6pcOCdDQ7Z0PC2CQ/bkPC9HAArwQCyHQC8kQDLGQD9kQDfAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ApCw6QkOAqDg6ogOCNCA8Z0PCRDQ8rMPC0Aw9bkPC2GQAr0QC7HQC8kQDOGQDtoQDvAA",
+      "teamId": "1201-1602-1605",
+      "characters": [
+        "芭芭拉",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AbAw4xYOATDA5E8OBEDw7ZAPCRAA8ZcPCUBw9LwPC1DA9cgPDGCA9skQDLGQC9kRDTAA",
+      "teamId": "1303-1306-1403",
+      "characters": [
+        "班尼特",
+        "可莉",
+        "刻晴"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Klee",
+        "Keqing"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ATAw4xYOAUDA5E8OBNDw7ZAPCRAA8ZcPCVBw9bwPC2DA9skPDNGQC9kQDbGQDtsRDjAA",
+      "teamId": "1303-1306-1403",
+      "characters": [
+        "班尼特",
+        "可莉",
+        "刻晴"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Klee",
+        "Keqing"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ATBg4xwOAUAw5E8OBNDw8ZAPCRAA8pcPCTBw9LwPC1DA9cIPDGCQ9skQDbGQC9sQDuAA",
+      "teamId": "1303-1306-1403",
+      "characters": [
+        "班尼特",
+        "可莉",
+        "刻晴"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Klee",
+        "Keqing"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ATAw5BwOAUBg7U8OBNDw8ZAPCRBw9JcPC0DA9bwPDFCA9sgPDGGQC8kQDbGwDuMRDjAA",
+      "teamId": "1303-1306-1403",
+      "characters": [
+        "班尼特",
+        "可莉",
+        "刻晴"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Klee",
+        "Keqing"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "BJFx9TYQA0ER9nQQClFR95YQDIEx+rQQDNGB/rkRDKKxC70RDLLBDMgRDeJxD8oRDfEB",
+      "teamId": "1408-2201-2301",
+      "characters": [
+        "八重神子",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Yae Miko",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "A5BQ8iEPA0Bw9V0PCVBQ9pUPCYBw+LMPC9Aw/bgQC6GACrwQC7HAC8cQDOFwD8kQDPAA",
+      "teamId": "1408-2201-2301",
+      "characters": [
+        "八重神子",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Yae Miko",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "A5BQySEPAxBw8XMPCUBQ9ZUPC2Aw+LMPC9GACrgQC6GQC7sQC7HADrwQDOFwD8cQDPAA",
+      "teamId": "1408-2201-2301",
+      "characters": [
+        "八重神子",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Yae Miko",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "BZJSyyMRBSJy9l8RCVIy95cRC2JS+rURDYMyBLoSDaOCDLsSDbPCDb4SDuNyEckSDvIC",
+      "teamId": "1408-2201-2301",
+      "characters": [
+        "八重神子",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Yae Miko",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "BHFx8jYQAxER814QCEEx9ZYQClFR95gQDIEx+rQRDKKBC7kRDLKhDL0RDOLBEMgRDfEB",
+      "teamId": "1408-2201-2301",
+      "characters": [
+        "八重神子",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Yae Miko",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "A0BQ9CEPA1Bw9XMPCWBQ9qAPCoBw+acPC9HACrwQDKEgC8IQD7EQDvEQD+EgD/IQD/AA",
+      "teamId": "1408-2201-2301",
+      "characters": [
+        "八重神子",
+        "纯水精灵·洛蒂娅",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Yae Miko",
+        "Rhodeia of Loch",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ASCg8wsPAzAQ9JcPCUBw9acPC1DQ9r0PDICA+NIPDZEgCtsQDqHQC/EQD7EQDvIRDzAA",
+      "teamId": "1203-1401-1703",
+      "characters": [
+        "莫娜",
+        "菲谢尔",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Mona",
+        "Fischl",
+        "Nahida"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ASCg8gsPAzAQ85cPCUBw9KcPClBw9b0PDGCA+MgPDZEgCtIQDqHQC+0QD7EQDvERDzAA",
+      "teamId": "1203-1401-1703",
+      "characters": [
+        "莫娜",
+        "菲谢尔",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Mona",
+        "Fischl",
+        "Nahida"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AyKi9Q0RBUIS95kRC1Jy+KkRDYLS+78RD9KS/9sSD6OyDO8SELPSDfMSEeMSEPQTETIC",
+      "teamId": "1203-1401-1703",
+      "characters": [
+        "莫娜",
+        "菲谢尔",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Mona",
+        "Fischl",
+        "Nahida"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ASCg8gsPAzAQ85cPCUBw9KcPClBw9bwPDGCA+MgPDZEgCtIQDqHQC+0QD7EQDfERDzAA",
+      "teamId": "1203-1401-1703",
+      "characters": [
+        "莫娜",
+        "菲谢尔",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Mona",
+        "Fischl",
+        "Nahida"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "BBER8jYQAiGh87QQDDEx9bkQDFGB97sQDGGh+bwQDIHR/r4RDaJxDMgRDbKRD8oREOEB",
+      "teamId": "1401-1703-2201",
+      "characters": [
+        "菲谢尔",
+        "纳西妲",
+        "纯水精灵·洛蒂娅"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Nahida",
+        "Rhodeia of Loch"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ASCg8zUPAzAQ9JcPCVBw9b0PC2DQ9sIPDJAg+cgPDNGACskQDKGQC/EQD7EQDvIQD+AA",
+      "teamId": "1401-1703-2201",
+      "characters": [
+        "菲谢尔",
+        "纳西妲",
+        "纯水精灵·洛蒂娅"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Nahida",
+        "Rhodeia of Loch"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AABQ7yAOAPBw9JcPCUBw9b0PC1DQ9sgQDCHwAs8QDTGQA9kQDaGwCt8QDbHwC+AQDuAA",
+      "teamId": "1105-1107-1407",
+      "characters": [
+        "神里绫华",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Kamisato Ayaka",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AABQ4CAOAPBw75cPCRBw9L0PC0DQ9cgPDFCA9s8QDDHwA9kQDaGQC9sQDbHwDt8QDuAA",
+      "teamId": "1105-1107-1407",
+      "characters": [
+        "神里绫华",
+        "申鹤",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Kamisato Ayaka",
+        "Shenhe",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AZGxyisOAaGR4mcPCBGh43sPCiHR954QDIEx+rQQDNGx/7wRDKLBDL0RDbJxEMgRDfEB",
+      "teamId": "1201-1203-1601",
+      "characters": [
+        "芭芭拉",
+        "莫娜",
+        "凝光"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Mona",
+        "Ningguang"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AVCw5QQOAWDg5kAPBEAA9JcPCVBw9b0PDGGQAsoQDDGgA9YQDbFgDNkQDcGQENsRDgAA",
+      "teamId": "1104-1402-1405",
+      "characters": [
+        "重云",
+        "雷泽",
+        "北斗"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Razor",
+        "Beidou"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AWCw5gQOAeDg9JcPCUBw9b0PC1DQ9soPDGGgA9YQDTFgC9kQDbGQDNsQDsFQEOURDgAA",
+      "teamId": "1104-1402-1405",
+      "characters": [
+        "重云",
+        "雷泽",
+        "北斗"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Razor",
+        "Beidou"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AABQ4BUOAPBw75cPCSBw9L0PDECA9cgPDFCg9soQDTFgA9kQDbGQC9sQDcHwDt8RDgAA",
+      "teamId": "1105-1107-1305",
+      "characters": [
+        "神里绫华",
+        "申鹤",
+        "宵宫"
+      ],
+      "charactersEn": [
+        "Kamisato Ayaka",
+        "Shenhe",
+        "Yoimiya"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AABQ7xUOAPBw8pcPCUBw9L0PDFCg9coPDWBg+NYQDTGQA9kQDbGwC98QDcHwDuARDgAA",
+      "teamId": "1105-1107-1305",
+      "characters": [
+        "神里绫华",
+        "申鹤",
+        "宵宫"
+      ],
+      "charactersEn": [
+        "Kamisato Ayaka",
+        "Shenhe",
+        "Yoimiya"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AECw5BYOA9Bw7VIPBRAg8X0PB0DQ9JcPCVBw9b0PC2HQAtkQDSGQCtsQDrEwC+MQDuAA",
+      "teamId": "1203-1306-2301",
+      "characters": [
+        "莫娜",
+        "可莉",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Mona",
+        "Klee",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUBg5AsOA9Bw7VIPBRAg8X0PB0DQ9JcPCVBw9b0PC2HQAtkQDSGQCtsQDrEwC+MQDuAA",
+      "teamId": "1203-1306-2301",
+      "characters": [
+        "莫娜",
+        "可莉",
+        "愚人众·火之债务处理人"
+      ],
+      "charactersEn": [
+        "Mona",
+        "Klee",
+        "Fatui Pyro Agent"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ASCg8xYPAzAQ9VIPBVAg9pcPCWBw+MgPDJGAAtkQDaGQCtsQDrHQC/EQD+EQDvIRDzAA",
+      "teamId": "1306-1401-1703",
+      "characters": [
+        "可莉",
+        "菲谢尔",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Klee",
+        "Fischl",
+        "Nahida"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ARCg8jEPATBg9JcPCUBw9b0PC1DQ9s0PDGDQ+dIPDZEgAtkQDaGQC9sQDuHQE/ERDzAA",
+      "teamId": "1306-1401-1703",
+      "characters": [
+        "可莉",
+        "菲谢尔",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Klee",
+        "Fischl",
+        "Nahida"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ALDQ6SsOApDg6ogOCKCA750OCfDQ9LMPC0Aw/bgPC+GAArsQC7HADrwQDOFwD8cQDfAA",
+      "teamId": "1205-1602-1605",
+      "characters": [
+        "珊瑚宫心海",
+        "诺艾尔",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Sangonomiya Kokomi",
+        "Noelle",
+        "Arataki Itto"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "A7AQ8SEPARAg8pcPCSBw9KkPCkCQ9b0PDFCA9sgPDGGQCskQDKHQC80QDbGQDtkQDeAA",
+      "teamId": "1302-1408-1703",
+      "characters": [
+        "香菱",
+        "八重神子",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Xiangling",
+        "Yae Miko",
+        "Nahida"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ATAw7xUOAvDg8pcPCSBw9MIPDECQ9ckPDGHwAs8QDSFgA9YQDTGQC9kQDbGwDOMQDsAA",
+      "teamId": "1303-1305-1605",
+      "characters": [
+        "班尼特",
+        "宵宫",
+        "荒泷一斗"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Yoimiya",
+        "Arataki Itto"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.012195,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AFDw5RsPAiAA85cPCUBw9L0PC1DQ9cgPDGGAAskQDCGQA9YQDTFgC9kQDbGQENsRDgAA",
+      "teamId": "1207-1402-1407",
+      "characters": [
+        "坎蒂丝",
+        "雷泽",
+        "雷电将军"
+      ],
+      "charactersEn": [
+        "Candace",
+        "Razor",
+        "Raiden Shogun"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AiAA8hIPAzAQ85cPCUBw9L0PC1DQ9cgPDGCA9skPDNGQCs0QDKHQC9sQD7EQDvEQD+AA",
+      "teamId": "1302-1407-1703",
+      "characters": [
+        "香菱",
+        "雷电将军",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Xiangling",
+        "Raiden Shogun",
+        "Nahida"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.012195,
+      "winRate": 0
+    }
+  ]
+}

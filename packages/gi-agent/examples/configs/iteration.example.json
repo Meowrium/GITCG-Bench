@@ -1,0 +1,31 @@
+{
+  "benchmarkPath": "./benchmark.example.json",
+  "targetSide": "A",
+  "selfPlay": {
+    "gamesMultiplier": 1
+  },
+  "training": {
+    "dbPath": "./output/data.db",
+    "outputPath": "./output/weights.iteration.json",
+    "options": {
+      "epochs": 200,
+      "lr": 0.01,
+      "lambda": 0.001
+    }
+  },
+  "candidatePolicy": {
+    "name": "candidate-evaluator",
+    "options": {
+      "learnedScoreScale": 10
+    }
+  },
+  "promoteRules": {
+    "minSampleCount": 500,
+    "minDeltaWinRate": 0.02,
+    "maxAllowedMatchupDrop": 0.03
+  },
+  "output": {
+    "jsonPath": "./output/iteration-report.json",
+    "markdownPath": "./output/iteration-report.md"
+  }
+}

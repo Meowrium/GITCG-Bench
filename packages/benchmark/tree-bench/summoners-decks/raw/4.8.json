@@ -1,0 +1,3360 @@
+{
+  "source": "https://www.summoners.top/",
+  "api": "https://www.summoners.top/api/v4/teams-stats?gameVersion=4.8 + /teams/{teamId}/decks-stats?gameVersion=4.8",
+  "gameVersion": "4.8",
+  "versionName": null,
+  "numGamesWithDeck": 222,
+  "usageRateDefinition": "numGames / numGamesWithDeck (ratio, 0-1)",
+  "winRateDefinition": "numGamesWin / numGames (ratio, 0-1)",
+  "deckCount": 186,
+  "decks": [
+    {
+      "deckCode": "FZDhyUANABBB0WENCGFgOIYNCaBx9DAPE0AB9jMQE4ExCFcTC7HwO78YDKFAisQQDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 12,
+      "numGamesWin": 5,
+      "usageRate": 0.054054,
+      "winRate": 0.4167
+    },
+    {
+      "deckCode": "FEAQyRwMF5AA0ZANCREAlKMZCkExiEgPFECB9IEQGDEQA7MUC8ExTIUYGKFQisQZDGAA",
+      "teamId": "1403-2103-2204",
+      "characters": [
+        "刻晴",
+        "无相之冰",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Keqing",
+        "Cryo Hypostasis",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 9,
+      "numGamesWin": 5,
+      "usageRate": 0.040541,
+      "winRate": 0.5556
+    },
+    {
+      "deckCode": "AEBBxUAMFVDhyWEMCJBQ0YYNFxHwOJcPE0AB9DAPE2ExCDMQFYFwO78TC7HwisQYDKAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 8,
+      "numGamesWin": 4,
+      "usageRate": 0.036036,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "A1GCxhYNAZGxypEOExHy0kgUCoJxOaUUFKEC9TEQFEEy9zQRDILxCcAUDbJBPMURDbEB",
+      "teamId": "1203-1505-2102",
+      "characters": [
+        "莫娜",
+        "枫原万叶",
+        "「女士」"
+      ],
+      "charactersEn": [
+        "Mona",
+        "Kaedehara Kazuha",
+        "La Signora"
+      ],
+      "numGames": 8,
+      "numGamesWin": 3,
+      "usageRate": 0.036036,
+      "winRate": 0.375
+    },
+    {
+      "deckCode": "ERBgxBMMA0CQyU8MEpGhOCoTCYBx9EgPFUBx9lcPGGEhO4ITC7FgirYYC6HQC8EQDLAA",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 7,
+      "numGamesWin": 5,
+      "usageRate": 0.031532,
+      "winRate": 0.7143
+    },
+    {
+      "deckCode": "ATCQ4x0OGECw5FkPBQCR8JIPGUAg9JcPCWBw9r0YE6FhijYZDGGQlskQFrFwC90RDjAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 6,
+      "numGamesWin": 3,
+      "usageRate": 0.027027,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "E2HxNl8MAUDQxFkMFpAhyWIOCTBw45wOCUDA5J0PCUDR9DQPC2Bg9rYYC6HQC70QE7AA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 6,
+      "numGamesWin": 4,
+      "usageRate": 0.027027,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "ERCR0VwPA0AQ9JcPE1AB9jAPE2ExCDMQFIGBO0gTDLFACsQQDLFgC8YQDNGQDckRDRAA",
+      "teamId": "1310-1411-1703",
+      "characters": [
+        "林尼",
+        "久岐忍",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Lyney",
+        "Kuki Shinobu",
+        "Nahida"
+      ],
+      "numGames": 6,
+      "numGamesWin": 4,
+      "usageRate": 0.027027,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "GDCw4x0OAUCQ5FkPBQCR8JIPGUAg9JcPCWBx9jMYDKEwiskZDGGRlmcQFrFwC90WDpAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 5,
+      "numGamesWin": 5,
+      "usageRate": 0.022523,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AdDR44sOATCQ5FkOBUCR8JIPGQAg9JcPCUBx9jMPE5EwisMYDKGQlskZFmFxC2cQDbAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 5,
+      "numGamesWin": 3,
+      "usageRate": 0.022523,
+      "winRate": 0.6
+    },
+    {
+      "deckCode": "AJBByUANFRDg0YYNCKBg9JcPE0AB9jAQE1ExBTMQFYFwCL8TC7HwO8MYDKFAisQQDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 5,
+      "numGamesWin": 0,
+      "usageRate": 0.022523,
+      "winRate": 0
+    },
+    {
+      "deckCode": "EUBx0XANARHAlKMZCkExOkgPFECB9IEPGGEQA7MQCzExTIUUGMFQisIYDKEglcQZDGAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 5,
+      "numGamesWin": 3,
+      "usageRate": 0.022523,
+      "winRate": 0.6
+    },
+    {
+      "deckCode": "AUAxxF4MA5CQyU8NBGHxOGENCeBx8jAPFUBx9FcPGGAh9oITC7Ewlr0QDLEQC8ERDBAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 5,
+      "numGamesWin": 1,
+      "usageRate": 0.022523,
+      "winRate": 0.2
+    },
+    {
+      "deckCode": "ERCR0VwPA0AR9GoPCVBx9jAPE2EBCDMQFIGBO0gTDLFACsQQDLFgC8YQDNGQDckRDRAA",
+      "teamId": "1310-1411-1703",
+      "characters": [
+        "林尼",
+        "久岐忍",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Lyney",
+        "Kuki Shinobu",
+        "Nahida"
+      ],
+      "numGames": 5,
+      "numGamesWin": 4,
+      "usageRate": 0.022523,
+      "winRate": 0.8
+    },
+    {
+      "deckCode": "AECQySoMAJGgOkYOBxDQ4pwOCSDA9J0PCUDR9jQPE2BA+bYPC5FgEb0RFUGATcQUDNAA",
+      "teamId": "1201-1202-1601",
+      "characters": [
+        "芭芭拉",
+        "行秋",
+        "凝光"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Xingqiu",
+        "Ningguang"
+      ],
+      "numGames": 5,
+      "numGamesWin": 2,
+      "usageRate": 0.022523,
+      "winRate": 0.4
+    },
+    {
+      "deckCode": "FTDgxB0MFkDAyVkMBZCR0WENCBDg3Y4OCRBx4UgOFSBx4lcPGEAh9IIYC6FgirYRDDAA",
+      "teamId": "1211-1404-2203",
+      "characters": [
+        "芙宁娜",
+        "赛诺",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Cyno",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 5,
+      "numGamesWin": 4,
+      "usageRate": 0.022523,
+      "winRate": 0.8
+    },
+    {
+      "deckCode": "ATCQ5B0OGECw8FkPBQCR9JIPGUAg9pcPCWFwA70QEzFhijYYDKGQlskZDWHQC+MQDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 4,
+      "numGamesWin": 4,
+      "usageRate": 0.018018,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ATCQ4x0OGECw5FkPBQCR8JIPGUAg9JcPCWBx9jYYE6FgiskZDGGRlmcQFrFwC90RDjAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 4,
+      "numGamesWin": 3,
+      "usageRate": 0.018018,
+      "winRate": 0.75
+    },
+    {
+      "deckCode": "AdCR44sOATDQ5FkOBUCR8JIPGQAg9JcPCUBw9rMPC2HQisMYDKGQlskZFmFxC2cQDbAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 4,
+      "numGamesWin": 3,
+      "usageRate": 0.018018,
+      "winRate": 0.75
+    },
+    {
+      "deckCode": "ATCQ4x0OGECw5FkPBQCR8JIPGSAg9JcPCUBx9jMPDGEwiskYDKGRlmcZFmFwC90QDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 4,
+      "numGamesWin": 0,
+      "usageRate": 0.018018,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FZDhyUANABBB0WENCGFgOIYNCaBx9DAPE0AB9jMQFYFxCFcTC7HwO78YDKFAisQQDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 4,
+      "numGamesWin": 3,
+      "usageRate": 0.018018,
+      "winRate": 0.75
+    },
+    {
+      "deckCode": "FpHiykEOARFC0mIOCWFh14cUCoFy2zEQFEEC9TQQFGIyCVgRDILxPMAUDbJBi8UZDaEB",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.018018,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FUDhxEAMAJBByUQNFhAQ0YYNCKBg9JcPE0AB9jAQE4ExCDMTFbFwO78YC6HwisIQDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.018018,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FZDhyUANABBB0WENCGBg2oYPCUBx9DAPE2AB9jMQFYFxCFcTC7HwO78YDKFAisQQDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 4,
+      "numGamesWin": 1,
+      "usageRate": 0.018018,
+      "winRate": 0.25
+    },
+    {
+      "deckCode": "FUDhxEAMAJBByUQNFGBB2mEPCEBg9IYPCWBx9jAQE4EBCDMTFbFxO1cYC6Hwir8QDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 4,
+      "numGamesWin": 1,
+      "usageRate": 0.018018,
+      "winRate": 0.25
+    },
+    {
+      "deckCode": "ARHBhhcYF2EAlJAZCUEBiEgPFECB9IEPGGEQA7MQCzExTIUUGMFQisIYDKEgldEZDWAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.018018,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "EZBw0RwNFxEAlKMZCkExOjAPE0AB9IEPGGEQA7MQCzExTIUUGMFQisQYDKFAlskQDLAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.018018,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AZAwzTkNFRDg0U8PBEDx9GEPCVBx9jAPFWBx+1cTGLEhO4IYDKEQisQZDGFAC8kQDLAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.018018,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AUAwxDkMFZDgyU8MBNHxWmEPCUBx9DAPFVBx9lcPGGEhO4IYDKEQisEZE2FhCzYQDLAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 4,
+      "numGamesWin": 1,
+      "usageRate": 0.018018,
+      "winRate": 0.25
+    },
+    {
+      "deckCode": "E2DxxF8MAZDQyVkNBdCR42IOFjAg5JwOCUDA9J0PCUDR9lcPFWFwirYYC6HRTTYUE9AA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.018018,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AUAxxBYMA5CQyU8NBGDx1ioTCYFxODANFeBx9FcPGEAh9oIPC2EwO70ZDGEQC8EQDLAA",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 4,
+      "numGamesWin": 3,
+      "usageRate": 0.018018,
+      "winRate": 0.75
+    },
+    {
+      "deckCode": "EdDh30ENEfBR4FcOFQBx9IIPGEAg9sYPDGFgiskYDKGQC9EQFtFxDWcQDeGQDtkRDTAA",
+      "teamId": "2102-2103-2402",
+      "characters": [
+        "「女士」",
+        "无相之冰",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "La Signora",
+        "Cryo Hypostasis",
+        "Thunder Manifestation"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.018018,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FZHyykIOEmFi1ysUE4KiOS0WCpJyWjEQFEEC9TQQFGIyCVgRDILxPMAUDbJBi8UZDaEB",
+      "teamId": "1210-2103-2602",
+      "characters": [
+        "那维莱特",
+        "无相之冰",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Neuvillette",
+        "Cryo Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 4,
+      "numGamesWin": 1,
+      "usageRate": 0.018018,
+      "winRate": 0.25
+    },
+    {
+      "deckCode": "ATAw4zgOEUDg5E8PBEDw9JcPCVBx9lcPC2HQir0YDKFgC8YQDLGQD8kQFvFxEToRDjAA",
+      "teamId": "1303-2302-2402",
+      "characters": [
+        "班尼特",
+        "深渊咏者·渊火",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Lector: Fathomless Flames",
+        "Thunder Manifestation"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.018018,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "A4Cg6B8PFRDR8WAPFpAA+YMQCDEwA5cQCWFxBjUYE6FRimcZFmFwC90QDrFwE+cRDjAA",
+      "teamId": "1406-1509-2501",
+      "characters": [
+        "九条裟罗",
+        "珐露珊",
+        "魔偶剑鬼"
+      ],
+      "charactersEn": [
+        "Kujou Sara",
+        "Faruzan",
+        "Maguu Kenki"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.018018,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FpDA0QkZGEHAlEUOGBDx4pEOCSHQiZ0YFJCB9EgPGEAh9oIPC5Bg+b0RDBFAFMQRDEAA",
+      "teamId": "1201-1211-1608",
+      "characters": [
+        "芭芭拉",
+        "芙宁娜",
+        "娜维娅"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Furina",
+        "Navia"
+      ],
+      "numGames": 4,
+      "numGamesWin": 1,
+      "usageRate": 0.018018,
+      "winRate": 0.25
+    },
+    {
+      "deckCode": "ATCQ4x0OGECw5FkPBQCR8JIPGSAg9JcPCUBw9r0PDGEwiskYDKGRlmcZFmFwC90QDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "GDCw4xkOAUDQ5FkPBQCR8JIPGUAg9JcPCWBw9rYYE6FgiskZDGGRlmcQFrFwC90RDjAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "ATCR44sOAUDQ5FkPBQCR8JIPGUAg9JcPCVBx9jMPE2EwiskYDKGRlmcZFmFwC90QDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "ATCR44sOAUDQ5FkPBQCR8JIPGSAg9JcPCUBw9rYPDGEwiskYDKGRlmcZFmFwC90QDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 3,
+      "numGamesWin": 0,
+      "usageRate": 0.013514,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FUDhyUAMAJBB1kQNFmEQOIYTCIBg2pcPE0AB9DAPE2ExCDMQFYFwO78TC7HwisQYDKAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.013514,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "AEBByUAMFZDh1kQNFpEQOIYNCKBg9JcPE0AB9jAPE2ExCFcQFYFwO78TC7HwisQYDKAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "FUDhyUAMAJBB0UQNFBBA2oYPCEBg9JcPCmFBBTAQE4EBCDMTE7EwO78YC6HwisQQDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "AZDB0RcNFxEBhnkYCWEAlKMZCkExiEgPFECB9IEQGDEQA7MUGMFRTIUYDKFAiskZDGAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.013514,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "FxAB0RcYAWHAlJAZCkEwiKMPFECB9EgPGGERA4EQCzEwTLMUGMFRioUYDKFAlcQZDWAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "EUBwyRwNFxAB0XkZCUEAlJAYCoAw9KMPFECB9kgQGDERA4EUC8ExTIUYGKFQisQZDGAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "AUAxxF4MA5CQyU8NBGDw1pcTE4EBODQVFaBx8lcPGEAh9IIPC2Aw9r0TDLEQisEQDLAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "AZDB0UENFxEAlJAZCUEAWaMVCpExiEgPFECB9IEQGDERA4UUGMFQTMQYDKFAiskZDGAA",
+      "teamId": "1403-2103-2204",
+      "characters": [
+        "刻晴",
+        "无相之冰",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Keqing",
+        "Cryo Hypostasis",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.013514,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "E/HwNh0TFWDwxFkMFkAhyWIMCJDg444OCTBw5JwOCUDA9J0PCUDR9lcPC2HQir8YC6AA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 3,
+      "numGamesWin": 3,
+      "usageRate": 0.013514,
+      "winRate": 1
+    },
+    {
+      "deckCode": "E2DwxB0MFUDwyVkMBZCR3WIOFjAg444OCUBw5JwPCUDA9J0PCWDR9lcYC6HRijYQE7AA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.013514,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "E2DxxF8MAUDQyVkMFpAh42IOCTDA5JwOCUDQ9J0PFUBx9lcPC2EwirYYC6HRETYREzAA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "AUAxyRYMA5CQzU8NBBDx0SoTEqCg9JcPE0AB9lcPFWFxO4IYGKEgirYZC2HQC8QRDDAA",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "AUAwxDkMEZBgyU8NBGDx1ioTEoGgOJcNE7AB9DAPE0Ax9oIQGIEgCL0TDLEQO8EQDLAA",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "FRDB0RkPA0AR9GoPCVBx9jAPE2EBCDMQFIGBO0gTDLFACsQQDLFgC8YQDNGQDckRDRAA",
+      "teamId": "1310-1411-1703",
+      "characters": [
+        "林尼",
+        "久岐忍",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Lyney",
+        "Kuki Shinobu",
+        "Nahida"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.013514,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "FRDA0TEPEUCQ9JcPE1AB9jAPE2ExCEgQFIGAO70TDLFACsQQDLFgC8YQDNGQDckRDRAA",
+      "teamId": "1310-1411-1703",
+      "characters": [
+        "林尼",
+        "久岐忍",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Lyney",
+        "Kuki Shinobu",
+        "Nahida"
+      ],
+      "numGames": 3,
+      "numGamesWin": 0,
+      "usageRate": 0.013514,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AUGxxikNEpFRypEOExHy0kgUCoJxOaUUFKEC9TEQFEEy9zQRDIJhCcAUDLLxPMURDbEB",
+      "teamId": "1203-1505-2102",
+      "characters": [
+        "莫娜",
+        "枫原万叶",
+        "「女士」"
+      ],
+      "charactersEn": [
+        "Mona",
+        "Kaedehara Kazuha",
+        "La Signora"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "AZBR2RgNFrCw8lEPCUBw9JcPE1AR9jEQFTFxO1cTGbExDJMQDMFgDcYQDNGgEMoRDQAA",
+      "teamId": "1111-1209-1305",
+      "characters": [
+        "莱欧斯利",
+        "夜兰",
+        "宵宫"
+      ],
+      "charactersEn": [
+        "Wriothesley",
+        "Yelan",
+        "Yoimiya"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "FJAR0RYNFBDx1ioNEmGhOCwNCaBx9DAPE0AB9jMQE4ExCFcTC7HwO8QYDKFAiskQDLAA",
+      "teamId": "1210-2103-2602",
+      "characters": [
+        "那维莱特",
+        "无相之冰",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Neuvillette",
+        "Cryo Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "AECRxE8MEZBwyUUNEhDA3p0OFCCB4kgPGEAR9FcPFWFwaLYYC6Fgir0RFRGAacMWDJAA",
+      "teamId": "1109-1201-1210",
+      "characters": [
+        "莱依拉",
+        "芭芭拉",
+        "那维莱特"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Barbara",
+        "Neuvillette"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "EUBxxE8MAJCQyUUNEhDA3p0OFCCB4kgPGEAR9FcWFYFwaLYYC6Fgir0RFRGAacMWDJAA",
+      "teamId": "1109-1201-1210",
+      "characters": [
+        "莱依拉",
+        "芭芭拉",
+        "那维莱特"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Barbara",
+        "Neuvillette"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "AECRxE8MEZBwyUUNEuDA4p0OFCCB9EgPGEAR9lcPFWFwaLYYC6Fgir0RCxHRaVgWDJAA",
+      "teamId": "1109-1201-1210",
+      "characters": [
+        "莱依拉",
+        "芭芭拉",
+        "那维莱特"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Barbara",
+        "Neuvillette"
+      ],
+      "numGames": 3,
+      "numGamesWin": 0,
+      "usageRate": 0.013514,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AICgxCoMAJCQyUYOBiBg4noPCUDA9J0PCWDR9kgPFZFxioIYC6FgCrYRC0HQTb0UFdAA",
+      "teamId": "1201-1202-1601",
+      "characters": [
+        "芭芭拉",
+        "行秋",
+        "凝光"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Xingqiu",
+        "Ningguang"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "F5ERhhcYF2EBlHoZF0GgWaMVCpExiEgPFECB9IEPGGAQ9rMQCzExA4UYGKFQiskZDGAA",
+      "teamId": "1109-2204-2405",
+      "characters": [
+        "莱依拉",
+        "吞星之鲸",
+        "圣骸毒蝎"
+      ],
+      "charactersEn": [
+        "Layla",
+        "All-Devouring Narwhal",
+        "Consecrated Scorpion"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "FkHRhXMYF1AhynwMF/DAz6QNCkBB1DMVE6Ax8lcPFUBw9L0PC2HRBDUQE0FRioQYGKAA",
+      "teamId": "1312-2503-2702",
+      "characters": [
+        "辛焱",
+        "圣骸飞蛇",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Xinyan",
+        "Consecrated Flying Serpent",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.013514,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "F1AxxG0MF0AByXwMF5HBlEgZFECB2VcNGJEhWoIPCiCQ9LMPC0ExAzUQEzFRBIUQGEAA",
+      "teamId": "1312-2204-2702",
+      "characters": [
+        "辛焱",
+        "吞星之鲸",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Xinyan",
+        "All-Devouring Narwhal",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 3,
+      "numGamesWin": 3,
+      "usageRate": 0.013514,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUFBygwNFZEC0kUOFRFB9YcQCUFh95gRFFICBjERFIIyCTQUFrJxPMAZDKLxi8URDbEB",
+      "teamId": "1104-1203-1507",
+      "characters": [
+        "重云",
+        "莫娜",
+        "早柚"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Mona",
+        "Sayu"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.013514,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "FYDhw2sMAECQxEUMFpARyWENEuDA4p0OFCCB9EgPGEERaFcYGKEgirYRCxFgab0WFZAA",
+      "teamId": "1111-1201-2203",
+      "characters": [
+        "莱欧斯利",
+        "芭芭拉",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Wriothesley",
+        "Barbara",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.013514,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "AFBgxQsMApCQyX0NEhDA0YYTCYFwOJcNCdCA9pgQE4EBCDATC7Hwir8YDKFAlsQQDLAA",
+      "teamId": "1106-1203-1506",
+      "characters": [
+        "优菈",
+        "莫娜",
+        "流浪者"
+      ],
+      "charactersEn": [
+        "Eula",
+        "Mona",
+        "Wanderer"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.013514,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "AXDR3YsOATCQ41kOBUCR5JIPGQAg8JcPE2Ax9jMYC6FgisIZDGEglsMQDLGQC8kWFpAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.009009,
+      "winRate": 1
+    },
+    {
+      "deckCode": "GDCw4x0OAUCQ5FkPBQCR8JIPGUAg9JcPCWBw9r0YE6FhijYZDGGQlskQFrFwC90RDjAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "GDCw5B0OAUCQ8FkPBQCR8pIPGSAg9JcPCUBw9r0PDGEwiskYDKGRlmcZDWHQC+MQDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ATCQ5B0OGECw8FkPBQCR8pIPGUAg9JcPCWBw9r0YDKGQiskZFmFxlmcQDbHQC+MRDjAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ATCR5IsOAUDQ8FkPBQCR8pIPGSAg9JcPCUBx9jYPE2FgiskYDKGRlmcZDWHQC+MQDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AcCQ4x0OGDCw5FkOBUCR8JIPGQAg9JcPCUBx9jMPE2EwisMYDKGQlskZFmFxC2cQDbAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "GNCw4x0OATCQ5FkOBUCR8JIPGQAg9JcPCUBw9rYPE2FhijYYDKEwlskZDGGRC2cRDTAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FUDhyUAMAJBB0UQNFhAQ2oYPCEBg9JcPE2EBBTAQE4ExCDMTFbFwO78YC6HwisQQDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.009009,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AEBBxEAMFZDhyUQNFhAR0WEPCEBg9IYPCWBx9jAQE4EBCDMTE7ExO1cYC6Hwir8QDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.009009,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AVFCxkENFpHhyoYOCRFi0oAUCoJyOTEQFEEC9TQQFGIyCVgRDILxPMAUDbJBi8UZDaEB",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.009009,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AEBBxEAMFZDhyUQNFmEQOIYNCKBg9JcPE0AB9jAPE2ExCFcQFYFwO7MTC7Hwir8YDKAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FUDhxEAMAJBByUQNFBBB1mENCKBg9IYPCUBx9jAQE4EBCFcTFbFxO4IYC6Hwir8QDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FUDhyUAMAJBB1kQNFmEQOIYNCKBg9JcPE0AB9jAQE1ExCFcQFYFwO78TC7HwisQYDKAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FUDhxUAMAFBByWEMCJBQ0YYNFxHwOJcPE0AB9DAPE2ExCDMQFYFwO78TC7HwisQYDKAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "F5AB0RcNARHAlJAZCkEgOKITFKCB9EgPGEAR9oEQCzEwA7MUGMFRTIUYDKEgisQZDGAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "EUBx0XANARHAN6MZCkExlEgTFIGBOIEPGEAQ9LMQCzExA4UUGMFQTMIYDKEgisQZDGAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ESBwxBwNFxAB0XkZCUEAlJATCoEwiKMPFECB9EgPGGERA4EQCzEwTLMYGKFRioUZDGAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "A0CQyRMMFZDgzU8NBBDx0WEPCUBx9EgPFWBx9lcTGLEhO4IYC6FgirYZDGEQC8QQDLAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.009009,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUAxyV4NA2CQ1k8TBIHxOGENCeBx9DAPFUBx9lcPGGEhO4IZC2EwlsEQDLEQC8QRDBAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.009009,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUAxyV4MA5CQzU8NBBDx0WEPCUBx9EgPFWBx9lcTGLEhO4IYC6FgisEZDGEQC8QQDLAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AUAxyV4MA5CQzU8NBBDx0WEPCUBx9EgPFWBx9lcTGLEhO4IYC6FgirYZDGEQC8QQDLAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FEAQ0RwNFxEAhpAZCkEwlKMYFICB9EgPGEAR9oEQCzEwA7MUGMFRTIUYDKEgisQZDGAA",
+      "teamId": "1403-2103-2204",
+      "characters": [
+        "刻晴",
+        "无相之冰",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Keqing",
+        "Cryo Hypostasis",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AZDB0UENFxEAhpAYCWEBlEgZFEGBiIEPGEAQ9LMPC2ExA4UQGDFQTMIUDMEglckZDGAA",
+      "teamId": "1403-2103-2204",
+      "characters": [
+        "刻晴",
+        "无相之冰",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Keqing",
+        "Cryo Hypostasis",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AUDB0XAYFGEQhpAZCkEglKMYFICB9EgPGEERA4EQCzEwTLMUGMFRioUYDKEglsIZDGAA",
+      "teamId": "1403-2103-2204",
+      "characters": [
+        "刻晴",
+        "无相之冰",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Keqing",
+        "Cryo Hypostasis",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AUDB0UENFxEAlJAZCkEgiKIPFECB9EgPGGERA4EQCzEwTLMUGMFRioUYDKEglsIQDLAA",
+      "teamId": "1403-2103-2204",
+      "characters": [
+        "刻晴",
+        "无相之冰",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Keqing",
+        "Cryo Hypostasis",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FWDwxB0ME0DwyVkMFpAh42IOCTBw5JwOCUDA9J0PCUDR9oIPC2FAirYYC6HRETYREzAA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.009009,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FWDwxB0ME0DwyVkMBZCR3WIOFjAg45cOCUDA5JwPCUDQ9J0PFWBw9rMYC6HRijYREzAA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.009009,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AdDRvT8TFWHwNlkMFkAhxGIMCZHAiJwOCUDQ5J0PGEAh9IIPGWDh9p4YC6FgirYQC+AA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AxCQxBMMEUBgyU8MBJDxzSoNEhCg0ZcPE0AB9FcPFWBx9oITGLEgirYYC6HQC8EQDLAA",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.009009,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUAxxBYMA5CQyU8NBBDx0SoTEoCg9JcPFECB9VcPFWBx9oITGLEgO7YYDKEQisEQDLAA",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.009009,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUAxxBYMA5CQyU8MBNDx0SoNEhGgOJcPFECB9FcPFWBx9oITGLEgirYYDKEQlsEQDLAA",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FPAR3x4OEQBQ4JcPCSBx8jMPE0Ax9FcPFVBw9skPDGGRO2cYFqFwitkQDbGQEd0RDTAA",
+      "teamId": "2102-2103-2402",
+      "characters": [
+        "「女士」",
+        "无相之冰",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "La Signora",
+        "Cryo Hypostasis",
+        "Thunder Manifestation"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "EZDh3UENEfBR31cOFQBx4IIPGEAg9LYPC2Bg9sYYDKFgiskQDLGQC9EQFtFwDdkRDTAA",
+      "teamId": "2102-2103-2402",
+      "characters": [
+        "「女士」",
+        "无相之冰",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "La Signora",
+        "Cryo Hypostasis",
+        "Thunder Manifestation"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FNAR3xUNEfDg4JcOEwAx9FcPFUBx9YIPGGAg9r0TDLGQO8kYFqFximcQDbGQEdkRDTAA",
+      "teamId": "2102-2103-2402",
+      "characters": [
+        "「女士」",
+        "无相之冰",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "La Signora",
+        "Cryo Hypostasis",
+        "Thunder Manifestation"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "EfBR3x4OFAAQ4JcPCSBx8lcPFUBw9L0PDFCQ9skPDGGhimcYFqFwC9kQDbGQE90RDTAA",
+      "teamId": "2102-2103-2402",
+      "characters": [
+        "「女士」",
+        "无相之冰",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "La Signora",
+        "Cryo Hypostasis",
+        "Thunder Manifestation"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FhLBiTIQEkGS9WsQClFy9zEQFGIyPEkUFbKCi1gRDaJBDMcRDbJhDsoRDdKREtISDjEB",
+      "teamId": "1310-1411-1703",
+      "characters": [
+        "林尼",
+        "久岐忍",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Lyney",
+        "Kuki Shinobu",
+        "Nahida"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ARBR2RgNFpCw21EPCSBw9JcPE0ERAjEQGTExO5MTDLFgDMYQDMGQDckQDNGgEMoRDQAA",
+      "teamId": "1111-1209-1305",
+      "characters": [
+        "莱欧斯利",
+        "夜兰",
+        "宵宫"
+      ],
+      "charactersEn": [
+        "Wriothesley",
+        "Yelan",
+        "Yoimiya"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FJDxyRYNFGAR1ioTEoCh2iwPCUBx9DAPE2EBCDMQE4ExO1cTC7Hwir8YDKFAlcQQDLAA",
+      "teamId": "1210-2103-2602",
+      "characters": [
+        "那维莱特",
+        "无相之冰",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Neuvillette",
+        "Cryo Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FVHBNUEMGTCBymoMFqChz5sMCfAQ3ZcPCSBx8lcPFUBx9JMPGVAw9rQPC2FAO70QE8AA",
+      "teamId": "1411-1510-2103",
+      "characters": [
+        "久岐忍",
+        "闲云",
+        "无相之冰"
+      ],
+      "charactersEn": [
+        "Kuki Shinobu",
+        "Xianyun",
+        "Cryo Hypostasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FVDBw0EMGaCBymoMFvCh3ZsPCSAQ9JcPCUBx9VcPGVAx9pMPC2FQAr0TC7HRDDUQE8AA",
+      "teamId": "1411-1510-2103",
+      "characters": [
+        "久岐忍",
+        "闲云",
+        "无相之冰"
+      ],
+      "charactersEn": [
+        "Kuki Shinobu",
+        "Xianyun",
+        "Cryo Hypostasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FVDBw0EMGaCBymoMFvCh2ZsNCdAQ8ZcPCSBx8lcPFUBx9JMPGVAw9rQPC2FQO70QE8AA",
+      "teamId": "1411-1510-2103",
+      "characters": [
+        "久岐忍",
+        "闲云",
+        "无相之冰"
+      ],
+      "charactersEn": [
+        "Kuki Shinobu",
+        "Xianyun",
+        "Cryo Hypostasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ATAw4zgOEUDg5E8PBEDw9JcPCVBw9r0PC2HQisMYDKFgC8YQDLGQDckQFvFxEToRDjAA",
+      "teamId": "1303-2302-2402",
+      "characters": [
+        "班尼特",
+        "深渊咏者·渊火",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Lector: Fathomless Flames",
+        "Thunder Manifestation"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AZDB0RUNFxEAlKMZCkExOjAPE0AB9IEPGGEQA7MQCzExTIUUGMFQisQYDKFAlskZDGAA",
+      "teamId": "1403-2102-2204",
+      "characters": [
+        "刻晴",
+        "「女士」",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Keqing",
+        "La Signora",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "EZBw0SgNFRDB1kcTFIBw2pcPE0AB9DAPE2ExAjMQFYFwCL8TC7HwO8QYDKFAiskQDLAA",
+      "teamId": "1109-1411-1505",
+      "characters": [
+        "莱依拉",
+        "久岐忍",
+        "枫原万叶"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Kuki Shinobu",
+        "Kaedehara Kazuha"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FTDgxB0MAECQyVkMBZCR0WENCBDg3Y4OCRBx4UgOFSBx4lcPGEAh9IIYC6FgirYRDDAA",
+      "teamId": "1201-1404-2203",
+      "characters": [
+        "芭芭拉",
+        "赛诺",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Barbara",
+        "Cyno",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AXCRyYwMApHgWoYOCJBg6Z0OCaDQ6rMPC0Aw9LYPC2GAArwYC6HBiqAQGrEAC8cQDPAA",
+      "teamId": "1309-1605-1608",
+      "characters": [
+        "迪希雅",
+        "荒泷一斗",
+        "娜维娅"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Arataki Itto",
+        "Navia"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.009009,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ASAB4l4PAwAQ9EwPFkAR9oIPGGAg/LYPC8FgisYYDKFgC8kQDLGQDt4QDuEQE+ERDjAA",
+      "teamId": "1208-1703-2203",
+      "characters": [
+        "妮露",
+        "纳西妲",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Nilou",
+        "Nahida",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "EVGRNhUTFWDhySIMEpAh3mEPCEAw9IMPCVBw9pcPE2ExADMQEwFBOzQTC7HRCzUQE7AA",
+      "teamId": "1310-2102-2203",
+      "characters": [
+        "林尼",
+        "「女士」",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Lyney",
+        "La Signora",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AqGh1ykOFWES2kgOFZJxOZgUCoFy3DEQFCEC85QQGkEx9bcRDIJhCcUUDbJBPMsaDWEB",
+      "teamId": "1401-1505-2103",
+      "characters": [
+        "菲谢尔",
+        "枫原万叶",
+        "无相之冰"
+      ],
+      "charactersEn": [
+        "Fischl",
+        "Kaedehara Kazuha",
+        "Cryo Hypostasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.009009,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ATCQ4x0OGECw5FkPBQCR8JIPGSAg9JcPCUBw9r0PE2FhijYYDKGQlskZFmFwC90QDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ATCR44sOAUDQ5FkPBQCR8JIPGSAg9JcPCUBw9r0PE2FhijYYDKGQlskZFmFwC90QDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ATCR5IsOAUDQ8FkPBQCR8pIPGSAg9JcPCUBw9sMPDGGQiskYFqFxlmcZDWHQC+MQDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ATCR5IsOAUDQ8FkPBQCR8pIPGSAg9JcPCUBw9r0PDGGQiskYFqFxlmcZDWHQC+MQDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ATCR44sOAUDQ5FkPBQCR8JIPGUAg9JcPCWBx9jMPE5EwiskYDKGRlmcZFmFwC90QDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AdDR44sOATCQ5FkOBUCR8JIPGQAg9JcPCUBx9jMPE2EwiskYDKGRlmcZFmFwC9wQDbAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ATCR5IsOAUDQ8FkPBQCR9JIPGUAg9pcPCWFwA8MQDDGQiskYFqFxlmcZDWHQC+MQDrAA",
+      "teamId": "1309-1313-1404",
+      "characters": [
+        "迪希雅",
+        "夏沃蕾",
+        "赛诺"
+      ],
+      "charactersEn": [
+        "Dehya",
+        "Chevreuse",
+        "Cyno"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FUDhyUAMAJBB1kQTFoAQ2oYPCEBg9JcPE2EBBTAQE4ExCDMTFbFwO78YC6HwisQQDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FUDhyUAMAJBB1kQNFmEQOIYNCKBg9JcPE0AB9jAQE4ExCDMTFbFwO78YC6HwisQQDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FUDhxEAMAJBByUQNFGFBOGENCKBg9IYPCUBx9jAPE2EBCDMQFYFxO4ITC7Hwir8YDKAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FUDhxEAMAJBByUQNFGBB2WENCKBg9IYPCUBx9jAPE2EBCDMQFYFxO4ITC7Hwir8YDKAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FUDhxEAMAJBByUQWFmEQOIYNCKBg9JcPE0AB9jAPFWFxCFcQGIEgO7MTC7Hwir8YDKAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FUDhxEAMAJBByWENCGFgOIYNCaBx9DAPE0AB9jMQE4ExCFcTC7EwO7MYC6Hwir8QDLAA",
+      "teamId": "1104-1507-2203",
+      "characters": [
+        "重云",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ERBx0XAYAWHAlJAZCkEwOqMPFECB9EgPGGERA4EQCzEwTLMUGMFRioUYDKFAlcQZDWAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ARDB0XAYEWFwlJAZCUEAiKMPCkAx9EgPFGGBA4EQGDEQTLMUGMFRioUYDKEglsQQDbAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "EUBw0RwNFxEAlJAZCUEAiKMPCkAx9EgPFGGBA4EQGDEQTLMUC8ExioUYGKFQlcQZDGAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUDB0RcNFxEAhpAYCWEAlKMZCkExiEgPFECB9IEQGDEQA7MUC8ExTIUYGKFQisQZDGAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "EUBw0RwNFxEAhpAYCWEAlKMZCkExiEgPFECB9IEQGDEQA7MUC8ExTIUYGKFQisQZDGAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AZDB0RcNFxEAhpAYCWEAlKMZCkExOkgPFECB9IEQGDEQA7MUC8ExTIUYGKFQisQZDGAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUDB0RcYF2EAlJAZCkEwiKMPFECB9EgPGGERA4EQCzEwTLMUGMFRioUYDKEglsQQDLAA",
+      "teamId": "1109-1403-2204",
+      "characters": [
+        "莱依拉",
+        "刻晴",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Keqing",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "A5CQyRMMFdDg0U8NBBDx9GEPCUBx9jAPFWFxCFcTGLEhO4IYDKEQisEZDGFAC8QQDLAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUAwyTkMFZDgzU8NBBDx0WEPCUBx9EgPFWBx9lcTGLEhO4IYC6FgirYZDGEQC8QQDLAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FUDgyRMMA5CQzU8NBBDx3GEPCSBx9DAPFUBx9VcPGGEhCIITC7HQisEYDKEQlsQQDLAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AZAxyV4MA9CQ0U8NBBHxiGEPCUBx9EgPFWBx9lcTGLEhO4IYC6FgirYZDGFAC8QQDLAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AZAwzTkNFRDg0U8TBKDx9GEPCUBx9jAPFWBx+1cTGLEhO4IYDKEQisQZDGFAC8kQDLAA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AWAxxF4MA0CQyU8MBJHxiGEPCSBx8jMPFUBx9FcPGFAh9oITC7HQO8EYDKERCzYQE7AA",
+      "teamId": "1303-2203-2401",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "无相之雷"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Electro Hypostasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AUDB0UENFxEAlKMZCkExOEgTFIGBWoEPGEAQ9LMQCzExA4UUGMFQTMIYDKEgisQZDGAA",
+      "teamId": "1403-2103-2204",
+      "characters": [
+        "刻晴",
+        "无相之冰",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Keqing",
+        "Cryo Hypostasis",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUDByUENFxAA0ZAYCWEAlKMZCkExiEgPFECB9IEQGDEQA7MUC8ExTIUYGKFQisQZDGAA",
+      "teamId": "1403-2103-2204",
+      "characters": [
+        "刻晴",
+        "无相之冰",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Keqing",
+        "Cryo Hypostasis",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AUDB0UENFxEAlJAZCkEwOKMYFICB9EgPGEAR9oEQCzEwA7MUGMFRTIUYDKEgisQZDGAA",
+      "teamId": "1403-2103-2204",
+      "characters": [
+        "刻晴",
+        "无相之冰",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Keqing",
+        "Cryo Hypostasis",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "E0DwxB0MFZDwyVkWFnAh42IOCTBw5JwOCUDA9J0PCUDR9lcPC2Fgir0YE6FhCzYRDDAA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "E0DwyR0MFZHwZ1kNFtAh42IOCTBw5JwOCUDA9J0PCUDR9lcPC2HRijYYE6FgC8QQDLAA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FWDwxB0ME5DwyVkNBdCR42IOFjAg5JwOCUDA9J0PCUDR9lcPFWFwirYYC6HRTTYUE9AA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AtLSN0AUFmHxxVoNF0EiymMNCpFx3Z0PCkHB5Z4QCkHS9YMQGWEi958ZGqLhi7cSDBEB",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "E2DxxF8MAUDRyWIMFpAg45wOCTDA5J0OCUDR9DMPE0Aw9rQPC2FgirYQC7HRCzYREzAA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AmLSN0ANFkHyxWMNF5IhiZ0PCkHB5Z4QCkHS9YMQGWEi958ZGqLhi7cMDEFhyr4SFBEB",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FWDwxB0ME0DwyVkMFpAh42IOCTDA5JwOCUDQ9J0PGEAh9oIPC2FAirYYC6FgE70UE9AA",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AtLSN0ANFpHxyloOF9Ei5GMPCTHh5Y8PCkFx9Z0QCkHB954QCmLRi7UZDKJhDLcSDDEB",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AUAxxBYMA5CQyU8NBBDx0SoTEoCg9JcPFECB9VcPFWBx9oITGLEgirYYDKEQlsEQDLAA",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUAxxBYMA5CQyU8MBNDw0XUNEhGhOioPCUBx9DAPFWBx9lcTGLEhioIYC6FgC70QDLAA",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUAxyRYMA5CQzU8NBBDx0SoTEqCg9JcPE0AB9lcPFWFxO4IYGKEgirYZC2HQC8QQDLAA",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AUAxxBYMA5CQyU8MBNDx0SoNEhCg9JcPE0AB9VcPFWFxO4ITGLEgirYYC6FgC8EQDLAA",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FJAR3RUNEfDg35cOEwAx4FcPFUBw9L0PE1BQ9sYPDGFgC8kQDNGRDmcQFuFwEdkRDTAA",
+      "teamId": "2102-2103-2402",
+      "characters": [
+        "「女士」",
+        "无相之冰",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "La Signora",
+        "Cryo Hypostasis",
+        "Thunder Manifestation"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "EZDh3UENEfBQ35cOCQBx4DMPEyAx8lcPFUBw9L0PE1BQ9skPDGGRimcQFrFwEdkRDTAA",
+      "teamId": "2102-2103-2402",
+      "characters": [
+        "「女士」",
+        "无相之冰",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "La Signora",
+        "Cryo Hypostasis",
+        "Thunder Manifestation"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FJAR3RUNEfDg35cOEwAx4FcPFUBw9L0PE1BQ9sYPDGFgO8kQDLGRDmcQFuFwEdkRDTAA",
+      "teamId": "2102-2103-2402",
+      "characters": [
+        "「女士」",
+        "无相之冰",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "La Signora",
+        "Cryo Hypostasis",
+        "Thunder Manifestation"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "EfBR30EOEQDg4JcPCSBx9DMPFUBw9bYPDGCQ9skTFrFximcYDaGQC9kQE7GAE90RDTAA",
+      "teamId": "2102-2103-2402",
+      "characters": [
+        "「女士」",
+        "无相之冰",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "La Signora",
+        "Cryo Hypostasis",
+        "Thunder Manifestation"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FZDA0TENERCR3WoPCUBx9DAPE1AB9jMQFIGBCEgTDLEwCsQQDLFAC8YQDNFgDckRDBAA",
+      "teamId": "1310-1411-1703",
+      "characters": [
+        "林尼",
+        "久岐忍",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Lyney",
+        "Kuki Shinobu",
+        "Nahida"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FhLBOzIQEkGS9WsQFFEC9zEQFGIyCTQUFbKCC0kRDLLRDMURDdJBD8cRDeJhEtISDjEB",
+      "teamId": "1310-1411-1703",
+      "characters": [
+        "林尼",
+        "久岐忍",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Lyney",
+        "Kuki Shinobu",
+        "Nahida"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AVGxxikNEpFRypEOExHy0kgUCoJxOZgQFEEC9TEQFGIyBjQRDILxCcAUDbJBPMURDbEB",
+      "teamId": "1203-1505-2102",
+      "characters": [
+        "莫娜",
+        "枫原万叶",
+        "「女士」"
+      ],
+      "charactersEn": [
+        "Mona",
+        "Kaedehara Kazuha",
+        "La Signora"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AZBR2RgNFsCw8lEPBUAQ9JcPCVBx9jEQEzERO1cTGbExDJMQDMFgDcYQDNGgEMoRDQAA",
+      "teamId": "1111-1209-1305",
+      "characters": [
+        "莱欧斯利",
+        "夜兰",
+        "宵宫"
+      ],
+      "charactersEn": [
+        "Wriothesley",
+        "Yelan",
+        "Yoimiya"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AZBR2RgNFrCw9FEPBUAQ9ZcPCVBx9jEQEzEROzMTGbExDJMQDMFgDcYQDNGgEMoRDQAA",
+      "teamId": "1111-1209-1305",
+      "characters": [
+        "莱欧斯利",
+        "夜兰",
+        "宵宫"
+      ],
+      "charactersEn": [
+        "Wriothesley",
+        "Yelan",
+        "Yoimiya"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AZBR2RgNFrCw8lEPBUAQ9JcPCVBx9jEQEzERO1cTGbExDJMQDMFgDcYQDNGgEMoRDQAA",
+      "teamId": "1111-1209-1305",
+      "characters": [
+        "莱欧斯利",
+        "夜兰",
+        "宵宫"
+      ],
+      "charactersEn": [
+        "Wriothesley",
+        "Yelan",
+        "Yoimiya"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AZBR2RgNFrCw9FEPBUAQ9pcQCTFxAzETE7EROzMQGZExDJMQDMFgDcYRDAGgEMoPDVAA",
+      "teamId": "1111-1209-1305",
+      "characters": [
+        "莱欧斯利",
+        "夜兰",
+        "宵宫"
+      ],
+      "charactersEn": [
+        "Wriothesley",
+        "Yelan",
+        "Yoimiya"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AZBR2RgNFrCw9FEPBUAQ9ZcPCWFxAzEQEzEROzMTGbExCZMQDMFgDMYQDNGgEMoRDQAA",
+      "teamId": "1111-1209-1305",
+      "characters": [
+        "莱欧斯利",
+        "夜兰",
+        "宵宫"
+      ],
+      "charactersEn": [
+        "Wriothesley",
+        "Yelan",
+        "Yoimiya"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FJDxyRYNFBAR0SoNEmCh1iwTCYBx9DAPE0AB9jMQE4ExCFcTC7HwO78YDKFAisQQDLAA",
+      "teamId": "1210-2103-2602",
+      "characters": [
+        "那维莱特",
+        "无相之冰",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Neuvillette",
+        "Cryo Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FVDBw0EMGaCBymoNGdCx8psPCSBw9JcPFUBx9VcPGVAx9pMPC2FQArUTC7HRDDUQE8AA",
+      "teamId": "1411-1510-2103",
+      "characters": [
+        "久岐忍",
+        "闲云",
+        "无相之冰"
+      ],
+      "charactersEn": [
+        "Kuki Shinobu",
+        "Xianyun",
+        "Cryo Hypostasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FyARxBcNFxAB0XoZF0GglKMTCoExOkgPFECB9IEQGDEQA7MUC8ExTIUYGKFQisIZDGAA",
+      "teamId": "1109-2204-2405",
+      "characters": [
+        "莱依拉",
+        "吞星之鲸",
+        "圣骸毒蝎"
+      ],
+      "charactersEn": [
+        "Layla",
+        "All-Devouring Narwhal",
+        "Consecrated Scorpion"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FlHRhXIYF1Ax1HwNF0HBiDMPEyAx8lcPFUBx9JMPGWExBJ4QGUHgir0YC6HRaTUWE5AA",
+      "teamId": "1312-2503-2702",
+      "characters": [
+        "辛焱",
+        "圣骸飞蛇",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Xinyan",
+        "Consecrated Flying Serpent",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FZDhyUANABBh0WENCGFgOIYYCYBx9DAPE0AB9jMQFYFxCFcTC7HwO78YDKFAisQQDLAA",
+      "teamId": "1106-1507-2203",
+      "characters": [
+        "优菈",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Eula",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FZDhyUANABBh0WENCGFgOIYNCaBx9DAPE0AB9jMQFYFxCFcTC7HwO78YDKFAisQQDLAA",
+      "teamId": "1106-1507-2203",
+      "characters": [
+        "优菈",
+        "早柚",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Eula",
+        "Sayu",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "E2DxxF8MEUDhyWIMFpAg45wOCTDA5J0OCUDR9DMPFUBw9rYPC2GQir0YC6HRETYREzAA",
+      "teamId": "1311-2304-2402",
+      "characters": [
+        "托马",
+        "铁甲熔火帝皇",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Emperor of Fire and Iron",
+        "Thunder Manifestation"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FWDxyR4OE0Dx5GIPFkAg9JwPCWDA9p0YCaHRijMQFfFwD7kRCzHQTcQUDNFAacYWDJAA",
+      "teamId": "1311-2304-2402",
+      "characters": [
+        "托马",
+        "铁甲熔火帝皇",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Emperor of Fire and Iron",
+        "Thunder Manifestation"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FUDxxB4ME5DxyWITFqAg45cOCTDA5JwOCUDQ9J0PFUBw9rYPC2HQir0YE6FhETYRDDAA",
+      "teamId": "1311-2304-2402",
+      "characters": [
+        "托马",
+        "铁甲熔火帝皇",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Emperor of Fire and Iron",
+        "Thunder Manifestation"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AZDB0RUNFxEAlKMZCkExOjAPE0AB9IEPGGEQA7MQCzExTIUUGMFQisIYDKFAlsQZDGAA",
+      "teamId": "1403-2102-2204",
+      "characters": [
+        "刻晴",
+        "「女士」",
+        "吞星之鲸"
+      ],
+      "charactersEn": [
+        "Keqing",
+        "La Signora",
+        "All-Devouring Narwhal"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUAxyRYMEZDg0U8NBBHxOCoPEkCg9JcPE1AB9lcPFWFxO4IYGKEgirYZDGEQC8QRDBAA",
+      "teamId": "1303-2402-2602",
+      "characters": [
+        "班尼特",
+        "雷音权现",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Thunder Manifestation",
+        "Azhdaha"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AUAxyRYMEZDg0U8NBBHxOCoPEkCg9JcPFFCB9lcPFWFxO4IYGKEgirYZDGEQC8QRDBAA",
+      "teamId": "1303-2402-2602",
+      "characters": [
+        "班尼特",
+        "雷音权现",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Thunder Manifestation",
+        "Azhdaha"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FpCw2xUNFPAQ35cOCQBx4DEPE0AR9DMPE2Ax9pMTGbEwO8YQDJFgDMoQDMGgENkRDQAA",
+      "teamId": "1111-1305-2103",
+      "characters": [
+        "莱欧斯利",
+        "宵宫",
+        "无相之冰"
+      ],
+      "charactersEn": [
+        "Wriothesley",
+        "Yoimiya",
+        "Cryo Hypostasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FUHhhBUaFADxyWEMFpAR2ywOEhDA4Z0OCSDR4lcPFUBx9J4PGWHgirYYC6FgC70QGLAA",
+      "teamId": "1210-2102-2203",
+      "characters": [
+        "那维莱特",
+        "「女士」",
+        "深渊使徒·激流"
+      ],
+      "charactersEn": [
+        "Neuvillette",
+        "La Signora",
+        "Abyss Herald: Wicked Torrents"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ARAxwV4MEUBgxE8MBJDxyWETEoGhOCoNCcBx9EgPFUBx9lcTGLEhO4IYC6FgirYQDLAA",
+      "teamId": "1303-2203-2602",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Azhdaha"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.004505,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AECwxSQMAVBgyVIMB5CgzXwNBxDQ0ZcNCbCA9JgPE0AB9VcPFWFxBTYYE6FgisQQDLAA",
+      "teamId": "1203-1306-1501",
+      "characters": [
+        "莫娜",
+        "可莉",
+        "砂糖"
+      ],
+      "charactersEn": [
+        "Mona",
+        "Klee",
+        "Sucrose"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.004505,
+      "winRate": 0
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/round12-ds/plans/moyou.r0.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round12-ds/plans/hongniu.r0.json"
+  },
+  "games": 10,
+  "seedBase": 20264300,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round12-ds/games/moyou__vs__hongniu"
+}

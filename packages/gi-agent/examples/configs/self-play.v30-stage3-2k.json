@@ -1,0 +1,15 @@
+{
+  "_doc": "V30 Stage 3 SMOKE — 2048 games / ~160k samples / ~1.5h Win native. Validates encoder doesn't overfit before committing 4h to the 5k run. unique_games target ≥ 2k.",
+  "benchmarkPath": "./benchmark.v30-stage3-2k.json",
+  "gamesMultiplier": 1,
+  "dbPath": "../output/v30-stage3-2k/samples.sqlite",
+  "source": "self_play",
+  "featureExtension": {
+    "enabled": true,
+    "fingerprintArtifactPath": "../../output/entity-fingerprints.generated.json"
+  },
+  "stateObservation": { "enabled": true },
+  "sideA": {"name": "baseline-a", "kind": "baseline", "options": {"endTurnPenalty": 5}},
+  "sideB": {"name": "baseline-b", "kind": "baseline", "options": {"endTurnPenalty": 5}},
+  "outputPath": "../output/v30-stage3-2k/self-play-result.json"
+}

@@ -1,0 +1,437 @@
+{
+  "source": "https://www.summoners.top/",
+  "api": "https://www.summoners.top/api/v4/teams-stats?gameVersion=5.3 + /teams/{teamId}/decks-stats?gameVersion=5.3",
+  "gameVersion": "5.3",
+  "versionName": null,
+  "numGamesWithDeck": 75,
+  "usageRateDefinition": "numGames / numGamesWithDeck (ratio, 0-1)",
+  "winRateDefinition": "numGamesWin / numGames (ratio, 0-1)",
+  "deckCount": 23,
+  "decks": [
+    {
+      "deckCode": "AFBwxScNEZCA2YMNCNCg9I4PCEDg9pcPCWFxBTMQGVExBpMQC2HwO78TE7FRDGURDDAA",
+      "deckName":"双枪",
+      "teamId": "1107-1209-1504",
+      "characters": [
+        "申鹤",
+        "夜兰",
+        "魈"
+      ],
+      "charactersEn": [
+        "Shenhe",
+        "Yelan",
+        "Xiao"
+      ],
+      "numGames": 6,
+      "numGamesWin": 4,
+      "usageRate": 0.08,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "AWAwwTkMERBgxE8MBEDxySoMEpGhOEgTFICB3FcPFUBx9IIPGGEhip4YGaHgC7YQC7AA",
+      "deckName":"班龙",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 6,
+      "numGamesWin": 3,
+      "usageRate": 0.08,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FtLyN0AUAmHRxVoNF0EiymMZCoHB5J0PCkHR5Z4QGUEi9YMQGmHi958ZDKJhi7cSDBEB",
+      "deckName":"蟹赛",
+      "teamId": "1311-1404-2304",
+      "characters": [
+        "托马",
+        "赛诺",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Thoma",
+        "Cyno",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 5,
+      "numGamesWin": 4,
+      "usageRate": 0.066667,
+      "winRate": 0.8
+    },
+    {
+      "deckCode": "FJAAyQQNAxBg0YYNCKBg9JcPE0AB9jAPE2ExCFcQFYFwO7YTC7HwTL8YDKFAisQQDLAA",
+      "deckName":"镜早",
+      "teamId": "1104-1507-2202",
+      "characters": [
+        "重云",
+        "早柚",
+        "愚人众·藏镜仕女"
+      ],
+      "charactersEn": [
+        "Chongyun",
+        "Sayu",
+        "Mirror Maiden"
+      ],
+      "numGames": 5,
+      "numGamesWin": 2,
+      "usageRate": 0.066667,
+      "winRate": 0.4
+    },
+    {
+      "deckCode": "FdHxNh0MAUDRxGIMFpAgyZwYCYDA5J0OCUDR9IIPGEAh9p4PGWHgirQYC6FgEbYUC9AA",
+      "teamId": "1404-2303-2304",
+      "characters": [
+        "赛诺",
+        "镀金旅团·炽沙叙事人",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Cyno",
+        "Eremite Scorching Loremaster",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 4,
+      "numGamesWin": 1,
+      "usageRate": 0.053333,
+      "winRate": 0.25
+    },
+    {
+      "deckCode": "A0OUx24YGaPE5S8RDCPT96ASF2OE/EsZG4QUjbobHKTjErkTDvRjFMAXDtTUbFsZD5MD",
+      "deckName":"双水莱欧",
+      "teamId": "1111-1201-1211",
+      "characters": [
+        "莱欧斯利",
+        "芭芭拉",
+        "芙宁娜"
+      ],
+      "charactersEn": [
+        "Wriothesley",
+        "Barbara",
+        "Furina"
+      ],
+      "numGames": 4,
+      "numGamesWin": 3,
+      "usageRate": 0.053333,
+      "winRate": 0.75
+    },
+    {
+      "deckCode": "F2LDyxcOG5KD02wPGxKy15MaFYID9jIRFlKD+EoYGoMTDIMSDtMyEcYSDvNCa8gYDpIC",
+      "deckName":"久闲",
+      "teamId": "1411-1510-2102",
+      "characters": [
+        "久岐忍",
+        "闲云",
+        "「女士」"
+      ],
+      "charactersEn": [
+        "Kuki Shinobu",
+        "Xianyun",
+        "La Signora"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.04,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "GYTEWxoPA0OUx3gQG8ME5YMRDCPT+aASF2OE/EsZG4QUjYQbDqRjFLkUDhTTbMAZGJMD",
+      "teamId": "1109-1201-1211",
+      "characters": [
+        "莱依拉",
+        "芭芭拉",
+        "芙宁娜"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Barbara",
+        "Furina"
+      ],
+      "numGames": 3,
+      "numGamesWin": 0,
+      "usageRate": 0.04,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AZBR2RgNFrCw8lEPBUAQ9JcPCVBx9TEPE2ERCFcTFbFxO5MQGcEwDMYQDNFgEMkRDQAA",
+      "teamId": "1111-1209-1305",
+      "characters": [
+        "莱欧斯利",
+        "夜兰",
+        "宵宫"
+      ],
+      "charactersEn": [
+        "Wriothesley",
+        "Yelan",
+        "Yoimiya"
+      ],
+      "numGames": 3,
+      "numGamesWin": 0,
+      "usageRate": 0.04,
+      "winRate": 0
+    },
+    {
+      "deckCode": "F4HB3iIQBCES81gQFkFx9bUQDFFB97YQDGFR/bcQHcIiTcMcDaLxu9MRDqIiCzkRFLEB",
+      "deckName":"芙八草",
+      "teamId": "1211-1408-1703",
+      "characters": [
+        "芙宁娜",
+        "八重神子",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Yae Miko",
+        "Nahida"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.04,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "ARBhwYwTGlFBNY8NGpBx2acNCLBg6ZcOCZBw9KQPFUBx9VcPGWExO5MTC7FACrQQDLAA",
+      "deckName":"千可",
+      "teamId": "1306-1608-1609",
+      "characters": [
+        "可莉",
+        "娜维娅",
+        "千织"
+      ],
+      "charactersEn": [
+        "Klee",
+        "Navia",
+        "Chiori"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.026667,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AlERNXMYF1EhhXsMF5DByXwNFeBx9FcPGkGxiqsYG6Fxup4bGaHhC8EQC7EwxbYcE1AA",
+      "deckName":"草龙",
+      "teamId": "1408-2503-2702",
+      "characters": [
+        "八重神子",
+        "圣骸飞蛇",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Yae Miko",
+        "Consecrated Flying Serpent",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AUAxxF4MEZBgyU8NBGDx1ioTCYFxOEgVFaBx9FcPGEAh9oITGbHgO7YYDKEQisEWDJAA",
+      "teamId": "1303-2203-2602",
+      "characters": [
+        "班尼特",
+        "深渊使徒·激流",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Abyss Herald: Wicked Torrents",
+        "Azhdaha"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AaBQ2QwNFpCw21EPBUAQ9JcPCVBx9jEQEyERA1cTFbFxO5MQGcEwDMYQDNFgEMoRDAAA",
+      "teamId": "1111-1204-1305",
+      "characters": [
+        "莱欧斯利",
+        "达达利亚",
+        "宵宫"
+      ],
+      "charactersEn": [
+        "Wriothesley",
+        "Tartaglia",
+        "Yoimiya"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "EVCB2b0NEZBQ25cPCUBx9DEPE1AR9jIQE4EhCJMTGbEwO8YQDMFgDMoQDdEQENERDQAA",
+      "deckName":"夜克",
+      "teamId": "1209-1412-2102",
+      "characters": [
+        "夜兰",
+        "克洛琳德",
+        "「女士」"
+      ],
+      "charactersEn": [
+        "Yelan",
+        "Clorinde",
+        "La Signora"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FRDA0TENFFDx2moPB0DA9JcPE1AB9TAPFGCB90gQGIEQCMMTDLFACsQQDLGQDckRDTAA",
+      "teamId": "1210-1411-1703",
+      "characters": [
+        "那维莱特",
+        "久岐忍",
+        "纳西妲"
+      ],
+      "charactersEn": [
+        "Neuvillette",
+        "Kuki Shinobu",
+        "Nahida"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.026667,
+      "winRate": 0
+    },
+    {
+      "deckCode": "EaCByr0NABBR1b8NCZBw2ZcNE7AR9DEPE0Ah9jITFbFxO1cQGcExDJMQDNFgEMYRDAAA",
+      "teamId": "1105-1209-1412",
+      "characters": [
+        "神里绫华",
+        "夜兰",
+        "克洛琳德"
+      ],
+      "charactersEn": [
+        "Kamisato Ayaka",
+        "Yelan",
+        "Clorinde"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FWDx0B4NERDR0WIZFkEglJwOCUDA9p0aCSHRroIaGOEhEZ4RGTHgE8QUDNFAacYWDJAA",
+      "teamId": "2303-2304-2402",
+      "characters": [
+        "镀金旅团·炽沙叙事人",
+        "铁甲熔火帝皇",
+        "雷音权现"
+      ],
+      "charactersEn": [
+        "Eremite Scorching Loremaster",
+        "Emperor of Fire and Iron",
+        "Thunder Manifestation"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "G0ARxBcVAKCQ4kUOGyBh9IAPCUDR9kgPFGGBaIEWGIEREbcRCxFgTbYUC9HQab0WDJAA",
+      "teamId": "1109-1201-1213",
+      "characters": [
+        "莱依拉",
+        "芭芭拉",
+        "希格雯"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Barbara",
+        "Sigewinne"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "G0ARxBcVAKCR4lIOEiDA9J0PFECB9kgPGGERaIEWG4Fxip4RCxFgEbYUC9HQab0WDJAA",
+      "teamId": "1110-1205-1211",
+      "characters": [
+        "夏洛蒂",
+        "珊瑚宫心海",
+        "芙宁娜"
+      ],
+      "charactersEn": [
+        "Charlotte",
+        "Sangonomiya Kokomi",
+        "Furina"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FTDBykEMGaCBz5sNGZCw3ZcPCUBx9FcPFVBx9ZMPGWAw9rQQCyFAO7UTC7FQDMMQDMAA",
+      "teamId": "1411-1510-2103",
+      "characters": [
+        "久岐忍",
+        "闲云",
+        "无相之冰"
+      ],
+      "charactersEn": [
+        "Kuki Shinobu",
+        "Xianyun",
+        "Cryo Hypostasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "GmBBtl8LEdDRxKcMGkBxy2IMFrAg0ZwNCRHAw50PCUDR9IIPGGEhTJ4YGaHgirQRCxAA",
+      "teamId": "1609-2303-2304",
+      "characters": [
+        "千织",
+        "镀金旅团·炽沙叙事人",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Chiori",
+        "Eremite Scorching Loremaster",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "GmBBvV8TAmERNqcMGkBxxGIMFpAgyZwVCaDA9J0PCUDR9oIPGGEhip4YGaHgabYWC5AA",
+      "teamId": "1408-1609-2304",
+      "characters": [
+        "八重神子",
+        "千织",
+        "铁甲熔火帝皇"
+      ],
+      "charactersEn": [
+        "Yae Miko",
+        "Chiori",
+        "Emperor of Fire and Iron"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.013333,
+      "winRate": 0
+    }
+  ],
+  "dedupRule": "同阵容(三角色组合,顺序无关)的卡组只保留 numGames 最大者; 并列时取 winRate 更高者"
+}

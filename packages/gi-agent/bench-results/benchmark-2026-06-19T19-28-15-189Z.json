@@ -1,0 +1,593 @@
+{
+  "generatedAt": "2026-06-19T19:28:15.189Z",
+  "version": "v6.3.0",
+  "summary": {
+    "totalMatchups": 3,
+    "totalGames": 96,
+    "meanWinRateA": 0.53125,
+    "meanRounds": 6.5625,
+    "meanElapsedMs": 33261.166666666664
+  },
+  "matchups": [
+    {
+      "matchupId": "shenxiao-mirror-neuralP1",
+      "sideAName": "baseline",
+      "sideBName": "neural-α0.3-s4",
+      "total": 32,
+      "winsP0": 18,
+      "winsP1": 14,
+      "draws": 0,
+      "winRateP0": 0.5625,
+      "avgRounds": 5.71875,
+      "avgElapsedMs": 31058.625
+    },
+    {
+      "matchupId": "leilang-mirror-neuralP1",
+      "sideAName": "baseline",
+      "sideBName": "neural-α0.3-s4",
+      "total": 32,
+      "winsP0": 18,
+      "winsP1": 14,
+      "draws": 0,
+      "winRateP0": 0.5625,
+      "avgRounds": 5.5625,
+      "avgElapsedMs": 27963.65625
+    },
+    {
+      "matchupId": "hongniu-mirror-neuralP1",
+      "sideAName": "baseline",
+      "sideBName": "neural-α0.3-s4",
+      "total": 32,
+      "winsP0": 15,
+      "winsP1": 17,
+      "draws": 0,
+      "winRateP0": 0.46875,
+      "avgRounds": 8.40625,
+      "avgElapsedMs": 40761.21875
+    }
+  ],
+  "result": {
+    "totalMatchups": 3,
+    "totalGames": 96,
+    "results": [
+      {
+        "matchupId": "shenxiao-mirror-neuralP1",
+        "sideAName": "baseline",
+        "sideBName": "neural-α0.3-s4",
+        "batch": {
+          "total": 32,
+          "winsP0": 18,
+          "winsP1": 14,
+          "draws": 0,
+          "winRateP0": 0.5625,
+          "avgRounds": 5.71875,
+          "avgElapsedMs": 31058.625,
+          "results": [
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 50563,
+              "replayPath": "output\\benchmark-logs\\shenxiao-mirror-neuralP1\\game-0001-p1.json"
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 27076,
+              "replayPath": "output\\benchmark-logs\\shenxiao-mirror-neuralP1\\game-0002-p1.json"
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 26625,
+              "replayPath": "output\\benchmark-logs\\shenxiao-mirror-neuralP1\\game-0003-p0.json"
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 26947
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 31178
+            },
+            {
+              "winner": 0,
+              "rounds": 5,
+              "elapsedMs": 30578
+            },
+            {
+              "winner": 0,
+              "rounds": 5,
+              "elapsedMs": 28202
+            },
+            {
+              "winner": 0,
+              "rounds": 4,
+              "elapsedMs": 24709
+            },
+            {
+              "winner": 1,
+              "rounds": 5,
+              "elapsedMs": 20356
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 19993
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 42841
+            },
+            {
+              "winner": 0,
+              "rounds": 5,
+              "elapsedMs": 26834
+            },
+            {
+              "winner": 1,
+              "rounds": 5,
+              "elapsedMs": 40398
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 41164
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 23724
+            },
+            {
+              "winner": 1,
+              "rounds": 5,
+              "elapsedMs": 23684
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 34963
+            },
+            {
+              "winner": 1,
+              "rounds": 5,
+              "elapsedMs": 35204
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 23645
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 29190
+            },
+            {
+              "winner": 1,
+              "rounds": 7,
+              "elapsedMs": 33321
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 22536
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 42608
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 34916
+            },
+            {
+              "winner": 0,
+              "rounds": 5,
+              "elapsedMs": 26139
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 39487
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 36289
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 20751
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 24545
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 39510
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 40156
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 25744
+            }
+          ]
+        }
+      },
+      {
+        "matchupId": "leilang-mirror-neuralP1",
+        "sideAName": "baseline",
+        "sideBName": "neural-α0.3-s4",
+        "batch": {
+          "total": 32,
+          "winsP0": 18,
+          "winsP1": 14,
+          "draws": 0,
+          "winRateP0": 0.5625,
+          "avgRounds": 5.5625,
+          "avgElapsedMs": 27963.65625,
+          "results": [
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 29652,
+              "replayPath": "output\\benchmark-logs\\leilang-mirror-neuralP1\\game-0001-p0.json"
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 21285,
+              "replayPath": "output\\benchmark-logs\\leilang-mirror-neuralP1\\game-0002-p0.json"
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 26053,
+              "replayPath": "output\\benchmark-logs\\leilang-mirror-neuralP1\\game-0003-p0.json"
+            },
+            {
+              "winner": 0,
+              "rounds": 5,
+              "elapsedMs": 31831
+            },
+            {
+              "winner": 0,
+              "rounds": 5,
+              "elapsedMs": 60126
+            },
+            {
+              "winner": 0,
+              "rounds": 5,
+              "elapsedMs": 18658
+            },
+            {
+              "winner": 1,
+              "rounds": 5,
+              "elapsedMs": 26131
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 18079
+            },
+            {
+              "winner": 0,
+              "rounds": 5,
+              "elapsedMs": 32271
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 23618
+            },
+            {
+              "winner": 0,
+              "rounds": 5,
+              "elapsedMs": 30411
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 32786
+            },
+            {
+              "winner": 0,
+              "rounds": 4,
+              "elapsedMs": 46158
+            },
+            {
+              "winner": 1,
+              "rounds": 5,
+              "elapsedMs": 21266
+            },
+            {
+              "winner": 1,
+              "rounds": 5,
+              "elapsedMs": 21114
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 18512
+            },
+            {
+              "winner": 1,
+              "rounds": 5,
+              "elapsedMs": 28514
+            },
+            {
+              "winner": 1,
+              "rounds": 5,
+              "elapsedMs": 33454
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 26000
+            },
+            {
+              "winner": 0,
+              "rounds": 5,
+              "elapsedMs": 25899
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 23138
+            },
+            {
+              "winner": 0,
+              "rounds": 7,
+              "elapsedMs": 31074
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 37862
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 23039
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 24724
+            },
+            {
+              "winner": 0,
+              "rounds": 7,
+              "elapsedMs": 32008
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 26223
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 29815
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 23244
+            },
+            {
+              "winner": 1,
+              "rounds": 4,
+              "elapsedMs": 15567
+            },
+            {
+              "winner": 1,
+              "rounds": 5,
+              "elapsedMs": 28613
+            },
+            {
+              "winner": 1,
+              "rounds": 6,
+              "elapsedMs": 27712
+            }
+          ]
+        }
+      },
+      {
+        "matchupId": "hongniu-mirror-neuralP1",
+        "sideAName": "baseline",
+        "sideBName": "neural-α0.3-s4",
+        "batch": {
+          "total": 32,
+          "winsP0": 15,
+          "winsP1": 17,
+          "draws": 0,
+          "winRateP0": 0.46875,
+          "avgRounds": 8.40625,
+          "avgElapsedMs": 40761.21875,
+          "results": [
+            {
+              "winner": 1,
+              "rounds": 8,
+              "elapsedMs": 31180,
+              "replayPath": "output\\benchmark-logs\\hongniu-mirror-neuralP1\\game-0001-p1.json"
+            },
+            {
+              "winner": 0,
+              "rounds": 9,
+              "elapsedMs": 30821,
+              "replayPath": "output\\benchmark-logs\\hongniu-mirror-neuralP1\\game-0002-p0.json"
+            },
+            {
+              "winner": 0,
+              "rounds": 10,
+              "elapsedMs": 63870,
+              "replayPath": "output\\benchmark-logs\\hongniu-mirror-neuralP1\\game-0003-p0.json"
+            },
+            {
+              "winner": 1,
+              "rounds": 8,
+              "elapsedMs": 38789
+            },
+            {
+              "winner": 0,
+              "rounds": 7,
+              "elapsedMs": 44203
+            },
+            {
+              "winner": 0,
+              "rounds": 12,
+              "elapsedMs": 50588
+            },
+            {
+              "winner": 0,
+              "rounds": 7,
+              "elapsedMs": 20320
+            },
+            {
+              "winner": 1,
+              "rounds": 8,
+              "elapsedMs": 47254
+            },
+            {
+              "winner": 1,
+              "rounds": 8,
+              "elapsedMs": 36099
+            },
+            {
+              "winner": 1,
+              "rounds": 7,
+              "elapsedMs": 33491
+            },
+            {
+              "winner": 1,
+              "rounds": 8,
+              "elapsedMs": 69722
+            },
+            {
+              "winner": 1,
+              "rounds": 7,
+              "elapsedMs": 34069
+            },
+            {
+              "winner": 1,
+              "rounds": 8,
+              "elapsedMs": 30578
+            },
+            {
+              "winner": 0,
+              "rounds": 6,
+              "elapsedMs": 32720
+            },
+            {
+              "winner": 1,
+              "rounds": 10,
+              "elapsedMs": 31232
+            },
+            {
+              "winner": 1,
+              "rounds": 10,
+              "elapsedMs": 63665
+            },
+            {
+              "winner": 0,
+              "rounds": 9,
+              "elapsedMs": 47201
+            },
+            {
+              "winner": 1,
+              "rounds": 8,
+              "elapsedMs": 30261
+            },
+            {
+              "winner": 0,
+              "rounds": 8,
+              "elapsedMs": 27137
+            },
+            {
+              "winner": 0,
+              "rounds": 9,
+              "elapsedMs": 55978
+            },
+            {
+              "winner": 0,
+              "rounds": 7,
+              "elapsedMs": 39317
+            },
+            {
+              "winner": 0,
+              "rounds": 8,
+              "elapsedMs": 46553
+            },
+            {
+              "winner": 0,
+              "rounds": 8,
+              "elapsedMs": 36604
+            },
+            {
+              "winner": 1,
+              "rounds": 7,
+              "elapsedMs": 34126
+            },
+            {
+              "winner": 0,
+              "rounds": 11,
+              "elapsedMs": 35998
+            },
+            {
+              "winner": 1,
+              "rounds": 7,
+              "elapsedMs": 51674
+            },
+            {
+              "winner": 1,
+              "rounds": 8,
+              "elapsedMs": 45000
+            },
+            {
+              "winner": 0,
+              "rounds": 9,
+              "elapsedMs": 49719
+            },
+            {
+              "winner": 1,
+              "rounds": 8,
+              "elapsedMs": 31220
+            },
+            {
+              "winner": 1,
+              "rounds": 9,
+              "elapsedMs": 32040
+            },
+            {
+              "winner": 1,
+              "rounds": 11,
+              "elapsedMs": 48287
+            },
+            {
+              "winner": 0,
+              "rounds": 9,
+              "elapsedMs": 34643
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "priorMatrix": []
+}

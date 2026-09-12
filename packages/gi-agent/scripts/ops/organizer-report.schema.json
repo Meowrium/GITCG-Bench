@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "organizer-report.schema.json",
+  "title": "organizer 三任务报告（WP4 件 3）",
+  "description": "organizer（证据整理者，不打分）三任务 mentions/practice/misalign 的报告契约。条目 schema 按 B 案 2026-09-03-llm-evidence-organizer-eval.md §5：{id, 维度(路线|执行|错位), 结论, 引用[{file, game, seq|turn, ruleKey}], 机械锚点?, 置信, 备注}，字段名用英文（dimension: route|execution|misalign）。校验不过 = 条目级剔除并记 invalidEntries（不整报作废）。misalign 维度条目必须带 mechanicalAnchor（脚本校验器强制）。citations[].file 限 x-evidenceFileWhitelist（evidencePack 相对路径；含 game-* 通配段）且文件实际存在。",
+  "type": "object",
+  "properties": {
+    "runDir": {
+      "type": "string",
+      "minLength": 1,
+      "description": "证据来源 plan:batch run 目录（来自 evidencePack manifest）"
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1,
+      "description": "organizer 模型名（ORGANIZER_MODEL / --model）"
+    },
+    "generatedAt": {
+      "type": "string",
+      "description": "ISO 8601 生成时间"
+    },
+    "tasks": {
+      "type": "object",
+      "description": "三任务产物；某任务失败被隔离时该键缺席（见 taskFailures）",
+      "properties": {
+        "mentions": { "$ref": "#/definitions/taskEntries" },
+        "practice": { "$ref": "#/definitions/taskEntries" },
+        "misalign": { "$ref": "#/definitions/taskEntries" }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "invalidEntries": {
+      "type": "array",
+      "description": "校验不过被剔除的条目（条目级隔离，不整报作废）",
+      "items": {
+        "type": "object",
+        "properties": {
+          "task": { "enum": ["mentions", "practice", "misalign"] },
+          "index": { "type": "integer", "minimum": 0, "description": "在 LLM 原始 entries 数组中的下标" },
+          "reason": { "type": "string", "minLength": 1 },
+          "entry": { "description": "被剔除的原始条目（原样保留供人工核查）" }
+        },
+        "required": ["task", "reason", "entry"],
+        "additionalProperties": false
+      }
+    },
+    "taskFailures": {
+      "type": "array",
+      "description": "调用失败且重试 2 次后仍失败而被隔离的任务",
+      "items": {
+        "type": "object",
+        "properties": {
+          "task": { "enum": ["mentions", "practice", "misalign"] },
+          "error": { "type": "string", "minLength": 1 }
+        },
+        "required": ["task", "error"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["runDir", "model", "tasks", "generatedAt"],
+  "additionalProperties": false,
+  "definitions": {
+    "taskEntries": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/entry" }
+    },
+    "entry": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "dimension": {
+          "enum": ["route", "execution", "misalign"],
+          "description": "维度：route=路线（提及）/ execution=执行（实践）/ misalign=错位（B案 §5 维度枚举）"
+        },
+        "conclusion": { "type": "string", "minLength": 1, "description": "结论（不打分，只描述事实与证据链）" },
+        "citations": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/citation" }
+        },
+        "mechanicalAnchor": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "enum": ["perRuleHitsZero", "thenMiss", "declareEndRatio", "perMethodOpening", "predictionMismatch", "fallbackCluster", "other"],
+              "description": "机械锚点种类（B案 §3.3 锚点表）"
+            },
+            "ruleKey": { "type": "string", "description": "适用时的规则键（global:3 / phase:burst:20 / opening:0）" },
+            "detail": { "type": "string", "description": "锚点读数（如 perRuleHits=0、thenMiss=3、coverage=41%）" }
+          },
+          "required": ["kind"],
+          "additionalProperties": false
+        },
+        "confidence": { "enum": ["high", "medium", "low"] },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "dimension", "conclusion", "citations", "confidence"],
+      "additionalProperties": false
+    },
+    "citation": {
+      "type": "object",
+      "properties": {
+        "file": {
+          "type": "string",
+          "minLength": 1,
+          "description": "evidencePack 相对路径（白名单见文档根 x-evidenceFileWhitelist；脚本校验存在性）"
+        },
+        "game": { "type": "string", "pattern": "^game-[0-9]+$" },
+        "seq": { "type": "integer", "minimum": 0, "description": "决策点序号（trace entries seq）" },
+        "turn": { "type": "integer", "minimum": 0 },
+        "ruleKey": { "type": "string", "description": "规则归因键（global:3 / phase:burst:20 / opening:0）" }
+      },
+      "required": ["file"],
+      "additionalProperties": false
+    }
+  },
+  "x-evidenceFileWhitelist": [
+    "fullDigest.txt",
+    "stateSignatures.jsonl",
+    "draw-sequence.md",
+    "outliers.json",
+    "plan.side0.json",
+    "manifest.json",
+    "side1/summary.side1.json",
+    "side1/game-*/plan_trace.side1.json"
+  ]
+}

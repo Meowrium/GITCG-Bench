@@ -1,0 +1,39 @@
+{
+  "name": "@gi-tcg/mcp",
+  "version": "0.17.4",
+  "type": "module",
+  "description": "MCP (Model Context Protocol) implementation for Genius Invokation TCG",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "browser": "./dist/browser.js",
+      "types": "./dist/index.d.ts",
+      "development": ["./src/index.ts", "./dist/index.js"],
+      "import": "./dist/index.js"
+    },
+    "./browser": {
+      "types": "./dist/browser.d.ts",
+      "import": "./dist/browser.js"
+    }
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "lint": "eslint src/",
+    "build": "tsup",
+    "build:card-index": "node ./dist/card-index/buildCardIndex.js",
+    "standalone": "tsx ./standalone-mcp.ts"
+  },
+  "keywords": ["mcp", "genius-invokation", "tcg", "ai"],
+  "author": "",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "@gi-tcg/assets-manager": "workspace:*",
+    "@gi-tcg/core": "workspace:*",
+    "@gi-tcg/data": "workspace:*",
+    "@gi-tcg/llm-deck-analyzer": "workspace:*",
+    "@gi-tcg/tactic-mcp": "workspace:*",
+    "@gi-tcg/typings": "workspace:*",
+    "@gi-tcg/utils": "workspace:*",
+    "zod": "^3.22.0"
+  }
+}

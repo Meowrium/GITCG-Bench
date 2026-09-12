@@ -1,0 +1,37 @@
+{
+  "name": "@gi-tcg/data",
+  "version": "0.20.5+gi-6-6-0",
+  "description": "Standard card data for Genius Invokation TCG",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "url": "https://github.com/piovium/genius-invokation",
+    "directory": "packages/data"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "development": ["./src/index.ts", "./dist/index.js"],
+      "import": "./dist/index.js"
+    },
+    "./internal/*": "./src/*.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "regenerate_data": "gnx ./scripts/generators/index.ts",
+    "check": "tsc --noEmit",
+    "build": "tsdown"
+  },
+  "peerDependencies": {
+    "@gi-tcg/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@gi-tcg/assets-manager": "workspace:*",
+    "@gi-tcg/config": "workspace:*",
+    "@microsoft/tsdoc": "^0.14.2",
+    "case-anything": "^2.1.13",
+    "glob": "^11.0.3"
+  }
+}

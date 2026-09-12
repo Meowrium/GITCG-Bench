@@ -1,0 +1,89 @@
+{
+  "version": "v5.7",
+  "decks": [
+    {
+      "code": "HEBx9M0PHWDg9pcQCXFxO6sTGrGwxLYcC0Fg28YdDLFhPqETGuEQr9saD/Eg1PIdD0AA",
+      "name": "基尼奇卡齐娜玛薇卡"
+    },
+    {
+      "code": "AUAxxBYMA5GQOE8TBIHxWioPEkCg9pcPFGGBO1cYFaFxioIZGGEg1LYdDEEQ3MEdDMAA",
+      "name": "班尼特若陀龙王无相之雷"
+    },
+    {
+      "code": "FJAAyTYNABBB0UQNCKBg9IYPCWBx9jAQE4EBCDMTFbFxO1cYC6Hw1L8dDEFA3MQdDMAA",
+      "name": "早柚愚人众·藏镜仕女重云"
+    },
+    {
+      "code": "FWDByd0NFBDx0SweCXBQ9JwPCUDB9kgPFGGBaLcUC9HRaTYWE5Fg1MQdDEFA3MYdDMAA",
+      "name": "久岐忍茜特菈莉那维莱特"
+    },
+    {
+      "code": "HMDh7BkPHBBx8dAPHSAB8pMPGWAx9p4bGaHgurUcC0FQxNQTDeFAPtscDsGw1OsdDkAA",
+      "name": "艾梅莉埃林尼基尼奇"
+    },
+    {
+      "code": "GmFBNt0MFUDxxKcVGqFxo2IPFkAg9JwPCWDQ9p0YFaFx04IRGBEg1LQdC0Fg3L0dE8AA",
+      "name": "千织茜特菈莉铁甲熔火帝皇"
+    },
+    {
+      "code": "FZDB0d0NABHRWuAPFkCh9CwPCWDR9kgWFIGBaIEdGLERD7cWDJFAacYdDEFg1MkdDMAA",
+      "name": "久岐忍茜特菈莉珊瑚宫心海"
+    },
+    {
+      "code": "HRDhwd0MGRGRNeATHlAAw5cNCbBx9FcPFUBx9qsPGmGxO50TGbHR254dGbHh1MEdHEAA",
+      "name": "玛薇卡茜特菈莉丘丘水行游侠"
+    },
+    {
+      "code": "G2ARxN0MAEHRWrYOGyBh4kgPFGCB9oEdGDER07cdG7Fw27YRCxFgab0WC5HR1DYdE0AA",
+      "name": "希格雯茜特菈莉珊瑚宫心海"
+    },
+    {
+      "code": "EZFxWt8PF0AB9HkQCTHQA50UGMFRTIUYDKEwitEZDWER24YdGLFh6JQeGYFB3FkdFcAA",
+      "name": "莱依拉恰斯卡吞星之鲸"
+    },
+    {
+      "code": "HRDh0b0VF6Ag9JAPEmDx9kcYCaHQip0ZC2HwxL8cDEFQC8URDAFg1MYdDEGQ3MkdDcAA",
+      "name": "玛薇卡克洛琳德圣骸飞蛇"
+    },
+    {
+      "code": "FmDBxt0VAKDR4uAOCSDR9kgPFGGBaIERGxFxTbcUGdHgabYWC5Fg1L0dDEFA3MQdDMAA",
+      "name": "芙宁娜茜特菈莉珊瑚宫心海"
+    },
+    {
+      "code": "AZBR2xgPFiCw9FEPBUAQ9ZcPE2ERAjETFbFxO1cZGWExDJMQDMFgEMYRDAGg1ModDUAA",
+      "name": "宵宫夜兰莱欧斯利"
+    },
+    {
+      "code": "ACARw98MFzAA1IANCEEAWp0PCWHQA6EQCjEwBKMQC0HRijUYE6FR6IUeGIFQ3MIdDMAA",
+      "name": "甘雨恰斯卡吞星之鲸"
+    },
+    {
+      "code": "AxBh4U8OHSDR4uAPHkAB9CwPEmDA9p0TCcHQPL0QC7HwC78RDBFg1MYdDEGR3FodDsAA",
+      "name": "愚人众·藏镜仕女那维莱特茜特菈莉"
+    },
+    {
+      "code": "FaDB9JgPHUDR9WoPFmCg9pEWFIGBlkgQG6FxEbcUDNFgacYWDJGQ1NAdDUEQ3NEdFcAA",
+      "name": "久岐忍闲云茜特菈莉"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "HEBx9M0PHWDg9pcQCXFxO6sTGrGwxLYcC0Fg28YdDLFhPqETGuEQr9saD/Eg1PIdD0AA",
+      "deck1": "AUAxxBYMA5GQOE8TBIHxWioPEkCg9pcPFGGBO1cYFaFxioIZGGEg1LYdDEEQ3MEdDMAA",
+      "deck0Name": "基尼奇卡齐娜玛薇卡",
+      "deck1Name": "班尼特若陀龙王无相之雷"
+    },
+    {
+      "deck0": "FJAAyTYNABBB0UQNCKBg9IYPCWBx9jAQE4EBCDMTFbFxO1cYC6Hw1L8dDEFA3MQdDMAA",
+      "deck1": "FWDByd0NFBDx0SweCXBQ9JwPCUDB9kgPFGGBaLcUC9HRaTYWE5Fg1MQdDEFA3MYdDMAA",
+      "deck0Name": "早柚愚人众·藏镜仕女重云",
+      "deck1Name": "久岐忍茜特菈莉那维莱特"
+    },
+    {
+      "deck0": "HMDh7BkPHBBx8dAPHSAB8pMPGWAx9p4bGaHgurUcC0FQxNQTDeFAPtscDsGw1OsdDkAA",
+      "deck1": "GmFBNt0MFUDxxKcVGqFxo2IPFkAg9JwPCWDQ9p0YFaFx04IRGBEg1LQdC0Fg3L0dE8AA",
+      "deck0Name": "艾梅莉埃林尼基尼奇",
+      "deck1Name": "千织茜特菈莉铁甲熔火帝皇"
+    }
+  ]
+}

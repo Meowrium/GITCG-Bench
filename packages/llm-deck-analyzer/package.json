@@ -1,0 +1,43 @@
+{
+  "name": "@gi-tcg/llm-deck-analyzer",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Deck analysis for Genius Invokation TCG - local heuristic analysis, prompt generation, and feature extraction",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "development": ["./src/index.ts", "./dist/index.js"],
+      "import": "./dist/index.js"
+    },
+    "./heuristics": {
+      "types": "./dist/heuristics.d.ts",
+      "development": ["./src/heuristics.ts", "./dist/heuristics.js"],
+      "import": "./dist/heuristics.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint src/",
+    "check": "tsc --noEmit",
+    "build": "tsup",
+    "test": "vitest run",
+    "analyze": "gnx src/cli/analyze-deck.ts",
+    "analyze:deck": "gnx src/cli/analyze-deck.ts",
+    "analyze:matchup": "gnx src/cli/analyze-matchup.ts",
+    "analyze:batch": "gnx src/cli/analyze-batch.ts",
+    "analyze:deck:rich": "gnx src/cli/analyze-deck-rich.ts",
+    "analyze:matchup:rich": "gnx src/cli/analyze-matchup-rich.ts",
+    "extract:features:v2": "gnx src/cli/extract-features-v2.ts",
+    "extract:features:v2:example": "gnx examples/extract-features-v2.ts"
+  },
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "@gi-tcg/assets-manager": "workspace:*",
+    "@gi-tcg/core": "workspace:*",
+    "@gi-tcg/data": "workspace:*",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0"
+  }
+}

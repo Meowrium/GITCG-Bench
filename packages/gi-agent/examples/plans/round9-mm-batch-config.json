@@ -1,0 +1,9 @@
+{
+  "planFile": "../../output/plan-oneshot/round9-mm/plans/hongniu.r4.json",
+  "opponent": { "type": "plan", "planFile": "../../output/plan-oneshot/round9-mm/plans/leihe.r4.json" },
+  "games": 10,
+  "seedBase": 20271201,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round9-mm/games"
+}

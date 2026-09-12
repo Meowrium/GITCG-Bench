@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/round20-xmodel/glm/plans/moyou.anchor.r0.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round19-dsv4/plans/hongniu.anchor.r0.json"
+  },
+  "games": 10,
+  "seedBase": 20273601,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round20-xmodel/xdeck/anchor/moyou-vs-hongniu"
+}

@@ -1,0 +1,89 @@
+{
+  "version": "v6.0",
+  "decks": [
+    {
+      "code": "H5ChyUANHRDR0UQNCKFg6YYPCUBx9DAPE2EBCDMQFYFxO1cTC7Hwir8dDEFA3MQdDMAA",
+      "name": "伊安珊早柚茜特菈莉"
+    },
+    {
+      "code": "GPDR4B4OEQBQ9JcPCUBx9VcPFWBw9sYYDKFgiskQDKGQE9ARDTEQ1NEdHkFw3N8dDcAA",
+      "name": "愚人众·霜役人雷音权现「女士」"
+    },
+    {
+      "code": "H1DBwt8MFyAA1J0NCUHQh6EYCnAQ9KMPCkEwAbYQCxFgA7oQCzGh6DUeE4FR3IUdGMAA",
+      "name": "蚀灭的源焰之主恰斯卡吞星之鲸"
+    },
+    {
+      "code": "HVHRNaQTFWHxNqcMGkBxxGITFoEgOJwYCYDA9J0PCUDR9lcPFWFwArodC0Gg1L0dE8AA",
+      "name": "茜特菈莉千织铁甲熔火帝皇"
+    },
+    {
+      "code": "EsGS8s8QHRFy85QQGiEy9/MQIGIiu58cGqLhxdUdDkJB+tgUDuKxP+wdD8Kx1e0eD0EB",
+      "name": "林尼艾梅莉埃基尼奇"
+    },
+    {
+      "code": "H0GglCYeAXBx9GMPFkAx9UgPFGGBaLcdG7FwCsYWDJFgackcDFGQ1NAdDUEQ3NEdGcAA",
+      "name": "伊安珊温迪胡桃"
+    },
+    {
+      "code": "HWDRxvoMFGDw2X0NB6DQ9I4PCEDg9ZcPE2ExBjMTFbFxC1cQGcEw1L8dC0Hx3DYdE8AA",
+      "name": "茜特菈莉伊安珊那维莱特"
+    },
+    {
+      "code": "GCCx8t4PAkAh9OEPHmAQ9pcQCRFxAascGkGx28EdHLEQC9sQDsEwDOMRDgFA1OQdD0AA",
+      "name": "夏沃蕾玛薇卡丽莎"
+    },
+    {
+      "code": "EQDRx7EMG3HRWi8PEkDw9J0PCWHQirMYC6EwlrYZC2Gg07oQC7HQ1L4dE0Fh3DYdGsAA",
+      "name": "镀金旅团·炽沙叙事人希格雯克洛琳德"
+    },
+    {
+      "code": "ABHQWi0OAqDA6mgPBkGAiowYCKHA050dCTHQ+L0UC9HwacYWDJFg1MkdDEGQ3NAdDcAA",
+      "name": "珊瑚宫心海阿贝多钟离"
+    },
+    {
+      "code": "AJCx3rIOGJDB6Y8OG6BQ6pcPCSBw8qQPE0Ax9DMPFVFxCFcTDLEQO8EgE2Fh1DYdDUAA",
+      "name": "莫娜黄金王兽娜维娅"
+    },
+    {
+      "code": "HEDR9N4TAbFBTOEUHsEQipcYE6ExurkbG6KQA8ggDDKABMkgDEKQBt4gDmEw3OMdD8AA",
+      "name": "卡齐娜玛薇卡安柏"
+    },
+    {
+      "code": "EUBxyRYMFJDx0SoeEnCh9CwPEkDA9pcQE4EBCDATE7ExO1cYFaFw1L8dC0Hw3MQdDMAA",
+      "name": "莱依拉若陀龙王那维莱特"
+    },
+    {
+      "code": "HCBx9M0PHWDg9pcTCbFxO54ZGWHhxLkcG0GQ28YdDLFhPqETGuEQr9caDfGw1PIdD0AA",
+      "name": "基尼奇卡齐娜玛薇卡"
+    },
+    {
+      "code": "AGBQxi0NHeBR8tcPBkCQ9GkPCVBw+ZcQEyEROzETGbExC5MQDMERDDUdE0Fh1DYdDMAA",
+      "name": "神里绫华阿贝多赛索斯"
+    },
+    {
+      "code": "H2GgNigMAFDwxY0NCKHgBo4QFGFwO5cTCbFxijAYE6IxBzMgFXFx1FcdC0Hw3L8dE8AA",
+      "name": "伊安珊枫原万叶坎蒂丝"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "H5ChyUANHRDR0UQNCKFg6YYPCUBx9DAPE2EBCDMQFYFxO1cTC7Hwir8dDEFA3MQdDMAA",
+      "deck1": "GPDR4B4OEQBQ9JcPCUBx9VcPFWBw9sYYDKFgiskQDKGQE9ARDTEQ1NEdHkFw3N8dDcAA",
+      "deck0Name": "伊安珊早柚茜特菈莉",
+      "deck1Name": "愚人众·霜役人雷音权现「女士」"
+    },
+    {
+      "deck0": "H1DBwt8MFyAA1J0NCUHQh6EYCnAQ9KMPCkEwAbYQCxFgA7oQCzGh6DUeE4FR3IUdGMAA",
+      "deck1": "HVHRNaQTFWHxNqcMGkBxxGITFoEgOJwYCYDA9J0PCUDR9lcPFWFwArodC0Gg1L0dE8AA",
+      "deck0Name": "蚀灭的源焰之主恰斯卡吞星之鲸",
+      "deck1Name": "茜特菈莉千织铁甲熔火帝皇"
+    },
+    {
+      "deck0": "EsGS8s8QHRFy85QQGiEy9/MQIGIiu58cGqLhxdUdDkJB+tgUDuKxP+wdD8Kx1e0eD0EB",
+      "deck1": "H0GglCYeAXBx9GMPFkAx9UgPFGGBaLcdG7FwCsYWDJFgackcDFGQ1NAdDUEQ3NEdGcAA",
+      "deck0Name": "林尼艾梅莉埃基尼奇",
+      "deck1Name": "伊安珊温迪胡桃"
+    }
+  ]
+}

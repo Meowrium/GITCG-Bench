@@ -1,0 +1,224 @@
+{
+  "schemaVersion": "3.0",
+  "deckCode": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+  "deckName": "雷鹤",
+  "version": "v6.3.0",
+  "deckProfile": {
+    "primaryType": "aggro",
+    "secondaryType": "midrange",
+    "tempo": "medium",
+    "startupSpeed": "turn2~3"
+  },
+  "keyCards": {
+    "combo": [
+      {
+        "id": "330004",
+        "role": "combo_starter",
+        "importance": "core",
+        "rationale": "中期斩杀时用于争取动数，但起手留下会导致手牌运转受阻",
+        "mulligan": "never"
+      }
+    ],
+    "damage": [
+      {
+        "id": "1107",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "箓灵增伤收益高",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "1407",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "雷眼收益高且元素爆发为队友充能提速",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "311406",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "廉价持续增伤，适合申鹤持续站场输出",
+        "mulligan": "high"
+      },
+      {
+        "id": "331102",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "中期高骰伤比的增伤单卡",
+        "mulligan": "never"
+      },
+      {
+        "id": "333002",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "雷神EA仙跳墙Q可以打出10点总伤击倒对手持续站场的关键角色，或后续配合任意元素爆发出伤",
+        "mulligan": "high"
+      }
+    ],
+    "draw": [
+      {
+        "id": "322008",
+        "role": "draw",
+        "importance": "important",
+        "rationale": "存储剩余费用、调整骰子质量",
+        "mulligan": "situational"
+      },
+      {
+        "id": "332004",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "灵活、有效撑起手牌质量",
+        "mulligan": "high"
+      }
+    ],
+    "sustain": [
+      {
+        "id": "333003",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高效承伤，但一般在中期保活争取轮次才有用",
+        "mulligan": "never"
+      },
+      {
+        "id": "333006",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高效治疗",
+        "mulligan": "never"
+      }
+    ],
+    "disruption": [],
+    "ramp": [
+      {
+        "id": "321011",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "回收残余骰子，在明确回合末会有1~2颗骰子盈余时可留",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322001",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "提现较慢的支援牌，费用偏高，较慢的对局中可留",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322008",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "存储剩余费用、调整骰子质量",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322012",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "第一回合可以直接雷神E+刘苏+切申鹤+申鹤E，启动更快生存压力更低",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "331101",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "灵活但牌效低",
+        "mulligan": "never"
+      },
+      {
+        "id": "332004",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "灵活、有效撑起手牌质量",
+        "mulligan": "high"
+      },
+      {
+        "id": "332008",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "灵活但牌效低的即时充能",
+        "mulligan": "high"
+      }
+    ],
+    "flex": [
+      {
+        "id": "322001",
+        "role": "flex_slot",
+        "importance": "important",
+        "rationale": "提现较慢的支援牌，费用偏高，较慢的对局中可留",
+        "mulligan": "situational"
+      }
+    ]
+  },
+  "abstentions": [],
+  "damageMode": "single_burst",
+  "powerCurve": "spiky",
+  "setupDependency": "medium",
+  "resilience": {
+    "hasHealing": true,
+    "hasShield": false,
+    "hasImmuneControl": false,
+    "vulnerableTo": [
+      "summon_swarm"
+    ]
+  },
+  "openingSequences": [
+    {
+      "id": "open-1",
+      "name": "拔刀",
+      "condition": "",
+      "style": "tempo",
+      "steps": [
+        {
+          "action": "雷电将军 神变·恶曜开眼",
+          "cost": "3雷",
+          "effectDescription": ""
+        },
+        {
+          "action": "雷电将军 源流",
+          "cost": "1雷+2任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "雷电将军 奥义·梦想真说",
+          "cost": "3雷+2能",
+          "effectDescription": ""
+        }
+      ],
+      "diceConstraint": "4雷+3雷",
+      "totalDiceUsed": 9,
+      "isPrimary": true
+    },
+    {
+      "id": "open-2",
+      "name": "刘苏",
+      "condition": "手牌有刘苏",
+      "style": "tempo",
+      "steps": [
+        {
+          "action": "雷电将军 神变·恶曜开眼",
+          "cost": "3雷",
+          "effectDescription": ""
+        },
+        {
+          "action": "刘苏",
+          "cost": "1任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "切申鹤",
+          "cost": "1任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "申鹤 仰灵威召将役咒",
+          "cost": "3冰",
+          "effectDescription": ""
+        }
+      ],
+      "diceConstraint": "3雷+3冰",
+      "totalDiceUsed": 8,
+      "isPrimary": false
+    }
+  ]
+}

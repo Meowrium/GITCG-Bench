@@ -1,0 +1,29 @@
+{
+  "benchmarkPath": "./benchmark.quick.json",
+  "gamesMultiplier": 1,
+  "rlCapture": {
+    "directory": "./output/rl-quick/self-play-rl",
+    "modelVersion": "test-luck-weighted-v1",
+    "viewKind": "policy_public",
+    "gameVersion": "v6.3.0",
+    "cardPoolVersion": "v6.3.0",
+    "rulesetVersion": "default",
+    "contractVersion": "obs.v1"
+  },
+  "dataset": {
+    "outputPath": "./output/rl-quick/rl-dataset",
+    "includeSides": [0, 1],
+    "requireChosenCandidate": true
+  },
+  "sideA": {
+    "name": "baseline-rand",
+    "kind": "baseline",
+    "options": { "endTurnPenalty": 5 }
+  },
+  "sideB": {
+    "name": "baseline-rand",
+    "kind": "baseline",
+    "options": { "endTurnPenalty": 5 }
+  },
+  "outputPath": "./output/rl-quick/self-play-result.json"
+}

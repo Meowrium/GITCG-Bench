@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/round22-g53f/plans/leihe.anchor.r0.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round20-xmodel/glm/plans/shuiba.anchor.r0.json"
+  },
+  "games": 10,
+  "seedBase": 20274001,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round22-g53f/xdeck/anchor/leihe-vs-shuiba"
+}

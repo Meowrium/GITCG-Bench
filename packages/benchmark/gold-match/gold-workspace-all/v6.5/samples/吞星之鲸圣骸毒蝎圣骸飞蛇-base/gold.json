@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "3.0",
+
+  "// deckProfile.archetype 枚举值": "burst | grind | ramp | control | swarm | hybrid",
+  "// deckProfile.tempo 枚举值": "fast (平均费≤2) | medium (2-3) | slow (>3)",
+  "// deckProfile.startupSpeed 枚举值": "turn1 (≤1费启动) | turn2 (2费启动) | turn3 (≥3费启动)",
+  "deckProfile": {
+    "archetype": "burst",
+    "tempo": "medium",
+    "startupSpeed": "turn2"
+  },
+
+  "// 关键牌分组说明": "id 必须来自 my_deck_data.json",
+  "// keyCard.role 枚举值": "combo_starter | combo_finisher | draw | sustain | disruption | ramp",
+  "// keyCard.importance 枚举值": "core (不可替代) | important (显著削弱) | flexible (可替代)",
+  "keyCards": {
+    "combo": [
+      // { "id": "角色或卡牌ID", "role": "combo_starter", "importance": "core", "rationale": "≤50字理由" }
+    ],
+    "draw": [],
+    "sustain": [],
+    "disruption": [],
+    "ramp": []
+  },
+
+  "// comboLine.damageType 枚举值": "vaporize | melt | overload | electrocharge | freeze | superconduct | swirl | burning | bloom | aggravate | spread | raw | other",
+  "// comboLine.expectedRound": "基于步骤总费用推算的触发回合 (1-6)",
+  "comboLines": [
+    // {
+    //   "id": "line-1",
+    //   "steps": [
+    //     { "actor": "卡牌ID", "action": "≤30字动作描述" },
+    //     { "actor": "卡牌ID", "action": "≤30字动作描述" }
+    //   ],
+    //   "damageType": "vaporize",
+    //   "expectedRound": 2,
+    //   "preconditions": ["场上已有水元素附着"]
+    // }
+  ],
+
+  "// matchup 说明": "无对手卡组，应将 matchup 字段加入 abstentions",
+  "matchup": {
+    "opponentThreats": [],
+    "assessment": {
+      "myAdvantages": [],
+      "oppAdvantages": [],
+      "recommendedStrategy": "race"
+    }
+  },
+
+  "// abstentions": "标注者无可靠依据时应弃权，不要编造",
+  "abstentions": [
+    // { "field": "matchup.opponentThreats", "reason": "无对手卡组" }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "_doc": "V30 Stage 2.E KPI-B sample collection. 8 mirror matchups × 80 games × ~63 sample/game ≈ 40k samples. Run with --enable-feature-extension.",
+  "benchmarkPath": "./benchmark.v30-kpib.json",
+  "gamesMultiplier": 1,
+  "dbPath": "../output/v30-kpib/samples.sqlite",
+  "source": "self_play",
+  "featureExtension": {
+    "enabled": true,
+    "fingerprintArtifactPath": "../../output/entity-fingerprints.generated.json"
+  },
+  "sideA": {"name": "baseline-a", "kind": "baseline", "options": {"endTurnPenalty": 5}},
+  "sideB": {"name": "baseline-b", "kind": "baseline", "options": {"endTurnPenalty": 5}},
+  "outputPath": "../output/v30-kpib/self-play-result.json"
+}

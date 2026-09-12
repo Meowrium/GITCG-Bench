@@ -1,0 +1,13 @@
+{
+  "planFile": "../../output/plan-oneshot/round22-g53f/plans/leihe.ctrl.r0.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round22-g53f/plans/hongniu.ctrl.r0.json"
+  },
+  "games": 10,
+  "seedBase": 30260801,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "gameVersion": "v6.3.0",
+  "outDir": "../../output/plan-oneshot/roundS1-selfevo/games/r0-evidence-vs-hongniu"
+}

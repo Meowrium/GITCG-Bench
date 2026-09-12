@@ -1,0 +1,74 @@
+{
+  "name": "@gi-tcg/agent",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Multi-agent system for Genius Invokation TCG: scoring calibration, battle AI, and R&D automation",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "development": [
+        "./src/index.ts",
+        "./dist/index.js"
+      ],
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint src/",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsup",
+    "scoring:audit": "gnx src/agents/scoring-auditor.ts",
+    "generate:temporal-profiles": "gnx src/knowledge/temporal-profiles/generate-profiles.ts",
+    "battle": "gnx src/agents/battle-agent.ts",
+    "benchmark": "gnx src/evaluation/benchmark/cli/run-benchmark.ts",
+    "branch-eval": "gnx src/evaluation/branch-eval/cli/run-branch-eval.ts",
+    "plan:validate": "gnx src/runtime/plan-oneshot/cli/run-plan-validate.ts",
+    "plan:batch": "gnx src/runtime/plan-oneshot/cli/run-plan-batch.ts",
+    "plan:author": "gnx src/runtime/plan-oneshot/cli/run-plan-author.ts",
+    "plan:reflect": "gnx src/runtime/plan-oneshot/cli/run-plan-reflect.ts",
+    "plan:organize-export": "gnx src/runtime/plan-oneshot/cli/run-plan-organize-export.ts",
+    "plan:ablate": "gnx src/runtime/plan-oneshot/cli/run-plan-ablate.ts",
+    "plan:eval": "gnx src/evaluation/plan-eval/cli/run-plan-eval.ts",
+    "iterate": "gnx src/automation/cli/run-iteration.ts",
+    "self-play": "gnx src/learning/self-play/cli/run-self-play.ts",
+    "self-play:topup": "gnx src/learning/self-play/cli/run-self-play-topup.ts",
+    "rl:export-dataset": "gnx src/learning/rl/cli/run-export-rl-dataset.ts",
+    "rl:smoke": "gnx src/learning/rl/cli/run-self-play-rl-smoke.ts",
+    "rl:sample": "gnx src/learning/rl/cli/run-sample-games.ts",
+    "combat-window:extract": "gnx src/learning/combat-windows/cli/run-extract-windows.ts",
+    "combat-window:analyze": "gnx src/learning/combat-windows/cli/run-post-analysis.ts",
+    "combat-window:validate": "gnx src/learning/combat-windows/cli/run-validate-trees.ts",
+    "combat-window:align-replay": "gnx src/learning/combat-windows/cli/run-align-replay.ts",
+    "combat-window:import-branch-eval": "gnx src/learning/combat-windows/cli/run-import-branch-eval.ts",
+    "combat-window:export-library": "gnx src/learning/combat-windows/cli/run-export-library.ts",
+    "combat-window:query-library": "gnx src/learning/combat-windows/cli/run-query-library.ts",
+    "combat-window:evaluate-library": "gnx src/learning/combat-windows/cli/run-evaluate-library.ts",
+    "combat-window:evaluate-workload": "gnx src/learning/combat-windows/cli/run-evaluate-workload.ts",
+    "combat-window:export-concepts": "gnx src/learning/combat-windows/cli/run-export-combat-window-concepts.ts",
+    "combat-window:export-combo-concepts": "gnx src/learning/combat-windows/cli/run-export-combo-window-concepts.ts",
+    "spl:compile": "gnx src/runtime/plan/cli/run-compile-all.ts",
+    "fingerprint:generate": "gnx src/learning/fingerprint/cli/generate-fingerprints.ts",
+    "encoder:export-dataset": "gnx src/learning/encoder/cli/run-export-encoder-dataset.ts"
+  },
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "@gi-tcg/assets-manager": "workspace:*",
+    "@gi-tcg/core": "workspace:*",
+    "@gi-tcg/data": "workspace:*",
+    "@gi-tcg/llm-deck-analyzer": "workspace:*",
+    "@gi-tcg/mcp": "workspace:*",
+    "@gi-tcg/ml": "workspace:*",
+    "@gi-tcg/typings": "workspace:*",
+    "@gi-tcg/utils": "workspace:*",
+    "@langchain/core": "0.3.40",
+    "@langchain/langgraph": "0.2.36",
+    "@langchain/openai": "0.3.10"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^12.11.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13"
+  }
+}

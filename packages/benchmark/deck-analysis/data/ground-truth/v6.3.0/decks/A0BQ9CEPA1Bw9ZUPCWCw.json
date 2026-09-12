@@ -1,0 +1,222 @@
+{
+  "schemaVersion": "3.0",
+  "deckCode": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+  "deckName": "水八",
+  "version": "v6.3.0",
+  "deckProfile": {
+    "primaryType": "midrange",
+    "tempo": "medium",
+    "startupSpeed": "turn2~3"
+  },
+  "keyCards": {
+    "combo": [],
+    "damage": [
+      {
+        "id": "312008",
+        "role": "damage_amplifier",
+        "importance": "important",
+        "rationale": "中后期提供增伤用，充能效果不容易触发",
+        "mulligan": "never"
+      },
+      {
+        "id": "330004",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "中期斩杀时用于争取动数，但起手留下会导致手牌运转受阻",
+        "mulligan": "never"
+      },
+      {
+        "id": "332018",
+        "role": "damage_amplifier",
+        "importance": "important",
+        "rationale": "中后期关键轮次才能发挥高收益，前期卡手",
+        "mulligan": "never"
+      },
+      {
+        "id": "333002",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "中后期斩杀用，料理可以靠卯师傅检索不用留",
+        "mulligan": "never"
+      }
+    ],
+    "draw": [
+      {
+        "id": "322005",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "料理体系运转核心",
+        "mulligan": "high"
+      },
+      {
+        "id": "322008",
+        "role": "draw",
+        "importance": "important",
+        "rationale": "存储剩余费用、调整骰子质量",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322016",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "伙伴体系核心",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "332004",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "灵活、有效撑起手牌质量",
+        "mulligan": "high"
+      }
+    ],
+    "sustain": [
+      {
+        "id": "333003",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高效承伤，但一般在中期保活争取轮次才有用",
+        "mulligan": "never"
+      },
+      {
+        "id": "333006",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高效治疗",
+        "mulligan": "never"
+      },
+      {
+        "id": "333007",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高收益治疗，但开局一般用不上",
+        "mulligan": "never"
+      },
+      {
+        "id": "312002",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "提供长线续航",
+        "mulligan": "never"
+      }
+    ],
+    "disruption": [
+      {
+        "id": "332013",
+        "role": "disruption",
+        "importance": "core",
+        "rationale": "有效去除关键召唤物",
+        "mulligan": "situational"
+      }
+    ],
+    "ramp": [
+      {
+        "id": "322001",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "提现较慢的支援牌，费用偏高，较慢的对局中可留",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322005",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "卡组运转关键牌，提供检索和持续的费用收益",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "322017",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "提升伙伴牌浓度，保证伙伴轴运转，持续提供收益，降低有效骰压力",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "322008",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "调整骰色，提高骰子利用率，补充手牌",
+        "mulligan": "high"
+      }
+    ],
+    "flex": [
+      {
+        "id": "312008",
+        "role": "flex_slot",
+        "importance": "important",
+        "rationale": "提高斩杀线用的单卡",
+        "mulligan": "never"
+      },
+      {
+        "id": "332013",
+        "role": "flex_slot",
+        "importance": "flexible",
+        "rationale": "针对特定召唤物",
+        "mulligan": "situational"
+      }
+    ]
+  },
+  "abstentions": [],
+  "damageMode": "summon_swarm",
+  "powerCurve": "steady",
+  "setupDependency": "low",
+  "resilience": {
+    "hasHealing": true,
+    "hasShield": true,
+    "hasImmuneControl": false,
+    "vulnerableTo": [
+      "frontloaded_burst"
+    ],
+    "hasBoardDisruption": true,
+    "hasSummonRemoval": true
+  },
+  "openingSequences": [
+    {
+      "id": "open-2",
+      "name": "纯水大E",
+      "condition": "水骰子≥4",
+      "style": "charge_up",
+      "steps": [
+        {
+          "action": "纯水精灵·洛蒂娅 林野百态",
+          "cost": "5水",
+          "effectDescription": ""
+        },
+        {
+          "action": "蓄爆",
+          "cost": "0",
+          "effectDescription": "为T2八重双E做铺垫"
+        },
+        {
+          "action": "结束",
+          "cost": "0",
+          "effectDescription": ""
+        }
+      ],
+      "diceConstraint": "4水骰",
+      "totalDiceUsed": 5,
+      "isPrimary": false
+    },
+    {
+      "id": "open-2",
+      "name": "纯水小E",
+      "condition": "水骰2~3个",
+      "style": "charge_up",
+      "steps": [
+        {
+          "action": "纯水精灵·洛蒂娅 纯水幻造",
+          "cost": "3水",
+          "effectDescription": ""
+        },
+        {
+          "action": "蓄爆",
+          "cost": "0",
+          "effectDescription": "投资牌蓄爆：骰子消耗/存储为非技能资源，铺垫后续回合"
+        }
+      ],
+      "diceConstraint": "水骰3个",
+      "totalDiceUsed": 3,
+      "isPrimary": false
+    }
+  ]
+}

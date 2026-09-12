@@ -1,0 +1,37 @@
+{
+  "deck": "ASBg2xwOATAw408OBEDw5JAPCRAA9JcPCUBw9aoPClCg9rwPC2HAC8kQDLGQEdIRDTAA",
+  "portfolioDir": "output/portfolio-p1",
+  "runRoot": "output/plan-bench",
+  "rounds": 3,
+  "games": 20,
+  "seedBase": 100,
+  "evidence": [
+    {
+      "label": "hongniu",
+      "deckCode": "ASBg2xwOATAw408OBEDw5JAPCRAA9JcPCUBw9aoPClCg9rwPC2HAC8kQDLGQEdIRDTAA",
+      "opponentPlanFile": "examples/plans/example-plan.json"
+    },
+    {
+      "label": "leihe",
+      "deckCode": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "opponentPlanFile": "src/runtime/plan-oneshot/prompts/examples/fewshot-plan.json"
+    }
+  ],
+  "metric": {
+    "label": "hongniu",
+    "opponentPlanFile": "examples/plans/example-plan.json",
+    "games": 40
+  },
+  "heldout": [
+    {
+      "label": "moyou",
+      "deckCode": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "opponentPlanFile": "examples/plans/example-plan.json",
+      "games": 10
+    }
+  ],
+  "skipAuthor": false,
+  "skipAblate": true,
+  "gameVersion": "v6.6.0",
+  "authorExtraArgs": []
+}

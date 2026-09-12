@@ -1,0 +1,89 @@
+{
+  "version": "v3.7",
+  "decks": [
+    {
+      "code": "ARFB8iEQAUFx9ZgQClFx9r4QDGHR98kQDYGB/soQDdKRA+ARDqLxC+ERD7IBDO8REOEB",
+      "name": "重云雷电将军申鹤"
+    },
+    {
+      "code": "ATAw4xwOAUBg5E8OBNDw7ZAPCRAA8ZcPCUBw9bMPDFAg9sIPDGGAC8gQDLGQDskRDjAA",
+      "name": "班尼特刻晴可莉"
+    },
+    {
+      "code": "AJCQ6i4OAqCw7YgPCECA9Z0PCWDQ/bMPC9GQArkQCyHQC70QDLGADskQDOGQD+kQDvAA",
+      "name": "芭芭拉荒泷一斗诺艾尔"
+    },
+    {
+      "code": "AUAw7RYOA9CQ8U8PBBDw8pcPCSBw9bMPC1Aw9sIPDGAg/ckPDOGQC+MQDrEwDuQQDuAA",
+      "name": "班尼特可莉无相之雷"
+    },
+    {
+      "code": "AJCw7SYOAdDA8ZcPCRBw9L0PC1DQ9cIPDIAg+cgPDNCA/ckQDKGQCtIQDbEgC9kRDTAA",
+      "name": "莫娜温迪刻晴"
+    },
+    {
+      "code": "AyAQ8zUPAUCg9ZcPCVBw9r0PC2DQ+MIPDJAg+ckPDNCQ/dIQDaEgCvEQD7EQDvIQD+AA",
+      "name": "纳西妲纯水精灵·洛蒂娅菲谢尔"
+    },
+    {
+      "code": "AfDw4AcOAABQ75cOCfBw8sgPDFCA9ckPDGCQ9s0PDNDQ/dIQDaEgC9kQDbGQDt8QDeAA",
+      "name": "九条裟罗申鹤神里绫华"
+    },
+    {
+      "code": "AnAQySwMApCg6YwOCJDA6p0OCaDQ9bMPC2Aw/bgPC9GAArsQC0GwC7wQC7HAD8cQDPAA",
+      "name": "八重神子钟离凝光"
+    },
+    {
+      "code": "BCFR9BsQAkFx9p4QClHR97QQDIGR/roQDNLRC74RDaIhDMkRDbKBD8oRDeKREPMREPEB",
+      "name": "纯水精灵·洛蒂娅菲谢尔胡桃"
+    },
+    {
+      "code": "AxAA8SEPAiDw85cPCVBw9cgPDGCA9skPDYCQ/dkQDiGwCusQDqHAC+wQD7EADvAQD+AA",
+      "name": "提纳里八重神子柯莱"
+    },
+    {
+      "code": "ATAw4xYOAUDQ5E8OBNDw7ZcPCUBw9bMPC1DQ9sIPDGEgA8gQDLGAC8kQDMGQDNYQDuAA",
+      "name": "班尼特可莉赛诺"
+    },
+    {
+      "code": "AZAw4zkOATBQ5E8OBEDw8ZcPCSBw8r0PCzDQ88gPDECA9MkPDFCQ9dYQDTFgC9kQDbAA",
+      "name": "班尼特无相之雷宵宫"
+    },
+    {
+      "code": "BSJy9zcRA1Ki+HURC2JS+rURDYIy/8QRDtMiBMoSDqOCDMsSDrOSDfMSEeMSEPQSEfIC",
+      "name": "愚人众·火之债务处理人纯水精灵·洛蒂娅菲谢尔"
+    },
+    {
+      "code": "ACCw8iQPATDA9HoPCUAA9ZAPCVBw9pcPC5DQ/b0PDNGAC8kQDLGQDu0QD+EQE/ERDzAA",
+      "name": "莫娜砂糖刻晴"
+    },
+    {
+      "code": "AyAQ8wsPAUCg9JcPCVBw9b0PC2DQ+MgPDJCA+ckQDSEgCtIQDrHQC/EQD+EQDvIRDzAA",
+      "name": "纳西妲莫娜菲谢尔"
+    },
+    {
+      "code": "AABA4BMOAOBw8U8PBBDw9JcPCUBw9b0PDFAg9sIPDGGAC8gQDLGQDMkQDcHwDt8QDuAA",
+      "name": "重云班尼特申鹤"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "ARFB8iEQAUFx9ZgQClFx9r4QDGHR98kQDYGB/soQDdKRA+ARDqLxC+ERD7IBDO8REOEB",
+      "deck1": "ATAw4xwOAUBg5E8OBNDw7ZAPCRAA8ZcPCUBw9bMPDFAg9sIPDGGAC8gQDLGQDskRDjAA",
+      "deck0Name": "重云雷电将军申鹤",
+      "deck1Name": "班尼特刻晴可莉"
+    },
+    {
+      "deck0": "AJCQ6i4OAqCw7YgPCECA9Z0PCWDQ/bMPC9GQArkQCyHQC70QDLGADskQDOGQD+kQDvAA",
+      "deck1": "AUAw7RYOA9CQ8U8PBBDw8pcPCSBw9bMPC1Aw9sIPDGAg/ckPDOGQC+MQDrEwDuQQDuAA",
+      "deck0Name": "芭芭拉荒泷一斗诺艾尔",
+      "deck1Name": "班尼特可莉无相之雷"
+    },
+    {
+      "deck0": "AJCw7SYOAdDA8ZcPCRBw9L0PC1DQ9cIPDIAg+cgPDNCA/ckQDKGQCtIQDbEgC9kRDTAA",
+      "deck1": "AyAQ8zUPAUCg9ZcPCVBw9r0PC2DQ+MIPDJAg+ckPDNCQ/dIQDaEgCvEQD7EQDvIQD+AA",
+      "deck0Name": "莫娜温迪刻晴",
+      "deck1Name": "纳西妲纯水精灵·洛蒂娅菲谢尔"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/round20-xmodel/glm/plans/shenxiao.ctrl.r0.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round20-xmodel/dsv4/plans/shenxiao.ctrl.r0.json"
+  },
+  "games": 10,
+  "seedBase": 20273301,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round20-xmodel/games/shenxiao.ctrl.glm-vs-dsv4"
+}

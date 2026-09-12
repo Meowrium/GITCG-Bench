@@ -1,0 +1,15 @@
+{
+  "version": "v6.3.0",
+  "matchups": [
+    {
+      "id": "pyroke-vs-cryohe",
+      "deck0Name": "PyroKe",
+      "deck1Name": "CryoHe",
+      "deck0": "ASBg2xwOATAw408OBEDw5JAPCRAA9JcPCUBw9aoPClCg9rwPC2HAC8kQDLGQEdIRDTAA",
+      "deck1": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "games": 2,
+      "sideA": {"name": "baseline-a", "kind": "baseline", "options": {"endTurnPenalty": 5}},
+      "sideB": {"name": "baseline-b", "kind": "baseline", "options": {"endTurnPenalty": 5}}
+    }
+  ]
+}

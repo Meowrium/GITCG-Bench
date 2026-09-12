@@ -1,0 +1,997 @@
+                                        PTCG-Bench: Can LLM Agents Master Pokémon Trading Card Game?
+
+                                                          Dongdong Hua1, Yifei Sun1, Renhong Huang1, Feng Gao2,
+                                                                           Chunping Wang2, Yang Yang1*
+
+                                                                     1 Zhejiang University, 2 FinVolution Group
+                                                                             {ddhua,yangya}@zju.edu.cn
+
+arXiv:2605.29653v1 [cs.AI] 28 May 2026                        Abstract                                TextWorld (Côté et al., 2018), ALFWorld (Shrid-
+                                                                                                      har et al., 2020), and MineDojo (Fan et al.,
+                                             Given a strategically complex board game, hu-            2022) to LLM-agent benchmarks such as lmgame-
+                                             man players can quickly learn to devise strate-          Bench (Hu et al., 2025), Orak (Park et al., 2025),
+                                             gies after playing a few rounds. Autonomous              and PokeAgent Challenge (Karten et al., 2026).
+                                             agents require similar capabilities in realistic         However, as summarized in Table 1, existing bench-
+                                             interactive environments, yet existing agent             marks often emphasize isolated aspects of agent
+                                             benchmarks often fail to fully capture such              capability, provide limited support for evaluating
+                                             strategic and evolving decision-making sce-              sustained self-evolution within the same strategic
+                                             narios. We present PTCG-Bench, a bench-                  environment, or leave harness-level effects insuf-
+                                             mark built on the Pokémon Trading Card Game              ficiently separated from model capability. This
+                                             (PTCG) that evaluates LLM agents at two com-             leaves open the need for a unified benchmark that
+                                             plementary levels: (1) their decision-making             can jointly assess strategic gameplay, stable self-
+                                             performance within a single complex environ-             evolution, and harness-aware agent evaluation.
+                                             ment, and (2) their ability to self-evolving
+                                             through accumulated experience. We further                  To address this gap, we introduce PTCG-Bench,
+                                             include a modular harness ablation to better in-         a benchmark built upon the Pokémon Trading Card
+                                             terpret agent performance without conflating it          Game (PTCG)2, as shown in Figure 1. PTCG is
+                                             with model capability. Our experiments show              a strategic two-player zero-sum game in which
+                                             that, although LLM agents can achieve non-               agents must reason over partially observable game
+                                             trivial gameplay performance, sustained and              states, make decisions under stochastic card draws,
+                                             stable self-evolution remains challenging, and           integrate textual card effects with numerical at-
+                                             performance is sensitive to harness design. We           tributes, and plan over adversarial interactions.
+                                             hope that PTCG-Bench will facilitate future              This setting allows us to evaluate whether LLM
+                                             research on harness-aware and self-evolving              agents can combine imperfect-information rea-
+                                             agents in realistic interactive environments.1           soning, long-horizon planning, hybrid textual-
+                                                                                                      numerical inference, and strategic decision-making
+                                        1 Introduction                                                within a single coherent game, rather than solving
+                                                                                                      them as isolated subtasks.
+                                        Games have long served as important testbeds
+                                        for autonomous agents, driving progress from                     Beyond initial performance, PTCG-Bench eval-
+                                        Atari (Mnih et al., 2015), Go (Silver et al., 2017),          uates a capability that is increasingly central to
+                                        and StarCraft II (Vinyals et al., 2019) to recent             autonomous agents: whether they can improve
+                                        LLM agents in Minecraft (Wang et al., 2023)                   through experience (Ou et al., 2025). For agents
+                                        and Diplomacy (Team et al., 2022). More re-                   deployed in realistic environments, success cannot
+                                        cently, Pokémon has attracted growing attention               rely solely on static instructions or one-shot task
+                                        as a challenging domain for both competitive bat-             solving; instead, agents must learn from trial and
+                                        tling (Karten et al., 2025) and open-ended RPG                error, consolidate reusable experience, and adapt
+                                        gameplay (Anthropic, 2025). Meanwhile, game-                  their future decisions as environments change. Re-
+                                        based benchmarks have expanded from classic en-               cent self-improvement methods (Agrawal et al.,
+                                        vironments such as ALE (Bellemare et al., 2013),
+                                                                                                          2For an official introduction to the Pokémon Trading Card
+                                            * Corresponding author.                                   Game, see https://tcg.pokemon.com/en-us/learn/.
+                                            1Code is available at https://github.com/zjunet/PTCG-
+                                        Bench.
+
+                                                                                                   1
+                                                                 HP                                Opponent Deck                           Opponent Hand (6)
+                                                                                      Type                                                                    Opponent Bench
+                                          Name                                        Tera Rule                                                                   Your Bench
+
+      Textual Info                 Stage                                                           Opponent Discard  Opponent Active            Your Hand (4)                        Prize Cards (6)
+                            Illustration                                                                                                                                              Your Discard
+Charizard ex Darkness                                                                                                                                                                  Your Deck
+Evolves from Charmeleon
+Burning Darkness:This...
+Infernal Reign:When you...
+
+Numerical Info              Ability/Text                                                                             Your Active
+
+HP Cost Damage              Energy Cost                                          Damage            Prize Cards (6)
+330 Fire ×2 180+            Attack/Text
+                                                                                 Retreat Cost
+Weakness     Retreat           Weakness                                          Rule Box
+Grass ×2  Colorless ×2
+                                                                     Face-up Card
+Empty Bench Slot                              Face-down Card     (Visible Information)
+     (Up to 5)                            (Unknown Information)
+
+Figure 1: Overview of the environment of PTCG-Bench. Left: An example Pokémon card annotated with key
+attributes including HP and Type, along with Ability and Attack descriptions that govern in-game decisions. Right:
+The two-player game board, where each player maintains an Active spot, up to five Bench slots, a Prize card zone, a
+Deck, a Discard pile, and a hand of hidden cards. Agents must reason over their own observable board state while
+inferring hidden information from the opponent's side.
+
+Table 1: Comparison between PTCG-Bench and representative game-based benchmarks. Abbrev.: IIR = imperfect-
+information reasoning, LHP = long-horizon planning, TNI = text-numerical inference, SDM = strategic decision-
+making, LSE = long-term self-evolution, MHS = modular harness support, and SGI = single-game integration.
+"" denotes partial coverage, where the capability is present in the environment or appears in some tasks but is not
+explicitly evaluated as a central requirement.
+
+Benchmark                                                        IIR                               LHP                                TNI  SDM                                LSE  MHS                SGI
+
+ALE (Bellemare et al., 2013)                                                                                                                                                                          
+
+MiniGrid (Chevalier-Boisvert et al., 2023)                                                                                                                                                            
+
+Procgen (Mohanty et al., 2021)                                                                                                                                                                        
+
+TextWorld (Côté et al., 2018)                                                                                                                                                                         
+
+ALFWorld (Shridhar et al., 2020)                                                                                                                                                                      
+
+MineDojo (Fan et al., 2022)                                                                                                                                                                           
+
+lmgame-Bench (Hu et al., 2025)                                                                                                                                                                        
+
+Orak (Park et al., 2025)                                                                                                                                                                              
+
+PokeAgent Challenge (Karten et al., 2026)                                                                                                                                                             
+
+PTCG-Bench (Ours)                                                                                                                                                                                     
+
+2025; Xu et al., 2026; Alzubi et al., 2026) and                                                                      2024). We therefore design a modular harness
+benchmarks (Jimenez et al., 2024; Zhou et al.,                                                                       around three key factors: observation structure,
+2024; Liu et al., 2024) have provided useful in-                                                                     legal-action masking, and context management. By
+sights, but many still emphasize relatively static,                                                                  ablating these components, PTCG-Bench allows
+short-horizon, or perfect-information settings. To                                                                   us to quantify how harness choices affect game-
+better approximate the conditions faced by agents                                                                    play performance and separate their effects from
+in realistic environments, PTCG-Bench evaluates                                                                      backbone capability.
+self-evolving agents under a longitudinal evalua-
+tion protocol, in which self-evolving agents play                                                                       We conduct extensive experiments and the re-
+a sequence of games, accumulate experience, and                                                                      sults show that LLM agents can achieve competi-
+are evaluated over multiple rounds to determine                                                                      tive gameplay performance, but their performance
+whether such experience leads to improved perfor-                                                                    varies widely across models and harness designs.
+mance in a dynamic environment.                                                                                      PTCG-Bench produces a wide ranking of agent sys-
+                                                                                                                     tems, with a 617-point Glicko-2 rating gap between
+   PTCG-Bench further enables controlled analysis                                                                    the strongest and weakest LLM-based agents.3
+of agent harness design. Modern LLM agents
+depend not only on the backbone model, but also                                                                          3Under the Glicko-2 formula, a 617-point rating difference
+on the surrounding harness design (Yang et al.,                                                                      corresponds to an expected win probability of approximately
+                                                                                                                     97.2% for the higher-rated player.
+
+                                                                                                   2
+Moreover, PTCG-Bench exposes the limitations of          an observation ot, maintains an interaction history
+existing self-evolution methods, with most agents        ht = (o1, a1, . . . , ot-1, at-1, ot), selects an action
+failing to improve consistently over time.               at, and receives a reward rt. Because the game
+                                                         state is not fully observable, the agent must act
+   Our main contributions are as follows:                based on ot and ht rather than the complete state.
+   · We introduce PTCG-Bench, a PTCG-based
+                                                            An LLM agent induces its policy through both
+      benchmark for evaluating LLM agents in a           a backbone model and a surrounding harness. The
+      complex environment involving imperfect in-        harness transforms the observation and history into
+      formation, long-horizon planning, and hybrid       a prompt, constrains or formats the available ac-
+      textual-numerical reasoning.                       tions, and parses the model output into an exe-
+   · We propose a longitudinal evaluation proto-         cutable action. We denote the resulting policy by
+      col to evaluate whether self-evolving agents
+      can accumulate cross-game experience and           at  ,(· | ot, ht),     (1)
+      convert it into improved subsequent decisions.
+   · We develop a modular agent harness with in-         where  represents the LLM backbone and  rep-
+      dependently ablatable components, enabling         resents the harness design. The expected perfor-
+      controlled analysis of multiple harness de-        mance of the agent can then be written as
+      signs beyond backbone capability.
+
+2 Preliminary                                            J (, ) = E,      rt .  (2)
+
+2.1 Pokémon Trading Card Game                                          t
+
+PTCG is a two-player, turn-based, zero-sum card          3 PTCG-Bench
+game in which each player uses a 60-card deck
+composed mainly of Pokémon, Energy, and Trainer          PTCG-Bench evaluates LLM-based agents in the
+cards. Players set up an Active Pokémon, optional        Pokémon Trading Card Game (PTCG) along three
+Benched Pokémon, and six face-down Prize cards,          dimensions: (i) decision-making under imperfect
+then alternate turns to develop their board, manage      information and long-horizon strategic interaction,
+resources, and attack the opponent. A player wins        (ii) self-evolution through accumulated cross-game
+by taking all Prize cards, eliminating all opposing      experience, and (iii) the contribution of harness
+Pokémon in play, or causing the opponent to draw         design beyond backbone capability. This section
+from an empty deck.                                      describes the game environment, the self-evolution
+                                                         protocol, the modular harness, the evaluation tour-
+   PTCG is challenging for LLM agents because            nament, and the evaluation metrics.
+it combines hidden information, stochastic card
+draws, dynamic legal actions, and long-horizon           3.1 Benchmark Environment
+resource planning. Agents must interpret natural-
+language card effects while reasoning over numer-        Engine implementation. PTCG-Bench uses a
+ical quantities such as HP, damage, Energy costs,        custom PTCG engine for reproducible rule execu-
+and Prize counts, and must make sequential de-           tion and legal-action validation. The engine im-
+cisions whose consequences can compound over             plements the core mechanics needed for full-game
+many turns. These properties make PTCG a suit-           evaluation, thereby providing a consistent environ-
+able environment for evaluating strategic decision-      ment for comparing agent systems. Detailed imple-
+making and experience-based improvement. Com-            mentation details are provided in Appendix A.
+plete rules are included in Appendix A.
+                                                         Deck pool. We use a fixed pool of 5 competi-
+2.2 LLM Agent Formalization                              tive decks covering distinct strategic archetypes,
+                                                         including aggressive, controlling, combo-oriented,
+By absorbing the opponent policy into the envi-          and attrition-based plans. The deck pool is used
+ronment dynamics, a PTCG match can be mod-               both for controlled mirror-match evaluation and for
+eled as a partially observable Markov decision pro-      cross-deck generalization analysis. Detailed deck
+cess (POMDP), where the complete game state              statistics and strategic profiles are in Appendix B.
+includes hidden information such as the oppo-
+nent's hand, face-down Prize cards, and unre-            State and action spaces. PTCG-Bench separates
+vealed deck order. At step t, the agent receives         private, public, and global state to preserve imper-
+                                                         fect information. Agents observe their own private
+
+                                                      3
+PTCG    Agent-Environment    System Prompt                                 Context Management
+Engine      Interaction    You are a Pokémon TCG battle agent ...
+                                                                            System Prompt Skills Observation k Tool Call k
+                             Observation Module                            ...... Observation n Tool Call n Memory ......
+
+                           // Parse gameboard information to text input    Backbone LLM
+                           Turn: Player A                                <think>...</think>
+                           Turn number: 10
+                           My board:                                        use_ability(Pidgeot ex, Quick Search)
+
+                              active[1]: Charmander, 70 HP                 Execution Module
+                              bench[1]: Pidgeot ex, 280 HP               // Parse tool calling to in-game action
+                              hand[4]: ...                               UseAbilityAction(
+                              ...
+                           Opponent board: ...                              player_id=Player A,
+                                                                            source=Pidgeot ex,
+                             More Harnesses                                 ability=Quick Search
+                                                                         )
+                           SKILL.md / Memory / Extra tools ......
+
+Figure 2: Agent-environment interaction loop in PTCG-Bench. At each decision point, the game engine exposes
+the current state and legal action set to the agent harness, which converts them into an LLM-readable prompt. The
+backbone model's response is parsed, validated, and executed by the engine to advance the game state.
+
+zones and public board information, while the op-        reflections, strategic summaries, memory entries,
+ponent's hand, deck order, and Prize-card identi-        revised prompts, or skill documents. This proto-
+ties remain hidden. The action space is defined          col separates within-game decision-making from
+as a set of parameterized game actions exposed           cross-game experience updates. We track round-
+through tool schemas, including playing or evolv-        wise performance against fixed-policy anchors to
+ing Pokémon, attaching Energy, playing Trainer           analyze whether accumulated experience improves,
+cards, attacking, retreating, and passing. Each ac-      preserves, or degrades subsequent play.
+tion specifies the required arguments needed for
+execution, thereby providing a structured interface      3.4 Modular Harness Architecture
+between agent decisions and game mechanics.
+                                                         In PTCG-Bench, the harness is not treated as a neu-
+3.2 Agent-Environment Interface                          tral wrapper between the game engine and back-
+                                                         bone LLM. Prior studies show that the surrounding
+As shown in Figure 2, the engine exposes the             agent scaffold, including state perception, context
+game state at each decision point, from which the        management, and action execution, can substan-
+agent receives a partial observation. The agent har-     tially change the measured capability of the same
+ness combines this observation with the interaction      backbone model.
+history and renders them into an LLM-readable
+prompt. The backbone LLM then returns a struc-              PTCG-Bench therefore decomposes the harness
+tured action request, typically as a tool call with      into modular components, allowing key agent-
+an action type and the corresponding parameters.         environment coupling factors to be ablated inde-
+The model response is parsed by the harness and          pendently. This modular separation helps prevent
+checked by the engine against the current legal ac-      the measured performance from conflating back-
+tion set. Valid actions are executed to advance the      bone capability with the effects of state perception,
+game state, while invalid requests trigger a retry.      context management, and action execution. The
+This interface fixes the underlying game execution       specific harness modules and ablation settings are
+while allowing agent systems to vary in how they         introduced in Section 4.4.
+represent information, use history, and select ac-
+tions. Such flexibility, in turn, enables evaluation     3.5 Evaluation Tournament
+with multiple harness modules.
+                                                         As shown in Figure 3, PTCG-Bench uses two
+3.3 Longitudinal Evaluation Protocol                     tournaments for different evaluation goals. Fixed
+                                                         agents are compared by round robin (Harary and
+PTCG-Bench evaluates whether self-evolving               Moser, 1966), where every configuration plays ev-
+agents improve through accumulated game expe-            ery other configuration to estimate overall playing
+rience. Games are organized into multiple rounds         strength on a shared rating scale. This setting sup-
+of complete PTCG matches. After each round, an           ports direct comparison among static backbones
+evolving agent may update persistent state, such as      and harness configurations.
+
+                                                      4
+Round Robin Tournament for Fixed Agents                               Anchored Tournament for Self-evolving Agents
+                                               Anchored Baselines
+                                                                      Anchored Tournament                                                               Evolution Gain R
+
+Round Robin  Rating
+Tournament                                                                                                                                      Rating
+                                                                                                 Evolve
+                                                                      N games × K rounds
+
+Figure 3: Evaluation tournament design in PTCG-Bench. Left: Fixed-policy agents are first evaluated by a round-
+robin tournament to obtain ratings, from which a set of fixed anchor baselines is selected. Right: Self-evolving
+agents are then evaluated through an anchored tournament, where each evolving policy plays against the frozen
+anchor baselines across rounds.
+
+   Self-evolving agents use an anchored tourna-                       4 Experiments
+ment because simultaneous policy updates would
+make a round-robin rating scale drift across rounds.                  4.1 Experimental Setup
+Each evolving agent plays fixed-policy anchors
+with calibrated ratings spanning the rating range,                    In this section, we conduct comprehensive experi-
+then may update its persistent state. Anchor                          ments to answer the following research questions:
+matchups therefore preserve a stable reference pop-                   (RQ1) Can PTCG-Bench Resolve Strategic Capa-
+ulation across agent snapshots. Since anchors do                      bility Differences among LLM Agents? (RQ2)
+not change, round-wise rating shifts primarily re-                    Can PTCG-Bench Measure Self-Evolution over Se-
+flect changes in the evolving agent.                                  quential Play? (RQ3) How Much Does Harness
+                                                                      Design Affect Agent Performance?
+
+3.6 Evaluation Metrics                                                LLM backbones. We evaluate 10 backbones
+                                                                      from 5 model families, pairing a frontier and cost-
+PTCG-Bench reports 4 complementary metrics.                           efficient variant from each family: Gemini 3.1 Pro
+                                                                      and Gemini 3 Flash, Claude Sonnet 4.6 and Claude
+Glicko-2 rating. We use Glicko-2 (Glickman,                           Haiku 4.5, DeepSeek V4 Pro and DeepSeek V4
+2012) as the primary measure of playing strength,                     Flash, GPT-5.4 and GPT-5.4 Nano, and Qwen3.6
+reporting both the rating mean µ and rating devia-                    Plus and Qwen3.5 Flash. Unless otherwise speci-
+tion  under stochastic match outcomes. Ratings                        fied, all agents use the same ReAct-style harness.
+are estimated from round-robin records for fixed
+agents and from anchor matchups for evolving                          Evaluation configuration. Fixed-agent exper-
+agents, with  indicating estimation uncertainty.                      iments use the round-robin tournament in Sec-
+                                                                      tion 3.5 with ten LLM agents and two non-LLM
+Head-to-head win rate. Head-to-head win rates                         references, Random and Heuristic, which sample
+provide an interpretable complement to Glicko-2                       legal actions with uniform and predefined weights,
+by exposing matchup-level advantages that aggre-                      respectively. Each pair plays M = 5 games, yield-
+gate ratings can obscure.                                             ing 330 games per tournament. Self-evolution uses
+                                                                      the anchored tournament in Section 3.5. We com-
+                                                                      pute ratings with Glicko-2 and use mirror matches
+                                                                      unless stated otherwise.
+
+Invalid action rate. Invalid action rate measures                     4.2 Backbone Strategic Capabilities
+how often an agent produces illegal or unparsable
+actions before retry or fallback and is especially                    To answer RQ1, we test whether PTCG-Bench re-
+relevant to harness ablations.                                        solves backbone-level strategic differences under a
+                                                                      fixed ReAct harness and mirror-match setting. Fig-
+Tool calls. The number of tool calls measures                         ure 4 reports Glicko-2 ratings for all 10 backbones
+interaction cost, counting action attempts and oper-                  together with the fixed-capability anchors.
+ations invoked during decision-making. We use it
+to contextualize configuration efficiency.                               PTCG-Bench produces a broad and well-
+                                                                      resolved rating distribution. Among LLM-based
+                                                                      agents, ratings span from GPT-5.4 Nano (1237)
+
+                                                                   5
+                                                                                      Random                                                                                                                                 100
+
+     Gemini 3.1 Pro                                                     1854          Heuristic 80
+  DeepSeek V4 Pro
+DeepSeek V4 Flash                                                 1727           Haiku 4.5 100 40
+                                                                                Sonnet 4.6 100 100 60
+     Gemini 3 Flash                                               1727          Glicko-2 Rating ()                                                                                                                           75
+ Claude Sonnet 4.6                                                                                                                                            Row agent win rate (%)
+                                                            1636
+             GPT-5.4
+       Qwen3.6 Plus                                         1600                DS-V4-Flash 100 100 40 100
+  Claude Haiku 4.5
+     Qwen3.5 Flash                                    1564                           DS-V4-Pro 100 80 100 60 60                                                                                                              50
+      GPT-5.4 Nano                                                              Gemini-3-Flash 100 100 60 60 20 60
+                                                      1509
+            Heuristic
+             Random                                   1473                      Gemini-3.1-Pro 100 100 80 100 80 80 80
+
+                          1000              1382                                      GPT-5.4 100 60 60 20 20 20 80 40                                                                                                       25
+                                                                                GPT-5.4-nano 80 60 20 20 0 0 20 0 0
+                                      1237
+
+                                1073  1219                  Google     OpenAI   Qwen3.5-Flash 80 100 40 20 40 0 0 20 40 60
+                                                1500        DeepSeek   Qwen
+                                                            Anthropic  Non-LLM  Qwen3.6-Plus 80 100 60 20 20 40 20 20 40 80 80
+                                                                                               RandHoemurHisatiikcSuo4Dn.nS5e-tV44.6D-GFSlea-mVshi4Gn-ieP-m3ro-iFnlia-3sh.1-GPGrPPoTTQ--5w5..4e4-nn3Qa.n5wo-eFnla3s.6h-Plus
+                                1200 1400 1600 1800 2000                                                                                                                                                                     0
+                                        Glicko-2 Rating ()
+
+Figure 4: PTCG-Bench tournament results under a unified ReAct harness. Left: Glicko-2 ratings (µ ± ) for LLM
+backbones and fixed-capability anchor agents, with all agents initialized at µ = 1500 and  = 350; error bars
+indicate rating deviation. Right: pairwise win-rate heatmap, where each cell gives the row agent's win rate against
+the column agent. Higher ratings and colder heatmap values indicate stronger play.
+
+to Gemini 3.1 Pro (1854), corresponding to a gap                                                                         Gemini 3.1 Pro
+of 617 Glicko-2 points. This spread substantially
+exceeds the rating deviations of most individual                                1800  DeepSeek V4 Flash
+agents, suggesting that PTCG-Bench can separate                                 1600
+LLM agents by playing strength rather than collaps-                             1400                        DeepSeek V4 Pro
+ing them into a narrow performance band. Head-                                  1200
+to-head win rates in the pairwise heatmap further                                     Gemini 3 Flash                    Claude Sonnet 4.6
+show that frontier variants consistently outperform
+their cost-efficient counterparts within the same                                     Qwen3.6 Plus                      GPT-5.4
+model family, suggesting that PTCG-Bench cap-
+tures meaningful capability differences rather than                                           Qwen3.5 Flash             Claude Haiku 4.5
+tournament noise.
+                                                                                      GPT-5.4 Nano
+   Gameplay strength is not determined by infer-
+ence cost. Figure 5 compares Glicko-2 rating with                                                   $0.10               $1.00
+inference cost per game. The non-monotonic distri-
+bution shows that higher cost does not necessarily                                                  Cost per Game (USD)
+yield stronger play, suggesting that PTCG-Bench
+also reveals practical cost­performance trade-offs                              Figure 5: Cost­rating trade-off for all ten LLM back-
+among LLM agents.                                                               bones. The y-axis reports the Glicko-2 rating mean µ,
+                                                                                and the x-axis reports inference cost per game in USD.
+   PTCG-Bench captures capabilities not fully                                   Models closer to the upper-left region achieve stronger
+reflected by general-purpose benchmarks. We                                     play at lower cost.
+further compare the PTCG-Bench ranking with
+model orderings reported by other LLM evalua-                                   strategic decision-making under uncertainty.
+tions such as LiveBench, SWE-Bench Pro, and
+GPQA (White et al., 2024; Deng et al., 2025; Rein                               4.3 Self-Evolution
+et al., 2023). As detailed in Appendix E, the result-
+ing rankings are only partially aligned. In particu-                            To answer RQ2, we evaluate whether PTCG-Bench
+lar, models that are stronger on general language                               can track self-evolution across sequential play us-
+understanding or preference-based evaluation do                                 ing fixed anchors and a stable rating scale.
+not always obtain proportionally higher PTCG-
+Bench ratings. This divergence suggests that                                    Evolving agent configurations. We evaluate five
+PTCG-Bench evaluates capabilities beyond static                                 representative self-evolving baselines under the
+language understanding, particularly imperfect-                                 same PTCG-Bench harness: Reflexion (Shinn et al.,
+information reasoning, long-horizon planning, and                               2023), ExpeL (Zhao et al., 2024), long-term mem-
+                                                                                ory (Park et al., 2023; Packer et al., 2023; Tan et al.,
+                                                                                2025; Xu et al., 2026), prompt evolution (Madaan
+                                                                                et al., 2023; Wang et al., 2024; Yuksekgonul et al.,
+                                                                                2025), and skill-library evolution (Anthropic, 2026;
+                                                                                Alzubi et al., 2026). Since PTCG involves long
+                                                                                horizons, delayed high-variance outcomes, hidden
+
+                                                                        6
+Glicko-2 Rating ()  1800  (a) Overall                              (b) Reflexion                        (c) ExpeL
+                                Anchored max     1500                               1500
+                                                 1450                               1450
+                    1600                         1400                               1400
+                                                 1350                               1350
+                    1400                         1300                               1300
+
+                    1200  Anchored min                  Init 1 2 3 4 5 6 7 8               Init 1 2 3 4 5 6 7 8
+
+                    1000
+                           Init 1 2 3 4 5 6 7 8
+
+                          (d) Long-Term Memory             (e) Prompt Optimization        (f) Skill Library
+                                                 1500
+Glicko-2 Rating ()  1500                                                            1500
+
+                    1450                         1450                               1450
+
+                    1400                         1400                               1400
+
+                    1350                         1350                               1350
+
+                    1300  Init 1 2 3 4 5 6 7 8   1300  Init 1 2 3 4 5 6 7 8         1300  Init 1 2 3 4 5 6 7 8
+
+                          Reflexion  Long-Term Memory        Skill Library                Anchored min/max
+                          ExpeL      Prompt Optimization     ReAct (baseline)             Evolving init
+
+Figure 6: Glicko-2 rating trajectories across self-evolution rounds for five evolving agent configurations using
+Qwen3.5-Flash. Panel (a) summarizes all evolving configurations relative to the anchored rating range, with gray
+dashed lines denoting anchored maximum and minimum ratings and the dotted line denoting the non-evolving
+same-backbone reference. Panels (b)­(f) provide method-specific comparisons against the non-evolving ReAct
+baseline, with shaded regions indicating rating uncertainty bands.
+
+information, stochastic card order, and opponent-            sistent monotonic improvement across the eight
+dependent strategy shifts, directly transplanting            rounds. Ratings instead fluctuate without forming
+rollout- or search-based methods would be costly             a stable upward trend, and no evolving configu-
+and unstable. We therefore adapt these baselines             ration reliably surpasses the non-evolving same-
+at the mechanism level. All configurations use the           backbone reference by the end of evaluation. These
+same backbone and harness to isolate the effect of           results suggest that PTCG-Bench reveals the incom-
+self-evolution; details are provided in Appendix D.          pleteness of current self-evolution mechanisms:
+                                                             existing agents still struggle to extract reusable
+Anchored self-evolution protocol. We evaluate                strategic knowledge from long-horizon, imperfect-
+each evolving configuration for R = 8 rounds. In             information gameplay without dense rewards or
+each round, it plays 2 games against each of 12              verifiable ground-truth solutions.
+fixed anchors: the 10 static LLM agents from RQ1
+plus the Random and Heuristic agents. We also re-            4.4 Modular Harness Ablation
+port the non-evolving same-backbone ReAct agent
+as a static reference. This yields 24 games per con-         To answer RQ3, we examine whether and to what
+figuration and N = 120 evolving-agent games per              extent harness design affects measured agent per-
+round. After each round, each mechanism updates              formance. We hold the LLM backbone, deck pool,
+its persistent state from accumulated trajectories           and tournament setting fixed, and ablate key har-
+before the next snapshot is evaluated against the            ness choices that govern state representation, action
+same anchors, keeping rating changes on a stable             execution, and context management.
+reference scale.
+                                                             Harness modules. We focus on these three mod-
+   Figure 6 reports the resulting rating trajectories        ules because they correspond to the main stages
+and compares them with anchored baseline ratings             through which the harness can influence gameplay:
+and the non-evolving same-backbone ReAct ref-                how the agent perceives the state, how it grounds
+erence. The anchored rating range suggests sub-              decisions into executable actions, and how it retains
+stantial headroom for current self-evolving base-            temporal information across turns.
+lines, yet none of the five mechanisms shows con-
+                                                              · Observation structure (H1): replacing the
+
+                                                          7
+Table 2: Main harness ablation results. All configurations use the same LLM backbone and mirror-match tournament
+setting. µ denotes the Glicko-2 rating mean, and µ is measured relative to the full harness. Values in parentheses
+normalize the rating drop by the median rating gap between adjacent LLM backbones in the RQ1 ranking (55 rating
+points), which is also reported in the final row as a reference scale. Inv. Rate denotes the fraction of illegal or
+unparsable actions before retry or fallback.
+
+Configuration                        Struct.  Mask.       Hist.    µ        µ       Inv. Rate Tool Calls
+
+Full Harness (H1+H2+H3)                                          1726         ­     3.3%      78.8
+w/o Structured Observation (w/o H1)                              1693  -33 (0.6×)   5.2%      68.4
+w/o Legal Action Masking (w/o H2)                                1608  -118 (2.1×)  15.9%     86.7
+No History Context (w/o H3)                                      1611  -115 (2.1×)  19.0%     385.7
+Minimal Harness (w/o H1+H2+H3)                                   1575  -151 (2.7×)  27.3%     357.6
+
+Median adjacent LLM gap                                           55       1.0×            ­
+
+    structured state description with a minimally         that the measured differences are not artifacts of a
+    formatted raw state or game-log representation.       single mirror deck. Details are in Appendix F.
+ · Legal-action masking (H2): removing the
+    engine-computed legal action set and requiring        5 Related Work
+    the agent to infer valid actions and parameters
+    from the current state.                               5.1 Self-Evolving LLM Agents
+ · Context management (H3): removing recent
+    trajectory history while retaining the current        Recent work has explored self-evolving LLM
+    state and legal actions.                              agents that improve through interaction histo-
+                                                          ries, reflective feedback, and reusable experience.
+Main harness ablation. Table 2 reports the main           GEPA evolves prompts from reflective trajectory
+harness ablation results. The full harness uses           analysis (Agrawal et al., 2025); A-MEM organizes
+structured observation, legal-action masking, and         adaptive memories for long-term improvement (Xu
+context-window-aware history truncation. We com-          et al., 2026); and EvoSkill refines reusable skills
+pare it against three single-component ablations          from execution failures (Alzubi et al., 2026). These
+and a minimal harness. The minimal harness re-            studies suggest that agents can improve not only
+moves all three interface supports: it uses unstruc-      through model-level training, but also through
+tured observation, disables legal-action masking,         evolving prompts, memories, and skills.
+and provides no recent history.
+                                                          5.2 Benchmarks for LLM Game Agents
+   The ablations show that harness design affects
+measured capability. Removing structured ob-              Games are important testbeds because they re-
+servation yields a moderate 33-point rating drop          quire perception, memory, planning, and long-
+and more invalid actions, whereas removing legal-         horizon decision-making. LMGame-Bench (Hu
+action masking or recent history reduces rating by        et al., 2025) evaluates diverse games with mod-
+118 and 115 points, respectively; the former in-          ular perception, memory, and reasoning compo-
+creases invalid rate, and the latter increases tool       nents, while Orak (Park et al., 2025) covers multi-
+calls by nearly fivefold. These drops exceed typi-        ple video-game genres for systematic agent train-
+cal adjacent-backbone gaps in RQ1 and approach            ing and evaluation. Other benchmarks emphasize
+several within-family model-tier gaps. Harness de-        specific challenges: TCG-Bench (Alrashed et al.,
+sign therefore has a substantial effect on measured       2026) is a contamination-resistant and difficulty-
+gameplay strength, making it a central factor in          scalable multilingual card-game benchmark, while
+evaluating LLM-agent systems with PTCG-Bench.             the PokeAgent Challenge (Karten et al., 2026) tar-
+                                                          gets competitive decision-making under partial ob-
+4.5 Cross-Deck Generalization                             servability and long-context strategic reasoning.
+
+We further evaluate deck-wise mirror-match gener-         6 Conclusion
+alization across five deck archetypes to test whether
+the measured backbone differences persist under           We introduced PTCG-Bench, a comprehensive
+different strategic settings. The main agent rank-        benchmark for studying LLM agents in a realistic
+ing is largely preserved across decks, suggesting         and complex game environment. By combining
+                                                          long-horizon imperfect-information gameplay with
+
+                                                       8
+a longitudinal evaluation protocol, PTCG-Bench            with all relevant IP regulations.
+provides a controlled setting for evaluating self-           The data used in PTCG-Bench is derived from
+evolution under delayed feedback, stochasticity,
+and opponent interaction. Experiments across ten          fictional card game materials and does not involve
+LLM backbones and multiple self-evolution mech-           human subjects, user-generated personal data, or
+anisms show that current agents can achieve mean-         information that uniquely identifies real individuals.
+ingful gameplay performance, but accumulated ex-          We reviewed the collected data to ensure that it does
+perience does not yet reliably translate into sta-        not contain personally identifying information.
+ble performance gains. Harness ablations further
+show that interface design materially affects mea-           We used ChatGPT to assist with language edit-
+sured capability, underscoring the need to study          ing and improving the clarity of the manuscript.
+self-evolution at the agent-system level. These find-     The authors reviewed and verified all AI-assisted
+ings highlight PTCG as a challenging testbed for          content and are responsible for the final paper.
+future research on self-evolving agents.
+                                                          References
+Limitations
+                                                          Lakshya A Agrawal, Shangyin Tan, Dilara Soylu,
+PTCG-Bench is designed to support controlled                 Noah Ziems, Rishi Khare, Krista Opsahl-Ong, Ar-
+evaluation of LLM-agent systems in a complex                 nav Singhvi, Herumb Shandilya, Michael J Ryan,
+trading card game, and the current study focuses             Meng Jiang, and 1 others. 2025. Gepa: Reflec-
+on settings that make performance differences in-            tive prompt evolution can outperform reinforcement
+terpretable. In particular, we use a fixed deck pool         learning. arXiv preprint arXiv:2507.19457.
+and primarily rely on mirror-match evaluation to
+reduce asymmetric matchup effects, while studying         Sultan Alrashed, Jianghui Wang, and Francesco
+experience-based updates to prompts, memories,               Orabona. 2026. Cards against contamination: Tcg-
+and skills under a fixed LLM backbone. These                 bench for difficulty-scalable multilingual llm reason-
+choices allow us to isolate backbone capability, har-        ing. In Findings of the Association for Computa-
+ness design, and self-evolution mechanisms within            tional Linguistics: EACL 2026, pages 6710­6724.
+the same environment, but they do not exhaust the
+full space of strategic adaptation. Future extensions     Salaheddin Alzubi, Noah Provenzano, Jaydon Bingham,
+could incorporate open deck building, arbitrary              Weiyuan Chen, and Tu Vu. 2026. Evoskill: Auto-
+cross-deck matchups, longer experience streams, or           mated skill discovery for multi-agent systems. arXiv
+parameter-level learning while retaining the same            preprint arXiv:2603.02766.
+controlled evaluation framework.
+                                                          Anthropic. 2025. Claude's extended thinking. Ac-
+Ethical Considerations                                       cessed: May 2026.
+
+In constructing PTCG-Bench, we utilized publicly          Anthropic. 2026. Agent skills: Open standard specifica-
+available information from the Pokémon Trading               tion. https://agentskills.io/home. Accessed:
+Card Game (PTCG), including card names, me-                  May 20, 2026.
+chanics, descriptions and images. All materials
+are used solely for non-commercial academic re-           Marc G Bellemare, Yavar Naddaf, Joel Veness, and
+search purposes under the principles of fair use /           Michael Bowling. 2013. The arcade learning envi-
+research exceptions in applicable copyright laws.            ronment: An evaluation platform for general agents.
+This benchmark is not intended for commercial                Journal of artificial intelligence research, 47:253­
+applications, nor does it claim any affiliation with,        279.
+sponsorship by, or endorsement from The Poké-
+mon Company, Nintendo, or related entities. We            Maxime Chevalier-Boisvert, Bolun Dai, Mark Tow-
+respect the intellectual property rights of the copy-        ers, Rodrigo Perez-Vicente, Lucas Willems, Salem
+right holders and have made efforts to use the data          Lahlou, Suman Pal, Pablo Samuel Castro, and J K
+in a transformative manner for benchmarking lan-             Terry. 2023. Minigrid & miniworld: Modular & cus-
+guage models. The dataset will be released only              tomizable reinforcement learning environments for
+for research use, and we encourage users to comply           goal-oriented tasks. Advances in Neural Information
+                                                             Processing Systems, 36:73383­73394.
+
+                                                          Marc-Alexandre Côté, Akos Kádár, Xingdi Yuan, Ben
+                                                             Kybartas, Tavian Barnes, Emery Fine, James Moore,
+                                                             Matthew Hausknecht, Layla El Asri, Mahmoud
+                                                             Adada, and 1 others. 2018. Textworld: A learning
+                                                             environment for text-based games. In Workshop on
+                                                             Computer Games, pages 41­75. Springer.
+
+                                                          Xiang Deng, Jeff Da, Edwin Pan, Yannis Yiming
+                                                             He, Charles Ide, Kanak Garg, Niklas Lauffer, An-
+                                                             drew Park, Nitin Pasari, Chetan Rane, and 1 others.
+
+                                                       9
+   2025. Swe-bench pro: Can ai agents solve long-               Sharada Mohanty, Jyotish Poonganam, Adrien Gaidon,
+   horizon software engineering tasks? arXiv preprint              Andrey Kolobov, Blake Wulfe, Dipam Chakraborty,
+   arXiv:2509.16941.                                               Grazvydas Semetulskis, João Schapke, Jonas Kubil-
+                                                                   ius, Jurgis Pasukonis, and 1 others. 2021. Measuring
+Linxi Fan, Guanzhi Wang, Yunfan Jiang, Ajay Man-                   sample efficiency and generalization in reinforcement
+   dlekar, Yuncong Yang, Haoyi Zhu, Andrew Tang,                   learning benchmarks: Neurips 2020 procgen bench-
+   De-An Huang, Yuke Zhu, and Anima Anandkumar.                    mark. arXiv preprint arXiv:2103.15332.
+   2022. Minedojo: Building open-ended embodied
+   agents with internet-scale knowledge. Advances in            Yixin Ou, Wangchunshu Zhou, Shengwei Ding, Long
+   Neural Information Processing Systems, 35:18343­                Li, Jialong Wu, Tiannan Wang, Jiamin Chen, Shuai
+   18362.                                                          Wang, Xiaohua Xu, Ningyu Zhang, and 1 oth-
+                                                                   ers. 2025. Symbolic learning enables self-evolving
+Mark E Glickman. 2012. Example of the glicko-2 sys-                agents. AI Open.
+   tem. Boston University, 28:2012.
+                                                                Charles Packer, Vivian Fang, Shishir_G Patil, Kevin
+Frank Harary and Leo Moser. 1966. The theory of                    Lin, Sarah Wooders, and Joseph_E Gonzalez. 2023.
+   round robin tournaments. The American Mathemati-                Memgpt: towards llms as operating systems.
+   cal Monthly, 73(3):231­246.
+                                                                Dongmin Park, Minkyu Kim, Beongjun Choi, Junhyuck
+Lanxiang Hu, Mingjia Huo, Yuxuan Zhang, Haoyang                    Kim, Keon Lee, Jonghyun Lee, Inkyu Park, Byeong-
+   Yu, Eric P Xing, Ion Stoica, Tajana Rosing, Haojian             Uk Lee, Jaeyoung Hwang, Jaewoo Ahn, and 1 others.
+   Jin, and Hao Zhang. 2025. lmgame-bench: How                     2025. Orak: A foundational benchmark for training
+   good are llms at playing games? arXiv preprint                  and evaluating llm agents on diverse video games.
+   arXiv:2505.15146.                                               arXiv preprint arXiv:2506.03610.
+
+Carlos E Jimenez, John Yang, Alexander Wettig,                  Joon Sung Park, Joseph O'Brien, Carrie Jun Cai, Mered-
+   Shunyu Yao, Kexin Pei, Ofir Press, and Karthik                  ith Ringel Morris, Percy Liang, and Michael S Bern-
+   Narasimhan. 2024. Swe-bench: Can language mod-                  stein. 2023. Generative agents: Interactive simulacra
+   els resolve real-world github issues? In International          of human behavior. In Proceedings of the 36th an-
+   Conference on Learning Representations, volume                  nual acm symposium on user interface software and
+   2024, pages 54107­54157.                                        technology, pages 1­22.
+
+Seth Karten, Jake Grigsby, Tersoo Upaa Jr, Junik Bae,           David Rein, Betty Li Hou, Asa Cooper Stickland, Jack-
+   Seonghun Hong, Hyunyoung Jeong, Jaeyoon Jung,                   son Petty, Richard Yuanzhe Pang, Julien Dirani, Ju-
+   Kun Kerdthaisong, Gyungbo Kim, Hyeokgi Kim, and                 lian Michael, and Samuel R Bowman. 2023. Gpqa: A
+   1 others. 2026. The pokeagent challenge: Competi-               graduate-level google-proof q&a benchmark. arXiv
+   tive and long-context learning at scale. arXiv preprint         preprint arXiv:2311.12022.
+   arXiv:2603.15563.
+                                                                Noah Shinn, Federico Cassano, Ashwin Gopinath,
+Seth Karten, Andy Luu Nguyen, and Chi Jin. 2025.                   Karthik Narasimhan, and Shunyu Yao. 2023. Re-
+   Pok\'echamp: an expert-level minimax language                   flexion: Language agents with verbal reinforcement
+   agent. arXiv preprint arXiv:2503.04094.                         learning. Advances in neural information processing
+                                                                   systems, 36:8634­8652.
+Xiao Liu, Hao Yu, Hanchen Zhang, Yifan Xu, Xuanyu
+   Lei, Hanyu Lai, Yu Gu, Hangliang Ding, Kaiwen                Mohit Shridhar, Xingdi Yuan, Marc-Alexandre Côté,
+   Men, Kejuan Yang, and 1 others. 2024. Agentbench:               Yonatan Bisk, Adam Trischler, and Matthew
+   Evaluating llms as agents. In International Con-                Hausknecht. 2020. Alfworld: Aligning text and em-
+   ference on Learning Representations, volume 2024,               bodied environments for interactive learning. arXiv
+   pages 52989­53046.                                              preprint arXiv:2010.03768.
+
+Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler                David Silver, Julian Schrittwieser, Karen Simonyan,
+   Hallinan, Luyu Gao, Sarah Wiegreffe, Uri Alon,                  Ioannis Antonoglou, Aja Huang, Arthur Guez,
+   Nouha Dziri, Shrimai Prabhumoye, Yiming Yang,                   Thomas Hubert, Lucas Baker, Matthew Lai, Adrian
+   and 1 others. 2023. Self-refine: Iterative refinement           Bolton, and 1 others. 2017. Mastering the game of go
+   with self-feedback. Advances in neural information              without human knowledge. nature, 550(7676):354­
+   processing systems, 36:46534­46594.                             359.
+
+Volodymyr Mnih, Koray Kavukcuoglu, David Silver,                Zhen Tan, Jun Yan, I-Hung Hsu, Rujun Han, Zifeng
+   Andrei A Rusu, Joel Veness, Marc G Bellemare,                   Wang, Long Le, Yiwen Song, Yanfei Chen, Hamid
+   Alex Graves, Martin Riedmiller, Andreas K Fidje-                Palangi, George Lee, and 1 others. 2025. In prospect
+   land, Georg Ostrovski, and 1 others. 2015. Human-               and retrospect: Reflective memory management for
+   level control through deep reinforcement learning.              long-term personalized dialogue agents. In Proceed-
+   nature, 518(7540):529­533.                                      ings of the 63rd Annual Meeting of the Association
+                                                                   for Computational Linguistics (Volume 1: Long Pa-
+                                                                   pers), pages 8416­8439.
+
+                                                            10
+Meta Fundamental AI Research Diplomacy Team and 1            Webarena: A realistic web environment for build-
+   others. 2022. Human-level play in the game of diplo-      ing autonomous agents. In International Conference
+   macy by combining language models with strategic          on Learning Representations, volume 2024, pages
+   reasoning. Science, 378(6624):1067­1074.                  15585­15606.
+
+The Pokémon Company International. 2026. Poké-               A PTCG Rules and Engine Details
+   mon trading card game rules. https://www.
+   pokemon.com/static-assets/content-assets/                 A.1 Complete PTCG Rules
+   cms2/pdf/trading-card-game/rulebook/par_
+   rulebook_en.pdf. Accessed: May 2026.                      PTCG-Bench follows the official rules of the Poké-
+                                                             mon Trading Card Game. Each game is played
+Oriol Vinyals, Igor Babuschkin, Wojciech M Czarnecki,        between two players with 60-card decks, hidden
+   Michaël Mathieu, Andrew Dudzik, Junyoung Chung,           hands and decks, public boards, discard piles, and
+   David H Choi, Richard Powell, Timo Ewalds, Petko          six Prize cards. A player first sets up an Active
+   Georgiev, and 1 others. 2019. Grandmaster level in        Pokémon and optional Benched Pokémon, then al-
+   starcraft ii using multi-agent reinforcement learning.    ternates turns consisting of card draw, legal in-turn
+   nature, 575(7782):350­354.                                actions, and optional attack resolution. During a
+                                                             turn, players may play Basic Pokémon, evolve eli-
+Guanzhi Wang, Yuqi Xie, Yunfan Jiang, Ajay Man-              gible Pokémon, attach Energy, play Trainer cards,
+   dlekar, Chaowei Xiao, Yuke Zhu, Linxi Fan, and            use Abilities, retreat or switch the Active Pokémon,
+   Anima Anandkumar. 2023. Voyager: An open-ended            and attack when the required conditions are satis-
+   embodied agent with large language models. arXiv          fied. The engine implements the main card-type
+   preprint arXiv:2305.16291.                                mechanics for Pokémon, Energy, Items, Support-
+                                                             ers, Tools, and Stadiums, as well as evolution con-
+Xinyuan Wang, Chenxi Li, Zhen Wang, Fan Bai, Hao-            straints, retreat costs, Special Conditions, Knock
+   tian Luo, Jiayou Zhang, Nebojsa Jojic, Eric Xing, and     Outs, Prize-taking, and standard win conditions. A
+   Zhiting Hu. 2024. Promptagent: Strategic planning         player wins by taking all Prize cards, by leaving
+   with language models enables expert-level prompt op-      the opponent with no Pokémon in play, or when the
+   timization. In International Conference on Learning       opponent cannot draw at the beginning of their turn.
+   Representations, volume 2024, pages 23967­24001.          For complete official rules and card-specific tim-
+                                                             ing details, we refer readers to the official PTCG
+Colin White, Samuel Dooley, Manley Roberts, Arka Pal,        rulebook (The Pokémon Company International,
+   Ben Feuer, Siddhartha Jain, Ravid Shwartz-Ziv, Neel       2026).
+   Jain, Khalid Saifullah, Siddartha Naidu, and 1 others.
+   2024. Livebench: A challenging, contamination-free        A.2 Engine Implementation
+   llm benchmark. arXiv preprint arXiv:2406.19314,
+   4:2.                                                      The PTCG-Bench engine is implemented in Python
+                                                             to facilitate integration with common agent re-
+Wujiang Xu, Zujie Liang, Kai Mei, Hang Gao, Juntao           search pipelines. It maintains the full game state,
+   Tan, and Yongfeng Zhang. 2026. A-mem: Agentic             validates legal actions before execution, applies
+   memory for llm agents. Advances in Neural Informa-        rule-based state transitions, and records complete
+   tion Processing Systems, 38:17577­17604.                  game trajectories for later analysis. This unified
+                                                             interface allows agents with different prompting,
+John Yang, Carlos E Jimenez, Alexander Wettig, Kilian        planning, memory, or learning mechanisms to inter-
+   Lieret, Shunyu Yao, Karthik Narasimhan, and Ofir          act with the same environment under reproducible
+   Press. 2024. Swe-agent: Agent-computer interfaces         execution.
+   enable automated software engineering. Advances in
+   Neural Information Processing Systems, 37:50528­             As shown in Figure 7, we also provide a React-
+   50652.                                                    based frontend for replay, debugging, and qual-
+                                                             itative inspection. The frontend visualizes pub-
+Mert Yuksekgonul, Federico Bianchi, Joseph Boen,             lic game states, action histories, card movements,
+   Sheng Liu, Pan Lu, Zhi Huang, Carlos Guestrin,            Prize-card progression, and agent decisions over
+   and James Zou. 2025. Optimizing generative ai by          time, making it easier to trace failure cases and in-
+   backpropagating language model feedback. Nature,          terpret agent behavior during full-game evaluation.
+   639(8055):609­616.                                        The frontend is used only for visualization and anal-
+                                                             ysis; game execution and scoring are determined
+Andrew Zhao, Daniel Huang, Quentin Xu, Matthieu
+   Lin, Yong-Jin Liu, and Gao Huang. 2024. Expel:
+   Llm agents are experiential learners. In Proceedings
+   of the AAAI Conference on Artificial Intelligence,
+   volume 38, pages 19632­19642.
+
+Shuyan Zhou, Frank F Xu, Hao Zhu, Xuhui Zhou,
+   Robert Lo, Abishek Sridhar, Xianyi Cheng, Tianyue
+   Ou, Yonatan Bisk, Daniel Fried, and 1 others. 2024.
+
+                                                         11
+                                                                call executes a single game action and returns an
+                                                                updated observation.
+
+Figure 7: Screenshot of the PTCG-Bench frontend. The            Agent Configuration. Unless otherwise speci-
+interface visualizes our half-field board state, including      fied, all agents use the same decoding and inter-
+the Active Pokémon, Bench, Prize cards, Deck, Discard           action settings within each experiment. We fix
+pile, and Hand.                                                 the system prompt template, observation format,
+                                                                action schema, retry/fallback policy, and context-
+by the Python engine.                                           management rule across compared agents. The
+                                                                default harness maintains recent trajectory context
+B Deck Details                                                  up to the model's maximum context window and
+                                                                truncates older interaction history when necessary.
+PTCG-Bench uses a fixed pool of five competitive                The no-history ablation removes trajectory history
+decks to cover representative strategic archetypes              entirely while preserving the current state and le-
+while keeping the evaluation space controlled.                  gal action set. For self-evolving agents, the LLM
+Each deck induces a different pattern of board                  backbone and action interface are held fixed across
+development, resource management, and win-                      rounds; only the persistent state associated with the
+condition execution, requiring agents to adapt                  evolution mechanism, such as reflections, lessons,
+across heterogeneous strategic contexts. Table 3                memories, revised prompts, or skills, is updated.
+summarizes the composition and strategic profile
+of each deck.                                                   Tool Interface. The tool interface separates exe-
+                                                                cutable game actions from information-query tools.
+   Together, these decks contain over 100 unique                Game-action tools modify the game state and must
+cards and span several axes of strategic diversity,             correspond to legal actions returned by the en-
+including aggressive versus controlling plans, fast             gine. Query tools do not modify the game state
+setup versus resource-efficient play, single-core ver-          and are used to inspect card text or discard-pile
+sus multi-core win conditions, and evolution-line               contents. The activate_skill tool is enabled
+versus Basic-Pokémon-centered board construc-                   only for the skill-library configuration and retrieves
+tion. This deck pool reduces the risk that evalu-               stored procedural guidance relevant to the current
+ation results are dominated by a single play pattern,           state. Table 4 summarizes the tool schema exposed
+while remaining small enough to support controlled              to agents.
+mirror-match and cross-deck analyses.
+                                                                   For actions involving duplicate Pokémon with
+C Agent-Environment Interface Details                           the same name, the observation may provide field
+                                                                indices to disambiguate targets. Agents are in-
+                                                                structed to copy card names, attack names, target
+                                                                names, and indices exactly from the observation or
+                                                                available_actions. Invalid, unparsable, or un-
+                                                                available actions are rejected by the game engine
+                                                                and counted in the invalid action rate before retry
+                                                                or fallback.
+
+This appendix provides additional details on the                D Self-Evolution Mechanism Details
+agent-environment interface used in PTCG-Bench.
+All LLM agents interact with the game engine                    We compare self-evolution mechanisms at the level
+through the same structured observation format                  of how prior gameplay experience is converted into
+and tool-based action interface. At each deci-                  persistent decision-making state. This design keeps
+sion step, the engine provides the current pub-                 the PTCG interaction interface fixed while vary-
+lic and private game state, the legal action set,               ing the form of experience retained across games.
+and any pending card-selection prompt. The field                In particular, all evolving configurations share the
+available_actions is treated as authoritative:                  same backbone model, base harness, action tools,
+agents are instructed to select only actions listed             and evaluation anchors; they differ only in whether
+by the engine. A game turn may therefore consist                past trajectories are converted into reflections, dis-
+of multiple LLM decision steps, since each tool                 tilled lessons, retrieved memories, revised prompt
+
+                                                            12
+Table 3: Deck composition and strategic profiles of the five PTCG-Bench decks. #P/#T/#E denote Pokémon, Trainer,
+and Energy card counts, respectively.
+
+Deck             #P #T #E Plan    Board Structure Resource Focus             Agent Challenge
+
+Charizard ex 20 32 8 Aggro / scal- Stage-2 evolution Rare Candy setup; Fire Timing evolution and prize-
+
+                 ing              line                    Energy acceleration based damage scaling
+
+Gardevoir ex 15 34 11 Control / re- Stage-2 evolution Psychic Energy recov- Balancing damage, Energy
+
+                 cursion          line                    ery; discard manage- recursion, and attacker rota-
+
+                                                          ment               tion
+
+Miraidon ex 13 29 18 Fast aggro Basic-Pokémon Electric Energy acceler- Sequencing search, accelera-
+
+                                  axis                    ation; early board filling tion, and early pressure
+
+Gholdengo ex 19 30 11 Combo / Multi-attacker box Hand size; Energy dis- Estimating burst damage and
+
+                 burst                                    card and recovery  preserving combo resources
+
+Lugia Archeops 20 24 16 Attrition / Multi-core box Special Energy acceler- Choosing attackers and allo-
+
+                 toolbox                                  ation; Archeops setup cating Special Energy effi-
+
+                                                                             ciently
+
+Table 4: Summary of the PTCG-Bench tool interface. Required arguments are shown in parentheses; optional
+disambiguation indices are omitted for brevity.
+
+Category         Tool             Purpose and Required Arguments
+
+Attack           attack           Use the Active Pokémon's attack; requires source_card, attack_name.
+Board setup      play_pokemon     Play a Basic Pokémon to the Active Spot or Bench; requires source_card, position.
+Evolution        evolve_pokemon   Evolve a Pokémon in play; requires source_card, target_card.
+Energy           attach_energy    Attach one Energy card from hand; requires source_card, target_card.
+Trainer          use_supporter    Play a Supporter card; requires source_card.
+Trainer          use_item         Play an Item card; requires source_card.
+Trainer          use_tool         Attach a Pokémon Tool; requires source_card, target_card.
+Stadium          put_stadium      Play a Stadium card; requires source_card.
+Stadium          discard_stadium  Discard the current Stadium when legally allowed; requires source_card.
+Stadium          use_stadium      Activate an in-play Stadium effect; requires source_card.
+Ability          use_ability      Activate a Pokémon Ability; requires source_card, optionally ability_name.
+Switching        retreat          Retreat the Active Pokémon; requires source_card.
+Selection        choose_card      Resolve a card-selection prompt; requires chosen_cards.
+Turn control     pass_turn        End the current turn without further action.
+Information      query_card       Query exact card text and metadata; requires card_id.
+Information      query_discard    Inspect a player's discard pile; requires player.
+Skill retrieval  activate_skill   Load stored skill guidance; requires name, optionally resource.
+
+instructions, or structured skills.                       and are prepended to later game contexts so the
+   PTCG requires mechanism-level adaptation               agent can condition subsequent decisions on re-
+                                                          cent self-critique. This configuration tests whether
+rather than direct reuse of procedures designed for       lightweight post-game reflection alone can convert
+short-horizon or verifiable tasks. A complete tra-        individual failures into better future play.
+jectory contains many tool-mediated decisions, hid-
+den opponent information, stochastic card draws,          ExpeL. ExpeL-style evolution (Zhao et al., 2024)
+and a delayed game outcome. We therefore use              aggregates experience before updating persistent
+completed games and round-level trajectory col-           state. After each evaluation round, the agent dis-
+lections as the experience source for persistent up-      tills accumulated trajectories into reusable strate-
+dates, while later matches remain the evaluation          gic lessons rather than storing one reflection per
+signal for whether those updates transfer to new          game. The lessons aim to abstract recurring pat-
+gameplay.                                                 terns across games, such as common planning fail-
+                                                          ures or generally useful decision rules, and are
+Reflexion. Following reflection-based verbal re-          provided to later games as compact guidance. This
+inforcement (Shinn et al., 2023), the agent produces      configuration separates cross-game lesson distil-
+a free-form reflection after each game. The reflec-       lation from the more episodic feedback used by
+tion summarizes mistakes, missed opportunities,           Reflexion.
+and strategic lessons inferred from the trajectory
+and terminal outcome. These reflections remain            Long-Term Memory. The long-term memory
+episodic: they preserve game-specific feedback            configuration follows memory-based agent de-
+
+                                                      13
+                    LiveBench (n = 6)                  SWE-Bench Pro (n = 6)                      GPQA (n = 8)
+                     = 0.31, b = 0.20                    = -0.14, b = -0.07                        = 0.35, b = 0.25
+
+PTCG-Bench rank  1                                     1                                       1             DS-V4P
+                                                                                               2 G3.1P                 DS-V4F
+                 2  G3.1P                      DS-V4P  2  DS-V4P                      G3.1P
+
+                                               CS4.6                          DS-V4F           3        G3F
+
+                 3                                     3                                       4               CS4.6
+
+                          GPT-5.4                                                         G3F  5  GPT-5.4
+
+                 4                                     4
+
+                                        Q3.5F                   GPT-5.4                        6        Q3.6P
+
+                 5                                     5                                       7
+
+                                            GPT-5.4N                                 GPT-5.4N  8             GPT-5.4N
+
+                 6                                     6
+
+       123456                                                 123456                                 12345678
+External rank (1 = strongest)                          External rank (1 = strongest)           External rank (1 = strongest)
+
+Figure 8: Rank agreement between PTCG-Bench and external LLM evaluations on available overlapping model
+subsets. Each point is one shared model, and the dashed diagonal marks identical orderings within the overlap
+subset. LiveBench and GPQA show weak positive agreement with PTCG-Bench, while the collected SWE-Bench
+Pro ordering shows no clear agreement.
+
+signs (Park et al., 2023; Packer et al., 2023; Tan                       configuration provides a more modular form of
+et al., 2025; Xu et al., 2026). It stores prior game-                    persistent knowledge than a monolithic revised
+play episodes externally and retrieves memories                          prompt: different reusable skills can target differ-
+judged relevant to the current game state during                         ent strategic situations while remaining grounded
+later play. To reduce accumulation of low-level tra-                     in accumulated gameplay experience.
+jectory detail, periodic summarization compresses
+past episodes into higher-level strategic notes while                       Across these configurations, the persistent state
+preserving access to experience-derived guidance.                        is updated only by the corresponding self-evolution
+This configuration tests whether retrieval over prior                    mechanism. The environment state, legal-action in-
+experience is more useful than injecting a fixed set                     terface, and fixed anchor opponents are unchanged
+of lessons into every later context.                                     across rounds, allowing the longitudinal results in
+                                                                         Section 4.3 to compare how different forms of
+Prompt Evolution. Prompt evolution treats                                retained experience affect subsequent gameplay
+the strategy prompt itself as the persistent                             strength.
+state (Madaan et al., 2023; Wang et al., 2024; Yuk-
+sekgonul et al., 2025). After each evaluation round,                     E External Benchmark Rank Agreement
+the agent analyzes the current strategy prompt
+together with recent game summaries, identifies                          We compare the PTCG-Bench backbone ordering
+recurring failure modes, and revises the strategy                        with model scores reported by LiveBench, SWE-
+component of its instruction prompt. The revised                         Bench Pro, and GPQA (White et al., 2024; Deng
+prompt is then used in subsequent rounds under                           et al., 2025; Rein et al., 2023). Each comparison is
+the same interaction interface. Unlike memory-                           computed only on the subset of evaluated PTCG-
+based variants, this mechanism encodes experience                        Bench backbones with an available score for that
+into global decision principles that shape all later                     external benchmark. We rerank PTCG-Bench and
+decisions rather than retrieving state-specific past                     the external benchmark within that overlap sub-
+episodes.                                                                set, with rank 1 denoting the strongest model, and
+                                                                         report both Spearman  and Kendall b rank cor-
+Skill Library Evolution. Skill-library evolution                         relations in Figure 8. Tied external scores receive
+maintains a persistent collection of structured strat-                   average ranks; this affects the two GPQA entries
+egy skills (Anthropic, 2026; Alzubi et al., 2026).                       with score 90.4.
+Skills are distilled from prior games and describe
+an activation condition, a strategic objective, and                         On the overlapped model subsets, LiveBench
+recommended decision principles. During later                            yields Spearman  = 0.31 and Kendall b = 0.20,
+play, relevant skills are retrieved when their guid-                     GPQA yields  = 0.35 and b = 0.25, and SWE-
+ance matches the current decision context. This                          Bench Pro yields  = -0.14 and b = -0.07.
+                                                                         This suggests that PTCG-Bench measures critical
+
+                                                          14
+Glicko-2 Rating ()        Charizard ex                                                 play, or causing the opponent to be unable to draw
+                          Gardevoir ex                                                 at the beginning of their turn.
+                          Gholdengo ex
+                    1750  Lugia Archeops                                               Turn Structure. Each turn consists of drawing a
+                    1500  Miraidon ex                                                  card, taking legal in-turn actions, and optionally
+                                                                                       attacking. Legal in-turn actions include playing
+                    1250                                                               Basic Pokémon, evolving eligible Pokémon, at-
+                                                                                       taching one Energy card, playing Trainer cards,
+                    1000                                                               using Abilities, retreating the Active Pokémon,
+                                                                                       and passing the turn. Attacking ends the turn after
+                                  Random Qwen3.5 Claude Gemini 3DeepSeek               damage, effects, Knock Outs, Prize-taking, and
+                                                   Flash Haiku 4.5 Flash V4 Flash      win checks are resolved.
+
+Figure 9: Cross-deck mirror-match generalization re-                                   Observation Reading. The current game
+sults. Each group of bars represents agents evaluated                                  state is provided as a structured observa-
+under one deck archetype, with both players using the                                  tion. The field available_actions is author-
+same deck within that setting. Bar height is the Glicko-2                              itative: choose only actions listed there. If
+rating µ, and error bars denote rating deviation .                                     choosing_card is true, respond to that selec-
+                                                                                       tion prompt before taking any other action. Use
+                                                                                       opponent_last_turn_actions to infer recent
+                                                                                       changes. Your hand is visible, while the oppo-
+                                                                                       nent's hand and deck remain hidden.
+
+aspects of strategic reasoning in complex, long-                                       Decision Pattern. Before acting, consider HP and
+horizon game scenarios that are insufficiently cap-                                    damage, Energy attachments, available attacks,
+tured by these existing benchmarks.                                                    Prize counts, immediate threats, and possible win
+                                                                                       conditions. Then call the appropriate tool. A full
+F Cross-Deck Generalization                                                            game turn may require multiple decision steps
+                                                                                       because each game action is executed separately.
+We test cross-deck generalization with deck-wise
+mirror matches, varying the shared deck archetype                                      Action Discipline. Call at most one game-action
+across settings while avoiding asymmetric matchup                                      tool in each response. Use exact card names,
+effects. Figure 9 reports results across five represen-                                attack names, targets, and indices copied from
+tative decks: Charizard ex, Gardevoir ex, Miraidon                                     the observation or available_actions. Do not
+ex, Gholdengo ex, and Lugia Archeops.                                                  invent actions, targets, card names, or attack
+                                                                                       names. If an intended action is not listed in
+   The RQ1 ranking is largely preserved across all                                     available_actions, it is not currently legal. If
+five deck archetypes. Although individual ratings                                      an action fails or produces an unexpected result,
+fluctuate with deck mechanics, these variations do                                     inspect the updated observation and query rele-
+not produce systematic rank reversals, indicating                                      vant cards before proceeding.
+that the measured backbone differences are not ar-
+tifacts of a single mirror deck. This controlled anal-                                 Tools. Use query tools, such as query_card
+ysis tests cross-archetype robustness rather than
+asymmetric matchups between different decks.                                           and query_discard, when card text, discard
+
+G Prompt Templates                                                                     contents, attack effects, retreat costs, or other
+
+The following prompt is used for the non-evolving                                      details are uncertain. Use game-action tools, such
+ReAct agent and as the base interaction template
+for evolving variants. The full prompt addition-                                       as attack, play_pokemon, evolve_pokemon,
+ally includes concise reminders of PTCG-specific
+rules, including evolution restrictions, first-turn re-                                attach_energy, use_supporter, use_item,
+strictions, retreat constraints, Trainer-card limits,
+damage calculation, Special Conditions, and Knock                                      use_tool,  put_stadium,   retreat,
+Out resolution.
+                                                                                       use_ability, choose_card, and pass_turn,
+
+                                                                                       only when the corresponding action is legal in
+
+                                                                                       the current observation.
+
+                                                                                       H Implementation Details
+
+                                                                                       We used the OpenRouter API for model inference.
+                                                                                       Specifically, we set temperature to 0.7 and maxi-
+                                                                                       mum output length to 2048 tokens. Unless other-
+                                                                                       wise specified, other API parameters were kept at
+                                                                                       their default values.
+
+                    Role. You are a Pokémon TCG battle agent using
+                    the ReAct pattern. At each decision step, analyze
+                    the current game state and then call exactly one
+                    tool.
+
+                    Objective. Win the game by taking all Prize cards,
+                    Knocking Out all of the opponent's Pokémon in
+
+                                                                                   15
+

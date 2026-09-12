@@ -1,0 +1,89 @@
+{
+  "version": "GamePlanV1",
+  "planId": "5d9e507986b1",
+  "parentPlanId": null,
+  "createdAt": "2026-08-22T00:00:00.000Z",
+  "author": "manual",
+  "context": {
+    "deckCode": "ASBg2xwOATAw408OBEDw5JAPCRAA9JcPCUBw9aoPClCg9rwPC2HAC8kQDLGQEdIRDTAA",
+    "opponent": {
+      "kind": "known_deck",
+      "deckCode": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA"
+    }
+  },
+  "predictions": {
+    "winRateEstimate": 0.5,
+    "expectedRounds": 7,
+    "confidence": 0.3,
+    "keyThreats": ["对手出战角色低血时未被斩杀", "骰子断档导致空过"]
+  },
+  "opening": {
+    "chooseActive": [
+      { "characterDefId": 1306, "reason": "首发火系一号位" }
+    ],
+    "mulligan": [
+      { "keep": { "cardDefId": 311502 }, "reason": "保留装备牌" }
+    ],
+    "reroll": [
+      { "keepElements": ["pyro", "electro", "omni"], "minKeep": 4, "reason": "保留火/雷/万能骰" }
+    ]
+  },
+  "phases": [
+    {
+      "phaseId": "desperate",
+      "when": [{ "field": "self.aliveCount", "op": "<=", "value": 1 }],
+      "rules": [
+        {
+          "priority": 1,
+          "when": [],
+          "then": { "action_case": "useSkill", "kills": true },
+          "reason": "残局只认斩杀"
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "priority": 1,
+      "when": [],
+      "then": { "action_case": "useSkill", "kills": true },
+      "reason": "能斩必斩"
+    },
+    {
+      "priority": 5,
+      "when": [
+        { "field": "self.active.energy", "op": ">=", "value": "$self.active.maxEnergy" }
+      ],
+      "then": { "action_case": "useSkill", "skill_type": "burst" },
+      "reason": "能量满则爆发"
+    },
+    {
+      "priority": 10,
+      "when": [
+        { "field": "opponent.active.aura", "op": "==", "value": "none" },
+        { "field": "dice.pyro", "op": ">=", "value": 3 }
+      ],
+      "then": { "action_case": "useSkill", "skill_type": "elemental_skill" },
+      "reason": "无附着且火骰充足则挂元素"
+    },
+    {
+      "priority": 20,
+      "when": [{ "field": "hand.hasCard.311502", "op": "==", "value": true }],
+      "then": { "action_case": "playCard", "card_def_id": 311502 },
+      "reason": "有装备就装"
+    },
+    {
+      "priority": 30,
+      "when": [{ "field": "dice.total", "op": ">=", "value": 3 }],
+      "then": { "action_case": "useSkill", "skill_type": "elemental_skill" },
+      "reason": "骰子够用就战技输出"
+    },
+    {
+      "priority": 90,
+      "when": [{ "field": "dice.total", "op": "<=", "value": 2 }],
+      "then": { "action_case": "declareEnd" },
+      "reason": "骰尽结束回合"
+    }
+  ],
+  "fallback": { "policy": "conservative" }
+}

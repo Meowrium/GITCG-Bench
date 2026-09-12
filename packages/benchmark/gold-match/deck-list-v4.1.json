@@ -1,0 +1,89 @@
+{
+  "version": "v4.1",
+  "decks": [
+    {
+      "code": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "name": "荒泷一斗迪希雅诺艾尔"
+    },
+    {
+      "code": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "name": "申鹤雷电将军重云"
+    },
+    {
+      "code": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+      "name": "北斗重云雷泽"
+    },
+    {
+      "code": "BJFR3iIQBEFx9XQQClFR9pwQDGEx+bQQDIGB/rsRDKKxC70RDLLBDMgRDeJxD8oRDfEB",
+      "name": "纯水精灵·洛蒂娅八重神子愚人众·火之债务处理人"
+    },
+    {
+      "code": "AZAw2xYOAzCQ408OBEDw5JcPCSBw8rMPCzAw870PC1DQ9cIPDGAg9sgQDLGAC8kRDBAA",
+      "name": "班尼特可莉无相之雷"
+    },
+    {
+      "code": "AUCg9DUPA1Bw9XMPCWCw+KcPDNAg/cIQDCFgCsYQDLGQC8kQDdEQDdEQDeFwD90QD/AA",
+      "name": "菲谢尔纯水精灵·洛蒂娅愚人众·火之债务处理人"
+    },
+    {
+      "code": "AxBQ8hoPA0AQ9ZcPC1DQ9sIPDGAg+MYPDNFgCskQDLGQC9EQDdEQDdcQDeGwDvERDxAA",
+      "name": "纯水精灵·洛蒂娅菲谢尔纳西妲"
+    },
+    {
+      "code": "ASBg2xwOATAw408OBEDw5JAPCRAA9JcPCUBw9aoPClCg9rwPC2HAC8kQDLGQEdIRDTAA",
+      "name": "可莉刻晴班尼特"
+    },
+    {
+      "code": "ANBg8gsPAiCQ84YPCUBw9JgPCVCA9r0PC2DQ+cIPDJEgAsYQDKGQC8kQDbEQDNEQDcAA",
+      "name": "优菈莫娜流浪者"
+    },
+    {
+      "code": "ALDQ6SsOApDg6ogOCKCA750PCUDQ9LMPC2Aw/bgPC9HAArwQC7HQDscQDOGQD8kQDfAA",
+      "name": "珊瑚宫心海诺艾尔荒泷一斗"
+    },
+    {
+      "code": "APBw4CAOAABQ744OCPDg8ZcPCUBw9L0PDFCA9cgPDGHwA88QDTGQCtkQDbGwC98QDeAA",
+      "name": "申鹤雷电将军神里绫华"
+    },
+    {
+      "code": "AnCQ6AcOAoBw7nwPCBDg8Y4PCUBw9JcPC1DA9bwQDCGQAskQDTGQA9kQDaHQC+cQDrAA",
+      "name": "流浪者申鹤魈"
+    },
+    {
+      "code": "AZCgygEMAKDA3T0PByDw9IEPCEAw9YMPCVBw9pcQCiFgAqYQC2HQBr8QC7HwC8kQDOAA",
+      "name": "菲谢尔甘雨达达利亚"
+    },
+    {
+      "code": "APBQ3xUOAABw4JcOCfBw78IPDEAg9MYPDFBg9coQDDGgA9EQDcEQDdcQDdGQENsRDQAA",
+      "name": "神里绫华宵宫申鹤"
+    },
+    {
+      "code": "ALCg3wQNAPBQ4JcOCQBw9MIPDEAg9cYQDCFgC8kQDLGQDMoQDMGgDdEQDdEQENkRDQAA",
+      "name": "行秋重云神里绫华"
+    },
+    {
+      "code": "A9BQ4RoOABDA9IMPCEAw9bMPC1Aw9sIPDIAg/cYQDCFgCskQDLGQC9EQDdEQDtIQDfAA",
+      "name": "纯水精灵·洛蒂娅菲谢尔达达利亚"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+      "deck1": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "deck0Name": "荒泷一斗迪希雅诺艾尔",
+      "deck1Name": "申鹤雷电将军重云"
+    },
+    {
+      "deck0": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+      "deck1": "BJFR3iIQBEFx9XQQClFR9pwQDGEx+bQQDIGB/rsRDKKxC70RDLLBDMgRDeJxD8oRDfEB",
+      "deck0Name": "北斗重云雷泽",
+      "deck1Name": "纯水精灵·洛蒂娅八重神子愚人众·火之债务处理人"
+    },
+    {
+      "deck0": "AZAw2xYOAzCQ408OBEDw5JcPCSBw8rMPCzAw870PC1DQ9cIPDGAg9sgQDLGAC8kRDBAA",
+      "deck1": "AUCg9DUPA1Bw9XMPCWCw+KcPDNAg/cIQDCFgCsYQDLGQC8kQDdEQDdEQDeFwD90QD/AA",
+      "deck0Name": "班尼特可莉无相之雷",
+      "deck1Name": "菲谢尔纯水精灵·洛蒂娅愚人众·火之债务处理人"
+    }
+  ]
+}

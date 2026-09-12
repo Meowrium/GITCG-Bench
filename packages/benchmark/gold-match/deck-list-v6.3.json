@@ -1,0 +1,89 @@
+{
+  "version": "v6.3",
+  "decks": [
+    {
+      "code": "IUBg9CwUAsGxTJEYGaESihsZIVGxlYQaGOFBrrkdGzGS2xwdIbLCEx0hDjKgHuohD+AA",
+      "name": "嘉明钟离诺艾尔"
+    },
+    {
+      "code": "FqHByvwMF5AxyXwNF3HBh1cYFXJxHasPGkCx9MEYHKERijUeGIFBzIQcGMFR1IUdHEAA",
+      "name": "芙宁娜蚀灭的源焰之主阿佩普的绿洲守望者"
+    },
+    {
+      "code": "IOCQ8gUPAiDQ9EEPBkCQ9mkQCSFwApcQEzERAzEQGYExO5MTC7HgDL4QE8Fh1DYdDUAA",
+      "name": "瓦雷莎神里绫华阿贝多"
+    },
+    {
+      "code": "FhHB5+4PAkAR9PEYH6EQip0fCYHR+IQQGPFATcYUDNFgackWDJGQzNAcDcEA1NEdDUAA",
+      "name": "芙宁娜贪食匿叶龙山王八重神子"
+    },
+    {
+      "code": "IaFRWhkPIECw9JcPE2Ax9jMZGVExlZMbDKJgA8YgDDKgBsogDWEQadEWFJGhzEocE8AA",
+      "name": "爱可菲林尼水形幻人"
+    },
+    {
+      "code": "ItAB9N8PFEAi9iMPImExCOIQHoEgO5cTCbFwiqQYCqFB26sfGpGx+cEQHKERxUocIVAA",
+      "name": "丝柯克恰斯卡千年珍珠骏麟"
+    },
+    {
+      "code": "ATBx6dYOHKDR6i4eEpDg9JcPFUFxO1cTHbGRitkZDFFglcYaDSEQr9EaGvER1KEdGkAA",
+      "name": "胡桃希诺宁卡齐娜"
+    },
+    {
+      "code": "AWAwxDkMEUBgyU8MBJDx1ioTEoGhOFcVFaBx9IIPGEAi9hEYIaEQisEZDFER1DYdE8AA",
+      "name": "班尼特无相之雷若陀龙王"
+    },
+    {
+      "code": "HqDA9CwPAkGgBooQCGGgS50YCaHRioQaGOFArsYdDDFg28kdDLGQTdAUHtFwaeoWDpAA",
+      "name": "蓝砚钟离凝光"
+    },
+    {
+      "code": "EXCA6ioOAqDA9GgPCEGgBooQCWHQS50UC7ExioQYGKFA08YfDIFgTckUDNGQadAWHpAA",
+      "name": "夜兰凝光钟离"
+    },
+    {
+      "code": "IUBR2bINGJDB3o8OG5BQ6ZcOCaBx6jMPEyAx9FcPFUBw9cEPDGEROzYTE7Fh1IQdGEAA",
+      "name": "爱可菲黄金王兽娜维娅"
+    },
+    {
+      "code": "ARDR2b0NEZCA25cOCVBx5TEPE0AR9FcQFYFxCJMTGbEyOwAQDMFgDMYRDAGgEModDUAA",
+      "name": "赛诺克洛琳德夜兰"
+    },
+    {
+      "code": "IUBxycYMG5IhHcgOHJCB6bUOCKDg6o4PCUDQ9J0PC2HwAsEYDKERijYZE2Fh1IQdGEAA",
+      "name": "黑蛇骑士·摧岩之钺阿蕾奇诺黄金王兽"
+    },
+    {
+      "code": "IqIBHd8PGkBS9CMPImAx9uIQHoEgCJcTCbFwO6QYCqFBiqsdGrGx+cEfHJERCkodFEAA",
+      "name": "丝柯克恰斯卡深渊咏者·紫电"
+    },
+    {
+      "code": "ABGA5yoOAqDA6mgPCECg9IoQCWHQBp0UGLFBioQYDKFg08YfDIGQTckUDdEAadEWDZAA",
+      "name": "七七凝光钟离"
+    },
+    {
+      "code": "AXBB6s0OAqCw9IYPCEFgS50YCaHRioQfGIJAA8YQDPFgD8kUDNGQTdAWDZEQadEdHkAA",
+      "name": "安柏卡齐娜诺艾尔"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "IUBg9CwUAsGxTJEYGaESihsZIVGxlYQaGOFBrrkdGzGS2xwdIbLCEx0hDjKgHuohD+AA",
+      "deck1": "FqHByvwMF5AxyXwNF3HBh1cYFXJxHasPGkCx9MEYHKERijUeGIFBzIQcGMFR1IUdHEAA",
+      "deck0Name": "嘉明钟离诺艾尔",
+      "deck1Name": "芙宁娜蚀灭的源焰之主阿佩普的绿洲守望者"
+    },
+    {
+      "deck0": "IOCQ8gUPAiDQ9EEPBkCQ9mkQCSFwApcQEzERAzEQGYExO5MTC7HgDL4QE8Fh1DYdDUAA",
+      "deck1": "FhHB5+4PAkAR9PEYH6EQip0fCYHR+IQQGPFATcYUDNFgackWDJGQzNAcDcEA1NEdDUAA",
+      "deck0Name": "瓦雷莎神里绫华阿贝多",
+      "deck1Name": "芙宁娜贪食匿叶龙山王八重神子"
+    },
+    {
+      "deck0": "IaFRWhkPIECw9JcPE2Ax9jMZGVExlZMbDKJgA8YgDDKgBsogDWEQadEWFJGhzEocE8AA",
+      "deck1": "ItAB9N8PFEAi9iMPImExCOIQHoEgO5cTCbFwiqQYCqFB26sfGpGx+cEQHKERxUocIVAA",
+      "deck0Name": "爱可菲林尼水形幻人",
+      "deck1Name": "丝柯克恰斯卡千年珍珠骏麟"
+    }
+  ]
+}

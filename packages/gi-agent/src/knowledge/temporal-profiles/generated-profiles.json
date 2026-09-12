@@ -1,0 +1,2782 @@
+{
+  "schema_version": "temporal_profiles.v1",
+  "generated_at": "2026-05-09T09:58:50.738Z",
+  "source_count": 3,
+  "profile_count": 89,
+  "profiles": [
+    {
+      "definitionId": 322001,
+      "name": "Paimon",
+      "optionKind": "recurring_engine",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "generate_dice_omni": 2
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 3,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Paimon"
+    },
+    {
+      "definitionId": 322002,
+      "name": "Katheryne",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Katheryne"
+    },
+    {
+      "definitionId": 322003,
+      "name": "Timaeus",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "end_phase",
+        "on_play",
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "artifact"
+        }
+      ],
+      "payoff": {
+        "draw": 1,
+        "cost_reduction_all": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Timaeus"
+    },
+    {
+      "definitionId": 322004,
+      "name": "Wagner",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "on_play",
+        "end_phase",
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "weapon"
+        }
+      ],
+      "payoff": {
+        "draw": 1,
+        "cost_reduction_all": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Wagner"
+    },
+    {
+      "definitionId": 322005,
+      "name": "ChefMao",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "food"
+        }
+      ],
+      "payoff": {
+        "draw": 1,
+        "generate_dice_random": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": 1,
+        "usage_per_round": 1,
+        "max_uses_per_game": 1
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:ChefMao"
+    },
+    {
+      "definitionId": 322006,
+      "name": "Tubby",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "place"
+        }
+      ],
+      "payoff": {
+        "cost_reduction": 2
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Tubby"
+    },
+    {
+      "definitionId": 322007,
+      "name": "Timmie",
+      "optionKind": "recurring_engine",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "pigeon===3"
+        }
+      ],
+      "payoff": {
+        "draw": 1,
+        "generate_dice_omni": 1,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Timmie"
+    },
+    {
+      "definitionId": 322008,
+      "name": "Liben",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "end_phase",
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "collected>=3"
+        }
+      ],
+      "payoff": {
+        "draw": 2,
+        "generate_dice_omni": 2,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Liben"
+    },
+    {
+      "definitionId": 322009,
+      "name": "ChangTheNinth",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "inspiration>=3"
+        }
+      ],
+      "payoff": {
+        "draw": 2,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:ChangTheNinth"
+    },
+    {
+      "definitionId": 322010,
+      "name": "Ellin",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "cost_reduction": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Ellin"
+    },
+    {
+      "definitionId": 322011,
+      "name": "IronTongueTian",
+      "optionKind": "burst_enabler",
+      "triggerWindows": [
+        "end_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "energy_gain": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:IronTongueTian"
+    },
+    {
+      "definitionId": 322012,
+      "name": "LiuSu",
+      "optionKind": "burst_enabler",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "energy_gain": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": 2,
+        "usage_per_round": 1,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:LiuSu"
+    },
+    {
+      "definitionId": 322013,
+      "name": "Hanachirusato",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "on_play",
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "weapon"
+        },
+        {
+          "kind": "card_tag",
+          "value": "artifact"
+        },
+        {
+          "kind": "variable_at_least",
+          "value": "progress>=3"
+        }
+      ],
+      "payoff": {
+        "cost_reduction": 2
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Hanachirusato"
+    },
+    {
+      "definitionId": 322014,
+      "name": "KidKujirai",
+      "optionKind": "recurring_engine",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "generate_dice_omni": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:KidKujirai"
+    },
+    {
+      "definitionId": 322015,
+      "name": "Xudong",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "food"
+        }
+      ],
+      "payoff": {
+        "cost_reduction": 2
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Xudong"
+    },
+    {
+      "definitionId": 322016,
+      "name": "Dunyarzad",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "ally"
+        }
+      ],
+      "payoff": {
+        "draw": 1,
+        "cost_reduction": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": 1,
+        "usage_per_round": 1,
+        "max_uses_per_game": 1
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Dunyarzad"
+    },
+    {
+      "definitionId": 322017,
+      "name": "Rana",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "generate_dice_elemental": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Rana"
+    },
+    {
+      "definitionId": 322018,
+      "name": "MasterZhang",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "weapon"
+        }
+      ],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:MasterZhang"
+    },
+    {
+      "definitionId": 322019,
+      "name": "Setaria",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {
+        "draw": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": 3,
+        "usage_per_round": null,
+        "max_uses_per_game": 3
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Setaria"
+    },
+    {
+      "definitionId": 322020,
+      "name": "YayoiNanatsuki",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "artifact"
+        }
+      ],
+      "payoff": {
+        "cost_reduction": 2
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:YayoiNanatsuki"
+    },
+    {
+      "definitionId": 322022,
+      "name": "Jeht",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "on_play",
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "experience>=6"
+        }
+      ],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Jeht"
+    },
+    {
+      "definitionId": 322023,
+      "name": "SilverAndMelus",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "on_play",
+        "end_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:SilverAndMelus"
+    },
+    {
+      "definitionId": 322024,
+      "name": "Taroumaru",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "on_play",
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "count>=2"
+        }
+      ],
+      "payoff": {
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Taroumaru"
+    },
+    {
+      "definitionId": 322025,
+      "name": "TheWhiteGloveAndTheFisherman",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "end_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "usage===1"
+        }
+      ],
+      "payoff": {
+        "draw": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:TheWhiteGloveAndTheFisherman"
+    },
+    {
+      "definitionId": 322026,
+      "name": "SirArthur",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "end_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "clue>=2"
+        }
+      ],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:SirArthur"
+    },
+    {
+      "definitionId": 302213,
+      "name": "PucasSupport",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": false,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:PucasSupport"
+    },
+    {
+      "definitionId": 322027,
+      "name": "Serene",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "on_play",
+        "action_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Serene"
+    },
+    {
+      "definitionId": 322028,
+      "name": "Atea",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {
+        "cost_reduction": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Atea"
+    },
+    {
+      "definitionId": 322029,
+      "name": "ForestBlessing",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "on_play"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:ForestBlessing"
+    },
+    {
+      "definitionId": 322030,
+      "name": "GiftOfTheGoddessOfProphecy",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "on_play"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:GiftOfTheGoddessOfProphecy"
+    },
+    {
+      "definitionId": 322031,
+      "name": "Seymour",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "on_play",
+        "reactive"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": 2,
+        "usage_per_round": 1,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Seymour"
+    },
+    {
+      "definitionId": 322032,
+      "name": "BonaAndCocouik",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "on_play"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:BonaAndCocouik"
+    },
+    {
+      "definitionId": 302220,
+      "name": "MedicalEquipmentInvestmentGrandPlan",
+      "optionKind": "defense",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "progress>=1"
+        }
+      ],
+      "payoff": {
+        "heal": 2,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:MedicalEquipmentInvestmentGrandPlan"
+    },
+    {
+      "definitionId": 302221,
+      "name": "MedicalEquipmentInvestmentMegaPlan",
+      "optionKind": "defense",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "progress>=2"
+        }
+      ],
+      "payoff": {
+        "heal": 4,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:MedicalEquipmentInvestmentMegaPlan"
+    },
+    {
+      "definitionId": 302222,
+      "name": "MedicalEquipmentInvestmentSuperMegaPlan",
+      "optionKind": "defense",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "progress>=3"
+        }
+      ],
+      "payoff": {
+        "heal": 6,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:MedicalEquipmentInvestmentSuperMegaPlan"
+    },
+    {
+      "definitionId": 302229,
+      "name": "LepinepaulinesInvestmentInMedicalEquipment",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {
+        "damage": 1
+      },
+      "footprint": {
+        "support_slot": false,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:LepinepaulinesInvestmentInMedicalEquipment"
+    },
+    {
+      "definitionId": 302223,
+      "name": "GraphAdversarialTechnologyInvestmentGrandPlan",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "progress>=1"
+        }
+      ],
+      "payoff": {
+        "draw": 2,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:GraphAdversarialTechnologyInvestmentGrandPlan"
+    },
+    {
+      "definitionId": 302224,
+      "name": "GraphAdversarialTechnologyInvestmentMegaPlan",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "progress>=2"
+        }
+      ],
+      "payoff": {
+        "draw": 4,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:GraphAdversarialTechnologyInvestmentMegaPlan"
+    },
+    {
+      "definitionId": 302225,
+      "name": "GraphAdversarialTechnologyInvestmentSuperMegaPlan",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "progress>=3"
+        }
+      ],
+      "payoff": {
+        "draw": 6,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:GraphAdversarialTechnologyInvestmentSuperMegaPlan"
+    },
+    {
+      "definitionId": 302230,
+      "name": "LepinepaulinesInvestmentInGraphAdversarialTechnology",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": false,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:LepinepaulinesInvestmentInGraphAdversarialTechnology"
+    },
+    {
+      "definitionId": 302226,
+      "name": "EnergyMechanismInvestmentGrandPlan",
+      "optionKind": "recurring_engine",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "progress>=1"
+        }
+      ],
+      "payoff": {
+        "generate_dice_random": 1,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:EnergyMechanismInvestmentGrandPlan"
+    },
+    {
+      "definitionId": 302227,
+      "name": "EnergyMechanismInvestmentMegaPlan",
+      "optionKind": "recurring_engine",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "progress>=2"
+        }
+      ],
+      "payoff": {
+        "generate_dice_random": 2,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:EnergyMechanismInvestmentMegaPlan"
+    },
+    {
+      "definitionId": 302228,
+      "name": "EnergyMechanismInvestmentSuperMegaPlan",
+      "optionKind": "recurring_engine",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "progress>=3"
+        }
+      ],
+      "payoff": {
+        "generate_dice_random": 3,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:EnergyMechanismInvestmentSuperMegaPlan"
+    },
+    {
+      "definitionId": 302231,
+      "name": "LepinepaulinesInvestmentInEnergyMechanism",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": false,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:LepinepaulinesInvestmentInEnergyMechanism"
+    },
+    {
+      "definitionId": 322033,
+      "name": "LepinePauline",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "on_play"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:LepinePauline"
+    },
+    {
+      "definitionId": 323001,
+      "name": "ParametricTransformer",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "progress>=3"
+        }
+      ],
+      "payoff": {
+        "generate_dice_random": 3,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:ParametricTransformer"
+    },
+    {
+      "definitionId": 323002,
+      "name": "Nre",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "on_play",
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "food"
+        }
+      ],
+      "payoff": {
+        "draw": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Nre"
+    },
+    {
+      "definitionId": 323003,
+      "name": "RedFeatherFan",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:RedFeatherFan"
+    },
+    {
+      "definitionId": 323004,
+      "name": "TreasureseekingSeelie",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "clue>=3"
+        }
+      ],
+      "payoff": {
+        "draw": 3,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:TreasureseekingSeelie"
+    },
+    {
+      "definitionId": 323005,
+      "name": "SeedDispensary",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "cost_reduction": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": 2,
+        "usage_per_round": 1,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:SeedDispensary"
+    },
+    {
+      "definitionId": 323006,
+      "name": "MementoLens",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "weapon"
+        },
+        {
+          "kind": "card_tag",
+          "value": "artifact"
+        },
+        {
+          "kind": "card_tag",
+          "value": "place"
+        },
+        {
+          "kind": "card_tag",
+          "value": "ally"
+        },
+        {
+          "kind": "variable_at_least",
+          "value": "totalUsage<=0"
+        }
+      ],
+      "payoff": {
+        "cost_reduction": 2,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:MementoLens"
+    },
+    {
+      "definitionId": 323007,
+      "name": "LumenstoneAdjuvant",
+      "optionKind": "recurring_engine",
+      "triggerWindows": [
+        "action_phase",
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "playedCard===3"
+        }
+      ],
+      "payoff": {
+        "draw": 1,
+        "generate_dice_omni": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 3,
+        "usage_limit": 3,
+        "usage_per_round": 1,
+        "max_uses_per_game": 3
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:LumenstoneAdjuvant"
+    },
+    {
+      "definitionId": 323008,
+      "name": "Kusava",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "action_phase",
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "memory>0"
+        }
+      ],
+      "payoff": {
+        "cost_reduction": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Kusava"
+    },
+    {
+      "definitionId": 321001,
+      "name": "LiyueHarborWharf",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "end_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "draw": 2
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:LiyueHarborWharf"
+    },
+    {
+      "definitionId": 321002,
+      "name": "KnightsOfFavoniusLibrary",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "on_play"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:KnightsOfFavoniusLibrary"
+    },
+    {
+      "definitionId": 321003,
+      "name": "JadeChamber",
+      "optionKind": "recurring_engine",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "generate_dice_omni": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:JadeChamber"
+    },
+    {
+      "definitionId": 321004,
+      "name": "DawnWinery",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {
+        "cost_reduction": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 3,
+        "usage_limit": null,
+        "usage_per_round": 2,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:DawnWinery"
+    },
+    {
+      "definitionId": 321005,
+      "name": "WangshuInn",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "end_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:WangshuInn"
+    },
+    {
+      "definitionId": 321006,
+      "name": "FavoniusCathedral",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "end_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:FavoniusCathedral"
+    },
+    {
+      "definitionId": 321007,
+      "name": "Tenshukaku",
+      "optionKind": "recurring_engine",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "generate_dice_omni": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Tenshukaku"
+    },
+    {
+      "definitionId": 321008,
+      "name": "GrandNarukamiShrine",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "generate_dice_omni": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 3,
+        "usage_limit": null,
+        "usage_per_round": 2,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:GrandNarukamiShrine"
+    },
+    {
+      "definitionId": 321009,
+      "name": "SangonomiyaShrine",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "end_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:SangonomiyaShrine"
+    },
+    {
+      "definitionId": 321010,
+      "name": "SumeruCity",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "talent"
+        }
+      ],
+      "payoff": {
+        "cost_reduction": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": 1,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:SumeruCity"
+    },
+    {
+      "definitionId": 321011,
+      "name": "Vanarana",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "end_phase",
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "count===2"
+        },
+        {
+          "kind": "variable_at_least",
+          "value": "count===1"
+        }
+      ],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:Vanarana"
+    },
+    {
+      "definitionId": 321012,
+      "name": "ChinjuForest",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 4,
+        "usage_per_round": null,
+        "max_uses_per_game": 4
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:ChinjuForest"
+    },
+    {
+      "definitionId": 321013,
+      "name": "GoldenHouse",
+      "optionKind": "conditional_engine",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "weapon"
+        },
+        {
+          "kind": "card_tag",
+          "value": "artifact"
+        }
+      ],
+      "payoff": {
+        "cost_reduction": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": 2,
+        "usage_per_round": 1,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:GoldenHouse"
+    },
+    {
+      "definitionId": 321014,
+      "name": "GandharvaVille",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {
+        "generate_dice_omni": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": 3,
+        "usage_per_round": 1,
+        "max_uses_per_game": 3
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:GandharvaVille"
+    },
+    {
+      "definitionId": 321015,
+      "name": "StormterrorsLair",
+      "optionKind": "converter",
+      "triggerWindows": [
+        "on_play"
+      ],
+      "prerequisites": [
+        {
+          "kind": "card_tag",
+          "value": "talent"
+        }
+      ],
+      "payoff": {
+        "draw": 1,
+        "cost_reduction": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 3,
+        "usage_per_round": 1,
+        "max_uses_per_game": 3
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:StormterrorsLair"
+    },
+    {
+      "definitionId": 321016,
+      "name": "WeepingWillowOfTheLake",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "end_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "draw": 2
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:WeepingWillowOfTheLake"
+    },
+    {
+      "definitionId": 321017,
+      "name": "OperaEpiclese",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": 3,
+        "usage_per_round": 1,
+        "max_uses_per_game": 3
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:OperaEpiclese"
+    },
+    {
+      "definitionId": 321018,
+      "name": "FortressOfMeropide",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "forbidden>=5"
+        }
+      ],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:FortressOfMeropide"
+    },
+    {
+      "definitionId": 321019,
+      "name": "SeiraiIsland",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:SeiraiIsland"
+    },
+    {
+      "definitionId": 321020,
+      "name": "TheMausoleumOfKingDeshret",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "drawnCardCount===4"
+        }
+      ],
+      "payoff": {
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:TheMausoleumOfKingDeshret"
+    },
+    {
+      "definitionId": 321021,
+      "name": "CentralLaboratoryRuins",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {
+        "generate_dice_omni": 1,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:CentralLaboratoryRuins"
+    },
+    {
+      "definitionId": 321022,
+      "name": "StadiumOfTheSacredFlame",
+      "optionKind": "defense",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {
+        "generate_dice_random": 1,
+        "heal": 2,
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:StadiumOfTheSacredFlame"
+    },
+    {
+      "definitionId": 133087,
+      "name": "FormerSiteOfTheCentralLaboratory",
+      "optionKind": "recurring_engine",
+      "triggerWindows": [
+        "reactive",
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "attention>0"
+        }
+      ],
+      "payoff": {
+        "generate_dice_random": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:FormerSiteOfTheCentralLaboratory"
+    },
+    {
+      "definitionId": 321024,
+      "name": "ScionsOfTheCanopy",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "generate_dice_random": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:ScionsOfTheCanopy"
+    },
+    {
+      "definitionId": 321025,
+      "name": "PeopleOfTheSprings",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 3,
+        "usage_per_round": null,
+        "max_uses_per_game": 3
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:PeopleOfTheSprings"
+    },
+    {
+      "definitionId": 321026,
+      "name": "FlowerfeatherClan",
+      "optionKind": "generic_setup",
+      "triggerWindows": [],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "disposedCardCount>=2"
+        }
+      ],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:FlowerfeatherClan"
+    },
+    {
+      "definitionId": 321027,
+      "name": "MastersOfTheNightwind",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "intuition===0"
+        }
+      ],
+      "payoff": {
+        "self_dispose": true
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:MastersOfTheNightwind"
+    },
+    {
+      "definitionId": 321028,
+      "name": "CollectiveOfPlenty",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "reactive"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 3,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:CollectiveOfPlenty"
+    },
+    {
+      "definitionId": 321029,
+      "name": "CalligraphyTavern",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "on_play"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 3,
+        "usage_per_round": null,
+        "max_uses_per_game": 3
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:CalligraphyTavern"
+    },
+    {
+      "definitionId": 321030,
+      "name": "ConstellationMetropole",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "on_play",
+        "reactive"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 3
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_condition"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:ConstellationMetropole"
+    },
+    {
+      "definitionId": 321031,
+      "name": "AdventurersGuild",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "end_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "usage===0"
+        }
+      ],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 3,
+        "usage_per_round": null,
+        "max_uses_per_game": 3
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:AdventurersGuild"
+    },
+    {
+      "definitionId": 321035,
+      "name": "SilvermoonHall",
+      "optionKind": "recurring_engine",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "count>=3"
+        }
+      ],
+      "payoff": {
+        "generate_dice_random": 1
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": null,
+        "usage_per_round": null,
+        "max_uses_per_game": null
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:SilvermoonHall"
+    },
+    {
+      "definitionId": 321036,
+      "name": "TidesealStone",
+      "optionKind": "generic_setup",
+      "triggerWindows": [
+        "action_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 0,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 0,
+        "payoff_recurrence": "per_round"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:TidesealStone"
+    },
+    {
+      "definitionId": 321037,
+      "name": "FrostmoonEnclave",
+      "optionKind": "converter",
+      "triggerWindows": [
+        "on_play",
+        "end_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "draw": 2
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 4,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:FrostmoonEnclave"
+    },
+    {
+      "definitionId": 321038,
+      "name": "NashaTown",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "end_phase"
+      ],
+      "prerequisites": [
+        {
+          "kind": "variable_at_least",
+          "value": "usage===0"
+        }
+      ],
+      "payoff": {},
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 1,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:NashaTown"
+    },
+    {
+      "definitionId": 321039,
+      "name": "KuuvahkiExperimentalDesignBureau",
+      "optionKind": "deferred_bank",
+      "triggerWindows": [
+        "end_phase"
+      ],
+      "prerequisites": [],
+      "payoff": {
+        "draw": 2
+      },
+      "footprint": {
+        "support_slot": true,
+        "dice_cost_average": 2,
+        "usage_limit": 2,
+        "usage_per_round": null,
+        "max_uses_per_game": 2
+      },
+      "lifecycle": {
+        "ideal_deploy_round": {
+          "min": 1,
+          "max": 2
+        },
+        "payoff_delay": 1,
+        "payoff_recurrence": "once"
+      },
+      "confidence": "source_parsed",
+      "source": "dsl:KuuvahkiExperimentalDesignBureau"
+    }
+  ]
+}

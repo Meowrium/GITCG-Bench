@@ -1,0 +1,89 @@
+{
+  "version": "v6.2",
+  "decks": [
+    {
+      "code": "FqDByfwMF5Ax13wYF3HBh6shGtCx9MEPHEERijUYE6FRuoQbGKFBzIUcGMFR1ModHEAA",
+      "name": "芙宁娜蚀灭的源焰之主阿佩普的绿洲守望者"
+    },
+    {
+      "code": "AXFBh/whF9Ax9HwPF0HBiqsYGqGxrsEaHOERujUbGKFR6IUeHIGhzMocDMGQ1MkdGEAA",
+      "name": "安柏蚀灭的源焰之主阿佩普的绿洲守望者"
+    },
+    {
+      "code": "GPDR4B4OEQBQ9JcPCUBx9VcPFWBw9sYYDKFgiskQDKGQE9ARDTEQ1NEdHkFw3N8dDcAA",
+      "name": "愚人众·霜役人雷音权现「女士」"
+    },
+    {
+      "code": "IWBRxrIMGGDB3o8OG5BQ6ZcOCaBw6qQPCkBB9DMPE2ExO1cTFbFwzMEcDMER1DYdE0AA",
+      "name": "爱可菲黄金王兽娜维娅"
+    },
+    {
+      "code": "HLDh6xkPERDA8ZcPCUBx9JMPGWExuvIbH6IgA7UgCzJQBsogDGGgPtQTDeFA1NsdDkAA",
+      "name": "艾梅莉埃林尼艾尔海森"
+    },
+    {
+      "code": "AuDQ8gUPICCQ9EEPBkCQ9WkPCWFwApcQEzERAzETGbExO5MQDKEQDMEQE8Fh1DYdDUAA",
+      "name": "阿贝多神里绫华瓦雷莎"
+    },
+    {
+      "code": "ILCx9N4PHEHRO+ETHrEQTJcYCqFBijMbG6GRurkdDLKQA8kgDTIQBNEgFGKhBkogDXAA",
+      "name": "水形幻人玛薇卡卡齐娜"
+    },
+    {
+      "code": "IbBh68cOHMDg7JcPHxAh8fIPGSDR8p0PGWDh9p4bC6FA+bQfDJEwPtQTDeFA1NsdDkAA",
+      "name": "嘉明基尼奇艾梅莉埃"
+    },
+    {
+      "code": "HKDR6dYOAZBx6i4OEqHg6ZcPFUBx9FcTHbGRO9kYDKFgisYaDSEQr9EaGvER1KEdE0AA",
+      "name": "卡齐娜希诺宁胡桃"
+    },
+    {
+      "code": "IRBR8xkPIECy9BgPIWCA9pcTE7ExujMbGaIxA5MgDDJgBsYgDGGgzMocFcGg1PEdD0AA",
+      "name": "爱可菲林尼水形幻人"
+    },
+    {
+      "code": "G2EgNgsNGODB6Y8OG5BQ6pcOCaBw9KQPCkBB9jMTE7ExO1cgFWFwzLQcDMEQ1MEdE0AA",
+      "name": "黄金王兽莫娜娜维娅"
+    },
+    {
+      "code": "IaBQ9BQPIECx9TMPE2Ax9lcUFcFxulgbDKJgA8YgDDKQBsogDWEQzNEcFMGh1EodFUAA",
+      "name": "爱可菲安柏水形幻人"
+    },
+    {
+      "code": "GPDQ3yAOAABw4JcPCUBx9FcYFaFwusYgDEJgBMkgDGGQCs0cDMHQzNEdDUER1FodDcAA",
+      "name": "愚人众·霜役人雷电将军申鹤"
+    },
+    {
+      "code": "ERCB2b0NAZDQ25cOCVBx5TEPEyAR9FcPFUFxCJMTGbEwO8YQDMFgDMoRDAGgENEdDUAA",
+      "name": "夜兰克洛琳德赛诺"
+    },
+    {
+      "code": "HxChv0ALHfHRNkQTFGBA2oYeCJBg9I4PCEHgCJcQCYFxOzATE7IBBzMgFXFx1FcdIUAA",
+      "name": "伊安珊早柚茜特菈莉"
+    },
+    {
+      "code": "AkCy9BYUArHRS5EUGcESTBsVIbGxirkaG+GRrjcdITHC2xwdIbLQE+khDjKgHuohD+AA",
+      "name": "诺艾尔嘉明阿贝多"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "FqDByfwMF5Ax13wYF3HBh6shGtCx9MEPHEERijUYE6FRuoQbGKFBzIUcGMFR1ModHEAA",
+      "deck1": "AXFBh/whF9Ax9HwPF0HBiqsYGqGxrsEaHOERujUbGKFR6IUeHIGhzMocDMGQ1MkdGEAA",
+      "deck0Name": "芙宁娜蚀灭的源焰之主阿佩普的绿洲守望者",
+      "deck1Name": "安柏蚀灭的源焰之主阿佩普的绿洲守望者"
+    },
+    {
+      "deck0": "GPDR4B4OEQBQ9JcPCUBx9VcPFWBw9sYYDKFgiskQDKGQE9ARDTEQ1NEdHkFw3N8dDcAA",
+      "deck1": "IWBRxrIMGGDB3o8OG5BQ6ZcOCaBw6qQPCkBB9DMPE2ExO1cTFbFwzMEcDMER1DYdE0AA",
+      "deck0Name": "愚人众·霜役人雷音权现「女士」",
+      "deck1Name": "爱可菲黄金王兽娜维娅"
+    },
+    {
+      "deck0": "HLDh6xkPERDA8ZcPCUBx9JMPGWExuvIbH6IgA7UgCzJQBsogDGGgPtQTDeFA1NsdDkAA",
+      "deck1": "AuDQ8gUPICCQ9EEPBkCQ9WkPCWFwApcQEzERAzETGbExO5MQDKEQDMEQE8Fh1DYdDUAA",
+      "deck0Name": "艾梅莉埃林尼艾尔海森",
+      "deck1Name": "阿贝多神里绫华瓦雷莎"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/round22-g53f/plans/shuiba.ctrl.r0.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round19-glm/plans/leihe.ctrl.r0.json"
+  },
+  "games": 10,
+  "seedBase": 20273901,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round22-g53f/xdeck/ctrl/shuiba-vs-leihe"
+}

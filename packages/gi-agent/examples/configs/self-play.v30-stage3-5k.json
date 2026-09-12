@@ -1,0 +1,15 @@
+{
+  "_doc": "V30 Stage 3 FULL — 5120 games / ~400k samples / ~4h Win native. KPI-B target per V30 §20.6. Run only after smoke (2k) confirmed val/train gap < 10pp.",
+  "benchmarkPath": "./benchmark.v30-stage3-5k.json",
+  "gamesMultiplier": 1,
+  "dbPath": "../output/v30-stage3-5k/samples.sqlite",
+  "source": "self_play",
+  "featureExtension": {
+    "enabled": true,
+    "fingerprintArtifactPath": "../../output/entity-fingerprints.generated.json"
+  },
+  "stateObservation": { "enabled": true },
+  "sideA": {"name": "baseline-a", "kind": "baseline", "options": {"endTurnPenalty": 5}},
+  "sideB": {"name": "baseline-b", "kind": "baseline", "options": {"endTurnPenalty": 5}},
+  "outputPath": "../output/v30-stage3-5k/self-play-result.json"
+}

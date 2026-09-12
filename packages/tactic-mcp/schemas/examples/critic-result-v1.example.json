@@ -1,0 +1,31 @@
+{
+  "version": "CriticResultV1",
+  "session_id": "sess_001",
+  "plan_id": "plan_sess_001_1741270000",
+  "turn": 1,
+  "step_id": "turn1_step2",
+  "outcome": "partial",
+  "score": 0.62,
+  "violations": [
+    {
+      "code": "DICE_EFFICIENCY_LOW",
+      "severity": "medium",
+      "message": "Used omni die for low-impact action."
+    }
+  ],
+  "observations": [
+    "reaction setup achieved",
+    "core unit hp remained safe"
+  ],
+  "suggested_adjustments": [
+    "prioritize elemental_tuning before committing omni dice"
+  ],
+  "should_replan": false,
+  "replan_scope": "none",
+  "reason": "Plan still valid with minor micro adjustment.",
+  "next_constraints": [
+    "keep at least one fast-action option",
+    "avoid exposing core unit below 4 hp"
+  ],
+  "evaluated_at": "2026-03-06T09:00:08.000Z"
+}

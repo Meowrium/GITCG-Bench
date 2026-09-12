@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "critic_result": {
+    "version": "CriticResultV1",
+    "session_id": "sess_001",
+    "plan_id": "plan_sess_001_1741270000",
+    "turn": 2,
+    "step_id": "turn2_step1",
+    "outcome": "success",
+    "score": 0.78,
+    "violations": [],
+    "observations": [
+      "policy executed as intended",
+      "resource usage within constraints"
+    ],
+    "suggested_adjustments": [
+      "prefer non-omni conversion next step if available"
+    ],
+    "should_replan": false,
+    "replan_scope": "none",
+    "reason": "Current shard is still valid.",
+    "next_constraints": ["maintain core hp >= 4"],
+    "evaluated_at": "2026-03-06T09:30:00.000Z"
+  }
+}

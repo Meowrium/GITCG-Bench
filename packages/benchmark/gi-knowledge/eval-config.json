@@ -1,0 +1,19 @@
+{
+  "//": "七圣召唤评测配置 — 修改 runs 数组即可增减测试",
+  "questions": "packages/benchmark/gi-knowledge/data/benchmark-latest.json",
+  "max": 100,
+  "runs": [
+    {
+      "name": "opencode-kimi",
+      "api": "https://opencode.ai/zen/go/v1/chat/completions",
+      "model": "kimi-k2.6",
+      "tag": "kimi"
+    },
+    {
+      "name": "opencode-mmm",
+      "api": "https://opencode.ai/zen/go/v1/messages",
+      "model": "minimax-m3",
+      "tag": "MMM"
+    }
+  ]
+}

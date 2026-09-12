@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "3.0",
+  "deckCode": "AJCx2R4NEZFQOJcTCoFBWTAVE5EBOjMPE0Aw9MkPDFCQ9tEQDYEQCNUTDbFRTEkUFMAA",
+  "deckName": "莫娜雷音权现「女士」",
+  "version": "v6.6",
+  "deckProfile": {},
+  "keyCards": {
+    "combo": [],
+    "draw": [],
+    "sustain": [],
+    "disruption": [],
+    "ramp": []
+  },
+  "comboLines": [],
+  "matchup": {
+    "opponentThreats": [],
+    "assessment": {
+      "myAdvantages": [],
+      "oppAdvantages": []
+    }
+  },
+  "abstentions": []
+}

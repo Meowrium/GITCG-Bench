@@ -1,0 +1,89 @@
+{
+  "version": "v6.5",
+  "decks": [
+    {
+      "code": "AJCx2R4NEZFQOJcTCoFBWTAVE5EBOjMPE0Aw9MkPDFCQ9tEQDYEQCNUTDbFRTEkUFMAA",
+      "name": "莫娜雷音权现「女士」"
+    },
+    {
+      "code": "HJDR6RkOGKDB6o8PGGHxB88QHHHwO5cTCbFxxFccFUFwr7YaC/Fg1MYdDEFg3NsdDsAA",
+      "name": "卡齐娜林尼娜维娅"
+    },
+    {
+      "code": "AJCg2QQNAZGwWZcVE5AB2zAPE0AR9DMQE1EwCMMQDIFAO8QTDLGgTMoUDcEQaNERFAAA",
+      "name": "行秋重云雷泽"
+    },
+    {
+      "code": "EZBR6aQOAqDA6mgPGkBx9FcPFWFxip4YDKEQusEbE6FhzDYcDMFg1MYdDEGQ3N4dDsAA",
+      "name": "「女士」千织钟离"
+    },
+    {
+      "code": "AeCg9DEPEVCQ9ZcPCWBx9jAQE4EBCDMTE7FBOzQQC6HwC8YQDLFgDdUQDeFRETgRDTAA",
+      "name": "菲谢尔纳西妲林尼"
+    },
+    {
+      "code": "AaBR2RgNFpCw21EPBUAQ9JcPCVBx9TEPE2ERO1cTFbFxDJMQGcEwDcYQDNFgEMoRDAAA",
+      "name": "宵宫夜兰莱欧斯利"
+    },
+    {
+      "code": "EVCR1UIUEZFhSSoNEpCg2ZcTE4EBODANE7AR9DMPE0EwCMkQDIGQO8oTDbEQTNEUDcAA",
+      "name": "林尼千年珍珠骏麟若陀龙王"
+    },
+    {
+      "code": "AWCQxiUMEZChySMNCRAA0ZENEuDw550OCXDR6DQOE4FBCzYQDLEgDsIQDOFQD8URDDAA",
+      "name": "迪希雅琴琳妮特"
+    },
+    {
+      "code": "A4ICOxYOAfFx4I8PCgFx4ZgQC0FB9ccQDVFh98oQDWKRC84RDbLRDNIRDsJyDzkSFBEB",
+      "name": "雷电将军「女士」申鹤"
+    },
+    {
+      "code": "A5BhyUANABBB0UQNCKBg9IYPCUBx9jAPE2EBCDMQFYFxO1cTC7Hwir8YDKFAC8QQDLAA",
+      "name": "愚人众·藏镜仕女早柚重云"
+    },
+    {
+      "code": "FZDhyUANABBB0WENCGFgOIYNCaBx9DAPE0AB9jMQE4ExCFcTC7HwO78YDKFAisQQDLAA",
+      "name": "深渊使徒·激流早柚重云"
+    },
+    {
+      "code": "AFBwxScNEZCA2YMNCNCg9I4PCEDg9pcPCWFxBTMQGVExBpMQC2HwO78TFrFRDGURDDAA",
+      "name": "申鹤魈夜兰"
+    },
+    {
+      "code": "EpFy0lAOEhJiSisOE5Gi2i0WCpJxWqUUFKEC9TEQFEEy9zQRDILxCcUUDbJBPMoXDYEB",
+      "name": "莱依拉那维莱特若陀龙王"
+    },
+    {
+      "code": "AvDB76QPAEDQ9GgPGmBw+cEYDKERijYbE6FgusYdDDFgTd4cDsGQzOkdDkGg1OodDsAA",
+      "name": "钟离千织珊瑚宫心海"
+    },
+    {
+      "code": "GNDR3x4NEfBR4JAOCQBw9pcPFWFxAFcYC6HQisYQDKFgE8kRDDGQ1NAdDUEQ3NEdDcAA",
+      "name": "愚人众·霜役人雷音权现「女士」"
+    },
+    {
+      "code": "GVIDxnMOGUMjW3wXGZKy4KURDEIz9koRFmODBYMSGjMSCrUSDYMzjIYaGqNDDIcSGqIC",
+      "name": "吞星之鲸圣骸毒蝎圣骸飞蛇"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "AJCx2R4NEZFQOJcTCoFBWTAVE5EBOjMPE0Aw9MkPDFCQ9tEQDYEQCNUTDbFRTEkUFMAA",
+      "deck1": "HJDR6RkOGKDB6o8PGGHxB88QHHHwO5cTCbFxxFccFUFwr7YaC/Fg1MYdDEFg3NsdDsAA",
+      "deck0Name": "莫娜雷音权现「女士」",
+      "deck1Name": "卡齐娜林尼娜维娅"
+    },
+    {
+      "deck0": "AJCg2QQNAZGwWZcVE5AB2zAPE0AR9DMQE1EwCMMQDIFAO8QTDLGgTMoUDcEQaNERFAAA",
+      "deck1": "EZBR6aQOAqDA6mgPGkBx9FcPFWFxip4YDKEQusEbE6FhzDYcDMFg1MYdDEGQ3N4dDsAA",
+      "deck0Name": "行秋重云雷泽",
+      "deck1Name": "「女士」千织钟离"
+    },
+    {
+      "deck0": "AeCg9DEPEVCQ9ZcPCWBx9jAQE4EBCDMTE7FBOzQQC6HwC8YQDLFgDdUQDeFRETgRDTAA",
+      "deck1": "AaBR2RgNFpCw21EPBUAQ9JcPCVBx9TEPE2ERO1cTFbFxDJMQGcEwDcYQDNFgEMoRDAAA",
+      "deck0Name": "菲谢尔纳西妲林尼",
+      "deck1Name": "宵宫夜兰莱欧斯利"
+    }
+  ]
+}

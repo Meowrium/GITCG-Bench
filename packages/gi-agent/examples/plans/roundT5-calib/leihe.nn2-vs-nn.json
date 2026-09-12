@@ -1,0 +1,11 @@
+{
+  "planFile": "../../output/plan-oneshot/roundT5-calib/plans/leihe.nn2.json",
+  "opponent": {
+    "type": "nn"
+  },
+  "games": 10,
+  "seedBase": 20276401,
+  "concurrency": 2,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/roundT5-calib/games/leihe.nn2-vs-nn"
+}

@@ -1,0 +1,221 @@
+{
+  "schemaVersion": "3.0",
+  "deckCode": "AxBw9DUPAUCg9XMPCVBQ9rwPDIAg/cIPDNFgCsYQDKGQC8kQDbEQDdEQDeFwD90QD/AA",
+  "deckName": "水债",
+  "version": "v6.3.0",
+  "deckProfile": {
+    "primaryType": "midrange",
+    "tempo": "medium",
+    "startupSpeed": "turn4"
+  },
+  "keyCards": {
+    "combo": [
+      {
+        "id": "330004",
+        "role": "combo_bridge",
+        "importance": "core",
+        "rationale": "中期斩杀时用于争取动数，但起手留下会导致手牌运转受阻",
+        "mulligan": "never"
+      },
+      {
+        "id": "332008",
+        "role": "combo_starter",
+        "importance": "important",
+        "rationale": "前中期用处不大的即时充能",
+        "mulligan": "never"
+      }
+    ],
+    "damage": [
+      {
+        "id": "333002",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "中后期斩杀用，料理可以靠卯师傅检索不用留",
+        "mulligan": "never"
+      }
+    ],
+    "draw": [
+      {
+        "id": "322005",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "料理体系运转核心",
+        "mulligan": "high"
+      },
+      {
+        "id": "322008",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "存储剩余费用、调整骰子质量",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322016",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "伙伴体系核心",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "323002",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "料理轴检索核心，且越早上手收益越高",
+        "mulligan": "high"
+      },
+      {
+        "id": "332004",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "灵活、有效撑起手牌质量",
+        "mulligan": "high"
+      }
+    ],
+    "sustain": [
+      {
+        "id": "223011",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "残局收尾必备单卡，但起手留下会影响卡组运转",
+        "mulligan": "never"
+      },
+      {
+        "id": "312002",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "提供残局续航，但起手留下会影响卡组运转",
+        "mulligan": "never"
+      },
+      {
+        "id": "333003",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高效承伤，但一般在中期保活争取轮次才有用",
+        "mulligan": "never"
+      },
+      {
+        "id": "333005",
+        "role": "sustain",
+        "importance": "important",
+        "rationale": "提高料理轴浓度的单卡，提供少量回复并配合卯师傅产生额外骰子产出",
+        "mulligan": "never"
+      },
+      {
+        "id": "333006",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高效治疗",
+        "mulligan": "never"
+      },
+      {
+        "id": "333007",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高收益治疗，但开局一般用不上",
+        "mulligan": "never"
+      }
+    ],
+    "disruption": [
+      {
+        "id": "332013",
+        "role": "disruption",
+        "importance": "core",
+        "rationale": "有效去除关键召唤物",
+        "mulligan": "situational"
+      }
+    ],
+    "ramp": [
+      {
+        "id": "321010",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "提供续航，有效降低有效骰压力 ，且在残局手牌持续消耗时难以触发",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "322001",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "提现较慢的支援牌，费用偏高，较慢的对局中可留",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322005",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "料理体系运转核心",
+        "mulligan": "high"
+      },
+      {
+        "id": "322008",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "存储剩余费用、调整骰子质量",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322016",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "伙伴体系核心",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "323002",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "料理轴检索核心，且越早上手收益越高",
+        "mulligan": "high"
+      }
+    ],
+    "flex": [
+      {
+        "id": "332013",
+        "role": "flex_slot",
+        "importance": "core",
+        "rationale": "有效去除关键召唤物",
+        "mulligan": "situational"
+      }
+    ]
+  },
+  "abstentions": [],
+  "damageMode": "summon_swarm",
+  "powerCurve": "steady",
+  "setupDependency": "medium",
+  "resilience": {
+    "hasHealing": true,
+    "hasShield": true,
+    "hasImmuneControl": false,
+    "vulnerableTo": [],
+    "hasSummonRemoval": true,
+    "hasBoardDisruption": true
+  },
+  "openingSequences": [
+    {
+      "id": "open-1",
+      "name": "3+3",
+      "condition": "",
+      "style": "tempo",
+      "steps": [
+        {
+          "action": "菲谢尔 夜巡影翼",
+          "cost": "3雷",
+          "effectDescription": ""
+        },
+        {
+          "action": "切纯水精灵·洛蒂娅",
+          "cost": "1任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "纯水精灵·洛蒂娅 纯水幻造",
+          "cost": "3水",
+          "effectDescription": ""
+        }
+      ],
+      "diceConstraint": "3雷+3水",
+      "totalDiceUsed": 7,
+      "isPrimary": true
+    }
+  ]
+}

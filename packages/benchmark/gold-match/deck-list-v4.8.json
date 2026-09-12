@@ -1,0 +1,89 @@
+{
+  "version": "v4.8",
+  "decks": [
+    {
+      "code": "FZDhyUANABBB0WENCGFgOIYNCaBx9DAPE0AB9jMQE4ExCFcTC7HwO78YDKFAisQQDLAA",
+      "name": "深渊使徒·激流早柚重云"
+    },
+    {
+      "code": "FEAQyRwMF5AA0ZANCREAlKMZCkExiEgPFECB9IEQGDEQA7MUC8ExTIUYGKFQisQZDGAA",
+      "name": "无相之冰刻晴吞星之鲸"
+    },
+    {
+      "code": "A1GCxhYNAZGxypEOExHy0kgUCoJxOaUUFKEC9TEQFEEy9zQRDILxCcAUDbJBPMURDbEB",
+      "name": "枫原万叶「女士」莫娜"
+    },
+    {
+      "code": "ERBgxBMMA0CQyU8MEpGhOCoTCYBx9EgPFUBx9lcPGGEhO4ITC7FgirYYC6HQC8EQDLAA",
+      "name": "若陀龙王班尼特无相之雷"
+    },
+    {
+      "code": "ERCR0VwPA0AQ9JcPE1AB9jAPE2ExCDMQFIGBO0gTDLFACsQQDLFgC8YQDNGQDckRDRAA",
+      "name": "林尼久岐忍纳西妲"
+    },
+    {
+      "code": "ATCQ4x0OGECw5FkPBQCR8JIPGUAg9JcPCWBw9r0YE6FhijYZDGGQlskQFrFwC90RDjAA",
+      "name": "迪希雅赛诺夏沃蕾"
+    },
+    {
+      "code": "E2HxNl8MAUDQxFkMFpAhyWIOCTBw45wOCUDA5J0PCUDR9DQPC2Bg9rYYC6HQC70QE7AA",
+      "name": "托马铁甲熔火帝皇赛诺"
+    },
+    {
+      "code": "AECQySoMAJGgOkYOBxDQ4pwOCSDA9J0PCUDR9jQPE2BA+bYPC5FgEb0RFUGATcQUDNAA",
+      "name": "芭芭拉凝光行秋"
+    },
+    {
+      "code": "AUAxxF4MA5CQyU8NBGHxOGENCeBx8jAPFUBx9FcPGGAh9oITC7Ewlr0QDLEQC8ERDBAA",
+      "name": "班尼特深渊使徒·激流无相之雷"
+    },
+    {
+      "code": "EUBx0XANARHAlKMZCkExOkgPFECB9IEPGGEQA7MQCzExTIUUGMFQisIYDKEglcQZDGAA",
+      "name": "莱依拉吞星之鲸刻晴"
+    },
+    {
+      "code": "FTDgxB0MFkDAyVkMBZCR0WENCBDg3Y4OCRBx4UgOFSBx4lcPGEAh9IIYC6FgirYRDDAA",
+      "name": "深渊使徒·激流赛诺芙宁娜"
+    },
+    {
+      "code": "ATAw4zgOEUDg5E8PBEDw9JcPCVBx9lcPC2HQir0YDKFgC8YQDLGQD8kQFvFxEToRDjAA",
+      "name": "班尼特深渊咏者·渊火雷音权现"
+    },
+    {
+      "code": "A4Cg6B8PFRDR8WAPFpAA+YMQCDEwA5cQCWFxBjUYE6FRimcZFmFwC90QDrFwE+cRDjAA",
+      "name": "魔偶剑鬼九条裟罗珐露珊"
+    },
+    {
+      "code": "FpDA0QkZGEHAlEUOGBDx4pEOCSHQiZ0YFJCB9EgPGEAh9oIPC5Bg+b0RDBFAFMQRDEAA",
+      "name": "芙宁娜芭芭拉娜维娅"
+    },
+    {
+      "code": "FZHyykIOEmFi1ysUE4KiOS0WCpJyWjEQFEEC9TQQFGIyCVgRDILxPMAUDbJBi8UZDaEB",
+      "name": "那维莱特无相之冰若陀龙王"
+    },
+    {
+      "code": "EdDh30ENEfBR4FcOFQBx9IIPGEAg9sYPDGFgiskYDKGQC9EQFtFxDWcQDeGQDtkRDTAA",
+      "name": "雷音权现无相之冰「女士」"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "FZDhyUANABBB0WENCGFgOIYNCaBx9DAPE0AB9jMQE4ExCFcTC7HwO78YDKFAisQQDLAA",
+      "deck1": "FEAQyRwMF5AA0ZANCREAlKMZCkExiEgPFECB9IEQGDEQA7MUC8ExTIUYGKFQisQZDGAA",
+      "deck0Name": "深渊使徒·激流早柚重云",
+      "deck1Name": "无相之冰刻晴吞星之鲸"
+    },
+    {
+      "deck0": "A1GCxhYNAZGxypEOExHy0kgUCoJxOaUUFKEC9TEQFEEy9zQRDILxCcAUDbJBPMURDbEB",
+      "deck1": "ERBgxBMMA0CQyU8MEpGhOCoTCYBx9EgPFUBx9lcPGGEhO4ITC7FgirYYC6HQC8EQDLAA",
+      "deck0Name": "枫原万叶「女士」莫娜",
+      "deck1Name": "若陀龙王班尼特无相之雷"
+    },
+    {
+      "deck0": "ERCR0VwPA0AQ9JcPE1AB9jAPE2ExCDMQFIGBO0gTDLFACsQQDLFgC8YQDNGQDckRDRAA",
+      "deck1": "ATCQ4x0OGECw5FkPBQCR8JIPGUAg9JcPCWBw9r0YE6FhijYZDGGQlskQFrFwC90RDjAA",
+      "deck0Name": "林尼久岐忍纳西妲",
+      "deck1Name": "迪希雅赛诺夏沃蕾"
+    }
+  ]
+}

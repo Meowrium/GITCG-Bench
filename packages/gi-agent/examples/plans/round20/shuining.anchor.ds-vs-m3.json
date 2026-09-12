@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/round20-xmodel/ds/plans/shuining.anchor.r0.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round20-xmodel/m3/plans/shuining.anchor.r0.json"
+  },
+  "games": 10,
+  "seedBase": 20273201,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round20-xmodel/games/shuining.anchor.ds-vs-m3"
+}

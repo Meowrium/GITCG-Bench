@@ -1,0 +1,89 @@
+{
+  "version": "v4.7",
+  "decks": [
+    {
+      "code": "GVIDxnMOGUMjW3wXGZKy4KURDEIz9koRFmODBYMSGjMSCrUSDYMzjIYaGqNDDIcSGqIC",
+      "name": "吞星之鲸圣骸毒蝎圣骸飞蛇"
+    },
+    {
+      "code": "AEBByUAMFZDh1kQTFoEQOIYVCJFgWZcPE0AB9DAPE2ExCDMQFYFwO78TC7HwisQYDKAA",
+      "name": "重云早柚深渊使徒·激流"
+    },
+    {
+      "code": "FkHiym0WF5KyWmIOF+ES434PFCEy9TQQFUGC90kRGYISCYIXDILSaYUZGaJBEsUXDZEB",
+      "name": "深渊使徒·激流芙宁娜莱欧斯利"
+    },
+    {
+      "code": "EaCA0ycNADFwWYMVCJCg3YoPCEDg9I4PCWBw9pcQE1ERBTMQE2EwBr8TC7HwO8URDBAA",
+      "name": "夜兰魈申鹤"
+    },
+    {
+      "code": "FVEBxQwNAUJiOUUWFZJBWocOCaFh3pgQC0FB9aUQFGEC9zERFFIxCcARFIJiPDcSFxEB",
+      "name": "早柚莫娜优菈"
+    },
+    {
+      "code": "FkLChVENFjHixWsWF5ISWmIOFeFx9ZwQC0FC9jQRFIIyCUkUFbKBabQXDIIxC74SGREB",
+      "name": "久岐忍绮良良深渊使徒·激流"
+    },
+    {
+      "code": "EkJyhVANEkFixSsWE5KiWi0OCuFy9TEQFEEC9zQRFIIyCUkUDLIxPLQXDILRacAZGaEB",
+      "name": "莱依拉那维莱特若陀龙王"
+    },
+    {
+      "code": "AJGRWRcVFJDw3kUOEiDA4p0PFECB9EgPGGERCFcWGIEgaL0YC6HRilgRDBFAacQWDJAA",
+      "name": "芭芭拉莱依拉那维莱特"
+    },
+    {
+      "code": "EXFRWUEVEZDg3ZcNCfBx3zMOEwAw4LMPCyAw8r0PC0DQ9MkPDFCQ9soPDGGhC2cRFjAA",
+      "name": "「女士」无相之冰雷音权现"
+    },
+    {
+      "code": "EUCRyVwMA5EhWWoVFpAx3mMPCkBB9DAPE1Ax9zMQFIGBCEgTC7HRaIQWGIFAC8MRDBAA",
+      "name": "林尼久岐忍瑶瑶"
+    },
+    {
+      "code": "FkLyOR8UFILyWmMWF5Eh350PCkHB5Z4QCkHR9bQQDGEx970XDILCaTcZFKJii4URGbEB",
+      "name": "铁甲熔火帝皇雷音权现托马"
+    },
+    {
+      "code": "FZDgySkVFpGxWWEPB0DA9HwPCWFxAjAQE1EBBTEQE4ExCDMTC7HwO78WDIFAisQYDKAA",
+      "name": "深渊使徒·激流流浪者莱欧斯利"
+    },
+    {
+      "code": "GJIyS3EVGKEi2jQWFJIyWkkWFaGC9YMQDEEx97QQDPHSADYRGYJCCYURGaJSDIYRDbEB",
+      "name": "阿佩普的绿洲守望者吞星之鲸圣骸飞蛇"
+    },
+    {
+      "code": "AECRyWwVFpGwWUUNEuDB4kgOFCCB9IEPGEERCFcWGIEgaL0YC6HRilgRDBEwacQWDJAA",
+      "name": "芭芭拉芙宁娜莱欧斯利"
+    },
+    {
+      "code": "EkFixVAOF5Gy2isWE5KhWn4OCLHR9ZgQFEICCTERFIIyPDQUFbKBacAXDILxi8QZDaEB",
+      "name": "若陀龙王那维莱特莱欧斯利"
+    },
+    {
+      "code": "FVERhW0YF1AxyVUNF0DB1HwUCqFASqQYFXFxh4INC+Aw9L0PC0DR9TUPE2BR9mUQFqAA",
+      "name": "愚人众·雷萤术士辛焱阿佩普的绿洲守望者"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "GVIDxnMOGUMjW3wXGZKy4KURDEIz9koRFmODBYMSGjMSCrUSDYMzjIYaGqNDDIcSGqIC",
+      "deck1": "AEBByUAMFZDh1kQTFoEQOIYVCJFgWZcPE0AB9DAPE2ExCDMQFYFwO78TC7HwisQYDKAA",
+      "deck0Name": "吞星之鲸圣骸毒蝎圣骸飞蛇",
+      "deck1Name": "重云早柚深渊使徒·激流"
+    },
+    {
+      "deck0": "FkHiym0WF5KyWmIOF+ES434PFCEy9TQQFUGC90kRGYISCYIXDILSaYUZGaJBEsUXDZEB",
+      "deck1": "EaCA0ycNADFwWYMVCJCg3YoPCEDg9I4PCWBw9pcQE1ERBTMQE2EwBr8TC7HwO8URDBAA",
+      "deck0Name": "深渊使徒·激流芙宁娜莱欧斯利",
+      "deck1Name": "夜兰魈申鹤"
+    },
+    {
+      "deck0": "FVEBxQwNAUJiOUUWFZJBWocOCaFh3pgQC0FB9aUQFGEC9zERFFIxCcARFIJiPDcSFxEB",
+      "deck1": "FkLChVENFjHixWsWF5ISWmIOFeFx9ZwQC0FC9jQRFIIyCUkUFbKBabQXDIIxC74SGREB",
+      "deck0Name": "早柚莫娜优菈",
+      "deck1Name": "久岐忍绮良良深渊使徒·激流"
+    }
+  ]
+}

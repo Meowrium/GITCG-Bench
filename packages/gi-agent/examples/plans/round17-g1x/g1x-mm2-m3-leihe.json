@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/round10-mm/plans/leihe.r5.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round13-m3/plans/leihe.r2.json"
+  },
+  "games": 10,
+  "seedBase": 20271801,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round17-nniter/games/g1x-mm2-m3-leihe"
+}

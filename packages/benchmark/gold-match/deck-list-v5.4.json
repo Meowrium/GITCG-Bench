@@ -1,0 +1,89 @@
+{
+  "version": "v5.4",
+  "decks": [
+    {
+      "code": "A5BhyUANABBB0UQNCKBg9IYPCUBx9jAPE2EBCDMQFYFxO1cTC7Hwir8YDKFAC8QQDLAA",
+      "name": "愚人众·藏镜仕女早柚重云"
+    },
+    {
+      "code": "AmARyXMMF5EhWXsNF+DB9HwPGkGxiqsYG6FxurcbHKERC8EQC7EwxbMcE1FQzMYcDMAA",
+      "name": "八重神子阿佩普的绿洲守望者圣骸飞蛇"
+    },
+    {
+      "code": "AmLSN0ANFkHxxVoNF5IiiWMPCjHB5Z0PCkHR9Z4QGUEi94MQDGJBi7cZDKJhEr4VFNEB",
+      "name": "赛诺托马铁甲熔火帝皇"
+    },
+    {
+      "code": "ABBw0ScNETCA04MNCNAw7ooOCOCg9I4PCEDg9pcPGWExBpMQDGFQO8UQDLGQC8kRDTAA",
+      "name": "申鹤魈夜兰"
+    },
+    {
+      "code": "FtDRzxUMAvAR1HYNF0FhiFccFTBx8ZMPGRAw8rQPCyBA87UPCzBQ9r0PC2HQDM0QDMAA",
+      "name": "辛焱「女士」八重神子"
+    },
+    {
+      "code": "ARAxxBYMA0CQyU8TBIHxOCoNEsCg9JcPFECB9VcPFWBx9oITGLEgirYYC6FgC8EQDLAA",
+      "name": "班尼特若陀龙王无相之雷"
+    },
+    {
+      "code": "FnHRkx4ZADBBtHYLF1BgtYQLCPFANoUTCGBg2oYPF0Dx9H8PE2AR9jMTE7ExDFcQFcAA",
+      "name": "辛焱雷音权现重云"
+    },
+    {
+      "code": "FzAR4xkOGECx5HoPFxCg8ZcPCUBx9MEPHGAQ9rUTC9FQPcoYDKGgitkQDbGQE90RDjAA",
+      "name": "圣骸毒蝎林尼夏沃蕾"
+    },
+    {
+      "code": "EUDRxF8MAZDQy1kMFrEhOGIYCYDA5JwOCUDQ9J0PGEAh9oIPC2FAirYYC6FgEb0UDNAA",
+      "name": "镀金旅团·炽沙叙事人铁甲熔火帝皇赛诺"
+    },
+    {
+      "code": "AuDR6W0OApCx7XYOBtCQ9GkPF0HxAn8QCTFxA5MQGWEwBrUQE3FhCDYTDLGgDMoQDcAA",
+      "name": "阿贝多辛焱诺艾尔"
+    },
+    {
+      "code": "FWDBxhkMFpDBySINFhCg0ZEVE6AB9EgPFFCB9oEWGIERCrcQE9FhDzYQDPFAacQWDJAA",
+      "name": "久岐忍林尼芙宁娜"
+    },
+    {
+      "code": "AaChykENALDA8kgPCCAw9IMPCUBw9ZcPFWBx9lcQGSExO5MTC7FQC70QE7FRDDUQDMAA",
+      "name": "菲谢尔无相之冰达达利亚"
+    },
+    {
+      "code": "FZDByRYMEaCRyiINEpAh2SoNErCg9IMPCEAw9pcPCWFxBTMQE2ExO1cTGbExipMQDLAA",
+      "name": "久岐忍若陀龙王林尼"
+    },
+    {
+      "code": "AZBR2RgNFrCw8lEPBUAQ9JcPCVBx9TEPE2ERO1cTFbFxDJMQGcEwDcYQDNFgEMoRDQAA",
+      "name": "宵宫夜兰莱欧斯利"
+    },
+    {
+      "code": "F2LDyxcOG5KD02wPGBKi15MaFYID9zIRFmODakoSGqMTDYMSDtMyEcYSDvNCa8gYDpIC",
+      "name": "久岐忍「女士」闲云"
+    },
+    {
+      "code": "AXGRZ4sNAdDQ41kOCDDg5I4OCUBw8JcPHAAR9MEPC0Aw9rMPE2FhBjYYDKGQiskQFrAA",
+      "name": "迪希雅夏沃蕾赛诺"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "A5BhyUANABBB0UQNCKBg9IYPCUBx9jAPE2EBCDMQFYFxO1cTC7Hwir8YDKFAC8QQDLAA",
+      "deck1": "AmARyXMMF5EhWXsNF+DB9HwPGkGxiqsYG6FxurcbHKERC8EQC7EwxbMcE1FQzMYcDMAA",
+      "deck0Name": "愚人众·藏镜仕女早柚重云",
+      "deck1Name": "八重神子阿佩普的绿洲守望者圣骸飞蛇"
+    },
+    {
+      "deck0": "AmLSN0ANFkHxxVoNF5IiiWMPCjHB5Z0PCkHR9Z4QGUEi94MQDGJBi7cZDKJhEr4VFNEB",
+      "deck1": "ABBw0ScNETCA04MNCNAw7ooOCOCg9I4PCEDg9pcPGWExBpMQDGFQO8UQDLGQC8kRDTAA",
+      "deck0Name": "赛诺托马铁甲熔火帝皇",
+      "deck1Name": "申鹤魈夜兰"
+    },
+    {
+      "deck0": "FtDRzxUMAvAR1HYNF0FhiFccFTBx8ZMPGRAw8rQPCyBA87UPCzBQ9r0PC2HQDM0QDMAA",
+      "deck1": "ARAxxBYMA0CQyU8TBIHxOCoNEsCg9JcPFECB9VcPFWBx9oITGLEgirYYC6FgC8EQDLAA",
+      "deck0Name": "辛焱「女士」八重神子",
+      "deck1Name": "班尼特若陀龙王无相之雷"
+    }
+  ]
+}

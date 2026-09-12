@@ -1,0 +1,6 @@
+{
+  "benchmarkPath": "./benchmark.example.json",
+  "dbPath": "./output/data.db",
+  "gamesMultiplier": 2,
+  "outputPath": "./output/self-play-result.json"
+}

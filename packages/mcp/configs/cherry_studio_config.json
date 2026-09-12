@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "genius-invokation": {
+      "name": "Genius Invokation TCG",
+      "description": "七圣召唤 MCP 服务器 - AI 自动打牌",
+      "command": "bun",
+      "args": [
+        "run",
+        "d:/AI/GTCG/genius-invokation/packages/mcp/cherry-studio-mcp.ts"
+      ],
+      "cwd": "d:/AI/GTCG/genius-invokation",
+      "env": {},
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}

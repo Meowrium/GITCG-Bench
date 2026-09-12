@@ -1,0 +1,238 @@
+{
+  "schemaVersion": "3.0",
+  "deckCode": "ApDg6RkOAqCw6ogPCECA9J0PCWDQ/cIPDNEgAsYQDKFgC8kQDLGQDtEQDeEQD9sQDvAA",
+  "deckName": "红牛",
+  "version": "v6.3.0",
+  "deckProfile": {
+    "primaryType": "midrange",
+    "tempo": "medium",
+    "startupSpeed": "turn4"
+  },
+  "keyCards": {
+    "combo": [],
+    "damage": [
+      {
+        "id": "311305",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "提供持续护盾和增伤收益",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "332018",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "中后期关键轮次才能发挥高收益，前期卡手",
+        "mulligan": "never"
+      },
+      {
+        "id": "333002",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "中后期斩杀用，料理可以靠卯师傅检索不用留",
+        "mulligan": "never"
+      }
+    ],
+    "draw": [
+      {
+        "id": "322005",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "料理体系运转核心",
+        "mulligan": "high"
+      },
+      {
+        "id": "322008",
+        "role": "draw",
+        "importance": "important",
+        "rationale": "存储剩余费用、调整骰子质量",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322016",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "伙伴体系核心",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "332004",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "灵活、有效撑起手牌质量",
+        "mulligan": "high"
+      }
+    ],
+    "sustain": [
+      {
+        "id": "311305",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "提供持续护盾和增伤收益",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "312010",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "持续提供资源及护盾",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "331602",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高效回复但影响装备成型速度",
+        "mulligan": "situational"
+      },
+      {
+        "id": "333003",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高效承伤，但一般在中期保活争取轮次才有用",
+        "mulligan": "never"
+      },
+      {
+        "id": "333006",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高效治疗",
+        "mulligan": "never"
+      },
+      {
+        "id": "333007",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "高收益治疗，但开局一般用不上",
+        "mulligan": "never"
+      }
+    ],
+    "disruption": [
+      {
+        "id": "332013",
+        "role": "disruption",
+        "importance": "core",
+        "rationale": "有效去除关键召唤物",
+        "mulligan": "situational"
+      }
+    ],
+    "ramp": [
+      {
+        "id": "311305",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "提供持续护盾和增伤收益",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "312010",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "持续提供资源及护盾",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "322001",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "提现较慢的支援牌，费用偏高，较慢的对局中可留",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322005",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "料理体系运转核心",
+        "mulligan": "high"
+      },
+      {
+        "id": "322008",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "存储剩余费用、调整骰子质量",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322016",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "伙伴体系核心",
+        "mulligan": "always_keep"
+      }
+    ],
+    "flex": [
+      {
+        "id": "332013",
+        "role": "flex_slot",
+        "importance": "important",
+        "rationale": "有效去除关键召唤物",
+        "mulligan": "situational"
+      }
+    ]
+  },
+  "abstentions": [],
+  "damageMode": "raw",
+  "powerCurve": "steady",
+  "hasOneShotPotential": false,
+  "setupDependency": "medium",
+  "resilience": {
+    "hasHealing": true,
+    "hasShield": true,
+    "hasImmuneControl": false,
+    "vulnerableTo": [
+      "summon_swarm",
+      "reaction_chain",
+      "chip"
+    ],
+    "hasSummonRemoval": true
+  },
+  "openingSequences": [
+    {
+      "id": "open-1",
+      "name": "3+3",
+      "condition": "缺少蓄爆",
+      "style": "tempo",
+      "steps": [
+        {
+          "action": "迪希雅 熔铁流狱",
+          "cost": "3火",
+          "effectDescription": ""
+        },
+        {
+          "action": "切荒泷一斗",
+          "cost": "1任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "荒泷一斗 魔杀绝技·赤牛发破！",
+          "cost": "3岩",
+          "effectDescription": ""
+        }
+      ],
+      "diceConstraint": "3岩+3火",
+      "totalDiceUsed": 7,
+      "isPrimary": false
+    },
+    {
+      "id": "open-2",
+      "name": "迪E全摆",
+      "condition": "有3~5骰蓄爆",
+      "style": "charge_up",
+      "steps": [
+        {
+          "action": "迪希雅 熔铁流狱",
+          "cost": "3火",
+          "effectDescription": ""
+        },
+        {
+          "action": "蓄爆",
+          "cost": "0",
+          "effectDescription": "投资牌蓄爆：骰子消耗/存储为非技能资源，铺垫后续回合"
+        }
+      ],
+      "diceConstraint": "3火",
+      "totalDiceUsed": 3,
+      "isPrimary": false
+    }
+  ]
+}

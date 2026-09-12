@@ -1,0 +1,25 @@
+{
+  "version": "v6.3.0",
+  "matchups": [
+    {
+      "id": "sample-baseline-mirror",
+      "deck0": "FZDByRUNGRCB0WoNFlGgWpEPE0AB9TAPFGCB9kgWGIERCoEQDLFADcQQDPFgacYWDJAA",
+      "deck1": "FdHxNj8TAWDQxFkMFkAhyWIYCYDA45wOCUDQ5J0PGEAh9IIPGWDh9p4YC6FgirYRCxAA",
+      "games": 10,
+      "sideA": {
+        "name": "baseline-a",
+        "kind": "baseline",
+        "options": {
+          "endTurnPenalty": 5
+        }
+      },
+      "sideB": {
+        "name": "baseline-b",
+        "kind": "baseline",
+        "options": {
+          "endTurnPenalty": 5
+        }
+      }
+    }
+  ]
+}

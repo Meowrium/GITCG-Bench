@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/roundT7-shuizhai/plans/shuizhai.nn1.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round22-g53f/plans/hongniu.ctrl.r0.json"
+  },
+  "games": 10,
+  "seedBase": 20276501,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/roundT7-shuizhai/games/shuizhai.nn1-vs-hongniu-ctrl"
+}

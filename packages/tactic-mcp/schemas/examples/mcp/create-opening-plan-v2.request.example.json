@@ -1,0 +1,41 @@
+{
+  "name": "create_opening_plan_v2",
+  "arguments": {
+    "session_id": "sess_001",
+    "source_skills": ["base-skill", "reaction-priority"],
+    "global_goal": "Secure opening tempo while preserving core HP.",
+    "opening_window": {
+      "start_turn": 1,
+      "end_turn": 3
+    },
+    "turn_priorities": [
+      {
+        "turn": 1,
+        "objectives": ["set aura", "avoid over-spending omni"]
+      }
+    ],
+    "risk_rules": [
+      {
+        "id": "risk_001",
+        "condition": "expected_trade_value < 0",
+        "action": "skip_commit",
+        "priority": 95
+      }
+    ],
+    "trigger_rules": [
+      {
+        "id": "trigger_001",
+        "event": "active_character_defeated",
+        "replan_scope": "opening",
+        "cooldown_turns": 0
+      }
+    ],
+    "fallback_rules": [
+      {
+        "id": "fb_001",
+        "on_failure": "policy_unavailable",
+        "policy": "resource_hold"
+      }
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "3.0",
+  "version": "v6.3.0",
+  "deckA": {
+    "code": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+    "name": "水八"
+  },
+  "deckB": {
+    "code": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+    "name": "水凝"
+  },
+  "isMirror": false,
+  "perspectives": {
+    "a": {
+      "opponentNotables": {
+        "elementComposition": [
+          "hydro",
+          "geo",
+          "hydro"
+        ],
+        "powerCurve": "backloaded",
+        "damageMode": "single_burst",
+        "threatSummary": "control 体系，以凝光、芭芭拉、祭礼残章为核心制胜"
+      },
+      "threats": [
+        {
+          "source": "送你一程",
+          "kind": "grinding",
+          "window": "early",
+          "countermeasure": "送一个召唤物尽可能骗出来，降低其他召唤物被直接去除的风险",
+          "existingCounterCards": null
+        },
+        {
+          "source": "护法之誓",
+          "kind": "grinding",
+          "window": "early",
+          "countermeasure": "在对手的打法表现可能有的前提下适当减少召唤物投入，减少损失",
+          "existingCounterCards": null
+        },
+        {
+          "source": "凝光 天权崩玉",
+          "kind": "lethal",
+          "window": "late",
+          "countermeasure": "保证骰子和关键角色的血量充足",
+          "existingCounterCards": []
+        }
+      ],
+      "assessment": {
+        "myAdvantages": [],
+        "oppAdvantages": []
+      },
+      "overallDirection": "",
+      "decisiveFactor": "",
+      "abstentions": [],
+      "tempoShift": {
+        "shift": "accelerate",
+        "rationale": "消耗战拖不过"
+      }
+    },
+    "b": {
+      "opponentNotables": {
+        "elementComposition": [],
+        "powerCurve": "steady",
+        "damageMode": "summon_swarm",
+        "threatSummary": "midrange 体系，以自由的新风、仙跳墙为核心制胜"
+      },
+      "threats": [
+        {
+          "source": "仙跳墙",
+          "kind": "lethal",
+          "window": "mid",
+          "countermeasure": "确保凝光的血线健康，且留有充足回复手段以应对灌伤害压血线的轮次",
+          "existingCounterCards": [
+            "千岩牢固",
+            "莲花酥"
+          ]
+        },
+        {
+          "source": "自由的新风",
+          "kind": "lethal",
+          "window": "mid",
+          "countermeasure": "确保当前角色状态不会被连动效果击倒两个",
+          "existingCounterCards": [
+            "千岩牢固"
+          ]
+        },
+        {
+          "source": "纯水精灵·洛蒂娅 林野百态",
+          "kind": "ramping",
+          "window": "early",
+          "countermeasure": "清除对方召唤物",
+          "existingCounterCards": [
+            "送你一程",
+            "护法之誓"
+          ]
+        }
+      ],
+      "assessment": {
+        "myAdvantages": [],
+        "oppAdvantages": []
+      },
+      "overallDirection": "",
+      "decisiveFactor": "",
+      "abstentions": [],
+      "reactionControl": {
+        "myMonopoly": [],
+        "oppMonopoly": [],
+        "contested": [],
+        "advantage": "even"
+      },
+      "tempoShift": {
+        "shift": "slow_down",
+        "rationale": ""
+      }
+    }
+  }
+}

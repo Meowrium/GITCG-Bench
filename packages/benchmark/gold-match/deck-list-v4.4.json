@@ -1,0 +1,89 @@
+{
+  "version": "v4.4",
+  "decks": [
+    {
+      "code": "ElGS1kMVEpJiSisOCpFx2pgUFIICOTEOFLEy9TQQDUGR9soRDYKhCcsUDrIRTdIVDsEB",
+      "name": "林尼千年珍珠骏麟若陀龙王"
+    },
+    {
+      "code": "A4ICOxYOAfFx4I8PCgFx4ZgQC0FB9ccQDVFh98oQDWKRC84RDbLRDNIRDsJyDzkSFBEB",
+      "name": "雷电将军「女士」申鹤"
+    },
+    {
+      "code": "AVGh1gUVApKxSpgOFJEC2jEUFIISOTIUFKEy9TQQDUGR9soRDYKhCcsUDrIRTdIVDsEB",
+      "name": "行秋重云雷泽"
+    },
+    {
+      "code": "ABCx1RUNEVHgOpcPClBB9jAQE4EBCDQTE7FACsIQDLEgC8YQDOFgDskQDPGQEdERDTAA",
+      "name": "莫娜「女士」雷音权现"
+    },
+    {
+      "code": "EYGBOB4NEbBQ9ZcPCWBx9jAQE4EBCDETE7EROzMQDLFgC8YQDcFQDNURDQGQENkRExAA",
+      "name": "夜兰雷音权现「女士」"
+    },
+    {
+      "code": "ATAx3R4OATBg408OBEDw5JAPCUBw9JcPClCg9aoPC2DA9rwQC7HQC70QE8FRETURDDAA",
+      "name": "班尼特雷音权现可莉"
+    },
+    {
+      "code": "AVExNh4TEWBg1U8NBFDx2SoTEoCh3UcPCVBw9pcPE2EBCDAQE4ExC0gQDLEQEcEREzAA",
+      "name": "班尼特雷音权现若陀龙王"
+    },
+    {
+      "code": "AZGgODETEYCQ25cPCVBw9aQPCmBB9jAQE4EBCDMTE7FhOzYQDKEwC9UQDbFQEdkRDTAA",
+      "name": "菲谢尔纳西妲林尼"
+    },
+    {
+      "code": "EWBxyRYNABGQOkUPCWDA9p0PCZDR+TQQFKGBC0gQC7GQDrkQC+HQD8QQDPFATcYUDNAA",
+      "name": "莱依拉若陀龙王芭芭拉"
+    },
+    {
+      "code": "AGDQxSoMAFGQOkUOBBBQ4XoOCSDA4pwPCWDQ9p0PFJGBC0gQC/HAD7wRC0HRTTYUE9AA",
+      "name": "珊瑚宫心海凝光芭芭拉"
+    },
+    {
+      "code": "AFBgyQsMApCQ0XwNBxDQ3YYPCWBw+ZcPCZGAApgQE4EBCDATE7FgC8IQDLFADsURDBAA",
+      "name": "优菈莫娜流浪者"
+    },
+    {
+      "code": "AhBg1QwNFJEgOJcNE9AB9TAPE2ExAjMQFHGBCEgQE4FgO8QTDLFATMkQDLGQDdEQDdAA",
+      "name": "温迪达达利亚千年珍珠骏麟"
+    },
+    {
+      "code": "A3GR6DsPA4Ex6X0QChFx8pgQCzFB9KUQDUEy9UsQFVGh99oQDpKSAzkRFCKBCt4RD7EB",
+      "name": "流浪者魔偶剑鬼多莉"
+    },
+    {
+      "code": "AEDBxBcMAJGQOkUOCBAw4ZwOCSDQ4p0PE2BB+UgQFKGAC7kQC/HRDzYRExFgFMMUDNAA",
+      "name": "达达利亚莱依拉芭芭拉"
+    },
+    {
+      "code": "EZCg2RoTFIEROCMTCaBx9TAPE2AB9jQQE4FACL0TDLFgC8YQDLGQDckQDdFQEdURDTAA",
+      "name": "琳妮特菲谢尔无相之冰"
+    },
+    {
+      "code": "AdGhxSwNAUGRykYUBaFh4okPCRGB450PCiHR954QFJJCA0kRFbKBDLoRDPKRTr4VDNEB",
+      "name": "行秋诺艾尔芭芭拉"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "ElGS1kMVEpJiSisOCpFx2pgUFIICOTEOFLEy9TQQDUGR9soRDYKhCcsUDrIRTdIVDsEB",
+      "deck1": "A4ICOxYOAfFx4I8PCgFx4ZgQC0FB9ccQDVFh98oQDWKRC84RDbLRDNIRDsJyDzkSFBEB",
+      "deck0Name": "林尼千年珍珠骏麟若陀龙王",
+      "deck1Name": "雷电将军「女士」申鹤"
+    },
+    {
+      "deck0": "AVGh1gUVApKxSpgOFJEC2jEUFIISOTIUFKEy9TQQDUGR9soRDYKhCcsUDrIRTdIVDsEB",
+      "deck1": "ABCx1RUNEVHgOpcPClBB9jAQE4EBCDQTE7FACsIQDLEgC8YQDOFgDskQDPGQEdERDTAA",
+      "deck0Name": "行秋重云雷泽",
+      "deck1Name": "莫娜「女士」雷音权现"
+    },
+    {
+      "deck0": "EYGBOB4NEbBQ9ZcPCWBx9jAQE4EBCDETE7EROzMQDLFgC8YQDcFQDNURDQGQENkRExAA",
+      "deck1": "ATAx3R4OATBg408OBEDw5JAPCUBw9JcPClCg9aoPC2DA9rwQC7HQC70QE8FRETURDDAA",
+      "deck0Name": "夜兰雷音权现「女士」",
+      "deck1Name": "班尼特雷音权现可莉"
+    }
+  ]
+}

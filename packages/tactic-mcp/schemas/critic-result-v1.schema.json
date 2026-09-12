@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gtcg.local/schemas/critic-result-v1.schema.json",
+  "title": "Tactic Critic Result V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "session_id",
+    "plan_id",
+    "turn",
+    "step_id",
+    "outcome",
+    "score",
+    "should_replan",
+    "replan_scope",
+    "evaluated_at"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "CriticResultV1"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "turn": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "step_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outcome": {
+      "type": "string",
+      "enum": ["success", "partial", "fail"]
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "violations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "severity", "message"],
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "suggested_adjustments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "should_replan": {
+      "type": "boolean"
+    },
+    "replan_scope": {
+      "type": "string",
+      "enum": ["none", "micro", "opening", "midgame", "full"]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "next_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

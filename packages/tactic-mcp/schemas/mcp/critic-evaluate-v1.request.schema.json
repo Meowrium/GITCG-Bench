@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gtcg.local/schemas/mcp/critic-evaluate-v1.request.schema.json",
+  "title": "MCP critic_evaluate_v1 Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "arguments"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "const": "critic_evaluate_v1"
+    },
+    "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "session_id",
+        "plan_id",
+        "turn",
+        "step_id",
+        "expected_policy_id",
+        "actual_tool",
+        "actual_args",
+        "state_delta"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "plan_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "step_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_policy_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actual_tool": {
+          "type": "string",
+          "enum": [
+            "choose_action",
+            "elemental_tuning",
+            "choose_active",
+            "reroll_dice",
+            "switch_hands",
+            "select_card"
+          ]
+        },
+        "actual_args": {
+          "type": "object"
+        },
+        "state_delta": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["self_hp_delta", "opp_hp_delta", "dice_spent", "cards_spent"],
+          "properties": {
+            "self_hp_delta": { "type": "integer" },
+            "opp_hp_delta": { "type": "integer" },
+            "dice_spent": { "type": "integer", "minimum": 0 },
+            "cards_spent": { "type": "integer", "minimum": 0 },
+            "notes": { "type": "string" }
+          }
+        },
+        "hard_violations": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "version": "v6.3.0",
+  "decks": [
+    {
+      "id": "deck-001",
+      "name": "Example Deck 1",
+      "deckCode": "REPLACE_WITH_REAL_DECK_CODE",
+      "archetype": "midrange",
+      "tags": ["example", "core-pool"],
+      "notes": "Replace this with a confirmed common deck."
+    },
+    {
+      "id": "deck-002",
+      "name": "Example Deck 2",
+      "deckCode": "REPLACE_WITH_REAL_DECK_CODE",
+      "archetype": "aggro",
+      "tags": ["example", "core-pool"],
+      "notes": "Use stable ids so benchmark configs can reference them externally."
+    }
+  ]
+}

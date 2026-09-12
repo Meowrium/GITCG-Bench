@@ -1,0 +1,6488 @@
+{
+  "meta": {
+    "generatedAt": "2026-07-13T16:42:07.399Z",
+    "sourceRoot": "packages/data/src",
+    "totalQuestions": 456,
+    "categories": {
+      "character-stats": 40,
+      "card-name-to-effect": 80,
+      "effect-to-card-name": 60,
+      "card-type": 40,
+      "skill-cost": 15,
+      "character-element": 40,
+      "nation": 30,
+      "cost-deduction": 20,
+      "card-effect-match": 26,
+      "card-cost": 40,
+      "version-introduced": 30,
+      "weapon-type": 30,
+      "multiple-answer": 4,
+      "from-description-find-name": 1
+    }
+  },
+  "questions": [
+    {
+      "id": "q-0264",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“七七”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能3点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1108
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0018",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“亡草蔽日”的效果是什么？",
+      "groundTruth": "快速行动：装备给我方的圣骸牙兽。\n我方打出或舍弃噬骸能量块时：抓1张牌。（每回合1次）\n（牌组中包含圣骸牙兽，才能加入牌组）",
+      "keywords": [
+        "装备给我方的圣骸牙兽",
+        "我方打出或舍弃噬骸能量块时",
+        "（每回合1次）",
+        "（牌组中包含圣骸牙兽",
+        "才能加入牌组）"
+      ],
+      "sourceIds": [
+        227051
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0124",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：行动阶段开始时：赋予敌方随机1张手牌费用增加和不可调和。\n可用次数：2",
+      "groundTruth": "汐印石",
+      "keywords": [
+        "汐印石"
+      ],
+      "sourceIds": [
+        321036
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0006",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“裂晶弹片”的效果是什么？",
+      "groundTruth": "对敌方「出战角色」造成1点物理伤害，抓1张牌。",
+      "keywords": [
+        "对敌方「出战角色」造成1点物理伤害"
+      ],
+      "sourceIds": [
+        116081
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0022",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“水仙之梦”的效果是什么？",
+      "groundTruth": "附属角色使用技能后：冒险1次。（每回合2次）\n如果我方已经完成过冒险，则所附属角色造成的伤害+1。\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "附属角色使用技能后",
+        "（每回合2次）",
+        "如果我方已经完成过冒险",
+        "则所附属角色造成的伤害+1",
+        "（角色最多装备1件「圣遗物」）"
+      ],
+      "sourceIds": [
+        312043
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0044",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“远程状态”的效果是什么？",
+      "groundTruth": "/\nconst RangedStanceSkill = skill(12045)\n  .type(\"passive\")\n  .reserve();\n\n\n/**\n@id 12046\n@name 遏浪\n@description\n\n/\nconst UnknownSkill = skill(12046)\n  .reserve();\n\n/**\n@id 1204\n@name 达达利亚\n@description\n牌局亦为战场，能者方可争先。",
+      "keywords": [
+        "RangedStanceSkill",
+        "skill(12045)",
+        ".type(\"passive\")",
+        ".reserve();",
+        "@description"
+      ],
+      "sourceIds": [
+        12045
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0211",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“白手套和渔夫”属于什么类型？",
+      "groundTruth": "支援牌",
+      "keywords": [
+        "支援牌"
+      ],
+      "sourceIds": [
+        322025
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0456",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"风灵作成·陆叁零捌\"的效果是什么？(卡牌ID: 15012)",
+      "groundTruth": "造成3点风元素伤害，使对方强制切换到前一个角色。",
+      "keywords": [
+        "造成3点风元素伤害",
+        "使对方强制切换到前一"
+      ],
+      "sourceIds": [
+        15012
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0233",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“林尼”是什么元素的？",
+      "groundTruth": "火",
+      "keywords": [
+        "火"
+      ],
+      "sourceIds": [
+        1310
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0016",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“奇瑰之汤·助佑”的效果是什么？",
+      "groundTruth": "本回合中，目标角色下次使用技能时少花费2个元素骰。",
+      "keywords": [
+        "目标角色下次使用技能时少花费2个元素骰"
+      ],
+      "sourceIds": [
+        333022
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0215",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“乐平波琳的能量机关投资”属于什么类型？",
+      "groundTruth": "支援牌",
+      "keywords": [
+        "支援牌"
+      ],
+      "sourceIds": [
+        302231
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0230",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“愚人众·霜役人”是什么元素的？",
+      "groundTruth": "冰",
+      "keywords": [
+        "冰"
+      ],
+      "sourceIds": [
+        2104
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0196",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“冒险家头带”属于什么类型？",
+      "groundTruth": "装备牌",
+      "keywords": [
+        "装备牌"
+      ],
+      "sourceIds": [
+        312001
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0038",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“罔极盛怒”的效果是什么？",
+      "groundTruth": "快速行动：装备给我方的蚀灭的源焰之主。\n敌方打出名称不存在于本局最初牌组的牌时：所附属角色获得1点充能，下次造成的伤害+1。（每回合1次）\n（牌组中包含蚀灭的源焰之主，才能加入牌组）",
+      "keywords": [
+        "装备给我方的蚀灭的源焰之主",
+        "敌方打出名称不存在于本局最初牌组的牌时",
+        "所附属角色获得1点充能",
+        "下次造成的伤害+1",
+        "（每回合1次）"
+      ],
+      "sourceIds": [
+        223051
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0216",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“灵枪·仪式杖”属于什么类型？",
+      "groundTruth": "风元素角色牌",
+      "keywords": [
+        "风元素角色牌"
+      ],
+      "sourceIds": [
+        115112
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0026",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“海中寻宝”的效果是什么？",
+      "groundTruth": "生成6张海底宝藏，随机地置入我方牌库中。",
+      "keywords": [
+        "生成6张海底宝藏",
+        "随机地置入我方牌库中"
+      ],
+      "sourceIds": [
+        332031
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0014",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“一触即发”的效果是什么？",
+      "groundTruth": "战斗行动：我方出战角色为安柏时，装备此牌。\n安柏装备此牌后，立刻使用一次爆弹玩偶。\n安柏普通攻击后：如果此牌和兔兔伯爵仍在场，则引爆兔兔伯爵，造成4点火元素伤害。\n（牌组中包含安柏，才能加入牌组）",
+      "keywords": [
+        "我方出战角色为安柏时",
+        "安柏装备此牌后",
+        "立刻使用一次爆弹玩偶",
+        "安柏普通攻击后",
+        "如果此牌和兔兔伯爵仍在场"
+      ],
+      "sourceIds": [
+        213041
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0030",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“夜兰”的效果是什么？",
+      "groundTruth": "天地一渺渺，幽客自来去。",
+      "keywords": [],
+      "sourceIds": [
+        1209
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0010",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“天空之傲”的效果是什么？",
+      "groundTruth": "角色造成的伤害+1。\n每回合1次：角色使用「普通攻击」造成的伤害额外+1。\n（「双手剑」角色才能装备。角色最多装备1件「武器」）",
+      "keywords": [
+        "角色造成的伤害+1",
+        "角色使用「普通攻击」造成的伤害额外+1",
+        "（「双手剑」角色才能装备",
+        "角色最多装备1件「武器」）"
+      ],
+      "sourceIds": [
+        311304
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0140",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：挑选一项：\n将敌方1张当前元素骰费用最高的手牌置于牌组底。\n或\n将我方所有手牌置于牌组底，然后抓相同数量+1张手牌。\n（整局游戏只能打出一张「秘传」卡牌；这张牌一定在你的起始手牌中）",
+      "groundTruth": "「沙中遗事」",
+      "keywords": [
+        "「沙中遗事」"
+      ],
+      "sourceIds": [
+        330012
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0268",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“雷电将军”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1407
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0207",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“元素共鸣：交织之水”属于什么类型？",
+      "groundTruth": "事件牌",
+      "keywords": [
+        "事件牌"
+      ],
+      "sourceIds": [
+        331201
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0105",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：附属角色使用特技后：获得1点充能。（每回合1次)\n（角色最多装备1件「圣遗物」）",
+      "groundTruth": "魔战士的羽面",
+      "keywords": [
+        "魔战士的羽面"
+      ],
+      "sourceIds": [
+        312032
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0367",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“茜特菈莉”属于哪个国家/阵营？",
+      "groundTruth": "纳塔",
+      "keywords": [
+        "纳塔"
+      ],
+      "sourceIds": [
+        1114
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0186",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“田铁嘴”属于什么类型？",
+      "groundTruth": "支援牌",
+      "keywords": [
+        "支援牌"
+      ],
+      "sourceIds": [
+        322011
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0185",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“松茸酿肉卷”属于什么类型？",
+      "groundTruth": "事件牌",
+      "keywords": [
+        "事件牌"
+      ],
+      "sourceIds": [
+        333014
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0214",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“「穿越晨霭的冒险」”属于什么类型？",
+      "groundTruth": "事件牌",
+      "keywords": [
+        "事件牌"
+      ],
+      "sourceIds": [
+        332059
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0062",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“梦见月瑞希”的效果是什么？",
+      "groundTruth": "愁云拂散，梦间月明。",
+      "keywords": [],
+      "sourceIds": [
+        1514
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0437",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“谐律异想断章”能减少什么费用？",
+      "groundTruth": "附属角色使用技能后：我方所有角色附属1层生命之契，下次我方角色使用技能时少花费1个元素骰。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "少花费",
+        "减",
+        "谐律异想断章"
+      ],
+      "sourceIds": [
+        312039
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0046",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“子弹的戏法”的效果是什么？",
+      "groundTruth": "快速行动：我方恰斯卡在场时，对该角色打出。将一张追影弹加入手牌。\n（牌组中包含恰斯卡，才能加入牌组）",
+      "keywords": [
+        "我方恰斯卡在场时",
+        "对该角色打出",
+        "将一张追影弹加入手牌",
+        "（牌组中包含恰斯卡",
+        "才能加入牌组）"
+      ],
+      "sourceIds": [
+        215111
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0446",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"神里流·镜花\"的效果是什么？(卡牌ID: 12062)",
+      "groundTruth": "造成2点水元素伤害，本角色附属泷廻鉴花。",
+      "keywords": [
+        "造成2点水元素伤害",
+        "本角色附属泷廻鉴花"
+      ],
+      "sourceIds": [
+        12062
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0036",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“噬骸能量块”的效果是什么？",
+      "groundTruth": "随机舍弃1张当前元素骰费用最高的手牌，生成1个我方出战角色类型的元素骰。（每回合最多打出1张）",
+      "keywords": [
+        "随机舍弃1张当前元素骰费用最高的手牌",
+        "生成1个我方出战角色类型的元素骰",
+        "（每回合最多打出1张）"
+      ],
+      "sourceIds": [
+        124051
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0050",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“缤纷马卡龙”的效果是什么？",
+      "groundTruth": "治疗目标角色1点，该角色接下来3次受到伤害后再治疗其1点。\n（每回合每个角色最多食用1次「料理」）",
+      "keywords": [
+        "治疗目标角色1点",
+        "该角色接下来3次受到伤害后再治疗其1点",
+        "（每回合每个角色最多食用1次「料理」）"
+      ],
+      "sourceIds": [
+        333015
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0400",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"入场时：在我方牌组中随机生成5张事件牌\"",
+      "groundTruth": "层岩巨渊",
+      "keywords": [
+        "层岩巨渊"
+      ],
+      "sourceIds": [
+        321040
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0153",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“驰轮车·疾驰”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        113156
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0420",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"打出及每个行动阶段开始时：赋予我方随机1张手牌费用降低\"",
+      "groundTruth": "另一侧的霜月",
+      "keywords": [
+        "另一侧的霜月"
+      ],
+      "sourceIds": [
+        330013
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0411",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"我方打出当前元素骰费用至少为3的「武器」或「圣遗物」手牌时：少花费1个元素骰\"",
+      "groundTruth": "黄金屋",
+      "keywords": [
+        "黄金屋"
+      ],
+      "sourceIds": [
+        321013
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0005",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“星天之兆”的效果是什么？",
+      "groundTruth": "我方当前出战角色获得1点充能。",
+      "keywords": [
+        "我方当前出战角色获得1点充能"
+      ],
+      "sourceIds": [
+        332008
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0257",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“柯莱”是什么元素的？",
+      "groundTruth": "草",
+      "keywords": [
+        "草"
+      ],
+      "sourceIds": [
+        1701
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0172",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“元素幻变：冰草祝佑”需要多少元素骰费用？",
+      "groundTruth": "2费",
+      "keywords": [
+        "2",
+        "2费"
+      ],
+      "sourceIds": [
+        331008
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0100",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：角色造成的伤害+1。\n角色使用原本元素骰费用+充能费用至少为5的技能时，伤害额外+2。（每回合1次）\n（「弓」角色才能装备。角色最多装备1件「武器」）",
+      "groundTruth": "阿莫斯之弓",
+      "keywords": [
+        "阿莫斯之弓"
+      ],
+      "sourceIds": [
+        311204
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0148",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“花海甘露之光”需要多少元素骰费用？",
+      "groundTruth": "1费",
+      "keywords": [
+        "1",
+        "1费"
+      ],
+      "sourceIds": [
+        312022
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0094",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：结束阶段：如果所附属角色在后台，则此牌累积2点「报酬」。（最多累积4点）\n对角色打出「天赋」或角色使用「元素战技」时：此牌每有1点「报酬」，就将其消耗，以少花费1个元素骰。\n（角色最多装备1件「圣遗物」）",
+      "groundTruth": "黄金剧团",
+      "keywords": [
+        "黄金剧团"
+      ],
+      "sourceIds": [
+        312026
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0301",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“伊法”是在哪个版本加入游戏的？",
+      "groundTruth": "v6.1.0",
+      "keywords": [
+        "v6.1.0"
+      ],
+      "sourceIds": [
+        1515
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0340",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“阿贝多”使用什么武器？",
+      "groundTruth": "单手剑",
+      "keywords": [
+        "单手剑"
+      ],
+      "sourceIds": [
+        1604
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0001",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“冷血之剑”的效果是什么？",
+      "groundTruth": "战斗行动：我方出战角色为凯亚时，装备此牌。\n凯亚装备此牌后，立刻使用一次霜袭。\n装备有此牌的凯亚使用霜袭后：治疗自身2点。（每回合1次）\n（牌组中包含凯亚，才能加入牌组）",
+      "keywords": [
+        "我方出战角色为凯亚时",
+        "凯亚装备此牌后",
+        "立刻使用一次霜袭",
+        "装备有此牌的凯亚使用霜袭后",
+        "治疗自身2点"
+      ],
+      "sourceIds": [
+        211031
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0170",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“重帘留香”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        212021
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0078",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“浮烁的四叶印”的效果是什么？",
+      "groundTruth": "目标角色附属四叶印：每个回合的结束阶段，我方都切换到此角色。",
+      "keywords": [
+        "目标角色附属四叶印",
+        "每个回合的结束阶段",
+        "我方都切换到此角色"
+      ],
+      "sourceIds": [
+        332027
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0286",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“赛诺”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1404
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0401",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"召唤折纸飞鼠\"",
+      "groundTruth": "折纸飞鼠",
+      "keywords": [
+        "折纸飞鼠"
+      ],
+      "sourceIds": [
+        301034
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0306",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“夜翳的通感”是在哪个版本加入游戏的？",
+      "groundTruth": "v6.3.0",
+      "keywords": [
+        "v6.3.0"
+      ],
+      "sourceIds": [
+        14165
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0112",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：行动阶段开始时：此卡牌累计1点「进度」。「进度」达到1时，抓2张牌，然后弃置此卡牌。",
+      "groundTruth": "图形对抗投资·大计划",
+      "keywords": [
+        "图形对抗投资·大计划"
+      ],
+      "sourceIds": [
+        302223
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0408",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"角色造成的伤害+1\"",
+      "groundTruth": "天空之刃",
+      "keywords": [
+        "天空之刃"
+      ],
+      "sourceIds": [
+        311504
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0224",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“香菱”是什么元素的？",
+      "groundTruth": "火",
+      "keywords": [
+        "火"
+      ],
+      "sourceIds": [
+        1302
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0068",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“茉洁香迹”的效果是什么？",
+      "groundTruth": "所附属角色造成的物理伤害变为草元素伤害。\n装备有此牌的艾梅莉埃普通攻击后：我方最高等级的「柔灯之匣」立刻行动1次。（每回合1次）\n（牌组中包含艾梅莉埃，才能加入牌组）",
+      "keywords": [
+        "所附属角色造成的物理伤害变为草元素伤害",
+        "装备有此牌的艾梅莉埃普通攻击后",
+        "我方最高等级的「柔灯之匣」立刻行动1次",
+        "（每回合1次）",
+        "（牌组中包含艾梅莉埃"
+      ],
+      "sourceIds": [
+        217101
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0103",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：战斗行动：我方出战角色为镀金旅团·叶轮舞者时，装备此牌。\n镀金旅团·叶轮舞者装备此牌后，立刻使用一次蔓延旋舞。\n装备有此牌的镀金旅团·叶轮舞者在场，我方装备了厄灵·草之灵蛇的角色切换至出战时：造成1点草元素伤害。（每回合1次）\n（牌组中包含镀金旅团·叶轮舞者，才能加入牌组）",
+      "groundTruth": "灵蛇旋嘶",
+      "keywords": [
+        "灵蛇旋嘶"
+      ],
+      "sourceIds": [
+        227031
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0104",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：我方赛索斯获得1点充能。\n我方赛索斯因黑鸢的密喻扣除充能后，获得1点充能。（每回合1次）\n（牌组中包含赛索斯，才能加入牌组）",
+      "groundTruth": "巡日塔门书",
+      "keywords": [
+        "巡日塔门书"
+      ],
+      "sourceIds": [
+        214131
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0150",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“巡日塔门书”需要多少元素骰费用？",
+      "groundTruth": "1费",
+      "keywords": [
+        "1",
+        "1费"
+      ],
+      "sourceIds": [
+        214131
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0239",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“娜维娅”是什么元素的？",
+      "groundTruth": "岩",
+      "keywords": [
+        "岩"
+      ],
+      "sourceIds": [
+        1608
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0217",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“流火焦灼”属于什么类型？",
+      "groundTruth": "火元素角色牌",
+      "keywords": [
+        "火元素角色牌"
+      ],
+      "sourceIds": [
+        213011
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0012",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“蒂玛乌斯”的效果是什么？",
+      "groundTruth": "入场时：此牌附带2个「合成材料」。如果我方牌组中初始包含至少6张「圣遗物」，则从牌组中随机抽取1张「圣遗物」牌。\n结束阶段：此牌补充1个「合成材料」。\n打出「圣遗物」手牌时：如可能，则支付等同于「圣遗物」总费用数量的「合成材料」，以免费装备此「圣遗物」。（每回合1次）",
+      "keywords": [
+        "此牌附带2个「合成材料」",
+        "如果我方牌组中初始包含至少6张「圣遗物」",
+        "则从牌组中随机抽取1张「圣遗物」牌",
+        "此牌补充1个「合成材料」",
+        "打出「圣遗物」手牌时"
+      ],
+      "sourceIds": [
+        322003
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0033",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“甜甜花酿鸡”的效果是什么？",
+      "groundTruth": "治疗目标角色1点。\n（每回合每个角色最多食用1次「料理」）",
+      "keywords": [
+        "治疗目标角色1点",
+        "（每回合每个角色最多食用1次「料理」）"
+      ],
+      "sourceIds": [
+        333005
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0255",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“若陀龙王”是什么元素的？",
+      "groundTruth": "岩",
+      "keywords": [
+        "岩"
+      ],
+      "sourceIds": [
+        2602
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0080",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“医疗器材投资·超级大计划”的效果是什么？",
+      "groundTruth": "行动阶段开始时：此卡牌累计1点「进度」。「进度」达到3时，治疗我方受伤最多的角色6点，然后弃置此卡牌。",
+      "keywords": [
+        "行动阶段开始时",
+        "此卡牌累计1点「进度」",
+        "「进度」达到3时",
+        "治疗我方受伤最多的角色6点",
+        "然后弃置此卡牌"
+      ],
+      "sourceIds": [
+        302222
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0151",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“万千子嗣”需要多少元素骰费用？",
+      "groundTruth": "2费",
+      "keywords": [
+        "2",
+        "2费"
+      ],
+      "sourceIds": [
+        227021
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0320",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“温迪”是在哪个版本加入游戏的？",
+      "groundTruth": "v3.7.0",
+      "keywords": [
+        "v3.7.0"
+      ],
+      "sourceIds": [
+        1503
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0295",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“金焰绒翼龙暴君”的基础生命值和充能是多少？",
+      "groundTruth": "生命值11，充能2点",
+      "keywords": [
+        "11",
+        "生命值11"
+      ],
+      "sourceIds": [
+        2306
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0318",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“枫原万叶”是在哪个版本加入游戏的？",
+      "groundTruth": "v3.8.0",
+      "keywords": [
+        "v3.8.0"
+      ],
+      "sourceIds": [
+        1505
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0037",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“祭礼剑”的效果是什么？",
+      "groundTruth": "角色造成的伤害+1。\n角色使用「元素战技」后：生成1个此角色类型的元素骰。（每回合1次）\n（「单手剑」角色才能装备。角色最多装备1件「武器」）",
+      "keywords": [
+        "角色造成的伤害+1",
+        "角色使用「元素战技」后",
+        "生成1个此角色类型的元素骰",
+        "（每回合1次）",
+        "（「单手剑」角色才能装备"
+      ],
+      "sourceIds": [
+        311502
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0258",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“流浪者”是什么元素的？",
+      "groundTruth": "风",
+      "keywords": [
+        "风"
+      ],
+      "sourceIds": [
+        1506
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0130",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：治疗目标，其数值等同于我方场上召唤物的数量。\n（每回合每个角色最多食用1次「料理」）",
+      "groundTruth": "温泉时光",
+      "keywords": [
+        "温泉时光"
+      ],
+      "sourceIds": [
+        333019
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0092",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：战斗行动：我方手牌中存在当前元素骰费用为3的手牌时，舍弃1张当前元素骰费用为3的手牌，丝柯克获得2点蛇之狡谋。",
+      "groundTruth": "虚境裂隙",
+      "keywords": [
+        "虚境裂隙"
+      ],
+      "sourceIds": [
+        111163
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0040",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“罗网勾针”的效果是什么？",
+      "groundTruth": "角色使用「元素爆发」造成的伤害+2。\n我方引发元素反应时：累计1层矫捷无影，当矫捷无影不低于2层时，消耗2层矫捷无影使所附属角色获得1点充能。\n（「弓」角色才能装备。角色最多装备1件「武器」）",
+      "keywords": [
+        "角色使用「元素爆发」造成的伤害+2",
+        "我方引发元素反应时",
+        "累计1层矫捷无影",
+        "当矫捷无影不低于2层时",
+        "消耗2层矫捷无影使所附属角色获得1点充能"
+      ],
+      "sourceIds": [
+        311209
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0090",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：自幼就被选中的人，经长久年月的教化与训练，在无数次的汰换后才能成为所谓的「役人」。",
+      "groundTruth": "愚人众·霜役人",
+      "keywords": [
+        "愚人众·霜役人"
+      ],
+      "sourceIds": [
+        2104
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0343",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“重云”使用什么武器？",
+      "groundTruth": "双手剑",
+      "keywords": [
+        "双手剑"
+      ],
+      "sourceIds": [
+        1104
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0250",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“月兆祝赐·旧世潜藏”是什么元素的？",
+      "groundTruth": "雷",
+      "keywords": [
+        "雷"
+      ],
+      "sourceIds": [
+        14186
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0272",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“丘丘岩盔王”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        2601
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0129",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：生成1个岩元素骰。\n（牌组包含至少2个岩元素角色，才能加入牌组）",
+      "groundTruth": "元素共鸣：交织之岩",
+      "keywords": [
+        "元素共鸣：交织之岩"
+      ],
+      "sourceIds": [
+        331601
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0070",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“亡骸饥渴”的效果是什么？",
+      "groundTruth": "【被动】战斗开始时，生成2张噬骸能量块放入牌组底。我方每回合可以额外打出1张噬骸能量块。",
+      "keywords": [
+        "【被动】战斗开始时",
+        "生成2张噬骸能量块放入牌组底",
+        "我方每回合可以额外打出1张噬骸能量块"
+      ],
+      "sourceIds": [
+        27056
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0263",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“凝光”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能3点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1601
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0242",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“珐露珊”是什么元素的？",
+      "groundTruth": "风",
+      "keywords": [
+        "风"
+      ],
+      "sourceIds": [
+        1509
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0126",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：本回合中，所有我方角色下一次「元素战技」造成的伤害+2。\n（每回合每个角色最多食用1次「料理」）",
+      "groundTruth": "唐杜尔烤鸡",
+      "keywords": [
+        "唐杜尔烤鸡"
+      ],
+      "sourceIds": [
+        333011
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0425",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“虺雷之姿”能减少什么费用？",
+      "groundTruth": "对角色打出「天赋」或角色使用「普通攻击」时：少花费1个元素骰。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "少花费",
+        "减",
+        "虺雷之姿"
+      ],
+      "sourceIds": [
+        312011
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0313",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“琳妮特”是在哪个版本加入游戏的？",
+      "groundTruth": "v4.3.0",
+      "keywords": [
+        "v4.3.0"
+      ],
+      "sourceIds": [
+        1508
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0004",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“宵宫”的效果是什么？",
+      "groundTruth": "花见坂第十一届全街邀请赛「长野原队」队长兼首发牌手。",
+      "keywords": [
+        "花见坂第十一届全街邀请赛「长野原队」队长兼首发牌手"
+      ],
+      "sourceIds": [
+        1305
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0063",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“静水流涌之辉”的效果是什么？",
+      "groundTruth": "我方角色受到伤害或治疗后：此牌累积1点「湖光」。\n角色进行普通攻击时：如果已有12点「湖光」，则消耗12点，使此技能少花费2个无色元素且造成的伤害+1，并且治疗所附属角色1点（每回合1次）。\n（「单手剑」角色才能装备。角色最多装备1件「武器」）",
+      "keywords": [
+        "我方角色受到伤害或治疗后",
+        "此牌累积1点「湖光」",
+        "角色进行普通攻击时",
+        "如果已有12点「湖光」",
+        "则消耗12点"
+      ],
+      "sourceIds": [
+        311508
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0218",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“「清洁工作」”属于什么类型？",
+      "groundTruth": "事件牌",
+      "keywords": [
+        "事件牌"
+      ],
+      "sourceIds": [
+        302203
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0102",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：入场时：生成1张噬骸能量块，置入我方手牌。\n装备有此牌的圣骸飞蛇在场，我方打出噬骸能量块后：本回合中，我方下次切换角色后生成1个出战角色类型的元素骰。\n（牌组中包含圣骸飞蛇，才能加入牌组）",
+      "groundTruth": "亡风啸卷",
+      "keywords": [
+        "亡风啸卷"
+      ],
+      "sourceIds": [
+        225031
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0066",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“奇瑰之汤·宁静”的效果是什么？",
+      "groundTruth": "本回合中，目标角色下次受到的伤害-2。",
+      "keywords": [
+        "目标角色下次受到的伤害-2"
+      ],
+      "sourceIds": [
+        333024
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0277",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“重云”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能3点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1104
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0232",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“那维莱特”是什么元素的？",
+      "groundTruth": "水",
+      "keywords": [
+        "水"
+      ],
+      "sourceIds": [
+        1210
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0370",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“丽莎”属于哪个国家/阵营？",
+      "groundTruth": "蒙德",
+      "keywords": [
+        "蒙德"
+      ],
+      "sourceIds": [
+        1409
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0317",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“「悬木人」”是在哪个版本加入游戏的？",
+      "groundTruth": "v5.2.0",
+      "keywords": [
+        "v5.2.0"
+      ],
+      "sourceIds": [
+        321024
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0229",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“迪奥娜”是什么元素的？",
+      "groundTruth": "冰",
+      "keywords": [
+        "冰"
+      ],
+      "sourceIds": [
+        1102
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0314",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“暗流涌动”是在哪个版本加入游戏的？",
+      "groundTruth": "v4.6.0",
+      "keywords": [
+        "v4.6.0"
+      ],
+      "sourceIds": [
+        222031
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0168",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“「邪龙」的苏醒”需要多少元素骰费用？",
+      "groundTruth": "2费",
+      "keywords": [
+        "2",
+        "2费"
+      ],
+      "sourceIds": [
+        332051
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0341",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“鹿野院平藏”使用什么武器？",
+      "groundTruth": "法器",
+      "keywords": [
+        "法器"
+      ],
+      "sourceIds": [
+        1513
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0357",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“琳妮特”使用什么武器？",
+      "groundTruth": "单手剑",
+      "keywords": [
+        "单手剑"
+      ],
+      "sourceIds": [
+        1508
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0372",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“七七”属于哪个国家/阵营？",
+      "groundTruth": "璃月",
+      "keywords": [
+        "璃月"
+      ],
+      "sourceIds": [
+        1108
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0440",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“纵声欢唱”能减少什么费用？",
+      "groundTruth": "所有我方角色获得饱腹，抓2张牌，下2次切换角色少花费1个元素骰。\n（每回合每个角色最多食用1次「料理」）",
+      "keywords": [
+        "少花费",
+        "减",
+        "纵声欢唱"
+      ],
+      "sourceIds": [
+        333027
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0034",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“祭礼弓”的效果是什么？",
+      "groundTruth": "角色造成的伤害+1。\n角色使用「元素战技」后：生成1个此角色类型的元素骰。（每回合1次）\n（「弓」角色才能装备。角色最多装备1件「武器」）",
+      "keywords": [
+        "角色造成的伤害+1",
+        "角色使用「元素战技」后",
+        "生成1个此角色类型的元素骰",
+        "（每回合1次）",
+        "（「弓」角色才能装备"
+      ],
+      "sourceIds": [
+        311202
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0208",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“珐露珊”属于什么类型？",
+      "groundTruth": "风元素角色牌",
+      "keywords": [
+        "风元素角色牌"
+      ],
+      "sourceIds": [
+        1509
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0365",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“甘雨”属于哪个国家/阵营？",
+      "groundTruth": "璃月",
+      "keywords": [
+        "璃月"
+      ],
+      "sourceIds": [
+        1101
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0174",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“飞行队出击！”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        332046
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0407",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"战斗行动：我方出战角色为香菱时，装备此牌\"",
+      "groundTruth": "交叉火力",
+      "keywords": [
+        "交叉火力"
+      ],
+      "sourceIds": [
+        213021
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0330",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“归火圣夜巡礼”是在哪个版本加入游戏的？",
+      "groundTruth": "v5.3.0",
+      "keywords": [
+        "v5.3.0"
+      ],
+      "sourceIds": [
+        330010
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0108",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：战斗行动：我方出战角色为辛焱时，装备此牌。\n辛焱装备此牌后，立刻使用一次炎舞。\n装备有此牌的辛焱使用技能时：如果我方手牌数量不多于1，则造成的伤害+2。（每回合1次）\n（牌组中包含辛焱，才能加入牌组）",
+      "groundTruth": "地狱里摇摆",
+      "keywords": [
+        "地狱里摇摆"
+      ],
+      "sourceIds": [
+        213121
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0202",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“刺身拼盘”属于什么类型？",
+      "groundTruth": "事件牌",
+      "keywords": [
+        "事件牌"
+      ],
+      "sourceIds": [
+        333010
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0061",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“鸣神大社”的效果是什么？",
+      "groundTruth": "我方角色使用技能后：如果元素骰总数为奇数，则生成1个万能元素。（每回合2次）",
+      "keywords": [
+        "我方角色使用技能后",
+        "如果元素骰总数为奇数",
+        "则生成1个万能元素",
+        "（每回合2次）"
+      ],
+      "sourceIds": [
+        321008
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0114",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：我方选择行动前：如果我方角色所装备卡牌的原本元素骰费用总和不比对方更低，则生成1个出战角色类型的元素骰。（每回合1次）\n可用次数：3",
+      "groundTruth": "欧庇克莱歌剧院",
+      "keywords": [
+        "欧庇克莱歌剧院"
+      ],
+      "sourceIds": [
+        321017
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0281",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“宵宫”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能3点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1305
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0160",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“五重天的寒雨”需要多少元素骰费用？",
+      "groundTruth": "2费",
+      "keywords": [
+        "2",
+        "2费"
+      ],
+      "sourceIds": [
+        211141
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0097",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：入场时：从折纸飞鼠、跳跳纸蛙、折纸胖胖鼠中随机生成1张手牌。\n我方宣布结束时：随机触发我方1个「希穆兰卡」召唤物的「结束阶段」效果。\n可用次数：3",
+      "groundTruth": "墨色酒馆",
+      "keywords": [
+        "墨色酒馆"
+      ],
+      "sourceIds": [
+        321029
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0321",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“机巧神通”是在哪个版本加入游戏的？",
+      "groundTruth": "v3.3.0",
+      "keywords": [
+        "v3.3.0"
+      ],
+      "sourceIds": [
+        225011
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0389",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“爱可菲”属于哪个国家/阵营？",
+      "groundTruth": "枫丹",
+      "keywords": [
+        "枫丹"
+      ],
+      "sourceIds": [
+        1115
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0391",
+      "category": "multiple-answer",
+      "question": "问：在七圣召唤中，请列出至少3张带有\"料理\"标签的卡牌名称。",
+      "groundTruth": [
+        "梦见风名物点心",
+        "提瓦特煎蛋"
+      ],
+      "keywords": [
+        "梦见风名物点心",
+        "提瓦特煎蛋"
+      ],
+      "sourceIds": [
+        115142,
+        333009
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0032",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“「狂欢节奏」”的效果是什么？",
+      "groundTruth": "抓2张牌，如果我方手牌中的「武器」牌或「圣遗物」牌数量大于1张，则各生成1个万能元素。",
+      "keywords": [
+        "如果我方手牌中的「武器」牌或「圣遗物」牌数量大于1张",
+        "则各生成1个万能元素"
+      ],
+      "sourceIds": [
+        332055
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0197",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“神性之陨”属于什么类型？",
+      "groundTruth": "岩元素角色牌",
+      "keywords": [
+        "岩元素角色牌"
+      ],
+      "sourceIds": [
+        216041
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0136",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：接下来3次名称不存在于初始牌组中的牌加入我方手牌时，目标我方角色治疗自身1点。\n（每回合每个角色最多食用1次「料理」）",
+      "groundTruth": "咚咚嘭嘭",
+      "keywords": [
+        "咚咚嘭嘭"
+      ],
+      "sourceIds": [
+        333018
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0253",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“千织”是什么元素的？",
+      "groundTruth": "岩",
+      "keywords": [
+        "岩"
+      ],
+      "sourceIds": [
+        1609
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0158",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“夏诺蒂拉的声援”需要多少元素骰费用？",
+      "groundTruth": "1费",
+      "keywords": [
+        "1",
+        "1费"
+      ],
+      "sourceIds": [
+        302209
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0409",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"其他我方角色使用「元素爆发」后：所附属角色获得1点充能\"",
+      "groundTruth": "华饰之兜",
+      "keywords": [
+        "华饰之兜"
+      ],
+      "sourceIds": [
+        312007
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0106",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：治疗目标角色12点，使其获得效果：重击后：造成5点该角色元素类型的伤害。",
+      "groundTruth": "重铸圣剑",
+      "keywords": [
+        "重铸圣剑"
+      ],
+      "sourceIds": [
+        301039
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0226",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“莫娜”是什么元素的？",
+      "groundTruth": "水",
+      "keywords": [
+        "水"
+      ],
+      "sourceIds": [
+        1203
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0337",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“甘雨”使用什么武器？",
+      "groundTruth": "弓",
+      "keywords": [
+        "弓"
+      ],
+      "sourceIds": [
+        1101
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0138",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：选一个我方角色，我方其他角色准备技能时：所选角色下次元素战技少花费1个元素骰。（至多触发2次，不可叠加）",
+      "groundTruth": "健身的成果",
+      "keywords": [
+        "健身的成果"
+      ],
+      "sourceIds": [
+        332048
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0331",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“热量均衡计划”使用什么武器？",
+      "groundTruth": "长柄武器",
+      "keywords": [
+        "长柄武器"
+      ],
+      "sourceIds": [
+        14145
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0152",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“光辉的季节”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        212011
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0427",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“预算师的技艺”能减少什么费用？",
+      "groundTruth": "战斗行动：我方出战角色为卡维时，装备此牌。\n卡维装备此牌后，立刻使用一次画则巧施。\n装备有此牌的卡维在场，我方触发迸发扫描的效果后：将1张所舍弃卡牌的复制加入你的手牌。如果该牌为「场地」牌，则使本回合中我方下次打出「场地」时少花费2个元素骰。（每回合1次）\n（牌组中包含卡维，才能加入牌组）",
+      "keywords": [
+        "少花费",
+        "减",
+        "预算师的技艺"
+      ],
+      "sourceIds": [
+        217081
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0049",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“星轨王城”的效果是什么？",
+      "groundTruth": "入场时：生成手牌积木小人。\n我方角色使用「元素战技」后：下次打出积木小人少花费1个元素骰。（不可叠加）\n我方角色使用「元素爆发」后：下次打出的积木小人效果量+1。（不可叠加）",
+      "keywords": [
+        "生成手牌积木小人",
+        "我方角色使用「元素战技」后",
+        "下次打出积木小人少花费1个元素骰",
+        "（不可叠加）",
+        "我方角色使用「元素爆发」后"
+      ],
+      "sourceIds": [
+        321030
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0428",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“不动玄石之相”能减少什么费用？",
+      "groundTruth": "对角色打出「天赋」或角色使用技能时：少花费1个岩元素。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "少花费",
+        "减",
+        "不动玄石之相"
+      ],
+      "sourceIds": [
+        312601
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0303",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“愉舞欢游”是在哪个版本加入游戏的？",
+      "groundTruth": "v4.0.0",
+      "keywords": [
+        "v4.0.0"
+      ],
+      "sourceIds": [
+        330003
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0162",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“水泡史莱姆”需要多少元素骰费用？",
+      "groundTruth": "1费",
+      "keywords": [
+        "1",
+        "1费"
+      ],
+      "sourceIds": [
+        122051
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0188",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“肃净污染”属于什么类型？",
+      "groundTruth": "事件牌",
+      "keywords": [
+        "事件牌"
+      ],
+      "sourceIds": [
+        300009
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0238",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“妮露”是什么元素的？",
+      "groundTruth": "水",
+      "keywords": [
+        "水"
+      ],
+      "sourceIds": [
+        1208
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0366",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“罗莎莉亚”属于哪个国家/阵营？",
+      "groundTruth": "蒙德",
+      "keywords": [
+        "蒙德"
+      ],
+      "sourceIds": [
+        1113
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0348",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“烟绯”使用什么武器？",
+      "groundTruth": "法器",
+      "keywords": [
+        "法器"
+      ],
+      "sourceIds": [
+        1308
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0177",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“猜先有方”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        212091
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0310",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“浪船”是在哪个版本加入游戏的？",
+      "groundTruth": "v5.5.0",
+      "keywords": [
+        "v5.5.0"
+      ],
+      "sourceIds": [
+        301304
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0354",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“安柏”使用什么武器？",
+      "groundTruth": "弓",
+      "keywords": [
+        "弓"
+      ],
+      "sourceIds": [
+        1304
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0270",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“北斗”的基础生命值和充能是多少？",
+      "groundTruth": "生命值11，充能3点",
+      "keywords": [
+        "11",
+        "生命值11"
+      ],
+      "sourceIds": [
+        1405
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0093",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：入场时：生成4张太郎丸的存款，均匀地置入我方牌库中。\n我方打出2张太郎丸的存款后：弃置此牌，召唤愤怒的太郎丸。",
+      "groundTruth": "太郎丸",
+      "keywords": [
+        "太郎丸"
+      ],
+      "sourceIds": [
+        322024
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0132",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：复苏目标角色，并治疗此角色1点。\n（每回合中，最多通过「料理」复苏1个角色，并且每个角色最多食用1次「料理」）",
+      "groundTruth": "提瓦特煎蛋",
+      "keywords": [
+        "提瓦特煎蛋"
+      ],
+      "sourceIds": [
+        333009
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0228",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“愚人众·藏镜仕女”是什么元素的？",
+      "groundTruth": "水",
+      "keywords": [
+        "水"
+      ],
+      "sourceIds": [
+        2202
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0201",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“王下近待”属于什么类型？",
+      "groundTruth": "装备牌",
+      "keywords": [
+        "装备牌"
+      ],
+      "sourceIds": [
+        133092
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0328",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“老兵的容颜”是在哪个版本加入游戏的？",
+      "groundTruth": "v4.4.0",
+      "keywords": [
+        "v4.4.0"
+      ],
+      "sourceIds": [
+        312023
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0393",
+      "category": "multiple-answer",
+      "question": "问：在七圣召唤中，请列举至少3个火元素角色牌。",
+      "groundTruth": [
+        "迪卢克",
+        "香菱",
+        "班尼特",
+        "安柏",
+        "宵宫",
+        "可莉",
+        "胡桃",
+        "烟绯",
+        "迪希雅",
+        "林尼",
+        "托马",
+        "辛焱",
+        "夏沃蕾",
+        "阿蕾奇诺",
+        "玛薇卡",
+        "愚人众·火之债务处理人",
+        "深渊咏者·渊火",
+        "镀金旅团·炽沙叙事人",
+        "金焰绒翼龙暴君",
+        "焚尽的炽炎魔女",
+        "踏云献瑞",
+        "帝王甲胄",
+        "忿恨"
+      ],
+      "keywords": [
+        "迪卢克",
+        "香菱",
+        "班尼特"
+      ],
+      "sourceIds": [
+        1301,
+        1302,
+        1303,
+        1304,
+        1305,
+        1306,
+        1307,
+        1308,
+        1309,
+        1310,
+        1311,
+        1312,
+        1313,
+        1314,
+        1315,
+        2301,
+        2302,
+        2303,
+        2306,
+        6301,
+        13165,
+        23047,
+        23056
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0422",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“镜华风姿”能减少什么费用？",
+      "groundTruth": "战斗行动：我方出战角色为神里绫人时，装备此牌。\n神里绫人装备此牌后，立刻使用一次神里流·镜花。\n附属有泷廻鉴花的神里绫人「普通攻击」后：所附属角色本回合中下次「普通攻击」少花费2个无色元素。（该次普通攻击不会重复触发此卡牌的效果）\n（牌组中包含神里绫人，才能加入牌组）",
+      "keywords": [
+        "少花费",
+        "减",
+        "镜华风姿"
+      ],
+      "sourceIds": [
+        212061
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0071",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“立本”的效果是什么？",
+      "groundTruth": "结束阶段：收集我方未使用的元素骰（每种最多1个）。\n行动阶段开始时：如果此牌已收集3个元素骰，则抓2张牌，生成2点万能元素，然后弃置此牌。",
+      "keywords": [
+        "收集我方未使用的元素骰（每种最多1个）",
+        "行动阶段开始时",
+        "如果此牌已收集3个元素骰",
+        "生成2点万能元素",
+        "然后弃置此牌"
+      ],
+      "sourceIds": [
+        322008
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0178",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“长野原龙势流星群”需要多少元素骰费用？",
+      "groundTruth": "1费",
+      "keywords": [
+        "1",
+        "1费"
+      ],
+      "sourceIds": [
+        213051
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0245",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“圣骸角鳄”是什么元素的？",
+      "groundTruth": "水",
+      "keywords": [
+        "水"
+      ],
+      "sourceIds": [
+        2207
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0421",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“祭星者之望”能减少什么费用？",
+      "groundTruth": "我方每回合首次打出名称不属于初始牌组的牌时：少花费1个元素骰，所附属角色下次造成的伤害+1。（可叠加，最多叠加到2）\n（「法器」角色才能装备。角色最多装备1件「武器」）",
+      "keywords": [
+        "少花费",
+        "减",
+        "祭星者之望"
+      ],
+      "sourceIds": [
+        311112
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0054",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“失冕的宝冠”的效果是什么？",
+      "groundTruth": "我方触发燃烧反应后：敌方当前出战角色下次受到的伤害+1。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "我方触发燃烧反应后",
+        "敌方当前出战角色下次受到的伤害+1",
+        "（每回合1次）",
+        "（角色最多装备1件「圣遗物」）"
+      ],
+      "sourceIds": [
+        312035
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0275",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“茜特菈莉”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1114
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0241",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“罗莎莉亚”是什么元素的？",
+      "groundTruth": "冰",
+      "keywords": [
+        "冰"
+      ],
+      "sourceIds": [
+        1113
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0244",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“温迪”是什么元素的？",
+      "groundTruth": "风",
+      "keywords": [
+        "风"
+      ],
+      "sourceIds": [
+        1503
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0298",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“雷泽”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1402
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0266",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“行秋”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1202
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0146",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“星天之兆”需要多少元素骰费用？",
+      "groundTruth": "2费",
+      "keywords": [
+        "2",
+        "2费"
+      ],
+      "sourceIds": [
+        332008
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0161",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“烬城勇者绘卷”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        312034
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0252",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“瑶瑶”是什么元素的？",
+      "groundTruth": "草",
+      "keywords": [
+        "草"
+      ],
+      "sourceIds": [
+        1704
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0453",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"利爪猛击\"的效果是什么？(卡牌ID: 27051)",
+      "groundTruth": "造成2点物理伤害。",
+      "keywords": [
+        "造成2点物理伤害"
+      ],
+      "sourceIds": [
+        27051
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0179",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“诸圣的礼冠”需要多少元素骰费用？",
+      "groundTruth": "1费",
+      "keywords": [
+        "1",
+        "1费"
+      ],
+      "sourceIds": [
+        312033
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0182",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“黄油蟹蟹”属于什么类型？",
+      "groundTruth": "事件牌",
+      "keywords": [
+        "事件牌"
+      ],
+      "sourceIds": [
+        333012
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0142",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“焕光追影弹·冰”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        115117
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0117",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：角色使用「元素爆发」造成的伤害+2。\n我方引发元素反应时：累计1层矫捷无影，当矫捷无影不低于2层时，消耗2层矫捷无影使所附属角色获得1点充能。\n（「弓」角色才能装备。角色最多装备1件「武器」）",
+      "groundTruth": "罗网勾针",
+      "keywords": [
+        "罗网勾针"
+      ],
+      "sourceIds": [
+        311209
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0231",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“无相之雷”是什么元素的？",
+      "groundTruth": "雷",
+      "keywords": [
+        "雷"
+      ],
+      "sourceIds": [
+        2401
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0254",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“珊瑚宫心海”是什么元素的？",
+      "groundTruth": "水",
+      "keywords": [
+        "水"
+      ],
+      "sourceIds": [
+        1205
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0145",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“月桂的宝冠”需要多少元素骰费用？",
+      "groundTruth": "2费",
+      "keywords": [
+        "2",
+        "2费"
+      ],
+      "sourceIds": [
+        312701
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0180",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“冰雅刺剑”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        221041
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0082",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：对角色打出「天赋」或角色使用技能时：少花费1个水元素。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "groundTruth": "酒渍船帽",
+      "keywords": [
+        "酒渍船帽"
+      ],
+      "sourceIds": [
+        312201
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0212",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“墨色酒馆”属于什么类型？",
+      "groundTruth": "支援牌",
+      "keywords": [
+        "支援牌"
+      ],
+      "sourceIds": [
+        321029
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0248",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“诺艾尔”是什么元素的？",
+      "groundTruth": "岩",
+      "keywords": [
+        "岩"
+      ],
+      "sourceIds": [
+        1602
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0431",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“奇瑰之汤·助佑”能减少什么费用？",
+      "groundTruth": "本回合中，目标角色下次使用技能时少花费2个元素骰。",
+      "keywords": [
+        "少花费",
+        "减",
+        "奇瑰之汤·助佑"
+      ],
+      "sourceIds": [
+        333022
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0296",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“多莉”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1410
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0280",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“雷之新生”的基础生命值和充能是多少？",
+      "groundTruth": "生命值6，充能2点",
+      "keywords": [
+        "6",
+        "生命值6"
+      ],
+      "sourceIds": [
+        24065
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0159",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“永远的友谊”需要多少元素骰费用？",
+      "groundTruth": "2费",
+      "keywords": [
+        "2",
+        "2费"
+      ],
+      "sourceIds": [
+        332020
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0447",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"残光将终\"的效果是什么？(卡牌ID: 14123)",
+      "groundTruth": "造成3点雷元素伤害，自身附属4层生命之契。",
+      "keywords": [
+        "造成3点雷元素伤害",
+        "自身附属4层生命之契"
+      ],
+      "sourceIds": [
+        14123
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0430",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“转盘特调”能减少什么费用？",
+      "groundTruth": "目标角色获得4次随机增益效果，其中效果如下：\n治疗目标角色2点。\n目标角色获得1点额外最大生命值。\n目标角色下次使用技能少花费1个元素骰。\n目标角色下次造成的伤害+1。\n（每回合每个角色最多食用1次「料理」）",
+      "keywords": [
+        "少花费",
+        "减",
+        "转盘特调"
+      ],
+      "sourceIds": [
+        333030
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0023",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“芙佳的声援”的效果是什么？",
+      "groundTruth": "随机生成「伙伴」到场上，直到填满双方支援区。",
+      "keywords": [
+        "随机生成「伙伴」到场上",
+        "直到填满双方支援区"
+      ],
+      "sourceIds": [
+        302213
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0110",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：特技：昂扬状态\n可用次数：2\n（角色最多装备1个「特技」）\n[3130081: 昂扬状态] (3*Void) 附属角色准备技能2次「普通攻击」。",
+      "groundTruth": "突角龙",
+      "keywords": [
+        "突角龙"
+      ],
+      "sourceIds": [
+        313008
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0338",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“阿蕾奇诺”使用什么武器？",
+      "groundTruth": "长柄武器",
+      "keywords": [
+        "长柄武器"
+      ],
+      "sourceIds": [
+        1314
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0021",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“老兵的容颜”的效果是什么？",
+      "groundTruth": "角色受到伤害或治疗后：根据本回合触发此效果的次数，执行不同的效果。\n第1次触发：生成1个此角色类型的元素骰。\n第2次触发：抓1张牌。\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "角色受到伤害或治疗后",
+        "根据本回合触发此效果的次数",
+        "执行不同的效果",
+        "生成1个此角色类型的元素骰",
+        "（角色最多装备1件「圣遗物」）"
+      ],
+      "sourceIds": [
+        312023
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0269",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“夏沃蕾”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1313
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0166",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“起死回骸”需要多少元素骰费用？",
+      "groundTruth": "7费",
+      "keywords": [
+        "7",
+        "7费"
+      ],
+      "sourceIds": [
+        211081
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0398",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"角色使用「普通攻击」时：如果我方手牌数量不多于2，则少消耗1个元素骰\"",
+      "groundTruth": "角斗士的凯旋",
+      "keywords": [
+        "角斗士的凯旋"
+      ],
+      "sourceIds": [
+        312029
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0237",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“凯亚”是什么元素的？",
+      "groundTruth": "冰",
+      "keywords": [
+        "冰"
+      ],
+      "sourceIds": [
+        1103
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0276",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“神里绫人”的基础生命值和充能是多少？",
+      "groundTruth": "生命值11，充能2点",
+      "keywords": [
+        "11",
+        "生命值11"
+      ],
+      "sourceIds": [
+        1206
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0284",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“芙宁娜”的基础生命值和充能是多少？",
+      "groundTruth": "生命值12，充能2点",
+      "keywords": [
+        "12",
+        "生命值12"
+      ],
+      "sourceIds": [
+        1212
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0139",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：将一个装备在我方角色的「武器」装备牌，转移给另一个武器类型相同的我方角色，并重置其效果的「每回合」次数限制。",
+      "groundTruth": "诸武精通",
+      "keywords": [
+        "诸武精通"
+      ],
+      "sourceIds": [
+        332010
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0098",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：特技：灵性援护\n可用次数：2\n（角色最多装备1个「特技」）\n[3130051: 灵性援护] (1*Same) 从「场地」「道具」「料理」中挑选1张加入手牌，并且治疗附属角色1点。",
+      "groundTruth": "暝视龙",
+      "keywords": [
+        "暝视龙"
+      ],
+      "sourceIds": [
+        313005
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0206",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“沉没的预言”属于什么类型？",
+      "groundTruth": "水元素角色牌",
+      "keywords": [
+        "水元素角色牌"
+      ],
+      "sourceIds": [
+        212031
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0345",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“枫原万叶”使用什么武器？",
+      "groundTruth": "单手剑",
+      "keywords": [
+        "单手剑"
+      ],
+      "sourceIds": [
+        1505
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0385",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“枫原万叶”属于哪个国家/阵营？",
+      "groundTruth": "稻妻",
+      "keywords": [
+        "稻妻"
+      ],
+      "sourceIds": [
+        1505
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0210",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“厄灵·草之灵蛇”属于什么类型？",
+      "groundTruth": "草元素角色牌",
+      "keywords": [
+        "草元素角色牌"
+      ],
+      "sourceIds": [
+        127032
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0198",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“旅行剑”属于什么类型？",
+      "groundTruth": "装备牌",
+      "keywords": [
+        "装备牌"
+      ],
+      "sourceIds": [
+        311501
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0190",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“冲天转转”属于什么类型？",
+      "groundTruth": "岩元素角色牌",
+      "keywords": [
+        "岩元素角色牌"
+      ],
+      "sourceIds": [
+        116102
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0435",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“绪风之拥”能减少什么费用？",
+      "groundTruth": "战斗行动：我方出战角色为温迪时，装备此牌。\n温迪装备此牌后，立刻使用一次高天之歌。\n装备有此牌的温迪生成的风域触发后，会使本回合中我方角色下次「普通攻击」少花费1个无色元素。\n（牌组中包含温迪，才能加入牌组）",
+      "keywords": [
+        "少花费",
+        "减",
+        "绪风之拥"
+      ],
+      "sourceIds": [
+        215031
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0419",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"投掷阶段：总是投出2个雷元素骰和2个风元素骰\"",
+      "groundTruth": "雷风祝佑·疾霆",
+      "keywords": [
+        "雷风祝佑·疾霆"
+      ],
+      "sourceIds": [
+        303091
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0300",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“月兆祝赐·旧世潜藏”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能4点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        14186
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0181",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“激愈水球·中”属于什么类型？",
+      "groundTruth": "水元素角色牌",
+      "keywords": [
+        "水元素角色牌"
+      ],
+      "sourceIds": [
+        112132
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0249",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“纯水精灵·洛蒂娅”是什么元素的？",
+      "groundTruth": "水",
+      "keywords": [
+        "水"
+      ],
+      "sourceIds": [
+        2201
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0072",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“圣骸毒蝎”的效果是什么？",
+      "groundTruth": "因为啃噬伟大的生命体，而扭曲异变的毒蝎，操纵着险恶的轰雷。",
+      "keywords": [
+        "因为啃噬伟大的生命体",
+        "而扭曲异变的毒蝎",
+        "操纵着险恶的轰雷"
+      ],
+      "sourceIds": [
+        2405
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0183",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“归火圣夜巡礼”属于什么类型？",
+      "groundTruth": "事件牌",
+      "keywords": [
+        "事件牌"
+      ],
+      "sourceIds": [
+        330010
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0350",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“可莉”使用什么武器？",
+      "groundTruth": "法器",
+      "keywords": [
+        "法器"
+      ],
+      "sourceIds": [
+        1306
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0369",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“申鹤”属于哪个国家/阵营？",
+      "groundTruth": "璃月",
+      "keywords": [
+        "璃月"
+      ],
+      "sourceIds": [
+        1107
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0368",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“深渊咏者·渊火”属于哪个国家/阵营？",
+      "groundTruth": "怪物",
+      "keywords": [
+        "怪物"
+      ],
+      "sourceIds": [
+        2302
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0329",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“霹雳连霄”是在哪个版本加入游戏的？",
+      "groundTruth": "v3.4.0",
+      "keywords": [
+        "v3.4.0"
+      ],
+      "sourceIds": [
+        214051
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0323",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“米卡”是在哪个版本加入游戏的？",
+      "groundTruth": "v6.4.0",
+      "keywords": [
+        "v6.4.0"
+      ],
+      "sourceIds": [
+        1117
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0387",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“神里绫华”属于哪个国家/阵营？",
+      "groundTruth": "稻妻",
+      "keywords": [
+        "稻妻"
+      ],
+      "sourceIds": [
+        1105
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0377",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“那维莱特”属于哪个国家/阵营？",
+      "groundTruth": "枫丹",
+      "keywords": [
+        "枫丹"
+      ],
+      "sourceIds": [
+        1210
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0111",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：将一个我方角色所装备的「武器」返回手牌。\n本回合中，我方下次打出「武器」手牌时：少花费2个元素骰。",
+      "groundTruth": "藏锋何处",
+      "keywords": [
+        "藏锋何处"
+      ],
+      "sourceIds": [
+        332022
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0144",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“「究极霸王超级魔剑」”需要多少元素骰费用？",
+      "groundTruth": "2费",
+      "keywords": [
+        "2",
+        "2费"
+      ],
+      "sourceIds": [
+        311308
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0302",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“如雷的盛怒”是在哪个版本加入游戏的？",
+      "groundTruth": "v3.3.0",
+      "keywords": [
+        "v3.3.0"
+      ],
+      "sourceIds": [
+        312402
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0064",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“塞塔蕾”的效果是什么？",
+      "groundTruth": "双方执行任意行动后，我方手牌数量为0时：抓1张牌。\n可用次数：3",
+      "keywords": [
+        "双方执行任意行动后",
+        "我方手牌数量为0时"
+      ],
+      "sourceIds": [
+        322019
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0356",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“芙宁娜”使用什么武器？",
+      "groundTruth": "单手剑",
+      "keywords": [
+        "单手剑"
+      ],
+      "sourceIds": [
+        1211
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0055",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“奇瑰之汤·鼓舞”的效果是什么？",
+      "groundTruth": "目标角色获得1点额外最大生命值。",
+      "keywords": [
+        "目标角色获得1点额外最大生命值"
+      ],
+      "sourceIds": [
+        333026
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0434",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“光辉的季节”能减少什么费用？",
+      "groundTruth": "战斗行动：我方出战角色为芭芭拉时，装备此牌。\n芭芭拉装备此牌后，立刻使用一次演唱，开始♪。\n装备有此牌的芭芭拉在场时，歌声之环会使我方执行「切换角色」行动时少花费1个元素骰。（每回合1次）\n（牌组中包含芭芭拉，才能加入牌组）",
+      "keywords": [
+        "少花费",
+        "减",
+        "光辉的季节"
+      ],
+      "sourceIds": [
+        212011
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0390",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“愚人众·雷萤术士”属于哪个国家/阵营？",
+      "groundTruth": "愚人众",
+      "keywords": [
+        "愚人众"
+      ],
+      "sourceIds": [
+        2404
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0222",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“无尽食欲”是什么元素的？",
+      "groundTruth": "水",
+      "keywords": [
+        "水"
+      ],
+      "sourceIds": [
+        22045
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0278",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“卡维”的基础生命值和充能是多少？",
+      "groundTruth": "生命值12，充能2点",
+      "keywords": [
+        "12",
+        "生命值12"
+      ],
+      "sourceIds": [
+        1708
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0274",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“凯亚”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1103
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0141",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“白浪拂沙”需要多少元素骰费用？",
+      "groundTruth": "2费",
+      "keywords": [
+        "2",
+        "2费"
+      ],
+      "sourceIds": [
+        111154
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0322",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“宵宫”是在哪个版本加入游戏的？",
+      "groundTruth": "v3.3.0",
+      "keywords": [
+        "v3.3.0"
+      ],
+      "sourceIds": [
+        1305
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0176",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“脉冲的魔女”需要多少元素骰费用？",
+      "groundTruth": "1费",
+      "keywords": [
+        "1",
+        "1费"
+      ],
+      "sourceIds": [
+        214091
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0353",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“爱诺”使用什么武器？",
+      "groundTruth": "双手剑",
+      "keywords": [
+        "双手剑"
+      ],
+      "sourceIds": [
+        1216
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0359",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“纳西妲”使用什么武器？",
+      "groundTruth": "法器",
+      "keywords": [
+        "法器"
+      ],
+      "sourceIds": [
+        1703
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0312",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“湮远”是在哪个版本加入游戏的？",
+      "groundTruth": "v6.3.0",
+      "keywords": [
+        "v6.3.0"
+      ],
+      "sourceIds": [
+        211161
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0205",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“野猪公主”属于什么类型？",
+      "groundTruth": "事件牌",
+      "keywords": [
+        "事件牌"
+      ],
+      "sourceIds": [
+        332025
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0041",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“战欲涌现”的效果是什么？",
+      "groundTruth": "战斗行动：我方出战角色为优菈时，装备此牌。\n优菈装备此牌后，立刻使用一次凝浪之光剑。\n装备有此牌的优菈使用冰潮的涡旋时：额外为光降之剑累积1点「能量层数」。\n（牌组中包含优菈，才能加入牌组）",
+      "keywords": [
+        "我方出战角色为优菈时",
+        "优菈装备此牌后",
+        "立刻使用一次凝浪之光剑",
+        "装备有此牌的优菈使用冰潮的涡旋时",
+        "额外为光降之剑累积1点「能量层数」"
+      ],
+      "sourceIds": [
+        211061
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0294",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“迪希雅”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1309
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0360",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“米卡”使用什么武器？",
+      "groundTruth": "长柄武器",
+      "keywords": [
+        "长柄武器"
+      ],
+      "sourceIds": [
+        1117
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0325",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“千岩长枪”是在哪个版本加入游戏的？",
+      "groundTruth": "v3.3.0",
+      "keywords": [
+        "v3.3.0"
+      ],
+      "sourceIds": [
+        311402
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0199",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“水泡史莱姆”属于什么类型？",
+      "groundTruth": "水元素角色牌",
+      "keywords": [
+        "水元素角色牌"
+      ],
+      "sourceIds": [
+        122051
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0076",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“异兽侵蚀”的效果是什么？",
+      "groundTruth": "战斗行动：我方出战角色为黄金王兽时，装备此牌。\n黄金王兽装备此牌后，立刻使用一次兽境轰召。\n装备有此牌的黄金王兽在场时，对方的黄金侵蚀最多可叠加到5次，并且所附属角色不在后台时也会生效。\n（牌组中包含黄金王兽，才能加入牌组）",
+      "keywords": [
+        "我方出战角色为黄金王兽时",
+        "黄金王兽装备此牌后",
+        "立刻使用一次兽境轰召",
+        "装备有此牌的黄金王兽在场时",
+        "对方的黄金侵蚀最多可叠加到5次"
+      ],
+      "sourceIds": [
+        226031
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0386",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“八重神子”属于哪个国家/阵营？",
+      "groundTruth": "稻妻",
+      "keywords": [
+        "稻妻"
+      ],
+      "sourceIds": [
+        1408
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0057",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“恶龙的单片镜”的效果是什么？",
+      "groundTruth": "附属角色使用「元素战技」后：冒险1次。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "附属角色使用「元素战技」后",
+        "（每回合1次）",
+        "（角色最多装备1件「圣遗物」）"
+      ],
+      "sourceIds": [
+        312040
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0374",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“林尼”属于哪个国家/阵营？",
+      "groundTruth": "枫丹",
+      "keywords": [
+        "枫丹"
+      ],
+      "sourceIds": [
+        1310
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0042",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“愚人众的阴谋”的效果是什么？",
+      "groundTruth": "在对方场上，生成1个随机类型的「愚人众伏兵」。\n（牌组包含至少2个「愚人众」角色，才能加入牌组）",
+      "keywords": [
+        "生成1个随机类型的「愚人众伏兵」",
+        "（牌组包含至少2个「愚人众」角色",
+        "才能加入牌组）"
+      ],
+      "sourceIds": [
+        332016
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0289",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“安柏”的基础生命值和充能是多少？",
+      "groundTruth": "生命值12，充能2点",
+      "keywords": [
+        "12",
+        "生命值12"
+      ],
+      "sourceIds": [
+        1304
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0074",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“圣火竞技场”的效果是什么？",
+      "groundTruth": "我方使用技能或特技后：此牌累积1点「角逐之焰」。\n「角逐之焰」达到2时：生成1个随机基础元素骰。\n达到4时：治疗我方出战角色2点。\n达到6时：弃置此牌，使当前的我方出战角色在2回合内造成的伤害+1。",
+      "keywords": [
+        "我方使用技能或特技后",
+        "此牌累积1点「角逐之焰」",
+        "「角逐之焰」达到2时",
+        "生成1个随机基础元素骰",
+        "治疗我方出战角色2点"
+      ],
+      "sourceIds": [
+        321022
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0346",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“班尼特”使用什么武器？",
+      "groundTruth": "单手剑",
+      "keywords": [
+        "单手剑"
+      ],
+      "sourceIds": [
+        1303
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0379",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“刻晴”属于哪个国家/阵营？",
+      "groundTruth": "璃月",
+      "keywords": [
+        "璃月"
+      ],
+      "sourceIds": [
+        1403
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0123",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：角色造成的伤害+1。\n攻击剩余生命值不多于6的目标时，伤害额外+2。\n（「双手剑」角色才能装备。角色最多装备1件「武器」）",
+      "groundTruth": "狼的末路",
+      "keywords": [
+        "狼的末路"
+      ],
+      "sourceIds": [
+        311303
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0056",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“流明石触媒”的效果是什么？",
+      "groundTruth": "我方打出行动牌后：如果此牌在场期间本回合中我方已打出3张行动牌，则抓1张牌并生成1个万能元素。（每回合1次）\n可用次数：3\n【此卡含描述变量】",
+      "keywords": [
+        "我方打出行动牌后",
+        "如果此牌在场期间本回合中我方已打出3张行动牌",
+        "则抓1张牌并生成1个万能元素",
+        "（每回合1次）",
+        "【此卡含描述变量】"
+      ],
+      "sourceIds": [
+        323007
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0396",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"对角色打出「天赋」或角色使用技能时：少花费1个水元素\"",
+      "groundTruth": "沉沦之心",
+      "keywords": [
+        "沉沦之心"
+      ],
+      "sourceIds": [
+        312202
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0028",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“西风剑”的效果是什么？",
+      "groundTruth": "角色造成的伤害+1。\n角色使用「元素战技」后：角色额外获得1点充能。（每回合1次）\n（「单手剑」角色才能装备。角色最多装备1件「武器」）",
+      "keywords": [
+        "角色造成的伤害+1",
+        "角色使用「元素战技」后",
+        "角色额外获得1点充能",
+        "（每回合1次）",
+        "（「单手剑」角色才能装备"
+      ],
+      "sourceIds": [
+        311505
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0423",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“蒸发祝佑·炽燃”能减少什么费用？",
+      "groundTruth": "投掷阶段：总是投出2个水元素骰和2个火元素骰。\n我方火元素角色使用「元素战技」时：少花费1个元素骰。（每回合2次）",
+      "keywords": [
+        "少花费",
+        "减",
+        "蒸发祝佑·炽燃"
+      ],
+      "sourceIds": [
+        303052
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0454",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"滚雷裂音\"的效果是什么？(卡牌ID: 124024)",
+      "groundTruth": "我方对附属有雷鸣探知的角色造成的伤害+1。",
+      "keywords": [
+        "我方对附属有雷鸣探知的角色造成的伤害+1"
+      ],
+      "sourceIds": [
+        124024
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0077",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“勘探钻机”的效果是什么？",
+      "groundTruth": "所附属角色受到伤害时：如可能，舍弃1张当前元素骰费用最高的手牌，以抵消1点伤害，然后累积1点「团结」。（每回合1次）\n角色造成伤害时：如果此牌已有「团结」，则消耗所有「团结」，使此伤害+1，并且每消耗1点「团结」就抓1张牌。\n（「长柄武器」角色才能装备。角色最多装备1件「武器」）",
+      "keywords": [
+        "所附属角色受到伤害时",
+        "舍弃1张当前元素骰费用最高的手牌",
+        "以抵消1点伤害",
+        "然后累积1点「团结」",
+        "（每回合1次）"
+      ],
+      "sourceIds": [
+        311409
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0154",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“涅朵奇卡”需要多少元素骰费用？",
+      "groundTruth": "1费",
+      "keywords": [
+        "1",
+        "1费"
+      ],
+      "sourceIds": [
+        322034
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0443",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"斫雷\"的效果是什么？(卡牌ID: 14053)",
+      "groundTruth": "造成2点雷元素伤害，生成雷兽之盾。",
+      "keywords": [
+        "造成2点雷元素伤害",
+        "生成雷兽之盾"
+      ],
+      "sourceIds": [
+        14053
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0449",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"神射手\"的效果是什么？(卡牌ID: 13041)",
+      "groundTruth": "造成2点物理伤害。",
+      "keywords": [
+        "造成2点物理伤害"
+      ],
+      "sourceIds": [
+        13041
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0260",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“久岐忍”是什么元素的？",
+      "groundTruth": "雷",
+      "keywords": [
+        "雷"
+      ],
+      "sourceIds": [
+        1411
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0380",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“重云”属于哪个国家/阵营？",
+      "groundTruth": "璃月",
+      "keywords": [
+        "璃月"
+      ],
+      "sourceIds": [
+        1104
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0288",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“迪卢克”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能3点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1301
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0410",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"治疗目标角色1点\"",
+      "groundTruth": "甜甜花酿鸡",
+      "keywords": [
+        "甜甜花酿鸡"
+      ],
+      "sourceIds": [
+        333005
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0017",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“魔战士的羽面”的效果是什么？",
+      "groundTruth": "附属角色使用特技后：获得1点充能。（每回合1次)\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "附属角色使用特技后",
+        "获得1点充能",
+        "（每回合1次)",
+        "（角色最多装备1件「圣遗物」）"
+      ],
+      "sourceIds": [
+        312032
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0309",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“驰轮车·疾驰”是在哪个版本加入游戏的？",
+      "groundTruth": "v5.7.0",
+      "keywords": [
+        "v5.7.0"
+      ],
+      "sourceIds": [
+        113156
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0175",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“星天的花雨”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        212081
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0438",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“酒渍船帽”能减少什么费用？",
+      "groundTruth": "对角色打出「天赋」或角色使用技能时：少花费1个水元素。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "少花费",
+        "减",
+        "酒渍船帽"
+      ],
+      "sourceIds": [
+        312201
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0332",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“伊法”使用什么武器？",
+      "groundTruth": "法器",
+      "keywords": [
+        "法器"
+      ],
+      "sourceIds": [
+        1515
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0361",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“莱欧斯利”属于哪个国家/阵营？",
+      "groundTruth": "枫丹",
+      "keywords": [
+        "枫丹"
+      ],
+      "sourceIds": [
+        1111
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0382",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“阿佩普的绿洲守望者”属于哪个国家/阵营？",
+      "groundTruth": "怪物",
+      "keywords": [
+        "怪物"
+      ],
+      "sourceIds": [
+        2702
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0204",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“咔库库”属于什么类型？",
+      "groundTruth": "风元素角色牌",
+      "keywords": [
+        "风元素角色牌"
+      ],
+      "sourceIds": [
+        115152
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0133",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：角色造成的伤害+1。\n角色受到伤害或治疗后：如果本回合已受到伤害或治疗累计2次，则角色本回合中下次造成的伤害+2。（每回合1次）\n（「法器」角色才能装备。角色最多装备1件「武器」）",
+      "groundTruth": "万世涌流大典",
+      "keywords": [
+        "万世涌流大典"
+      ],
+      "sourceIds": [
+        133099
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0397",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"所附属角色受到伤害时：如可能，失去1点充能，以抵消1点伤害，然后生成魔蝎祝福\"",
+      "groundTruth": "厄灵·炎之魔蝎",
+      "keywords": [
+        "厄灵·炎之魔蝎"
+      ],
+      "sourceIds": [
+        123031
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0358",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“玛薇卡”使用什么武器？",
+      "groundTruth": "双手剑",
+      "keywords": [
+        "双手剑"
+      ],
+      "sourceIds": [
+        1315
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0220",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“愿一切欢睦陪伴你”属于什么类型？",
+      "groundTruth": "水元素角色牌",
+      "keywords": [
+        "水元素角色牌"
+      ],
+      "sourceIds": [
+        212151
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0442",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"勠心拳·蓄力\"的效果是什么？(卡牌ID: 15135)",
+      "groundTruth": "造成4点风元素伤害。",
+      "keywords": [
+        "造成4点风元素伤害"
+      ],
+      "sourceIds": [
+        15135
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0375",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“温迪”属于哪个国家/阵营？",
+      "groundTruth": "蒙德",
+      "keywords": [
+        "蒙德"
+      ],
+      "sourceIds": [
+        1503
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0051",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“丘丘水行游侠”的效果是什么？",
+      "groundTruth": "不属于任何部族的丘丘人流浪者，如同自我流放一般在荒野中四处漫游。",
+      "keywords": [
+        "不属于任何部族的丘丘人流浪者",
+        "如同自我流放一般在荒野中四处漫游"
+      ],
+      "sourceIds": [
+        2205
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0221",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“恰斯卡”是什么元素的？",
+      "groundTruth": "风",
+      "keywords": [
+        "风"
+      ],
+      "sourceIds": [
+        1511
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0019",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“瑶瑶”的效果是什么？",
+      "groundTruth": "玲珑玉质，身含仙骨。",
+      "keywords": [],
+      "sourceIds": [
+        1704
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0194",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“愚人众·霜役人”属于什么类型？",
+      "groundTruth": "冰元素角色牌",
+      "keywords": [
+        "冰元素角色牌"
+      ],
+      "sourceIds": [
+        2104
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0282",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“申鹤”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1107
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0234",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“愚人众·冰萤术士”是什么元素的？",
+      "groundTruth": "冰",
+      "keywords": [
+        "冰"
+      ],
+      "sourceIds": [
+        2101
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0292",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“理外之理”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能0点（）",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        11167
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0339",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“丝柯克”使用什么武器？",
+      "groundTruth": "单手剑",
+      "keywords": [
+        "单手剑"
+      ],
+      "sourceIds": [
+        6605
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0384",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“伊法”属于哪个国家/阵营？",
+      "groundTruth": "纳塔",
+      "keywords": [
+        "纳塔"
+      ],
+      "sourceIds": [
+        1515
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0052",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“祭星者之望”的效果是什么？",
+      "groundTruth": "我方每回合首次打出名称不属于初始牌组的牌时：少花费1个元素骰，所附属角色下次造成的伤害+1。（可叠加，最多叠加到2）\n（「法器」角色才能装备。角色最多装备1件「武器」）",
+      "keywords": [
+        "我方每回合首次打出名称不属于初始牌组的牌时",
+        "少花费1个元素骰",
+        "所附属角色下次造成的伤害+1",
+        "最多叠加到2）",
+        "（「法器」角色才能装备"
+      ],
+      "sourceIds": [
+        311112
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0308",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“沿途百景会心”是在哪个版本加入游戏的？",
+      "groundTruth": "v4.5.0",
+      "keywords": [
+        "v4.5.0"
+      ],
+      "sourceIds": [
+        217071
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0316",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“竹星”是在哪个版本加入游戏的？",
+      "groundTruth": "v5.0.0",
+      "keywords": [
+        "v5.0.0"
+      ],
+      "sourceIds": [
+        115102
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0087",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：战斗行动：我方出战角色为刻晴时，装备此牌。\n刻晴装备此牌后，立刻使用一次星斗归位。\n装备有此牌的刻晴生成的雷元素附魔获得以下效果：\n初始持续回合+1，并且会使所附属角色造成的雷元素伤害+1。\n（牌组中包含刻晴，才能加入牌组）",
+      "groundTruth": "抵天雷罚",
+      "keywords": [
+        "抵天雷罚"
+      ],
+      "sourceIds": [
+        214031
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0240",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“鹿野院平藏”是什么元素的？",
+      "groundTruth": "风",
+      "keywords": [
+        "风"
+      ],
+      "sourceIds": [
+        1513
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0191",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“天守阁”属于什么类型？",
+      "groundTruth": "支援牌",
+      "keywords": [
+        "支援牌"
+      ],
+      "sourceIds": [
+        321007
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0007",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“噔噔！”的效果是什么？",
+      "groundTruth": "对我方「出战角色」造成1点物理伤害。本回合的结束阶段时，抓1张牌。",
+      "keywords": [
+        "对我方「出战角色」造成1点物理伤害",
+        "本回合的结束阶段时"
+      ],
+      "sourceIds": [
+        332037
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0290",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“纯水精灵·洛蒂娅”的基础生命值和充能是多少？",
+      "groundTruth": "生命值11，充能3点",
+      "keywords": [
+        "11",
+        "生命值11"
+      ],
+      "sourceIds": [
+        2201
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0262",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“优菈”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1106
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0304",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“魔偶剑鬼”是在哪个版本加入游戏的？",
+      "groundTruth": "v3.3.0",
+      "keywords": [
+        "v3.3.0"
+      ],
+      "sourceIds": [
+        2501
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0081",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：角色造成的伤害+1。\n角色受到伤害或治疗后：如果本回合已受到伤害或治疗累计2次，则角色本回合中下次造成的伤害+2。（每回合1次）\n（「法器」角色才能装备。角色最多装备1件「武器」）",
+      "groundTruth": "万世流涌大典",
+      "keywords": [
+        "万世流涌大典"
+      ],
+      "sourceIds": [
+        311108
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0378",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“雷音权现”属于哪个国家/阵营？",
+      "groundTruth": "怪物",
+      "keywords": [
+        "怪物"
+      ],
+      "sourceIds": [
+        2402
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0122",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：快速行动：装备给我方的蚀灭的源焰之主。\n敌方打出名称不存在于本局最初牌组的牌时：所附属角色获得1点充能，下次造成的伤害+1。（每回合1次）\n（牌组中包含蚀灭的源焰之主，才能加入牌组）",
+      "groundTruth": "罔极盛怒",
+      "keywords": [
+        "罔极盛怒"
+      ],
+      "sourceIds": [
+        223051
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0025",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“班尼特”的效果是什么？",
+      "groundTruth": "当你知道自己一定会输时，那你肯定也知道如何能赢。",
+      "keywords": [
+        "当你知道自己一定会输时",
+        "那你肯定也知道如何能赢"
+      ],
+      "sourceIds": [
+        1303
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0089",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：角色受到伤害后：如果所附属角色为「出战角色」，则抓1张牌。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "groundTruth": "灵光明烁之心",
+      "keywords": [
+        "灵光明烁之心"
+      ],
+      "sourceIds": [
+        312021
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0115",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：角色造成的伤害+1。\n每回合1次：角色使用「普通攻击」造成的伤害额外+1。\n（「单手剑」角色才能装备。角色最多装备1件「武器」）",
+      "groundTruth": "天空之刃",
+      "keywords": [
+        "天空之刃"
+      ],
+      "sourceIds": [
+        311504
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0193",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“竹星”属于什么类型？",
+      "groundTruth": "风元素角色牌",
+      "keywords": [
+        "风元素角色牌"
+      ],
+      "sourceIds": [
+        115102
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0015",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“雷之新生”的效果是什么？",
+      "groundTruth": "战斗开始时，初始附属雷之新生。",
+      "keywords": [
+        "初始附属雷之新生"
+      ],
+      "sourceIds": [
+        24065
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0091",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：特技：援护射击\n所附属角色「夜魂值」为0时，弃置此牌；此牌被弃置时，所附属角色结束夜魂加持\n[1151521: 援护射击] (2*Void) 消耗1点「夜魂值」，对上一个敌方角色造成1点风元素伤害，并治疗我方受伤最多的角色2点。\n[1151522: ] ()\n[1151523: ] ()",
+      "groundTruth": "咔库库",
+      "keywords": [
+        "咔库库"
+      ],
+      "sourceIds": [
+        115152
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0417",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"元素幻变：雷元素风元素\"",
+      "groundTruth": "元素幻变：雷风祝佑",
+      "keywords": [
+        "元素幻变：雷风祝佑"
+      ],
+      "sourceIds": [
+        331009
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0116",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：战斗行动：我方出战角色为珊瑚宫心海时，装备此牌。\n珊瑚宫心海装备此牌后，立刻使用一次海人化羽。\n装备有此牌的珊瑚宫心海使用海人化羽时：召唤一个可用次数为1的化海月；如果化海月已在场，则改为使其可用次数+1。\n仪来羽衣存在期间，化海月造成的伤害+1。\n（牌组中包含珊瑚宫心海，才能加入牌组）",
+      "groundTruth": "匣中玉栉",
+      "keywords": [
+        "匣中玉栉"
+      ],
+      "sourceIds": [
+        212051
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0347",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“砂糖”使用什么武器？",
+      "groundTruth": "法器",
+      "keywords": [
+        "法器"
+      ],
+      "sourceIds": [
+        1501
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0039",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“绮良良”的效果是什么？",
+      "groundTruth": "歧尾骏足，通达万户。",
+      "keywords": [],
+      "sourceIds": [
+        1707
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0163",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“魔蝎烈祸”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        223031
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0149",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“海祇之冠”需要多少元素骰费用？",
+      "groundTruth": "1费",
+      "keywords": [
+        "1",
+        "1费"
+      ],
+      "sourceIds": [
+        312015
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0137",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：我方切换到所附属角色后：舍弃1张当前元素骰费用最高的手牌，将2个元素骰转换为万能元素，并使角色下次使用技能或打出「天赋」时少花费1个元素骰。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "groundTruth": "指挥的礼帽",
+      "keywords": [
+        "指挥的礼帽"
+      ],
+      "sourceIds": [
+        312030
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0073",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“虺雷之姿”的效果是什么？",
+      "groundTruth": "对角色打出「天赋」或角色使用「普通攻击」时：少花费1个元素骰。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "对角色打出「天赋」或角色使用「普通攻击」时",
+        "少花费1个元素骰",
+        "（每回合1次）",
+        "（角色最多装备1件「圣遗物」）"
+      ],
+      "sourceIds": [
+        312011
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0415",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"投掷阶段：总是投出2个冰元素骰和2个草元素骰\"",
+      "groundTruth": "冰草祝佑·棘霜",
+      "keywords": [
+        "冰草祝佑·棘霜"
+      ],
+      "sourceIds": [
+        303081
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0069",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“机关铸成之链”的效果是什么？",
+      "groundTruth": "对我方「出战角色」造成1点物理伤害。从牌组中随机抽取1张「圣遗物」牌。",
+      "keywords": [
+        "对我方「出战角色」造成1点物理伤害",
+        "从牌组中随机抽取1张「圣遗物」牌"
+      ],
+      "sourceIds": [
+        332028
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0342",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“夏洛蒂”使用什么武器？",
+      "groundTruth": "法器",
+      "keywords": [
+        "法器"
+      ],
+      "sourceIds": [
+        1110
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0441",
+      "category": "from-description-find-name",
+      "question": "问：在七圣召唤中，哪张卡牌的描述中提到\"结束阶段\"且效果是关于生成元素骰的？",
+      "groundTruth": "黄金剧团",
+      "keywords": [
+        "结束阶段",
+        "黄金剧团"
+      ],
+      "sourceIds": [
+        312026
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0267",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“塔利雅”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1215
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0086",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：对角色打出「天赋」或角色使用技能时：少花费1个草元素。（每回合1次）\n投掷阶段：2个元素骰初始总是投出草元素。\n（角色最多装备1件「圣遗物」）",
+      "groundTruth": "深林的记忆",
+      "keywords": [
+        "深林的记忆"
+      ],
+      "sourceIds": [
+        312702
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0045",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“快快缝补术”的效果是什么？",
+      "groundTruth": "选择一个我方「召唤物」，使其「可用次数」+1。",
+      "keywords": [
+        "选择一个我方「召唤物」",
+        "使其「可用次数」+1"
+      ],
+      "sourceIds": [
+        332012
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0433",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“翠绿的猎人之冠”能减少什么费用？",
+      "groundTruth": "对角色打出「天赋」或角色使用技能时：少花费1个风元素。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "少花费",
+        "减",
+        "翠绿的猎人之冠"
+      ],
+      "sourceIds": [
+        312501
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0247",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“芙宁娜”是什么元素的？",
+      "groundTruth": "水",
+      "keywords": [
+        "水"
+      ],
+      "sourceIds": [
+        1212
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0406",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"召唤折纸胖胖鼠\"",
+      "groundTruth": "折纸胖胖鼠",
+      "keywords": [
+        "折纸胖胖鼠"
+      ],
+      "sourceIds": [
+        301036
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0125",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：角色使用「普通攻击」后：治疗自身1点。（每回合至多3次）\n（角色最多装备1件「圣遗物」）",
+      "groundTruth": "冒险家头带",
+      "keywords": [
+        "冒险家头带"
+      ],
+      "sourceIds": [
+        312001
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0287",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“提纳里”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1702
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0291",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“若陀龙王”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        6604
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0285",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“夏洛蒂”的基础生命值和充能是多少？",
+      "groundTruth": "生命值11，充能2点",
+      "keywords": [
+        "11",
+        "生命值11"
+      ],
+      "sourceIds": [
+        1110
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0394",
+      "category": "multiple-answer",
+      "question": "问：在七圣召唤中，请列举至少3个使用弓的角色牌。",
+      "groundTruth": [
+        "甘雨",
+        "迪奥娜",
+        "夜兰",
+        "希格雯",
+        "安柏",
+        "宵宫",
+        "林尼",
+        "菲谢尔",
+        "九条裟罗",
+        "赛索斯",
+        "温迪",
+        "珐露珊",
+        "恰斯卡",
+        "五郎",
+        "柯莱",
+        "提纳里",
+        "远程状态",
+        "夜翳的通感"
+      ],
+      "keywords": [
+        "甘雨",
+        "迪奥娜",
+        "夜兰"
+      ],
+      "sourceIds": [
+        1101,
+        1102,
+        1209,
+        1213,
+        1304,
+        1305,
+        1310,
+        1401,
+        1406,
+        1413,
+        1503,
+        1509,
+        1511,
+        1606,
+        1701,
+        1702,
+        12045,
+        14165
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0444",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"炎舞\"的效果是什么？(卡牌ID: 13121)",
+      "groundTruth": "造成2点物理伤害。",
+      "keywords": [
+        "造成2点物理伤害"
+      ],
+      "sourceIds": [
+        13121
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0327",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“「唇啊，为我纺出歌与吟哦」”是在哪个版本加入游戏的？",
+      "groundTruth": "v6.6.0",
+      "keywords": [
+        "v6.6.0"
+      ],
+      "sourceIds": [
+        217111
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0362",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“妮露”属于哪个国家/阵营？",
+      "groundTruth": "须弥",
+      "keywords": [
+        "须弥"
+      ],
+      "sourceIds": [
+        1208
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0432",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“炸鱼薯条”能减少什么费用？",
+      "groundTruth": "本回合中，所有我方角色下次使用技能时少花费1个元素骰。\n（每回合每个角色最多食用1次「料理」）",
+      "keywords": [
+        "少花费",
+        "减",
+        "炸鱼薯条"
+      ],
+      "sourceIds": [
+        333013
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0043",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“盈满之实”的效果是什么？",
+      "groundTruth": "角色造成的伤害+1。\n入场时：抓2张牌。\n（「法器」角色才能装备。角色最多装备1件「武器」）",
+      "keywords": [
+        "角色造成的伤害+1",
+        "（「法器」角色才能装备",
+        "角色最多装备1件「武器」）"
+      ],
+      "sourceIds": [
+        311105
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0336",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“蓝砚”使用什么武器？",
+      "groundTruth": "法器",
+      "keywords": [
+        "法器"
+      ],
+      "sourceIds": [
+        1512
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0388",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“贪食匿叶龙山王”属于哪个国家/阵营？",
+      "groundTruth": "怪物",
+      "keywords": [
+        "怪物"
+      ],
+      "sourceIds": [
+        2704
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0165",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“代行裁判”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        211131
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0173",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“犬奔·疾如风”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        216061
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0334",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“刻晴”使用什么武器？",
+      "groundTruth": "单手剑",
+      "keywords": [
+        "单手剑"
+      ],
+      "sourceIds": [
+        1403
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0113",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：对角色打出「天赋」或角色使用「元素战技」时：少花费1个元素骰。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "groundTruth": "无常之面",
+      "keywords": [
+        "无常之面"
+      ],
+      "sourceIds": [
+        312013
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0003",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“华饰之兜”的效果是什么？",
+      "groundTruth": "其他我方角色使用「元素爆发」后：所附属角色获得1点充能。\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "其他我方角色使用「元素爆发」后",
+        "所附属角色获得1点充能",
+        "（角色最多装备1件「圣遗物」）"
+      ],
+      "sourceIds": [
+        312007
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0009",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“掘进的收获”的效果是什么？",
+      "groundTruth": "提供2点护盾，保护所附属角色。\n/\nconst DiggingDownToPaydirt = status(301301)\n  .shield(2)\n  .done();\n\n/**\n@id 313004\n@name 嵴锋龙\n@description\n特技：掘进突击\n可用次数：2\n（角色最多装备1个「特技」）\n[3130041: 掘进突击] (2*Void) 抓2张牌。然后，如果手牌中存在名称不存在于本局最初牌组中的牌，则提供2点护盾保护所附属角色。",
+      "keywords": [
+        "提供2点护盾",
+        "保护所附属角色",
+        "DiggingDownToPaydirt",
+        "status(301301)",
+        ".shield(2)"
+      ],
+      "sourceIds": [
+        301301
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0307",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“拨开雪翳之幕”是在哪个版本加入游戏的？",
+      "groundTruth": "v6.6.0",
+      "keywords": [
+        "v6.6.0"
+      ],
+      "sourceIds": [
+        214181
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0273",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“九条裟罗”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1406
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0405",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"角色造成的伤害+1\"",
+      "groundTruth": "祭礼剑",
+      "keywords": [
+        "祭礼剑"
+      ],
+      "sourceIds": [
+        311502
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0399",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"任意阵营的角色受到治疗后：使该角色附属悠远雷暴\"",
+      "groundTruth": "清籁岛",
+      "keywords": [
+        "清籁岛"
+      ],
+      "sourceIds": [
+        321019
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0426",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“黄金屋”能减少什么费用？",
+      "groundTruth": "我方打出当前元素骰费用至少为3的「武器」或「圣遗物」手牌时：少花费1个元素骰。（每回合1次）\n可用次数：2",
+      "keywords": [
+        "少花费",
+        "减",
+        "黄金屋"
+      ],
+      "sourceIds": [
+        321013
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0008",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“草与智慧”的效果是什么？",
+      "groundTruth": "抓1张牌。然后，选择任意手牌替换。\n（牌组包含至少2个「须弥」角色，才能加入牌组）",
+      "keywords": [
+        "选择任意手牌替换",
+        "（牌组包含至少2个「须弥」角色",
+        "才能加入牌组）"
+      ],
+      "sourceIds": [
+        331804
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0065",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“薇尔妲的声援”的效果是什么？",
+      "groundTruth": "随机将2张「秘传」卡牌加入你的手牌，并恢复双方牌手的「秘传」卡牌使用机会。",
+      "keywords": [
+        "随机将2张「秘传」卡牌加入你的手牌",
+        "并恢复双方牌手的「秘传」卡牌使用机会"
+      ],
+      "sourceIds": [
+        302212
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0349",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“丽莎”使用什么武器？",
+      "groundTruth": "法器",
+      "keywords": [
+        "法器"
+      ],
+      "sourceIds": [
+        1409
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0155",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“公义的酬报”需要多少元素骰费用？",
+      "groundTruth": "2费",
+      "keywords": [
+        "2",
+        "2费"
+      ],
+      "sourceIds": [
+        311408
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0011",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“西风大教堂”的效果是什么？",
+      "groundTruth": "结束阶段：治疗我方「出战角色」2点。\n可用次数：2",
+      "keywords": [
+        "治疗我方「出战角色」2点"
+      ],
+      "sourceIds": [
+        321006
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0053",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“浮溯之珏”的效果是什么？",
+      "groundTruth": "角色使用「普通攻击」后：抓1张牌。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "角色使用「普通攻击」后",
+        "（每回合1次）",
+        "（角色最多装备1件「圣遗物」）"
+      ],
+      "sourceIds": [
+        312019
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0402",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"我方出战角色为「女士」时，才能打出：入场时，生成3个「女士」当前元素类型的元素骰\"",
+      "groundTruth": "苦痛奉还",
+      "keywords": [
+        "苦痛奉还"
+      ],
+      "sourceIds": [
+        221021
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0283",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“远程状态”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能3点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        12045
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0048",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“洛梅的声援”的效果是什么？",
+      "groundTruth": "随机将2张美露莘好奇的「圣遗物」加入手牌。",
+      "keywords": [
+        "随机将2张美露莘好奇的「圣遗物」加入手牌"
+      ],
+      "sourceIds": [
+        302207
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0121",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：打出及每个行动阶段开始时：赋予我方随机1张手牌费用降低。\n（整局游戏只能打出一张「秘传」卡牌；这张牌一定在你的起始手牌中）",
+      "groundTruth": "另一侧的霜月",
+      "keywords": [
+        "另一侧的霜月"
+      ],
+      "sourceIds": [
+        330013
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0324",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“流浪者”是在哪个版本加入游戏的？",
+      "groundTruth": "v4.1.0",
+      "keywords": [
+        "v4.1.0"
+      ],
+      "sourceIds": [
+        1506
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0392",
+      "category": "multiple-answer",
+      "question": "问：在七圣召唤中，请列举至少3种元素共鸣牌的名称。",
+      "groundTruth": [
+        "元素共鸣：交织之冰",
+        "元素共鸣：粉碎之冰",
+        "元素共鸣：交织之水",
+        "元素共鸣：愈疗之水",
+        "元素共鸣：交织之火",
+        "元素共鸣：热诚之火",
+        "元素共鸣：交织之雷",
+        "元素共鸣：强能之雷",
+        "元素共鸣：交织之风",
+        "元素共鸣：迅捷之风",
+        "元素共鸣：交织之岩",
+        "元素共鸣：坚定之岩",
+        "元素共鸣：交织之草",
+        "元素共鸣：蔓生之草",
+        "月兆·满辉"
+      ],
+      "keywords": [
+        "元素共鸣：交织之冰",
+        "元素共鸣：粉碎之冰",
+        "元素共鸣：交织之水"
+      ],
+      "sourceIds": [
+        331101,
+        331102,
+        331201,
+        331202,
+        331301,
+        331302,
+        331401,
+        331402,
+        331501,
+        331502,
+        331601,
+        331602,
+        331701,
+        331702,
+        331721
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0404",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"我方冲天转转或冲天转转·脱离触发效果后，抓1张牌\"",
+      "groundTruth": "夜域赐礼·团结炉心",
+      "keywords": [
+        "夜域赐礼·团结炉心"
+      ],
+      "sourceIds": [
+        216101
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0157",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“忘玄”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        211071
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0236",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“迪希雅”是什么元素的？",
+      "groundTruth": "火",
+      "keywords": [
+        "火"
+      ],
+      "sourceIds": [
+        1309
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0424",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“冰风迷途的勇士”能减少什么费用？",
+      "groundTruth": "对角色打出「天赋」或角色使用技能时：少花费1个冰元素。（每回合1次）\n投掷阶段：2个元素骰初始总是投出冰元素。\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "少花费",
+        "减",
+        "冰风迷途的勇士"
+      ],
+      "sourceIds": [
+        312102
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0164",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“古海孑遗的权柄”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        212101
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0047",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“元素共鸣：迅捷之风”的效果是什么？",
+      "groundTruth": "我方下次执行「切换角色」行动时：将此次切换视为「快速行动」而非「战斗行动」，并且少花费1个元素骰。\n我方下次触发扩散反应时对目标以外的所有敌方角色造成的伤害+1。\n（牌组包含至少2个风元素角色，才能加入牌组）",
+      "keywords": [
+        "我方下次执行「切换角色」行动时",
+        "将此次切换视为「快速行动」而非「战斗行动」",
+        "并且少花费1个元素骰",
+        "我方下次触发扩散反应时对目标以外的所有敌方角色造成的伤害+1",
+        "（牌组包含至少2个风元素角色"
+      ],
+      "sourceIds": [
+        331502
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0002",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“乐平波琳”的效果是什么？",
+      "groundTruth": "入场时：挑选1个投资计划。",
+      "keywords": [
+        "挑选1个投资计划"
+      ],
+      "sourceIds": [
+        322033
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0429",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“匿叶龙”能减少什么费用？",
+      "groundTruth": "特技：钩物巧技\n可用次数：2\n（角色最多装备1个「特技」）\n[3130021: 钩物巧技] (2*Same) 造成1点物理伤害，窃取1张当前元素骰费用最高的对方手牌，然后对手抓1张牌。\n如果我方手牌数不多于2，此特技少花费1个元素骰。\n[3130022: ] ()",
+      "keywords": [
+        "少花费",
+        "减",
+        "匿叶龙"
+      ],
+      "sourceIds": [
+        313002
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0096",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：角色使用「普通攻击」后：抓1张牌。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "groundTruth": "浮溯之珏",
+      "keywords": [
+        "浮溯之珏"
+      ],
+      "sourceIds": [
+        312019
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0029",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“森林王器”的效果是什么？",
+      "groundTruth": "角色造成的伤害+1。\n入场时：所附属角色在本回合中，下次使用「普通攻击」后：生成2个此角色类型的元素骰。\n（「双手剑」角色才能装备。角色最多装备1件「武器」）",
+      "keywords": [
+        "角色造成的伤害+1",
+        "所附属角色在本回合中",
+        "下次使用「普通攻击」后",
+        "生成2个此角色类型的元素骰",
+        "（「双手剑」角色才能装备"
+      ],
+      "sourceIds": [
+        311307
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0352",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“* @description”使用什么武器？",
+      "groundTruth": "双手剑",
+      "keywords": [
+        "双手剑"
+      ],
+      "sourceIds": [
+        17094
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0243",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“瓦雷莎”是什么元素的？",
+      "groundTruth": "雷",
+      "keywords": [
+        "雷"
+      ],
+      "sourceIds": [
+        1415
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0364",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“* @description”属于哪个国家/阵营？",
+      "groundTruth": "纳塔",
+      "keywords": [
+        "纳塔"
+      ],
+      "sourceIds": [
+        17094
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0213",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“一捧绿野”属于什么类型？",
+      "groundTruth": "冰元素角色牌",
+      "keywords": [
+        "冰元素角色牌"
+      ],
+      "sourceIds": [
+        111155
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0189",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“灵光明烁之心”属于什么类型？",
+      "groundTruth": "装备牌",
+      "keywords": [
+        "装备牌"
+      ],
+      "sourceIds": [
+        312021
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0259",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“玛拉妮”是什么元素的？",
+      "groundTruth": "水",
+      "keywords": [
+        "水"
+      ],
+      "sourceIds": [
+        1214
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0256",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“贪食匿叶龙山王”是什么元素的？",
+      "groundTruth": "草",
+      "keywords": [
+        "草"
+      ],
+      "sourceIds": [
+        2704
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0381",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“莱依拉”属于哪个国家/阵营？",
+      "groundTruth": "须弥",
+      "keywords": [
+        "须弥"
+      ],
+      "sourceIds": [
+        1109
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0156",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“赤王陵”需要多少元素骰费用？",
+      "groundTruth": "1费",
+      "keywords": [
+        "1",
+        "1费"
+      ],
+      "sourceIds": [
+        321020
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0027",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“匿叶龙”的效果是什么？",
+      "groundTruth": "特技：钩物巧技\n可用次数：2\n（角色最多装备1个「特技」）\n[3130021: 钩物巧技] (2*Same) 造成1点物理伤害，窃取1张当前元素骰费用最高的对方手牌，然后对手抓1张牌。\n如果我方手牌数不多于2，此特技少花费1个元素骰。\n[3130022: ] ()",
+      "keywords": [
+        "（角色最多装备1个「特技」）",
+        "[3130021:",
+        "(2*Same)",
+        "造成1点物理伤害",
+        "窃取1张当前元素骰费用最高的对方手牌"
+      ],
+      "sourceIds": [
+        313002
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0451",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"秘仪·律渊渡魂\"的效果是什么？(卡牌ID: 14042)",
+      "groundTruth": "造成3点雷元素伤害，\n启途誓使的「凭依」级数+1。",
+      "keywords": [
+        "造成3点雷元素伤害",
+        "\n启途誓使的「凭依」"
+      ],
+      "sourceIds": [
+        14042
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0279",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“若陀龙王”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        6603
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0445",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"抟风秘道\"的效果是什么？(卡牌ID: 15093)",
+      "groundTruth": "造成1点风元素伤害，召唤赫耀多方面体。",
+      "keywords": [
+        "造成1点风元素伤害",
+        "召唤赫耀多方面体"
+      ],
+      "sourceIds": [
+        15093
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0059",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“肃净污染”的效果是什么？",
+      "groundTruth": "将我方所有手牌置于牌组底，然后抓相同数量+1张手牌。",
+      "keywords": [
+        "将我方所有手牌置于牌组底",
+        "然后抓相同数量+1张手牌"
+      ],
+      "sourceIds": [
+        300009
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0058",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“不动玄石之相”的效果是什么？",
+      "groundTruth": "对角色打出「天赋」或角色使用技能时：少花费1个岩元素。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "对角色打出「天赋」或角色使用技能时",
+        "少花费1个岩元素",
+        "（每回合1次）",
+        "（角色最多装备1件「圣遗物」）"
+      ],
+      "sourceIds": [
+        312601
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0235",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“卡齐娜”是什么元素的？",
+      "groundTruth": "岩",
+      "keywords": [
+        "岩"
+      ],
+      "sourceIds": [
+        1610
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0184",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“吐纳真定”属于什么类型？",
+      "groundTruth": "冰元素角色牌",
+      "keywords": [
+        "冰元素角色牌"
+      ],
+      "sourceIds": [
+        211041
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0223",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“爱诺”是什么元素的？",
+      "groundTruth": "水",
+      "keywords": [
+        "水"
+      ],
+      "sourceIds": [
+        1216
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0418",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"选一个我方角色，使其附属「重燃」为1的还魂诗\"",
+      "groundTruth": "火与战争",
+      "keywords": [
+        "火与战争"
+      ],
+      "sourceIds": [
+        331806
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0271",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“迪奥娜”的基础生命值和充能是多少？",
+      "groundTruth": "生命值12，充能3点",
+      "keywords": [
+        "12",
+        "生命值12"
+      ],
+      "sourceIds": [
+        1102
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0075",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“白缨枪”的效果是什么？",
+      "groundTruth": "角色造成的伤害+1。\n（「长柄武器」角色才能装备。角色最多装备1件「武器」）",
+      "keywords": [
+        "角色造成的伤害+1",
+        "（「长柄武器」角色才能装备",
+        "角色最多装备1件「武器」）"
+      ],
+      "sourceIds": [
+        311401
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0035",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“冰雅刺剑”的效果是什么？",
+      "groundTruth": "战斗行动：我方出战角色为愚人众·霜役人时，装备此牌。\n愚人众·霜役人装备此牌后，立刻使用一次霜刃截击。\n装备有此牌的愚人众·霜役人触发血契掠影后：使敌方出战角色的生命之契层数翻倍。\n（牌组中包含愚人众·霜役人，才能加入牌组）",
+      "keywords": [
+        "我方出战角色为愚人众·霜役人时",
+        "愚人众·霜役人装备此牌后",
+        "立刻使用一次霜刃截击",
+        "装备有此牌的愚人众·霜役人触发血契掠影后",
+        "使敌方出战角色的生命之契层数翻倍"
+      ],
+      "sourceIds": [
+        221041
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0261",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“莱欧斯利”的基础生命值和充能是多少？",
+      "groundTruth": "生命值11，充能3点",
+      "keywords": [
+        "11",
+        "生命值11"
+      ],
+      "sourceIds": [
+        1111
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0383",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“瑶瑶”属于哪个国家/阵营？",
+      "groundTruth": "璃月",
+      "keywords": [
+        "璃月"
+      ],
+      "sourceIds": [
+        1704
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0344",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“月兆祝赐·千籁恩宠”使用什么武器？",
+      "groundTruth": "法器",
+      "keywords": [
+        "法器"
+      ],
+      "sourceIds": [
+        17115
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0131",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：在「始基力：荒性」和「始基力：芒性」之中，切换芙宁娜的形态。\n如果我方场上存在沙龙成员或众水的歌者，也切换其形态。",
+      "groundTruth": "圣俗杂座",
+      "keywords": [
+        "圣俗杂座"
+      ],
+      "sourceIds": [
+        112113
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0128",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：随机将2张美露莘好奇的「圣遗物」加入手牌。",
+      "groundTruth": "洛梅的声援",
+      "keywords": [
+        "洛梅的声援"
+      ],
+      "sourceIds": [
+        302207
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0315",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“星天的花雨”是在哪个版本加入游戏的？",
+      "groundTruth": "v4.2.0",
+      "keywords": [
+        "v4.2.0"
+      ],
+      "sourceIds": [
+        212081
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0143",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“仙跳墙”需要多少元素骰费用？",
+      "groundTruth": "2费",
+      "keywords": [
+        "2",
+        "2费"
+      ],
+      "sourceIds": [
+        333002
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0099",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：战斗行动：我方出战角色为砂糖时，装备此牌。\n砂糖装备此牌后，立刻使用一次禁·风灵作成·柒伍同构贰型。\n装备有此牌的砂糖生成的大型风灵已转换成另一种元素后：我方造成的此类元素伤害+1。\n（牌组中包含砂糖，才能加入牌组）",
+      "groundTruth": "混元熵增论",
+      "keywords": [
+        "混元熵增论"
+      ],
+      "sourceIds": [
+        215011
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0088",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：特技：钩物巧技\n可用次数：2\n（角色最多装备1个「特技」）\n[3130021: 钩物巧技] (2*Same) 造成1点物理伤害，窃取1张当前元素骰费用最高的对方手牌，然后对手抓1张牌。\n如果我方手牌数不多于2，此特技少花费1个元素骰。\n[3130022: ] ()",
+      "groundTruth": "匿叶龙",
+      "keywords": [
+        "匿叶龙"
+      ],
+      "sourceIds": [
+        313002
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0416",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"将我方所有元素骰转换为万能元素\"",
+      "groundTruth": "雷与永恒",
+      "keywords": [
+        "雷与永恒"
+      ],
+      "sourceIds": [
+        331803
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0060",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“温迪”的效果是什么？",
+      "groundTruth": "「四季轮转，四风从不止息。」\n「当然啦，功劳也不是它们的，主要是我的。」\n「要是没有吟游诗人，谁去把这些传唱？」",
+      "keywords": [
+        "四风从不止息",
+        "功劳也不是它们的",
+        "「要是没有吟游诗人",
+        "谁去把这些传唱？」"
+      ],
+      "sourceIds": [
+        1503
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0083",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：战斗行动：我方出战角色为蓝砚时，装备此牌。\n蓝砚装备此牌后，立刻使用一次凤缕随翦舞。\n装备有此牌的蓝砚在场，我方角色进行普通攻击时：获得1层凤缕护盾。（每回合1次）\n（牌组中包含蓝砚，才能加入牌组）",
+      "groundTruth": "舞袂翩兮扬玉霓",
+      "keywords": [
+        "舞袂翩兮扬玉霓"
+      ],
+      "sourceIds": [
+        215121
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0246",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“刻晴”是什么元素的？",
+      "groundTruth": "雷",
+      "keywords": [
+        "雷"
+      ],
+      "sourceIds": [
+        1403
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0119",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：投掷阶段：总是投出2个火元素骰和2个岩元素骰。\n我方造成后火元素伤害或岩元素伤害后：生成2层护盾。（每回合1次）",
+      "groundTruth": "火岩祝佑·重熔",
+      "keywords": [
+        "火岩祝佑·重熔"
+      ],
+      "sourceIds": [
+        303072
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0439",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“梦迹一风”能减少什么费用？",
+      "groundTruth": "战斗行动：我方出战角色为REALNAME[ID(1)时，装备此牌。\n#REALNAME[ID(1)装备此牌后，立刻使用一次羽画·风姿华歌。\n装备有此牌的#REALNAME[ID(1)在优风倾姿状态下进行重击后：下次从该角色执行「切换角色」行动时少花费1个元素骰，并且造成1点风元素伤害。\n（牌组中包含#REALNAME[ID(1)，才能加入牌组）",
+      "keywords": [
+        "少花费",
+        "减",
+        "梦迹一风"
+      ],
+      "sourceIds": [
+        215061
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0448",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"嵴之啮咬\"的效果是什么？(卡牌ID: 16101)",
+      "groundTruth": "造成2点物理伤害。",
+      "keywords": [
+        "造成2点物理伤害"
+      ],
+      "sourceIds": [
+        16101
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0293",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“希格雯”的基础生命值和充能是多少？",
+      "groundTruth": "生命值12，充能2点",
+      "keywords": [
+        "12",
+        "生命值12"
+      ],
+      "sourceIds": [
+        1213
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0085",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：「牌，难。」\n「但，有朋友…」",
+      "groundTruth": "雷泽",
+      "keywords": [
+        "雷泽"
+      ],
+      "sourceIds": [
+        1402
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0251",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“镀金旅团·炽沙叙事人”是什么元素的？",
+      "groundTruth": "火",
+      "keywords": [
+        "火"
+      ],
+      "sourceIds": [
+        2303
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0412",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"特技：昂扬状态\"",
+      "groundTruth": "突角龙",
+      "keywords": [
+        "突角龙"
+      ],
+      "sourceIds": [
+        313008
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0031",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“沉沦之心”的效果是什么？",
+      "groundTruth": "对角色打出「天赋」或角色使用技能时：少花费1个水元素。（每回合1次）\n投掷阶段：2个元素骰初始总是投出水元素。\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "对角色打出「天赋」或角色使用技能时",
+        "少花费1个水元素",
+        "（每回合1次）",
+        "2个元素骰初始总是投出水元素",
+        "（角色最多装备1件「圣遗物」）"
+      ],
+      "sourceIds": [
+        312202
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0167",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“冷血之剑”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        211031
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0020",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“提纳里”的效果是什么？",
+      "groundTruth": "从某种角度来说，经验并不等同于智慧。",
+      "keywords": [
+        "从某种角度来说",
+        "经验并不等同于智慧"
+      ],
+      "sourceIds": [
+        1702
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0299",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“克洛琳德”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1412
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0319",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“毁裂风涡”是在哪个版本加入游戏的？",
+      "groundTruth": "v4.3.0",
+      "keywords": [
+        "v4.3.0"
+      ],
+      "sourceIds": [
+        225021
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0109",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：投掷阶段：总是投出2个冰元素骰和2个草元素骰。\n结束阶段：对敌方附着有冰元素的角色造成2点穿透伤害，然后移除其冰元素附着。",
+      "groundTruth": "冰草祝佑·棘霜",
+      "keywords": [
+        "冰草祝佑·棘霜"
+      ],
+      "sourceIds": [
+        303081
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0395",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"我方舍弃或调和1张牌后：此牌累积1点「新闻线索」\"",
+      "groundTruth": "亚瑟先生",
+      "keywords": [
+        "亚瑟先生"
+      ],
+      "sourceIds": [
+        322026
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0079",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“「诸君听我颂，共举爱之杯！」”的效果是什么？",
+      "groundTruth": "战斗行动：我方出战角色为芙宁娜时，装备此牌。\n芙宁娜装备此牌后，立刻使用一次孤心沙龙。\n装备有此牌的芙宁娜使用孤心沙龙时，会对自身附属万众瞩目。（角色普通攻击时根据形态触发不同效果）\n（牌组中包含芙宁娜，才能加入牌组）",
+      "keywords": [
+        "我方出战角色为芙宁娜时",
+        "芙宁娜装备此牌后",
+        "立刻使用一次孤心沙龙",
+        "装备有此牌的芙宁娜使用孤心沙龙时",
+        "会对自身附属万众瞩目"
+      ],
+      "sourceIds": [
+        212111
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0265",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“胡桃”的基础生命值和充能是多少？",
+      "groundTruth": "生命值12，充能3点",
+      "keywords": [
+        "12",
+        "生命值12"
+      ],
+      "sourceIds": [
+        1307
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0452",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"熠辉轨度剑\"的效果是什么？(卡牌ID: 11091)",
+      "groundTruth": "造成2点物理伤害。",
+      "keywords": [
+        "造成2点物理伤害"
+      ],
+      "sourceIds": [
+        11091
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0135",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：我方燃烧烈焰入场时：下次双方角色使用技能后，触发1次我方燃烧烈焰的回合结束效果。（每回合2次）",
+      "groundTruth": "余薰",
+      "keywords": [
+        "余薰"
+      ],
+      "sourceIds": [
+        17105
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0195",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“无光鲸噬”属于什么类型？",
+      "groundTruth": "水元素角色牌",
+      "keywords": [
+        "水元素角色牌"
+      ],
+      "sourceIds": [
+        222041
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0376",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“琳妮特”属于哪个国家/阵营？",
+      "groundTruth": "枫丹",
+      "keywords": [
+        "枫丹"
+      ],
+      "sourceIds": [
+        1508
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0450",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"星斗归位\"的效果是什么？(卡牌ID: 14032)",
+      "groundTruth": "造成3点雷元素伤害，生成手牌雷楔。",
+      "keywords": [
+        "造成3点雷元素伤害",
+        "生成手牌雷楔"
+      ],
+      "sourceIds": [
+        14032
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0192",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“噔噔！”属于什么类型？",
+      "groundTruth": "事件牌",
+      "keywords": [
+        "事件牌"
+      ],
+      "sourceIds": [
+        332037
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0187",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“万世涌流大典”属于什么类型？",
+      "groundTruth": "装备牌",
+      "keywords": [
+        "装备牌"
+      ],
+      "sourceIds": [
+        133099
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0225",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“申鹤”是什么元素的？",
+      "groundTruth": "冰",
+      "keywords": [
+        "冰"
+      ],
+      "sourceIds": [
+        1107
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0371",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“北斗”属于哪个国家/阵营？",
+      "groundTruth": "璃月",
+      "keywords": [
+        "璃月"
+      ],
+      "sourceIds": [
+        1405
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0203",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“重帘留香”属于什么类型？",
+      "groundTruth": "水元素角色牌",
+      "keywords": [
+        "水元素角色牌"
+      ],
+      "sourceIds": [
+        212021
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0171",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“夜域赐礼·团结炉心”需要多少元素骰费用？",
+      "groundTruth": "1费",
+      "keywords": [
+        "1",
+        "1费"
+      ],
+      "sourceIds": [
+        216101
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0120",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：抓1张「特技」牌，下次打出「特技」牌后，生成1个万能元素。",
+      "groundTruth": "很棒，哥们。",
+      "keywords": [
+        "很棒，哥们。"
+      ],
+      "sourceIds": [
+        332050
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0127",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：我方执行「切换角色」行动时：将此次切换视为「快速行动」而非「战斗行动」。（每回合1次）",
+      "groundTruth": "凯瑟琳",
+      "keywords": [
+        "凯瑟琳"
+      ],
+      "sourceIds": [
+        322002
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0118",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：双方召唤积木小人。\n（积木小人：结束阶段：造成1点物理伤害。\n可用次数：2）",
+      "groundTruth": "旁白的注脚",
+      "keywords": [
+        "旁白的注脚"
+      ],
+      "sourceIds": [
+        332052
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0436",
+      "category": "cost-deduction",
+      "question": "问：在七圣召唤中，卡牌“晨曦酒庄”能减少什么费用？",
+      "groundTruth": "我方执行「切换角色」行动时：少花费1个元素骰。（每回合2次）",
+      "keywords": [
+        "少花费",
+        "减",
+        "晨曦酒庄"
+      ],
+      "sourceIds": [
+        321004
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0147",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“王下近侍”需要多少元素骰费用？",
+      "groundTruth": "3费",
+      "keywords": [
+        "3",
+        "3费"
+      ],
+      "sourceIds": [
+        311206
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0305",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“甜甜花酿鸡”是在哪个版本加入游戏的？",
+      "groundTruth": "v3.3.0",
+      "keywords": [
+        "v3.3.0"
+      ],
+      "sourceIds": [
+        333005
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0169",
+      "category": "card-cost",
+      "question": "问：在七圣召唤中，卡牌“僚佐的才巧”需要多少元素骰费用？",
+      "groundTruth": "5费",
+      "keywords": [
+        "5",
+        "5费"
+      ],
+      "sourceIds": [
+        213111
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0067",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“「穿越晨霭的冒险」”的效果是什么？",
+      "groundTruth": "将当前元素骰费用最低的至多2张手牌置入牌组底，然后抓等量的牌。\n此牌被舍弃后：冒险1次。",
+      "keywords": [
+        "将当前元素骰费用最低的至多2张手牌置入牌组底",
+        "然后抓等量的牌",
+        "此牌被舍弃后"
+      ],
+      "sourceIds": [
+        332059
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0024",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“指挥的礼帽”的效果是什么？",
+      "groundTruth": "我方切换到所附属角色后：舍弃1张当前元素骰费用最高的手牌，将2个元素骰转换为万能元素，并使角色下次使用技能或打出「天赋」时少花费1个元素骰。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "keywords": [
+        "我方切换到所附属角色后",
+        "舍弃1张当前元素骰费用最高的手牌",
+        "将2个元素骰转换为万能元素",
+        "并使角色下次使用技能或打出「天赋」时少花费1个元素骰",
+        "（每回合1次）"
+      ],
+      "sourceIds": [
+        312030
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0101",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：对角色打出「天赋」或角色使用「普通攻击」时：少花费1个元素骰。（每回合1次）\n（角色最多装备1件「圣遗物」）",
+      "groundTruth": "虺雷之姿",
+      "keywords": [
+        "虺雷之姿"
+      ],
+      "sourceIds": [
+        312011
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0351",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“申鹤”使用什么武器？",
+      "groundTruth": "长柄武器",
+      "keywords": [
+        "长柄武器"
+      ],
+      "sourceIds": [
+        1107
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0311",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“宗室面具”是在哪个版本加入游戏的？",
+      "groundTruth": "v6.0.0",
+      "keywords": [
+        "v6.0.0"
+      ],
+      "sourceIds": [
+        312037
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0084",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：本回合中，目标角色下一次「普通攻击」造成的伤害+1。\n（每回合每个角色最多食用1次「料理」）",
+      "groundTruth": "绝云锅巴",
+      "keywords": [
+        "绝云锅巴"
+      ],
+      "sourceIds": [
+        333001
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0095",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：角色使用「元素爆发」造成的伤害+2。\n我方引发元素反应时：累计1层盛放的思绪，当盛放的思绪不低于2层时，消耗2层盛放的思绪使所附属角色获得1点充能。\n（「双手剑」角色才能装备。角色最多装备1件「武器」）",
+      "groundTruth": "拾慧铸熔",
+      "keywords": [
+        "拾慧铸熔"
+      ],
+      "sourceIds": [
+        311310
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0209",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“原木刀”属于什么类型？",
+      "groundTruth": "装备牌",
+      "keywords": [
+        "装备牌"
+      ],
+      "sourceIds": [
+        311507
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0403",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"角色造成的伤害+1\"",
+      "groundTruth": "裁叶萃光",
+      "keywords": [
+        "裁叶萃光"
+      ],
+      "sourceIds": [
+        311506
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0373",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“烟绯”属于哪个国家/阵营？",
+      "groundTruth": "璃月",
+      "keywords": [
+        "璃月"
+      ],
+      "sourceIds": [
+        1308
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0013",
+      "category": "card-name-to-effect",
+      "question": "问：在七圣召唤中，“知是留云僊”的效果是什么？",
+      "groundTruth": "战斗行动：我方出战角色为闲云时，装备此牌。\n闲云装备此牌后，立刻使用一次朝起鹤云。\n我方切换角色时，此牌累积1层「风翎」。（每回合最多累积2层）\n装备有此牌的闲云使用清风散花词时，消耗所有「风翎」，每消耗1层都使伤害+1。\n（牌组中包含闲云，才能加入牌组）",
+      "keywords": [
+        "我方出战角色为闲云时",
+        "闲云装备此牌后",
+        "立刻使用一次朝起鹤云",
+        "我方切换角色时",
+        "此牌累积1层「风翎」"
+      ],
+      "sourceIds": [
+        215101
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0326",
+      "category": "version-introduced",
+      "question": "问：在七圣召唤中，卡牌“蓝砚”是在哪个版本加入游戏的？",
+      "groundTruth": "v5.8.0",
+      "keywords": [
+        "v5.8.0"
+      ],
+      "sourceIds": [
+        1512
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0107",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：角色造成的伤害+1。\n我方角色引发元素反应时：造成的伤害+1。（每回合最多触发2次）\n（「法器」角色才能装备。角色最多装备1件「武器」）",
+      "groundTruth": "千夜浮梦",
+      "keywords": [
+        "千夜浮梦"
+      ],
+      "sourceIds": [
+        311104
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0455",
+      "category": "skill-cost",
+      "question": "问：在七圣召唤中，技能\"虚界玄爪\"的效果是什么？(卡牌ID: 23051)",
+      "groundTruth": "造成2点物理伤害。",
+      "keywords": [
+        "造成2点物理伤害"
+      ],
+      "sourceIds": [
+        23051
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0333",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“远程状态”使用什么武器？",
+      "groundTruth": "弓",
+      "keywords": [
+        "弓"
+      ],
+      "sourceIds": [
+        12045
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0414",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"对角色打出「天赋」或角色使用技能时：少花费1个冰元素\"",
+      "groundTruth": "破冰踏雪的回音",
+      "keywords": [
+        "破冰踏雪的回音"
+      ],
+      "sourceIds": [
+        312101
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0355",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“月兆祝赐·象拟中继”使用什么武器？",
+      "groundTruth": "长柄武器",
+      "keywords": [
+        "长柄武器"
+      ],
+      "sourceIds": [
+        14175
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0200",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“坍陷与契机”属于什么类型？",
+      "groundTruth": "事件牌",
+      "keywords": [
+        "事件牌"
+      ],
+      "sourceIds": [
+        332026
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q-0297",
+      "category": "character-stats",
+      "question": "问：在七圣召唤中，角色牌“五郎”的基础生命值和充能是多少？",
+      "groundTruth": "生命值10，充能2点",
+      "keywords": [
+        "10",
+        "生命值10"
+      ],
+      "sourceIds": [
+        1606
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0134",
+      "category": "effect-to-card-name",
+      "question": "问：在七圣召唤中，哪张牌的效果如下：入场时：生成2张手牌积木小人，并生成2张积木小人，随机置入我方牌组中。\n我方打出「希穆兰卡」召唤物后，使其效果量+1。\n可用次数：2",
+      "groundTruth": "预言女神的礼物",
+      "keywords": [
+        "预言女神的礼物"
+      ],
+      "sourceIds": [
+        322030
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q-0335",
+      "category": "weapon-type",
+      "question": "问：在七圣召唤中，角色牌“温迪”使用什么武器？",
+      "groundTruth": "弓",
+      "keywords": [
+        "弓"
+      ],
+      "sourceIds": [
+        1503
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0413",
+      "category": "card-effect-match",
+      "question": "问：在七圣召唤中，以下效果对应哪张牌？\"选一个我方角色，我方其他角色准备技能时：所选角色下次元素战技少花费1个元素骰\"",
+      "groundTruth": "健身的成果",
+      "keywords": [
+        "健身的成果"
+      ],
+      "sourceIds": [
+        332048
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q-0363",
+      "category": "nation",
+      "question": "问：在七圣召唤中，角色牌“柯莱”属于哪个国家/阵营？",
+      "groundTruth": "须弥",
+      "keywords": [
+        "须弥"
+      ],
+      "sourceIds": [
+        1701
+      ],
+      "difficulty": "medium",
+      "overlap": true
+    },
+    {
+      "id": "q-0227",
+      "category": "character-element",
+      "question": "问：在七圣召唤中，角色牌“北斗”是什么元素的？",
+      "groundTruth": "雷",
+      "keywords": [
+        "雷"
+      ],
+      "sourceIds": [
+        1405
+      ],
+      "difficulty": "easy",
+      "overlap": true
+    },
+    {
+      "id": "q-0219",
+      "category": "card-type",
+      "question": "问：在七圣召唤中，卡牌“夜翳的通感”属于什么类型？",
+      "groundTruth": "雷元素角色牌",
+      "keywords": [
+        "雷元素角色牌"
+      ],
+      "sourceIds": [
+        14165
+      ],
+      "difficulty": "easy"
+    }
+  ]
+}

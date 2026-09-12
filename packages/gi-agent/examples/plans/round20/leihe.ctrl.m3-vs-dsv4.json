@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/round19-m3/plans/leihe.ctrl.r0.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round19-dsv4/plans/leihe.ctrl.r0.json"
+  },
+  "games": 10,
+  "seedBase": 20273101,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round20-xmodel/games/leihe.ctrl.m3-vs-dsv4"
+}

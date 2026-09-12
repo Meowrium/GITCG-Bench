@@ -1,0 +1,321 @@
+diff --git a/packages/assets-manager/src/manager.ts b/packages/assets-manager/src/manager.ts
+index 15d05d87..aba079bb 100644
+--- a/packages/assets-manager/src/manager.ts
++++ b/packages/assets-manager/src/manager.ts
+@@ -48,6 +48,13 @@ export type AnyData =
+   | KeywordRawData
+   | SkillRawData;
+ 
++type CategoryData =
++  | ActionCardRawData
++  | CharacterRawData
++  | EntityRawData
++  | KeywordRawData;
++type ApiDataResponse<T> = { data: T[] };
++
+ export interface GetDataOptions {}
+ 
+ export interface GetImageOptions {
+@@ -74,6 +81,11 @@ export const DEFAULT_ASSETS_API_ENDPOINT =
+   import.meta.env.DEFAULT_ASSETS_API_ENDPOINT ||
+   "https://gi-tcg-assets-api-hf.guyutongxue.site/api/v4";
+ 
++const LOCAL_CARD_IMAGES_BASE_URL =
++  import.meta.env.VITE_LOCAL_CARD_IMAGES_BASE_URL ||
++  import.meta.env.LOCAL_CARD_IMAGES_BASE_URL ||
++  "";
++
+ const FETCH_OPTION: RequestInit = {
+   headers: {
+     "X-Gi-Tcg-Assets-Manager": "1",
+@@ -313,8 +325,8 @@ export class AssetsManager {
+       return this.dataCache.get(id)!;
+     }
+     const url = `${this.options.apiEndpoint}/datum/${this.options.version}/${this.options.language}/${id}`;
+-    const promise = this.limitedFetch(url, FETCH_OPTION)
+-      .then((r) => r.json())
++    const promise: Promise<AnyData> = this.limitedFetch(url, FETCH_OPTION)
++      .then((r) => r.json() as Promise<AnyData>)
+       .then((data) => {
+         this.dataCacheSync.set(id, data);
+         return data;
+@@ -333,8 +345,8 @@ export class AssetsManager {
+     const url = `${this.options.apiEndpoint}/datum/${this.options.version}/${
+       this.options.language
+     }/${-id}`;
+-    const promise = this.limitedFetch(url, FETCH_OPTION)
+-      .then((r) => r.json())
++    const promise: Promise<AnyData> = this.limitedFetch(url, FETCH_OPTION)
++      .then((r) => r.json() as Promise<AnyData>)
+       .then((data) => {
+         this.dataCacheSync.set(-id, data);
+         return data;
+@@ -368,12 +380,10 @@ export class AssetsManager {
+   async getCategory(
+     category: Category,
+     options: GetDataOptions = {}
+-  ): Promise<
+-    (ActionCardRawData | CharacterRawData | EntityRawData | KeywordRawData)[]
+-  > {
++  ): Promise<CategoryData[]> {
+     const dataUrl = `${this.options.apiEndpoint}/data/${this.options.version}/${this.options.language}/${category}`;
+     const { data } = await this.limitedFetch(dataUrl, FETCH_OPTION).then((r) =>
+-      r.json()
++      r.json() as Promise<ApiDataResponse<CategoryData>>
+     );
+     return data;
+   }
+@@ -389,7 +399,7 @@ export class AssetsManager {
+     }
+     const url = this.getImageUrlSync(id, options);
+     const promise = this.limitedFetch(url, FETCH_OPTION)
+-      .then((r) => r.blob())
++      .then((r) => r.blob() as unknown as Promise<Blob>)
+       .then((blob) => {
+         this.imageCacheSync.set(cacheKey, blob);
+         return blob;
+@@ -407,8 +417,8 @@ export class AssetsManager {
+       return this.imageCache.get(cacheKey)!;
+     }
+     const url = `${this.options.apiEndpoint}/image/raw/${imageName}`;
+-    const promise = this.limitedFetch(url, FETCH_OPTION)
+-      .then((r) => r.blob())
++    const promise :Promise<Blob>= this.limitedFetch(url, FETCH_OPTION)
++      .then((r) => r.blob() as unknown as Promise<Blob>)
+       .then((blob) => {
+         this.imageCacheSync.set(cacheKey, blob);
+         return blob;
+@@ -418,12 +428,18 @@ export class AssetsManager {
+   }
+ 
+   getImageUrlSync(id: number, options: GetImageOptions = {}): string {
++    const localCardImageUrl =
++      LOCAL_CARD_IMAGES_BASE_URL
++        ? `${LOCAL_CARD_IMAGES_BASE_URL.replace(/\/$/, "")}/${id}`
++        : null;
++
+     const searchParams = new URLSearchParams({
+       thumbnail: String(options.thumbnail ?? false),
+       type: options.type ?? "unspecified",
+     });
+     const url =
+       this.customDataImageUrls.get(id) ??
++      localCardImageUrl ??
+       `${this.options.apiEndpoint}/image/${id}?${searchParams}`;
+     return url;
+   }
+@@ -464,7 +480,7 @@ export class AssetsManager {
+     return (this.preparedSyncData ??= (async () => {
+       const dataUrl = `${this.options.apiEndpoint}/data/${this.options.version}/${this.options.language}/all`;
+       const { data } = await this.limitedFetch(dataUrl, FETCH_OPTION).then(
+-        (r) => r.json()
++        (r) => r.json() as Promise<ApiDataResponse<AnyData>>
+       );
+       // Data
+       for (const d of data) {
+diff --git a/packages/server/src/rooms/rooms.controller.ts b/packages/server/src/rooms/rooms.controller.ts
+index c0f42841..394bf75b 100644
+--- a/packages/server/src/rooms/rooms.controller.ts
++++ b/packages/server/src/rooms/rooms.controller.ts
+@@ -262,4 +262,51 @@ export class RoomsController {
+     this.rooms.receivePlayerGiveUp(roomId, playerId);
+     return { message: "given up" };
+   }
++  // ===== AI 控制端点 =====
++
++  @Post(":roomId/ai/:playerId/enable")
++  enableAi(
++    @Param("roomId", ParseIntPipe) roomId: number,
++    @Param("playerId", ParsePlayerIdPipe) playerId: number | string,
++  ) {
++    this.rooms.enableAiMode(roomId, playerId);
++    return { success: true, message: "AI mode enabled" };
++  }
++
++  @Post(":roomId/ai/:playerId/disable")
++  disableAi(
++    @Param("roomId", ParseIntPipe) roomId: number,
++    @Param("playerId", ParsePlayerIdPipe) playerId: number | string,
++  ) {
++    this.rooms.disableAiMode(roomId, playerId);
++    return { success: true, message: "AI mode disabled" };
++  }
++
++  @Get(":roomId/ai/:playerId/mode")
++  getAiMode(
++    @Param("roomId", ParseIntPipe) roomId: number,
++    @Param("playerId", ParsePlayerIdPipe) playerId: number | string,
++  ) {
++    const isAiMode = this.rooms.isAiMode(roomId, playerId);
++    return { isAiMode };
++  }
++
++  @Get(":roomId/ai/:playerId/request")
++  getAiRequest(
++    @Param("roomId", ParseIntPipe) roomId: number,
++    @Param("playerId", ParsePlayerIdPipe) playerId: number | string,
++  ) {
++    const request = this.rooms.getAiRequest(roomId, playerId);
++    return { request };
++  }
++
++  @Post(":roomId/ai/:playerId/respond")
++  aiRespond(
++    @Param("roomId", ParseIntPipe) roomId: number,
++    @Param("playerId", ParsePlayerIdPipe) playerId: number | string,
++
++  ) {
++    this.rooms.respondToAi(roomId, playerId, response);
++    return { success: true, message: "AI response sent" };
++  }
+ }
+diff --git a/packages/server/src/rooms/rooms.service.ts b/packages/server/src/rooms/rooms.service.ts
+index 7f44e01d..b1b3cd8d 100644
+--- a/packages/server/src/rooms/rooms.service.ts
++++ b/packages/server/src/rooms/rooms.service.ts
+@@ -206,6 +206,11 @@ class Player implements PlayerIOWithError {
+   private _contiguousTimeoutRpcExecuted = 0;
+   private _oppPlayer: Player | null = null;
+ 
++  // AI mode support
++  private _aiMode = false;
++  private _aiWaitingResolve: ((response: RpcResponse) => void) | null = null;
++  private _aiCurrentRequest: RpcRequest | null = null;
++
+   private _game: InternalGame | null = null;
+   private _who: 0 | 1 = 0;
+ 
+@@ -299,6 +304,14 @@ class Player implements PlayerIOWithError {
+   }
+ 
+   async rpc(request: RpcRequest): Promise<RpcResponse> {
++    // AI mode: wait for external response via aiRespond()
++    if (this._aiMode) {
++      this._aiCurrentRequest = request;
++      return new Promise<RpcResponse>((resolve) => {
++        this._aiWaitingResolve = resolve;
++      });
++    }
++
+     const id = this._nextRpcId++;
+     // 计时器上限
+     let totalTimeout = this._initialRoundTimeout;
+@@ -377,6 +390,35 @@ class Player implements PlayerIOWithError {
+   complete() {
+     this.completeSubject.next();
+   }
++
++  // AI mode control methods
++  enableAiMode() {
++    this._aiMode = true;
++  }
++
++  disableAiMode() {
++    this._aiMode = false;
++  }
++
++  isAiMode(): boolean {
++    return this._aiMode;
++  }
++
++  getAiCurrentRequest(): RpcRequest | null {
++    return this._aiCurrentRequest;
++  }
++
++  aiRespond(response: RpcResponse) {
++    if (this._aiWaitingResolve) {
++      this._aiWaitingResolve(response);
++      this._aiWaitingResolve = null;
++      this._aiCurrentRequest = null;
++    }
++  }
++
++  hasPendingAiResponse(): boolean {
++    return this._aiMode && this._aiWaitingResolve !== null;
++  }
+ }
+ 
+ type GameStopHandler = (room: Room, game: InternalGame | null) => void;
+@@ -1001,4 +1043,81 @@ export class RoomsService {
+     }
+     room.giveUp(playerId);
+   }
+-}
++
++  //AI 控制方法 - 允许外部 MCP 控制 AI 玩家
++  enableAiMode(roomId: number, playerId: number | string): boolean {
++    const room = this.rooms.get(roomId);
++    if (!room) {
++      throw new NotFoundException(`Room ${roomId} not found`);
++    }
++    const player = room.players.find(p => p.id === playerId);
++    if (!player) {
++      throw new NotFoundException(`Player ${playerId} not found in room`);
++    }
++    (player as any).enableAiMode();
++    this.logger.log(`AI mode enabled for player ${playerId} in room ${roomId}`);
++    return true;
++  }
++
++  disableAiMode(roomId: number, playerId: number | string): boolean {
++    const room = this.rooms.get(roomId);
++    if (!room) {
++      throw new NotFoundException(`Room ${roomId} not found`);
++    }
++    const player = room.players.find(p => p.id === playerId);
++    if (!player) {
++      throw new NotFoundException(`Player ${playerId} not found in room`);
++    }
++    (player as any).disableAiMode();
++    this.logger.log(`AI mode disabled for player ${playerId} in room ${roomId}`);
++    return true;
++  }
++
++  isAiMode(roomId: number, playerId: number | string): boolean {
++    const room = this.rooms.get(roomId);
++    if (!room) {
++      throw new NotFoundException(`Room ${roomId} not found`);
++    }
++    const player = room.players.find(p => p.id === playerId);
++    if (!player) {
++      throw new NotFoundException(`Player ${playerId} not found in room`);
++    }
++    return (player as any).isAiMode();
++  }
++
++  getAiRequest(roomId: number, playerId: number | string): RpcRequest | null {
++    const room = this.rooms.get(roomId);
++    if (!room) {
++      throw new NotFoundException(`Room ${roomId} not found`);
++    }
++    const player = room.players.find(p => p.id === playerId);
++    if (!player) {
++      throw new NotFoundException(`Player ${playerId} not found in room`);
++    }
++    return (player as any).getAiCurrentRequest();
++  }
++
++  respondToAi(roomId: number, playerId: number | string, rawResponse: any): boolean {
++    const room = this.rooms.get(roomId);
++    if (!room) {
++      throw new NotFoundException(`Room ${roomId} not found`);
++    }
++    const player = room.players.find(p => p.id === playerId);
++    if (!player) {
++      throw new NotFoundException(`Player ${playerId} not found in room`);
++    }
++    
++    // 转换为 RpcResponse
++    const response: RpcResponse = {
++      success: rawResponse.success,
++      values: rawResponse.values || {},
++      cardSelection: rawResponse.cardSelection,
++      dieSelection: rawResponse.dieSelection,
++    };
++    
++    (player as any).aiRespond(response);
++    this.logger.log(`AI response sent to player ${playerId} in room ${roomId}`);
++    return true;
++  }
++
++} 

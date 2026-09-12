@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/roundT5-calib/plans/leihe.nn2.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round22-g53f/plans/hongniu.ctrl.r0.json"
+  },
+  "games": 10,
+  "seedBase": 20276501,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/roundT5-calib/games/leihe.nn2-vs-hongniu-ctrl"
+}

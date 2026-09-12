@@ -1,0 +1,338 @@
+{
+  "phase": "semantic_scholar_salvage",
+  "week": "2026-W26",
+  "generated": "2026-06-22T01:13:02.361301",
+  "total_new": 22,
+  "score_counts": {
+    "1": 6,
+    "2": 10,
+    "3": 1,
+    "4": 4,
+    "5": 1
+  },
+  "papers": {
+    "Research of artificial intelligence in imperfect information card games": {
+      "arxiv_id": "",
+      "title": "Research of artificial intelligence in imperfect information card games",
+      "authors": [
+        "Megan Sun"
+      ],
+      "year": 2024,
+      "pub_date": "2024-01-22",
+      "abstract": "Artificial intelligence (AI) in games has advanced significantly, notably in perfect information games such as Go and Chess. Imperfect information games, in which participants do not have complete information about the game state, create more difficulties. They incorporate both public and private observations, where strategies must be improved to achieve a Nash equilibrium. This study investigates artificial intelligence and reinforcement learning approaches, in which agents learn to maximize fu",
+      "score": 5,
+      "query": "imperfect information card game reinforcement learning"
+    },
+    "2406.17807": {
+      "arxiv_id": "2406.17807",
+      "title": "Enhancing Commentary Strategies for Imperfect Information Card Games: A Study of Large Language Models in Guandan Commentary",
+      "authors": [
+        "Meiling Tao",
+        "Xuechen Liang",
+        "Yiling Tao",
+        "Tianyu Shi"
+      ],
+      "year": 2024,
+      "pub_date": "2024-06-23",
+      "abstract": "Recent advancements in large language models (LLMs) have unlocked the potential for generating high-quality game commentary. However, producing insightful and engaging commentary for complex games with incomplete information remains a significant challenge. In this paper, we introduce a novel commentary method that combine Reinforcement Learning (RL) and LLMs, tailored specifically for the Chinese card game \\textit{Guandan}. Our system leverages RL to generate intricate card-playing scenarios an",
+      "score": 4,
+      "query": "imperfect information card game reinforcement learning"
+    },
+    "Mastering the Card Game of Jaipur Through Zero-Knowledge Self-Play Reinforcement": {
+      "arxiv_id": "",
+      "title": "Mastering the Card Game of Jaipur Through Zero-Knowledge Self-Play Reinforcement Learning and Action Masks",
+      "authors": [
+        "Cristina Cutajar",
+        "Josef Bajada"
+      ],
+      "year": 2023,
+      "pub_date": null,
+      "abstract": "",
+      "score": 4,
+      "query": "card game reinforcement learning MCTS"
+    },
+    "Policy-Based Reinforcement Learning Approach in Imperfect Information Card Game": {
+      "arxiv_id": "",
+      "title": "Policy-Based Reinforcement Learning Approach in Imperfect Information Card Game",
+      "authors": [
+        "Kamil Chrustowski",
+        "Piotr Duch"
+      ],
+      "year": 2025,
+      "pub_date": "2025-02-17",
+      "abstract": "Games provide an excellent testing ground for machine learning and artificial intelligence, offering diverse environments with strategic challenges and complex decision-making scenarios. This study seeks to design a self-learning artificial intelligent agent capable of playing the trick-taking stage of the popular card game Thousand, known for its complex bidding system and dynamic gameplay. Due to the game’s vast state space and strategic complexity, other artificial intelligence approaches, su",
+      "score": 4,
+      "query": "card game reinforcement learning MCTS"
+    },
+    "Strategies for Enhancing Card Game Analysis: Exploring Large Language Models in ": {
+      "arxiv_id": "",
+      "title": "Strategies for Enhancing Card Game Analysis: Exploring Large Language Models in Imperfect Information Settings",
+      "authors": [
+        "Feihu Ma",
+        "Xuechen Liang",
+        "Jianing Long",
+        "Meiling Tao"
+      ],
+      "year": 2025,
+      "pub_date": null,
+      "abstract": "Recent advancements in large language models (LLMs) have unlocked the potential for generating high-quality game commentary. However, producing insightful and engaging commentary for complex games with incomplete information remains a significant challenge. In this paper, we introduce a novel commentary method that combine Reinforcement Learning (RL) and LLMs, tailored specifically for the Chinese card game Guandan. Our system leverages RL to generate intricate card-playing scenarios and employs",
+      "score": 4,
+      "query": "imperfect information card game reinforcement learning"
+    },
+    "Multi-Agent Deep Reinforcement Learning in Imperfect Information Games": {
+      "arxiv_id": "",
+      "title": "Multi-Agent Deep Reinforcement Learning in Imperfect Information Games",
+      "authors": [
+        "E. V. York"
+      ],
+      "year": 2020,
+      "pub_date": null,
+      "abstract": "",
+      "score": 3,
+      "query": "imperfect information card game reinforcement learning"
+    },
+    "2004.04000": {
+      "arxiv_id": "2004.04000",
+      "title": "Learning from Learners: Adapting Reinforcement Learning Agents to be Competitive in a Card Game",
+      "authors": [
+        "Pablo V. A. Barros",
+        "Ana Tanevska",
+        "A. Sciutti"
+      ],
+      "year": 2020,
+      "pub_date": "2020-04-08",
+      "abstract": "Learning how to adapt to complex and dynamic environments is one of the most important factors that contribute to our intelligence. Endowing artificial agents with this ability is not a simple task, particularly in competitive scenarios. In this paper, we present a broad study on how popular reinforcement learning algorithms can be adapted and implemented to learn and to play a real-world implementation of a competitive multiplayer card game. We propose specific training and validation routines ",
+      "score": 2,
+      "query": "card game reinforcement learning MCTS"
+    },
+    "2302.00384": {
+      "arxiv_id": "2302.00384",
+      "title": "Alphazzle: Jigsaw Puzzle Solver with Deep Monte-Carlo Tree Search",
+      "authors": [
+        "Marie-Morgane Paumard",
+        "Hedi Tabia",
+        "David Picard"
+      ],
+      "year": 2023,
+      "pub_date": "2023-02-01",
+      "abstract": "Solving jigsaw puzzles requires to grasp the visual features of a sequence of patches and to explore efficiently a solution space that grows exponentially with the sequence length. Therefore, visual deep reinforcement learning (DRL) should answer this problem more efficiently than optimization solvers coupled with neural networks. Based on this assumption, we introduce Alphazzle, a reassembly algorithm based on single-player Monte Carlo Tree Search (MCTS). A major difference with DRL algorithms ",
+      "score": 2,
+      "query": "card game reinforcement learning MCTS"
+    },
+    "2605.28258": {
+      "arxiv_id": "2605.28258",
+      "title": "GUI Agents for Continual Game Generation",
+      "authors": [
+        "Yixu Huang",
+        "Bo Li",
+        "Na Li",
+        "Zhe Wang",
+        "Kai Chen",
+        "Haonan Ge",
+        "Qingyi Si",
+        "Yuanzhe Shen",
+        "Ruihan Yang",
+        "Guangjin Wang",
+        "Hongcheng Guo"
+      ],
+      "year": 2026,
+      "pub_date": "2026-05-27",
+      "abstract": "Generating a game is not the same as making one that can be played. Despite advances in code generation, existing approaches treat game generation as one-shot translation from prompt to artifact, leaving interaction-level failures undetected. We argue that evaluating and improving game generation requires a player, and study two roles for graphical user interface (GUI) agents in this process: (1) as an objective evaluator, for which we introduce PlaytestArena, a new evaluation environment that p",
+      "score": 2,
+      "query": "code generation game playing"
+    },
+    "Code Generation for AI Scripting in Computer Role-Playing Games": {
+      "arxiv_id": "",
+      "title": "Code Generation for AI Scripting in Computer Role-Playing Games",
+      "authors": [
+        "M. McNaughton",
+        "D. Szafron",
+        "Dominique Parker",
+        "J. Redford"
+      ],
+      "year": 2004,
+      "pub_date": null,
+      "abstract": "",
+      "score": 2,
+      "query": "code generation game playing"
+    },
+    "Implementasi SDLC Waterfall dalam Pembuatan Game Edukasi Heroes of Harmony “HOH”": {
+      "arxiv_id": "",
+      "title": "Implementasi SDLC Waterfall dalam Pembuatan Game Edukasi Heroes of Harmony “HOH” Menggunakan RPG Maker Mv",
+      "authors": [
+        "Danang Tri Laksono",
+        "Daniel Swanjaya",
+        "Resty Wulaningrum"
+      ],
+      "year": 2022,
+      "pub_date": "2022-11-11",
+      "abstract": "The development of technology and games is currently experiencing very rapid development, both online and offline games. In general, games are applications that turn human life into software. Role-playing games (RPGs) are games that contain a complex story and elements of the art of role-playing that make you feel like a character in a game. It is based on the problem of designing and building the game Heroes of Harmony with RPG Maker MV. The research method used to make this RPG game is softwar",
+      "score": 2,
+      "query": "code generation game playing"
+    },
+    "Learning to play an imperfect information card game using reinforcement learning": {
+      "arxiv_id": "",
+      "title": "Learning to play an imperfect information card game using reinforcement learning",
+      "authors": [
+        "Bugra Kaan Demirdöver",
+        "Ömer Baykal",
+        "F. Alpaslan"
+      ],
+      "year": 2022,
+      "pub_date": "2022-01-01",
+      "abstract": "Artificial intelligence and machine learning are widely popular in many areas. One of the most popular ones is gaming. Games are perfect testbeds for machine learning and artificial intelligence with various scenarios and types. This study aims to develop a self-learning intelligent agent to play the Hearts game. Hearts is one of the most popular trick-taking card games around the world. It is an imperfect information card game. In addition to having a huge state space, Hearts offers many extra ",
+      "score": 2,
+      "query": "card game reinforcement learning MCTS"
+    },
+    "Multi-DMC: Deep Monte-Carlo with Multi-Stage Learning in the Card Game UNO": {
+      "arxiv_id": "",
+      "title": "Multi-DMC: Deep Monte-Carlo with Multi-Stage Learning in the Card Game UNO",
+      "authors": [
+        "Xueqin Yang",
+        "Xiaofei Liu",
+        "Wenbin Lin"
+      ],
+      "year": 2024,
+      "pub_date": "2024-08-05",
+      "abstract": "Games can serve as important benchmarks for evaluating artificial intelligence (AI), and many game AIs have been invented, such as AlphaGo, Libratus, OpenAI Five, Suphx, and DouZero. For UNO, a popular shedding-type card game, the AI faces imperfect-information challenges, large state space, and sparse rewards. The existing methods only demonstrate the promising feasibility of classic reinforcement learning in the UNO game, which is still far from being able to compete with human players. Based ",
+      "score": 2,
+      "query": "imperfect information card game reinforcement learning"
+    },
+    "SECUR-AMA: Active Malware Analysis Based on Monte Carlo Tree Search for Android ": {
+      "arxiv_id": "",
+      "title": "SECUR-AMA: Active Malware Analysis Based on Monte Carlo Tree Search for Android Systems",
+      "authors": [
+        "Riccardo Sartea",
+        "A. Farinelli",
+        "Matteo Murari"
+      ],
+      "year": 2020,
+      "pub_date": "2020-01-01",
+      "abstract": "Abstract We propose SECUR-AMA, an Active Malware Analysis (AMA) framework for Android. (AMA) is a technique that aims at acquiring knowledge about target applications by executing actions on the system that trigger responses from the targets. The main strength of this approach is the capability of extracting behaviors that would otherwise remain invisible. A key difference from other analysis techniques is that the triggering actions are not selected randomly or sequentially, but following strat",
+      "score": 2,
+      "query": "card game reinforcement learning MCTS"
+    },
+    "Validation of a Card Game-Based Reinforcement Learning Methodology for Elementar": {
+      "arxiv_id": "",
+      "title": "Validation of a Card Game-Based Reinforcement Learning Methodology for Elementary Students to Understand Core Tamper-Prevention Principles in Blockchain Structures",
+      "authors": [
+        "Jinsu Kim",
+        "Daisung Ma",
+        "Youngkwon Bae",
+        "Jaekwoun Shim",
+        "Woochun Jun",
+        "Young-Sik Jeong",
+        "Eunsun Choi",
+        "Byoungrae Han",
+        "Namje Park",
+        "Sunju Park"
+      ],
+      "year": 2025,
+      "pub_date": "2025-11-30",
+      "abstract": "",
+      "score": 2,
+      "query": "card game reinforcement learning MCTS"
+    },
+    "WERNER: A Card Game for Reinforcement Learning of Inorganic Chemistry Nomenclatu": {
+      "arxiv_id": "",
+      "title": "WERNER: A Card Game for Reinforcement Learning of Inorganic Chemistry Nomenclature",
+      "authors": [
+        "C. Buendía-Atencio",
+        "G. Pieffet",
+        "V. P. Lorett Velásquez"
+      ],
+      "year": 2022,
+      "pub_date": "2022-04-13",
+      "abstract": "",
+      "score": 2,
+      "query": "card game reinforcement learning MCTS"
+    },
+    "2101.12195": {
+      "arxiv_id": "2101.12195",
+      "title": "Playable Video Generation",
+      "authors": [
+        "W. Menapace",
+        "Stéphane Lathuilière",
+        "S. Tulyakov",
+        "Aliaksandr Siarohin",
+        "E. Ricci"
+      ],
+      "year": 2021,
+      "pub_date": "2021-01-28",
+      "abstract": "This paper introduces the unsupervised learning problem of playable video generation (PVG). In PVG, we aim at allowing a user to control the generated video by selecting a discrete action at every time step as when playing a video game. The difficulty of the task lies both in learning semantically consistent actions and in generating realistic videos conditioned on the user input. We propose a novel framework for PVG that is trained in a self-supervised manner on a large dataset of unlabelled vi",
+      "score": 1,
+      "query": "code generation game playing"
+    },
+    "Code Defenders: Crowdsourcing Effective Tests and Subtle Mutants with a Mutation": {
+      "arxiv_id": "",
+      "title": "Code Defenders: Crowdsourcing Effective Tests and Subtle Mutants with a Mutation Testing Game",
+      "authors": [
+        "J. Rojas",
+        "Thomas D. White",
+        "Benjamin S. Clegg",
+        "Gordon Fraser"
+      ],
+      "year": 2017,
+      "pub_date": "2017-05-20",
+      "abstract": "",
+      "score": 1,
+      "query": "code generation game playing"
+    },
+    "Implementasi Generate Map dan Pemunculan Objek secara Acak pada Game 3D mengguna": {
+      "arxiv_id": "",
+      "title": "Implementasi Generate Map dan Pemunculan Objek secara Acak pada Game 3D menggunakan Bahasa C# dan Metode Perlin Noise di Unity: Studi Kasus pada Game Development",
+      "authors": [
+        "Renita Selviana",
+        "Dauw Bastha Fiastat Lugata",
+        "A. Alimin"
+      ],
+      "year": 2023,
+      "pub_date": "2023-05-28",
+      "abstract": "Perlin noise algorithm is used to generate noise on the map surface, creating natural effects in 3D games. In this research, a C# script code has been implemented in Unity that can generate maps and spawn random objects in the game. The research results demonstrate that the implementation of map generation and random object spawning techniques can enhance gameplay quality and provide a more immersive playing experience for users. This research aims to contribute to game development on the Unity ",
+      "score": 1,
+      "query": "code generation game playing"
+    },
+    "Maze Adventure: An Application of Maze Algorithm in Role-playing Game Developmen": {
+      "arxiv_id": "",
+      "title": "Maze Adventure: An Application of Maze Algorithm in Role-playing Game Development by Python",
+      "authors": [
+        "Rui Yang",
+        "Cong He"
+      ],
+      "year": 2022,
+      "pub_date": null,
+      "abstract": "This paper talks about the development and algorithms of a 2D role-playing game coded in Python: Maze Adventure. The game is developed based on the Aldous Broder maze generation algorithm, a random walk algorithm, which is a way to produce uniform spanning trees. With the maze that is drawn by these uniform spanning trees, this paper introduces each part of code that has different functions, which works together to form a complete game. It summarizes the basic algorithms for not only the maze al",
+      "score": 1,
+      "query": "code generation game playing"
+    },
+    "NVIDIA's Next-Generation CUDA Compute and Graphics Architecture, Code-Named Ferm": {
+      "arxiv_id": "",
+      "title": "NVIDIA's Next-Generation CUDA Compute and Graphics Architecture, Code-Named Fermi, Adds Muscle for Parallel Processing",
+      "authors": [
+        "T. Halfhill"
+      ],
+      "year": 2009,
+      "pub_date": null,
+      "abstract": "",
+      "score": 1,
+      "query": "code generation game playing"
+    },
+    "ScriptEase: generating scripting code for computer role-playing games": {
+      "arxiv_id": "",
+      "title": "ScriptEase: generating scripting code for computer role-playing games",
+      "authors": [
+        "M. McNaughton",
+        "M. Cutumisu",
+        "D. Szafron",
+        "J. Schaeffer",
+        "J. Redford",
+        "Dominique Parker"
+      ],
+      "year": 2004,
+      "pub_date": "2004-09-20",
+      "abstract": "",
+      "score": 1,
+      "query": "code generation game playing"
+    }
+  }
+}

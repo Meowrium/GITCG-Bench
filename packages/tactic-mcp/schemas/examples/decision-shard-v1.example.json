@@ -1,0 +1,99 @@
+{
+  "version": "DecisionShardV1",
+  "shard_id": "shard_001_t1",
+  "session_id": "sess_001",
+  "plan_id": "plan_sess_001_1741270000",
+  "turn_range": {
+    "start": 1,
+    "end": 1
+  },
+  "tactical_goal": "Enable reaction setup with minimal dice waste.",
+  "candidate_policies": [
+    {
+      "id": "pol_001",
+      "priority": 100,
+      "preconditions": ["has_pending_rpc", "can_pay_required_cost"],
+      "action_template": {
+        "tool": "choose_action",
+        "args": {
+          "action_index": 1,
+          "used_dice": [8, 2, 2]
+        }
+      }
+    },
+    {
+      "id": "pol_002",
+      "priority": 80,
+      "preconditions": ["elemental_tuning_available"],
+      "action_template": {
+        "tool": "elemental_tuning",
+        "args": {
+          "removed_card_id": 300123,
+          "target_dice": 2
+        }
+      }
+    }
+  ],
+  "execution_constraints": {
+    "max_actions_this_turn": 3,
+    "dice_budget_mode": "balanced",
+    "protect_character_definition_ids": [101],
+    "forbid_actions": ["greedy_overcommit"]
+  },
+  "fallback_chain": [
+    {
+      "when": "all_candidate_policies_invalid",
+      "policy": "save_dice"
+    }
+  ],
+  "exit_conditions": ["end_phase_reached", "high_value_trade_completed"],
+  "combat_window_plan": {
+    "window_id": "r1_opening_window",
+    "plan_horizon": {
+      "min_actions": 2,
+      "max_actions": 4
+    },
+    "entry_conditions": ["pending_method=action", "round=1"],
+    "interrupt_conditions": ["pending_method!=action", "self.active_hp<=2"],
+    "success_conditions": ["reaction_ready"],
+    "fail_conditions": ["core_character_dead"],
+    "entry_node_id": "setup",
+    "nodes": [
+      {
+        "id": "setup",
+        "kind": "setup",
+        "intent": "establish_setup",
+        "expected_action_case": ["useSkill", "playCard"],
+        "when": ["pending_method=action"],
+        "must_do": ["preserve_core_window"],
+        "avoid": ["greedy_overcommit"],
+        "prefer_tags": ["useSkill", "summon"],
+        "resource_policy": "balanced",
+        "fallback_rule": "pick_highest_valid_candidate",
+        "next": [
+          {
+            "condition": "summon_ready",
+            "to": "pivot",
+            "priority": 100
+          }
+        ]
+      },
+      {
+        "id": "pivot",
+        "kind": "pivot",
+        "intent": "fast_pivot",
+        "expected_action_case": ["switchActive", "playCard"],
+        "when": ["pending_method=action"],
+        "must_do": ["protect_core_character"],
+        "avoid": ["slow_switch_if_lethal_risk"],
+        "prefer_tags": ["switchActive", "fast_switch"],
+        "resource_policy": "balanced",
+        "fallback_rule": "save_dice",
+        "next": []
+      }
+    ]
+  },
+  "telemetry_requirements": {
+    "record_fields": ["action_index", "used_dice", "hp_delta", "value_estimate"]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gtcg.local/schemas/mcp/create-decision-shard-v1.response.schema.json",
+  "title": "MCP create_decision_shard_v1 Response",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "decision_shard", "shard_path"],
+      "properties": {
+        "ok": {
+          "type": "boolean",
+          "const": true
+        },
+        "decision_shard": {
+          "$ref": "../decision-shard-v1.schema.json"
+        },
+        "shard_path": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["ok", "error_code", "message"],
+      "properties": {
+        "ok": {
+          "type": "boolean",
+          "const": false
+        },
+        "error_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recover_hint": {
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

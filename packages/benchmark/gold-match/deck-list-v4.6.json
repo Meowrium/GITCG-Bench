@@ -1,0 +1,89 @@
+{
+  "version": "v4.6",
+  "decks": [
+    {
+      "code": "AJCg2QQNAZGwWZcVE5AB2zAPE0AR9DMQE1EwCMMQDIFAO8QTDLGgTMoUDcEQaNERFAAA",
+      "name": "行秋重云雷泽"
+    },
+    {
+      "code": "EpFy0lAOEhJiSisOE5Gi2i0WCpJxWqUUFKEC9TEQFEEy9zQRDILxCcUUDbJBPMoXDYEB",
+      "name": "莱依拉那维莱特若陀龙王"
+    },
+    {
+      "code": "EZCR2V0NEbCh52AOFnAA6IMOCIAw9JcPCUBx9TMQEwExADUQE2FRBjYQE7FgC8kRDDAA",
+      "name": "林尼珐露珊琳妮特"
+    },
+    {
+      "code": "EpKCWh8OErFR9ZgQC0FB96UQFGISPDIUFLIyaTQXDYJhDMcRDcKhDcsSDgKREdoSFhEB",
+      "name": "夜兰雷音权现「女士」"
+    },
+    {
+      "code": "AECxxEAMAJBhyUQNFBBA0YYNCKBg9JcPCkFBBTAQE1EBCDMQE4EwO78TC7HwC8MQDLAA",
+      "name": "莫娜早柚优菈"
+    },
+    {
+      "code": "FEDhyU8VAJGQWUUNEuDA4p0OCSDR9DMPE0BB9kgPFGGACL0UC8HRaDYWFYGAacQWDJAA",
+      "name": "夏洛蒂那维莱特芭芭拉"
+    },
+    {
+      "code": "EpKBWgUWApGx30EPCuFy9TEQFEEC9jIQFGISBjQRDILxCcQUDbJBPMoXDYKhadoSDgEB",
+      "name": "夜兰重云雷泽"
+    },
+    {
+      "code": "ADBx2RgNApFwWYMVCJCg3YoPCEDg9I4PCWBw9qQQE1ExBTMQC2HwBr8TDLFQO8URDRAA",
+      "name": "申鹤夜兰魈"
+    },
+    {
+      "code": "EQBx0U8NABGROiwOEhDA4Z0OCSDR4kgPFFCA9rQQFbGAC8YRDBFgTckUDNGQadAWDZAA",
+      "name": "莱依拉那维莱特芭芭拉"
+    },
+    {
+      "code": "FRHwNR0TEVFxWGIVFoAgxJwMCUDAyZ0MCZHRWjMPE2Aw9rUQC7FQC70QC/HQD8ERDEAA",
+      "name": "铁甲熔火帝皇赛诺莱依拉"
+    },
+    {
+      "code": "FZDByVAVFZHhWWoTFaBB9GEPFEBw9aQPE2EBCDMQE4ExO0gWFIGAaL0QFaGAC8QRDBAA",
+      "name": "久岐忍绮良良深渊使徒·激流"
+    },
+    {
+      "code": "E5Jyyw4VAoOSW0cXCpMyPJ4QCxLS458QFSJD5EoRFpOCarsYDYOSDb8SDrNCEcYTDhIC",
+      "name": "莱依拉达达利亚芭芭拉"
+    },
+    {
+      "code": "A9Ch510OAXDw6IMOCIAw8ZcPCRBw86QPEzAw9L0PC0DR9jUPE5BR+WcQDbGQC9kRDTAA",
+      "name": "魔偶剑鬼珐露珊九条裟罗"
+    },
+    {
+      "code": "FpHByjMWFpLiWmsOF+ES9WQQF0Ex9qUQFGEC9zQRFIIyCUkUFbKCaVkXDYJBDMUSDREB",
+      "name": "久岐忍瑶瑶深渊使徒·激流"
+    },
+    {
+      "code": "AFBgxSkMAJCwyXwNBxDQ0YYTCYFwOJcVCZGAWZgNE9AB9DAPC0HwCL8QDIFATMQUDMAA",
+      "name": "优菈流浪者莫娜"
+    },
+    {
+      "code": "AJCx2R4NEZFQOJcTCoFBWTAVE5AB9TMPE2EwBb8QDIFACMQTDLGQO8kUDcEQTNEQFLAA",
+      "name": "莫娜雷音权现「女士」"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "AJCg2QQNAZGwWZcVE5AB2zAPE0AR9DMQE1EwCMMQDIFAO8QTDLGgTMoUDcEQaNERFAAA",
+      "deck1": "EpFy0lAOEhJiSisOE5Gi2i0WCpJxWqUUFKEC9TEQFEEy9zQRDILxCcUUDbJBPMoXDYEB",
+      "deck0Name": "行秋重云雷泽",
+      "deck1Name": "莱依拉那维莱特若陀龙王"
+    },
+    {
+      "deck0": "EZCR2V0NEbCh52AOFnAA6IMOCIAw9JcPCUBx9TMQEwExADUQE2FRBjYQE7FgC8kRDDAA",
+      "deck1": "EpKCWh8OErFR9ZgQC0FB96UQFGISPDIUFLIyaTQXDYJhDMcRDcKhDcsSDgKREdoSFhEB",
+      "deck0Name": "林尼珐露珊琳妮特",
+      "deck1Name": "夜兰雷音权现「女士」"
+    },
+    {
+      "deck0": "AECxxEAMAJBhyUQNFBBA0YYNCKBg9JcPCkFBBTAQE1EBCDMQE4EwO78TC7HwC8MQDLAA",
+      "deck1": "FEDhyU8VAJGQWUUNEuDA4p0OCSDR9DMPE0BB9kgPFGGACL0UC8HRaDYWFYGAacQWDJAA",
+      "deck0Name": "莫娜早柚优菈",
+      "deck1Name": "夏洛蒂那维莱特芭芭拉"
+    }
+  ]
+}

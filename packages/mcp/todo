@@ -1,0 +1,13 @@
+移植参考：如果你要为另一个卡牌游戏做类似MOD，核心需要替换的是：
+CommandExecutor（游戏操作API）
+GameStateConverter（游戏状态读取）
+ChoiceScreenUtils（各界面交互）
+patches/（游戏钩子）
+
+可复用部分：
+MCPServer
+MCPProtocol
+MCPToolHandler 
+的框架结构，只需修改工具定义部分。
+
+构建依赖：项目使用Maven，依赖 ModTheSpire.jar、BaseMod.jar、游戏本体 desktop-1.0.jar 以及 Google Gson（JSON序列化库）。这些依赖都需要你自己提供本地路径。 pom.xml:21-48

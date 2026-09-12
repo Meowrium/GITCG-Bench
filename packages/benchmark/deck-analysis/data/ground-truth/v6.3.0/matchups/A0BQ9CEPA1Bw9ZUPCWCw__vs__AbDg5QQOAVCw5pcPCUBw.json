@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "3.0",
+  "version": "v6.3.0",
+  "deckA": {
+    "code": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+    "name": "水八"
+  },
+  "deckB": {
+    "code": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+    "name": "雷狼"
+  },
+  "isMirror": false,
+  "perspectives": {
+    "a": {
+      "opponentNotables": {
+        "elementComposition": [
+          "electro",
+          "cryo",
+          "electro"
+        ],
+        "powerCurve": "backloaded",
+        "damageMode": "chip",
+        "threatSummary": "combo 体系，以重攻击为核心制胜"
+      },
+      "threats": [],
+      "assessment": {
+        "myAdvantages": [],
+        "oppAdvantages": []
+      },
+      "overallDirection": "",
+      "decisiveFactor": "",
+      "abstentions": []
+    },
+    "b": {
+      "opponentNotables": {
+        "elementComposition": [
+          "hydro",
+          "electro",
+          "pyro"
+        ],
+        "powerCurve": "",
+        "damageMode": "",
+        "threatSummary": ""
+      },
+      "threats": [],
+      "assessment": {
+        "myAdvantages": [],
+        "oppAdvantages": []
+      },
+      "overallDirection": "",
+      "decisiveFactor": "",
+      "abstentions": []
+    }
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "schemaVersion": "3.0",
+  "deckCode": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA",
+  "deckName": "雷狼",
+  "version": "v6.3.0",
+  "deckProfile": {
+    "primaryType": "combo",
+    "tempo": "medium",
+    "startupSpeed": "turn2~3"
+  },
+  "keyCards": {
+    "combo": [
+      {
+        "id": "312004",
+        "role": "combo_bridge",
+        "importance": "core",
+        "rationale": "OTK组件，前期过牌为主",
+        "mulligan": "never"
+      },
+      {
+        "id": "323001",
+        "role": "combo_bridge",
+        "importance": "core",
+        "rationale": "费用和收益都较高的蓄爆牌，但容易被对面在我方无法利用/回收额外骰子的情况下直接触发",
+        "mulligan": "never"
+      },
+      {
+        "id": "333008",
+        "role": "combo_bridge",
+        "importance": "core",
+        "rationale": "帮助北斗充满能量，或用于斩杀回合的减费",
+        "mulligan": "always_keep"
+      }
+    ],
+    "damage": [
+      {
+        "id": "332018",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "中后期关键轮次才能发挥高收益，前期卡手",
+        "mulligan": "never"
+      }
+    ],
+    "draw": [
+      {
+        "id": "322005",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "料理体系运转核心",
+        "mulligan": "high"
+      },
+      {
+        "id": "322008",
+        "role": "draw",
+        "importance": "important",
+        "rationale": "存储剩余费用、调整骰子质量",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322009",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "手牌运转的起点，与前期充能的节奏契合",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "322016",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "伙伴体系核心",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "332004",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "灵活、有效撑起手牌质量",
+        "mulligan": "high"
+      }
+    ],
+    "sustain": [
+      {
+        "id": "333005",
+        "role": "sustain",
+        "importance": "important",
+        "rationale": "提高料理轴浓度的单卡，提供少量回复并配合卯师傅产生额外骰子产出",
+        "mulligan": "never"
+      }
+    ],
+    "disruption": [],
+    "ramp": [
+      {
+        "id": "322001",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "提现较慢的支援牌，费用偏高，较慢的对局中可留",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322008",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "存储残余费用，过牌凑齐斩杀组件",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322016",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "伙伴体系核心",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "323001",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "费用和收益都较高的蓄爆牌，但容易被对面在我方无法利用/回收额外骰子的情况下直接触发",
+        "mulligan": "situational"
+      },
+      {
+        "id": "330002",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "打出条件略苛刻的回费组件，过牌多的情况下可留",
+        "mulligan": "never"
+      },
+      {
+        "id": "331401",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "灵活但牌效低的单卡，更倾向于依靠过牌抽上手",
+        "mulligan": "never"
+      },
+      {
+        "id": "331402",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "低费快速行动获得充能，提速争取轮次的同时节约骰子",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "332004",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "灵活、有效撑起手牌质量",
+        "mulligan": "high"
+      },
+      {
+        "id": "332005",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "开局几乎无法触发",
+        "mulligan": "never"
+      },
+      {
+        "id": "332019",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "收益单一的卡牌，更愿意在斩杀回合上手提现",
+        "mulligan": "never"
+      }
+    ],
+    "flex": []
+  },
+  "abstentions": [],
+  "damageMode": "chip",
+  "powerCurve": "backloaded",
+  "hasOneShotPotential": true,
+  "setupDependency": "high",
+  "resilience": {
+    "hasHealing": true,
+    "hasShield": false,
+    "hasImmuneControl": false,
+    "vulnerableTo": [
+      "frontloaded_burst",
+      "reaction_chain"
+    ]
+  },
+  "openingSequences": [
+    {
+      "id": "open-1",
+      "name": "北斗3A",
+      "condition": "北斗生存压力小",
+      "style": "tempo",
+      "steps": [
+        {
+          "action": "北斗 征涛",
+          "cost": "1雷+2任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "北斗 征涛",
+          "cost": "1雷+2任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "北斗 征涛",
+          "cost": "1雷+2任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "北斗 斫雷",
+          "cost": "3雷+3能",
+          "effectDescription": ""
+        }
+      ],
+      "diceConstraint": "3雷+3雷",
+      "totalDiceUsed": 12,
+      "isPrimary": true
+    },
+    {
+      "id": "open-2",
+      "name": "重狼",
+      "condition": "",
+      "style": "tempo",
+      "steps": [
+        {
+          "action": "重云 重华叠霜",
+          "cost": "3冰",
+          "effectDescription": ""
+        },
+        {
+          "action": "雷泽 利爪与苍雷",
+          "cost": "3雷",
+          "effectDescription": ""
+        },
+        {
+          "action": "雷泽 钢脊",
+          "cost": "1雷+2任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "雷泽 雷牙",
+          "cost": "3雷+2能",
+          "effectDescription": ""
+        }
+      ],
+      "diceConstraint": "3冰+4雷+3雷",
+      "totalDiceUsed": 12,
+      "isPrimary": true
+    },
+    {
+      "id": "open-3",
+      "name": "蓄爆",
+      "condition": "有蓄爆牌",
+      "style": "charge_up",
+      "steps": [
+        {
+          "action": "北斗 征涛",
+          "cost": "1雷+2任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "蓄爆",
+          "cost": "0",
+          "effectDescription": "投资牌蓄爆：骰子消耗/存储为非技能资源，铺垫后续回合"
+        }
+      ],
+      "diceConstraint": "1雷",
+      "totalDiceUsed": 3,
+      "isPrimary": false
+    }
+  ]
+}

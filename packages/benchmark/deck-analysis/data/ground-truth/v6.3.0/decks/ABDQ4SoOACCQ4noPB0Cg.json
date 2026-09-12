@@ -1,0 +1,270 @@
+{
+  "schemaVersion": "3.0",
+  "deckCode": "ABDQ4SoOACCQ4noPB0Cg9J0PCWDQ+cIPDNAg/sYQDKFgC8kQDLGQDtEQDeEQD9oQDvAA",
+  "deckName": "水凝",
+  "version": "v6.3.0",
+  "deckProfile": {
+    "primaryType": "control",
+    "secondaryType": "combo",
+    "tempo": "slow",
+    "startupSpeed": ">=turn5"
+  },
+  "keyCards": {
+    "combo": [
+      {
+        "id": "332009",
+        "role": "combo_starter",
+        "importance": "core",
+        "rationale": "中期有充能时才有效，用于斩杀或瞬抬血",
+        "mulligan": "never"
+      },
+      {
+        "id": "333002",
+        "role": "combo_bridge",
+        "importance": "core",
+        "rationale": "慢速对局可在起手留下，保证斩杀的稳定性",
+        "mulligan": "situational"
+      },
+      {
+        "id": "1601",
+        "role": "combo_finisher",
+        "importance": "core",
+        "rationale": "在带有璇玑屏的前提下12点斩杀"
+      },
+      {
+        "id": "1201",
+        "role": "combo_finisher",
+        "importance": "core",
+        "rationale": "配合白垩实现瞬时大回复"
+      }
+    ],
+    "damage": [
+      {
+        "id": "311102",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "提供持续资源及增伤",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "333002",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "慢速对局可在起手留下，保证斩杀的稳定性",
+        "mulligan": "situational"
+      }
+    ],
+    "draw": [
+      {
+        "id": "322005",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "料理轴运转核心",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "322008",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "提升骰子利用率，优化手牌及骰色",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322016",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "伙伴轴乃至整个支援区的运转核心，有效压缩牌库",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "332004",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "灵活过牌",
+        "mulligan": "always_keep"
+      }
+    ],
+    "sustain": [
+      {
+        "id": "312010",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "持续提供资源及护盾",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "331202",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "中期群体抬血用",
+        "mulligan": "never"
+      },
+      {
+        "id": "333003",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "争取关键轮次",
+        "mulligan": "never"
+      },
+      {
+        "id": "333006",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "中期打出以缓解生存压力",
+        "mulligan": "never"
+      },
+      {
+        "id": "333007",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "中期提供持续回复",
+        "mulligan": "never"
+      }
+    ],
+    "disruption": [
+      {
+        "id": "332013",
+        "role": "disruption",
+        "importance": "core",
+        "rationale": "针对特定召唤物牌组",
+        "mulligan": "situational"
+      },
+      {
+        "id": "332014",
+        "role": "disruption",
+        "importance": "important",
+        "rationale": "针对特定召唤物牌组",
+        "mulligan": "situational"
+      }
+    ],
+    "ramp": [
+      {
+        "id": "311102",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "提供持续资源及增伤",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "312010",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "持续提供资源及护盾",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "322001",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "高收益但优先级低于其他装备牌",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322005",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "料理轴运转核心",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "322008",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "提升骰子利用率，优化手牌及骰色",
+        "mulligan": "situational"
+      },
+      {
+        "id": "322016",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "伙伴轴乃至整个支援区的运转核心，有效压缩牌库",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "330001",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "提速装备装备牌，加速装备成型",
+        "mulligan": "high"
+      },
+      {
+        "id": "331201",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "灵活但牌效较低",
+        "mulligan": "never"
+      },
+      {
+        "id": "332004",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "灵活过牌",
+        "mulligan": "always_keep"
+      }
+    ],
+    "flex": [
+      {
+        "id": "332014",
+        "role": "flex_slot",
+        "importance": "important",
+        "rationale": "针对特定召唤物牌组",
+        "mulligan": "situational"
+      }
+    ]
+  },
+  "abstentions": [],
+  "damageMode": "single_burst",
+  "powerCurve": "backloaded",
+  "hasOneShotPotential": false,
+  "setupDependency": "high",
+  "resilience": {
+    "hasHealing": true,
+    "hasShield": true,
+    "hasImmuneControl": false,
+    "vulnerableTo": [
+      "frontloaded_burst",
+      "summon_swarm",
+      "chip"
+    ],
+    "hasSummonRemoval": true
+  },
+  "openingSequences": [
+    {
+      "id": "open-1",
+      "name": "全蓄",
+      "condition": "蓄爆足够",
+      "style": "charge_up",
+      "steps": [
+        {
+          "action": "蓄爆",
+          "cost": "0",
+          "effectDescription": "投资牌蓄爆：骰子消耗/存储为非技能资源，铺垫后续回合"
+        }
+      ],
+      "diceConstraint": "",
+      "totalDiceUsed": 0,
+      "isPrimary": false
+    },
+    {
+      "id": "open-2",
+      "name": "水环",
+      "condition": "有需要消除的元素附着",
+      "style": "tempo",
+      "steps": [
+        {
+          "action": "芭芭拉 演唱，开始♪",
+          "cost": "3水",
+          "effectDescription": ""
+        },
+        {
+          "action": "蓄爆",
+          "cost": "0",
+          "effectDescription": "投资牌蓄爆：骰子消耗/存储为非技能资源，铺垫后续回合"
+        }
+      ],
+      "diceConstraint": "3水",
+      "totalDiceUsed": 3,
+      "isPrimary": false
+    }
+  ]
+}

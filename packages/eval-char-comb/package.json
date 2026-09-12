@@ -1,0 +1,17 @@
+{
+  "name": "@gi-tcg/eval-char-comb",
+  "version": "0.1.0",
+  "type": "module",
+  "dependencies": {
+    "@gi-tcg/core": "workspace:*",
+    "@gi-tcg/data": "workspace:*",
+    "@gi-tcg/typings": "workspace:*"
+  },
+"scripts": {
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsup",
+    "build:noTyping": "NO_TYPING=1 tsup",
+    "extract": "gnx src/cli/extract-all.ts"
+  }
+}

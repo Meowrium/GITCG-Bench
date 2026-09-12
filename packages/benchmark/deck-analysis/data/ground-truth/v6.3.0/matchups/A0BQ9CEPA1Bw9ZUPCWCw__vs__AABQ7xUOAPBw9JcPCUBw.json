@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "3.0",
+  "version": "v6.3.0",
+  "myDeckCode": "A0BQ9CEPA1Bw9ZUPCWCw+MIPDIBg/cYQDCGQCskQDaEQC9EQDbEgDt0QD+EQD/IQD/AA",
+  "myDeckName": "水八",
+  "opponentDeckCode": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+  "opponentDeckName": "神宵",
+  "isMirror": false,
+  "opponentNotables": {
+    "elementComposition": [
+      "cryo",
+      "pyro",
+      "cryo"
+    ],
+    "powerCurve": "spiky",
+    "damageMode": "chip",
+    "threatSummary": "combo 体系，以兽肉薄荷卷、元素共鸣：粉碎之冰为核心制胜"
+  },
+  "threats": [
+    {
+      "source": "宵宫 琉金云间草",
+      "kind": "lethal",
+      "window": "mid",
+      "countermeasure": "尽可能用料理、圣遗物等回复、减伤效果降低对手爆发轮次的战损，抓住轮次窗口期斩杀",
+      "existingCounterCards": null
+    },
+    {
+      "source": "申鹤 神女遣灵真诀",
+      "kind": "lethal",
+      "window": "early",
+      "countermeasure": "送你一程",
+      "existingCounterCards": [
+        "送你一程"
+      ]
+    }
+  ],
+  "assessment": {
+    "myAdvantages": [
+      "better_sustain"
+    ],
+    "oppAdvantages": [
+      "tempo_advantage",
+      "faster_combo"
+    ],
+    "recommendedStrategy": "outlast"
+  },
+  "overallDirection": "heavilyUnfavored",
+  "decisiveFactor": "宵宫Q提供的总伤极高，足以击穿回复带来的韧性",
+  "abstentions": [],
+  "reactionControl": {
+    "myMonopoly": [],
+    "oppMonopoly": [],
+    "contested": [],
+    "advantage": "even"
+  },
+  "tempoShift": {
+    "shift": "maintain_early_pressure",
+    "rationale": ""
+  },
+  "windowShift": {
+    "myEffectiveWindow": "",
+    "adjustment": "same_as_isolated"
+  },
+  "playOrder": {}
+}

@@ -1,0 +1,25 @@
+{
+  "version": "v6.3.0",
+  "matchups": [
+    {
+      "id": "pyroke-vs-pyroke",
+      "deck0Name": "PyroKe",
+      "deck1Name": "PyroKe",
+      "deck0": "ASBg2xwOATAw408OBEDw5JAPCRAA9JcPCUBw9aoPClCg9rwPC2HAC8kQDLGQEdIRDTAA",
+      "deck1": "ASBg2xwOATAw408OBEDw5JAPCRAA9JcPCUBw9aoPClCg9rwPC2HAC8kQDLGQEdIRDTAA",
+      "games": 10,
+      "sideA": {"name": "baseline-rand-a", "kind": "baseline", "options": {"endTurnPenalty": 5}},
+      "sideB": {"name": "baseline-rand-b", "kind": "baseline", "options": {"endTurnPenalty": 5}}
+    },
+    {
+      "id": "pyroke-vs-cryohe",
+      "deck0Name": "PyroKe",
+      "deck1Name": "CryoHe",
+      "deck0": "ASBg2xwOATAw408OBEDw5JAPCRAA9JcPCUBw9aoPClCg9rwPC2HAC8kQDLGQEdIRDTAA",
+      "deck1": "APBw4CAOAABA8Y4PCBDg9JcPCUBw9b0PDFAg9sIPDIGQCskQDKHQC80QDbHQDt8QDeAA",
+      "games": 5,
+      "sideA": {"name": "baseline-rand-a", "kind": "baseline", "options": {"endTurnPenalty": 5}},
+      "sideB": {"name": "baseline-rand-b", "kind": "baseline", "options": {"endTurnPenalty": 5}}
+    }
+  ]
+}

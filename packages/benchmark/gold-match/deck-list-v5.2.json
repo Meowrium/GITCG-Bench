@@ -1,0 +1,89 @@
+{
+  "version": "v5.2",
+  "decks": [
+    {
+      "code": "AFBwxScNEZCA2YMNCNCg9I4PCEDg9pcPCWFxBTMQGVExBpMQC2HwO78TFrFRDGURDDAA",
+      "name": "申鹤魈夜兰"
+    },
+    {
+      "code": "FvHC0BYXGnGC3msQGiGy85wQCkFx9ZgQFVGC9kkQDGFB974QFHFS+DYRDSKhA8sXDZEB",
+      "name": "久岐忍「女士」闲云"
+    },
+    {
+      "code": "FmLiN40OG5FC2pAOG+Fy6qgPCpFx85gQCyFB9aUQFEEy9jQQFmJyPFgUDLJBi7URFLEB",
+      "name": "深渊使徒·激流娜维娅千织"
+    },
+    {
+      "code": "AaBR2RgNFpCw21EPBUAQ9JcPCVBx9TEPE2ERO1cTFbFxDJMQGcEwDcYQDNFgEMoRDAAA",
+      "name": "宵宫夜兰莱欧斯利"
+    },
+    {
+      "code": "ARAxxF4MEUBgyU8MBJHxOCoTEoCg3JcPFECB9FcPFVBx9oITGLEgirYYC6FgC8EQDLAA",
+      "name": "班尼特深渊使徒·激流若陀龙王"
+    },
+    {
+      "code": "GmBBtl8LFdHhNacVFoARxGEMFkAhyWIMCZDA3JwPCUDQ9J0PGGEhAoIUGdHhaZ4WC5AA",
+      "name": "千织铁甲熔火帝皇深渊使徒·激流"
+    },
+    {
+      "code": "FtLyN0AUAmHRxVoNF0EiymMNCpLBiZ0PCjHR5Z4PGUEi9YMQGmHi958ZDKJhi7cSDBEB",
+      "name": "铁甲熔火帝皇托马赛诺"
+    },
+    {
+      "code": "FdHxNh0TAWDQxFkMFkEhiGIOCTDA45wOCUDQ5J0PGEAh9IIPGWDh9p4YC6FgirYRCxAA",
+      "name": "铁甲熔火帝皇镀金旅团·炽沙叙事人赛诺"
+    },
+    {
+      "code": "ARFhNYwTGlFBNo8TGmFxZacNCbBw6ZcOCpBB9DMPE0Ax9VcPFWFxO5MTC7FACsEQDLAA",
+      "name": "可莉娜维娅千织"
+    },
+    {
+      "code": "ARAA4gsOAyAQ8EwPFUBx9FcPGGAh9oIPC8Bg/LYbDKFgC8YQDPGQEckRGDGAaeEWDpAA",
+      "name": "妮露莫娜纳西妲"
+    },
+    {
+      "code": "F5Ax1G0NF0Ah2XwVF6DA8p0PFUBx9IIPGWHhBJ4TC8HRTDUYE6FRioUbGKFQDskWDJAA",
+      "name": "阿佩普的绿洲守望者辛焱圣骸飞蛇"
+    },
+    {
+      "code": "FWDx0B4NERDR0WIZFkEglJwOCUDA9p0aCeHRroIRGBEhEZ4RGTHgE8QUDNFAacYWDJAA",
+      "name": "铁甲熔火帝皇雷音权现镀金旅团·炽沙叙事人"
+    },
+    {
+      "code": "FUDBxl4MGZCByWoNFhCh0WENCVERWjAPE1AB9UgPFGGBCoEQGNEQD78QDPEwacQWDJAA",
+      "name": "久岐忍深渊使徒·激流闲云"
+    },
+    {
+      "code": "FWDByUEMGZCB0WoNFhCg1ZEYE4AB9DAPFFCB9kgPGGERCoEQC7HwDcQQDPFAacYWDJAA",
+      "name": "久岐忍无相之冰闲云"
+    },
+    {
+      "code": "FcDxtqQLF9ERracaFtAhxGIMF5GgN5wTCXDA3p0PCUDR9IIPGGEhTJ4UGcHhiqwYGqAA",
+      "name": "铁甲熔火帝皇千织圣骸毒蝎"
+    },
+    {
+      "code": "GBHAWhkOApCw6YYOCKBg6pwPCUDQ9J0PGWHgAsIYDKEgC8YQDMFgD8kQDPGQadEWDZAA",
+      "name": "娜维娅迪希雅诺艾尔"
+    }
+  ],
+  "matchups": [
+    {
+      "deck0": "AFBwxScNEZCA2YMNCNCg9I4PCEDg9pcPCWFxBTMQGVExBpMQC2HwO78TFrFRDGURDDAA",
+      "deck1": "FvHC0BYXGnGC3msQGiGy85wQCkFx9ZgQFVGC9kkQDGFB974QFHFS+DYRDSKhA8sXDZEB",
+      "deck0Name": "申鹤魈夜兰",
+      "deck1Name": "久岐忍「女士」闲云"
+    },
+    {
+      "deck0": "FmLiN40OG5FC2pAOG+Fy6qgPCpFx85gQCyFB9aUQFEEy9jQQFmJyPFgUDLJBi7URFLEB",
+      "deck1": "AaBR2RgNFpCw21EPBUAQ9JcPCVBx9TEPE2ERO1cTFbFxDJMQGcEwDcYQDNFgEMoRDAAA",
+      "deck0Name": "深渊使徒·激流娜维娅千织",
+      "deck1Name": "宵宫夜兰莱欧斯利"
+    },
+    {
+      "deck0": "ARAxxF4MEUBgyU8MBJHxOCoTEoCg3JcPFECB9FcPFVBx9oITGLEgirYYC6FgC8EQDLAA",
+      "deck1": "GmBBtl8LFdHhNacVFoARxGEMFkAhyWIMCZDA3JwPCUDQ9J0PGGEhAoIUGdHhaZ4WC5AA",
+      "deck0Name": "班尼特深渊使徒·激流若陀龙王",
+      "deck1Name": "千织铁甲熔火帝皇深渊使徒·激流"
+    }
+  ]
+}

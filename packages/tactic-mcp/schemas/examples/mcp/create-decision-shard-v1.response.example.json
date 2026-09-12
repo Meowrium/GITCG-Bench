@@ -1,0 +1,85 @@
+{
+  "ok": true,
+  "decision_shard": {
+    "version": "DecisionShardV1",
+    "shard_id": "shard_sess_001_t2",
+    "session_id": "sess_001",
+    "plan_id": "plan_sess_001_1741270000",
+    "turn_range": {
+      "start": 2,
+      "end": 2
+    },
+    "tactical_goal": "Convert turn-2 hand into a safe reaction line.",
+    "candidate_policies": [
+      {
+        "id": "policy_default_fragmented_decision",
+        "priority": 50,
+        "preconditions": ["has_pending_rpc", "action_available"],
+        "action_template": {
+          "tool": "submit_decision_fragment_v1",
+          "args": {
+            "fragment_strategy": "pick_highest_valid_candidate"
+          }
+        }
+      }
+    ],
+    "execution_constraints": {
+      "max_actions_this_turn": 3,
+      "dice_budget_mode": "balanced"
+    },
+    "fallback_chain": [
+      {
+        "when": "primary_policy_invalid",
+        "policy": "save_dice"
+      }
+    ],
+    "exit_conditions": ["reaction_ready", "end_phase_reached"],
+    "combat_window_plan": {
+      "window_id": "r2_reaction_window",
+      "plan_horizon": {
+        "min_actions": 2,
+        "max_actions": 4
+      },
+      "entry_conditions": ["pending_method=action", "round=2"],
+      "interrupt_conditions": ["pending_method!=action", "self.active_hp<=2"],
+      "success_conditions": ["reaction_ready"],
+      "fail_conditions": ["core_character_dead"],
+      "entry_node_id": "setup",
+      "nodes": [
+        {
+          "id": "setup",
+          "kind": "setup",
+          "intent": "establish_setup",
+          "expected_action_case": ["useSkill", "playCard"],
+          "when": ["pending_method=action"],
+          "must_do": ["preserve_core_window"],
+          "avoid": ["greedy_overcommit"],
+          "prefer_tags": ["useSkill", "summon"],
+          "resource_policy": "balanced",
+          "fallback_rule": "pick_highest_valid_candidate",
+          "next": [
+            {
+              "condition": "reaction_ready",
+              "to": "convert",
+              "priority": 100
+            }
+          ]
+        },
+        {
+          "id": "convert",
+          "kind": "convert",
+          "intent": "cash_in_reaction",
+          "expected_action_case": ["playCard", "useSkill"],
+          "when": ["pending_method=action"],
+          "must_do": ["maximize_reaction_value"],
+          "avoid": ["break_next_turn_window_for_1_damage"],
+          "prefer_tags": ["playCard", "reaction", "useSkill"],
+          "resource_policy": "aggressive",
+          "fallback_rule": "pick_highest_valid_candidate",
+          "next": []
+        }
+      ]
+    }
+  },
+  "shard_path": "runtime-plans/sess_001.shard.turn2.json"
+}

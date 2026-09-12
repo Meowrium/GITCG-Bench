@@ -1,0 +1,22 @@
+{
+  "name": "@gi-tcg/tactic-mcp",
+  "version": "0.17.4",
+  "type": "module",
+  "description": "Runtime schema validator for tactic MCP tool contracts",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "development": ["./src/index.ts", "./dist/index.js"],
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsup"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1"
+  }
+}

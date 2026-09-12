@@ -1,0 +1,12 @@
+{
+  "planFile": "../../output/plan-oneshot/round9/plans/moyou.r0.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round9/plans/shuizhai.r0.json"
+  },
+  "games": 10,
+  "seedBase": 20264200,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round9/games/moyou__vs__shuizhai"
+}

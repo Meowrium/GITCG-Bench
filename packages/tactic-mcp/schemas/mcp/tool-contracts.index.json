@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gtcg.local/schemas/mcp/tool-contracts.index.json",
+  "version": "ToolContractsIndexV1",
+  "tools": [
+    {
+      "name": "create_opening_plan_v2",
+      "request_schema": "./create-opening-plan-v2.request.schema.json",
+      "response_schema": "./create-opening-plan-v2.response.schema.json"
+    },
+    {
+      "name": "create_decision_shard_v1",
+      "request_schema": "./create-decision-shard-v1.request.schema.json",
+      "response_schema": "./create-decision-shard-v1.response.schema.json"
+    },
+    {
+      "name": "critic_evaluate_v1",
+      "request_schema": "./critic-evaluate-v1.request.schema.json",
+      "response_schema": "./critic-evaluate-v1.response.schema.json"
+    }
+  ]
+}

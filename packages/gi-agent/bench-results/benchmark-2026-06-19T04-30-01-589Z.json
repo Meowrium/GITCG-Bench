@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-06-19T04:30:01.589Z",
+  "version": "v6.3.0",
+  "summary": {
+    "totalMatchups": 1,
+    "totalGames": 2,
+    "meanWinRateA": 0.5,
+    "meanRounds": 7,
+    "meanElapsedMs": 29759.5
+  },
+  "matchups": [
+    {
+      "matchupId": "shuiba-mirror-smoke",
+      "sideAName": "neural-α0.5",
+      "sideBName": "baseline",
+      "total": 2,
+      "winsP0": 1,
+      "winsP1": 1,
+      "draws": 0,
+      "winRateP0": 0.5,
+      "avgRounds": 7,
+      "avgElapsedMs": 29759.5
+    }
+  ],
+  "result": {
+    "totalMatchups": 1,
+    "totalGames": 2,
+    "results": [
+      {
+        "matchupId": "shuiba-mirror-smoke",
+        "sideAName": "neural-α0.5",
+        "sideBName": "baseline",
+        "batch": {
+          "total": 2,
+          "winsP0": 1,
+          "winsP1": 1,
+          "draws": 0,
+          "winRateP0": 0.5,
+          "avgRounds": 7,
+          "avgElapsedMs": 29759.5,
+          "results": [
+            {
+              "winner": 0,
+              "rounds": 7,
+              "elapsedMs": 34357,
+              "replayPath": "output\\benchmark-logs\\shuiba-mirror-smoke\\game-0001-p0.json"
+            },
+            {
+              "winner": 1,
+              "rounds": 7,
+              "elapsedMs": 25162,
+              "replayPath": "output\\benchmark-logs\\shuiba-mirror-smoke\\game-0002-p1.json"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "priorMatrix": []
+}

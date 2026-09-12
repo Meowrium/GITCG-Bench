@@ -1,0 +1,13 @@
+{
+  "planFile": "../../output/plan-oneshot/round18-mirror/plans/mm9-leilang.n1.json",
+  "opponent": {
+    "type": "plan",
+    "planFile": "../../output/plan-oneshot/round18-mirror/plans/ds12-leilang.n1.json"
+  },
+  "games": 10,
+  "seedBase": 20272001,
+  "concurrency": 4,
+  "alternateFirstPlayer": true,
+  "outDir": "../../output/plan-oneshot/round18-mirror/games/x-leilang",
+  "opponentDeckCode": "AbDg5QQOAVCw5pcPCUBw9MIPDFAg9sYQDCFgA8kQDDGQDMoQDMGgDdEQDdEQENYRDQAA"
+}

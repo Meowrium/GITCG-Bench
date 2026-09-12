@@ -1,0 +1,23 @@
+{
+  "name": "critic_evaluate_v1",
+  "arguments": {
+    "session_id": "sess_001",
+    "plan_id": "plan_sess_001_1741270000",
+    "turn": 2,
+    "step_id": "turn2_step1",
+    "expected_policy_id": "pol_201",
+    "actual_tool": "choose_action",
+    "actual_args": {
+      "action_index": 2,
+      "used_dice": [8, 2, 2]
+    },
+    "state_delta": {
+      "self_hp_delta": -1,
+      "opp_hp_delta": -2,
+      "dice_spent": 3,
+      "cards_spent": 1,
+      "notes": "Trade is slightly positive and preserves tempo."
+    },
+    "hard_violations": []
+  }
+}

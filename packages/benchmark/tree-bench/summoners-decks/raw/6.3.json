@@ -1,0 +1,1308 @@
+{
+  "source": "https://www.summoners.top/",
+  "api": "https://www.summoners.top/api/v4/teams-stats?gameVersion=6.3 + /teams/{teamId}/decks-stats?gameVersion=6.3",
+  "gameVersion": "6.3",
+  "versionName": "月之四",
+  "numGamesWithDeck": 75,
+  "usageRateDefinition": "numGames / numGamesWithDeck (ratio, 0-1)",
+  "winRateDefinition": "numGamesWin / numGames (ratio, 0-1)",
+  "deckCount": 72,
+  "decks": [
+    {
+      "deckCode": "FqHByvwMF5AxyXwNF3HBh1cYFXJxHasPGkCx9MEYHKERijUeGIFBzIQcGMFR1IUdHEAA",
+      "teamId": "1211-2305-2702",
+      "characters": [
+        "芙宁娜",
+        "蚀灭的源焰之主",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Lord of Eroded Primal Fire",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 5,
+      "numGamesWin": 3,
+      "usageRate": 0.066667,
+      "winRate": 0.6
+    },
+    {
+      "deckCode": "FhHB5+4PAkAR9PEYH6EQip0fCYHR+IQQGPFATcYUDNFgackWDJGQzNAcDcEA1NEdDUAA",
+      "teamId": "1211-1408-2704",
+      "characters": [
+        "芙宁娜",
+        "八重神子",
+        "贪食匿叶龙山王"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Yae Miko",
+        "Gluttonous Yumkasaur Mountain King"
+      ],
+      "numGames": 5,
+      "numGamesWin": 2,
+      "usageRate": 0.066667,
+      "winRate": 0.4
+    },
+    {
+      "deckCode": "IUBg9CwUAsGxTJEYGaESihsZIVGxlYQaGOFBrrkdGzGS2xwdIbLCEx0hDjKgHuohD+AA",
+      "teamId": "1316-1602-1603",
+      "characters": [
+        "嘉明",
+        "诺艾尔",
+        "钟离"
+      ],
+      "charactersEn": [
+        "Gaming",
+        "Noelle",
+        "Zhongli"
+      ],
+      "numGames": 5,
+      "numGamesWin": 1,
+      "usageRate": 0.066667,
+      "winRate": 0.2
+    },
+    {
+      "deckCode": "IOCQ8gUPAiDQ9EEPBkCQ9mkQCSFwApcQEzERAzEQGYExO5MTC7HgDL4QE8Fh1DYdDUAA",
+      "teamId": "1105-1415-1604",
+      "characters": [
+        "神里绫华",
+        "瓦雷莎",
+        "阿贝多"
+      ],
+      "charactersEn": [
+        "Kamisato Ayaka",
+        "Varesa",
+        "Albedo"
+      ],
+      "numGames": 5,
+      "numGamesWin": 3,
+      "usageRate": 0.066667,
+      "winRate": 0.6
+    },
+    {
+      "deckCode": "IaFRWhkPIECw9JcPE2Ax9jMZGVExlZMbDKJgA8YgDDKgBsogDWEQadEWFJGhzEocE8AA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.053333,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ItAB9N8PFEAi9iMPImExCOIQHoEgO5cTCbFwiqQYCqFB26sfGpGx+cEQHKERxUocIVAA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.053333,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "IkAB9N8PFGAi9iMQIoExCOITHrEgO5cYCaFwiqQZClFBlasdGrGx+cEfHJES1B0dD0AA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 4,
+      "numGamesWin": 2,
+      "usageRate": 0.053333,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "ATBx6dYOHKDR6i4eEpDg9JcPFUFxO1cTHbGRitkZDFFglcYaDSEQr9EaGvER1KEdGkAA",
+      "teamId": "1307-1610-1611",
+      "characters": [
+        "胡桃",
+        "卡齐娜",
+        "希诺宁"
+      ],
+      "charactersEn": [
+        "Hu Tao",
+        "Kachina",
+        "Xilonen"
+      ],
+      "numGames": 4,
+      "numGamesWin": 0,
+      "usageRate": 0.053333,
+      "winRate": 0
+    },
+    {
+      "deckCode": "AWAwxDkMEUBgyU8MBJDx1ioTEoGhOFcVFaBx9IIPGEAi9hEYIaEQisEZDFER1DYdE8AA",
+      "teamId": "1303-2401-2602",
+      "characters": [
+        "班尼特",
+        "无相之雷",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Bennett",
+        "Electro Hypostasis",
+        "Azhdaha"
+      ],
+      "numGames": 4,
+      "numGamesWin": 1,
+      "usageRate": 0.053333,
+      "winRate": 0.25
+    },
+    {
+      "deckCode": "ITBR8xkPIECw9JcPE2Ax9jMZGVEwusYbDKJgA8ogDDKgBtEgDWERzEocFMGh1FodD0AA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.04,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "IaBR3BkVIKCw9JcPCUBx9jMPE2ExulcgFTJwA8YgDEJgBsogDGGgzNEcDcER1EodFEAA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.04,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "IRBR8RkPIECw9pcYCaFxlTMZE1EwusYbDKJgA8ogDDKgBtEgDWERzEocFMGh1FodD0AA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.04,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "IcBR8xkPIDCw9pcYCaFxlTMZE1ExuoQbGKJAA8YgDDJgBsogDWEQzNEcFMGh1EodDUAA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.04,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "FCAi8iAPHUDy9CMPImAx9uIQHoEgO5cTCbFwiqQYCqFB26sfGpGx+cEcHFES1B0dD0AA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.04,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "IkAB9N8PFGAi9iMQIoExCOITHrEgO5cYCaFwiqQZClFB+KsfGoKxKsEiHKES1B0dD0AA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.04,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "IqEBSt8hFNAi9CMPIkAx9uIPHmEgCJcQCYFwiqQYCqFB28EdHLER+WUfGJFBCoQdFEAA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.04,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "FqDByfwMF5Ax13wYF3HBhzMhFdBx9FcPGkGxiqsYHKERlcEeE4FRzIUcGMFR1ModHEAA",
+      "teamId": "1211-2305-2702",
+      "characters": [
+        "芙宁娜",
+        "蚀灭的源焰之主",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Lord of Eroded Primal Fire",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 3,
+      "numGamesWin": 3,
+      "usageRate": 0.04,
+      "winRate": 1
+    },
+    {
+      "deckCode": "H6HBynMMFpDByXwYF3HBh1chFdBx9KsPGkGxisEYHKERujUbGKFBzIQcGMFR1IUdHEAA",
+      "teamId": "1211-2305-2702",
+      "characters": [
+        "芙宁娜",
+        "蚀灭的源焰之主",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Lord of Eroded Primal Fire",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 3,
+      "numGamesWin": 2,
+      "usageRate": 0.04,
+      "winRate": 0.6667
+    },
+    {
+      "deckCode": "HJDR6dYOAaBx6i4eEpDg9JcPFUFxO1cTHbGRitkYE6FhlTYaDCFgacYaE/Ghr1odDkAA",
+      "teamId": "1307-1610-1611",
+      "characters": [
+        "胡桃",
+        "卡齐娜",
+        "希诺宁"
+      ],
+      "charactersEn": [
+        "Hu Tao",
+        "Kachina",
+        "Xilonen"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.04,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "FnDA9CEPHkHhlfEdHzER07cdG7Fx+IQfGIFAacYWDJFgzMkcDMGQ1NAdDUEQ3NEdHsAA",
+      "teamId": "1211-1408-2704",
+      "characters": [
+        "芙宁娜",
+        "八重神子",
+        "贪食匿叶龙山王"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Yae Miko",
+        "Gluttonous Yumkasaur Mountain King"
+      ],
+      "numGames": 3,
+      "numGamesWin": 0,
+      "usageRate": 0.04,
+      "winRate": 0
+    },
+    {
+      "deckCode": "IUBR2bINGJDB3o8OG5BQ6ZcOCaBx6jMPEyAx9FcPFUBw9cEPDGEROzYTE7Fh1IQdGEAA",
+      "teamId": "1115-1608-2603",
+      "characters": [
+        "爱可菲",
+        "娜维娅",
+        "黄金王兽"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Navia",
+        "Golden Wolflord"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.04,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "ARDR2b0NEZCA25cOCVBx5TEPE0AR9FcQFYFxCJMTGbEyOwAQDMFgDMYRDAGgEModDUAA",
+      "teamId": "1209-1404-1412",
+      "characters": [
+        "夜兰",
+        "赛诺",
+        "克洛琳德"
+      ],
+      "charactersEn": [
+        "Yelan",
+        "Cyno",
+        "Clorinde"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.04,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "EXCA6ioOAqDA9GgPCEGgBooQCWHQS50UC7ExioQYGKFA08YfDIFgTckUDNGQadAWHpAA",
+      "teamId": "1209-1601-1603",
+      "characters": [
+        "夜兰",
+        "凝光",
+        "钟离"
+      ],
+      "charactersEn": [
+        "Yelan",
+        "Ningguang",
+        "Zhongli"
+      ],
+      "numGames": 3,
+      "numGamesWin": 1,
+      "usageRate": 0.04,
+      "winRate": 0.3333
+    },
+    {
+      "deckCode": "HqDA9CwPAkGgBooQCGGgS50YCaHRioQaGOFArsYdDDFg28kdDLGQTdAUHtFwaeoWDpAA",
+      "teamId": "1512-1601-1603",
+      "characters": [
+        "蓝砚",
+        "凝光",
+        "钟离"
+      ],
+      "charactersEn": [
+        "Lan Yan",
+        "Ningguang",
+        "Zhongli"
+      ],
+      "numGames": 3,
+      "numGamesWin": 0,
+      "usageRate": 0.04,
+      "winRate": 0
+    },
+    {
+      "deckCode": "IaBR8xkPIDCw9JcPE0Ax9jMbGaExupMgDDJgA8YgDGKgBsoWDZEQzNEcFMGh1EodE0AA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.026667,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IXBR8xkPIDCx9DMPE0Ax9rcPG2JwA8YgDDJgBsogDGGgadEWDZERzEocFMGh1FodHkAA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.026667,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IXBR8xkPIECx9DMPE2Ax9rcbG6FwusYgDDJgA8ogDGKgBtEWDZER1EodFEGh3FodHsAA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FqDByfwMF5Ax13wYF3HBh6shGtCx9MEPHEERijUYE6FRuoQbGKFBzIUcGMFR1ModHEAA",
+      "teamId": "1211-2305-2702",
+      "characters": [
+        "芙宁娜",
+        "蚀灭的源焰之主",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Lord of Eroded Primal Fire",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.026667,
+      "winRate": 1
+    },
+    {
+      "deckCode": "FqHByvwMF5Ax13wYF3HBh1chFdBx9KsPGkGxisEYHKEQlbMeE4FRzDUcGMFR1IUdHEAA",
+      "teamId": "1211-2305-2702",
+      "characters": [
+        "芙宁娜",
+        "蚀灭的源焰之主",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Lord of Eroded Primal Fire",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FqDByfwMF5Ax13wYF3HBh6shGtCx9LcPHEERisEYE6FR6IQQGPFBzIUcGMFR1ModHEAA",
+      "teamId": "1211-2305-2702",
+      "characters": [
+        "芙宁娜",
+        "蚀灭的源焰之主",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Lord of Eroded Primal Fire",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "H6DByXMMFpDB13wNF3HBh6sYGnKxHcEPHEAQ9LMUC8Ex6DUeE4FRzIUcGMFR1ModHEAA",
+      "teamId": "1211-2305-2702",
+      "characters": [
+        "芙宁娜",
+        "蚀灭的源焰之主",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Lord of Eroded Primal Fire",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FqDByfwMF5Ax13wYF3HBh1chFdBx9KsPGkGxisEYHKERlTUeE4FRzIUcGMFR1ModHEAA",
+      "teamId": "1211-2305-2702",
+      "characters": [
+        "芙宁娜",
+        "蚀灭的源焰之主",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Lord of Eroded Primal Fire",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.026667,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ARFxo9YOHJDR6S4OEqDg6pceCZBx9FcPFUFxO9kTHbGQisYaDCFgr9EaDfER1KEdGkAA",
+      "teamId": "1307-1610-1611",
+      "characters": [
+        "胡桃",
+        "卡齐娜",
+        "希诺宁"
+      ],
+      "charactersEn": [
+        "Hu Tao",
+        "Kachina",
+        "Xilonen"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "HJDR6dYOAaBx6i4eEpDg9JcPFUFxO1cTHbGRitkYE6FhlTYaDCFgacYaFfGhr6MdDkAA",
+      "teamId": "1307-1610-1611",
+      "characters": [
+        "胡桃",
+        "卡齐娜",
+        "希诺宁"
+      ],
+      "charactersEn": [
+        "Hu Tao",
+        "Kachina",
+        "Xilonen"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "FnDA9iEPHpHh0/EdHzER27cdG7Fx+IQfGIFATcYUDNFgackWDJGQ1NAdDUEQ3NEdHsAA",
+      "teamId": "1211-1408-2704",
+      "characters": [
+        "芙宁娜",
+        "八重神子",
+        "贪食匿叶龙山王"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Yae Miko",
+        "Gluttonous Yumkasaur Mountain King"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "IUBg9CwUAsGxTJEYGaESihsZIVGxlYQaG+GRrrkdITHC2xwdIbLQE+khDjKgHuohD+AA",
+      "teamId": "1316-1602-1603",
+      "characters": [
+        "嘉明",
+        "诺艾尔",
+        "钟离"
+      ],
+      "charactersEn": [
+        "Gaming",
+        "Noelle",
+        "Zhongli"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.026667,
+      "winRate": 0
+    },
+    {
+      "deckCode": "IWBR3rIOGJDB6Y8OG6BQ6pcPCUBx9DMPE2Ax9lcTFbFwxcEcDFERzDYcE8Fg1MYdDEAA",
+      "teamId": "1115-1608-2603",
+      "characters": [
+        "爱可菲",
+        "娜维娅",
+        "黄金王兽"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Navia",
+        "Golden Wolflord"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "AXBB6s0OAqCw9IYPCEFgS50YCaHRioQfGIJAA8YQDPFgD8kUDNGQTdAWDZEQadEdHkAA",
+      "teamId": "1304-1602-1610",
+      "characters": [
+        "安柏",
+        "诺艾尔",
+        "卡齐娜"
+      ],
+      "charactersEn": [
+        "Amber",
+        "Noelle",
+        "Kachina"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.026667,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ABGA5yoOAqDA6mgPCECg9IoQCWHQBp0UGLFBioQYDKFg08YfDIGQTckUDdEAadEWDZAA",
+      "teamId": "1108-1601-1603",
+      "characters": [
+        "七七",
+        "凝光",
+        "钟离"
+      ],
+      "charactersEn": [
+        "Qiqi",
+        "Ningguang",
+        "Zhongli"
+      ],
+      "numGames": 2,
+      "numGamesWin": 2,
+      "usageRate": 0.026667,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IqIBHd8PGkBS9CMPImAx9uIQHoEgCJcTCbFwO6QYCqFBiqsdGrGx+cEfHJERCkodFEAA",
+      "teamId": "1116-1511-2406",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "深渊咏者·紫电"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Abyss Lector: Violet Lightning"
+      ],
+      "numGames": 2,
+      "numGamesWin": 1,
+      "usageRate": 0.026667,
+      "winRate": 0.5
+    },
+    {
+      "deckCode": "IUBxycYMG5IhHcgOHJCB6bUOCKDg6o4PCUDQ9J0PC2HwAsEYDKERijYZE2Fh1IQdGEAA",
+      "teamId": "1314-2603-2604",
+      "characters": [
+        "阿蕾奇诺",
+        "黄金王兽",
+        "黑蛇骑士·摧岩之钺"
+      ],
+      "charactersEn": [
+        "Arlecchino",
+        "Golden Wolflord",
+        "Black Serpent Knight: Rockbreaker Ax"
+      ],
+      "numGames": 2,
+      "numGamesWin": 0,
+      "usageRate": 0.026667,
+      "winRate": 0
+    },
+    {
+      "deckCode": "IaBR8xkPIECw9JcPCWBx9jMZE1EwurQbDKJgA8YgDDKgBsogDWEQzNEcFMGh1EodFUAA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IaBR8RkPIBCw9JcPCUBx9jMPE2EwusYbDKJgA8ogDDKgBtEgDWERzEocFMGg1NwdFUAA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IRBR8RkPICCw9JcPCUBx9jMPE2EwusYbDKJgA8ogDDKgBtEgDWERzEocFMGh1FodD0AA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IcFRWhkPIDCw85cPCUBx9DMPE2ExuoQbGKJAA8YgDDJgBsogDWEQzNEcFMGh1EodDUAA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IcFRWhkPIDCw85cPCUBx9DMPE2ExuoQbGKJAA8YgDDJgBsogDWEQ1NEdFEGh3EodDcAA",
+      "teamId": "1115-1310-2206",
+      "characters": [
+        "爱可菲",
+        "林尼",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Escoffier",
+        "Lyney",
+        "Hydro Tulpa"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ItAB9N8PFEAi9iMPImExCOIQHoEgO5cTCbFwiqQYCqFB26sfGpGx+cEQHKERxTYcIVAA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IqIBHd8PFCAi9CMPIkAw9k8PHmEhCOIQCYFwO5cTCrFAiqQYGqGxlasfHJER+cEdHEAA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ItAB8t8PFEAi9CMPImExCOIQHoEgO5cTCbFwiqQYCqFBlVcdGrGx+cEfHJERCsodIUAA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ItAB9N8PFEAi9iMPImExCOIQHoEgO5cTCbFwiqQYCqFB26sfGoGx+MEQHKERxUocIVAA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ItAB8t8PFEAi9CMPImAx9uIQHoEgCJcTCbFwO6QYCqFBiqsZGlGx+MEfHIIRKsodIUAA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IiAB9N8PFEAi9iMPImExCOIQHoEgO5cTCbFwiqQYCqFB26sfHIER+MEQIaHQxfIcD1AA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IkAB9N8PFGAi9iMQIoExCOITHrEgO5cYCaFwiqQdCrFB28EfHJER+WUQFqFSxR0cD1AA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IiAB9N8PFEAi9iMPImExCOIQHoEgO5cTCbFwiqQYCqFB26sfHJER+cEQIaHQxfIcD1AA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.013333,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ItAB8t8PFCAi9CMPIkAx9uIPHmEgO5cTCbFwiqQYCqFB+asfGpGxxcEcHFEQ1MMdIUAA",
+      "teamId": "1116-1511-2403",
+      "characters": [
+        "丝柯克",
+        "恰斯卡",
+        "千年珍珠骏麟"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Chasca",
+        "Millennial Pearl Seahorse"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.013333,
+      "winRate": 0
+    },
+    {
+      "deckCode": "H6HBynMYFnHBh3whF9DA9JcPFUFxilcYGqGxlasbHKER6MEeE4FRzDUcGMFR1IUdHEAA",
+      "teamId": "1211-2305-2702",
+      "characters": [
+        "芙宁娜",
+        "蚀灭的源焰之主",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Lord of Eroded Primal Fire",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "F1LCy/0dGKEyyn0NGJHC2FgZFnJyiKwiG9Gy9cIQHUIR6bQfDIIyzTYdFMJS1YYeGUEB",
+      "teamId": "1211-2305-2702",
+      "characters": [
+        "芙宁娜",
+        "蚀灭的源焰之主",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Lord of Eroded Primal Fire",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.013333,
+      "winRate": 0
+    },
+    {
+      "deckCode": "H6HBh3MYFnLBHXwPF0DB9FcYFaFxiqsZGlGxlcEbHKER6DUeE4FRzIUcGMFR1ModHEAA",
+      "teamId": "1211-2305-2702",
+      "characters": [
+        "芙宁娜",
+        "蚀灭的源焰之主",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Lord of Eroded Primal Fire",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.013333,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FnHBh/wYF3IxHXwPF0DB9FcPFVFxTMEUHMERioUYGKFRusobHKGgzMkcDMGQ1NcdDUAA",
+      "teamId": "1211-2305-2702",
+      "characters": [
+        "芙宁娜",
+        "蚀灭的源焰之主",
+        "阿佩普的绿洲守望者"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Lord of Eroded Primal Fire",
+        "Guardian of Apep's Oasis"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.013333,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ARFxo9YOHJDR6i4OEqHg6ZcPCUBx9NkTHbGQO78YC6HwlcYaDCFgr9EaDfER1KEdGkAA",
+      "teamId": "1307-1610-1611",
+      "characters": [
+        "胡桃",
+        "卡齐娜",
+        "希诺宁"
+      ],
+      "charactersEn": [
+        "Hu Tao",
+        "Kachina",
+        "Xilonen"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ARFxo9YOHJDR6i4OEqHg6ZcPCUBx9FcTFbFxO9kYHaGQlcYaDCFgr9EaDfER1KEdGkAA",
+      "teamId": "1307-1610-1611",
+      "characters": [
+        "胡桃",
+        "卡齐娜",
+        "希诺宁"
+      ],
+      "charactersEn": [
+        "Hu Tao",
+        "Kachina",
+        "Xilonen"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.013333,
+      "winRate": 0
+    },
+    {
+      "deckCode": "FhHA5yEPHkDh9PEdHzER07cdG7Fx+IQfGIFAacYWDJFgzMkcDMGQ1NAdDUEA3NEdDcAA",
+      "teamId": "1211-1408-2704",
+      "characters": [
+        "芙宁娜",
+        "八重神子",
+        "贪食匿叶龙山王"
+      ],
+      "charactersEn": [
+        "Furina",
+        "Yae Miko",
+        "Gluttonous Yumkasaur Mountain King"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IcFgTCwYAqGxipEZGVESlRsaIeGxroQdGDFB27kdG7KSExwhITLCHh0hDuGg1OodFEAA",
+      "teamId": "1316-1602-1603",
+      "characters": [
+        "嘉明",
+        "诺艾尔",
+        "钟离"
+      ],
+      "charactersEn": [
+        "Gaming",
+        "Noelle",
+        "Zhongli"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.013333,
+      "winRate": 0
+    },
+    {
+      "deckCode": "ERCB2b0NAZDQ25cOCVBx5TEPE0AR9FcQFYFxCJMTGbEyOwAQDMFgDMYRDAGgEModDUAA",
+      "teamId": "1209-1404-1412",
+      "characters": [
+        "夜兰",
+        "赛诺",
+        "克洛琳德"
+      ],
+      "charactersEn": [
+        "Yelan",
+        "Cyno",
+        "Clorinde"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AXBB6s0OAqCw9IYPCEFgS50YCaHRioQdGDFA+MYQDPFgD8kUDNGQTdAWDZEQadEdHkAA",
+      "teamId": "1304-1602-1610",
+      "characters": [
+        "安柏",
+        "诺艾尔",
+        "卡齐娜"
+      ],
+      "charactersEn": [
+        "Amber",
+        "Noelle",
+        "Kachina"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "ABEh57IOIaBw6j4PIECC9AgQCWHQBp0UGLFBioQYDKFg08YfDIGQTckUDdEAadEWDZAA",
+      "teamId": "1102-2603-2604",
+      "characters": [
+        "迪奥娜",
+        "黄金王兽",
+        "黑蛇骑士·摧岩之钺"
+      ],
+      "charactersEn": [
+        "Diona",
+        "Golden Wolflord",
+        "Black Serpent Knight: Rockbreaker Ax"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AAEh57IOAqCw6j4PA0Di9AgQIGGABp0UCbHQirMYGKFB04QfDIFgTcYUDNGQackWDZAA",
+      "teamId": "1102-1602-2603",
+      "characters": [
+        "迪奥娜",
+        "诺艾尔",
+        "黄金王兽"
+      ],
+      "charactersEn": [
+        "Diona",
+        "Noelle",
+        "Golden Wolflord"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "EUBxyRYMFJDx0SoNEhGh5ywPEmHACJcQE4EBOzATE7ExilcYFaFwlb8ZC1HwEMQdDEAA",
+      "teamId": "1109-1210-2602",
+      "characters": [
+        "莱依拉",
+        "那维莱特",
+        "若陀龙王"
+      ],
+      "charactersEn": [
+        "Layla",
+        "Neuvillette",
+        "Azhdaha"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "H3Chv0ALHfHRNkQTFGBA2oYeCJBg9I4PCEHgCJcQCYFxOzATE7EBlTMdE0Ex3FcdFcAA",
+      "teamId": "1114-1414-1507",
+      "characters": [
+        "茜特菈莉",
+        "伊安珊",
+        "早柚"
+      ],
+      "charactersEn": [
+        "Citlali",
+        "Iansan",
+        "Sayu"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "IkIBHd8PH0Ci9CMPImAx9uIQHoEgCJcTCbFwiqQYCqFB+asfGpKxB8EgHHERxYQcGFAA",
+      "teamId": "1116-1414-1511",
+      "characters": [
+        "丝柯克",
+        "伊安珊",
+        "恰斯卡"
+      ],
+      "charactersEn": [
+        "Skirk",
+        "Iansan",
+        "Chasca"
+      ],
+      "numGames": 1,
+      "numGamesWin": 1,
+      "usageRate": 0.013333,
+      "winRate": 1
+    },
+    {
+      "deckCode": "AKAR9BYPIUFyBggQIGGAS50YCaHRioQaGOFArsYdDDFg28kfDIGQTdAUHtFwaeoWDpAA",
+      "teamId": "1101-2602-2604",
+      "characters": [
+        "甘雨",
+        "若陀龙王",
+        "黑蛇骑士·摧岩之钺"
+      ],
+      "charactersEn": [
+        "Ganyu",
+        "Azhdaha",
+        "Black Serpent Knight: Rockbreaker Ax"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.013333,
+      "winRate": 0
+    },
+    {
+      "deckCode": "A6Ax9BkPIECw9pcYE6ExijMbG6JwA8YgDDJgBskgDGGgacoWDZEQzNEcFMGh1EodE0AA",
+      "teamId": "1310-1705-2206",
+      "characters": [
+        "林尼",
+        "白术",
+        "水形幻人"
+      ],
+      "charactersEn": [
+        "Lyney",
+        "Baizhu",
+        "Hydro Tulpa"
+      ],
+      "numGames": 1,
+      "numGamesWin": 0,
+      "usageRate": 0.013333,
+      "winRate": 0
+    }
+  ]
+}

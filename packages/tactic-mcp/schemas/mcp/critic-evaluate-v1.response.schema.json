@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gtcg.local/schemas/mcp/critic-evaluate-v1.response.schema.json",
+  "title": "MCP critic_evaluate_v1 Response",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "critic_result"],
+      "properties": {
+        "ok": {
+          "type": "boolean",
+          "const": true
+        },
+        "critic_result": {
+          "$ref": "../critic-result-v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["ok", "error_code", "message"],
+      "properties": {
+        "ok": {
+          "type": "boolean",
+          "const": false
+        },
+        "error_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recover_hint": {
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

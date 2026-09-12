@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gtcg.local/schemas/mcp/create-opening-plan-v2.request.schema.json",
+  "title": "MCP create_opening_plan_v2 Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "arguments"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "const": "create_opening_plan_v2"
+    },
+    "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "plan_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deck_fingerprint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_skills": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "global_goal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "opening_window": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["start_turn", "end_turn"],
+          "properties": {
+            "start_turn": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "end_turn": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "turn_priorities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["turn", "objectives"],
+            "properties": {
+              "turn": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "objectives": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        },
+        "risk_rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "condition", "action", "priority"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "condition": {
+                "type": "string",
+                "minLength": 1
+              },
+              "action": {
+                "type": "string",
+                "minLength": 1
+              },
+              "priority": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 100
+              }
+            }
+          }
+        },
+        "pivot_rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "when", "then"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "when": {
+                "type": "string",
+                "minLength": 1
+              },
+              "then": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "trigger_rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "event", "replan_scope"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "event": {
+                "type": "string",
+                "minLength": 1
+              },
+              "operator": {
+                "type": "string",
+                "enum": [">", ">=", "<", "<=", "==", "!="]
+              },
+              "value": {
+                "type": ["number", "string", "boolean"]
+              },
+              "replan_scope": {
+                "type": "string",
+                "enum": ["micro", "opening", "midgame", "full"]
+              },
+              "cooldown_turns": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        "fallback_rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "on_failure", "policy"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "on_failure": {
+                "type": "string",
+                "minLength": 1
+              },
+              "policy": {
+                "type": "string",
+                "enum": ["conservative", "resource_hold", "hp_stabilize", "tempo_recover"]
+              }
+            }
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

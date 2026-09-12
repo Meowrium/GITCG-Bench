@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-06-19T18:33:05.633Z",
+  "version": "v6.3.0",
+  "summary": {
+    "totalMatchups": 1,
+    "totalGames": 2,
+    "meanWinRateA": 0.5,
+    "meanRounds": 7,
+    "meanElapsedMs": 32126
+  },
+  "matchups": [
+    {
+      "matchupId": "shuiba-mirror-neuralP1",
+      "sideAName": "baseline",
+      "sideBName": "neural-α0.3-s4",
+      "total": 2,
+      "winsP0": 1,
+      "winsP1": 1,
+      "draws": 0,
+      "winRateP0": 0.5,
+      "avgRounds": 7,
+      "avgElapsedMs": 32126
+    }
+  ],
+  "result": {
+    "totalMatchups": 1,
+    "totalGames": 2,
+    "results": [
+      {
+        "matchupId": "shuiba-mirror-neuralP1",
+        "sideAName": "baseline",
+        "sideBName": "neural-α0.3-s4",
+        "batch": {
+          "total": 2,
+          "winsP0": 1,
+          "winsP1": 1,
+          "draws": 0,
+          "winRateP0": 0.5,
+          "avgRounds": 7,
+          "avgElapsedMs": 32126,
+          "results": [
+            {
+              "winner": 1,
+              "rounds": 7,
+              "elapsedMs": 33934,
+              "replayPath": "output\\benchmark-logs\\shuiba-mirror-neuralP1\\game-0001-p1.json"
+            },
+            {
+              "winner": 0,
+              "rounds": 7,
+              "elapsedMs": 30318,
+              "replayPath": "output\\benchmark-logs\\shuiba-mirror-neuralP1\\game-0002-p0.json"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "priorMatrix": []
+}

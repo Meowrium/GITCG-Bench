@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "3.0",
+  "deckCode": "AABQ7xUOAPBw9JcPCUBw9b0PDFCg9soQDTFgA9YQDbGQC9kQDcGwDN8QDeHwEOARDgAA",
+  "deckName": "神宵",
+  "version": "v6.3.0",
+  "deckProfile": {
+    "primaryType": "combo",
+    "secondaryType": "aggro",
+    "tempo": "fast",
+    "startupSpeed": "turn2~3"
+  },
+  "keyCards": {
+    "combo": [
+      {
+        "id": "312004",
+        "role": "combo_starter",
+        "importance": "core",
+        "rationale": "OTK组件，前期过牌为主",
+        "mulligan": "never"
+      },
+      {
+        "id": "330002",
+        "role": "combo_starter",
+        "importance": "core",
+        "rationale": "打出条件略苛刻的回费组件，过牌多的情况下可留",
+        "mulligan": "high"
+      },
+      {
+        "id": "333004",
+        "role": "combo_finisher",
+        "importance": "important",
+        "rationale": "牌效较低，优先找过牌",
+        "mulligan": "high"
+      },
+      {
+        "id": "333008",
+        "role": "combo_finisher",
+        "importance": "core",
+        "rationale": "帮助第一回合宵宫3动充满元素爆发",
+        "mulligan": "always_keep"
+      }
+    ],
+    "damage": [
+      {
+        "id": "331102",
+        "role": "damage_amplifier",
+        "importance": "core",
+        "rationale": "中期高骰伤比的增伤单卡",
+        "mulligan": "never"
+      }
+    ],
+    "draw": [
+      {
+        "id": "322009",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "手牌运转的起点，与前期充能的节奏契合",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "323004",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "低费大过牌，需要技能行动触发，与前期充能的节奏契合",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "332004",
+        "role": "draw",
+        "importance": "core",
+        "rationale": "灵活过牌",
+        "mulligan": "always_keep"
+      }
+    ],
+    "sustain": [
+      {
+        "id": "333003",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "争取关键轮次的卡牌，提升卡组韧性",
+        "mulligan": "never"
+      },
+      {
+        "id": "333006",
+        "role": "sustain",
+        "importance": "core",
+        "rationale": "争取关键轮次，缓解残血角色的站场压力",
+        "mulligan": "never"
+      }
+    ],
+    "disruption": [],
+    "ramp": [
+      {
+        "id": "321011",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "回收残余骰子，在明确回合末会有1~2颗骰子盈余时可留",
+        "mulligan": "situational"
+      },
+      {
+        "id": "323001",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "费用和收益都较高的蓄爆牌，但容易被对面在我方无法利用/回收额外骰子的情况下直接触发",
+        "mulligan": "high"
+      },
+      {
+        "id": "323004",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "低费大过牌，需要技能行动触发，与前期充能的节奏契合",
+        "mulligan": "always_keep"
+      },
+      {
+        "id": "330002",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "打出条件略苛刻的回费组件，过牌多的情况下可留",
+        "mulligan": "situational"
+      },
+      {
+        "id": "331101",
+        "role": "ramp",
+        "importance": "core",
+        "rationale": "灵活但牌效低",
+        "mulligan": "never"
+      },
+      {
+        "id": "332005",
+        "role": "ramp",
+        "importance": "important",
+        "rationale": "开局几乎无法触发",
+        "mulligan": "never"
+      }
+    ],
+    "flex": []
+  },
+  "abstentions": [],
+  "damageMode": "chip",
+  "powerCurve": "spiky",
+  "hasOneShotPotential": true,
+  "setupDependency": "low",
+  "resilience": {
+    "hasHealing": true,
+    "hasShield": true,
+    "hasImmuneControl": false,
+    "vulnerableTo": [
+      "frontloaded_burst",
+      "summon_swarm"
+    ]
+  },
+  "openingSequences": [
+    {
+      "id": "open-1",
+      "name": "宵宫3AQ",
+      "condition": "有1个额外骰子/减费",
+      "style": "charge_up",
+      "steps": [
+        {
+          "action": "宵宫 烟火打扬",
+          "cost": "1火+2任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "宵宫 烟火打扬",
+          "cost": "1火+2任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "宵宫 烟火打扬",
+          "cost": "1火+2任意",
+          "effectDescription": ""
+        },
+        {
+          "action": "宵宫 琉金云间草",
+          "cost": "3火+3能",
+          "effectDescription": "开始出伤"
+        }
+      ],
+      "diceConstraint": "",
+      "totalDiceUsed": 12,
+      "isPrimary": false
+    }
+  ]
+}

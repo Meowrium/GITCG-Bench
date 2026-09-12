@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gtcg.local/schemas/mcp/create-opening-plan-v2.response.schema.json",
+  "title": "MCP create_opening_plan_v2 Response",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "plan", "plan_path"],
+      "properties": {
+        "ok": {
+          "type": "boolean",
+          "const": true
+        },
+        "plan": {
+          "$ref": "../plan-v2.schema.json"
+        },
+        "plan_path": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["ok", "error_code", "message"],
+      "properties": {
+        "ok": {
+          "type": "boolean",
+          "const": false
+        },
+        "error_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recover_hint": {
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

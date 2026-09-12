@@ -39,6 +39,16 @@ cd packages/gi-agent && pnpm test
 - 需要 Node `^26.1.0` 与 pnpm；仓库使用 pnpm workspace（`catalog:` 集中版本）。
 - 涉及 LLM 的脚本一律从环境变量取凭据（如 `OPENAI_API_KEY`，评估用 `LLM_API_KEY`），仓库内不存任何 key。示例见 `packages/gi-agent/.env.example`。
 
+## 验证状态（本机 Windows + Node 26 + pnpm 11）
+
+快照本身做过一轮实测（验证日志留在本机，未入库），结论如下：
+
+- **安装**：`pnpm install` 完成（1487 包）。⚠️ 三个依赖的 postinstall 在本机失败（`@swc/core`、`@vscode/vsce-sign`、`@bufbuild/buf`，退出码 3221225794 = Windows DLL 初始化失败，疑与本机安全软件有关）；改用 `pnpm install --ignore-scripts` 可完成链接，`packages/typings` 的 `pnpm build:buf` 实测仍能正常生成 `src/gen/`。
+- **构建**：`typings` / `utils` / `core` / `data` / `assets-manager` / `llm-deck-analyzer` 构建成功。
+  ⚠️ 全量 `pnpm build` 会停在 `@gi-tcg/tactic-mcp`，`@gi-tcg/mcp` 的 dts 构建也会失败（TS5101 `baseUrl` 弃用 + `console`/`process` 缺 lib 配置）——**在派生自本仓库的工作库中同样复现，属预存问题**，非本快照引入。
+- **类型**：`packages/gi-agent` 的 `tsc --noEmit` 相对工作库无新增错误；剩余为「未被 git 跟踪的生成物/资产」缺失（`assets-manager` 的 `names/deck/share_id.json`、`deck-analytics` 的 `reaction-table.js`）与 2 个预存错误。
+- **测试**：`packages/gi-agent` 共 88 文件 / 675 用例，**673 通过**；唯一失败 `cli-config.test.ts`（2 例，ENOENT 读 `output/` 下生成的 preset/artifact）在工作库同样失败。决策树管线相关 **31 文件 / 376 用例全通过**。
+
 ## 血缘与许可
 
 - 本项目基于 [piovium/genius-invokation](https://github.com/piovium/genius-invokation)（七圣召唤模拟器）的下游工作，遵循 **AGPL-3.0**（见 [`LICENSE`](./LICENSE)）。上游版权归原作者所有；本仓库新增部分同样以 AGPLv3 发布。

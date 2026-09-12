@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gi-tcg.dev/schemas/gi-ml/ranking-dataset.schema.json",
+  "title": "RankingDataset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "dataset_id",
+    "query_groups"
+  ],
+  "properties": {
+    "dataset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "metadata": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "query_groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "query_id",
+          "candidates"
+        ],
+        "properties": {
+          "query_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "state_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "context_slots": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": true
+          },
+          "candidates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "candidate_id",
+                "action_case"
+              ],
+              "properties": {
+                "candidate_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "action_case": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "action_definition_ref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "raw_feature_ref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "concept_target_ref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "runtime_slots": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "pairwise_preferences": {
+            "type": "array",
+            "default": [],
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "candidate_a_id",
+                "candidate_b_id",
+                "preference_label"
+              ],
+              "properties": {
+                "candidate_a_id": {
+                  "type": "string"
+                },
+                "candidate_b_id": {
+                  "type": "string"
+                },
+                "preference_label": {
+                  "type": [
+                    "number",
+                    "integer"
+                  ]
+                },
+                "confidence": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "evidence_ref": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "preference_slots": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

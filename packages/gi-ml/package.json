@@ -1,0 +1,73 @@
+{
+  "name": "@gi-tcg/ml",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "ML workspace for concept bottleneck and pairwise ranking experiments in Genius Invokation",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "development": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./contracts": {
+      "types": "./src/contracts/index.ts",
+      "development": "./src/contracts/index.ts",
+      "import": "./src/contracts/index.ts"
+    },
+    "./runtime": {
+      "types": "./src/runtime/index.ts",
+      "development": "./src/runtime/index.ts",
+      "import": "./src/runtime/index.ts"
+    },
+    "./ranker": {
+      "types": "./src/ranker/index.ts",
+      "development": "./src/ranker/index.ts",
+      "import": "./src/ranker/index.ts"
+    },
+    "./value": {
+      "types": "./src/value/index.ts",
+      "development": "./src/value/index.ts",
+      "import": "./src/value/index.ts"
+    },
+    "./utils": {
+      "types": "./src/utils/index.ts",
+      "development": "./src/utils/index.ts",
+      "import": "./src/utils/index.ts"
+    }
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "vitest run src",
+    "py:test": "cd ./python && python -m unittest discover -s tests -p \"test_*.py\"",
+    "build:concept-targets:py": "cd ./python && python -m gitcg_ml.cli.build_concept_targets",
+    "train:concept-model:py": "cd ./python && python -m gitcg_ml.cli.train_concept_model",
+    "train:slot-linear-ranker:py": "cd ./python && python -m gitcg_ml.cli.train_slot_linear_ranker",
+    "train:linear-value-model:py": "cd ./python && python -m gitcg_ml.cli.train_linear_value_model",
+    "export:branch-eval-dataset": "gnx ./src/cli/export/run-export-branch-eval-dataset.ts",
+    "export:rl-ranking-dataset": "gnx ./src/cli/export/run-export-rl-ranking-dataset.ts",
+    "export:rl-value-dataset": "gnx ./src/cli/export/run-export-rl-value-dataset.ts",
+    "export:branch-eval-concepts": "gnx ./src/cli/export/run-export-branch-eval-concepts.ts",
+    "export:static-effect-seed-concepts": "gnx ./src/cli/export/run-export-static-effect-seed-concepts.ts",
+    "export:branch-eval-combo-concepts": "gnx ./src/cli/export/run-export-branch-eval-combo-concepts.ts",
+    "merge:ranking-datasets": "gnx ./src/cli/query/run-merge-ranking-datasets.ts",
+    "build:concept-bank": "gnx ./src/cli/build/run-build-concept-bank.ts",
+    "build:discovered-concept-bank": "gnx ./src/cli/build/run-build-discovered-concept-bank.ts",
+    "build:slot-linear-ranker": "gnx ./src/cli/build/run-build-slot-linear-ranker.ts",
+    "pipeline:rl-warm-start": "gnx ./src/cli/pipeline/run-build-rl-warm-start-pipeline.ts",
+    "pipeline:rl-value-warm-start": "gnx ./src/cli/pipeline/run-build-rl-value-warm-start-pipeline.ts",
+    "pipeline:rl-warm-start-bundle": "gnx ./src/cli/pipeline/run-build-rl-warm-start-bundle.ts",
+    "pipeline:rl-formal-train": "gnx ./src/cli/pipeline/run-train-rl-formal-pipeline.ts",
+    "pipeline:concept-training:ps1": "pwsh -File ./scripts/run-concept-training-pipeline.ps1",
+    "pipeline:branch-eval-baseline": "gnx ./src/cli/pipeline/run-build-branch-eval-baseline-pipeline.ts",
+    "evaluate:slot-linear-ranker": "gnx ./src/cli/evaluate/run-evaluate-slot-linear-ranker.ts",
+    "evaluate:rl-value-artifact": "gnx ./src/cli/evaluate/run-evaluate-rl-value-artifact.ts",
+    "rank:dataset-query": "gnx ./src/cli/query/run-rank-dataset-query.ts",
+    "compare:nonlinear": "gnx ./src/cli/query/run-nonlinear-comparison.ts",
+    "build:gbdt-value": "gnx ./src/cli/build/run-build-gbdt-value.ts",
+    "pipeline:iterative": "gnx ./src/cli/pipeline/run-iterative-pipeline.ts"
+  },
+  "license": "AGPL-3.0",
+  "dependencies": {
+  }
+}

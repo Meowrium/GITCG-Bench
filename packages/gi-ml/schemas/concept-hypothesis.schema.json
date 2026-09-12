@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gi-tcg.dev/schemas/gi-ml/concept-hypothesis.schema.json",
+  "title": "ConceptHypothesis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "concept_id",
+    "name",
+    "scope",
+    "description",
+    "evidence_refs",
+    "status"
+  ],
+  "properties": {
+    "concept_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "state",
+        "state_action",
+        "window"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "estimator_slot": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "validation_slot": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "ranking_slot": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "validated",
+        "deprecated"
+      ]
+    },
+    "source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "updated_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

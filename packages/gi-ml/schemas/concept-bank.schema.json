@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gi-tcg.dev/schemas/gi-ml/concept-bank.schema.json",
+  "title": "ConceptBank",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "bank_version",
+    "concepts"
+  ],
+  "properties": {
+    "bank_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "compatibility": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "gi_agent_min_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "runtime_digest_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "feature_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ruleset_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "concepts": {
+      "type": "array",
+      "items": {
+        "$ref": "./concept-hypothesis.schema.json"
+      }
+    },
+    "validation_summary": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "deprecation_rules": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "concept_id": {
+            "type": "string"
+          },
+          "rule": {
+            "type": "string"
+          },
+          "note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    }
+  }
+}

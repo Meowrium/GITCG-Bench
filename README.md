@@ -11,6 +11,7 @@
 | `packages/core` `data` `typings` `utils` … | 上游模拟器与卡牌数据（含本仓库的评测侧改动） |
 | `packages/gi-agent` | LLM 对战 agent 与 one-shot 决策树管线：`author → batch → reflect → ablate`，含 harness、卡面事实表与机检 |
 | `packages/benchmark` | 基准套件：`gi-knowledge`（知识问答）、`tree-bench`（决策树对战）、`battle-benchmark`（自进化） |
+| `packages/gi-ml` | 学习/训练子系统：概念库、ranker、value artifact（同时是 `gi-agent` 的契约类型来源） |
 | `packages/gitcg-theory` | 理论框架与文献笔记（`paper-scout/` 只含 markdown 笔记与题录，PDF 未入库） |
 | `docs/` `AGENTS.md` `CLAUDE.md` | 工程文档与包级约定 |
 
@@ -19,8 +20,7 @@
 ## 不含什么（本次快照刻意剔除）
 
 - **闭源 NN 基线**：`aibridge` 桥接工程、`gi-agent/src/runtime/nn-bridge/`、NN 相关的脚本/示例计划/证据文档（其代码调用点已一并清理，快照内无悬挂引用）。
-- **学习/训练子系统** `packages/gi-ml`（概念库 / ranker / value artifact 训练侧）。
-- **第三方版权材料**：电子书（`gitcg-theory/cgt/books`）、论文 PDF、官方卡图（`packages/card_images`）。
+- **第三方版权材料**：电子书（`gitcg-theory/cgt/books`）、论文 PDF、官方卡图（`packages/card_images`）。论文草稿（`packages/benchmark/paper/`）亦未收入。
 - **本地 agent 配置** `.opencode/`（含个人凭据脚本）与本地凭据文件（`tree-bench/API.txt` 等）。
 
 ## 评测口径（scope）

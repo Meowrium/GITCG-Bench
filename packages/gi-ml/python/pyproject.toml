@@ -1,0 +1,19 @@
+[project]
+name = "gitcg-ml"
+version = "0.1.0"
+description = "Python training workspace for gi-ml"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "hydra-core>=1.3.2",
+  "lightgbm>=4.0.0",
+  "lightning>=2.5.0",
+  "numpy>=2.2.0",
+  "pydantic>=2.11.0",
+  "torch>=2.6.0",
+  "xgboost>=2.1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -2,7 +2,7 @@
 
 `@gi-tcg/agent` 当前已经从“LLM graph 为中心”调整成“policy + benchmark + learning 为中心”的实验包。
 
-如果你想用统一前端来管理卡组和 benchmark 配置，见 [packages/gi-agent-ui](/D:/AI/GTCG/genius-invokation/packages/gi-agent-ui)。
+如果你想用统一前端来管理卡组和 benchmark 配置，见 [packages/gi-agent-ui](<repo-root>/packages/gi-agent-ui)。
 
 现阶段最推荐的用途有四个：
 
@@ -50,7 +50,7 @@ cd packages/gi-agent
 
 如果你要走“基于 agent 的自动学习路线”，建议直接按下面这条闭环用，而不是先从 `battle-agent` 开始：
 
-1. 用 [packages/gi-agent-ui](/D:/AI/GTCG/genius-invokation/packages/gi-agent-ui) 整理卡组和 benchmark 配置
+1. 用 [packages/gi-agent-ui](<repo-root>/packages/gi-agent-ui) 整理卡组和 benchmark 配置
 2. 跑 `benchmark` 固定基线，先确认 baseline policy 的稳定报表
 3. 跑 `self-play` 补动作样本到 `DataLake`
 4. 跑 `iterate` 自动完成“训练 evaluator -> baseline 对比 -> promote/reject 报告”
@@ -63,7 +63,7 @@ cd packages/gi-agent
 - `battle-agent` 是实验闭环
 - LLM 在你现在这套里不是训练和评测的必需品
 
-如果你要做“LLM 对局日志 -> 局部窗口树 -> 离线验证 -> replay/branch-eval 补强 -> library 检索/评估（含 runtime query 与 workload 覆盖）”的一阶段种子树流程，见 [docs/combat-window-pipeline.md](/D:/AI/GTCG/genius-invokation/packages/gi-agent/docs/combat-window-pipeline.md)。
+如果你要做“LLM 对局日志 -> 局部窗口树 -> 离线验证 -> replay/branch-eval 补强 -> library 检索/评估（含 runtime query 与 workload 覆盖）”的一阶段种子树流程，见 [docs/combat-window-pipeline.md](<repo-root>/packages/gi-agent/docs/combat-window-pipeline.md)。
 
 如果你只想先抓重点，可以把 `gi-agent` 的使用路径分成两条：
 
@@ -113,7 +113,7 @@ pnpm run combat-window:evaluate-workload --library ./output/combat-windows/libra
 - `combat-window:evaluate-workload`
   评估一批真实 benchmark/self-play workload 能被树库接住多少
 
-完整参数和示例见 [docs/combat-window-pipeline.md](/D:/AI/GTCG/genius-invokation/packages/gi-agent/docs/combat-window-pipeline.md)。
+完整参数和示例见 [docs/combat-window-pipeline.md](<repo-root>/packages/gi-agent/docs/combat-window-pipeline.md)。
 
 ### 1. 跑 benchmark
 
@@ -129,7 +129,7 @@ pnpm run benchmark examples/configs/benchmark.example.json
 pnpm run benchmark examples/configs/benchmark.example.json --output benchmark-result.json --markdown benchmark-report.md
 ```
 
-示例配置见 [examples/configs/benchmark.example.json](/D:/AI/GTCG/genius-invokation/packages/gi-agent/examples/configs/benchmark.example.json)。
+示例配置见 [examples/configs/benchmark.example.json](<repo-root>/packages/gi-agent/examples/configs/benchmark.example.json)。
 更细的配置说明见 [examples/BENCHMARK_GUIDE.md](./examples/BENCHMARK_GUIDE.md)。
 模板文件见 [examples/TEMPLATES.md](./examples/TEMPLATES.md)。
 
@@ -178,7 +178,7 @@ pnpm run benchmark examples/configs/benchmark.example.json --output benchmark-re
 }
 ```
 
-benchmark CLI 入口在 [run-benchmark.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/evaluation/benchmark/cli/run-benchmark.ts)。
+benchmark CLI 入口在 [run-benchmark.ts](<repo-root>/packages/gi-agent/src/evaluation/benchmark/cli/run-benchmark.ts)。
 
 ### 2. 直接在代码里跑本地对局
 
@@ -212,10 +212,10 @@ console.log(batch.winRateP0)
 
 相关文件：
 
-- [policy-player-io.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/io/policy-player-io.ts)
-- [baseline-policy.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/policy/baseline-policy.ts)
-- [evaluator-policy.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/policy/evaluator-policy.ts)
-- [runner.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/sandbox/runner.ts)
+- [policy-player-io.ts](<repo-root>/packages/gi-agent/src/runtime/io/policy-player-io.ts)
+- [baseline-policy.ts](<repo-root>/packages/gi-agent/src/runtime/policy/baseline-policy.ts)
+- [evaluator-policy.ts](<repo-root>/packages/gi-agent/src/runtime/policy/evaluator-policy.ts)
+- [runner.ts](<repo-root>/packages/gi-agent/src/sandbox/runner.ts)
 
 ### 3. 训练一个 evaluator
 
@@ -242,10 +242,10 @@ console.log(result.outputPath)
 
 相关文件：
 
-- [train-evaluator.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/training/train-evaluator.ts)
-- [data-lake.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/db/data-lake.ts)
-- [feature-extractor.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/scoring/feature-extractor.ts)
-- [logistic-reg.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/scoring/logistic-reg.ts)
+- [train-evaluator.ts](<repo-root>/packages/gi-agent/src/learning/training/train-evaluator.ts)
+- [data-lake.ts](<repo-root>/packages/gi-agent/src/db/data-lake.ts)
+- [feature-extractor.ts](<repo-root>/packages/gi-agent/src/learning/scoring/feature-extractor.ts)
+- [logistic-reg.ts](<repo-root>/packages/gi-agent/src/learning/scoring/logistic-reg.ts)
 
 ### 4. 自动跑一轮迭代
 
@@ -261,7 +261,7 @@ pnpm run iterate examples/configs/iteration.example.json
 pnpm run iterate examples/configs/iteration.example.json --output output/iteration-report.json --markdown output/iteration-report.md
 ```
 
-示例配置见 [examples/configs/iteration.example.json](/D:/AI/GTCG/genius-invokation/packages/gi-agent/examples/configs/iteration.example.json)。
+示例配置见 [examples/configs/iteration.example.json](<repo-root>/packages/gi-agent/examples/configs/iteration.example.json)。
 
 这个命令会做四件事：
 
@@ -305,7 +305,7 @@ pnpm run iterate examples/configs/iteration.example.json --output output/iterati
 pnpm run self-play examples/configs/self-play.example.json
 ```
 
-示例配置见 [examples/configs/self-play.example.json](/D:/AI/GTCG/genius-invokation/packages/gi-agent/examples/configs/self-play.example.json)。
+示例配置见 [examples/configs/self-play.example.json](<repo-root>/packages/gi-agent/examples/configs/self-play.example.json)。
 
 这条命令会：
 
@@ -370,8 +370,8 @@ pnpm run iterate examples/configs/iteration.example.json
 
 当前仓库里，会真正初始化 `ChatOpenAI` 的入口主要有两个：
 
-- [battle-graph.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/graphs/battle-graph.ts)
-- [post-analysis.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/combat-windows/post-analysis.ts)
+- [battle-graph.ts](<repo-root>/packages/gi-agent/src/graphs/battle-graph.ts)
+- [post-analysis.ts](<repo-root>/packages/gi-agent/src/learning/combat-windows/post-analysis.ts)
 
 也就是说：
 
@@ -420,13 +420,13 @@ pnpm run combat-window:analyze --input ./output/combat-windows/windows.json --tr
 
 其中：
 
-- `OPENAI_MODEL` 和 `OPENAI_TEMPERATURE` 是 [battle-agent.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/agents/battle-agent.ts) 显式读取的
+- `OPENAI_MODEL` 和 `OPENAI_TEMPERATURE` 是 [battle-agent.ts](<repo-root>/packages/gi-agent/src/agents/battle-agent.ts) 显式读取的
 - `OPENAI_API_KEY` 和 `OPENAI_BASE_URL` 是 `ChatOpenAI` 的标准环境变量
 - `GI_SERVER_URL` 用来指定本地对局服务地址
 
 ## 现有 CLI
 
-在 [package.json](/D:/AI/GTCG/genius-invokation/packages/gi-agent/package.json) 里，目前真正可用的命令主要是：
+在 [package.json](<repo-root>/packages/gi-agent/package.json) 里，目前真正可用的命令主要是：
 
 ```bash
 pnpm run check
@@ -571,8 +571,8 @@ pnpm run battle -- --base-url http://localhost:3901 --model gpt-4o
 
 入口文件：
 
-- [battle-agent.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/agents/battle-agent.ts)
-- [battle-graph.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/graphs/battle-graph.ts)
+- [battle-agent.ts](<repo-root>/packages/gi-agent/src/agents/battle-agent.ts)
+- [battle-graph.ts](<repo-root>/packages/gi-agent/src/graphs/battle-graph.ts)
 
 当前需要注意：
 
@@ -584,26 +584,26 @@ pnpm run battle -- --base-url http://localhost:3901 --model gpt-4o
 
 ### Policy
 
-- [baseline-policy.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/policy/baseline-policy.ts)
+- [baseline-policy.ts](<repo-root>/packages/gi-agent/src/runtime/policy/baseline-policy.ts)
   - 对 `candidate_actions` 做启发式排序
-- [evaluator-policy.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/policy/evaluator-policy.ts)
+- [evaluator-policy.ts](<repo-root>/packages/gi-agent/src/runtime/policy/evaluator-policy.ts)
   - 在 baseline 分数上叠加 learned score
 
 ### Search
 
-- [bounded-searcher.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/search/bounded-searcher.ts)
+- [bounded-searcher.ts](<repo-root>/packages/gi-agent/src/runtime/search/bounded-searcher.ts)
   - 用于局部 beam search
-- [sim-adapter.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/adapters/sim-adapter.ts)
+- [sim-adapter.ts](<repo-root>/packages/gi-agent/src/runtime/adapters/sim-adapter.ts)
   - 负责模拟状态推进
 
 ### Eval Baselines
 
 这部分已经按组件拆开：
 
-- [delta-extractor.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/eval-baselines/delta-extractor.ts)
-- [heuristic-scorer.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/eval-baselines/heuristic-scorer.ts)
-- [feasibility-estimator.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/eval-baselines/feasibility-estimator.ts)
-- [state-evaluator.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/eval-baselines/state-evaluator.ts)
+- [delta-extractor.ts](<repo-root>/packages/gi-agent/src/runtime/eval-baselines/delta-extractor.ts)
+- [heuristic-scorer.ts](<repo-root>/packages/gi-agent/src/runtime/eval-baselines/heuristic-scorer.ts)
+- [feasibility-estimator.ts](<repo-root>/packages/gi-agent/src/runtime/eval-baselines/feasibility-estimator.ts)
+- [state-evaluator.ts](<repo-root>/packages/gi-agent/src/runtime/eval-baselines/state-evaluator.ts)
 
 `StateEvaluator` 现在更像一个兼容 facade，真正逻辑已经分散到上面三个组件里。
 
@@ -611,10 +611,10 @@ pnpm run battle -- --base-url http://localhost:3901 --model gpt-4o
 
 这部分主要是从旧实验里回收的“静态先验”：
 
-- [character-profile-extractor.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/knowledge/character-profiles/character-profile-extractor.ts)
-- [source-parser.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/knowledge/character-profiles/source-parser.ts)
-- [skill-phase-value-estimator.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/knowledge/character-profiles/skill-phase-value-estimator.ts)
-- [card-affinity-analyzer.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/knowledge/deck-priors/card-affinity-analyzer.ts)
+- [character-profile-extractor.ts](<repo-root>/packages/gi-agent/src/knowledge/character-profiles/character-profile-extractor.ts)
+- [source-parser.ts](<repo-root>/packages/gi-agent/src/knowledge/character-profiles/source-parser.ts)
+- [skill-phase-value-estimator.ts](<repo-root>/packages/gi-agent/src/knowledge/character-profiles/skill-phase-value-estimator.ts)
+- [card-affinity-analyzer.ts](<repo-root>/packages/gi-agent/src/knowledge/deck-priors/card-affinity-analyzer.ts)
 
 目前它们更适合：
 

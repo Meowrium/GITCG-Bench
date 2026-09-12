@@ -1221,11 +1221,11 @@ runtime detection priority:
 
 ### 17.2 Windows 操作步骤
 
-**前置**：仓库已在 D:\AI\GTCG\genius-invokation 上 `pnpm install` 过，node_modules 已含 win32 esbuild + better-sqlite3 prebuild。
+**前置**：仓库已在 <repo-root> 上 `pnpm install` 过，node_modules 已含 win32 esbuild + better-sqlite3 prebuild。
 
 ```powershell
 # 1. 切回 Windows PowerShell（不要在 WSL 里跑）
-cd D:\AI\GTCG\genius-invokation\packages\gi-agent
+cd <repo-root>\packages\gi-agent
 
 # 2. 验证 better-sqlite3 native binding 可用
 node -e "const D = require('better-sqlite3'); const db = new D(':memory:'); db.exec('CREATE TABLE t (x)'); console.log('better-sqlite3 OK')"
@@ -1414,7 +1414,7 @@ DatabaseCtor = requireFromHere("better-sqlite3")
 ### 18.6 下一步（待 Windows 重跑）
 
 ```powershell
-cd D:\AI\GTCG\genius-invokation\packages\gi-agent
+cd <repo-root>\packages\gi-agent
 
 # 删除带 bug 的旧 sqlite
 rm examples\output\v30-kpib\samples.sqlite
@@ -1641,7 +1641,7 @@ V30 §5.4 提出 TD(λ) on V(s) + A(s,a) baseline subtraction。本次实现采�
 执行序列（已在 Windows native + better-sqlite3 验证）：
 
 ```powershell
-cd D:\AI\GTCG\genius-invokation\packages\gi-agent
+cd <repo-root>\packages\gi-agent
 
 # 1. 自对弈 + 状态观察
 pnpm run self-play examples/configs/self-play.v30-encoder-smoke.json `
@@ -1724,7 +1724,7 @@ V30 §10 把阶段 3 划为 Week 5-7（实现）+ Week 8（验收 + α 调参）
 ### 20.9 复现命令汇总
 
 ```powershell
-cd D:\AI\GTCG\genius-invokation\packages\gi-agent
+cd <repo-root>\packages\gi-agent
 
 # 阶段 1 + 2 + 3 全部测试 (175 个，5 个失败为预存项 vs V30 无关)
 pnpm exec vitest run

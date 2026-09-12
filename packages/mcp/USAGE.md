@@ -183,9 +183,9 @@ bun run examples/start-game.ts
       "command": "bun",
       "args": [
         "run",
-        "d:/AI/GTCG/genius-invokation/packages/mcp/src/index.ts"
+        "<repo-root>/packages/mcp/src/index.ts"
       ],
-      "cwd": "d:/AI/GTCG/genius-invokation"
+      "cwd": "<repo-root>"
     }
   }
 }
@@ -218,10 +218,10 @@ Cherry Studio 使用不同的配置格式。在 Cherry Studio 的 MCP 设置中�
 **参数**:
 ```
 run
-d:/AI/GTCG/genius-invokation/packages/mcp/cherry-studio-mcp.ts
+<repo-root>/packages/mcp/cherry-studio-mcp.ts
 ```
 
-**工作目录**: `d:/AI/GTCG/genius-invokation`
+**工作目录**: `<repo-root>`
 
 **环境变量**: （留空）
 
@@ -239,9 +239,9 @@ Claude Code 使用与 Claude Desktop 相同的配置格式，但配置文件位�
       "command": "bun",
       "args": [
         "run",
-        "d:/AI/GTCG/genius-invokation/packages/mcp/claude-code-mcp.ts"
+        "<repo-root>/packages/mcp/claude-code-mcp.ts"
       ],
-      "cwd": "d:/AI/GTCG/genius-invokation",
+      "cwd": "<repo-root>",
       "env": {}
     }
   }

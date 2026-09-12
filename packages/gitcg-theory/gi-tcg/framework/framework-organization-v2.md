@@ -1,6 +1,6 @@
 # 七圣召唤框架第二轮整理
 
-> 来源：基于 [framework-open-questions.md](D:\AI\GTCG\gitcg-theory\framework-open-questions.md) 的新回答整理。  
+> 来源：基于 [framework-open-questions.md](<local-workspace>\gitcg-theory\framework-open-questions.md) 的新回答整理。  
 > 目的：不覆盖主文档与原始问答，只把这一次新增的思考结果收束成更接近正文的结构，并明确当前仍未收束的点。
 
 ## 一、这一轮新增的核心结论

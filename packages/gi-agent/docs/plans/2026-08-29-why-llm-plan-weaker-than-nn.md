@@ -353,7 +353,7 @@ reflect（r4 对局为证据）：turns=6、final、modules=11、verdicts 45（3
 
 ### 9.1 工具链与环境（Windows + Git Bash）
 
-- **pnpm `sh` shim 损坏**：corepack 把路径拼成 `D:\Users\LUBY\anaconda3\Library\c\Users\...`，直接 `pnpm` 报错——一律用 `pnpm.cmd`。
+- **pnpm `sh` shim 损坏**：corepack 把路径拼成 `<home>\anaconda3\Library\c\Users\...`，直接 `pnpm` 报错——一律用 `pnpm.cmd`。
 - **`cmd //c set` 的环境变量到不了 node 子进程**（探针实测）：设置 `OPENAI_API_KEY` 等必须用 bash 前缀 `VAR=... pnpm.cmd ...`。API key 因此只走内联环境变量，**不入任何仓库文件**（纪律）。
 - **`cmd //c` 内层引号会变成字面量**：无空格路径一律去引号；`cd` 必须用 `/d` 形式否则"Missing script"。
 - **llm.ts 硬编码 20 分钟超时**（`AbortSignal.timeout(1_200_000)`）：GLM thinking 流式调用常超 20 min，被杀后触发静默 8 连重试循环。已加 `LLM_TIMEOUT_MS` 环境变量覆盖（跑长轮用 3600000）。

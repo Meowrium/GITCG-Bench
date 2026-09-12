@@ -100,9 +100,9 @@ bun run build:card-index
    - **参数**: 
      ```
      run
-     d:/AI/GTCG/genius-invokation/packages/mcp/cherry-studio-mcp.ts
+     <repo-root>/packages/mcp/cherry-studio-mcp.ts
      ```
-   - **工作目录**: `d:/AI/GTCG/genius-invokation`
+   - **工作目录**: `<repo-root>`
 3. 保存并启用
 
 #### 步骤 4：开始对局

@@ -54,7 +54,7 @@
 | glm-5.3-flash | ~0-3/16 | 推进到 d3 附近，几乎全失败 |
 
 battle 0/640（未进入）。**进程已死**：日志
-`C:\Users\LUBY\.zcode\cli\exec\sess_49665f51-3f2c-48f6-a6bb-6d84b2a7ded4\call_1796e888846a439a9f1c2b8a-stdout.log`
+`<home>\.zcode\cli\exec\sess_49665f51-3f2c-48f6-a6bb-6d84b2a7ded4\call_1796e888846a439a9f1c2b8a-stdout.log`
 最后写入 2026-09-06 23:35:37（过夜停止，疑机器休眠/后台任务被终止）。重启即幂等续跑：
 state.json 只记 done（**失败不入 state**，死亡时 in-memory 的失败清单已丢），未 done 的
 单元会自动重试。已产出的 deepseek 计划文件会被 adopt/skip 逻辑复用，不重花钱。

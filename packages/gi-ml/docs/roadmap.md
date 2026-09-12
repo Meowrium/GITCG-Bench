@@ -171,4 +171,4 @@
 
 相关方案文档：
 
-- [static-effect-meta-priors.md](/D:/AI/GTCG/genius-invokation/packages/gi-ml/docs/static-effect-meta-priors.md)
+- [static-effect-meta-priors.md](<repo-root>/packages/gi-ml/docs/static-effect-meta-priors.md)

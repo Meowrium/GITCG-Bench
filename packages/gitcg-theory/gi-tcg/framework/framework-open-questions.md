@@ -1,8 +1,8 @@
 # 七圣召唤框架待回答问题
 
 > 这份文档只整理**现阶段还没有收束**、但接下来最值得继续回答的问题。  
-> 已经初步稳定下来的主线，见 [framework.md](D:\AI\GTCG\gitcg-theory\framework.md)。  
-> 原始问答记录，见 [framework-guiding-questions.md](D:\AI\GTCG\gitcg-theory\framework-guiding-questions.md)。
+> 已经初步稳定下来的主线，见 [framework.md](<local-workspace>\gitcg-theory\framework.md)。  
+> 原始问答记录，见 [framework-guiding-questions.md](<local-workspace>\gitcg-theory\framework-guiding-questions.md)。
 
 ## 一、这份文档的用途
 

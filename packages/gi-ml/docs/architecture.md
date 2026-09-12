@@ -227,4 +227,4 @@ flowchart LR
 
 补充候选方向：
 
-- 关于“将静态卡牌 / 技能效果编译为跨牌共享 meta priors”的方案，见 [static-effect-meta-priors.md](/D:/AI/GTCG/genius-invokation/packages/gi-ml/docs/static-effect-meta-priors.md)。
+- 关于“将静态卡牌 / 技能效果编译为跨牌共享 meta priors”的方案，见 [static-effect-meta-priors.md](<repo-root>/packages/gi-ml/docs/static-effect-meta-priors.md)。

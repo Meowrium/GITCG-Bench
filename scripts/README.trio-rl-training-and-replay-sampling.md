@@ -12,8 +12,8 @@ Use these notes when editing or adding scripts around:
 
 The current reference scripts are:
 
-- [run-trio-rl-004.sh](/D:/AI/GTCG/genius-invokation/scripts/run-trio-rl-004.sh)
-- [run-trio-rl-004-sample-weak-replays.sh](/D:/AI/GTCG/genius-invokation/scripts/run-trio-rl-004-sample-weak-replays.sh)
+- [run-trio-rl-004.sh](<repo-root>/scripts/run-trio-rl-004.sh)
+- [run-trio-rl-004-sample-weak-replays.sh](<repo-root>/scripts/run-trio-rl-004-sample-weak-replays.sh)
 
 ## Capture vs Replay
 

@@ -24,7 +24,7 @@
 
 ## 命令
 
-在 [package.json](/D:/AI/GTCG/genius-invokation/packages/gi-agent/package.json) 里新增了三条命令：
+在 [package.json](<repo-root>/packages/gi-agent/package.json) 里新增了三条命令：
 
 - `pnpm run combat-window:extract`
 - `pnpm run combat-window:analyze`
@@ -67,7 +67,7 @@ pnpm run combat-window:extract `
 
 ## 2. 赛后结构化分析
 
-这一步需要 OpenAI API 环境变量。仓库里已有说明见 [README.md](/D:/AI/GTCG/genius-invokation/packages/gi-agent/README.md#L316)。
+这一步需要 OpenAI API 环境变量。仓库里已有说明见 [README.md](<repo-root>/packages/gi-agent/README.md#L316)。
 
 ```powershell
 cd packages/gi-agent
@@ -406,17 +406,17 @@ pnpm run combat-window:evaluate-workload `
 
 ## 代码位置
 
-- 提取器：[window-extractor.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/combat-windows/window-extractor.ts)
-- LLM 分析器：[post-analysis.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/combat-windows/post-analysis.ts)
-- 树库存储：[tree-lake.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/combat-windows/tree-lake.ts)
-- 验证器：[tree-validator.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/combat-windows/tree-validator.ts)
-- replay 对齐器：[replay-alignment.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/combat-windows/replay-alignment.ts)
-- branch-eval 导入器：[branch-eval-import.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/combat-windows/branch-eval-import.ts)
-- library 导出器：[export-library.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/combat-windows/export-library.ts)
-- library 检索器：[library-selector.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/combat-windows/library-selector.ts)
-- library 评估器：[library-evaluator.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/combat-windows/library-evaluator.ts)
-- workload 评估器：[library-workload-evaluator.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/combat-windows/library-workload-evaluator.ts)
-- runtime digest 特征工具：[runtime-digest-utils.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/learning/combat-windows/runtime-digest-utils.ts)
+- 提取器：[window-extractor.ts](<repo-root>/packages/gi-agent/src/learning/combat-windows/window-extractor.ts)
+- LLM 分析器：[post-analysis.ts](<repo-root>/packages/gi-agent/src/learning/combat-windows/post-analysis.ts)
+- 树库存储：[tree-lake.ts](<repo-root>/packages/gi-agent/src/learning/combat-windows/tree-lake.ts)
+- 验证器：[tree-validator.ts](<repo-root>/packages/gi-agent/src/learning/combat-windows/tree-validator.ts)
+- replay 对齐器：[replay-alignment.ts](<repo-root>/packages/gi-agent/src/learning/combat-windows/replay-alignment.ts)
+- branch-eval 导入器：[branch-eval-import.ts](<repo-root>/packages/gi-agent/src/learning/combat-windows/branch-eval-import.ts)
+- library 导出器：[export-library.ts](<repo-root>/packages/gi-agent/src/learning/combat-windows/export-library.ts)
+- library 检索器：[library-selector.ts](<repo-root>/packages/gi-agent/src/learning/combat-windows/library-selector.ts)
+- library 评估器：[library-evaluator.ts](<repo-root>/packages/gi-agent/src/learning/combat-windows/library-evaluator.ts)
+- workload 评估器：[library-workload-evaluator.ts](<repo-root>/packages/gi-agent/src/learning/combat-windows/library-workload-evaluator.ts)
+- runtime digest 特征工具：[runtime-digest-utils.ts](<repo-root>/packages/gi-agent/src/learning/combat-windows/runtime-digest-utils.ts)
 
 ## 推荐起步规模
 

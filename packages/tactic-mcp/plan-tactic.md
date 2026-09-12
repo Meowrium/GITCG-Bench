@@ -16,19 +16,19 @@
 4. Regression tests: 验证 `create_opening_plan_v1` 与 `ensurePlanV1BeforeAction()` 行为不回归。
 
 **Relevant files**
-- `d:/AI/GTCG/genius-invokation/packages/tactic-mcp/README.md` - 同步运行时校验层与导出 API 说明。
-- `d:/AI/GTCG/genius-invokation/packages/tactic-mcp/schemas/mcp/tool-contracts.index.json` - 作为工具契约索引加载入口。
-- `d:/AI/GTCG/genius-invokation/packages/tactic-mcp/schemas/mcp/create-opening-plan-v2.request.schema.json` - `create_opening_plan_v2` 请求校验源。
-- `d:/AI/GTCG/genius-invokation/packages/tactic-mcp/schemas/mcp/create-opening-plan-v2.response.schema.json` - `create_opening_plan_v2` 响应校验源。
-- `d:/AI/GTCG/genius-invokation/packages/tactic-mcp/schemas/mcp/create-decision-shard-v1.request.schema.json` - `create_decision_shard_v1` 请求校验源。
-- `d:/AI/GTCG/genius-invokation/packages/tactic-mcp/schemas/mcp/create-decision-shard-v1.response.schema.json` - `create_decision_shard_v1` 响应校验源。
-- `d:/AI/GTCG/genius-invokation/packages/tactic-mcp/schemas/mcp/critic-evaluate-v1.request.schema.json` - `critic_evaluate_v1` 请求校验源。
-- `d:/AI/GTCG/genius-invokation/packages/tactic-mcp/schemas/mcp/critic-evaluate-v1.response.schema.json` - `critic_evaluate_v1` 响应校验源。
-- `d:/AI/GTCG/genius-invokation/packages/mcp/src/mcp/StandaloneMcpToolHandler.ts` - 新工具定义、dispatch、工具桩处理器、落盘路径对齐。
-- `d:/AI/GTCG/genius-invokation/packages/mcp/src/mcp/StandaloneMCPServer.ts` - 工具调用链路保持兼容（通常无需改动，仅验证）。
-- `d:/AI/GTCG/genius-invokation/packages/mcp/src/mcp/MCPProtocol.ts` - 复用 `buildToolCallResultJson` / error envelope（通常无需改动）。
+- `<repo-root>/packages/tactic-mcp/README.md` - 同步运行时校验层与导出 API 说明。
+- `<repo-root>/packages/tactic-mcp/schemas/mcp/tool-contracts.index.json` - 作为工具契约索引加载入口。
+- `<repo-root>/packages/tactic-mcp/schemas/mcp/create-opening-plan-v2.request.schema.json` - `create_opening_plan_v2` 请求校验源。
+- `<repo-root>/packages/tactic-mcp/schemas/mcp/create-opening-plan-v2.response.schema.json` - `create_opening_plan_v2` 响应校验源。
+- `<repo-root>/packages/tactic-mcp/schemas/mcp/create-decision-shard-v1.request.schema.json` - `create_decision_shard_v1` 请求校验源。
+- `<repo-root>/packages/tactic-mcp/schemas/mcp/create-decision-shard-v1.response.schema.json` - `create_decision_shard_v1` 响应校验源。
+- `<repo-root>/packages/tactic-mcp/schemas/mcp/critic-evaluate-v1.request.schema.json` - `critic_evaluate_v1` 请求校验源。
+- `<repo-root>/packages/tactic-mcp/schemas/mcp/critic-evaluate-v1.response.schema.json` - `critic_evaluate_v1` 响应校验源。
+- `<repo-root>/packages/mcp/src/mcp/StandaloneMcpToolHandler.ts` - 新工具定义、dispatch、工具桩处理器、落盘路径对齐。
+- `<repo-root>/packages/mcp/src/mcp/StandaloneMCPServer.ts` - 工具调用链路保持兼容（通常无需改动，仅验证）。
+- `<repo-root>/packages/mcp/src/mcp/MCPProtocol.ts` - 复用 `buildToolCallResultJson` / error envelope（通常无需改动）。
 - `d:/AI/GTCG/runtime-plans/` - 文件落盘兼容目录（验证路径规则）。
-- `d:/AI/GTCG/genius-invokation/packages/mcp/prompt.txt` - 若需要，补充新工具调用时机提示并保持 v1 语义。
+- `<repo-root>/packages/mcp/prompt.txt` - 若需要，补充新工具调用时机提示并保持 v1 语义。
 
 **Verification**
 1. 在 `packages/tactic-mcp` 运行 schema validator 单测：合法样例全部通过、非法样例全部失败并产出一致错误码。

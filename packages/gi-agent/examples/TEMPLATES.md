@@ -2,8 +2,8 @@
 
 为了方便后续整理常见卡组和固定 benchmark 场景，这里先放了两个模板：
 
-- [examples/configs/decks.template.json](/D:/AI/GTCG/genius-invokation/packages/gi-agent/examples/configs/decks.template.json)
-- [benchmark-core.template.json](/D:/AI/GTCG/genius-invokation/packages/gi-agent/benchmark-core.template.json)
+- [examples/configs/decks.template.json](<repo-root>/packages/gi-agent/examples/configs/decks.template.json)
+- [benchmark-core.template.json](<repo-root>/packages/gi-agent/benchmark-core.template.json)
 
 ## 1. `decks.template.json`
 

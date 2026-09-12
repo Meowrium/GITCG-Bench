@@ -1,6 +1,6 @@
 # 七圣召唤框架整理问题
 
-> 承接 [framework.md](D:\AI\GTCG\gitcg-theory\framework.md)，这份文档不直接给结论，而是按写作顺序提出问题，帮助把原始想法整理成一套更完整的理论框架。
+> 承接 [framework.md](<local-workspace>\gitcg-theory\framework.md)，这份文档不直接给结论，而是按写作顺序提出问题，帮助把原始想法整理成一套更完整的理论框架。
 >
 > 卡牌信息参考genius-invokation/packages/data/src
 > 卡组代码可以通过genius-invokation/packages下的decoder组件进行解码获取详细卡组信息

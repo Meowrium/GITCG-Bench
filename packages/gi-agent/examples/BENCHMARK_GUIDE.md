@@ -2,13 +2,13 @@
 
 这份文档只讲一件事：
 
-如何给 [run-benchmark.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/evaluation/benchmark/cli/run-benchmark.ts) 写配置，并正确理解输出结果。
+如何给 [run-benchmark.ts](<repo-root>/packages/gi-agent/src/evaluation/benchmark/cli/run-benchmark.ts) 写配置，并正确理解输出结果。
 
-如果你只是想先跑起来，先看 [examples/configs/benchmark.example.json](/D:/AI/GTCG/genius-invokation/packages/gi-agent/examples/configs/benchmark.example.json)。
+如果你只是想先跑起来，先看 [examples/configs/benchmark.example.json](<repo-root>/packages/gi-agent/examples/configs/benchmark.example.json)。
 
 ## 最小命令
 
-在 [packages/gi-agent](/D:/AI/GTCG/genius-invokation/packages/gi-agent) 下执行：
+在 [packages/gi-agent](<repo-root>/packages/gi-agent) 下执行：
 
 ```bash
 pnpm run benchmark examples/configs/benchmark.example.json
@@ -129,7 +129,7 @@ sample: policy-new vs policy-old -> 62.00%
 }
 ```
 
-`options` 对应 [baseline-policy.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/policy/baseline-policy.ts) 里的参数。
+`options` 对应 [baseline-policy.ts](<repo-root>/packages/gi-agent/src/runtime/policy/baseline-policy.ts) 里的参数。
 
 当前可配的主要项：
 
@@ -165,7 +165,7 @@ sample: policy-new vs policy-old -> 62.00%
 
 - `learnedScoreScale`
 
-对应实现见 [evaluator-policy.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/runtime/policy/evaluator-policy.ts)。
+对应实现见 [evaluator-policy.ts](<repo-root>/packages/gi-agent/src/runtime/policy/evaluator-policy.ts)。
 
 ## deck code 从哪里来
 
@@ -295,7 +295,7 @@ sample-baseline-mirror: baseline-a vs baseline-b -> 40.00% (4-6-0)
 2. 再跑新版本配置，再保存一份 JSON
 3. 用库里的 `compareBenchmarks()` 自己做比较
 
-对应函数在 [benchmark-report.ts](/D:/AI/GTCG/genius-invokation/packages/gi-agent/src/evaluation/benchmark/benchmark-report.ts)。
+对应函数在 [benchmark-report.ts](<repo-root>/packages/gi-agent/src/evaluation/benchmark/benchmark-report.ts)。
 
 ## 什么时候结果才“可信”
 

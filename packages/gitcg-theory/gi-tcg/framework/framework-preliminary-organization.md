@@ -1,6 +1,6 @@
 # 七圣召唤框架初步整理
 
-> 来源：[framework-guiding-questions.md](D:\AI\GTCG\gitcg-theory\framework-guiding-questions.md) 第一至十一部分回答的初步收束版。
+> 来源：[framework-guiding-questions.md](<local-workspace>\gitcg-theory\framework-guiding-questions.md) 第一至十一部分回答的初步收束版。
 >
 > 目标不是直接定稿，而是把目前已经相对稳定的内容整理成“可继续扩写正文”的骨架，并把尚未稳定的问题单独标出来。
 
@@ -303,7 +303,7 @@ A(s') != A(s)
 
 如果继续推进，最合适的顺序不是立刻补公式，而是：
 
-1. 先把本整理版压缩回 [framework.md](D:\AI\GTCG\gitcg-theory\framework.md) 的正文骨架。
+1. 先把本整理版压缩回 [framework.md](<local-workspace>\gitcg-theory\framework.md) 的正文骨架。
 2. 在 `framework.md` 中只保留目前已经稳定的一到八部分主线。
 3. 把第九到十一部分写成“方向性定义 + 开放问题”，暂不强求严格公式。
 4. 单独新增一个例子文档，用具体牌组和具体局面来承载后续讨论。

@@ -527,6 +527,6 @@ M1–M3 是"实验能跑且有判别力"的最小集；M4 接上反思闭环；M
    - **胜率差分评估（2026-08-27 已落地）**：三个对战 checkpoint 均带 value 头（tanh ∈ (-1,1) 局内胜率估计，决策方视角）；权重目录另有独立的 `lineup胜率预测.pt`（赛前 lineup 级，未接入）。`plan:eval --oracle nn` 默认开启 valueDiff：每个决策点记录 valueBefore/After/Delta（行动后取下一 action 暂停点估值，对方视角取负、终局 ±1/0，跨掷骰边界的点排除出聚合），valueDelta < -0.1（≈5pp 胜率）记崩落点，perRule 同步聚合——与 blunder（策略分歧）互补的行动后果指标，可直接喂反思管线。细节与实测见 `docs/nn-bridge-integration.md` §7。
 
    **2026-08-24 勘察结论**：
-   - `D:\AI\GTCG\cc_AI\Windows_AGI`（AGI.exe）是同一 AI 的 UE5 闭源 GUI 对战客户端（自带 C++ 引擎 + DirectML 推理 + HTTPS 平台客户端），只能整局对战、无法作为可查询 policy/oracle 嵌入——不作接入路线。
-   - 桥接纯策略链路（`ModelBridgePolicy.decide(CanonicalState, RpcEnvelope)`，aibridge `model_policy.py`）只依赖 torch + checkpoint + `pynet_trans.py`（已就位 `D:\AI\GTCG\clean_genius_AI`）+ 映射配置，**不需要** cppo 本地模拟器；PUCT 搜索档才需要 `gitcg==0.20.7` Python 绑定（PyPI win_amd64 wheel 已确认可得）。
+   - `<local-workspace>\cc_AI\Windows_AGI`（AGI.exe）是同一 AI 的 UE5 闭源 GUI 对战客户端（自带 C++ 引擎 + DirectML 推理 + HTTPS 平台客户端），只能整局对战、无法作为可查询 policy/oracle 嵌入——不作接入路线。
+   - 桥接纯策略链路（`ModelBridgePolicy.decide(CanonicalState, RpcEnvelope)`，aibridge `model_policy.py`）只依赖 torch + checkpoint + `pynet_trans.py`（已就位 `<local-workspace>\clean_genius_AI`）+ 映射配置，**不需要** cppo 本地模拟器；PUCT 搜索档才需要 `gitcg==0.20.7` Python 绑定（PyPI win_amd64 wheel 已确认可得）。
    - `CanonicalState`/`RpcEnvelope` 为观察者安全结构，可由本仓库 `exposeState` 玩家视角 state + rpc `Action` 直接转换（平台与本仓库同源）。

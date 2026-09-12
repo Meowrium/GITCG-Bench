@@ -1,0 +1,20 @@
+# deps & build output
+node_modules/
+dist/
+*.tsbuildinfo
+
+# local env / secrets (never commit)
+.env
+.env.*
+!*.env.example
+
+# local runtime artifacts
+.tmp/
+temp/
+output/
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

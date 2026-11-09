@@ -66,8 +66,8 @@ CLEANUP_LIST.txt
 
 # Top-level data copies (already in packages/)
 data/
-gitcg-data/
-gitcg-theory/
+/gitcg-data/
+/gitcg-theory/
 
 # Deck collection data
 4.1卡组收集/
